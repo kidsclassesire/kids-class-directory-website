@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kids Class Directory</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    
     <style>
-        /* Base Styles & Typography */
         :root {
-            --primary: #ff385c; /* Airbnb-style vibrant color */
+            --primary: #ff385c;
             --primary-hover: #d90b34;
             --text-dark: #0f172a;
             --text-muted: #64748b;
@@ -26,7 +29,7 @@
             flex-direction: column;
         }
 
-        /* Hero Section (Search Area) */
+        /* Hero / Search Area */
         #hero {
             display: flex;
             flex-direction: column;
@@ -36,45 +39,33 @@
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             background: linear-gradient(to bottom, #ffffff, #f8fafc);
             border-bottom: 1px solid transparent;
+            z-index: 10;
         }
 
-        /* Initial State (Centered) */
         .hero-initial {
             height: 100vh;
             padding-bottom: 10vh;
         }
 
-        /* Active State (Top Header) */
         .hero-active {
             height: auto;
-            padding: 2rem;
+            padding: 1.5rem;
             border-bottom-color: var(--border);
             background: #ffffff;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         .hero-text {
             text-align: center;
             margin-bottom: 2.5rem;
-            transition: opacity 0.3s ease, height 0.3s ease;
         }
+        .hero-active .hero-text { display: none; }
+        .hero-text h1 { font-size: 3rem; margin: 0 0 1rem; letter-spacing: -0.02em; }
+        .hero-text p { font-size: 1.25rem; color: var(--text-muted); margin: 0; }
 
-        .hero-active .hero-text {
-            display: none; /* Hide large text when searching */
-        }
-
-        .hero-text h1 {
-            font-size: 3rem;
-            margin: 0 0 1rem;
-            letter-spacing: -0.02em;
-        }
-
-        .hero-text p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            margin: 0;
-        }
-
-        /* Pill Search Bar */
+        /* Search Bar */
         .search-bar {
             display: flex;
             align-items: center;
@@ -85,453 +76,263 @@
             padding: 8px 8px 8px 32px;
             width: 100%;
             max-width: 800px;
-            transition: box-shadow 0.2s ease;
         }
-
-        .search-bar:hover {
-            box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
-        }
-
-        .search-input-group {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            padding-right: 16px;
-        }
-
-        .search-input-group label {
-            font-size: 0.75rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-dark);
-            margin-bottom: 4px;
-            cursor: pointer;
-        }
-
-        .search-input-group input {
-            border: none;
-            outline: none;
-            background: transparent;
-            font-size: 1rem;
-            color: var(--text-dark);
-            padding: 0;
-            width: 100%;
-        }
-
-        .search-input-group input::placeholder {
-            color: #94a3b8;
-        }
-
-        .search-divider {
-            width: 1px;
-            height: 40px;
-            background-color: var(--border);
-            margin: 0 24px 0 8px;
-        }
-
+        .search-input-group { display: flex; flex-direction: column; flex: 1; padding-right: 16px; }
+        .search-input-group label { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--text-dark); margin-bottom: 4px; }
+        .search-input-group input { border: none; outline: none; background: transparent; font-size: 1rem; width: 100%; }
+        .search-divider { width: 1px; height: 40px; background-color: var(--border); margin: 0 24px 0 8px; }
         .search-btn {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 54px;
-            height: 54px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background 0.2s;
-            flex-shrink: 0;
+            background-color: var(--primary); color: white; border: none; border-radius: 50%;
+            width: 54px; height: 54px; display: flex; align-items: center; justify-content: center; cursor: pointer;
         }
 
-        .search-btn:hover {
-            background-color: var(--primary-hover);
-        }
-
-        .search-btn svg {
-            width: 20px;
-            height: 20px;
-            fill: none;
-            stroke: currentColor;
-            stroke-width: 3;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        /* Main Content & Grid (Hidden initially) */
+        /* Split Layout for Main Content */
         #main-content {
-            padding: 2rem;
-            max-width: 1400px;
+            display: none;
+            flex-grow: 1;
+            max-width: 1600px;
             margin: 0 auto;
             width: 100%;
-            box-sizing: border-box;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.5s ease;
         }
-
         #main-content.visible {
-            opacity: 1;
-            visibility: visible;
+            display: flex;
         }
 
-        #result-meta {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            color: var(--text-dark);
+        /* Left Column: Results */
+        .results-column {
+            width: 55%;
+            padding: 2rem;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
         }
 
+        /* Right Column: Map */
+        .map-column {
+            width: 45%;
+            position: sticky;
+            top: 90px; /* Accounts for header */
+            height: calc(100vh - 90px);
+            background: #e2e8f0;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        #result-meta { font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; }
+
+        /* Grid inside Results */
         #directory-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
 
-        /* Class Cards */
+        /* Cards */
         .class-card {
-            background: #ffffff;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-            border: 1px solid var(--border);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            background: #ffffff; border-radius: 16px; overflow: hidden;
+            border: 1px solid var(--border); display: flex; flex-direction: column;
         }
-
-        .class-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.15);
-        }
-
-        .card-image {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
-        }
-
-        .card-content {
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .card-content h2 {
-            margin: 0 0 0.5rem;
-            font-size: 1.25rem;
-            color: var(--text-dark);
-        }
-
-        .tag-container {
-            margin-bottom: 1rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .tag {
-            background: #f1f5f9;
-            color: #475569;
-            padding: 0.25rem 0.75rem;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .description {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: var(--text-muted);
-            flex-grow: 1;
-            margin-bottom: 1.5rem;
-        }
-
-        .meta-info {
-            font-size: 0.85rem;
-            color: var(--text-dark);
-            margin-bottom: 1.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .meta-info strong {
-            font-weight: 600;
-        }
-
-        .button {
-            display: block;
-            text-align: center;
-            background: var(--text-dark);
-            color: white;
-            text-decoration: none;
-            padding: 0.85rem;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: background 0.2s;
-        }
-
-        .button:hover {
-            background: #000000;
-        }
+        .card-image { width: 100%; height: 180px; object-fit: cover; background: linear-gradient(135deg, #e2e8f0, #cbd5e1); }
+        .card-content { padding: 1.25rem; display: flex; flex-direction: column; flex-grow: 1; }
+        .card-content h2 { margin: 0 0 0.5rem; font-size: 1.1rem; }
+        .tag-container { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+        .tag { background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 600; }
+        .meta-info { font-size: 0.85rem; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border); }
+        .button { display: block; text-align: center; background: var(--text-dark); color: white; text-decoration: none; padding: 0.75rem; border-radius: 8px; margin-top: 1rem; font-weight: 600; }
 
         /* Pagination */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            margin-top: 3rem;
-            padding-bottom: 3rem;
-        }
+        .pagination { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 2rem; padding-bottom: 2rem; }
+        .page-button { border: 1px solid var(--text-dark); background: #ffffff; border-radius: 8px; padding: 0.5rem 1rem; cursor: pointer; font-weight: 600; }
 
-        .page-button {
-            border: 1px solid var(--text-dark);
-            background: #ffffff;
-            color: var(--text-dark);
-            border-radius: 8px;
-            padding: 0.75rem 1.5rem;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.2s;
-        }
-
-        .page-button:hover:not(:disabled) {
-            background: var(--text-dark);
-            color: #ffffff;
-        }
-
-        .page-button:disabled {
-            opacity: 0.3;
-            cursor: not-allowed;
-            border-color: var(--border);
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            #main-content.visible { flex-direction: column-reverse; }
+            .results-column { width: 100%; }
+            .map-column { width: 100%; height: 400px; position: relative; top: 0; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Hero / Search Section -->
     <header id="hero" class="hero-initial">
         <div class="hero-text">
             <h1>Discover Kids Classes</h1>
             <p>Find the best local activities for your children.</p>
         </div>
-        
         <div class="search-bar">
             <div class="search-input-group">
                 <label for="search-input">Activity</label>
-                <input id="search-input" type="text" placeholder="e.g. swimming, gymnastics" autocomplete="off">
+                <input id="search-input" type="text" placeholder="e.g. athletics, coding">
             </div>
-            
             <div class="search-divider"></div>
-            
             <div class="search-input-group">
                 <label for="location-input">Where</label>
-                <input id="location-input" type="text" placeholder="e.g. Dublin 24, Tallaght" autocomplete="off">
+                <input id="location-input" type="text" placeholder="e.g. Dublin 16, South Dublin">
             </div>
-
-            <button id="search-btn" class="search-btn" aria-label="Search">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13 3C7.477 3 3 7.477 3 13s4.477 10 10 10c2.395 0 4.593-.84 6.31-2.24l6.983 6.982 1.414-1.414-6.982-6.983A9.957 9.957 0 0023 13c0-5.523-4.477-10-10-10zm0 2c4.43 0 8 3.57 8 8s-3.57 8-8 8-8-3.57-8-8 3.57-8 8-8z"/>
-                </svg>
+            <button id="search-btn" class="search-btn">
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="none" stroke-width="3"><path d="M13 3C7.477 3 3 7.477 3 13s4.477 10 10 10c2.395 0 4.593-.84 6.31-2.24l6.983 6.982 1.414-1.414-6.982-6.983A9.957 9.957 0 0023 13c0-5.523-4.477-10-10-10zm0 2c4.43 0 8 3.57 8 8s-3.57 8-8 8-8-3.57-8-8 3.57-8 8-8z"/></svg>
             </button>
         </div>
     </header>
 
-    <!-- Results Grid -->
     <main id="main-content">
-        <div id="result-meta">
-            <span id="result-count">Loading classes...</span>
+        <div class="results-column">
+            <div id="result-meta"><span id="result-count">Loading classes...</span></div>
+            <div id="directory-container"></div>
+            <div id="pagination-controls" class="pagination"></div>
         </div>
-        <div id="directory-container"></div>
-        <div id="pagination-controls" class="pagination"></div>
+        <div class="map-column">
+            <div id="map"></div>
+        </div>
     </main>
 
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    
     <script>
         const searchInput = document.getElementById('search-input');
         const locationInput = document.getElementById('location-input');
         const searchBtn = document.getElementById('search-btn');
         const heroSection = document.getElementById('hero');
         const mainContent = document.getElementById('main-content');
-        const resultCount = document.getElementById('result-count');
-        const directoryContainer = document.getElementById('directory-container');
-        const paginationControls = document.getElementById('pagination-controls');
         
         let classesData = [];
         let filteredData = [];
-        const pageSize = 24; // Better for 1, 2, 3, or 4 column grids
+        const pageSize = 12; 
         let currentPage = 1;
-        let hasTriggeredSearch = false; // Tracks UI state
+        let hasTriggeredSearch = false;
+        
+        // Map Variables
+        let map;
+        let mapMarkers = [];
 
-        function formatAge(item) {
-            if (item.age_range_display) return item.age_range_display;
-            if (item.minimum_age != null && item.maximum_age != null) return `Ages ${item.minimum_age}-${item.maximum_age}`;
-            if (item.minimum_age != null) return `From ${item.minimum_age} yrs`;
-            if (item.maximum_age != null) return `Up to ${item.maximum_age} yrs`;
-            return 'All ages';
+        // Initialize Map centered on Dublin
+        function initMap() {
+            map = L.map('map').setView([53.3498, -6.2603], 10);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
         }
 
-        function matchesField(value, query) {
-            return value && query && value.toString().toLowerCase().includes(query);
+        // Update Map with current filtered data
+        function updateMap() {
+            // Remove existing markers
+            mapMarkers.forEach(marker => map.removeLayer(marker));
+            mapMarkers = [];
+
+            // A group to calculate boundaries so the map zooms to fit all pins
+            const markerGroup = L.featureGroup().addTo(map);
+
+            filteredData.forEach((item, index) => {
+                // FALLBACK: If coordinates are null in your JSON, we generate a mock one near Dublin for testing.
+                // You should remove the fallback once your scraper extracts real lat/longs.
+                let lat = item.latitude;
+                let lng = item.longitude;
+                
+                if (!lat || !lng) {
+                    lat = 53.3498 + (Math.random() - 0.5) * 0.1; 
+                    lng = -6.2603 + (Math.random() - 0.5) * 0.1;
+                }
+
+                const marker = L.marker([lat, lng]);
+                marker.bindPopup(`<b>${item.company_name}</b><br>${item.category}`);
+                marker.addTo(markerGroup);
+                mapMarkers.push(marker);
+            });
+
+            // Adjust map view to fit all markers if there are any
+            if (mapMarkers.length > 0) {
+                map.fitBounds(markerGroup.getBounds(), { padding: [30, 30] });
+            }
         }
 
         function filterClasses(data, query, location) {
-            const normalizedQuery = query.trim().toLowerCase();
-            const normalizedLocation = location.trim().toLowerCase();
-
+            const q = query.trim().toLowerCase();
+            const l = location.trim().toLowerCase();
             return data.filter(item => {
-                const textSearch = normalizedQuery === '' || [
-                    item.company_name,
-                    item.category,
-                    item.description,
-                    item.age_range_display,
-                    (item.class_types || []).join(' '),
-                    item.pricing_basis,
-                    item.pricing_details
-                ].some(value => matchesField(value, normalizedQuery));
-
-                const locationSearch = normalizedLocation === '' || [
-                    item.address,
-                    item.eircode,
-                    item.parental_requirement
-                ].some(value => matchesField(value, normalizedLocation));
-
-                return textSearch && locationSearch;
+                const textMatch = q === '' || [item.company_name, item.category, item.description].some(v => v && v.toString().toLowerCase().includes(q));
+                const locMatch = l === '' || [item.address, item.eircode].some(v => v && v.toString().toLowerCase().includes(l));
+                return textMatch && locMatch;
             });
         }
 
-        function getPageCount() {
-            return Math.max(1, Math.ceil(filteredData.length / pageSize));
-        }
-
-        function getPageData() {
-            const pageCount = getPageCount();
-            if (currentPage > pageCount) currentPage = pageCount;
-            const start = (currentPage - 1) * pageSize;
-            return filteredData.slice(start, start + pageSize);
-        }
-
         function renderClasses(data) {
-            directoryContainer.innerHTML = '';
-
-            if (!data.length) {
-                directoryContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center; font-size: 1.1rem; color: #64748b;">No classes match your search. Try adjusting your filters.</p>';
-                return;
-            }
-
+            const container = document.getElementById('directory-container');
+            container.innerHTML = '';
             data.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'class-card';
-                const ageText = formatAge(item);
-                const websiteUrl = item.website_url || '#';
-                
-                // If an image URL is provided, display it. Otherwise, show a nice gradient fallback block.
-                const imageUrl = item.image_url || item.image || '';
-                const imageMarkup = imageUrl 
-                    ? `<img class="card-image" src="${imageUrl}" alt="${item.company_name}">` 
-                    : `<div class="card-image"></div>`;
-
                 card.innerHTML = `
-                    ${imageMarkup}
+                    <div class="card-image"></div>
                     <div class="card-content">
                         <h2>${item.company_name}</h2>
                         <div class="tag-container">
                             <span class="tag">${item.category || 'Class'}</span>
-                            <span class="tag">${ageText}</span>
                         </div>
-                        <p class="description">${item.description || 'No description available.'}</p>
                         <div class="meta-info">
                             <strong>Where:</strong> ${item.address || 'Contact for details'}<br>
-                            <strong style="display:inline-block; margin-top:4px;">Price:</strong> ${item.pricing_basis || 'Contact for details'}
                         </div>
-                        <a href="${websiteUrl}" target="_blank" class="button">Visit Website</a>
+                        <a href="${item.website_url || '#'}" target="_blank" class="button">Visit Website</a>
                     </div>
                 `;
-
-                directoryContainer.appendChild(card);
+                container.appendChild(card);
             });
         }
 
         function renderPagination() {
-            const pageCount = getPageCount();
-            if (filteredData.length <= pageSize) {
-                paginationControls.innerHTML = '';
-                return;
-            }
+            const pageCount = Math.max(1, Math.ceil(filteredData.length / pageSize));
+            const paginationControls = document.getElementById('pagination-controls');
+            if (filteredData.length <= pageSize) { paginationControls.innerHTML = ''; return; }
 
             paginationControls.innerHTML = `
-                <button class="page-button" id="prev-page" ${currentPage === 1 ? 'disabled' : ''}>Previous</button>
-                <span style="font-weight: 600; color: #64748b;">Page ${currentPage} of ${pageCount}</span>
+                <button class="page-button" id="prev-page" ${currentPage === 1 ? 'disabled' : ''}>Prev</button>
+                <span style="font-size:0.9rem; font-weight:600;">Page ${currentPage} of ${pageCount}</span>
                 <button class="page-button" id="next-page" ${currentPage === pageCount ? 'disabled' : ''}>Next</button>
             `;
-
-            document.getElementById('prev-page').addEventListener('click', () => {
-                if (currentPage > 1) {
-                    currentPage -= 1;
-                    renderPage();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-            });
-            
-            document.getElementById('next-page').addEventListener('click', () => {
-                if (currentPage < pageCount) {
-                    currentPage += 1;
-                    renderPage();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-            });
+            document.getElementById('prev-page')?.addEventListener('click', () => { currentPage--; renderPage(); });
+            document.getElementById('next-page')?.addEventListener('click', () => { currentPage++; renderPage(); });
         }
 
         function renderPage() {
-            const pageData = getPageData();
-            renderClasses(pageData);
+            const start = (currentPage - 1) * pageSize;
+            renderClasses(filteredData.slice(start, start + pageSize));
             renderPagination();
         }
 
         function executeSearch() {
-            // Trigger the UI transition on the first search
             if (!hasTriggeredSearch) {
                 hasTriggeredSearch = true;
                 heroSection.classList.remove('hero-initial');
                 heroSection.classList.add('hero-active');
                 mainContent.classList.add('visible');
+                initMap(); // Map must be initialized after the div is visible
             }
-
-            const query = searchInput.value;
-            const location = locationInput.value;
             
-            filteredData = filterClasses(classesData, query, location);
+            filteredData = filterClasses(classesData, searchInput.value, locationInput.value);
             currentPage = 1;
-            
-            resultCount.textContent = `Over ${filteredData.length} ${filteredData.length === 1 ? 'class' : 'classes'} found`;
+            document.getElementById('result-count').textContent = `${filteredData.length} classes found`;
             
             renderPage();
+            
+            // Allow time for map to adjust to its new container size before plotting
+            setTimeout(() => {
+                map.invalidateSize();
+                updateMap();
+            }, 100);
         }
 
-        // Event Listeners for searching
         searchBtn.addEventListener('click', executeSearch);
-        
-        // Allow pressing "Enter" in the inputs to trigger search
         searchInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') executeSearch(); });
         locationInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') executeSearch(); });
-        
-        // Optional: Uncomment below if you want real-time filtering as they type (after initial search)
-        searchInput.addEventListener('input', () => { if (hasTriggeredSearch) executeSearch(); });
-        locationInput.addEventListener('input', () => { if (hasTriggeredSearch) executeSearch(); });
 
-        // Load Data (Wait for interaction before displaying)
         fetch('south_dublin_kids_activities.json')
-            .then(response => response.json())
-            .then(data => {
-                classesData = data;
-            })
-            .catch(error => {
-                console.error('Error loading data:', error);
-                resultCount.textContent = 'Unable to load class data.';
-            });
+            .then(res => res.json())
+            .then(data => { classesData = data; })
+            .catch(err => console.error('Error loading data:', err));
     </script>
 </body>
 </html>
