@@ -119,6 +119,52 @@
             gap: 1.5rem;
             margin-top: 0;
         }
+        .card-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px 12px 0 0;
+            margin-bottom: 1rem;
+            background: #e2e8f0;
+        }
+        .class-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        .pagination {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            padding: 1.25rem 0;
+            color: #475569;
+        }
+        .pagination-info {
+            font-size: 0.95rem;
+        }
+        .page-button {
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            color: #334155;
+            border-radius: 9999px;
+            padding: 0.65rem 1rem;
+            cursor: pointer;
+            font-weight: 700;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .page-button:hover:not(:disabled) {
+            background: #eef2ff;
+            border-color: #c7d2fe;
+        }
+        .page-button:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+        }
     </style>
 </head>
 <body>
@@ -144,6 +190,7 @@
     </div>
 
     <div id="directory-container"></div>
+    <div id="pagination-controls"></div>
 
     <script>
         const searchInput = document.getElementById('search-input');
@@ -151,7 +198,11 @@
         const resultCount = document.getElementById('result-count');
         const resultHint = document.getElementById('result-hint');
         const directoryContainer = document.getElementById('directory-container');
+        const paginationControls = document.getElementById('pagination-controls');
         let classesData = [];
+        let filteredData = [];
+        const pageSize = 25;
+        let currentPage = 1;
 
         function formatAge(item) {
             if (item.age_range_display) return item.age_range_display;
@@ -190,6 +241,17 @@
             });
         }
 
+        function getPageCount() {
+            return Math.max(1, Math.ceil(filteredData.length / pageSize));
+        }
+
+        function getPageData() {
+            const pageCount = getPageCount();
+            if (currentPage > pageCount) currentPage = pageCount;
+            const start = (currentPage - 1) * pageSize;
+            return filteredData.slice(start, start + pageSize);
+        }
+
         function renderClasses(data) {
             directoryContainer.innerHTML = '';
 
@@ -203,8 +265,11 @@
                 card.className = 'class-card';
                 const ageText = formatAge(item);
                 const websiteUrl = item.website_url || '#';
+                const imageUrl = item.image_url || item.image || '';
+                const imageMarkup = imageUrl ? `<img class="card-image" src="${imageUrl}" alt="${item.company_name} image">` : '';
 
                 card.innerHTML = `
+                    ${imageMarkup}
                     <h2>${item.company_name}</h2>
                     <div class="tag-container">
                         <span class="tag">${item.category || 'Class'}</span>
@@ -222,12 +287,48 @@
             });
         }
 
+        function renderPagination() {
+            const pageCount = getPageCount();
+            if (filteredData.length <= pageSize) {
+                paginationControls.innerHTML = '';
+                return;
+            }
+
+            paginationControls.innerHTML = `
+                <div class="pagination-info">Page ${currentPage} of ${pageCount} — showing ${getPageData().length} of ${filteredData.length} results</div>
+                <div>
+                    <button class="page-button" id="prev-page" ${currentPage === 1 ? 'disabled' : ''}>Previous</button>
+                    <button class="page-button" id="next-page" ${currentPage === pageCount ? 'disabled' : ''}>Next</button>
+                </div>
+            `;
+
+            document.getElementById('prev-page').addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage -= 1;
+                    renderPage();
+                }
+            });
+            document.getElementById('next-page').addEventListener('click', () => {
+                if (currentPage < pageCount) {
+                    currentPage += 1;
+                    renderPage();
+                }
+            });
+        }
+
+        function renderPage() {
+            const pageData = getPageData();
+            renderClasses(pageData);
+            renderPagination();
+        }
+
         function updateResults() {
             const query = searchInput.value;
             const location = locationInput.value;
-            const filtered = filterClasses(classesData, query, location);
-            resultCount.textContent = `${filtered.length} ${filtered.length === 1 ? 'result' : 'results'} found`;
-            renderClasses(filtered);
+            filteredData = filterClasses(classesData, query, location);
+            currentPage = 1;
+            resultCount.textContent = `${filteredData.length} ${filteredData.length === 1 ? 'result' : 'results'} found`;
+            renderPage();
         }
 
         searchInput.addEventListener('input', updateResults);
