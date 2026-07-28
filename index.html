@@ -57,57 +57,194 @@
             transition: background 0.2s;
         }
         .button:hover { background: #4338ca; }
+
+        #search-section {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 2rem;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+            margin-bottom: 2rem;
+        }
+        #search-section h2 {
+            margin: 0 0 0.5rem;
+            color: #0f172a;
+            font-size: 1.6rem;
+        }
+        #search-section p {
+            margin: 0 0 1.5rem;
+            color: #475569;
+            line-height: 1.7;
+        }
+        .search-fields {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            align-items: end;
+        }
+        .search-field {
+            display: flex;
+            flex-direction: column;
+        }
+        .search-field label {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #334155;
+        }
+        .search-field input {
+            border: 1px solid #cbd5e1;
+            border-radius: 14px;
+            background: #f8fafc;
+            color: #0f172a;
+            padding: 0.95rem 1rem;
+            font-size: 0.98rem;
+        }
+        .search-field input:focus {
+            outline: none;
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.08);
+        }
+        #result-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+            margin-top: 1.25rem;
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+        #directory-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 0;
+        }
     </style>
 </head>
 <body>
 
     <h1>Find Local Kids Classes</h1>
+    <div id="search-section">
+        <h2>Search classes by keyword and location</h2>
+        <p>Type a class name, category, or venue, then add a location to narrow the results. The directory updates automatically.</p>
+        <div class="search-fields">
+            <div class="search-field">
+                <label for="search-input">Search</label>
+                <input id="search-input" type="search" placeholder="e.g. swimming, music, toddler" autocomplete="off">
+            </div>
+            <div class="search-field">
+                <label for="location-input">Location</label>
+                <input id="location-input" type="search" placeholder="e.g. Tallaght, Dundrum, Dublin 24" autocomplete="off">
+            </div>
+        </div>
+        <div id="result-meta">
+            <span id="result-count">Loading classes…</span>
+            <span id="result-hint">Leave both fields blank to show all classes.</span>
+        </div>
+    </div>
+
     <div id="directory-container"></div>
 
     <script>
-        // Load the merged JSON dataset from the new file.
-        fetch('south_dublin_kids_activities.json')
-            .then(response => response.json())
-            .then(data => renderClasses(data))
-            .catch(error => {
-                console.error('Error loading data:', error);
-                document.getElementById('directory-container').innerHTML = '<p>Unable to load class data. Please try again later.</p>';
-            });
+        const searchInput = document.getElementById('search-input');
+        const locationInput = document.getElementById('location-input');
+        const resultCount = document.getElementById('result-count');
+        const resultHint = document.getElementById('result-hint');
+        const directoryContainer = document.getElementById('directory-container');
+        let classesData = [];
 
-        // Function to build the HTML for each class
+        function formatAge(item) {
+            if (item.age_range_display) return item.age_range_display;
+            if (item.minimum_age != null && item.maximum_age != null) return `Ages: ${item.minimum_age}-${item.maximum_age}`;
+            if (item.minimum_age != null) return `From age ${item.minimum_age}`;
+            if (item.maximum_age != null) return `Up to age ${item.maximum_age}`;
+            return 'Age not specified';
+        }
+
+        function matchesField(value, query) {
+            return value && query && value.toString().toLowerCase().includes(query);
+        }
+
+        function filterClasses(data, query, location) {
+            const normalizedQuery = query.trim().toLowerCase();
+            const normalizedLocation = location.trim().toLowerCase();
+
+            return data.filter(item => {
+                const textSearch = normalizedQuery === '' || [
+                    item.company_name,
+                    item.category,
+                    item.description,
+                    item.age_range_display,
+                    (item.class_types || []).join(' '),
+                    item.pricing_basis,
+                    item.pricing_details
+                ].some(value => matchesField(value, normalizedQuery));
+
+                const locationSearch = normalizedLocation === '' || [
+                    item.address,
+                    item.eircode,
+                    item.parental_requirement
+                ].some(value => matchesField(value, normalizedLocation));
+
+                return textSearch && locationSearch;
+            });
+        }
+
         function renderClasses(data) {
-            const container = document.getElementById('directory-container');
-            
+            directoryContainer.innerHTML = '';
+
+            if (!data.length) {
+                directoryContainer.innerHTML = '<p>No classes match your search. Try a broader keyword or remove the location filter.</p>';
+                return;
+            }
+
             data.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'class-card';
-                
-                // Handle age display gracefully if minimum/maximum are null
-                const ageText = (item.minimum_age && item.maximum_age) 
-                    ? `Ages: ${item.minimum_age}-${item.maximum_age}` 
-                    : item.age_range_display || 'Age not specified';
+                const ageText = formatAge(item);
+                const websiteUrl = item.website_url || '#';
 
-                // Construct the inner HTML of the card using template literals
                 card.innerHTML = `
                     <h2>${item.company_name}</h2>
                     <div class="tag-container">
-                        <span class="tag">${item.category}</span>
+                        <span class="tag">${item.category || 'Class'}</span>
                         <span class="tag">${ageText}</span>
                     </div>
-                    <p class="description">${item.description}</p>
+                    <p class="description">${item.description || 'No description available.'}</p>
                     <div class="meta-info">
                         <strong>Location:</strong> ${item.address || 'Contact for details'}<br>
                         <strong>Pricing:</strong> ${item.pricing_basis || 'Contact for details'}
                     </div>
-                    <a href="${item.website_url}" target="_blank" class="button">Visit Website</a>
+                    <a href="${websiteUrl}" target="_blank" class="button">Visit Website</a>
                 `;
-                
-                container.appendChild(card);
+
+                directoryContainer.appendChild(card);
             });
         }
 
-        // Initialize the page
-        renderClasses(classesData);
+        function updateResults() {
+            const query = searchInput.value;
+            const location = locationInput.value;
+            const filtered = filterClasses(classesData, query, location);
+            resultCount.textContent = `${filtered.length} ${filtered.length === 1 ? 'result' : 'results'} found`;
+            renderClasses(filtered);
+        }
+
+        searchInput.addEventListener('input', updateResults);
+        locationInput.addEventListener('input', updateResults);
+
+        fetch('south_dublin_kids_activities.json')
+            .then(response => response.json())
+            .then(data => {
+                classesData = data;
+                resultHint.textContent = 'Leave both fields blank to show all classes.';
+                updateResults();
+            })
+            .catch(error => {
+                console.error('Error loading data:', error);
+                resultCount.textContent = 'Unable to load class data.';
+                directoryContainer.innerHTML = '<p>Unable to load class data. Please try again later.</p>';
+            });
     </script>
 </body>
 </html>
