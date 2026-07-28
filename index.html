@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Class Directory</title>
+    <style>
+        /* CSS to style the page and cards */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 { text-align: center; color: #0f172a; }
+        #directory-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .class-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        .class-card h2 { margin-top: 0; font-size: 1.25rem; color: #1e293b; }
+        .tag-container { margin-bottom: 1rem; }
+        .tag {
+            display: inline-block;
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .description { font-size: 0.95rem; line-height: 1.5; flex-grow: 1; }
+        .meta-info { font-size: 0.85rem; color: #64748b; margin-top: 1rem; }
+        .button {
+            display: block;
+            text-align: center;
+            background: #4f46e5;
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .button:hover { background: #4338ca; }
+    </style>
+</head>
+<body>
+
+    <h1>Find Local Kids Classes</h1>
+    <div id="directory-container"></div>
+
+    <script>
+        // FOR GITHUB PAGES: 
+        // When your JSON is saved in a file called 'classes.json' in the same folder,
+        // you will uncomment the fetch block below and delete the manual array.
+        
+        /*
+        fetch('classes.json')
+            .then(response => response.json())
+            .then(data => renderClasses(data))
+            .catch(error => console.error('Error loading data:', error));
+        */
+
+        // FOR LOCAL TESTING: 
+        // Here is your exact data schema embedded so you can test the HTML immediately.
+        const classesData = [
+          {
+            "company_name": "Dundrum South Dublin Athletic Club (DSD)",
+            "category": "Athletics",
+            "description": "Ireland's largest athletics club, offering juvenile athletics training covering track & field, cross country and road running on its own 400m Mondo track and trail campus in the Dublin mountains foothills.",
+            "class_types": ["Juvenile Athletics / Little Athletics"],
+            "minimum_age": 6,
+            "maximum_age": 17,
+            "age_range_display": "Juvenile (approx. primary to secondary school age)",
+            "parental_requirement": "Drop-off",
+            "address": "Tibradden Road, Taylorsgrange, Dublin 16",
+            "pricing_basis": "Annual membership",
+            "website_url": "https://www.dsdac.com/"
+          }
+        ];
+
+        // Function to build the HTML for each class
+        function renderClasses(data) {
+            const container = document.getElementById('directory-container');
+            
+            data.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'class-card';
+                
+                // Handle age display gracefully if minimum/maximum are null
+                const ageText = (item.minimum_age && item.maximum_age) 
+                    ? `Ages: ${item.minimum_age}-${item.maximum_age}` 
+                    : item.age_range_display || 'Age not specified';
+
+                // Construct the inner HTML of the card using template literals
+                card.innerHTML = `
+                    <h2>${item.company_name}</h2>
+                    <div class="tag-container">
+                        <span class="tag">${item.category}</span>
+                        <span class="tag">${ageText}</span>
+                    </div>
+                    <p class="description">${item.description}</p>
+                    <div class="meta-info">
+                        <strong>Location:</strong> ${item.address || 'Contact for details'}<br>
+                        <strong>Pricing:</strong> ${item.pricing_basis || 'Contact for details'}
+                    </div>
+                    <a href="${item.website_url}" target="_blank" class="button">Visit Website</a>
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+
+        // Initialize the page
+        renderClasses(classesData);
+    </script>
+</body>
+</html>
