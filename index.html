@@ -65,34 +65,14 @@
     <div id="directory-container"></div>
 
     <script>
-        // FOR GITHUB PAGES: 
-        // When your JSON is saved in a file called 'classes.json' in the same folder,
-        // you will uncomment the fetch block below and delete the manual array.
-        
-        /*
-        fetch('classes.json')
+        // Load the merged JSON dataset from the new file.
+        fetch('south_dublin_kids_activities.json')
             .then(response => response.json())
             .then(data => renderClasses(data))
-            .catch(error => console.error('Error loading data:', error));
-        */
-
-        // FOR LOCAL TESTING: 
-        // Here is your exact data schema embedded so you can test the HTML immediately.
-        const classesData = [
-          {
-            "company_name": "Dundrum South Dublin Athletic Club (DSD)",
-            "category": "Athletics",
-            "description": "Ireland's largest athletics club, offering juvenile athletics training covering track & field, cross country and road running on its own 400m Mondo track and trail campus in the Dublin mountains foothills.",
-            "class_types": ["Juvenile Athletics / Little Athletics"],
-            "minimum_age": 6,
-            "maximum_age": 17,
-            "age_range_display": "Juvenile (approx. primary to secondary school age)",
-            "parental_requirement": "Drop-off",
-            "address": "Tibradden Road, Taylorsgrange, Dublin 16",
-            "pricing_basis": "Annual membership",
-            "website_url": "https://www.dsdac.com/"
-          }
-        ];
+            .catch(error => {
+                console.error('Error loading data:', error);
+                document.getElementById('directory-container').innerHTML = '<p>Unable to load class data. Please try again later.</p>';
+            });
 
         // Function to build the HTML for each class
         function renderClasses(data) {
