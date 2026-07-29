@@ -171,3 +171,141 @@
     </script>
 </body>
 </html>
+
+<!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        const errorMsg = document.getElementById('auth-error');
+        
+        try {
+            const SUPABASE_URL = 'https://gnozodfteywsiwcnbwch.supabase.co';
+            const SUPABASE_ANON_KEY = 'sb_publishable_eduvbMySPxHPT0iZjE_LqQ_w6nyjnjY';
+            
+            if (!window.supabase) {
+                throw new Error("Supabase library failed to load. Check your internet connection or adblocker.");
+            }
+
+            const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+            const authSection = document.getElementById('auth-section');
+            const dashboardSection = document.getElementById('dashboard-section');
+            const claimsContainer = document.getElementById('claims-container');
+            const loginBtn = document.getElementById('login-btn');
+
+            // Check active session on load
+            async function checkSession() {
+                try {
+                    const { data: { session }, error } = await supabase.auth.getSession();
+                    if (error) throw error;
+                    if (session) {
+                        authSection.style.display = 'none';
+                        dashboardSection.style.display = 'block';
+                        fetchClaims();
+                    }
+                } catch (err) {
+                    console.warn("Session check failed:", err.message);
+                }
+            }
+
+            // Login Logic
+            loginBtn.addEventListener('click', async () => {
+                try {
+                    loginBtn.textContent = "Logging in...";
+                    loginBtn.disabled = true;
+                    
+                    const email = document.getElementById('admin-email').value;
+                    const password = document.getElementById('admin-password').value;
+                    
+                    if (!email || !password) {
+                        throw new Error("Please enter both email and password.");
+                    }
+
+                    const { error } = await supabase.auth.signInWithPassword({ email, password });
+                    
+                    if (error) {
+                        throw error;
+                    } else {
+                        errorMsg.style.display = 'none';
+                        authSection.style.display = 'none';
+                        dashboardSection.style.display = 'block';
+                        fetchClaims();
+                    }
+                } catch (err) {
+                    errorMsg.textContent = err.message;
+                    errorMsg.style.display = 'block';
+                } finally {
+                    loginBtn.textContent = "Log In";
+                    loginBtn.disabled = false;
+                }
+            });
+
+            // Logout Logic
+            document.getElementById('logout-btn').addEventListener('click', async () => {
+                await supabase.auth.signOut();
+                dashboardSection.style.display = 'none';
+                authSection.style.display = 'flex';
+                document.getElementById('admin-email').value = '';
+                document.getElementById('admin-password').value = '';
+            });
+
+            // Fetch Pending Claims
+            async function fetchClaims() {
+                claimsContainer.innerHTML = '<p>Loading claims...</p>';
+                try {
+                    const { data, error } = await supabase
+                        .from('claim_requests')
+                        .select('*')
+                        .eq('status', 'pending');
+
+                    if (error) throw error;
+
+                    if (data.length === 0) {
+                        claimsContainer.innerHTML = '<p>No pending claims right now.</p>';
+                        return;
+                    }
+
+                    claimsContainer.innerHTML = '';
+                    data.forEach(claim => {
+                        const card = document.createElement('div');
+                        card.className = 'claim-card';
+                        card.innerHTML = `
+                            <div class="claim-details">
+                                <h3>${claim.business_name}</h3>
+                                <p><strong>Requester:</strong> ${claim.requester_name} (${claim.requester_position})</p>
+                                <p><strong>Email:</strong> ${claim.requester_email}</p>
+                                <p><strong>Submitted:</strong> ${new Date(claim.created_at).toLocaleDateString()}</p>
+                            </div>
+                            <button class="btn approve-btn" onclick="approveClaim('${claim.id}', '${claim.requester_email}', '${claim.business_id}')">Approve</button>
+                        `;
+                        claimsContainer.appendChild(card);
+                    });
+                } catch (err) {
+                    claimsContainer.innerHTML = `<p style="color:red;">Error loading claims: ${err.message}</p>`;
+                }
+            }
+
+            // Approve Claim Logic
+            window.approveClaim = async function(claimId, email, businessId) {
+                const confirmApproval = confirm(`Are you sure you want to approve ${email}?`);
+                if (!confirmApproval) return;
+
+                try {
+                    const { error } = await supabase
+                        .from('claim_requests')
+                        .update({ status: 'approved' })
+                        .eq('id', claimId);
+
+                    if (error) throw error;
+                    fetchClaims(); 
+                } catch (err) {
+                    alert('Failed to approve claim: ' + err.message);
+                }
+            }
+
+            checkSession();
+
+        } catch (setupError) {
+            errorMsg.style.display = 'block';
+            errorMsg.textContent = 'Critical Setup Error: ' + setupError.message;
+        }
+    </script>
