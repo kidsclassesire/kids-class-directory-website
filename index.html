@@ -148,6 +148,12 @@
 
         .meta-info { font-size: 0.85rem; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border); }
         .button { display: block; text-align: center; background: var(--text-dark); color: white; text-decoration: none; padding: 0.75rem; border-radius: 8px; margin-top: 1rem; font-weight: 600; }
+        
+        .claim-btn {
+            background: none; border: none; color: var(--text-muted); font-size: 0.8rem;
+            cursor: pointer; padding: 0.5rem; margin-top: 0.5rem; text-decoration: underline; text-align: center;
+        }
+        .claim-btn:hover { color: var(--text-dark); }
 
         /* Pagination */
         .pagination { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 2rem; padding-bottom: 2rem; }
@@ -159,6 +165,41 @@
             .results-column { width: 100%; }
             .map-column { width: 100%; height: 400px; position: relative; top: 0; }
         }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(4px);
+            display: none; justify-content: center; align-items: center; z-index: 1000;
+        }
+        .modal-overlay.active { display: flex; }
+        .modal {
+            background: #ffffff; padding: 2.5rem; border-radius: 16px; width: 90%; max-width: 450px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            position: relative;
+        }
+        .close-modal {
+            position: absolute; top: 1rem; right: 1rem; background: none; border: none;
+            font-size: 1.5rem; cursor: pointer; color: var(--text-muted);
+        }
+        .close-modal:hover { color: var(--text-dark); }
+        .modal h3 { margin-top: 0; color: var(--text-dark); font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .modal p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.5; }
+        
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark); }
+        .form-group input {
+            width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 8px;
+            font-size: 1rem; box-sizing: border-box; background: #f8fafc; color: var(--text-dark);
+        }
+        .form-group input:focus { outline: none; border-color: var(--primary); background: #ffffff; }
+        
+        .submit-btn {
+            width: 100%; background: var(--primary); color: white; border: none; padding: 0.85rem;
+            border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 1rem; margin-top: 0.5rem; transition: background 0.2s;
+        }
+        .submit-btn:hover { background: var(--primary-hover); }
+        .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; }
     </style>
 </head>
 <body>
@@ -232,8 +273,42 @@
         </div>
     </main>
 
+    <!-- Claim Business Modal -->
+    <div id="claim-modal" class="modal-overlay">
+        <div class="modal">
+            <button id="close-modal" class="close-modal">&times;</button>
+            <h3 id="modal-business-name">Claim Business</h3>
+            <p>Verify your ownership to manage this page and update your details.</p>
+            
+            <form id="claim-form">
+                <input type="hidden" id="claim-business-id">
+                <input type="hidden" id="claim-business-title">
+                
+                <div class="form-group">
+                    <label for="claim-name">Your Full Name</label>
+                    <input type="text" id="claim-name" required placeholder="e.g. Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label for="claim-email">Business Email Address</label>
+                    <input type="email" id="claim-email" required placeholder="e.g. jane@yourbusiness.ie">
+                    <small style="color:#64748b; font-size: 0.75rem; display:block; margin-top:4px;">Must be an official business domain.</small>
+                </div>
+                <div class="form-group">
+                    <label for="claim-position">Your Position / Role</label>
+                    <input type="text" id="claim-position" required placeholder="e.g. Owner, Manager">
+                </div>
+                <button type="submit" class="submit-btn" id="claim-submit">Submit Claim Request</button>
+            </form>
+
+            <div id="claim-success" style="display: none; text-align: center; color: #166534; background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
+                <strong>Request Submitted!</strong><br>We will review your details and email you portal access shortly.
+            </div>
+        </div>
+    </div>
+
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <!-- Supabase JS -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
         window.SUPABASE_URL = window.SUPABASE_URL || 'https://gnozodfteywsiwcnbwch.supabase.co';
@@ -241,6 +316,16 @@
     </script>
     
     <script>
+        // Utility function to escape HTML inside dynamic strings
+        function escapeHtml(unsafe) {
+            return (unsafe || '').toString()
+                 .replace(/&/g, "&amp;")
+                 .replace(/</g, "&lt;")
+                 .replace(/>/g, "&gt;")
+                 .replace(/"/g, "&quot;")
+                 .replace(/'/g, "&#039;");
+        }
+
         const searchInput = document.getElementById('search-input');
         const locationInput = document.getElementById('location-input');
         const nearMeBtn = document.getElementById('near-me-btn');
@@ -263,11 +348,9 @@
         let map;
         let mapMarkers = [];
         
-        // Variables for Near Me functionality
         let userLat = null;
         let userLon = null;
 
-        // Haversine formula to calculate distance in km
         function getDistance(lat1, lon1, lat2, lon2) {
             const R = 6371; 
             const dLat = (lat2 - lat1) * Math.PI / 180;
@@ -278,7 +361,6 @@
             return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
         }
 
-        // Initialize Map
         function initMap() {
             if (map) return;
             map = L.map('map').setView([53.3498, -6.2603], 10);
@@ -295,29 +377,20 @@
                     const { data, error } = await supabase.from('classes').select('*');
                     if (!error && data) {
                         classesData = data;
-                        updateResults();
                         return;
                     }
-                    console.warn('Supabase load failed, falling back to local JSON:', error);
                 }
             } catch (err) {
                 console.warn('Supabase unavailable, falling back to local JSON:', err);
             }
 
-            fetch('south_dublin_kids_activities.json')
+            // Fallback
+            return fetch('south_dublin_kids_activities.json')
                 .then(response => response.json())
-                .then(data => {
-                    classesData = data;
-                    updateResults();
-                })
-                .catch(error => {
-                    console.error('Error loading data:', error);
-                    document.getElementById('result-count').textContent = 'Unable to load class data.';
-                    document.getElementById('directory-container').innerHTML = '<p>Unable to load class data. Please try again later.</p>';
-                });
+                .then(data => { classesData = data; })
+                .catch(error => { console.error('Error loading data:', error); });
         }
 
-        // Generate Map Pins & Bind Two-Way Click
         function updateMap() {
             mapMarkers.forEach(marker => map.removeLayer(marker));
             mapMarkers = [];
@@ -326,7 +399,6 @@
             filteredData.forEach((item, index) => {
                 let lat = item.latitude;
                 let lng = item.longitude;
-                // Fallback coordinates for testing since JSON lat/long is null
                 if (!lat || !lng) {
                     lat = 53.3498 + (Math.random() - 0.5) * 0.1; 
                     lng = -6.2603 + (Math.random() - 0.5) * 0.1;
@@ -334,19 +406,17 @@
                 const marker = L.marker([lat, lng]);
                 marker.bindPopup(`<b>${item.company_name}</b><br>${item.category || 'Class'}`);
                 
-                // FEATURE 1: Two-Way Map Interactivity
                 marker.on('click', () => {
                     const pageNum = Math.floor(index / pageSize) + 1;
                     if (currentPage !== pageNum) {
                         currentPage = pageNum;
                         renderPage();
                     }
-                    // Scroll to card and highlight it
                     const card = document.getElementById(`card-${index}`);
                     if (card) {
                         card.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         card.style.borderColor = 'var(--primary)';
-                        setTimeout(() => card.style.borderColor = 'var(--border)', 2000); // Fade border back
+                        setTimeout(() => card.style.borderColor = 'var(--border)', 2000); 
                     }
                 });
 
@@ -359,7 +429,6 @@
             }
         }
 
-        // Apply All Filters
         function filterClasses() {
             const q = searchInput.value.trim().toLowerCase();
             const l = locationInput.value.trim().toLowerCase();
@@ -369,24 +438,20 @@
             const needsDropoff = dropoffFilter.checked;
 
             filteredData = classesData.filter(item => {
-                // Text Search
                 const textMatch = q === '' || [item.company_name, item.category, item.description].some(v => v && v.toString().toLowerCase().includes(q));
                 
-                // Location or Distance Search (Near Me)
                 let locMatch = true;
                 if (userLat !== null && userLon !== null && locationInput.value === 'Current Location') {
                     const lat = item.latitude || 53.3498; 
                     const lng = item.longitude || -6.2603; 
-                    locMatch = getDistance(userLat, userLon, lat, lng) <= 20; // Within 20km
+                    locMatch = getDistance(userLat, userLon, lat, lng) <= 20;
                 } else {
                     locMatch = l === '' || [item.address, item.eircode].some(v => v && v.toString().toLowerCase().includes(l));
                 }
                 
-                // Category & Drop-off
                 const catMatch = cat === '' || (item.category && item.category === cat);
                 const dropoffMatch = !needsDropoff || (item.parental_requirement === 'Drop-off');
 
-                // Age Bracket
                 let ageMatch = true;
                 if (ageBracket !== '') {
                     const min = item.minimum_age !== null ? item.minimum_age : 0;
@@ -397,10 +462,9 @@
                     if (ageBracket === 'teen') ageMatch = (max >= 13);
                 }
 
-                // FEATURE 4: Day Filtering
                 let dayMatch = true;
                 if (dayBracket !== '') {
-                    const days = item.days_of_week || ''; // Assumes string like "Monday, Saturday" in real data
+                    const days = item.days_of_week || ''; 
                     if (dayBracket === 'weekend') {
                         dayMatch = days.toLowerCase().includes('saturday') || days.toLowerCase().includes('sunday');
                     } else if (dayBracket === 'weekday') {
@@ -417,10 +481,9 @@
             
             setTimeout(() => { if (map) { map.invalidateSize(); updateMap(); } }, 100);
 
-            // FEATURE 3: Generate Shareable URL (Push state to browser history)
             const params = new URLSearchParams();
             if (q) params.set('q', q);
-            if (locationInput.value && !userLat) params.set('loc', locationInput.value); // Don't share precise GPS via URL
+            if (locationInput.value && !userLat) params.set('loc', locationInput.value); 
             if (cat) params.set('cat', cat);
             if (ageBracket) params.set('age', ageBracket);
             if (dayBracket) params.set('day', dayBracket);
@@ -428,7 +491,6 @@
             window.history.pushState(null, '', '?' + params.toString());
         }
 
-        // Render HTML for Cards
         function renderClasses(data, globalStartIndex) {
             const container = document.getElementById('directory-container');
             container.innerHTML = '';
@@ -441,9 +503,9 @@
             data.forEach((item, localIndex) => {
                 const card = document.createElement('div');
                 card.className = 'class-card';
-                // Assign unique ID based on its exact position in filteredData
                 card.id = `card-${globalStartIndex + localIndex}`; 
                 
+                // Add the claim button at the bottom of the card content
                 card.innerHTML = `
                     <div class="card-image"></div>
                     <div class="card-content">
@@ -459,13 +521,13 @@
                             <strong>Where:</strong> ${item.address || 'Contact for details'}<br>
                         </div>
                         <a href="${item.website_url || '#'}" target="_blank" class="button">Visit Website</a>
+                        <button class="claim-btn" data-id="${item.id || item.company_name}" data-name="${escapeHtml(item.company_name)}">Claim this business</button>
                     </div>
                 `;
                 container.appendChild(card);
             });
         }
 
-        // Render Pagination Controls
         function renderPagination() {
             const pageCount = Math.max(1, Math.ceil(filteredData.length / pageSize));
             const paginationControls = document.getElementById('pagination-controls');
@@ -480,14 +542,12 @@
             document.getElementById('next-page')?.addEventListener('click', () => { currentPage++; renderPage(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
         }
 
-        // Coordinate Page State
         function renderPage() {
             const start = (currentPage - 1) * pageSize;
             renderClasses(filteredData.slice(start, start + pageSize), start);
             renderPagination();
         }
 
-        // Trigger the initial UI transition and search
         function executeInitialSearch() {
             if (!hasTriggeredSearch) {
                 hasTriggeredSearch = true;
@@ -499,10 +559,9 @@
             filterClasses();
         }
 
-        // FEATURE 2: Near Me Geolocation Button
         nearMeBtn.addEventListener('click', () => {
             if (navigator.geolocation) {
-                nearMeBtn.style.color = 'var(--primary)'; // Provide visual feedback
+                nearMeBtn.style.color = 'var(--primary)'; 
                 navigator.geolocation.getCurrentPosition(pos => {
                     userLat = pos.coords.latitude;
                     userLon = pos.coords.longitude;
@@ -517,14 +576,12 @@
             }
         });
 
-        // Clear GPS data if they manually type a new location
         locationInput.addEventListener('input', () => {
             userLat = null;
             userLon = null;
             nearMeBtn.style.color = '#94a3b8';
         });
 
-        // Event Listeners
         searchBtn.addEventListener('click', executeInitialSearch);
         searchInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') executeInitialSearch(); });
         locationInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') executeInitialSearch(); });
@@ -534,7 +591,72 @@
         dayFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
         dropoffFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
 
-        // Fetch Data & Handle Shareable URLs on Load
+        // --- Claim Business Logic ---
+        const claimModal = document.getElementById('claim-modal');
+        const closeModalBtn = document.getElementById('close-modal');
+        const claimForm = document.getElementById('claim-form');
+        const claimSuccess = document.getElementById('claim-success');
+
+        // Close modal events
+        closeModalBtn.addEventListener('click', () => { claimModal.classList.remove('active'); });
+        claimModal.addEventListener('click', (e) => { if (e.target === claimModal) claimModal.classList.remove('active'); });
+
+        // Open modal via Event Delegation (handles dynamic buttons)
+        document.getElementById('directory-container').addEventListener('click', (e) => {
+            if (e.target.classList.contains('claim-btn')) {
+                const businessId = e.target.getAttribute('data-id');
+                const businessName = e.target.getAttribute('data-name');
+                
+                document.getElementById('modal-business-name').textContent = `Claim ${businessName}`;
+                document.getElementById('claim-business-id').value = businessId;
+                document.getElementById('claim-business-title').value = businessName;
+                
+                claimForm.style.display = 'block';
+                claimSuccess.style.display = 'none';
+                claimForm.reset();
+                claimModal.classList.add('active');
+            }
+        });
+
+        // Form Submission to Supabase
+        claimForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = document.getElementById('claim-submit');
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.disabled = true;
+
+            const requestData = {
+                business_id: document.getElementById('claim-business-id').value,
+                business_name: document.getElementById('claim-business-title').value,
+                requester_name: document.getElementById('claim-name').value,
+                requester_email: document.getElementById('claim-email').value,
+                requester_position: document.getElementById('claim-position').value,
+                status: 'pending'
+            };
+
+            try {
+                if (window.supabase) {
+                    const supabase = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
+                    // Insert into the claim_requests table
+                    const { error } = await supabase.from('claim_requests').insert([requestData]);
+                    if (error) throw error;
+                } else {
+                    console.warn("Supabase not fully connected. Simulating submission.");
+                    await new Promise(resolve => setTimeout(resolve, 800)); 
+                }
+
+                claimForm.style.display = 'none';
+                claimSuccess.style.display = 'block';
+            } catch (err) {
+                alert('There was an error submitting your claim. Please check your connection and try again.');
+                console.error(err);
+            } finally {
+                submitBtn.textContent = 'Submit Claim Request';
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Load Initial Data
         loadClasses().then(() => {
             const params = new URLSearchParams(window.location.search);
             if (Array.from(params.keys()).length > 0) {
@@ -546,7 +668,7 @@
                 if(params.get('dropoff') === 'true') dropoffFilter.checked = true;
                 executeInitialSearch();
             }
-        }).catch(err => console.error('Error loading data:', err));
+        });
     </script>
 </body>
 </html>
