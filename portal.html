@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Owner Portal</title>
+    <style>
+        :root { --primary: #ff385c; --text-dark: #0f172a; --bg-page: #f8fafc; --border: #e2e8f0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: var(--bg-page); color: var(--text-dark); margin: 0; padding: 2rem; display: flex; flex-direction: column; align-items: center; }
+        .container { background: #ffffff; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); width: 100%; max-width: 600px; margin-bottom: 2rem; }
+        h1, h2 { margin-top: 0; }
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .form-group input, .form-group textarea { width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; box-sizing: border-box; font-family: inherit; }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .btn { background: var(--primary); color: white; border: none; padding: 0.85rem; border-radius: 8px; cursor: pointer; font-weight: 600; width: 100%; font-size: 1rem; }
+        .toggle-text { text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 1rem; cursor: pointer; }
+        .toggle-text:hover { color: var(--text-dark); text-decoration: underline; }
+        .alert { padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; display: none; }
+        .alert-error { background: #fee2e2; color: #991b1b; border: 1px solid #f87171; }
+        .alert-success { background: #dcfce7; color: #166534; border: 1px solid #4ade80; }
+        #dashboard-section { display: none; }
+    </style>
+</head>
+<body>
+
+    <!-- Auth Section -->
+    <div class="container" id="auth-section">
+        <h1 id="auth-title">Owner Sign Up</h1>
+        <p style="color: #64748b; margin-bottom: 2rem;">Sign up using the email address you used to claim your business.</p>
+        
+        <div class="alert alert-error" id="auth-error"></div>
+        <div class="alert alert-success" id="auth-success"></div>
+
+        <div class="form-group">
+            <label for="owner-email">Business Email</label>
+            <input type="email" id="owner-email" required>
+        </div>
+        <div class="form-group">
+            <label for="owner-password">Password</label>
+            <input type="password" id="owner-password" required>
+        </div>
+        <button class="btn" id="auth-btn">Create Account</button>
+        <div class="toggle-text" id="toggle-auth">Already have an account? Log In here.</div>
+    </div>
+
+    <!-- Edit Business Section -->
+    <div class="container" id="dashboard-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <h2>Manage Your Listing</h2>
+            <button class="btn" id="logout-btn" style="width: auto; background: var(--text-dark); padding: 0.5rem 1rem;">Log Out</button>
+        </div>
+        
+        <div class="alert alert-error" id="dash-error"></div>
+        <div class="alert alert-success" id="dash-success"></div>
+
+        <div id="unauthorized-msg" style="display: none; text-align: center; padding: 2rem 0; color: #64748b;">
+            Your account is pending approval by an admin. Check back later.
+        </div>
+
+        <form id="edit-business-form" style="display: none;">
+            <input type="hidden" id="edit-id">
+            <div class="form-group">
+                <label for="edit-name">Business Name</label>
+                <input type="text" id="edit-name" required>
+            </div>
+            <div class="form-group">
+                <label for="edit-description">Description</label>
+                <textarea id="edit-description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="edit-website">Website URL</label>
+                <input type="url" id="edit-website">
+            </div>
+            <button type="submit" class="btn" id="save-btn">Save Changes</button>
+        </form>
+    </div>
+
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        const SUPABASE_URL = 'https://gnozodfteywsiwcnbwch.supabase.co';
+        const SUPABASE_ANON_KEY = 'sb_publishable_eduvbMySPxHPT0iZjE_LqQ_w6nyjnjY';
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        let isSignUp = true;
+        let currentUserEmail = '';
+
+        // UI Elements
+        const authSection = document.getElementById('auth-section');
+        const dashboardSection = document.getElementById('dashboard-section');
+        const editForm = document.getElementById('edit-business-form');
+        const unauthorizedMsg = document.getElementById('unauthorized-msg');
+        const authError = document.getElementById('auth-error');
+        const authSuccess = document.getElementById('auth-success');
+        const dashError = document.getElementById('dash-error');
+        const dashSuccess = document.getElementById('dash-success');
+
+        // Toggle Login / Signup
+        document.getElementById('toggle-auth').addEventListener('click', () => {
+            isSignUp = !isSignUp;
+            document.getElementById('auth-title').textContent = isSignUp ? "Owner Sign Up" : "Owner Log In";
+            document.getElementById('auth-btn').textContent = isSignUp ? "Create Account" : "Log In";
+            document.getElementById('toggle-auth').textContent = isSignUp ? "Already have an account? Log In here." : "Need an account? Sign Up here.";
+            authError.style.display = 'none';
+            authSuccess.style.display = 'none';
+        });
+
+        // Handle Auth Submit
+        document.getElementById('auth-btn').addEventListener('click', async () => {
+            const email = document.getElementById('owner-email').value;
+            const password = document.getElementById('owner-password').value;
+            authError.style.display = 'none';
+
+            try {
+                if (isSignUp) {
+                    const { error } = await supabase.auth.signUp({ email, password });
+                    if (error) throw error;
+                    authSuccess.textContent = "Account created! You are now logged in.";
+                    authSuccess.style.display = 'block';
+                } else {
+                    const { error } = await supabase.auth.signInWithPassword({ email, password });
+                    if (error) throw error;
+                }
+                setTimeout(checkSession, 1000);
+            } catch (err) {
+                authError.textContent = err.message;
+                authError.style.display = 'block';
+            }
+        });
+
+        // Logout
+        document.getElementById('logout-btn').addEventListener('click', async () => {
+            await supabase.auth.signOut();
+            dashboardSection.style.display = 'none';
+            authSection.style.display = 'block';
+            document.getElementById('owner-email').value = '';
+            document.getElementById('owner-password').value = '';
+        });
+
+        // Check Session & Fetch Business
+        async function checkSession() {
+            const { data: { session } } = await supabase.auth.getSession();
+            if (session) {
+                currentUserEmail = session.user.email;
+                authSection.style.display = 'none';
+                dashboardSection.style.display = 'block';
+                loadOwnerBusiness();
+            }
+        }
+
+        // Load Business Details if Approved
+        async function loadOwnerBusiness() {
+            try {
+                // 1. Check if they have an approved claim
+                const { data: claim, error: claimError } = await supabase
+                    .from('claim_requests')
+                    .select('business_id')
+                    .eq('requester_email', currentUserEmail)
+                    .eq('status', 'approved')
+                    .single();
+
+                if (claimError || !claim) {
+                    unauthorizedMsg.style.display = 'block';
+                    editForm.style.display = 'none';
+                    return;
+                }
+
+                // 2. Fetch their actual business details
+                const { data: business, error: bizError } = await supabase
+                    .from('classes')
+                    .select('*')
+                    .eq('id', claim.business_id)
+                    .single();
+
+                if (bizError) throw bizError;
+
+                // Populate Form
+                document.getElementById('edit-id').value = business.id;
+                document.getElementById('edit-name').value = business.company_name || '';
+                document.getElementById('edit-description').value = business.description || '';
+                document.getElementById('edit-website').value = business.website_url || '';
+                
+                unauthorizedMsg.style.display = 'none';
+                editForm.style.display = 'block';
+
+            } catch (err) {
+                dashError.textContent = "Error loading business details.";
+                dashError.style.display = 'block';
+            }
+        }
+
+        // Handle Form Save
+        editForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            dashError.style.display = 'none';
+            dashSuccess.style.display = 'none';
+            document.getElementById('save-btn').textContent = "Saving...";
+
+            const id = document.getElementById('edit-id').value;
+            const updates = {
+                company_name: document.getElementById('edit-name').value,
+                description: document.getElementById('edit-description').value,
+                website_url: document.getElementById('edit-website').value
+            };
+
+            try {
+                const { error } = await supabase
+                    .from('classes')
+                    .update(updates)
+                    .eq('id', id);
+
+                if (error) throw error;
+                
+                dashSuccess.textContent = "Your listing has been updated successfully on the main directory!";
+                dashSuccess.style.display = 'block';
+            } catch (err) {
+                dashError.textContent = "Failed to update: " + err.message;
+                dashError.style.display = 'block';
+            } finally {
+                document.getElementById('save-btn').textContent = "Save Changes";
+            }
+        });
+
+        checkSession();
+    </script>
+</body>
+</html>
