@@ -83,108 +83,57 @@
         .search-divider { width: 1px; height: 40px; background-color: var(--border); margin: 0 24px 0 8px; }
         .search-btn {
             background-color: var(--primary); color: white; border: none; border-radius: 50%;
-            width: 54px; height: 54px; display: flex; align-items: center; justify-content: center; cursor: pointer;
+            width: 54px; height: 54px; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0;
         }
+        .near-me-btn {
+            background: none; border: none; cursor: pointer; color: #94a3b8; padding: 4px;
+            display: flex; align-items: center; justify-content: center; transition: color 0.2s;
+        }
+        .near-me-btn:hover { color: var(--primary); }
 
         /* Split Layout for Main Content */
-        #main-content {
-            display: none;
-            flex-grow: 1;
-            max-width: 1600px;
-            margin: 0 auto;
-            width: 100%;
-        }
-        #main-content.visible {
-            display: flex;
-        }
+        #main-content { display: none; flex-grow: 1; max-width: 1600px; margin: 0 auto; width: 100%; }
+        #main-content.visible { display: flex; }
 
         /* Left Column: Results */
-        .results-column {
-            width: 55%;
-            padding: 2rem;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-        }
+        .results-column { width: 55%; padding: 2rem; box-sizing: border-box; display: flex; flex-direction: column; }
 
         /* Granular Filter Bar */
         .filter-bar {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border);
+            display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem; border-bottom: 1px solid var(--border);
         }
 
         .filter-select {
-            appearance: none;
-            background: #ffffff;
-            border: 1px solid var(--border);
-            border-radius: 9999px;
-            padding: 0.6rem 2.5rem 0.6rem 1.25rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            cursor: pointer;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230f172a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            background-size: 1em;
-            transition: border-color 0.2s;
+            appearance: none; background: #ffffff; border: 1px solid var(--border); border-radius: 9999px;
+            padding: 0.6rem 2.5rem 0.6rem 1.25rem; font-size: 0.9rem; font-weight: 600; color: var(--text-dark);
+            cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230f172a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 1rem center; background-size: 1em; transition: border-color 0.2s;
         }
-
-        .filter-select:hover {
-            border-color: var(--text-dark);
-        }
+        .filter-select:hover { border-color: var(--text-dark); }
 
         .toggle-label {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            padding: 0.6rem 1.25rem;
-            border: 1px solid var(--border);
-            border-radius: 9999px;
-            background: #ffffff;
-            transition: all 0.2s;
+            display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 600;
+            cursor: pointer; padding: 0.6rem 1.25rem; border: 1px solid var(--border); border-radius: 9999px;
+            background: #ffffff; transition: all 0.2s;
         }
-
-        .toggle-label:hover {
-            border-color: var(--text-dark);
-        }
-
-        .toggle-label input[type="checkbox"] {
-            width: 16px;
-            height: 16px;
-            accent-color: var(--primary);
-            cursor: pointer;
-        }
+        .toggle-label:hover { border-color: var(--text-dark); }
+        .toggle-label input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--primary); cursor: pointer; }
 
         /* Right Column: Map */
-        .map-column {
-            width: 45%;
-            position: sticky;
-            top: 90px;
-            height: calc(100vh - 90px);
-            background: #e2e8f0;
-        }
+        .map-column { width: 45%; position: sticky; top: 90px; height: calc(100vh - 90px); background: #e2e8f0; }
         #map { width: 100%; height: 100%; }
 
         #result-meta { font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; }
 
         /* Grid inside Results */
-        #directory-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
+        #directory-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
 
         /* Cards */
-        .class-card { background: #ffffff; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); display: flex; flex-direction: column; }
+        .class-card { 
+            background: #ffffff; border-radius: 16px; overflow: hidden; border: 2px solid var(--border); 
+            display: flex; flex-direction: column; transition: border-color 0.5s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        }
         .card-image { width: 100%; height: 180px; object-fit: cover; background: linear-gradient(135deg, #e2e8f0, #cbd5e1); }
         .card-content { padding: 1.25rem; display: flex; flex-direction: column; flex-grow: 1; }
         .card-content h2 { margin: 0 0 0.5rem; font-size: 1.1rem; }
@@ -192,16 +141,9 @@
         .tag { background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 600; }
         
         .description {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-            margin-bottom: 1rem;
-            flex-grow: 1;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem;
+            flex-grow: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+            overflow: hidden; text-overflow: ellipsis;
         }
 
         .meta-info { font-size: 0.85rem; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border); }
@@ -234,7 +176,12 @@
             <div class="search-divider"></div>
             <div class="search-input-group">
                 <label for="location-input">Where</label>
-                <input id="location-input" type="text" placeholder="e.g. Dublin 16, South Dublin">
+                <div style="display: flex; align-items: center; width: 100%;">
+                    <input id="location-input" type="text" placeholder="e.g. Dublin 16" style="flex: 1;">
+                    <button id="near-me-btn" class="near-me-btn" aria-label="Use my location" title="Find near me">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.364-7.364l-1.414 1.414M6.05 17.95l-1.414 1.414m13.314 0l-1.414-1.414M6.05 6.05L4.636 4.636"></path></svg>
+                    </button>
+                </div>
             </div>
             <button id="search-btn" class="search-btn">
                 <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="none" stroke-width="3"><path d="M13 3C7.477 3 3 7.477 3 13s4.477 10 10 10c2.395 0 4.593-.84 6.31-2.24l6.983 6.982 1.414-1.414-6.982-6.983A9.957 9.957 0 0023 13c0-5.523-4.477-10-10-10zm0 2c4.43 0 8 3.57 8 8s-3.57 8-8 8-8-3.57-8-8 3.57-8 8-8z"/></svg>
@@ -263,6 +210,12 @@
                     <option value="teen">13+ Years</option>
                 </select>
 
+                <select id="day-filter" class="filter-select">
+                    <option value="">Any Day</option>
+                    <option value="weekday">Weekdays</option>
+                    <option value="weekend">Weekends</option>
+                </select>
+
                 <label class="toggle-label">
                     <input type="checkbox" id="dropoff-filter">
                     Drop-off Allowed
@@ -285,9 +238,12 @@
     <script>
         const searchInput = document.getElementById('search-input');
         const locationInput = document.getElementById('location-input');
+        const nearMeBtn = document.getElementById('near-me-btn');
         const searchBtn = document.getElementById('search-btn');
+        
         const categoryFilter = document.getElementById('category-filter');
         const ageFilter = document.getElementById('age-filter');
+        const dayFilter = document.getElementById('day-filter');
         const dropoffFilter = document.getElementById('dropoff-filter');
         
         const heroSection = document.getElementById('hero');
@@ -301,8 +257,25 @@
         
         let map;
         let mapMarkers = [];
+        
+        // Variables for Near Me functionality
+        let userLat = null;
+        let userLon = null;
 
+        // Haversine formula to calculate distance in km
+        function getDistance(lat1, lon1, lat2, lon2) {
+            const R = 6371; 
+            const dLat = (lat2 - lat1) * Math.PI / 180;
+            const dLon = (lon2 - lon1) * Math.PI / 180;
+            const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                      Math.sin(dLon/2) * Math.sin(dLon/2);
+            return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        }
+
+        // Initialize Map
         function initMap() {
+            if (map) return;
             map = L.map('map').setView([53.3498, -6.2603], 10);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
@@ -310,20 +283,39 @@
             }).addTo(map);
         }
 
+        // Generate Map Pins & Bind Two-Way Click
         function updateMap() {
             mapMarkers.forEach(marker => map.removeLayer(marker));
             mapMarkers = [];
             const markerGroup = L.featureGroup().addTo(map);
 
-            filteredData.forEach(item => {
+            filteredData.forEach((item, index) => {
                 let lat = item.latitude;
                 let lng = item.longitude;
+                // Fallback coordinates for testing since JSON lat/long is null
                 if (!lat || !lng) {
                     lat = 53.3498 + (Math.random() - 0.5) * 0.1; 
                     lng = -6.2603 + (Math.random() - 0.5) * 0.1;
                 }
                 const marker = L.marker([lat, lng]);
                 marker.bindPopup(`<b>${item.company_name}</b><br>${item.category || 'Class'}`);
+                
+                // FEATURE 1: Two-Way Map Interactivity
+                marker.on('click', () => {
+                    const pageNum = Math.floor(index / pageSize) + 1;
+                    if (currentPage !== pageNum) {
+                        currentPage = pageNum;
+                        renderPage();
+                    }
+                    // Scroll to card and highlight it
+                    const card = document.getElementById(`card-${index}`);
+                    if (card) {
+                        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        card.style.borderColor = 'var(--primary)';
+                        setTimeout(() => card.style.borderColor = 'var(--border)', 2000); // Fade border back
+                    }
+                });
+
                 marker.addTo(markerGroup);
                 mapMarkers.push(marker);
             });
@@ -333,52 +325,77 @@
             }
         }
 
+        // Apply All Filters
         function filterClasses() {
             const q = searchInput.value.trim().toLowerCase();
             const l = locationInput.value.trim().toLowerCase();
             const cat = categoryFilter.value;
             const ageBracket = ageFilter.value;
+            const dayBracket = dayFilter.value;
             const needsDropoff = dropoffFilter.checked;
 
             filteredData = classesData.filter(item => {
-                // 1. Text Search
+                // Text Search
                 const textMatch = q === '' || [item.company_name, item.category, item.description].some(v => v && v.toString().toLowerCase().includes(q));
-                const locMatch = l === '' || [item.address, item.eircode].some(v => v && v.toString().toLowerCase().includes(l));
                 
-                // 2. Category Filter
+                // Location or Distance Search (Near Me)
+                let locMatch = true;
+                if (userLat !== null && userLon !== null && locationInput.value === 'Current Location') {
+                    const lat = item.latitude || 53.3498; 
+                    const lng = item.longitude || -6.2603; 
+                    locMatch = getDistance(userLat, userLon, lat, lng) <= 20; // Within 20km
+                } else {
+                    locMatch = l === '' || [item.address, item.eircode].some(v => v && v.toString().toLowerCase().includes(l));
+                }
+                
+                // Category & Drop-off
                 const catMatch = cat === '' || (item.category && item.category === cat);
-                
-                // 3. Drop-off Filter
                 const dropoffMatch = !needsDropoff || (item.parental_requirement === 'Drop-off');
 
-                // 4. Age Bracket Filter
+                // Age Bracket
                 let ageMatch = true;
                 if (ageBracket !== '') {
                     const min = item.minimum_age !== null ? item.minimum_age : 0;
                     const max = item.maximum_age !== null ? item.maximum_age : 99;
-                    
                     if (ageBracket === 'toddler') ageMatch = (min <= 4);
                     if (ageBracket === 'child') ageMatch = (min <= 8 && max >= 5);
                     if (ageBracket === 'preteen') ageMatch = (min <= 12 && max >= 9);
                     if (ageBracket === 'teen') ageMatch = (max >= 13);
                 }
 
-                return textMatch && locMatch && catMatch && dropoffMatch && ageMatch;
+                // FEATURE 4: Day Filtering
+                let dayMatch = true;
+                if (dayBracket !== '') {
+                    const days = item.days_of_week || ''; // Assumes string like "Monday, Saturday" in real data
+                    if (dayBracket === 'weekend') {
+                        dayMatch = days.toLowerCase().includes('saturday') || days.toLowerCase().includes('sunday');
+                    } else if (dayBracket === 'weekday') {
+                        dayMatch = ['monday','tuesday','wednesday','thursday','friday'].some(d => days.toLowerCase().includes(d));
+                    }
+                }
+
+                return textMatch && locMatch && catMatch && dropoffMatch && ageMatch && dayMatch;
             });
 
             currentPage = 1;
             document.getElementById('result-count').textContent = `${filteredData.length} classes found`;
             renderPage();
             
-            setTimeout(() => {
-                if (map) {
-                    map.invalidateSize();
-                    updateMap();
-                }
-            }, 100);
+            setTimeout(() => { if (map) { map.invalidateSize(); updateMap(); } }, 100);
+
+            // FEATURE 3: Generate Shareable URL (Push state to browser history)
+            const params = new URLSearchParams();
+            if (q) params.set('q', q);
+            if (locationInput.value && !userLat) params.set('loc', locationInput.value); // Don't share precise GPS via URL
+            if (cat) params.set('cat', cat);
+            if (ageBracket) params.set('age', ageBracket);
+            if (dayBracket) params.set('day', dayBracket);
+            if (needsDropoff) params.set('dropoff', 'true');
+            window.history.pushState(null, '', '?' + params.toString());
         }
 
-        function renderClasses(data) {
+        // Render HTML for Cards
+        function renderClasses(data, globalStartIndex) {
             const container = document.getElementById('directory-container');
             container.innerHTML = '';
             
@@ -387,9 +404,12 @@
                 return;
             }
 
-            data.forEach(item => {
+            data.forEach((item, localIndex) => {
                 const card = document.createElement('div');
                 card.className = 'class-card';
+                // Assign unique ID based on its exact position in filteredData
+                card.id = `card-${globalStartIndex + localIndex}`; 
+                
                 card.innerHTML = `
                     <div class="card-image"></div>
                     <div class="card-content">
@@ -411,6 +431,7 @@
             });
         }
 
+        // Render Pagination Controls
         function renderPagination() {
             const pageCount = Math.max(1, Math.ceil(filteredData.length / pageSize));
             const paginationControls = document.getElementById('pagination-controls');
@@ -421,16 +442,18 @@
                 <span style="font-size:0.9rem; font-weight:600;">Page ${currentPage} of ${pageCount}</span>
                 <button class="page-button" id="next-page" ${currentPage === pageCount ? 'disabled' : ''}>Next</button>
             `;
-            document.getElementById('prev-page')?.addEventListener('click', () => { currentPage--; renderPage(); });
-            document.getElementById('next-page')?.addEventListener('click', () => { currentPage++; renderPage(); });
+            document.getElementById('prev-page')?.addEventListener('click', () => { currentPage--; renderPage(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+            document.getElementById('next-page')?.addEventListener('click', () => { currentPage++; renderPage(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
         }
 
+        // Coordinate Page State
         function renderPage() {
             const start = (currentPage - 1) * pageSize;
-            renderClasses(filteredData.slice(start, start + pageSize));
+            renderClasses(filteredData.slice(start, start + pageSize), start);
             renderPagination();
         }
 
+        // Trigger the initial UI transition and search
         function executeInitialSearch() {
             if (!hasTriggeredSearch) {
                 hasTriggeredSearch = true;
@@ -442,20 +465,61 @@
             filterClasses();
         }
 
-        // Event Listeners for main search inputs
+        // FEATURE 2: Near Me Geolocation Button
+        nearMeBtn.addEventListener('click', () => {
+            if (navigator.geolocation) {
+                nearMeBtn.style.color = 'var(--primary)'; // Provide visual feedback
+                navigator.geolocation.getCurrentPosition(pos => {
+                    userLat = pos.coords.latitude;
+                    userLon = pos.coords.longitude;
+                    locationInput.value = 'Current Location';
+                    executeInitialSearch();
+                }, () => {
+                    alert("Location access denied or unavailable.");
+                    nearMeBtn.style.color = '#94a3b8';
+                });
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        });
+
+        // Clear GPS data if they manually type a new location
+        locationInput.addEventListener('input', () => {
+            userLat = null;
+            userLon = null;
+            nearMeBtn.style.color = '#94a3b8';
+        });
+
+        // Event Listeners
         searchBtn.addEventListener('click', executeInitialSearch);
         searchInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') executeInitialSearch(); });
         locationInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') executeInitialSearch(); });
 
-        // Event Listeners for Granular Filters (Auto-update results when changed)
         categoryFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
         ageFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
+        dayFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
         dropoffFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
 
-        // Load Data
+        // Fetch Data & Handle Shareable URLs on Load
         fetch('south_dublin_kids_activities.json')
             .then(res => res.json())
-            .then(data => { classesData = data; })
+            .then(data => { 
+                classesData = data; 
+                
+                // Check if someone shared a link with pre-filled filters
+                const params = new URLSearchParams(window.location.search);
+                if (Array.from(params.keys()).length > 0) {
+                    if(params.has('q')) searchInput.value = params.get('q');
+                    if(params.has('loc')) locationInput.value = params.get('loc');
+                    if(params.has('cat')) categoryFilter.value = params.get('cat');
+                    if(params.has('age')) ageFilter.value = params.get('age');
+                    if(params.has('day')) dayFilter.value = params.get('day');
+                    if(params.get('dropoff') === 'true') dropoffFilter.checked = true;
+                    
+                    // Automatically run the search so the shared view opens immediately
+                    executeInitialSearch();
+                }
+            })
             .catch(err => console.error('Error loading data:', err));
     </script>
 </body>
