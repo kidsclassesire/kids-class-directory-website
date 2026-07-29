@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Directory</title>
+    <style>
+        :root {
+            --primary: #ff385c;
+            --text-dark: #0f172a;
+            --bg-page: #f8fafc;
+            --border: #e2e8f0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-dark);
+            margin: 0; padding: 2rem;
+            display: flex; flex-direction: column; align-items: center;
+        }
+        .container {
+            background: #ffffff; padding: 2rem; border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            width: 100%; max-width: 800px;
+        }
+        h1 { margin-top: 0; }
+        
+        /* Auth Section */
+        #auth-section { display: flex; flex-direction: column; max-width: 400px; margin: 0 auto; }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .form-group input { width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; box-sizing: border-box; }
+        .btn { background: var(--primary); color: white; border: none; padding: 0.85rem; border-radius: 8px; cursor: pointer; font-weight: 600; width: 100%; }
+        
+        /* Dashboard Section */
+        #dashboard-section { display: none; }
+        .claim-card { border: 1px solid var(--border); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; }
+        .claim-details h3 { margin: 0 0 0.5rem; }
+        .claim-details p { margin: 0; color: #64748b; font-size: 0.9rem; line-height: 1.5; }
+        .approve-btn { background: #10b981; width: auto; padding: 0.75rem 1.5rem; }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="auth-section">
+        <h1>Admin Login</h1>
+        <div class="form-group">
+            <label for="admin-email">Email</label>
+            <input type="email" id="admin-email">
+        </div>
+        <div class="form-group">
+            <label for="admin-password">Password</label>
+            <input type="password" id="admin-password">
+        </div>
+        <button class="btn" id="login-btn">Log In</button>
+        <p id="auth-error" style="color: #ef4444; font-size: 0.85rem; display: none;"></p>
+    </div>
+
+    <div class="container" id="dashboard-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <h1>Pending Claims</h1>
+            <button class="btn" id="logout-btn" style="width: auto; background: var(--text-dark);">Log Out</button>
+        </div>
+        <div id="claims-container">
+            <p>Loading claims...</p>
+        </div>
+    </div>
+
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        // Replace with your actual Supabase URL and Anon Key
+        const SUPABASE_URL = 'https://gnozodfteywsiwcnbwch.supabase.co';
+        const SUPABASE_ANON_KEY = 'sb_publishable_eduvbMySPxHPT0iZjE_LqQ_w6nyjnjY';
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        const authSection = document.getElementById('auth-section');
+        const dashboardSection = document.getElementById('dashboard-section');
+        const claimsContainer = document.getElementById('claims-container');
+
+        // Check active session on load
+        async function checkSession() {
+            const { data: { session } } = await supabase.auth.getSession();
+            if (session) {
+                authSection.style.display = 'none';
+                dashboardSection.style.display = 'block';
+                fetchClaims();
+            }
+        }
+
+        // Login Logic
+        document.getElementById('login-btn').addEventListener('click', async () => {
+            const email = document.getElementById('admin-email').value;
+            const password = document.getElementById('admin-password').value;
+            const errorMsg = document.getElementById('auth-error');
+            
+            const { error } = await supabase.auth.signInWithPassword({ email, password });
+            if (error) {
+                errorMsg.textContent = error.message;
+                errorMsg.style.display = 'block';
+            } else {
+                errorMsg.style.display = 'none';
+                authSection.style.display = 'none';
+                dashboardSection.style.display = 'block';
+                fetchClaims();
+            }
+        });
+
+        // Logout Logic
+        document.getElementById('logout-btn').addEventListener('click', async () => {
+            await supabase.auth.signOut();
+            dashboardSection.style.display = 'none';
+            authSection.style.display = 'flex';
+        });
+
+        // Fetch Pending Claims
+        async function fetchClaims() {
+            const { data, error } = await supabase
+                .from('claim_requests')
+                .select('*')
+                .eq('status', 'pending');
+
+            if (error) {
+                claimsContainer.innerHTML = '<p>Error loading claims.</p>';
+                console.error(error);
+                return;
+            }
+
+            if (data.length === 0) {
+                claimsContainer.innerHTML = '<p>No pending claims right now.</p>';
+                return;
+            }
+
+            claimsContainer.innerHTML = '';
+            data.forEach(claim => {
+                const card = document.createElement('div');
+                card.className = 'claim-card';
+                card.innerHTML = `
+                    <div class="claim-details">
+                        <h3>${claim.business_name}</h3>
+                        <p><strong>Requester:</strong> ${claim.requester_name} (${claim.requester_position})</p>
+                        <p><strong>Email:</strong> ${claim.requester_email}</p>
+                        <p><strong>Submitted:</strong> ${new Date(claim.created_at).toLocaleDateString()}</p>
+                    </div>
+                    <button class="btn approve-btn" onclick="approveClaim('${claim.id}', '${claim.requester_email}', '${claim.business_id}')">Approve</button>
+                `;
+                claimsContainer.appendChild(card);
+            });
+        }
+
+        // Approve Claim Logic (Changes status to 'approved')
+        async function approveClaim(claimId, email, businessId) {
+            const confirmApproval = confirm(`Are you sure you want to approve ${email}?`);
+            if (!confirmApproval) return;
+
+            const { error } = await supabase
+                .from('claim_requests')
+                .update({ status: 'approved' })
+                .eq('id', claimId);
+
+            if (error) {
+                alert('Failed to approve claim.');
+                console.error(error);
+            } else {
+                // Here is where we will eventually trigger the logic to create their user account!
+                fetchClaims(); // Refresh the list
+            }
+        }
+
+        checkSession();
+    </script>
+</body>
+</html>
