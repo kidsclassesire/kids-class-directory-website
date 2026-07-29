@@ -234,6 +234,11 @@
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        window.SUPABASE_URL = window.SUPABASE_URL || 'https://gnozodfteywsiwcnbwch.supabase.co';
+        window.SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'sb_publishable_eduvbMySPxHPT0iZjE_LqQ_w6nyjnjY';
+    </script>
     
     <script>
         const searchInput = document.getElementById('search-input');
@@ -281,6 +286,35 @@
                 maxZoom: 19,
                 attribution: '© OpenStreetMap'
             }).addTo(map);
+        }
+
+        async function loadClasses() {
+            try {
+                if (window.SUPABASE_ANON_KEY && window.SUPABASE_URL) {
+                    const supabase = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
+                    const { data, error } = await supabase.from('classes').select('*');
+                    if (!error && data) {
+                        classesData = data;
+                        updateResults();
+                        return;
+                    }
+                    console.warn('Supabase load failed, falling back to local JSON:', error);
+                }
+            } catch (err) {
+                console.warn('Supabase unavailable, falling back to local JSON:', err);
+            }
+
+            fetch('south_dublin_kids_activities.json')
+                .then(response => response.json())
+                .then(data => {
+                    classesData = data;
+                    updateResults();
+                })
+                .catch(error => {
+                    console.error('Error loading data:', error);
+                    document.getElementById('result-count').textContent = 'Unable to load class data.';
+                    document.getElementById('directory-container').innerHTML = '<p>Unable to load class data. Please try again later.</p>';
+                });
         }
 
         // Generate Map Pins & Bind Two-Way Click
@@ -501,26 +535,18 @@
         dropoffFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
 
         // Fetch Data & Handle Shareable URLs on Load
-        fetch('south_dublin_kids_activities.json')
-            .then(res => res.json())
-            .then(data => { 
-                classesData = data; 
-                
-                // Check if someone shared a link with pre-filled filters
-                const params = new URLSearchParams(window.location.search);
-                if (Array.from(params.keys()).length > 0) {
-                    if(params.has('q')) searchInput.value = params.get('q');
-                    if(params.has('loc')) locationInput.value = params.get('loc');
-                    if(params.has('cat')) categoryFilter.value = params.get('cat');
-                    if(params.has('age')) ageFilter.value = params.get('age');
-                    if(params.has('day')) dayFilter.value = params.get('day');
-                    if(params.get('dropoff') === 'true') dropoffFilter.checked = true;
-                    
-                    // Automatically run the search so the shared view opens immediately
-                    executeInitialSearch();
-                }
-            })
-            .catch(err => console.error('Error loading data:', err));
+        loadClasses().then(() => {
+            const params = new URLSearchParams(window.location.search);
+            if (Array.from(params.keys()).length > 0) {
+                if(params.has('q')) searchInput.value = params.get('q');
+                if(params.has('loc')) locationInput.value = params.get('loc');
+                if(params.has('cat')) categoryFilter.value = params.get('cat');
+                if(params.has('age')) ageFilter.value = params.get('age');
+                if(params.has('day')) dayFilter.value = params.get('day');
+                if(params.get('dropoff') === 'true') dropoffFilter.checked = true;
+                executeInitialSearch();
+            }
+        }).catch(err => console.error('Error loading data:', err));
     </script>
 </body>
 </html>
