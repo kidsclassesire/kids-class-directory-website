@@ -237,10 +237,6 @@
             <div class="filter-bar">
                 <select id="category-filter" class="filter-select">
                     <option value="">Any Category</option>
-                    <option value="Athletics">Athletics</option>
-                    <option value="Technology">Technology</option>
-                    <option value="Sports">Sports</option>
-                    <option value="Arts">Arts</option>
                 </select>
 
                 <select id="age-filter" class="filter-select">
@@ -361,6 +357,12 @@
             return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
         }
 
+        function populateCategoryFilter() {
+            const categories = [...new Set(classesData.map(item => item.category).filter(Boolean))].sort();
+            categoryFilter.innerHTML = '<option value="">Any Category</option>' +
+                categories.map(cat => `<option value="${escapeHtml(cat)}">${escapeHtml(cat)}</option>`).join('');
+        }
+
         function initMap() {
             if (map) return;
             map = L.map('map').setView([53.3498, -6.2603], 10);
@@ -397,12 +399,10 @@
             const markerGroup = L.featureGroup().addTo(map);
 
             filteredData.forEach((item, index) => {
-                let lat = item.latitude;
-                let lng = item.longitude;
-                if (!lat || !lng) {
-                    lat = 53.3498 + (Math.random() - 0.5) * 0.1; 
-                    lng = -6.2603 + (Math.random() - 0.5) * 0.1;
-                }
+                const lat = item.latitude;
+                const lng = item.longitude;
+                if (!lat || !lng) return; // Skip: no verified coordinates, don't fabricate a pin location
+
                 const marker = L.marker([lat, lng]);
                 marker.bindPopup(`<b>${item.company_name}</b><br>${item.category || 'Class'}`);
                 
@@ -442,9 +442,10 @@
                 
                 let locMatch = true;
                 if (userLat !== null && userLon !== null && locationInput.value === 'Current Location') {
-                    const lat = item.latitude || 53.3498; 
-                    const lng = item.longitude || -6.2603; 
-                    locMatch = getDistance(userLat, userLon, lat, lng) <= 20;
+                    // Without verified coordinates we can't compute a real distance, so don't
+                    // exclude the item based on a fabricated fallback location.
+                    locMatch = !item.latitude || !item.longitude ||
+                        getDistance(userLat, userLon, item.latitude, item.longitude) <= 20;
                 } else {
                     locMatch = l === '' || [item.address, item.eircode].some(v => v && v.toString().toLowerCase().includes(l));
                 }
@@ -658,6 +659,7 @@
 
         // Load Initial Data
         loadClasses().then(() => {
+            populateCategoryFilter();
             const params = new URLSearchParams(window.location.search);
             if (Array.from(params.keys()).length > 0) {
                 if(params.has('q')) searchInput.value = params.get('q');
