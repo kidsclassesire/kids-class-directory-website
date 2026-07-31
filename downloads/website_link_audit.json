@@ -1,0 +1,539 @@
+{
+  "checked": 906,
+  "dead": [
+    {
+      "url": "http://swwfrc.ie/family-supports-swwfrc/the-parent-and-toddler-group/",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1082)>",
+      "status": null,
+      "working_alternate": null
+    },
+    {
+      "url": "http://clannrescentre.com/activities/children-activities/corrib-baby-and-toddler/",
+      "error": "HTTP Error 400: Bad Request",
+      "status": 400,
+      "working_alternate": null
+    },
+    {
+      "url": "http://www.bushytennispadel.ie/index.aspx",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404,
+      "working_alternate": null
+    },
+    {
+      "url": "http://www.kellystownridingschool.com/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://National%20Concert%20Hall",
+      "error": "URL can't contain control characters. 'National Concert Hall' (found at least ' ')",
+      "status": null,
+      "working_alternate": null
+    },
+    {
+      "url": "https://4familiesinfinglas.ie/st-helenas-family-resource-centre/",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for '4familiesinfinglas.ie'. (_ssl.c:1082)>",
+      "status": null,
+      "working_alternate": null
+    },
+    {
+      "url": "https://Emeraldeducationcentrebundoran.com.com",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://beeutifulminds.ie",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1082)>",
+      "status": null,
+      "working_alternate": "https://www.beeutifulminds.ie/"
+    },
+    {
+      "url": "https://buytickets.at/bumpsbainne/2252232",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://buytickets.at/bumpsbainne/2252232"
+    },
+    {
+      "url": "https://clonmelcommunitymother.ie/mother-baby-parent-toddler/",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404,
+      "working_alternate": null
+    },
+    {
+      "url": "https://clonmelcommunitymother.ie/mother-baby-parent-toddler/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdEpvak95U0xFbkJad1RSWQEeeoNimM8kgjZpnmCbCqxXTN_kmMX7SvQ0rjk1hxeWTf5a0nb_9yOIqHQLLiA_aem_6r8M0595DRJfrCoaLCSF5g",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404,
+      "working_alternate": null
+    },
+    {
+      "url": "https://clubspark.net/deerparkTennisClub",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404,
+      "working_alternate": null
+    },
+    {
+      "url": "https://downstrandsfrc.ie/glenties-parent-toddler-group/",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404,
+      "working_alternate": null
+    },
+    {
+      "url": "https://downstrandsfrc.ie/downstrands-parent-toddler-group/",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404,
+      "working_alternate": null
+    },
+    {
+      "url": "https://enniskerry.ie/g/mums-n-tots/",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404,
+      "working_alternate": null
+    },
+    {
+      "url": "https://droicheadfrc.ie/",
+      "error": "HTTP Error 503: Service Temporarily Unavailable",
+      "status": 503,
+      "working_alternate": null
+    },
+    {
+      "url": "https://facebook.com/killinardenFRC",
+      "error": "HTTP Error 400: Bad Request",
+      "status": 400,
+      "working_alternate": null
+    },
+    {
+      "url": "https://galway.spydus.ie./cgi-bin/spydus.exe/MSGTRN/WPAC/HOME",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'galway.spydus.ie.'. (_ssl.c:1082)>",
+      "status": null,
+      "working_alternate": "http://galway.spydus.ie./cgi-bin/spydus.exe/MSGTRN/WPAC/HOME"
+    },
+    {
+      "url": "https://firstswim.ie/contact-us/",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404,
+      "working_alternate": null
+    },
+    {
+      "url": "https://ie.miniathletics.com",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'ie.miniathletics.com'. (_ssl.c:1082)>",
+      "status": null,
+      "working_alternate": "http://ie.miniathletics.com/"
+    },
+    {
+      "url": "https://knockanrawley.ie/community-programme/",
+      "error": "HTTP Error 500: Internal Server Error",
+      "status": 500,
+      "working_alternate": null
+    },
+    {
+      "url": "https://balcultrystables.ie/",
+      "error": "The read operation timed out",
+      "status": null,
+      "working_alternate": null
+    },
+    {
+      "url": "https://muckypicnic.com",
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "status": null,
+      "working_alternate": null
+    },
+    {
+      "url": "https://stagekidzacademy.com",
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "status": null,
+      "working_alternate": "https://stagekidzacademy.ie/"
+    },
+    {
+      "url": "https://raphoefrc.ie/little-smiles-with-big-dreams-toddler-group-2",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404,
+      "working_alternate": null
+    },
+    {
+      "url": "https://teachnadaoinefrc.com/our-supports/",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404,
+      "working_alternate": null
+    },
+    {
+      "url": "https://sligofamilyresourcecentre.org/parent-and-toddler-group/",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404,
+      "working_alternate": null
+    },
+    {
+      "url": "https://courses.inss.ie/contact-us/",
+      "error": "The read operation timed out",
+      "status": null,
+      "working_alternate": "http://courses.inss.ie/contact-us/"
+    },
+    {
+      "url": "https://stkevinsfrc.ie/support/parent-toddler-group/",
+      "error": "HTTP Error 500: Internal Server Error",
+      "status": 500,
+      "working_alternate": null
+    },
+    {
+      "url": "https://gyng.ie/wp/yolos/parent-and-toddler/",
+      "error": "The read operation timed out",
+      "status": null,
+      "working_alternate": "https://gyng.com/wp/yolos/parent-and-toddler/"
+    },
+    {
+      "url": "https://kylejamesriley.com/",
+      "error": "The read operation timed out",
+      "status": null,
+      "working_alternate": "http://kylejamesriley.com/"
+    },
+    {
+      "url": "https://mfrc.ie/",
+      "error": "The read operation timed out",
+      "status": null,
+      "working_alternate": "https://mfrc.com/"
+    },
+    {
+      "url": "https://totsspots.com/listing/ballyhea-parent-baby-toddler-group/",
+      "error": "The read operation timed out",
+      "status": null,
+      "working_alternate": "https://www.totsspots.com/listing/ballyhea-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/carrigaline-parent-toddler-group/",
+      "error": "The read operation timed out",
+      "status": null,
+      "working_alternate": "https://www.totsspots.com/listing/carrigaline-parent-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/clondalkin-parent-baby-toddler-group/",
+      "error": "The read operation timed out",
+      "status": null,
+      "working_alternate": "https://www.totsspots.com/listing/clondalkin-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/corramartin-aughnasheelin-baby-toddler-group/",
+      "error": "The read operation timed out",
+      "status": null,
+      "working_alternate": "https://www.totsspots.com/listing/corramartin-aughnasheelin-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/craughwell-parent-baby-toddler-group/",
+      "error": "The read operation timed out",
+      "status": null,
+      "working_alternate": "https://www.totsspots.com/listing/craughwell-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/little-learners-holistics/",
+      "error": "The read operation timed out",
+      "status": null,
+      "working_alternate": "http://totsspots.com/listing/little-learners-holistics/"
+    },
+    {
+      "url": "https://totsspots.com/listing/messy-play-limerick-tipperary/",
+      "error": "The read operation timed out",
+      "status": null,
+      "working_alternate": "https://www.totsspots.com/listing/messy-play-limerick-tipperary/"
+    },
+    {
+      "url": "https://totsspots.com/listing/mooncoin-kilkenny-baby-toddler-group/",
+      "error": "The read operation timed out",
+      "status": null,
+      "working_alternate": "http://totsspots.com/listing/mooncoin-kilkenny-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/moyvane-parent-baby-toddler-group/",
+      "error": "The read operation timed out",
+      "status": null,
+      "working_alternate": "http://totsspots.com/listing/moyvane-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/north-wexford-parent-and-toddler-group/",
+      "error": "The read operation timed out",
+      "status": null,
+      "working_alternate": "https://www.totsspots.com/listing/north-wexford-parent-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/philipstown-baby-and-toddler-group/",
+      "error": "The read operation timed out",
+      "status": null,
+      "working_alternate": "http://totsspots.com/listing/philipstown-baby-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/rathanna-parent-toddler-group/",
+      "error": "The read operation timed out",
+      "status": null,
+      "working_alternate": "https://www.totsspots.com/listing/rathanna-parent-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/renmore-parent-baby-toddler-group/",
+      "error": "The read operation timed out",
+      "status": null,
+      "working_alternate": "http://totsspots.com/listing/renmore-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/rockchapel-baby-toddler-group/",
+      "error": "The read operation timed out",
+      "status": null,
+      "working_alternate": "https://www.totsspots.com/listing/rockchapel-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/sandyford-parent-toddler-group/",
+      "error": "The read operation timed out",
+      "status": null,
+      "working_alternate": "https://www.totsspots.com/listing/sandyford-parent-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/shanakill-parent-baby-toddler-group/",
+      "error": "The read operation timed out",
+      "status": null,
+      "working_alternate": "https://www.totsspots.com/listing/shanakill-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/shercock-parent-baby-and-toddler-group/",
+      "error": "The read operation timed out",
+      "status": null,
+      "working_alternate": "http://totsspots.com/listing/shercock-parent-baby-and-toddler-group/"
+    },
+    {
+      "url": "https://www.babygra.ie",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.birthandbaby.ie/",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.birthandbaby.ie'. (_ssl.c:1082)>",
+      "status": null,
+      "working_alternate": "https://www.birthandbaby.com/"
+    },
+    {
+      "url": "https://www.bloomfieldhousehotel.ie/swim-lessons.html",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.creationcup.ie",
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "status": null,
+      "working_alternate": "https://www.creationcup.com/"
+    },
+    {
+      "url": "https://www.debbieallendanceschool.com/contact.html",
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "status": null,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.dimplesbabymassage.com/",
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "status": null,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.belcarra.ie/community-futures/",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.dublincity.ie/events/toddler-storytime-phibsboro-library",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://dublincity.ie/events/toddler-storytime-phibsboro-library"
+    },
+    {
+      "url": "https://www.facebook.com/LouthABCProgramme/",
+      "error": "HTTP Error 400: Bad Request",
+      "status": 400,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.facebook.com/ParentsTotsCBC/",
+      "error": "HTTP Error 400: Bad Request",
+      "status": 400,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.facebook.com/profile.php?id=100086975242986&sk=about",
+      "error": "HTTP Error 400: Bad Request",
+      "status": 400,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.facebook.com/profile.php?id=61550026827173",
+      "error": "HTTP Error 400: Bad Request",
+      "status": 400,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.facebook.com/groups/306898116445743/discussion/preview",
+      "error": "HTTP Error 400: Bad Request",
+      "status": 400,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.facebook.com/p/Kentstown-Toddler-and-Baby-Group-100067292811547/",
+      "error": "HTTP Error 400: Bad Request",
+      "status": 400,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.facebook.com/castleislandparentandtoddlergroup/about",
+      "error": "HTTP Error 400: Bad Request",
+      "status": 400,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.facebook.com/musicmovement4tots/",
+      "error": "HTTP Error 400: Bad Request",
+      "status": 400,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.facebook.com/profile/100064632253690/search/?q=toddler",
+      "error": "HTTP Error 400: Bad Request",
+      "status": 400,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.facebook.com/profile.php?id=61564788114218",
+      "error": "HTTP Error 400: Bad Request",
+      "status": 400,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.facebook.com/share/twcnxn7mpYaHLXCj/",
+      "error": "HTTP Error 400: Bad Request",
+      "status": 400,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.facebook.com/share/1BVRyYhpbW/%20https://www.instagram.com/katarchard_infantmassage?igsh=MXhoaGppanNicTR0OQ==",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.facebook.com/profile.php?id=61565478435216",
+      "error": "HTTP Error 400: Bad Request",
+      "status": 400,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.facebook.com/suzukiviolinennis",
+      "error": "HTTP Error 400: Bad Request",
+      "status": 400,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.facebook.com/summerhillbabyandtoddlergroup/",
+      "error": "HTTP Error 400: Bad Request",
+      "status": 400,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.facebook.com/share/577zzhoQSn4Hu6GA/",
+      "error": "HTTP Error 400: Bad Request",
+      "status": 400,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.facebook.com/profile.php?id=61566883178839",
+      "error": "HTTP Error 400: Bad Request",
+      "status": 400,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.bricks4kidz.ie/fingal/parent-toddler-classes-malahide/",
+      "error": "HTTP Error 410: Gone",
+      "status": 410,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.kidcreate.ie",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404,
+      "working_alternate": "https://www.kidcreate.com/"
+    },
+    {
+      "url": "https://www.lecanveycommunitycentre.ie/events/toddler-parent-group/",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.independent.ie/regionals/wexford/enniscorthy-news/localnotes/around-the-districts-bree-galbally-to-kiltealy-ballindaggin/a1010161768.html",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://independent.ie/regionals/wexford/enniscorthy-news/localnotes/around-the-districts-bree-galbally-to-kiltealy-ballindaggin/a1010161768.html"
+    },
+    {
+      "url": "https://www.dublincookery.com/cookery-workshops-for-children/",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.meath.ie/council/events/navan-parent-and-toddler-storytime",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>",
+      "status": null,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.meath.ie/council/events/oldcastle-parent-toddler-group",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>",
+      "status": null,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.meath.ie/events?keywords=&type%5B%5D=907",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>",
+      "status": null,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.meath.ie/events?keywords=&type%5B0%5D=919&ends=2024-07-07T10%3A29%3A48Z&location=&page=0",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>",
+      "status": null,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.littlekickers.ie/index",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.playmatters.ie/",
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "status": null,
+      "working_alternate": "https://www.playmatters.com/"
+    },
+    {
+      "url": "https://www.kildaresteinerschool.ie/siologa-parent-and-child-programme/",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.zendenstudio.ie/",
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "status": null,
+      "working_alternate": "https://www.zendenstudio.com/"
+    },
+    {
+      "url": "https://www.turtletots.ie/licensee/turtle-tots-ireland/",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.turtletots.ie/licensee/turtle-tots-dublin/",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404,
+      "working_alternate": null
+    }
+  ]
+}

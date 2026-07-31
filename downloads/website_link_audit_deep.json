@@ -1,0 +1,469 @@
+{
+  "tld_swap": [
+    {
+      "company": "Stagekidz Academy",
+      "dead_url": "https://stagekidzacademy.com",
+      "alternate": "https://stagekidzacademy.ie/",
+      "name_matched_in_page": true,
+      "phone_matched_in_page": false,
+      "verdict": "LIKELY SAME BUSINESS"
+    },
+    {
+      "company": "Gorey Parent, Baby and Toddler Group",
+      "dead_url": "https://gyng.ie/wp/yolos/parent-and-toddler/",
+      "alternate": "https://gyng.com/wp/yolos/parent-and-toddler/",
+      "name_matched_in_page": false,
+      "phone_matched_in_page": false,
+      "verdict": "UNCLEAR - no Irish/company signal found"
+    },
+    {
+      "company": "Glengoole Parent, Baby & Toddler Group",
+      "dead_url": "https://mfrc.ie/",
+      "alternate": "https://mfrc.com/",
+      "name_matched_in_page": false,
+      "phone_matched_in_page": false,
+      "verdict": "UNCLEAR - no Irish/company signal found"
+    },
+    {
+      "company": "www.birthandbaby.ie",
+      "dead_url": "https://www.birthandbaby.ie/",
+      "alternate": "https://www.birthandbaby.com/",
+      "name_matched_in_page": false,
+      "phone_matched_in_page": false,
+      "verdict": "POSSIBLY SAME - has Ireland signal but no name/phone match"
+    },
+    {
+      "company": "Creation Cup",
+      "dead_url": "https://www.creationcup.ie",
+      "alternate": "https://www.creationcup.com/",
+      "name_matched_in_page": true,
+      "phone_matched_in_page": false,
+      "verdict": "LIKELY SAME BUSINESS"
+    },
+    {
+      "company": "KidCREATE Arts & Crafts",
+      "dead_url": "https://www.kidcreate.ie",
+      "alternate": "https://www.kidcreate.com/",
+      "name_matched_in_page": true,
+      "phone_matched_in_page": false,
+      "verdict": "LIKELY SAME BUSINESS"
+    },
+    {
+      "company": "Dungloe Letterkenny Outdoor Toddler Group",
+      "dead_url": "https://www.playmatters.ie/",
+      "alternate": "https://www.playmatters.com/",
+      "name_matched_in_page": false,
+      "phone_matched_in_page": false,
+      "verdict": "UNCLEAR - no Irish/company signal found"
+    },
+    {
+      "company": "ZenDen",
+      "dead_url": "https://www.zendenstudio.ie/",
+      "alternate": "https://www.zendenstudio.com/",
+      "name_matched_in_page": true,
+      "phone_matched_in_page": false,
+      "verdict": "LIKELY SAME BUSINESS"
+    }
+  ],
+  "timeout_retry": [
+    {
+      "url": "https://courses.inss.ie/contact-us/",
+      "now_ok": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://totsspots.com/listing/clondalkin-parent-baby-toddler-group/",
+      "now_ok": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://totsspots.com/listing/corramartin-aughnasheelin-baby-toddler-group/",
+      "now_ok": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://totsspots.com/listing/craughwell-parent-baby-toddler-group/",
+      "now_ok": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://kylejamesriley.com/",
+      "now_ok": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://totsspots.com/listing/carrigaline-parent-toddler-group/",
+      "now_ok": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://totsspots.com/listing/little-learners-holistics/",
+      "now_ok": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://totsspots.com/listing/ballyhea-parent-baby-toddler-group/",
+      "now_ok": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://totsspots.com/listing/messy-play-limerick-tipperary/",
+      "now_ok": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://totsspots.com/listing/moyvane-parent-baby-toddler-group/",
+      "now_ok": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://totsspots.com/listing/north-wexford-parent-and-toddler-group/",
+      "now_ok": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://totsspots.com/listing/philipstown-baby-and-toddler-group/",
+      "now_ok": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://totsspots.com/listing/mooncoin-kilkenny-baby-toddler-group/",
+      "now_ok": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://totsspots.com/listing/rathanna-parent-toddler-group/",
+      "now_ok": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://totsspots.com/listing/renmore-parent-baby-toddler-group/",
+      "now_ok": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://totsspots.com/listing/rockchapel-baby-toddler-group/",
+      "now_ok": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://totsspots.com/listing/sandyford-parent-toddler-group/",
+      "now_ok": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://totsspots.com/listing/shercock-parent-baby-and-toddler-group/",
+      "now_ok": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://totsspots.com/listing/shanakill-parent-baby-toddler-group/",
+      "now_ok": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://gyng.ie/wp/yolos/parent-and-toddler/",
+      "now_ok": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://mfrc.ie/",
+      "now_ok": true,
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://balcultrystables.ie/",
+      "now_ok": true,
+      "status": 200,
+      "error": null
+    }
+  ],
+  "wayback": [
+    {
+      "company": "Clonmel & Cashel Parent and Baby Group",
+      "url": "https://clonmelcommunitymother.ie/mother-baby-parent-toddler/",
+      "has_snapshot": true,
+      "timestamp": "20250804150258",
+      "snapshot_url": "http://web.archive.org/web/20250804150258/https://clonmelcommunitymother.ie/mother-baby-parent-toddler/"
+    },
+    {
+      "company": "Stagekidz Academy",
+      "url": "https://stagekidzacademy.com",
+      "has_snapshot": false,
+      "timestamp": null,
+      "snapshot_url": null
+    },
+    {
+      "company": "Bushy Park Tennis Academy",
+      "url": "http://www.bushytennispadel.ie/index.aspx",
+      "has_snapshot": true,
+      "timestamp": "20250908154656",
+      "snapshot_url": "http://web.archive.org/web/20250908154656/http://www.bushytennispadel.ie/Index.aspx"
+    },
+    {
+      "company": "First Swim",
+      "url": "https://firstswim.ie/contact-us/",
+      "has_snapshot": false,
+      "timestamp": null,
+      "snapshot_url": null
+    },
+    {
+      "company": "Glenties Parent, Baby and Toddler Group",
+      "url": "https://downstrandsfrc.ie/glenties-parent-toddler-group/",
+      "has_snapshot": false,
+      "timestamp": null,
+      "snapshot_url": null
+    },
+    {
+      "company": "Mucky Picnic",
+      "url": "https://muckypicnic.com",
+      "has_snapshot": false,
+      "timestamp": null,
+      "snapshot_url": null
+    },
+    {
+      "company": "Deerpark Tennis Club",
+      "url": "https://clubspark.net/deerparkTennisClub",
+      "has_snapshot": false,
+      "timestamp": null,
+      "snapshot_url": null
+    },
+    {
+      "company": "Enniskerry Parent, Baby and Toddler Group",
+      "url": "https://enniskerry.ie/g/mums-n-tots/",
+      "has_snapshot": false,
+      "timestamp": null,
+      "snapshot_url": null
+    },
+    {
+      "company": "Downstrands Parent, Baby and Toddler Group",
+      "url": "https://downstrandsfrc.ie/downstrands-parent-toddler-group/",
+      "has_snapshot": false,
+      "timestamp": null,
+      "snapshot_url": null
+    },
+    {
+      "company": "Clonmel / Cahir Parent, Baby & Toddler Group",
+      "url": "https://clonmelcommunitymother.ie/mother-baby-parent-toddler/?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExdEpvak95U0xFbkJad1RSWQEeeoNimM8kgjZpnmCbCqxXTN_kmMX7SvQ0rjk1hxeWTf5a0nb_9yOIqHQLLiA_aem_6r8M0595DRJfrCoaLCSF5g",
+      "has_snapshot": false,
+      "timestamp": null,
+      "snapshot_url": null
+    },
+    {
+      "company": "Raphoe Family Resource Centre Toddler Group",
+      "url": "https://raphoefrc.ie/little-smiles-with-big-dreams-toddler-group-2",
+      "has_snapshot": true,
+      "timestamp": "20250519121542",
+      "snapshot_url": "http://web.archive.org/web/20250519121542/https://raphoefrc.ie/little-smiles-with-big-dreams-toddler-group-2"
+    },
+    {
+      "company": "Dimples Baby Massage",
+      "url": "https://www.dimplesbabymassage.com/",
+      "has_snapshot": true,
+      "timestamp": "20230329204120",
+      "snapshot_url": "http://web.archive.org/web/20230329204120/https://www.dimplesbabymassage.com/"
+    },
+    {
+      "company": "Baby Massage with Kathryn",
+      "url": "https://www.facebook.com/share/1BVRyYhpbW/%20https://www.instagram.com/katarchard_infantmassage?igsh=MXhoaGppanNicTR0OQ==",
+      "has_snapshot": false,
+      "timestamp": null,
+      "snapshot_url": null
+    },
+    {
+      "company": "Monaghan Toddler Group - Teach Na nDaoine",
+      "url": "https://teachnadaoinefrc.com/our-supports/",
+      "has_snapshot": false,
+      "timestamp": null,
+      "snapshot_url": null
+    },
+    {
+      "company": "Sligo Parent, Baby and Toddler Group",
+      "url": "https://sligofamilyresourcecentre.org/parent-and-toddler-group/",
+      "has_snapshot": true,
+      "timestamp": "20260122152927",
+      "snapshot_url": "http://web.archive.org/web/20260122152927/https://sligofamilyresourcecentre.org/parent-and-toddler-group/"
+    },
+    {
+      "company": "Creation Cup",
+      "url": "https://www.creationcup.ie",
+      "has_snapshot": true,
+      "timestamp": "20240901202902",
+      "snapshot_url": "http://web.archive.org/web/20240901202902/https://www.creationcup.ie/"
+    },
+    {
+      "company": "Bloomfield Health & Leisure Club",
+      "url": "https://www.bloomfieldhousehotel.ie/swim-lessons.html",
+      "has_snapshot": false,
+      "timestamp": null,
+      "snapshot_url": null
+    },
+    {
+      "company": "Debbie Allen Dance School",
+      "url": "https://www.debbieallendanceschool.com/contact.html",
+      "has_snapshot": false,
+      "timestamp": null,
+      "snapshot_url": null
+    },
+    {
+      "company": "Parent and Toddler Lego Class",
+      "url": "https://www.bricks4kidz.ie/fingal/parent-toddler-classes-malahide/",
+      "has_snapshot": false,
+      "timestamp": null,
+      "snapshot_url": null
+    },
+    {
+      "company": "Belcarra Parent, Baby and Toddler Group",
+      "url": "https://www.belcarra.ie/community-futures/",
+      "has_snapshot": false,
+      "timestamp": null,
+      "snapshot_url": null
+    },
+    {
+      "company": "KidCREATE Arts & Crafts",
+      "url": "https://www.kidcreate.ie",
+      "has_snapshot": true,
+      "timestamp": "20250305031422",
+      "snapshot_url": "http://web.archive.org/web/20250305031422/https://www.kidcreate.ie/"
+    },
+    {
+      "company": "Lecanvey Parent, Baby and Toddler Group",
+      "url": "https://www.lecanveycommunitycentre.ie/events/toddler-parent-group/",
+      "has_snapshot": false,
+      "timestamp": null,
+      "snapshot_url": null
+    },
+    {
+      "company": "Little Kickers",
+      "url": "https://www.littlekickers.ie/index",
+      "has_snapshot": true,
+      "timestamp": "20260415183954",
+      "snapshot_url": "http://web.archive.org/web/20260415183954/https://www.littlekickers.ie/index"
+    },
+    {
+      "company": "Dungloe Letterkenny Outdoor Toddler Group",
+      "url": "https://www.playmatters.ie/",
+      "has_snapshot": true,
+      "timestamp": "20240908005118",
+      "snapshot_url": "http://web.archive.org/web/20240908005118/https://playmatters.ie/"
+    },
+    {
+      "company": "Alix Gardner's Cookery School",
+      "url": "https://www.dublincookery.com/cookery-workshops-for-children/",
+      "has_snapshot": false,
+      "timestamp": null,
+      "snapshot_url": null
+    },
+    {
+      "company": "Dunlavin Parent, Baby and Toddler Group",
+      "url": "https://www.kildaresteinerschool.ie/siologa-parent-and-child-programme/",
+      "has_snapshot": false,
+      "timestamp": null,
+      "snapshot_url": null
+    },
+    {
+      "company": "ZenDen",
+      "url": "https://www.zendenstudio.ie/",
+      "has_snapshot": false,
+      "timestamp": null,
+      "snapshot_url": null
+    },
+    {
+      "company": "Turtle Tots Dublin",
+      "url": "https://www.turtletots.ie/licensee/turtle-tots-dublin/",
+      "has_snapshot": false,
+      "timestamp": null,
+      "snapshot_url": null
+    },
+    {
+      "company": "Turtle Tots Swimming Classes; Turtle Tots Swimming Classes - Kerry; Turtle Tots Swimming Classes - Cork; Turtle Tots Swimming Classes - Wexford/Wicklow; Turtle Tots Swimming Classes -Mayo/Monaghan/Sligo; Turtle Tots Swimming Classes /Louth/Limerick/Laois/Waterford",
+      "url": "https://www.turtletots.ie/licensee/turtle-tots-ireland/",
+      "has_snapshot": false,
+      "timestamp": null,
+      "snapshot_url": null
+    }
+  ],
+  "ssl_refetch": [
+    {
+      "company": "Ramsgrange Parent, Baby and Toddler Group",
+      "url": "http://swwfrc.ie/family-supports-swwfrc/the-parent-and-toddler-group/",
+      "fetched_ok": true,
+      "snippet": "<!DOCTYPE html> <html class=\"sp-html sp-seedprod sp-h-full\" lang=\"en-GB\"> <head> <!-- Open Graph --> <meta property=\"og:url\" content=\"https://swwfrc.ie/family-supports-swwfrc/the-parent-and-toddler-group/\" /> <meta property=\"og:type\" content=\"website\" /> <!-- Twitter Card --> <meta name=\"twitter:car"
+    },
+    {
+      "company": "Finglas Baby & Toddler Groups /Breastfeeding /Baby Massage",
+      "url": "https://4familiesinfinglas.ie/st-helenas-family-resource-centre/",
+      "fetched_ok": false,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "company": "",
+      "url": "https://beeutifulminds.ie",
+      "fetched_ok": true,
+      "snippet": "<!doctype html > <html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\" class=\"ios-preview-native-scroll\"> <head> <meta charset=\"utf-8\"> <script type=\"text/javascript\"> window._currentDevice = 'desktop'; window.Parameters = window.Parameters || { HomeUrl: 'https://www.beeutifulminds.ie/', SystemID: 'U"
+    },
+    {
+      "company": "",
+      "url": "https://galway.spydus.ie./cgi-bin/spydus.exe/MSGTRN/WPAC/HOME",
+      "fetched_ok": true,
+      "snippet": "<!DOCTYPE html> <html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:x=\"http://www.w3.org/1999/xhtml\" xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\" xmlns:civica=\"http://www.civica.com\"><head prefix=\"og: http://ogp.me/ns# books: http://ogp.me/ns/books#\"><meta charset=\"utf-8\" /><meta http-equiv=\""
+    },
+    {
+      "company": "",
+      "url": "https://ie.miniathletics.com",
+      "fetched_ok": true,
+      "snippet": "\ufeff<!doctype html> <html lang=\"en\" data-bs-theme=\"auto\"> <head> <title> ma3.applecado.co.uk &mdash; Host welcome page for </title> <meta charset=\"utf-8\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <meta name=\"robots\" content=\"noindex, follow\"> <meta name=\"theme-color\" content"
+    },
+    {
+      "company": "www.birthandbaby.ie",
+      "url": "https://www.birthandbaby.ie/",
+      "fetched_ok": true,
+      "snippet": "<!DOCTYPE html><html lang=\"en-US\" > <!--[if lt IE 7]><html class=\"no-js ie ie6 lt-ie9 lt-ie8 lt-ie7\" lang=\"en-US\"> <![endif]--> <!--[if IE 7]><html class=\"no-js ie ie7 lt-ie9 lt-ie8\" lang=\"en-US\"> <![endif]--> <!--[if IE 8]><html class=\"no-js ie ie8 lt-ie9\" lang=\"en-US\"> <![endif]--> <!--[if gt IE 8"
+    },
+    {
+      "company": "Navan Library Parent and Toddler Group",
+      "url": "https://www.meath.ie/council/events/navan-parent-and-toddler-storytime",
+      "fetched_ok": true,
+      "snippet": "<!DOCTYPE html> <html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\"> <head> <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalizat"
+    },
+    {
+      "company": "Oldcastle Library Parent and Toddler Group",
+      "url": "https://www.meath.ie/council/events/oldcastle-parent-toddler-group",
+      "fetched_ok": true,
+      "snippet": "<!DOCTYPE html> <html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\"> <head> <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalizat"
+    },
+    {
+      "company": "Ashbourne Library Parent, Baby and Toddler Group",
+      "url": "https://www.meath.ie/events?keywords=&type%5B%5D=907",
+      "fetched_ok": true,
+      "snippet": "<!DOCTYPE html> <html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\"> <head> <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalizat"
+    },
+    {
+      "company": "Trim Library Baby, Toddler and Kids Groups",
+      "url": "https://www.meath.ie/events?keywords=&type%5B0%5D=919&ends=2024-07-07T10%3A29%3A48Z&location=&page=0",
+      "fetched_ok": true,
+      "snippet": "<!DOCTYPE html> <html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\"> <head> <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalizat"
+    }
+  ]
+}
