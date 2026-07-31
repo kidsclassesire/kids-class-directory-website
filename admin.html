@@ -24,20 +24,23 @@
             width: 100%; max-width: 800px;
         }
         h1 { margin-top: 0; }
-        
+
         /* Auth Section */
         #auth-section { display: flex; flex-direction: column; max-width: 400px; margin: 0 auto; }
         .form-group { margin-bottom: 1rem; }
         .form-group label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem; }
         .form-group input { width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; box-sizing: border-box; }
         .btn { background: var(--primary); color: white; border: none; padding: 0.85rem; border-radius: 8px; cursor: pointer; font-weight: 600; width: 100%; }
-        
+
         /* Dashboard Section */
         #dashboard-section { display: none; }
         .claim-card { border: 1px solid var(--border); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; }
         .claim-details h3 { margin: 0 0 0.5rem; }
         .claim-details p { margin: 0; color: #64748b; font-size: 0.9rem; line-height: 1.5; }
         .approve-btn { background: #10b981; width: auto; padding: 0.75rem 1.5rem; }
+
+        #unauthorized-section { display: none; text-align: center; max-width: 400px; margin: 0 auto; }
+        #unauthorized-section p { color: #64748b; }
     </style>
 </head>
 <body>
@@ -56,6 +59,12 @@
         <p id="auth-error" style="color: #ef4444; font-size: 0.85rem; display: none;"></p>
     </div>
 
+    <div class="container" id="unauthorized-section">
+        <h1>Not an admin account</h1>
+        <p>This account is signed in, but isn't on the admin list. If you think this is a mistake, contact the site owner.</p>
+        <button class="btn" id="unauthorized-logout-btn" style="width: auto;">Log Out</button>
+    </div>
+
     <div class="container" id="dashboard-section">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
             <h1>Pending Claims</h1>
@@ -69,101 +78,125 @@
     <!-- Supabase JS -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
-        // Replace with your actual Supabase URL and Anon Key
-        const SUPABASE_URL = 'https://gnozodfteywsiwcnbwch.supabase.co';
+        const SUPABASE_URL = 'https://gnozodfteywsiwcnbwch.supabaseClient.co';
         const SUPABASE_ANON_KEY = 'sb_publishable_eduvbMySPxHPT0iZjE_LqQ_w6nyjnjY';
-        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
         const authSection = document.getElementById('auth-section');
         const dashboardSection = document.getElementById('dashboard-section');
+        const unauthorizedSection = document.getElementById('unauthorized-section');
         const claimsContainer = document.getElementById('claims-container');
+        const loginBtn = document.getElementById('login-btn');
+        const errorMsg = document.getElementById('auth-error');
 
-        // Check active session on load
-        async function checkSession() {
-            const { data: { session } } = await supabase.auth.getSession();
-            if (session) {
-                authSection.style.display = 'none';
+        // The RLS policy on `admins` only lets a user see their OWN row (if it exists),
+        // so this doubles as both the UI gate and confirmation the server-side checks
+        // (claim_requests UPDATE policy) will actually allow this user to approve anything.
+        async function isCurrentUserAdmin() {
+            const { data, error } = await supabaseClient.from('admins').select('email').maybeSingle();
+            return !error && !!data;
+        }
+
+        async function showDashboardIfAdmin() {
+            const admin = await isCurrentUserAdmin();
+            authSection.style.display = 'none';
+            if (admin) {
+                unauthorizedSection.style.display = 'none';
                 dashboardSection.style.display = 'block';
                 fetchClaims();
+            } else {
+                dashboardSection.style.display = 'none';
+                unauthorizedSection.style.display = 'block';
             }
         }
 
-        // Login Logic
-        document.getElementById('login-btn').addEventListener('click', async () => {
+        async function checkSession() {
+            const { data: { session } } = await supabaseClient.auth.getSession();
+            if (session) {
+                await showDashboardIfAdmin();
+            }
+        }
+
+        loginBtn.addEventListener('click', async () => {
             const email = document.getElementById('admin-email').value;
             const password = document.getElementById('admin-password').value;
-            const errorMsg = document.getElementById('auth-error');
-            
-            const { error } = await supabase.auth.signInWithPassword({ email, password });
-            if (error) {
-                errorMsg.textContent = error.message;
+            errorMsg.style.display = 'none';
+            loginBtn.textContent = "Logging in...";
+            loginBtn.disabled = true;
+
+            try {
+                const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
+                if (error) throw error;
+                await showDashboardIfAdmin();
+            } catch (err) {
+                errorMsg.textContent = err.message;
                 errorMsg.style.display = 'block';
-            } else {
-                errorMsg.style.display = 'none';
-                authSection.style.display = 'none';
-                dashboardSection.style.display = 'block';
-                fetchClaims();
+            } finally {
+                loginBtn.textContent = "Log In";
+                loginBtn.disabled = false;
             }
         });
 
-        // Logout Logic
-        document.getElementById('logout-btn').addEventListener('click', async () => {
-            await supabase.auth.signOut();
+        async function doLogout() {
+            await supabaseClient.auth.signOut();
             dashboardSection.style.display = 'none';
+            unauthorizedSection.style.display = 'none';
             authSection.style.display = 'flex';
-        });
+            document.getElementById('admin-email').value = '';
+            document.getElementById('admin-password').value = '';
+        }
+        document.getElementById('logout-btn').addEventListener('click', doLogout);
+        document.getElementById('unauthorized-logout-btn').addEventListener('click', doLogout);
 
-        // Fetch Pending Claims
         async function fetchClaims() {
-            const { data, error } = await supabase
-                .from('claim_requests')
-                .select('*')
-                .eq('status', 'pending');
+            claimsContainer.innerHTML = '<p>Loading claims...</p>';
+            try {
+                const { data, error } = await supabaseClient
+                    .from('claim_requests')
+                    .select('*')
+                    .eq('status', 'pending');
 
-            if (error) {
-                claimsContainer.innerHTML = '<p>Error loading claims.</p>';
-                console.error(error);
-                return;
+                if (error) throw error;
+
+                if (data.length === 0) {
+                    claimsContainer.innerHTML = '<p>No pending claims right now.</p>';
+                    return;
+                }
+
+                claimsContainer.innerHTML = '';
+                data.forEach(claim => {
+                    const card = document.createElement('div');
+                    card.className = 'claim-card';
+                    card.innerHTML = `
+                        <div class="claim-details">
+                            <h3>${claim.business_name}</h3>
+                            <p><strong>Requester:</strong> ${claim.requester_name} (${claim.requester_position})</p>
+                            <p><strong>Email:</strong> ${claim.requester_email}</p>
+                            <p><strong>Submitted:</strong> ${new Date(claim.created_at).toLocaleDateString()}</p>
+                        </div>
+                        <button class="btn approve-btn" data-claim-id="${claim.id}">Approve</button>
+                    `;
+                    card.querySelector('.approve-btn').addEventListener('click', () => approveClaim(claim.id, claim.requester_email));
+                    claimsContainer.appendChild(card);
+                });
+            } catch (err) {
+                claimsContainer.innerHTML = `<p style="color:red;">Error loading claims: ${err.message}</p>`;
             }
-
-            if (data.length === 0) {
-                claimsContainer.innerHTML = '<p>No pending claims right now.</p>';
-                return;
-            }
-
-            claimsContainer.innerHTML = '';
-            data.forEach(claim => {
-                const card = document.createElement('div');
-                card.className = 'claim-card';
-                card.innerHTML = `
-                    <div class="claim-details">
-                        <h3>${claim.business_name}</h3>
-                        <p><strong>Requester:</strong> ${claim.requester_name} (${claim.requester_position})</p>
-                        <p><strong>Email:</strong> ${claim.requester_email}</p>
-                        <p><strong>Submitted:</strong> ${new Date(claim.created_at).toLocaleDateString()}</p>
-                    </div>
-                    <button class="btn approve-btn" onclick="approveClaim('${claim.id}', '${claim.requester_email}', '${claim.business_id}')">Approve</button>
-                `;
-                claimsContainer.appendChild(card);
-            });
         }
 
-        // Approve Claim Logic (Changes status to 'approved')
-        async function approveClaim(claimId, email, businessId) {
-            const confirmApproval = confirm(`Are you sure you want to approve ${email}?`);
-            if (!confirmApproval) return;
+        async function approveClaim(claimId, email) {
+            if (!confirm(`Are you sure you want to approve ${email}?`)) return;
 
-            const { error } = await supabase
-                .from('claim_requests')
-                .update({ status: 'approved' })
-                .eq('id', claimId);
+            try {
+                const { error } = await supabaseClient
+                    .from('claim_requests')
+                    .update({ status: 'approved' })
+                    .eq('id', claimId);
 
-            if (error) {
-                alert('Failed to approve claim.');
-                console.error(error);
-            } else {
-                // Here is where we will eventually trigger the logic to create their user account!
-                fetchClaims(); // Refresh the list
+                if (error) throw error;
+                fetchClaims();
+            } catch (err) {
+                alert('Failed to approve claim: ' + err.message);
             }
         }
 
@@ -171,141 +204,3 @@
     </script>
 </body>
 </html>
-
-<!-- Supabase JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script>
-        const errorMsg = document.getElementById('auth-error');
-        
-        try {
-            const SUPABASE_URL = 'https://gnozodfteywsiwcnbwch.supabase.co';
-            const SUPABASE_ANON_KEY = 'sb_publishable_eduvbMySPxHPT0iZjE_LqQ_w6nyjnjY';
-            
-            if (!window.supabase) {
-                throw new Error("Supabase library failed to load. Check your internet connection or adblocker.");
-            }
-
-            const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-            const authSection = document.getElementById('auth-section');
-            const dashboardSection = document.getElementById('dashboard-section');
-            const claimsContainer = document.getElementById('claims-container');
-            const loginBtn = document.getElementById('login-btn');
-
-            // Check active session on load
-            async function checkSession() {
-                try {
-                    const { data: { session }, error } = await supabase.auth.getSession();
-                    if (error) throw error;
-                    if (session) {
-                        authSection.style.display = 'none';
-                        dashboardSection.style.display = 'block';
-                        fetchClaims();
-                    }
-                } catch (err) {
-                    console.warn("Session check failed:", err.message);
-                }
-            }
-
-            // Login Logic
-            loginBtn.addEventListener('click', async () => {
-                try {
-                    loginBtn.textContent = "Logging in...";
-                    loginBtn.disabled = true;
-                    
-                    const email = document.getElementById('admin-email').value;
-                    const password = document.getElementById('admin-password').value;
-                    
-                    if (!email || !password) {
-                        throw new Error("Please enter both email and password.");
-                    }
-
-                    const { error } = await supabase.auth.signInWithPassword({ email, password });
-                    
-                    if (error) {
-                        throw error;
-                    } else {
-                        errorMsg.style.display = 'none';
-                        authSection.style.display = 'none';
-                        dashboardSection.style.display = 'block';
-                        fetchClaims();
-                    }
-                } catch (err) {
-                    errorMsg.textContent = err.message;
-                    errorMsg.style.display = 'block';
-                } finally {
-                    loginBtn.textContent = "Log In";
-                    loginBtn.disabled = false;
-                }
-            });
-
-            // Logout Logic
-            document.getElementById('logout-btn').addEventListener('click', async () => {
-                await supabase.auth.signOut();
-                dashboardSection.style.display = 'none';
-                authSection.style.display = 'flex';
-                document.getElementById('admin-email').value = '';
-                document.getElementById('admin-password').value = '';
-            });
-
-            // Fetch Pending Claims
-            async function fetchClaims() {
-                claimsContainer.innerHTML = '<p>Loading claims...</p>';
-                try {
-                    const { data, error } = await supabase
-                        .from('claim_requests')
-                        .select('*')
-                        .eq('status', 'pending');
-
-                    if (error) throw error;
-
-                    if (data.length === 0) {
-                        claimsContainer.innerHTML = '<p>No pending claims right now.</p>';
-                        return;
-                    }
-
-                    claimsContainer.innerHTML = '';
-                    data.forEach(claim => {
-                        const card = document.createElement('div');
-                        card.className = 'claim-card';
-                        card.innerHTML = `
-                            <div class="claim-details">
-                                <h3>${claim.business_name}</h3>
-                                <p><strong>Requester:</strong> ${claim.requester_name} (${claim.requester_position})</p>
-                                <p><strong>Email:</strong> ${claim.requester_email}</p>
-                                <p><strong>Submitted:</strong> ${new Date(claim.created_at).toLocaleDateString()}</p>
-                            </div>
-                            <button class="btn approve-btn" onclick="approveClaim('${claim.id}', '${claim.requester_email}', '${claim.business_id}')">Approve</button>
-                        `;
-                        claimsContainer.appendChild(card);
-                    });
-                } catch (err) {
-                    claimsContainer.innerHTML = `<p style="color:red;">Error loading claims: ${err.message}</p>`;
-                }
-            }
-
-            // Approve Claim Logic
-            window.approveClaim = async function(claimId, email, businessId) {
-                const confirmApproval = confirm(`Are you sure you want to approve ${email}?`);
-                if (!confirmApproval) return;
-
-                try {
-                    const { error } = await supabase
-                        .from('claim_requests')
-                        .update({ status: 'approved' })
-                        .eq('id', claimId);
-
-                    if (error) throw error;
-                    fetchClaims(); 
-                } catch (err) {
-                    alert('Failed to approve claim: ' + err.message);
-                }
-            }
-
-            checkSession();
-
-        } catch (setupError) {
-            errorMsg.style.display = 'block';
-            errorMsg.textContent = 'Critical Setup Error: ' + setupError.message;
-        }
-    </script>

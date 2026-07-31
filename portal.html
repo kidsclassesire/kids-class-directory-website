@@ -5,21 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Owner Portal</title>
     <style>
-        :root { --primary: #ff385c; --text-dark: #0f172a; --bg-page: #f8fafc; --border: #e2e8f0; }
+        :root { --primary: #ff385c; --text-dark: #0f172a; --bg-page: #f8fafc; --border: #e2e8f0; --text-muted: #64748b; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: var(--bg-page); color: var(--text-dark); margin: 0; padding: 2rem; display: flex; flex-direction: column; align-items: center; }
-        .container { background: #ffffff; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); width: 100%; max-width: 600px; margin-bottom: 2rem; }
+        .container { background: #ffffff; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); width: 100%; max-width: 700px; margin-bottom: 2rem; box-sizing: border-box; }
         h1, h2 { margin-top: 0; }
         .form-group { margin-bottom: 1.25rem; }
         .form-group label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .form-group input, .form-group textarea { width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; box-sizing: border-box; font-family: inherit; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; box-sizing: border-box; font-family: inherit; font-size: 0.95rem; }
         .form-group textarea { resize: vertical; min-height: 100px; }
+        .form-row { display: flex; gap: 1rem; }
+        .form-row .form-group { flex: 1; }
         .btn { background: var(--primary); color: white; border: none; padding: 0.85rem; border-radius: 8px; cursor: pointer; font-weight: 600; width: 100%; font-size: 1rem; }
-        .toggle-text { text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 1rem; cursor: pointer; }
+        .btn-secondary { background: #ffffff; color: var(--text-dark); border: 1px solid var(--border); padding: 0.6rem 1rem; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.85rem; width: auto; }
+        .btn-danger { background: #ffffff; color: #dc2626; border: 1px solid #fecaca; padding: 0.6rem 1rem; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.85rem; width: auto; }
+        .toggle-text { text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem; cursor: pointer; }
         .toggle-text:hover { color: var(--text-dark); text-decoration: underline; }
         .alert { padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; display: none; }
         .alert-error { background: #fee2e2; color: #991b1b; border: 1px solid #f87171; }
         .alert-success { background: #dcfce7; color: #166534; border: 1px solid #4ade80; }
         #dashboard-section { display: none; }
+        fieldset { border: none; padding: 0; margin: 0 0 2rem; }
+        fieldset legend { font-weight: 700; font-size: 1rem; padding: 0 0 0.75rem; border-bottom: 1px solid var(--border); width: 100%; margin-bottom: 1.25rem; }
+        .checkbox-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.5rem; }
+        .checkbox-grid label { display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; font-weight: 500; }
+        .checkbox-grid input { width: auto; }
+        .image-field { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+        .image-preview-box { width: 90px; height: 90px; border-radius: 8px; background: #f1f5f9; border: 1px dashed var(--border); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; }
+        .image-preview-box img { width: 100%; height: 100%; object-fit: cover; }
+        .image-preview-box .empty-label { font-size: 0.7rem; color: var(--text-muted); text-align: center; padding: 0.5rem; }
+        .image-field-actions { display: flex; flex-direction: column; gap: 0.5rem; }
+        .image-field-actions .btn-row { display: flex; gap: 0.5rem; }
+        .image-hint { font-size: 0.75rem; color: var(--text-muted); margin: 0; }
+        .save-bar { position: sticky; bottom: 0; background: #ffffff; padding-top: 1rem; }
     </style>
 </head>
 <body>
@@ -27,8 +44,8 @@
     <!-- Auth Section -->
     <div class="container" id="auth-section">
         <h1 id="auth-title">Owner Sign Up</h1>
-        <p style="color: #64748b; margin-bottom: 2rem;">Sign up using the email address you used to claim your business.</p>
-        
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Sign up using the email address you used to claim your business.</p>
+
         <div class="alert alert-error" id="auth-error"></div>
         <div class="alert alert-success" id="auth-success"></div>
 
@@ -50,41 +67,215 @@
             <h2>Manage Your Listing</h2>
             <button class="btn" id="logout-btn" style="width: auto; background: var(--text-dark); padding: 0.5rem 1rem;">Log Out</button>
         </div>
-        
+
         <div class="alert alert-error" id="dash-error"></div>
         <div class="alert alert-success" id="dash-success"></div>
 
-        <div id="unauthorized-msg" style="display: none; text-align: center; padding: 2rem 0; color: #64748b;">
+        <div id="unauthorized-msg" style="display: none; text-align: center; padding: 2rem 0; color: var(--text-muted);">
             Your account is pending approval by an admin. Check back later.
         </div>
 
         <form id="edit-business-form" style="display: none;">
             <input type="hidden" id="edit-id">
-            <div class="form-group">
-                <label for="edit-name">Business Name</label>
-                <input type="text" id="edit-name" required>
+
+            <fieldset>
+                <legend>Images</legend>
+                <div class="image-field">
+                    <div class="image-preview-box" id="logo-preview-box">
+                        <span class="empty-label">No logo</span>
+                    </div>
+                    <div class="image-field-actions">
+                        <label style="font-size:0.85rem; font-weight:700;">Logo</label>
+                        <p class="image-hint">Shown as a small badge on your card.</p>
+                        <div class="btn-row">
+                            <input type="file" id="logo-file-input" accept="image/*" style="display:none;">
+                            <button type="button" class="btn-secondary" id="logo-upload-btn">Upload</button>
+                            <button type="button" class="btn-danger" id="logo-delete-btn" style="display:none;">Remove</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-field">
+                    <div class="image-preview-box" id="banner-preview-box">
+                        <span class="empty-label">No banner</span>
+                    </div>
+                    <div class="image-field-actions">
+                        <label style="font-size:0.85rem; font-weight:700;">Banner photo</label>
+                        <p class="image-hint">The main image at the top of your card.</p>
+                        <div class="btn-row">
+                            <input type="file" id="banner-file-input" accept="image/*" style="display:none;">
+                            <button type="button" class="btn-secondary" id="banner-upload-btn">Upload</button>
+                            <button type="button" class="btn-danger" id="banner-delete-btn" style="display:none;">Remove</button>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Basic Info</legend>
+                <div class="form-group">
+                    <label for="edit-name">Business Name</label>
+                    <input type="text" id="edit-name" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-category">Category</label>
+                        <input type="text" id="edit-category" placeholder="e.g. Music, Football, Arts and crafts">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-class-types">Class Types</label>
+                        <input type="text" id="edit-class-types" placeholder="Comma-separated, e.g. Ballet, Tap">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="edit-description">Description</label>
+                    <textarea id="edit-description" required></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Ages &amp; Supervision</legend>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-min-age">Minimum Age</label>
+                        <input type="number" id="edit-min-age" step="0.1" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-max-age">Maximum Age</label>
+                        <input type="number" id="edit-max-age" step="0.1" min="0">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-age-display">Age Range (display text)</label>
+                        <input type="text" id="edit-age-display" placeholder="e.g. 3-8 years">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-parental-req">Supervision</label>
+                        <select id="edit-parental-req">
+                            <option value="">Not stated</option>
+                            <option value="Drop-off">Drop-off</option>
+                            <option value="Parent-Accompanied">Parent-Accompanied</option>
+                            <option value="Varies by Age or Class">Varies by Age or Class</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Schedule</legend>
+                <div class="form-group">
+                    <label>Days of the Week</label>
+                    <div class="checkbox-grid" id="days-checkbox-grid">
+                        <label><input type="checkbox" value="Monday"> Monday</label>
+                        <label><input type="checkbox" value="Tuesday"> Tuesday</label>
+                        <label><input type="checkbox" value="Wednesday"> Wednesday</label>
+                        <label><input type="checkbox" value="Thursday"> Thursday</label>
+                        <label><input type="checkbox" value="Friday"> Friday</label>
+                        <label><input type="checkbox" value="Saturday"> Saturday</label>
+                        <label><input type="checkbox" value="Sunday"> Sunday</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-start-time">Start Time</label>
+                        <input type="text" id="edit-start-time" placeholder="e.g. 10:00">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-end-time">End Time</label>
+                        <input type="text" id="edit-end-time" placeholder="e.g. 11:00">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="edit-term-structure">Term Structure</label>
+                    <input type="text" id="edit-term-structure" placeholder="e.g. School-term programme, Drop-in, 6-week term">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Pricing</legend>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-price-amount">Price Amount</label>
+                        <input type="number" id="edit-price-amount" step="0.01" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-price-currency">Currency</label>
+                        <input type="text" id="edit-price-currency" placeholder="EUR">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-pricing-basis">Basis</label>
+                        <input type="text" id="edit-pricing-basis" placeholder="e.g. Per term, Per class">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="edit-pricing-details">Pricing Details</label>
+                    <textarea id="edit-pricing-details" placeholder="Any extra detail on pricing, sibling discounts, etc."></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Contact &amp; Links</legend>
+                <div class="form-group">
+                    <label for="edit-website">Website URL</label>
+                    <input type="url" id="edit-website">
+                </div>
+                <div class="form-group">
+                    <label for="edit-booking-url">Booking URL</label>
+                    <input type="url" id="edit-booking-url">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-email">Contact Email</label>
+                        <input type="email" id="edit-email">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-phone">Phone Number</label>
+                        <input type="text" id="edit-phone">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="edit-address">Address</label>
+                    <input type="text" id="edit-address">
+                </div>
+                <div class="form-group">
+                    <label for="edit-eircode">Eircode</label>
+                    <input type="text" id="edit-eircode">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Facilities</legend>
+                <div class="checkbox-grid" id="facilities-checkbox-grid">
+                    <label><input type="checkbox" value="Indoor Venue"> Indoor Venue</label>
+                    <label><input type="checkbox" value="Outdoor Venue"> Outdoor Venue</label>
+                    <label><input type="checkbox" value="Wheelchair Accessible"> Wheelchair Accessible</label>
+                    <label><input type="checkbox" value="Buggy Accessible"> Buggy Accessible</label>
+                    <label><input type="checkbox" value="Cafe On-site"> Cafe On-site</label>
+                    <label><input type="checkbox" value="Changing Facilities"> Changing Facilities</label>
+                    <label><input type="checkbox" value="Free Parking"> Free Parking</label>
+                    <label><input type="checkbox" value="Paid Parking"> Paid Parking</label>
+                    <label><input type="checkbox" value="Parent Viewing Area"> Parent Viewing Area</label>
+                </div>
+            </fieldset>
+
+            <div class="save-bar">
+                <button type="submit" class="btn" id="save-btn">Save Changes</button>
             </div>
-            <div class="form-group">
-                <label for="edit-description">Description</label>
-                <textarea id="edit-description" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="edit-website">Website URL</label>
-                <input type="url" id="edit-website">
-            </div>
-            <button type="submit" class="btn" id="save-btn">Save Changes</button>
         </form>
     </div>
 
     <!-- Supabase JS -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
-        const SUPABASE_URL = 'https://gnozodfteywsiwcnbwch.supabase.co';
+        const SUPABASE_URL = 'https://gnozodfteywsiwcnbwch.supabaseClient.co';
         const SUPABASE_ANON_KEY = 'sb_publishable_eduvbMySPxHPT0iZjE_LqQ_w6nyjnjY';
-        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        const STORAGE_BUCKET = 'business-uploads';
+        const STORAGE_PUBLIC_PREFIX = `${SUPABASE_URL}/storage/v1/object/public/${STORAGE_BUCKET}/`;
 
         let isSignUp = true;
         let currentUserEmail = '';
+        let currentBusinessId = null;
 
         // UI Elements
         const authSection = document.getElementById('auth-section');
@@ -95,6 +286,17 @@
         const authSuccess = document.getElementById('auth-success');
         const dashError = document.getElementById('dash-error');
         const dashSuccess = document.getElementById('dash-success');
+
+        function showDashError(message) {
+            dashError.textContent = message;
+            dashError.style.display = 'block';
+            dashSuccess.style.display = 'none';
+        }
+        function showDashSuccess(message) {
+            dashSuccess.textContent = message;
+            dashSuccess.style.display = 'block';
+            dashError.style.display = 'none';
+        }
 
         // Toggle Login / Signup
         document.getElementById('toggle-auth').addEventListener('click', () => {
@@ -114,12 +316,12 @@
 
             try {
                 if (isSignUp) {
-                    const { error } = await supabase.auth.signUp({ email, password });
+                    const { error } = await supabaseClient.auth.signUp({ email, password });
                     if (error) throw error;
                     authSuccess.textContent = "Account created! You are now logged in.";
                     authSuccess.style.display = 'block';
                 } else {
-                    const { error } = await supabase.auth.signInWithPassword({ email, password });
+                    const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
                     if (error) throw error;
                 }
                 setTimeout(checkSession, 1000);
@@ -131,7 +333,7 @@
 
         // Logout
         document.getElementById('logout-btn').addEventListener('click', async () => {
-            await supabase.auth.signOut();
+            await supabaseClient.auth.signOut();
             dashboardSection.style.display = 'none';
             authSection.style.display = 'block';
             document.getElementById('owner-email').value = '';
@@ -140,7 +342,7 @@
 
         // Check Session & Fetch Business
         async function checkSession() {
-            const { data: { session } } = await supabase.auth.getSession();
+            const { data: { session } } = await supabaseClient.auth.getSession();
             if (session) {
                 currentUserEmail = session.user.email;
                 authSection.style.display = 'none';
@@ -149,16 +351,39 @@
             }
         }
 
+        function setCheckboxGroup(gridId, values) {
+            const set = new Set((values || []).map(v => v.toLowerCase()));
+            document.querySelectorAll(`#${gridId} input[type="checkbox"]`).forEach(cb => {
+                cb.checked = set.has(cb.value.toLowerCase());
+            });
+        }
+        function getCheckboxGroup(gridId) {
+            return Array.from(document.querySelectorAll(`#${gridId} input[type="checkbox"]:checked`)).map(cb => cb.value);
+        }
+        function csvToArray(str) {
+            return (str || '').split(',').map(s => s.trim()).filter(Boolean);
+        }
+
+        function renderImagePreview(boxId, path, emptyLabel) {
+            const box = document.getElementById(boxId);
+            if (path) {
+                box.innerHTML = `<img src="${path}" alt="" onerror="this.parentElement.innerHTML='<span class=&quot;empty-label&quot;>Image failed to load</span>'">`;
+            } else {
+                box.innerHTML = `<span class="empty-label">${emptyLabel}</span>`;
+            }
+            document.getElementById(boxId === 'logo-preview-box' ? 'logo-delete-btn' : 'banner-delete-btn').style.display = path ? 'inline-block' : 'none';
+        }
+
         // Load Business Details if Approved
         async function loadOwnerBusiness() {
             try {
                 // 1. Check if they have an approved claim
-                const { data: claim, error: claimError } = await supabase
+                const { data: claim, error: claimError } = await supabaseClient
                     .from('claim_requests')
                     .select('business_id')
                     .eq('requester_email', currentUserEmail)
                     .eq('status', 'approved')
-                    .single();
+                    .maybeSingle();
 
                 if (claimError || !claim) {
                     unauthorizedMsg.style.display = 'block';
@@ -167,7 +392,7 @@
                 }
 
                 // 2. Fetch their actual business details
-                const { data: business, error: bizError } = await supabase
+                const { data: business, error: bizError } = await supabaseClient
                     .from('classes')
                     .select('*')
                     .eq('id', claim.business_id)
@@ -175,50 +400,184 @@
 
                 if (bizError) throw bizError;
 
+                currentBusinessId = business.id;
+
                 // Populate Form
                 document.getElementById('edit-id').value = business.id;
                 document.getElementById('edit-name').value = business.company_name || '';
+                document.getElementById('edit-category').value = business.category || '';
+                document.getElementById('edit-class-types').value = (business.class_types || []).join(', ');
                 document.getElementById('edit-description').value = business.description || '';
+                document.getElementById('edit-min-age').value = business.minimum_age ?? '';
+                document.getElementById('edit-max-age').value = business.maximum_age ?? '';
+                document.getElementById('edit-age-display').value = business.age_range_display || '';
+                document.getElementById('edit-parental-req').value = business.parental_requirement || '';
+                setCheckboxGroup('days-checkbox-grid', business.days_of_week);
+                document.getElementById('edit-start-time').value = business.start_time || '';
+                document.getElementById('edit-end-time').value = business.end_time || '';
+                document.getElementById('edit-term-structure').value = business.term_structure || '';
+                document.getElementById('edit-price-amount').value = business.price_amount ?? '';
+                document.getElementById('edit-price-currency').value = business.price_currency || 'EUR';
+                document.getElementById('edit-pricing-basis').value = business.pricing_basis || '';
+                document.getElementById('edit-pricing-details').value = business.pricing_details || '';
                 document.getElementById('edit-website').value = business.website_url || '';
-                
+                document.getElementById('edit-booking-url').value = business.booking_url || '';
+                document.getElementById('edit-email').value = business.email_address || '';
+                document.getElementById('edit-phone').value = business.phone_number || '';
+                document.getElementById('edit-address').value = business.address || '';
+                document.getElementById('edit-eircode').value = business.eircode || '';
+                setCheckboxGroup('facilities-checkbox-grid', business.facilities);
+
+                renderImagePreview('logo-preview-box', business.logo_path, 'No logo');
+                renderImagePreview('banner-preview-box', business.hosted_image_path, 'No banner');
+
                 unauthorizedMsg.style.display = 'none';
                 editForm.style.display = 'block';
 
             } catch (err) {
-                dashError.textContent = "Error loading business details.";
-                dashError.style.display = 'block';
+                showDashError("Error loading business details.");
             }
         }
+
+        // ---- Image upload / delete ----
+
+        async function uploadImage(kind, file) {
+            if (!currentBusinessId) return;
+            if (!file.type.startsWith('image/')) {
+                showDashError('Please choose an image file.');
+                return;
+            }
+            if (file.size > 5 * 1024 * 1024) {
+                showDashError('Image is too large (max 5MB).');
+                return;
+            }
+
+            const btn = document.getElementById(`${kind}-upload-btn`);
+            btn.textContent = 'Uploading...';
+            btn.disabled = true;
+
+            try {
+                const ext = (file.name.split('.').pop() || 'jpg').toLowerCase();
+                const path = `${currentBusinessId}/${kind}.${ext}`;
+
+                // Remove any existing file(s) for this business+kind under a different
+                // extension first, so switching from .png to .jpg doesn't leave an
+                // orphaned old file sitting in storage.
+                const { data: existing } = await supabaseClient.storage.from(STORAGE_BUCKET).list(`${currentBusinessId}`);
+                if (existing && existing.length) {
+                    const stale = existing.filter(f => f.name.startsWith(`${kind}.`)).map(f => `${currentBusinessId}/${f.name}`);
+                    if (stale.length) await supabaseClient.storage.from(STORAGE_BUCKET).remove(stale);
+                }
+
+                const { error: uploadError } = await supabaseClient.storage.from(STORAGE_BUCKET).upload(path, file, { upsert: true });
+                if (uploadError) throw uploadError;
+
+                const { data: urlData } = supabaseClient.storage.from(STORAGE_BUCKET).getPublicUrl(path);
+                const publicUrl = urlData.publicUrl;
+
+                const column = kind === 'logo' ? 'logo_path' : 'hosted_image_path';
+                const { error: dbError } = await supabaseClient.from('classes').update({ [column]: publicUrl }).eq('id', currentBusinessId);
+                if (dbError) throw dbError;
+
+                renderImagePreview(`${kind}-preview-box`, publicUrl, kind === 'logo' ? 'No logo' : 'No banner');
+                showDashSuccess(`${kind === 'logo' ? 'Logo' : 'Banner'} updated.`);
+            } catch (err) {
+                showDashError(`Failed to upload: ${err.message}`);
+            } finally {
+                btn.textContent = 'Upload';
+                btn.disabled = false;
+            }
+        }
+
+        async function deleteImage(kind) {
+            if (!currentBusinessId) return;
+            if (!confirm(`Remove your current ${kind}?`)) return;
+
+            const column = kind === 'logo' ? 'logo_path' : 'hosted_image_path';
+            const currentPath = kind === 'logo'
+                ? document.querySelector('#logo-preview-box img')?.getAttribute('src')
+                : document.querySelector('#banner-preview-box img')?.getAttribute('src');
+
+            try {
+                // Only remove the actual file from storage if it's one we host (owner
+                // upload) -- legacy bulk-imported logos/banners are plain relative paths
+                // to files committed in the repo, sometimes shared across multiple
+                // listings, and are never touched here.
+                if (currentPath && currentPath.startsWith(STORAGE_PUBLIC_PREFIX)) {
+                    const storagePath = currentPath.slice(STORAGE_PUBLIC_PREFIX.length);
+                    await supabaseClient.storage.from(STORAGE_BUCKET).remove([storagePath]);
+                }
+
+                const { error } = await supabaseClient.from('classes').update({ [column]: null }).eq('id', currentBusinessId);
+                if (error) throw error;
+
+                renderImagePreview(`${kind}-preview-box`, null, kind === 'logo' ? 'No logo' : 'No banner');
+                showDashSuccess(`${kind === 'logo' ? 'Logo' : 'Banner'} removed.`);
+            } catch (err) {
+                showDashError(`Failed to remove: ${err.message}`);
+            }
+        }
+
+        document.getElementById('logo-upload-btn').addEventListener('click', () => document.getElementById('logo-file-input').click());
+        document.getElementById('banner-upload-btn').addEventListener('click', () => document.getElementById('banner-file-input').click());
+        document.getElementById('logo-file-input').addEventListener('change', (e) => { if (e.target.files[0]) uploadImage('logo', e.target.files[0]); e.target.value = ''; });
+        document.getElementById('banner-file-input').addEventListener('change', (e) => { if (e.target.files[0]) uploadImage('banner', e.target.files[0]); e.target.value = ''; });
+        document.getElementById('logo-delete-btn').addEventListener('click', () => deleteImage('logo'));
+        document.getElementById('banner-delete-btn').addEventListener('click', () => deleteImage('banner'));
 
         // Handle Form Save
         editForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             dashError.style.display = 'none';
             dashSuccess.style.display = 'none';
-            document.getElementById('save-btn').textContent = "Saving...";
+            const saveBtn = document.getElementById('save-btn');
+            saveBtn.textContent = "Saving...";
+            saveBtn.disabled = true;
 
             const id = document.getElementById('edit-id').value;
+            const numOrNull = (v) => (v === '' ? null : Number(v));
+            const strOrNull = (v) => (v === '' ? null : v);
+
             const updates = {
                 company_name: document.getElementById('edit-name').value,
+                category: strOrNull(document.getElementById('edit-category').value),
+                class_types: csvToArray(document.getElementById('edit-class-types').value),
                 description: document.getElementById('edit-description').value,
-                website_url: document.getElementById('edit-website').value
+                minimum_age: numOrNull(document.getElementById('edit-min-age').value),
+                maximum_age: numOrNull(document.getElementById('edit-max-age').value),
+                age_range_display: strOrNull(document.getElementById('edit-age-display').value),
+                parental_requirement: strOrNull(document.getElementById('edit-parental-req').value),
+                days_of_week: getCheckboxGroup('days-checkbox-grid'),
+                start_time: strOrNull(document.getElementById('edit-start-time').value),
+                end_time: strOrNull(document.getElementById('edit-end-time').value),
+                term_structure: strOrNull(document.getElementById('edit-term-structure').value),
+                price_amount: numOrNull(document.getElementById('edit-price-amount').value),
+                price_currency: strOrNull(document.getElementById('edit-price-currency').value),
+                pricing_basis: strOrNull(document.getElementById('edit-pricing-basis').value),
+                pricing_details: strOrNull(document.getElementById('edit-pricing-details').value),
+                website_url: strOrNull(document.getElementById('edit-website').value),
+                booking_url: strOrNull(document.getElementById('edit-booking-url').value),
+                email_address: strOrNull(document.getElementById('edit-email').value),
+                phone_number: strOrNull(document.getElementById('edit-phone').value),
+                address: strOrNull(document.getElementById('edit-address').value),
+                eircode: strOrNull(document.getElementById('edit-eircode').value),
+                facilities: getCheckboxGroup('facilities-checkbox-grid'),
             };
 
             try {
-                const { error } = await supabase
+                const { error } = await supabaseClient
                     .from('classes')
                     .update(updates)
                     .eq('id', id);
 
                 if (error) throw error;
-                
-                dashSuccess.textContent = "Your listing has been updated successfully on the main directory!";
-                dashSuccess.style.display = 'block';
+
+                showDashSuccess("Your listing has been updated successfully on the main directory!");
             } catch (err) {
-                dashError.textContent = "Failed to update: " + err.message;
-                dashError.style.display = 'block';
+                showDashError("Failed to update: " + err.message);
             } finally {
-                document.getElementById('save-btn').textContent = "Save Changes";
+                saveBtn.textContent = "Save Changes";
+                saveBtn.disabled = false;
             }
         });
 
