@@ -158,6 +158,22 @@
         }
         .favorite-btn:hover { transform: scale(1.08); }
         .favorite-btn.active { color: var(--primary); }
+
+        /* Star ratings */
+        .rating-summary { display: flex; align-items: center; gap: 6px; margin-bottom: 0.5rem; }
+        .rating-summary .star-icon { width: 15px; height: 15px; color: #cbd5e1; }
+        .rating-summary .star-icon.filled { color: #f59e0b; }
+        .rating-summary .rating-text { font-size: 0.8rem; color: var(--text-muted); font-weight: 600; }
+
+        .rate-row { display: flex; align-items: center; gap: 8px; margin-bottom: 0.75rem; }
+        .rate-row .rate-label { font-size: 0.75rem; color: var(--text-muted); }
+        .star-input { display: flex; flex-direction: row-reverse; justify-content: flex-end; gap: 2px; }
+        .star-input input { position: absolute; opacity: 0; width: 0; height: 0; }
+        .star-input label { cursor: pointer; display: flex; }
+        .star-input label .star-icon { width: 18px; height: 18px; color: #cbd5e1; transition: color 0.15s; }
+        .star-input label:hover .star-icon,
+        .star-input label:hover ~ label .star-icon,
+        .star-input input:checked ~ label .star-icon { color: #f59e0b; }
         
         .description {
             font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem;
@@ -372,6 +388,9 @@
     <script>
         window.SUPABASE_URL = window.SUPABASE_URL || 'https://gnozodfteywsiwcnbwch.supabase.co';
         window.SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'sb_publishable_eduvbMySPxHPT0iZjE_LqQ_w6nyjnjY';
+        // Single shared client -- creating multiple instances triggers a "Multiple GoTrueClient
+        // instances" warning and duplicate auth listeners for no benefit.
+        window.supabaseClient = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
     </script>
     
     <script>
@@ -450,6 +469,74 @@
 
         updateFavoritesToggleLabel();
 
+        // --- Star Ratings (1-5, no login required) ---
+        // ratingsByClassId: class id -> { sum, count } aggregated from all voters.
+        // myRatingsByClassId: class id -> this browser's own rating (1-5), so the
+        // star input can show what you already picked.
+        let ratingsByClassId = new Map();
+        let myRatingsByClassId = new Map();
+        let ratingsLoaded = false;
+
+        function getOrCreateVoterId() {
+            let voterId = localStorage.getItem('voterId');
+            if (!voterId) {
+                voterId = (crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2)}`);
+                localStorage.setItem('voterId', voterId);
+            }
+            return voterId;
+        }
+        const voterId = getOrCreateVoterId();
+
+        async function loadRatings() {
+            if (!window.supabase || !window.SUPABASE_URL || !window.SUPABASE_ANON_KEY) return;
+            try {
+                const supabase = window.supabaseClient;
+                const { data, error } = await supabase.from('class_ratings').select('class_id, voter_id, rating');
+                if (error) throw error;
+                ratingsByClassId = new Map();
+                myRatingsByClassId = new Map();
+                (data || []).forEach(r => {
+                    const agg = ratingsByClassId.get(r.class_id) || { sum: 0, count: 0 };
+                    agg.sum += r.rating;
+                    agg.count += 1;
+                    ratingsByClassId.set(r.class_id, agg);
+                    if (r.voter_id === voterId) myRatingsByClassId.set(r.class_id, r.rating);
+                });
+            } catch (err) {
+                // Table may not exist yet (migration not run) -- ratings are an enhancement,
+                // not core functionality, so fail quietly and just show no ratings.
+                console.warn('Ratings unavailable:', err.message || err);
+            } finally {
+                ratingsLoaded = true;
+            }
+        }
+
+        async function submitRating(classId, rating) {
+            const agg = ratingsByClassId.get(classId) || { sum: 0, count: 0 };
+            const previousMine = myRatingsByClassId.get(classId);
+
+            // Optimistic update so the average reflects the vote immediately.
+            if (previousMine !== undefined) {
+                agg.sum += (rating - previousMine);
+            } else {
+                agg.sum += rating;
+                agg.count += 1;
+            }
+            ratingsByClassId.set(classId, agg);
+            myRatingsByClassId.set(classId, rating);
+            renderPage();
+
+            try {
+                const supabase = window.supabaseClient;
+                const { error } = await supabase.from('class_ratings')
+                    .upsert({ class_id: classId, voter_id: voterId, rating, updated_at: new Date().toISOString() },
+                        { onConflict: 'class_id,voter_id' });
+                if (error) throw error;
+            } catch (err) {
+                console.warn('Could not save rating:', err.message || err);
+            }
+        }
+
         // Ireland bounding box, used to reject wrong-country geocoding matches
         const IE_BOUNDS = { latMin: 51.0, latMax: 55.5, lonMin: -10.5, lonMax: -5.0 };
 
@@ -519,7 +606,7 @@
         async function loadClasses() {
             try {
                 if (window.SUPABASE_ANON_KEY && window.SUPABASE_URL) {
-                    const supabase = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
+                    const supabase = window.supabaseClient;
                     const { data, error } = await supabase.from('classes').select('*');
                     if (!error && data) {
                         classesData = data;
@@ -682,6 +769,36 @@
                 ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg>'
                 : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg>';
 
+            const starPath = 'M12 2l2.9 6.9 7.5.6-5.7 5 1.7 7.3L12 17.8 5.6 21.8l1.7-7.3-5.7-5 7.5-.6z';
+            const starIcon = (filled) => `<svg class="star-icon${filled ? ' filled' : ''}" viewBox="0 0 24 24" fill="currentColor"><path d="${starPath}"/></svg>`;
+            const starIconPlain = `<svg class="star-icon" viewBox="0 0 24 24" fill="currentColor"><path d="${starPath}"/></svg>`;
+
+            function ratingSectionHtml(item) {
+                if (item.id == null) return ''; // Ratings need a real DB id to attach to
+                const agg = ratingsByClassId.get(item.id);
+                const avg = agg && agg.count ? agg.sum / agg.count : 0;
+                const roundedAvg = Math.round(avg);
+                const summaryStars = [1, 2, 3, 4, 5].map(n => starIcon(n <= roundedAvg)).join('');
+                const summaryText = agg && agg.count
+                    ? `${avg.toFixed(1)} (${agg.count} rating${agg.count === 1 ? '' : 's'})`
+                    : (ratingsLoaded ? 'No ratings yet' : '');
+
+                const myRating = myRatingsByClassId.get(item.id);
+                const groupName = `rate-${item.id}`;
+                const starInputs = [5, 4, 3, 2, 1].map(n => `
+                    <input type="radio" name="${groupName}" id="${groupName}-${n}" value="${n}" data-class-id="${item.id}" ${myRating === n ? 'checked' : ''}>
+                    <label for="${groupName}-${n}" title="${n} star${n === 1 ? '' : 's'}">${starIconPlain}</label>
+                `).join('');
+
+                return `
+                    <div class="rating-summary">${summaryStars}<span class="rating-text">${summaryText}</span></div>
+                    <div class="rate-row">
+                        <span class="rate-label">${myRating ? 'Your rating:' : 'Rate this:'}</span>
+                        <div class="star-input">${starInputs}</div>
+                    </div>
+                `;
+            }
+
             data.forEach((item, localIndex) => {
                 const card = document.createElement('div');
                 card.className = 'class-card';
@@ -706,6 +823,7 @@
                         <p class="description">
                             ${item.description || 'No description available.'}
                         </p>
+                        ${ratingSectionHtml(item)}
                         <div class="meta-info">
                             <strong>Where:</strong> ${item.address || 'Contact for details'}<br>
                         </div>
@@ -810,6 +928,14 @@
         claimModal.addEventListener('click', (e) => { if (e.target === claimModal) claimModal.classList.remove('active'); });
 
         // Open modal via Event Delegation (handles dynamic buttons)
+        document.getElementById('directory-container').addEventListener('change', (e) => {
+            if (e.target.matches('.star-input input[type="radio"]')) {
+                const classId = parseInt(e.target.dataset.classId, 10);
+                const rating = parseInt(e.target.value, 10);
+                submitRating(classId, rating);
+            }
+        });
+
         document.getElementById('directory-container').addEventListener('click', (e) => {
             const favBtn = e.target.closest('.favorite-btn');
             if (favBtn) {
@@ -849,7 +975,7 @@
 
             try {
                 if (window.supabase) {
-                    const supabase = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
+                    const supabase = window.supabaseClient;
                     // Insert into the claim_requests table
                     const { error } = await supabase.from('claim_requests').insert([requestData]);
                     if (error) throw error;
@@ -870,7 +996,7 @@
         });
 
         // Load Initial Data
-        loadClasses().then(() => {
+        Promise.all([loadClasses(), loadRatings()]).then(() => {
             populateCategoryFilter();
             const params = new URLSearchParams(window.location.search);
             if (Array.from(params.keys()).length > 0) {
