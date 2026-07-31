@@ -7,7 +7,9 @@
     
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
-    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+
     <style>
         :root {
             --primary: #ff385c;
@@ -85,6 +87,7 @@
             background-color: var(--primary); color: white; border: none; border-radius: 50%;
             width: 54px; height: 54px; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0;
         }
+        .search-btn svg { width: 22px; height: 22px; }
         .near-me-btn {
             background: none; border: none; cursor: pointer; color: #94a3b8; padding: 4px;
             display: flex; align-items: center; justify-content: center; transition: color 0.2s;
@@ -177,9 +180,34 @@
 
         /* Responsive */
         @media (max-width: 968px) {
-            #main-content.visible { flex-direction: column-reverse; }
-            .results-column { width: 100%; }
-            .map-column { width: 100%; height: 400px; position: relative; top: 0; }
+            /* Show the results list before the map — parents scan classes first,
+               the map is a secondary reference, not the primary task on a small screen. */
+            #main-content.visible { flex-direction: column; }
+            .results-column { width: 100%; padding: 1.25rem; }
+            .map-column { width: 100%; height: 280px; position: relative; top: 0; }
+
+            /* Filter pills: one scrollable row instead of wrapping into a tall stack
+               that pushes results far down the page. */
+            .filter-bar {
+                flex-wrap: nowrap; overflow-x: auto; margin: 0 -1.25rem 1.5rem; padding: 0 1.25rem 1rem;
+                -webkit-overflow-scrolling: touch; scrollbar-width: none;
+            }
+            .filter-bar::-webkit-scrollbar { display: none; }
+            .filter-select, .toggle-label { flex-shrink: 0; }
+        }
+
+        @media (max-width: 640px) {
+            .hero-text h1 { font-size: 2rem; }
+            .hero-text p { font-size: 1rem; }
+            .hero-initial { padding-bottom: 4vh; }
+
+            /* Stack the search bar: Activity, then Where (+ near-me), then a full-width
+               search button — the single-row layout doesn't fit a phone viewport and was
+               pushing the search button off-screen entirely. */
+            .search-bar { flex-wrap: wrap; border-radius: 24px; padding: 16px; gap: 12px; }
+            .search-input-group { flex: 1 1 100%; padding-right: 0; }
+            .search-divider { display: none; }
+            .search-btn { width: 100%; border-radius: 12px; order: 3; }
         }
 
         /* Modal Styles */
@@ -338,6 +366,7 @@
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <!-- Supabase JS -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
@@ -381,7 +410,7 @@
         let isGeocoding = false;
 
         let map;
-        let mapMarkers = [];
+        let markerClusterGroup = null;
 
         let userLat = null;
         let userLon = null;
@@ -509,9 +538,13 @@
         }
 
         function updateMap() {
-            mapMarkers.forEach(marker => map.removeLayer(marker));
-            mapMarkers = [];
-            const markerGroup = L.featureGroup().addTo(map);
+            if (markerClusterGroup) {
+                map.removeLayer(markerClusterGroup);
+            }
+            // Nearby pins collapse into a single numbered cluster until zoomed in --
+            // with 500+ results (Ireland-wide) showing every pin individually made the
+            // map an unreadable wall of overlapping markers.
+            markerClusterGroup = L.markerClusterGroup({ maxClusterRadius: 50 });
 
             filteredData.forEach((item, index) => {
                 const lat = item.latitude;
@@ -520,7 +553,7 @@
 
                 const marker = L.marker([lat, lng]);
                 marker.bindPopup(`<b>${item.company_name}</b><br>${item.category || 'Class'}`);
-                
+
                 marker.on('click', () => {
                     const pageNum = Math.floor(index / pageSize) + 1;
                     if (currentPage !== pageNum) {
@@ -531,16 +564,16 @@
                     if (card) {
                         card.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         card.style.borderColor = 'var(--primary)';
-                        setTimeout(() => card.style.borderColor = 'var(--border)', 2000); 
+                        setTimeout(() => card.style.borderColor = 'var(--border)', 2000);
                     }
                 });
 
-                marker.addTo(markerGroup);
-                mapMarkers.push(marker);
+                markerClusterGroup.addLayer(marker);
             });
 
-            if (mapMarkers.length > 0) {
-                map.fitBounds(markerGroup.getBounds(), { padding: [30, 30] });
+            map.addLayer(markerClusterGroup);
+            if (markerClusterGroup.getLayers().length > 0) {
+                map.fitBounds(markerClusterGroup.getBounds(), { padding: [30, 30] });
             }
         }
 
