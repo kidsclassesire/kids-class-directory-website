@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="360">
+	<clipPath id="pennant">
+		<path d="M 0,0 V 360 L 600,180 z"/>
+	</clipPath>
+	<path d="M 0,0 V 360 L 600,180 z" fill="#fff"/>
+	<path d="M 0,0 V 180 H 200 V 60 z M 600,180 H 200 V 300 z" fill="#009"/>
+	<path d="M 200,0 V 360 M 0,180 H 600" clip-path="url(#pennant)" stroke="#f00" stroke-width="60"/>
+</svg>
