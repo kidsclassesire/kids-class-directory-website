@@ -257,6 +257,19 @@
                     <input type="checkbox" id="dropoff-filter">
                     Drop-off Allowed
                 </label>
+
+                <select id="radius-filter" class="filter-select" title="Set a location above to use this">
+                    <option value="">Any Distance</option>
+                    <option value="5">Within 5 km</option>
+                    <option value="10">Within 10 km</option>
+                    <option value="20">Within 20 km</option>
+                    <option value="50">Within 50 km</option>
+                </select>
+
+                <select id="sort-select" class="filter-select" title="Set a location above to sort by distance">
+                    <option value="relevance">Sort: Relevance</option>
+                    <option value="distance">Sort: Nearest First</option>
+                </select>
             </div>
 
             <div id="result-meta"><span id="result-count">Loading classes...</span></div>
@@ -331,19 +344,23 @@
         const ageFilter = document.getElementById('age-filter');
         const dayFilter = document.getElementById('day-filter');
         const dropoffFilter = document.getElementById('dropoff-filter');
-        
+        const radiusFilter = document.getElementById('radius-filter');
+        const sortSelect = document.getElementById('sort-select');
+
         const heroSection = document.getElementById('hero');
         const mainContent = document.getElementById('main-content');
-        
+
         let classesData = [];
         let filteredData = [];
-        const pageSize = 12; 
+        const pageSize = 12;
         let currentPage = 1;
         let hasTriggeredSearch = false;
-        
+        let lastGeocodedQuery = null;
+        let isGeocoding = false;
+
         let map;
         let mapMarkers = [];
-        
+
         let userLat = null;
         let userLon = null;
 
@@ -357,10 +374,61 @@
             return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
         }
 
+        // Ireland bounding box, used to reject wrong-country geocoding matches
+        const IE_BOUNDS = { latMin: 51.0, latMax: 55.5, lonMin: -10.5, lonMax: -5.0 };
+
+        async function geocodeLocation(query) {
+            const hasIreland = /dublin|ireland/i.test(query);
+            const q = hasIreland ? query : `${query}, Co. Dublin, Ireland`;
+            try {
+                const url = `https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=ie&q=${encodeURIComponent(q)}`;
+                const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
+                if (!res.ok) return null;
+                const results = await res.json();
+                if (!results.length) return null;
+                const lat = parseFloat(results[0].lat);
+                const lon = parseFloat(results[0].lon);
+                if (lat < IE_BOUNDS.latMin || lat > IE_BOUNDS.latMax || lon < IE_BOUNDS.lonMin || lon > IE_BOUNDS.lonMax) {
+                    return null;
+                }
+                return { lat, lon };
+            } catch (err) {
+                console.warn('Geocoding failed:', err);
+                return null;
+            }
+        }
+
+        const CATEGORY_GROUPS = [
+            ['Sports & Fitness', ['Athletics', 'Basketball', 'Football', 'GAA', 'Gymnastics', 'Hockey',
+                'Horse Riding', 'Martial Arts', 'Rugby', 'Sports', 'Swimming', 'Team Sports', 'Tennis', 'Watersports']],
+            ['Arts, Music & Drama', ['Arts and crafts', 'Cooking', 'Dance', 'Drama', 'Music']],
+            ['Baby & Toddler', ['Developmental', 'Parent-and-toddler']],
+            ['Academic & STEM', ['Academic Support', 'Languages', 'STEM']],
+            ['Camps & Outdoor', ['Camps', 'Outdoor']],
+        ];
+
         function populateCategoryFilter() {
-            const categories = [...new Set(classesData.map(item => item.category).filter(Boolean))].sort();
-            categoryFilter.innerHTML = '<option value="">Any Category</option>' +
-                categories.map(cat => `<option value="${escapeHtml(cat)}">${escapeHtml(cat)}</option>`).join('');
+            const present = new Set(classesData.map(item => item.category).filter(Boolean));
+            let html = '<option value="">Any Category</option>';
+            const grouped = new Set();
+
+            CATEGORY_GROUPS.forEach(([groupLabel, members]) => {
+                const inGroup = members.filter(c => present.has(c)).sort();
+                if (!inGroup.length) return;
+                inGroup.forEach(c => grouped.add(c));
+                html += `<optgroup label="${escapeHtml(groupLabel)}">` +
+                    inGroup.map(c => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('') +
+                    '</optgroup>';
+            });
+
+            const leftover = [...present].filter(c => !grouped.has(c)).sort();
+            if (leftover.length) {
+                html += '<optgroup label="Other">' +
+                    leftover.map(c => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('') +
+                    '</optgroup>';
+            }
+
+            categoryFilter.innerHTML = html;
         }
 
         function initMap() {
@@ -436,20 +504,32 @@
             const ageBracket = ageFilter.value;
             const dayBracket = dayFilter.value;
             const needsDropoff = dropoffFilter.checked;
+            const radiusKm = radiusFilter.value ? parseFloat(radiusFilter.value) : null;
+            const hasOrigin = userLat !== null && userLon !== null;
 
             filteredData = classesData.filter(item => {
                 const textMatch = q === '' || [item.company_name, item.category, item.description].some(v => v && v.toString().toLowerCase().includes(q));
-                
+
+                // Compute distance from the active search origin (geolocation or a geocoded
+                // typed location) whenever both are available, for display/sort purposes.
+                item._distanceKm = (hasOrigin && item.latitude && item.longitude)
+                    ? getDistance(userLat, userLon, item.latitude, item.longitude)
+                    : undefined;
+
                 let locMatch = true;
-                if (userLat !== null && userLon !== null && locationInput.value === 'Current Location') {
-                    // Without verified coordinates we can't compute a real distance, so don't
-                    // exclude the item based on a fabricated fallback location.
-                    locMatch = !item.latitude || !item.longitude ||
-                        getDistance(userLat, userLon, item.latitude, item.longitude) <= 20;
+                if (hasOrigin) {
+                    if (radiusKm !== null) {
+                        // An explicit radius was requested: items without coordinates can't be
+                        // verified as within range, so they're excluded rather than assumed-ok.
+                        locMatch = item._distanceKm !== undefined && item._distanceKm <= radiusKm;
+                    } else {
+                        // No radius set: don't exclude on distance, just use it for sort/display.
+                        locMatch = true;
+                    }
                 } else {
                     locMatch = l === '' || [item.address, item.eircode].some(v => v && v.toString().toLowerCase().includes(l));
                 }
-                
+
                 const catMatch = cat === '' || (item.category && item.category === cat);
                 const dropoffMatch = !needsDropoff || (item.parental_requirement === 'Drop-off');
 
@@ -465,7 +545,7 @@
 
                 let dayMatch = true;
                 if (dayBracket !== '') {
-                    const days = item.days_of_week || ''; 
+                    const days = item.days_of_week || '';
                     if (dayBracket === 'weekend') {
                         dayMatch = days.toLowerCase().includes('saturday') || days.toLowerCase().includes('sunday');
                     } else if (dayBracket === 'weekday') {
@@ -476,19 +556,33 @@
                 return textMatch && locMatch && catMatch && dropoffMatch && ageMatch && dayMatch;
             });
 
+            if (sortSelect.value === 'distance' && hasOrigin) {
+                filteredData.sort((a, b) => {
+                    const da = a._distanceKm !== undefined ? a._distanceKm : Infinity;
+                    const db = b._distanceKm !== undefined ? b._distanceKm : Infinity;
+                    return da - db;
+                });
+            }
+
             currentPage = 1;
-            document.getElementById('result-count').textContent = `${filteredData.length} classes found`;
+            let countMsg = `${filteredData.length} classes found`;
+            if (l && !hasOrigin && lastGeocodedQuery === l) {
+                countMsg += ` — couldn't pinpoint "${locationInput.value}", showing text matches instead`;
+            }
+            document.getElementById('result-count').textContent = countMsg;
             renderPage();
-            
+
             setTimeout(() => { if (map) { map.invalidateSize(); updateMap(); } }, 100);
 
             const params = new URLSearchParams();
             if (q) params.set('q', q);
-            if (locationInput.value && !userLat) params.set('loc', locationInput.value); 
+            if (locationInput.value) params.set('loc', locationInput.value);
             if (cat) params.set('cat', cat);
             if (ageBracket) params.set('age', ageBracket);
             if (dayBracket) params.set('day', dayBracket);
             if (needsDropoff) params.set('dropoff', 'true');
+            if (radiusKm) params.set('radius', radiusKm);
+            if (sortSelect.value !== 'relevance') params.set('sort', sortSelect.value);
             window.history.pushState(null, '', '?' + params.toString());
         }
 
@@ -520,6 +614,7 @@
                         </p>
                         <div class="meta-info">
                             <strong>Where:</strong> ${item.address || 'Contact for details'}<br>
+                            ${item._distanceKm !== undefined ? `<strong>Distance:</strong> ${item._distanceKm.toFixed(1)} km away<br>` : ''}
                         </div>
                         <a href="${item.website_url || '#'}" target="_blank" class="button">Visit Website</a>
                         <button class="claim-btn" data-id="${item.id || item.company_name}" data-name="${escapeHtml(item.company_name)}">Claim this business</button>
@@ -549,7 +644,7 @@
             renderPagination();
         }
 
-        function executeInitialSearch() {
+        async function performSearch() {
             if (!hasTriggeredSearch) {
                 hasTriggeredSearch = true;
                 heroSection.classList.remove('hero-initial');
@@ -557,17 +652,32 @@
                 mainContent.classList.add('visible');
                 initMap();
             }
+
+            const locText = locationInput.value.trim().toLowerCase();
+            if (locText && locText !== 'current location' && locText !== lastGeocodedQuery && !isGeocoding) {
+                isGeocoding = true;
+                const originalPlaceholder = searchBtn.style.opacity;
+                searchBtn.style.opacity = '0.6';
+                const coords = await geocodeLocation(locationInput.value.trim());
+                lastGeocodedQuery = locText;
+                userLat = coords ? coords.lat : null;
+                userLon = coords ? coords.lon : null;
+                searchBtn.style.opacity = originalPlaceholder || '1';
+                isGeocoding = false;
+            }
+
             filterClasses();
         }
 
         nearMeBtn.addEventListener('click', () => {
             if (navigator.geolocation) {
-                nearMeBtn.style.color = 'var(--primary)'; 
+                nearMeBtn.style.color = 'var(--primary)';
                 navigator.geolocation.getCurrentPosition(pos => {
                     userLat = pos.coords.latitude;
                     userLon = pos.coords.longitude;
                     locationInput.value = 'Current Location';
-                    executeInitialSearch();
+                    lastGeocodedQuery = 'current location';
+                    performSearch();
                 }, () => {
                     alert("Location access denied or unavailable.");
                     nearMeBtn.style.color = '#94a3b8';
@@ -580,17 +690,20 @@
         locationInput.addEventListener('input', () => {
             userLat = null;
             userLon = null;
+            lastGeocodedQuery = null;
             nearMeBtn.style.color = '#94a3b8';
         });
 
-        searchBtn.addEventListener('click', executeInitialSearch);
-        searchInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') executeInitialSearch(); });
-        locationInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') executeInitialSearch(); });
+        searchBtn.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') performSearch(); });
+        locationInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') performSearch(); });
 
         categoryFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
         ageFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
         dayFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
         dropoffFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
+        radiusFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
+        sortSelect.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
 
         // --- Claim Business Logic ---
         const claimModal = document.getElementById('claim-modal');
@@ -668,7 +781,9 @@
                 if(params.has('age')) ageFilter.value = params.get('age');
                 if(params.has('day')) dayFilter.value = params.get('day');
                 if(params.get('dropoff') === 'true') dropoffFilter.checked = true;
-                executeInitialSearch();
+                if(params.has('radius')) radiusFilter.value = params.get('radius');
+                if(params.has('sort')) sortSelect.value = params.get('sort');
+                performSearch();
             }
         });
     </script>
