@@ -1050,9 +1050,11 @@
                 claimModal.classList.add('active');
                 return;
             }
-            // Visit Website / booking links and the star rating widget have their own
-            // behavior -- clicking them should not also expand/collapse the card.
-            if (e.target.closest('a, .star-input')) {
+            // Visit Website / booking links and the whole ratings area (the read-only
+            // average display, the "Rate this:" label, and the star input itself) have
+            // their own behavior -- clicking any of them should not also expand/collapse
+            // the card.
+            if (e.target.closest('a, .rating-summary, .rate-row')) {
                 return;
             }
             const card = e.target.closest('.class-card');
