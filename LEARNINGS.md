@@ -57,6 +57,8 @@ Built `scripts/classify_candidates.py` to fix this: keyword-based category class
 
 **`downloads/all_normalized_candidates.json`, `deduped_candidates.*`, and `scripts/dedup_import.py` are superseded for actual import purposes** — they still exist on disk but reflect the pre-cleanup, unfiltered merge. Use `cleaned_new_candidates.json` instead. Nothing from this merge has been written to the live database yet.
 
+**Update 2026-07-31, after the merge landed:** cleaned up `downloads/` to hold only `classes_in_database.json` — a fresh export of the *entire* live `classes` table (554 rows), pulled directly from Supabase rather than assembled from local files, so it's guaranteed accurate. Removed the raw scrapes (`dostuff_providers_ireland.csv`, `dublincitymum_listings.csv`, `totsspots_listings.csv`, `south_dublin_kids_activities_MASTER.json`), the superseded intermediate outputs (`all_normalized_candidates.*`, `deduped_candidates.*`), and the now-redundant partial exports (`cleaned_new_candidates.json`, `insert_ready.json` — both only held the 487 *new* rows, not the full 554). All of this is still recoverable from git history if ever needed. Note: `scripts/dedup_import.py` and `scripts/classify_candidates.py` reference some of these now-deleted input files by path — they're historical record of *how* the merge was done, not meant to be re-run as-is.
+
 ### Geocoding the new candidates (2026-07-31)
 
 Ran `scripts/geocode_new_candidates.py` (same Nominatim approach as before — bounds-check, drop-venue-name fallback, no eircode lookups) against the 149 candidate rows that had an address but no coordinates. Result: 92/117 unique addresses resolved; `cleaned_new_candidates.json` now has coordinates on 432/516 rows.
