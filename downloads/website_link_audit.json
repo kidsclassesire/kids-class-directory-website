@@ -1,16 +1,17 @@
 {
-  "checked": 906,
+  "checked_at": "2026-07-31T19:58:42.224757+00:00",
+  "checked": 908,
   "dead": [
-    {
-      "url": "http://swwfrc.ie/family-supports-swwfrc/the-parent-and-toddler-group/",
-      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1082)>",
-      "status": null,
-      "working_alternate": null
-    },
     {
       "url": "http://clannrescentre.com/activities/children-activities/corrib-baby-and-toddler/",
       "error": "HTTP Error 400: Bad Request",
       "status": 400,
+      "working_alternate": null
+    },
+    {
+      "url": "http://swwfrc.ie/family-supports-swwfrc/the-parent-and-toddler-group/",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1082)>",
+      "status": null,
       "working_alternate": null
     },
     {
@@ -42,18 +43,6 @@
       "error": "HTTP Error 403: Forbidden",
       "status": 403,
       "working_alternate": null
-    },
-    {
-      "url": "https://beeutifulminds.ie",
-      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1082)>",
-      "status": null,
-      "working_alternate": "https://www.beeutifulminds.ie/"
-    },
-    {
-      "url": "https://buytickets.at/bumpsbainne/2252232",
-      "error": "HTTP Error 403: Forbidden",
-      "status": 403,
-      "working_alternate": "http://buytickets.at/bumpsbainne/2252232"
     },
     {
       "url": "https://clonmelcommunitymother.ie/mother-baby-parent-toddler/",
@@ -92,22 +81,16 @@
       "working_alternate": null
     },
     {
-      "url": "https://droicheadfrc.ie/",
-      "error": "HTTP Error 503: Service Temporarily Unavailable",
-      "status": 503,
-      "working_alternate": null
-    },
-    {
       "url": "https://facebook.com/killinardenFRC",
       "error": "HTTP Error 400: Bad Request",
       "status": 400,
       "working_alternate": null
     },
     {
-      "url": "https://galway.spydus.ie./cgi-bin/spydus.exe/MSGTRN/WPAC/HOME",
-      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'galway.spydus.ie.'. (_ssl.c:1082)>",
-      "status": null,
-      "working_alternate": "http://galway.spydus.ie./cgi-bin/spydus.exe/MSGTRN/WPAC/HOME"
+      "url": "https://droicheadfrc.ie/",
+      "error": "HTTP Error 503: Service Temporarily Unavailable",
+      "status": 503,
+      "working_alternate": null
     },
     {
       "url": "https://firstswim.ie/contact-us/",
@@ -116,21 +99,9 @@
       "working_alternate": null
     },
     {
-      "url": "https://ie.miniathletics.com",
-      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'ie.miniathletics.com'. (_ssl.c:1082)>",
-      "status": null,
-      "working_alternate": "http://ie.miniathletics.com/"
-    },
-    {
       "url": "https://knockanrawley.ie/community-programme/",
       "error": "HTTP Error 500: Internal Server Error",
       "status": 500,
-      "working_alternate": null
-    },
-    {
-      "url": "https://balcultrystables.ie/",
-      "error": "The read operation timed out",
-      "status": null,
       "working_alternate": null
     },
     {
@@ -138,12 +109,6 @@
       "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
       "status": null,
       "working_alternate": null
-    },
-    {
-      "url": "https://stagekidzacademy.com",
-      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
-      "status": null,
-      "working_alternate": "https://stagekidzacademy.ie/"
     },
     {
       "url": "https://raphoefrc.ie/little-smiles-with-big-dreams-toddler-group-2",
@@ -164,136 +129,1090 @@
       "working_alternate": null
     },
     {
-      "url": "https://courses.inss.ie/contact-us/",
-      "error": "The read operation timed out",
-      "status": null,
-      "working_alternate": "http://courses.inss.ie/contact-us/"
-    },
-    {
       "url": "https://stkevinsfrc.ie/support/parent-toddler-group/",
       "error": "HTTP Error 500: Internal Server Error",
       "status": 500,
       "working_alternate": null
     },
     {
-      "url": "https://gyng.ie/wp/yolos/parent-and-toddler/",
-      "error": "The read operation timed out",
-      "status": null,
-      "working_alternate": "https://gyng.com/wp/yolos/parent-and-toddler/"
+      "url": "https://totsspots.com/listing/baby-massage-sinead-grace/",
+      "error": "HTTP Error 429: Too Many Requests",
+      "status": 429,
+      "working_alternate": "https://www.totsspots.com/listing/baby-massage-sinead-grace/"
     },
     {
-      "url": "https://kylejamesriley.com/",
-      "error": "The read operation timed out",
-      "status": null,
-      "working_alternate": "http://kylejamesriley.com/"
+      "url": "https://totsspots.com/listing/babymassagewithorla/",
+      "error": "HTTP Error 429: Too Many Requests",
+      "status": 429,
+      "working_alternate": "https://www.totsspots.com/listing/babymassagewithorla/"
     },
     {
-      "url": "https://mfrc.ie/",
-      "error": "The read operation timed out",
-      "status": null,
-      "working_alternate": "https://mfrc.com/"
+      "url": "https://totsspots.com/listing/clooneen-manorhamilton-parent-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/clooneen-manorhamilton-parent-toddler-group/"
     },
     {
-      "url": "https://totsspots.com/listing/ballyhea-parent-baby-toddler-group/",
-      "error": "The read operation timed out",
-      "status": null,
-      "working_alternate": "https://www.totsspots.com/listing/ballyhea-parent-baby-toddler-group/"
+      "url": "https://totsspots.com/listing/cork-libraries-toddler-time/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/cork-libraries-toddler-time/"
     },
     {
-      "url": "https://totsspots.com/listing/carrigaline-parent-toddler-group/",
-      "error": "The read operation timed out",
-      "status": null,
-      "working_alternate": "https://www.totsspots.com/listing/carrigaline-parent-toddler-group/"
+      "url": "https://totsspots.com/listing/belturbet-parent-toddler-baby-group/",
+      "error": "HTTP Error 429: Too Many Requests",
+      "status": 429,
+      "working_alternate": "https://www.totsspots.com/listing/belturbet-parent-toddler-baby-group/"
     },
     {
-      "url": "https://totsspots.com/listing/clondalkin-parent-baby-toddler-group/",
-      "error": "The read operation timed out",
-      "status": null,
-      "working_alternate": "https://www.totsspots.com/listing/clondalkin-parent-baby-toddler-group/"
+      "url": "https://totsspots.com/listing/dizzy-footwork-productions-ltd-dance-drama-acrobatic-classes/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/dizzy-footwork-productions-ltd-dance-drama-acrobatic-classes/"
     },
     {
-      "url": "https://totsspots.com/listing/corramartin-aughnasheelin-baby-toddler-group/",
-      "error": "The read operation timed out",
-      "status": null,
-      "working_alternate": "https://www.totsspots.com/listing/corramartin-aughnasheelin-baby-toddler-group/"
+      "url": "https://totsspots.com/listing/do-your-dance-tots-3/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/do-your-dance-tots-3/"
     },
     {
-      "url": "https://totsspots.com/listing/craughwell-parent-baby-toddler-group/",
-      "error": "The read operation timed out",
-      "status": null,
-      "working_alternate": "https://www.totsspots.com/listing/craughwell-parent-baby-toddler-group/"
+      "url": "https://totsspots.com/listing/do-your-dance-tots-blackrock/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/do-your-dance-tots-blackrock/"
     },
     {
-      "url": "https://totsspots.com/listing/little-learners-holistics/",
-      "error": "The read operation timed out",
-      "status": null,
-      "working_alternate": "http://totsspots.com/listing/little-learners-holistics/"
+      "url": "https://totsspots.com/listing/donegal-town-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/donegal-town-parent-baby-toddler-group/"
     },
     {
-      "url": "https://totsspots.com/listing/messy-play-limerick-tipperary/",
-      "error": "The read operation timed out",
-      "status": null,
-      "working_alternate": "https://www.totsspots.com/listing/messy-play-limerick-tipperary/"
+      "url": "https://totsspots.com/listing/donoughmore-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/donoughmore-parent-baby-toddler-group/"
     },
     {
-      "url": "https://totsspots.com/listing/mooncoin-kilkenny-baby-toddler-group/",
-      "error": "The read operation timed out",
-      "status": null,
-      "working_alternate": "http://totsspots.com/listing/mooncoin-kilkenny-baby-toddler-group/"
+      "url": "https://totsspots.com/listing/dromahair-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/dromahair-parent-baby-toddler-group/"
     },
     {
-      "url": "https://totsspots.com/listing/moyvane-parent-baby-toddler-group/",
-      "error": "The read operation timed out",
-      "status": null,
-      "working_alternate": "http://totsspots.com/listing/moyvane-parent-baby-toddler-group/"
+      "url": "https://totsspots.com/listing/dromdaleague-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/dromdaleague-parent-baby-toddler-group/"
     },
     {
-      "url": "https://totsspots.com/listing/north-wexford-parent-and-toddler-group/",
-      "error": "The read operation timed out",
-      "status": null,
-      "working_alternate": "https://www.totsspots.com/listing/north-wexford-parent-and-toddler-group/"
+      "url": "https://totsspots.com/listing/drumaweer-greencastle-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/drumaweer-greencastle-toddler-group/"
     },
     {
-      "url": "https://totsspots.com/listing/philipstown-baby-and-toddler-group/",
-      "error": "The read operation timed out",
-      "status": null,
-      "working_alternate": "http://totsspots.com/listing/philipstown-baby-and-toddler-group/"
+      "url": "https://totsspots.com/listing/drummin-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/drummin-parent-baby-toddler-group/"
     },
     {
-      "url": "https://totsspots.com/listing/rathanna-parent-toddler-group/",
-      "error": "The read operation timed out",
-      "status": null,
-      "working_alternate": "https://www.totsspots.com/listing/rathanna-parent-toddler-group/"
+      "url": "https://totsspots.com/listing/drumshanbo-parent-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/drumshanbo-parent-toddler-group/"
     },
     {
-      "url": "https://totsspots.com/listing/renmore-parent-baby-toddler-group/",
-      "error": "The read operation timed out",
-      "status": null,
-      "working_alternate": "http://totsspots.com/listing/renmore-parent-baby-toddler-group/"
+      "url": "https://totsspots.com/listing/drumsna-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/drumsna-toddler-group/"
     },
     {
-      "url": "https://totsspots.com/listing/rockchapel-baby-toddler-group/",
-      "error": "The read operation timed out",
-      "status": null,
-      "working_alternate": "https://www.totsspots.com/listing/rockchapel-baby-toddler-group/"
+      "url": "https://totsspots.com/listing/dunboyne-parent-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/dunboyne-parent-baby-and-toddler-group/"
     },
     {
-      "url": "https://totsspots.com/listing/sandyford-parent-toddler-group/",
-      "error": "The read operation timed out",
-      "status": null,
-      "working_alternate": "https://www.totsspots.com/listing/sandyford-parent-toddler-group/"
+      "url": "https://totsspots.com/listing/dunfanaghy-creeslough-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/dunfanaghy-creeslough-toddler-group/"
     },
     {
-      "url": "https://totsspots.com/listing/shanakill-parent-baby-toddler-group/",
-      "error": "The read operation timed out",
-      "status": null,
-      "working_alternate": "https://www.totsspots.com/listing/shanakill-parent-baby-toddler-group/"
+      "url": "https://totsspots.com/listing/dunlavin-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/dunlavin-parent-baby-toddler-group/"
     },
     {
-      "url": "https://totsspots.com/listing/shercock-parent-baby-and-toddler-group/",
-      "error": "The read operation timed out",
-      "status": null,
-      "working_alternate": "http://totsspots.com/listing/shercock-parent-baby-and-toddler-group/"
+      "url": "https://totsspots.com/listing/dunshaughlin-parent-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/dunshaughlin-parent-baby-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/edels-baby-massage-portlaoise/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/edels-baby-massage-portlaoise/"
+    },
+    {
+      "url": "https://totsspots.com/listing/edgeworthstown-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/edgeworthstown-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/elmm-infant-massage-castledermot/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/elmm-infant-massage-castledermot/"
+    },
+    {
+      "url": "https://totsspots.com/listing/feenagh-kilmeedy-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/feenagh-kilmeedy-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/fireflies-leixlip-parent-kids-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/fireflies-leixlip-parent-kids-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/firies-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/firies-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/fitclub-family-fitness-greystones/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/fitclub-family-fitness-greystones/"
+    },
+    {
+      "url": "https://totsspots.com/listing/fox-c-play-cafe-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/fox-c-play-cafe-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/frenchpark-parent-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/frenchpark-parent-baby-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/fundamental-football/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/fundamental-football/"
+    },
+    {
+      "url": "https://totsspots.com/listing/gaa-kids-class-hunterstown/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/gaa-kids-class-hunterstown/"
+    },
+    {
+      "url": "https://totsspots.com/listing/garrafrauns-baby-toddler-group-galway/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/garrafrauns-baby-toddler-group-galway/"
+    },
+    {
+      "url": "https://totsspots.com/listing/geevagh-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/geevagh-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/gentle-hands-baby-massage/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/gentle-hands-baby-massage/"
+    },
+    {
+      "url": "https://totsspots.com/listing/gentle-start-collective/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/gentle-start-collective/"
+    },
+    {
+      "url": "https://totsspots.com/listing/glenasmole-parent-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/glenasmole-parent-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/gentle-touch-baby-massage-with-roisin/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/gentle-touch-baby-massage-with-roisin/"
+    },
+    {
+      "url": "https://totsspots.com/listing/glenbeigh-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/glenbeigh-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/glengarriff-coomhola-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/glengarriff-coomhola-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/glenroe-ballyorgan-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/glenroe-ballyorgan-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/greystones-church-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/greystones-church-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/gort-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/gort-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/glin-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/glin-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/greystones-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/greystones-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/happy-peeps-sensory-play/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/happy-peeps-sensory-play/"
+    },
+    {
+      "url": "https://totsspots.com/listing/caherdaniel-parent-baby-toddler-group/",
+      "error": "HTTP Error 429: Too Many Requests",
+      "status": 429,
+      "working_alternate": "https://www.totsspots.com/listing/caherdaniel-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/headford-cloughanover-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/headford-cloughanover-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/huntstown-parent-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/huntstown-parent-baby-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/inistioge-kilkenny-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/inistioge-kilkenny-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/innishannon-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/innishannon-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/irish-dance-classes/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/irish-dance-classes/"
+    },
+    {
+      "url": "https://totsspots.com/listing/irishtown-mayo-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/irishtown-mayo-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/kaleidoscope-kids-newcastle-west-community-centre/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/kaleidoscope-kids-newcastle-west-community-centre/"
+    },
+    {
+      "url": "https://totsspots.com/listing/kells-parent-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/kells-parent-baby-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/kerryhead-ballyheigue-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/kerryhead-ballyheigue-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/kids-and-co-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/kids-and-co-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/kids-connect-sligo/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/kids-connect-sligo/"
+    },
+    {
+      "url": "https://totsspots.com/listing/kids-craft-club/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/kids-craft-club/"
+    },
+    {
+      "url": "https://totsspots.com/listing/kilcummin-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/kilcummin-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/kilcullen-parent-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/kilcullen-parent-baby-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/kilcurry-parent-baby-toddler-group-2/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/kilcurry-parent-baby-toddler-group-2/"
+    },
+    {
+      "url": "https://totsspots.com/listing/kildangan-parent-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/kildangan-parent-baby-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/kilflynn-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/kilflynn-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/kilgarvan-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/kilgarvan-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/kilkelly-parent-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/kilkelly-parent-baby-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/kill-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/kill-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/kilkishen-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/kilkishen-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/killeshandra-parent-toddler-baby-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/killeshandra-parent-toddler-baby-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/killeedy-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/killeedy-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/killinkere-parent-toddler-baby-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/killinkere-parent-toddler-baby-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/killucan-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/killucan-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/killyfargy-scotshouse-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/killyfargy-scotshouse-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/kilnaleck-parent-toddler-baby-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/kilnaleck-parent-toddler-baby-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/kingscourt-mum-baby-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/kingscourt-mum-baby-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/kingscourt-parent-toddler-baby-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/kingscourt-parent-toddler-baby-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/kinnitty-parent-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/kinnitty-parent-baby-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/kinvara-mum-social-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/kinvara-mum-social-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/kinvarra-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/kinvarra-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/ladysbridge-parent-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/ladysbridge-parent-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/lasting-touch-baby-massage/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/lasting-touch-baby-massage/"
+    },
+    {
+      "url": "https://totsspots.com/listing/knockmore-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/knockmore-baby-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/lattin-cullen-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/lattin-cullen-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/le-cheile-cootehill-parent-toddler-baby-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/le-cheile-cootehill-parent-toddler-baby-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/leixlip-church-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/leixlip-church-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/lenas-little-learners/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/lenas-little-learners/"
+    },
+    {
+      "url": "https://totsspots.com/listing/lifford-donegal-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/lifford-donegal-baby-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/limerick-parent-toddler-group-michaels-church/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/limerick-parent-toddler-group-michaels-church/"
+    },
+    {
+      "url": "https://totsspots.com/listing/lisgoold-leamlara-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/lisgoold-leamlara-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/little-artists-ireland/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/little-artists-ireland/"
+    },
+    {
+      "url": "https://totsspots.com/listing/little-darlings-play-cafe-santry/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/little-darlings-play-cafe-santry/"
+    },
+    {
+      "url": "https://totsspots.com/listing/little-bears/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/little-bears/"
+    },
+    {
+      "url": "https://totsspots.com/listing/little-island-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/little-island-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/little-lullabies-baby-massage/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/little-lullabies-baby-massage/"
+    },
+    {
+      "url": "https://totsspots.com/listing/little-lotus-2/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/little-lotus-2/"
+    },
+    {
+      "url": "https://totsspots.com/listing/little-lotus-summer-sessions-9-12-yr-olds/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/little-lotus-summer-sessions-9-12-yr-olds/"
+    },
+    {
+      "url": "https://totsspots.com/listing/little-ones-playgroup/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/little-ones-playgroup/"
+    },
+    {
+      "url": "https://totsspots.com/listing/longford-baby-toddler-group-school/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/longford-baby-toddler-group-school/"
+    },
+    {
+      "url": "https://totsspots.com/listing/louth-village-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/louth-village-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/little-turtles-playgroup-dublin/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/little-turtles-playgroup-dublin/"
+    },
+    {
+      "url": "https://totsspots.com/listing/lusk-parent-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/lusk-parent-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/lullababy-baby-classes/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/lullababy-baby-classes/"
+    },
+    {
+      "url": "https://totsspots.com/listing/maree-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/maree-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/malin-head-ballyhillin-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/malin-head-ballyhillin-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/messy-tots-for-little-ones/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/messy-tots-for-little-ones/"
+    },
+    {
+      "url": "https://totsspots.com/listing/millstreet-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/millstreet-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/mindful-creativity-with-michelle/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/mindful-creativity-with-michelle/"
+    },
+    {
+      "url": "https://totsspots.com/listing/mindful-present-moments/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://totsspots.com/listing/moate-parent-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/moate-parent-baby-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/monaghan-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/monaghan-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/monaghan-parent-and-toddler-group-irish/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/monaghan-parent-and-toddler-group-irish/"
+    },
+    {
+      "url": "https://totsspots.com/listing/monard-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/monard-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/move-to-improve-kids-class-philipstown/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/move-to-improve-kids-class-philipstown/"
+    },
+    {
+      "url": "https://totsspots.com/listing/mullingar-mum-and-baby-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/mullingar-mum-and-baby-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/mullagh-cavan-parent-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/mullagh-cavan-parent-baby-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/mum2mum-roscommon/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/mum2mum-roscommon/"
+    },
+    {
+      "url": "https://totsspots.com/listing/music-class-baby-toddler-firhouse/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/music-class-baby-toddler-firhouse/"
+    },
+    {
+      "url": "https://totsspots.com/listing/newport-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/newport-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/music-class-for-kids-wicklow/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/music-class-for-kids-wicklow/"
+    },
+    {
+      "url": "https://totsspots.com/listing/newtownmountkennedy-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/newtownmountkennedy-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/parentsfirst-community-families-baby-cafe/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/parentsfirst-community-families-baby-cafe/"
+    },
+    {
+      "url": "https://totsspots.com/listing/newtownshandrum-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/newtownshandrum-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/pettigo-donegal-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/pettigo-donegal-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/play-group-in-irish-gaeilge/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/play-group-in-irish-gaeilge/"
+    },
+    {
+      "url": "https://totsspots.com/listing/playful-paisti/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/playful-paisti/"
+    },
+    {
+      "url": "https://totsspots.com/listing/portarlington-laois-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/portarlington-laois-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/portarlington-toddler-group-buggy-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/portarlington-toddler-group-buggy-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/quin-baby-toddler-group-clare/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/quin-baby-toddler-group-clare/"
+    },
+    {
+      "url": "https://totsspots.com/listing/quin-village-parent-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/quin-village-parent-baby-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/raheny-parent-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/raheny-parent-baby-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/rahara-parent-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/rahara-parent-baby-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/raphoe-donegal-sparks-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/raphoe-donegal-sparks-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/raphoe-donegal-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/raphoe-donegal-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/rathdowney-additional-needs-social-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/rathdowney-additional-needs-social-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/rathnure-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/rathnure-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/rathedmond-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/rathedmond-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/rathcoole-templeogue-toddlers-class/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/rathcoole-templeogue-toddlers-class/"
+    },
+    {
+      "url": "https://totsspots.com/listing/ray-donegal-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/ray-donegal-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/reenard-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/reenard-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/renaniree-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/renaniree-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/rooskey-parent-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/rooskey-parent-baby-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/rosey-stars-%f0%9f%8c%9f/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/rosey-stars-%f0%9f%8c%9f/"
+    },
+    {
+      "url": "https://totsspots.com/listing/sandyford-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/sandyford-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/schull-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/schull-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/scoil-rince-fainne-irish-dancing-for-kids/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/scoil-rince-fainne-irish-dancing-for-kids/"
+    },
+    {
+      "url": "https://totsspots.com/listing/sheeps-head-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/sheeps-head-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/sensory-spraoi/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/sensory-spraoi/"
+    },
+    {
+      "url": "https://totsspots.com/listing/shannon-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/shannon-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/skerries-parent-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/skerries-parent-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/sensory-neurodiverse-balbriggan/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/sensory-neurodiverse-balbriggan/"
+    },
+    {
+      "url": "https://totsspots.com/listing/skryne-navan-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/skryne-navan-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/sound-and-scribble/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/sound-and-scribble/"
+    },
+    {
+      "url": "https://totsspots.com/listing/stamullen-parent-toddler-group-meath/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/stamullen-parent-toddler-group-meath/"
+    },
+    {
+      "url": "https://totsspots.com/listing/stranorlar-parent-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/stranorlar-parent-baby-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/strandhill-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/strandhill-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/stillorgan-parent-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/stillorgan-parent-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/stretch-n-grow-parent-toddler-class-kilternan/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/stretch-n-grow-parent-toddler-class-kilternan/"
+    },
+    {
+      "url": "https://totsspots.com/listing/swanlinbar-parent-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/swanlinbar-parent-baby-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/swinford-parent-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/swinford-parent-baby-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/tap-and-toddle/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/tap-and-toddle/"
+    },
+    {
+      "url": "https://totsspots.com/listing/teatime-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/teatime-baby-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/the-extra-special-parent-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/the-extra-special-parent-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/templemore-corville-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/templemore-corville-parent-baby-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/the-unrelated-auntie-messy-play-group-facilitated-by-a-play-therapist/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/the-unrelated-auntie-messy-play-group-facilitated-by-a-play-therapist/"
+    },
+    {
+      "url": "https://totsspots.com/listing/the-wonder-years-play-mindfulness-2/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/the-wonder-years-play-mindfulness-2/"
+    },
+    {
+      "url": "https://totsspots.com/listing/touch-therapies-by-aimee-baby-massage-class/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "http://totsspots.com/listing/touch-therapies-by-aimee-baby-massage-class/"
+    },
+    {
+      "url": "https://totsspots.com/listing/the-yoga-fairy-classes/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/the-yoga-fairy-classes/"
+    },
+    {
+      "url": "https://totsspots.com/listing/the-yoga-fairy/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/the-yoga-fairy/"
+    },
+    {
+      "url": "https://totsspots.com/listing/tinahely-parent-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": "https://www.totsspots.com/listing/tinahely-parent-baby-and-toddler-group/"
+    },
+    {
+      "url": "https://totsspots.com/listing/tiny-tornados/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://totsspots.com/listing/tralee-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://totsspots.com/listing/tulla-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://totsspots.com/listing/turlough-parent-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://totsspots.com/listing/westport-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://totsspots.com/listing/whitechurch-waterloo-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://totsspots.com/listing/whitethorn-equestrian-centre/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://totsspots.com/listing/wicklow-parent-baby-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://totsspots.com/listing/wilton-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://totsspots.com/listing/yoni-hearts-club-baby-massage-yoga/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://totsspots.com/listing/woodford-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://totsspots.com/listing/zen-baby-by-grace/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
     },
     {
       "url": "https://www.babygra.ie",
@@ -302,15 +1221,21 @@
       "working_alternate": null
     },
     {
-      "url": "https://www.birthandbaby.ie/",
-      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.birthandbaby.ie'. (_ssl.c:1082)>",
-      "status": null,
-      "working_alternate": "https://www.birthandbaby.com/"
-    },
-    {
       "url": "https://www.bloomfieldhousehotel.ie/swim-lessons.html",
       "error": "HTTP Error 404: Not Found",
       "status": 404,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.birthandbaby.ie/",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.birthandbaby.ie'. (_ssl.c:1082)>",
+      "status": null,
+      "working_alternate": "https://birthandbaby.ie/"
+    },
+    {
+      "url": "https://www.bricks4kidz.ie/fingal/parent-toddler-classes-malahide/",
+      "error": "HTTP Error 410: Gone",
+      "status": 410,
       "working_alternate": null
     },
     {
@@ -320,13 +1245,13 @@
       "working_alternate": "https://www.creationcup.com/"
     },
     {
-      "url": "https://www.debbieallendanceschool.com/contact.html",
+      "url": "https://www.dimplesbabymassage.com/",
       "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
       "status": null,
       "working_alternate": null
     },
     {
-      "url": "https://www.dimplesbabymassage.com/",
+      "url": "https://www.debbieallendanceschool.com/contact.html",
       "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
       "status": null,
       "working_alternate": null
@@ -338,10 +1263,16 @@
       "working_alternate": null
     },
     {
-      "url": "https://www.dublincity.ie/events/toddler-storytime-phibsboro-library",
-      "error": "HTTP Error 403: Forbidden",
-      "status": 403,
-      "working_alternate": "https://dublincity.ie/events/toddler-storytime-phibsboro-library"
+      "url": "https://www.facebook.com/ParentsTotsCBC/",
+      "error": "HTTP Error 400: Bad Request",
+      "status": 400,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.facebook.com/groups/306898116445743/discussion/preview",
+      "error": "HTTP Error 400: Bad Request",
+      "status": 400,
+      "working_alternate": null
     },
     {
       "url": "https://www.facebook.com/LouthABCProgramme/",
@@ -350,7 +1281,19 @@
       "working_alternate": null
     },
     {
-      "url": "https://www.facebook.com/ParentsTotsCBC/",
+      "url": "https://www.facebook.com/castleislandparentandtoddlergroup/about",
+      "error": "HTTP Error 400: Bad Request",
+      "status": 400,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.facebook.com/WildByNatureFS/",
+      "error": "HTTP Error 400: Bad Request",
+      "status": 400,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.facebook.com/musicmovement4tots/",
       "error": "HTTP Error 400: Bad Request",
       "status": 400,
       "working_alternate": null
@@ -368,7 +1311,7 @@
       "working_alternate": null
     },
     {
-      "url": "https://www.facebook.com/groups/306898116445743/discussion/preview",
+      "url": "https://www.facebook.com/profile.php?id=61566883178839",
       "error": "HTTP Error 400: Bad Request",
       "status": 400,
       "working_alternate": null
@@ -380,25 +1323,13 @@
       "working_alternate": null
     },
     {
-      "url": "https://www.facebook.com/castleislandparentandtoddlergroup/about",
+      "url": "https://www.facebook.com/profile.php?id=61565478435216",
       "error": "HTTP Error 400: Bad Request",
       "status": 400,
       "working_alternate": null
     },
     {
-      "url": "https://www.facebook.com/musicmovement4tots/",
-      "error": "HTTP Error 400: Bad Request",
-      "status": 400,
-      "working_alternate": null
-    },
-    {
-      "url": "https://www.facebook.com/profile/100064632253690/search/?q=toddler",
-      "error": "HTTP Error 400: Bad Request",
-      "status": 400,
-      "working_alternate": null
-    },
-    {
-      "url": "https://www.facebook.com/profile.php?id=61564788114218",
+      "url": "https://www.facebook.com/share/577zzhoQSn4Hu6GA/",
       "error": "HTTP Error 400: Bad Request",
       "status": 400,
       "working_alternate": null
@@ -416,7 +1347,13 @@
       "working_alternate": null
     },
     {
-      "url": "https://www.facebook.com/profile.php?id=61565478435216",
+      "url": "https://www.facebook.com/profile/100064632253690/search/?q=toddler",
+      "error": "HTTP Error 400: Bad Request",
+      "status": 400,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.facebook.com/profile.php?id=61564788114218",
       "error": "HTTP Error 400: Bad Request",
       "status": 400,
       "working_alternate": null
@@ -434,24 +1371,6 @@
       "working_alternate": null
     },
     {
-      "url": "https://www.facebook.com/share/577zzhoQSn4Hu6GA/",
-      "error": "HTTP Error 400: Bad Request",
-      "status": 400,
-      "working_alternate": null
-    },
-    {
-      "url": "https://www.facebook.com/profile.php?id=61566883178839",
-      "error": "HTTP Error 400: Bad Request",
-      "status": 400,
-      "working_alternate": null
-    },
-    {
-      "url": "https://www.bricks4kidz.ie/fingal/parent-toddler-classes-malahide/",
-      "error": "HTTP Error 410: Gone",
-      "status": 410,
-      "working_alternate": null
-    },
-    {
       "url": "https://www.kidcreate.ie",
       "error": "HTTP Error 404: Not Found",
       "status": 404,
@@ -459,18 +1378,6 @@
     },
     {
       "url": "https://www.lecanveycommunitycentre.ie/events/toddler-parent-group/",
-      "error": "HTTP Error 404: Not Found",
-      "status": 404,
-      "working_alternate": null
-    },
-    {
-      "url": "https://www.independent.ie/regionals/wexford/enniscorthy-news/localnotes/around-the-districts-bree-galbally-to-kiltealy-ballindaggin/a1010161768.html",
-      "error": "HTTP Error 403: Forbidden",
-      "status": 403,
-      "working_alternate": "https://independent.ie/regionals/wexford/enniscorthy-news/localnotes/around-the-districts-bree-galbally-to-kiltealy-ballindaggin/a1010161768.html"
-    },
-    {
-      "url": "https://www.dublincookery.com/cookery-workshops-for-children/",
       "error": "HTTP Error 404: Not Found",
       "status": 404,
       "working_alternate": null
@@ -506,6 +1413,12 @@
       "working_alternate": null
     },
     {
+      "url": "https://www.dublincookery.com/cookery-workshops-for-children/",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404,
+      "working_alternate": null
+    },
+    {
       "url": "https://www.playmatters.ie/",
       "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
       "status": null,
@@ -518,10 +1431,76 @@
       "working_alternate": null
     },
     {
+      "url": "https://www.totsspots.com/listing/carrigaline-parent-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.totsspots.com/listing/ballyhea-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.totsspots.com/listing/clondalkin-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.totsspots.com/listing/corramartin-aughnasheelin-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.totsspots.com/listing/messy-play-limerick-tipperary/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.totsspots.com/listing/craughwell-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.totsspots.com/listing/rockchapel-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.totsspots.com/listing/north-wexford-parent-and-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.totsspots.com/listing/sandyford-parent-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
+      "url": "https://www.totsspots.com/listing/rathanna-parent-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
+    },
+    {
       "url": "https://www.zendenstudio.ie/",
       "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
       "status": null,
       "working_alternate": "https://www.zendenstudio.com/"
+    },
+    {
+      "url": "https://www.totsspots.com/listing/shanakill-parent-baby-toddler-group/",
+      "error": "HTTP Error 403: Forbidden",
+      "status": 403,
+      "working_alternate": null
     },
     {
       "url": "https://www.turtletots.ie/licensee/turtle-tots-ireland/",

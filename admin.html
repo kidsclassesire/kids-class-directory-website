@@ -41,6 +41,26 @@
 
         #unauthorized-section { display: none; text-align: center; max-width: 400px; margin: 0 auto; }
         #unauthorized-section p { color: #64748b; }
+
+        /* Data Quality Review */
+        .dq-tabs { display: flex; gap: 0.5rem; margin: 2rem 0 1rem; border-bottom: 1px solid var(--border); }
+        .dq-tab { background: none; border: none; padding: 0.75rem 1rem; font-weight: 600; font-size: 0.9rem; color: #64748b; cursor: pointer; border-bottom: 2px solid transparent; width: auto; }
+        .dq-tab.active { color: var(--primary); border-bottom-color: var(--primary); }
+        .dq-card { border: 1px solid var(--border); padding: 1.25rem; border-radius: 8px; margin-bottom: 1rem; }
+        .dq-card h4 { margin: 0 0 0.25rem; }
+        .dq-card .dq-meta { color: #64748b; font-size: 0.85rem; margin: 0 0 0.75rem; }
+        .dq-card .dq-row { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem; }
+        .dq-card input[type="text"], .dq-card input[type="number"] { flex: 1; padding: 0.6rem; border: 1px solid var(--border); border-radius: 6px; font-family: inherit; }
+        .dq-card .btn-small { width: auto; padding: 0.6rem 1rem; font-size: 0.85rem; }
+        .dq-card .btn-dismiss { background: #94a3b8; }
+        .dq-card .btn-save { background: #10b981; }
+        .dq-empty { color: #64748b; text-align: center; padding: 2rem; }
+
+        .image-field { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem; }
+        .image-preview-box { width: 70px; height: 70px; border-radius: 8px; background: #f1f5f9; border: 1px dashed var(--border); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; }
+        .image-preview-box img { width: 100%; height: 100%; object-fit: cover; }
+        .image-preview-box .empty-label { font-size: 0.65rem; color: #64748b; text-align: center; padding: 0.4rem; }
+        .image-field-actions { display: flex; gap: 0.5rem; }
     </style>
 </head>
 <body>
@@ -73,12 +93,21 @@
         <div id="claims-container">
             <p>Loading claims...</p>
         </div>
+
+        <div class="dq-tabs">
+            <button class="dq-tab active" data-tab="links" id="dq-tab-links">Dead Links (<span id="dq-count-links">0</span>)</button>
+            <button class="dq-tab" data-tab="coords" id="dq-tab-coords">Missing Coordinates (<span id="dq-count-coords">0</span>)</button>
+            <button class="dq-tab" data-tab="images" id="dq-tab-images">Missing Images (<span id="dq-count-images">0</span>)</button>
+        </div>
+        <div id="dq-container">
+            <p>Loading data quality review...</p>
+        </div>
     </div>
 
     <!-- Supabase JS -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
-        const SUPABASE_URL = 'https://gnozodfteywsiwcnbwch.supabaseClient.co';
+        const SUPABASE_URL = 'https://gnozodfteywsiwcnbwch.supabase.co';
         const SUPABASE_ANON_KEY = 'sb_publishable_eduvbMySPxHPT0iZjE_LqQ_w6nyjnjY';
         const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
@@ -104,6 +133,7 @@
                 unauthorizedSection.style.display = 'none';
                 dashboardSection.style.display = 'block';
                 fetchClaims();
+                loadDataQuality();
             } else {
                 dashboardSection.style.display = 'none';
                 unauthorizedSection.style.display = 'block';
@@ -198,6 +228,284 @@
             } catch (err) {
                 alert('Failed to approve claim: ' + err.message);
             }
+        }
+
+        // ============================================================
+        // Data Quality Review
+        // ============================================================
+        const STORAGE_BUCKET = 'business-uploads';
+        const IE_BOUNDS = { latMin: 51.0, latMax: 55.5, lonMin: -10.5, lonMax: -5.0 };
+
+        const dqContainer = document.getElementById('dq-container');
+        let dqActiveTab = 'links';
+        let dqData = { links: [], coords: [], images: [] };
+
+        document.querySelectorAll('.dq-tab').forEach(btn => {
+            btn.addEventListener('click', () => {
+                dqActiveTab = btn.dataset.tab;
+                document.querySelectorAll('.dq-tab').forEach(b => b.classList.toggle('active', b === btn));
+                renderDqTab();
+            });
+        });
+
+        async function loadDataQuality() {
+            await Promise.all([fetchDeadLinks(), fetchMissingCoords(), fetchMissingImages()]);
+            renderDqTab();
+        }
+
+        async function fetchDeadLinks() {
+            const { data, error } = await supabaseClient
+                .from('classes')
+                .select('id,company_name,website_url,website_checked_at')
+                .eq('website_status', 'dead')
+                .eq('website_flag_dismissed', false)
+                .order('company_name');
+            dqData.links = error ? [] : data;
+            document.getElementById('dq-count-links').textContent = dqData.links.length;
+        }
+
+        async function fetchMissingCoords() {
+            const { data, error } = await supabaseClient
+                .from('classes')
+                .select('id,company_name,address,latitude,longitude')
+                .or('latitude.is.null,longitude.is.null')
+                .eq('coords_flag_dismissed', false)
+                .order('company_name');
+            dqData.coords = error ? [] : data;
+            document.getElementById('dq-count-coords').textContent = dqData.coords.length;
+        }
+
+        async function fetchMissingImages() {
+            const { data, error } = await supabaseClient
+                .from('classes')
+                .select('id,company_name,logo_path,hosted_image_path')
+                .is('logo_path', null)
+                .is('hosted_image_path', null)
+                .eq('image_flag_dismissed', false)
+                .order('company_name');
+            dqData.images = error ? [] : data;
+            document.getElementById('dq-count-images').textContent = dqData.images.length;
+        }
+
+        function renderDqTab() {
+            if (dqActiveTab === 'links') renderLinksTab();
+            else if (dqActiveTab === 'coords') renderCoordsTab();
+            else renderImagesTab();
+        }
+
+        function removeDqRow(listKey, rowId, card) {
+            dqData[listKey] = dqData[listKey].filter(r => r.id !== rowId);
+            document.getElementById(`dq-count-${listKey}`).textContent = dqData[listKey].length;
+            card.remove();
+            if (!dqData[listKey].length) renderDqTab();
+        }
+
+        async function saveDqUpdate(id, updates, card, listKey) {
+            try {
+                const { error } = await supabaseClient.from('classes').update(updates).eq('id', id);
+                if (error) throw error;
+                removeDqRow(listKey, id, card);
+            } catch (err) {
+                alert('Failed to save: ' + err.message);
+            }
+        }
+
+        async function dismissDqFlag(id, flagColumn, timestampColumn, card, listKey) {
+            try {
+                const { error } = await supabaseClient
+                    .from('classes')
+                    .update({ [flagColumn]: true, [timestampColumn]: new Date().toISOString() })
+                    .eq('id', id);
+                if (error) throw error;
+                removeDqRow(listKey, id, card);
+            } catch (err) {
+                alert('Failed to dismiss: ' + err.message);
+            }
+        }
+
+        async function geocodeAddress(address) {
+            try {
+                const url = `https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=ie&q=${encodeURIComponent(address)}`;
+                const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
+                if (!res.ok) return null;
+                const results = await res.json();
+                if (!results.length) return null;
+                const lat = parseFloat(results[0].lat);
+                const lon = parseFloat(results[0].lon);
+                if (lat < IE_BOUNDS.latMin || lat > IE_BOUNDS.latMax || lon < IE_BOUNDS.lonMin || lon > IE_BOUNDS.lonMax) return null;
+                return { lat, lon };
+            } catch (err) {
+                return null;
+            }
+        }
+
+        function renderDqImagePreview(boxId, path) {
+            const box = document.getElementById(boxId);
+            if (!box) return;
+            if (path) {
+                box.innerHTML = `<img src="${path}" alt="" onerror="this.parentElement.innerHTML='<span class=&quot;empty-label&quot;>Failed to load</span>'">`;
+            } else {
+                box.innerHTML = `<span class="empty-label">${boxId.startsWith('logo') ? 'No logo' : 'No banner'}</span>`;
+            }
+        }
+
+        async function uploadDqImage(businessId, kind, file, card, row) {
+            if (!file.type.startsWith('image/')) { alert('Please choose an image file.'); return; }
+            if (file.size > 5 * 1024 * 1024) { alert('Image is too large (max 5MB).'); return; }
+
+            const btn = card.querySelector(`#${kind}-upload-btn-${businessId}`);
+            btn.textContent = 'Uploading...';
+            btn.disabled = true;
+
+            try {
+                const ext = (file.name.split('.').pop() || 'jpg').toLowerCase();
+                const path = `${businessId}/${kind}.${ext}`;
+
+                const { data: existing } = await supabaseClient.storage.from(STORAGE_BUCKET).list(`${businessId}`);
+                if (existing && existing.length) {
+                    const stale = existing.filter(f => f.name.startsWith(`${kind}.`)).map(f => `${businessId}/${f.name}`);
+                    if (stale.length) await supabaseClient.storage.from(STORAGE_BUCKET).remove(stale);
+                }
+
+                const { error: uploadError } = await supabaseClient.storage.from(STORAGE_BUCKET).upload(path, file, { upsert: true });
+                if (uploadError) throw uploadError;
+
+                const { data: urlData } = supabaseClient.storage.from(STORAGE_BUCKET).getPublicUrl(path);
+                const publicUrl = urlData.publicUrl;
+
+                const column = kind === 'logo' ? 'logo_path' : 'hosted_image_path';
+                const { error: dbError } = await supabaseClient.from('classes').update({ [column]: publicUrl }).eq('id', businessId);
+                if (dbError) throw dbError;
+
+                renderDqImagePreview(`${kind}-preview-${businessId}`, publicUrl);
+                row[column] = publicUrl;
+
+                // The "missing images" query requires BOTH to be null, so filling in
+                // either one already makes this row drop out of a fresh fetch --
+                // remove it from view now to match, rather than waiting for both.
+                removeDqRow('images', businessId, card);
+            } catch (err) {
+                alert('Failed to upload: ' + err.message);
+            } finally {
+                btn.textContent = kind === 'logo' ? 'Upload logo' : 'Upload banner';
+                btn.disabled = false;
+            }
+        }
+
+        function renderLinksTab() {
+            const rows = dqData.links;
+            if (!rows.length) { dqContainer.innerHTML = '<p class="dq-empty">No dead links flagged.</p>'; return; }
+            dqContainer.innerHTML = '';
+            rows.forEach(row => {
+                const card = document.createElement('div');
+                card.className = 'dq-card';
+                const checkedDate = row.website_checked_at ? new Date(row.website_checked_at).toLocaleDateString() : 'unknown';
+                card.innerHTML = `
+                    <h4>${row.company_name}</h4>
+                    <p class="dq-meta">Flagged dead as of ${checkedDate}</p>
+                    <div class="dq-row">
+                        <input type="text" value="${(row.website_url || '').replace(/"/g, '&quot;')}" id="link-input-${row.id}">
+                        <button class="btn btn-small btn-save">Save</button>
+                        <button class="btn btn-small btn-dismiss">Dismiss</button>
+                    </div>
+                `;
+                card.querySelector('.btn-save').addEventListener('click', () => {
+                    const newUrl = document.getElementById(`link-input-${row.id}`).value.trim();
+                    saveDqUpdate(row.id, { website_url: newUrl || null, website_status: null, website_checked_at: null }, card, 'links');
+                });
+                card.querySelector('.btn-dismiss').addEventListener('click', () => {
+                    dismissDqFlag(row.id, 'website_flag_dismissed', 'website_flag_dismissed_at', card, 'links');
+                });
+                dqContainer.appendChild(card);
+            });
+        }
+
+        function renderCoordsTab() {
+            const rows = dqData.coords;
+            if (!rows.length) { dqContainer.innerHTML = '<p class="dq-empty">No missing coordinates flagged.</p>'; return; }
+            dqContainer.innerHTML = '';
+            rows.forEach(row => {
+                const card = document.createElement('div');
+                card.className = 'dq-card';
+                card.innerHTML = `
+                    <h4>${row.company_name}</h4>
+                    <p class="dq-meta">${row.address || '(no address on file)'}</p>
+                    <div class="dq-row">
+                        <button class="btn btn-small" id="geocode-btn-${row.id}">Geocode from address</button>
+                    </div>
+                    <div class="dq-row">
+                        <input type="number" step="any" placeholder="Latitude" value="${row.latitude ?? ''}" id="lat-input-${row.id}">
+                        <input type="number" step="any" placeholder="Longitude" value="${row.longitude ?? ''}" id="lon-input-${row.id}">
+                        <button class="btn btn-small btn-save">Save</button>
+                        <button class="btn btn-small btn-dismiss">Dismiss</button>
+                    </div>
+                `;
+                card.querySelector(`#geocode-btn-${row.id}`).addEventListener('click', async (e) => {
+                    if (!row.address) { alert('No address on file to geocode.'); return; }
+                    e.target.textContent = 'Geocoding...';
+                    e.target.disabled = true;
+                    const coords = await geocodeAddress(row.address);
+                    e.target.textContent = 'Geocode from address';
+                    e.target.disabled = false;
+                    if (!coords) { alert('Could not geocode this address.'); return; }
+                    document.getElementById(`lat-input-${row.id}`).value = coords.lat;
+                    document.getElementById(`lon-input-${row.id}`).value = coords.lon;
+                });
+                card.querySelector('.btn-save').addEventListener('click', () => {
+                    const lat = document.getElementById(`lat-input-${row.id}`).value;
+                    const lon = document.getElementById(`lon-input-${row.id}`).value;
+                    saveDqUpdate(row.id, {
+                        latitude: lat === '' ? null : Number(lat),
+                        longitude: lon === '' ? null : Number(lon),
+                    }, card, 'coords');
+                });
+                card.querySelector('.btn-dismiss').addEventListener('click', () => {
+                    dismissDqFlag(row.id, 'coords_flag_dismissed', 'coords_flag_dismissed_at', card, 'coords');
+                });
+                dqContainer.appendChild(card);
+            });
+        }
+
+        function renderImagesTab() {
+            const rows = dqData.images;
+            if (!rows.length) { dqContainer.innerHTML = '<p class="dq-empty">No missing images flagged.</p>'; return; }
+            dqContainer.innerHTML = '';
+            rows.forEach(row => {
+                const card = document.createElement('div');
+                card.className = 'dq-card';
+                card.innerHTML = `
+                    <h4>${row.company_name}</h4>
+                    <div class="image-field">
+                        <div class="image-preview-box" id="logo-preview-${row.id}"><span class="empty-label">No logo</span></div>
+                        <div class="image-field-actions">
+                            <button class="btn btn-small" id="logo-upload-btn-${row.id}">Upload logo</button>
+                            <input type="file" accept="image/*" id="logo-file-${row.id}" style="display:none;">
+                        </div>
+                        <div class="image-preview-box" id="banner-preview-${row.id}"><span class="empty-label">No banner</span></div>
+                        <div class="image-field-actions">
+                            <button class="btn btn-small" id="banner-upload-btn-${row.id}">Upload banner</button>
+                            <input type="file" accept="image/*" id="banner-file-${row.id}" style="display:none;">
+                        </div>
+                    </div>
+                    <div class="dq-row">
+                        <button class="btn btn-small btn-dismiss">Dismiss</button>
+                    </div>
+                `;
+                card.querySelector(`#logo-upload-btn-${row.id}`).addEventListener('click', () => document.getElementById(`logo-file-${row.id}`).click());
+                card.querySelector(`#banner-upload-btn-${row.id}`).addEventListener('click', () => document.getElementById(`banner-file-${row.id}`).click());
+                card.querySelector(`#logo-file-${row.id}`).addEventListener('change', (e) => {
+                    if (e.target.files[0]) uploadDqImage(row.id, 'logo', e.target.files[0], card, row);
+                    e.target.value = '';
+                });
+                card.querySelector(`#banner-file-${row.id}`).addEventListener('change', (e) => {
+                    if (e.target.files[0]) uploadDqImage(row.id, 'banner', e.target.files[0], card, row);
+                    e.target.value = '';
+                });
+                card.querySelector('.btn-dismiss').addEventListener('click', () => {
+                    dismissDqFlag(row.id, 'image_flag_dismissed', 'image_flag_dismissed_at', card, 'images');
+                });
+                dqContainer.appendChild(card);
+            });
         }
 
         checkSession();
