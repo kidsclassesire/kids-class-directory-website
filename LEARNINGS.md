@@ -87,3 +87,7 @@ Added to `index.html` to make finding nearby classes actually work at 554-record
 - **Category dropdown grouped via `<optgroup>`** — `CATEGORY_GROUPS` in `index.html` maps categories into 5 groups (Sports & Fitness, Arts/Music/Drama, Baby & Toddler, Academic & STEM, Camps & Outdoor) with any unmapped category falling into an "Other" group as a safety net for future data additions.
 
 All state round-trips through URL params (`loc`, `radius`, `sort` added to the existing `q`/`cat`/`age`/`day`/`dropoff`), so deep links reproduce a full search including re-geocoding the location on load.
+
+## Deferred: per-class detail pages (2026-07-31)
+
+Discussed adding a page per class (fixes truncated descriptions, surfaces unused fields like pricing/facilities/schedule, gives shareable links). Deliberately **not building yet** — user wants to wait until there's a permanent domain/host, since real SEO benefit needs statically-generated per-class pages, and doing that against a throwaway/temporary domain means redoing the indexing work later. Revisit once hosting is settled.

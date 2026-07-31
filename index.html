@@ -130,15 +130,31 @@
         #directory-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
 
         /* Cards */
-        .class-card { 
-            background: #ffffff; border-radius: 16px; overflow: hidden; border: 2px solid var(--border); 
-            display: flex; flex-direction: column; transition: border-color 0.5s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        .class-card {
+            background: #ffffff; border-radius: 16px; overflow: hidden; border: 2px solid var(--border);
+            display: flex; flex-direction: column; position: relative;
+            transition: border-color 0.5s ease, transform 0.2s ease, box-shadow 0.2s ease;
         }
         .card-image { width: 100%; height: 180px; object-fit: cover; background: linear-gradient(135deg, #e2e8f0, #cbd5e1); }
         .card-content { padding: 1.25rem; display: flex; flex-direction: column; flex-grow: 1; }
         .card-content h2 { margin: 0 0 0.5rem; font-size: 1.1rem; }
         .tag-container { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
         .tag { background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 600; }
+        .distance-badge {
+            display: inline-flex; align-items: center; gap: 3px; background: #eff6ff; color: #1d4ed8;
+            padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700;
+        }
+        .distance-badge svg { flex-shrink: 0; }
+
+        .favorite-btn {
+            position: absolute; top: 12px; right: 12px; z-index: 2;
+            width: 34px; height: 34px; border-radius: 50%; border: none; cursor: pointer;
+            background: rgba(255,255,255,0.92); color: #64748b;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 1px 4px rgba(15,23,42,0.2); transition: color 0.2s, transform 0.15s;
+        }
+        .favorite-btn:hover { transform: scale(1.08); }
+        .favorite-btn.active { color: var(--primary); }
         
         .description {
             font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem;
@@ -258,6 +274,11 @@
                     Drop-off Allowed
                 </label>
 
+                <label class="toggle-label">
+                    <input type="checkbox" id="favorites-only-filter">
+                    <span id="favorites-toggle-text">My Shortlist (0)</span>
+                </label>
+
                 <select id="radius-filter" class="filter-select" title="Set a location above to use this">
                     <option value="">Any Distance</option>
                     <option value="5">Within 5 km</option>
@@ -346,6 +367,7 @@
         const dropoffFilter = document.getElementById('dropoff-filter');
         const radiusFilter = document.getElementById('radius-filter');
         const sortSelect = document.getElementById('sort-select');
+        const favoritesOnlyFilter = document.getElementById('favorites-only-filter');
 
         const heroSection = document.getElementById('hero');
         const mainContent = document.getElementById('main-content');
@@ -373,6 +395,31 @@
                       Math.sin(dLon/2) * Math.sin(dLon/2);
             return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
         }
+
+        // --- Favorites / Shortlist (localStorage, no login required) ---
+        let favoriteKeys = new Set(JSON.parse(localStorage.getItem('favoriteClassKeys') || '[]'));
+
+        function getItemKey(item) {
+            return item.id != null ? `id:${item.id}` : `na:${item.company_name}|${item.address || ''}`;
+        }
+
+        function updateFavoritesToggleLabel() {
+            const label = document.getElementById('favorites-toggle-text');
+            if (label) label.textContent = `My Shortlist (${favoriteKeys.size})`;
+        }
+
+        function toggleFavorite(key) {
+            if (favoriteKeys.has(key)) favoriteKeys.delete(key); else favoriteKeys.add(key);
+            localStorage.setItem('favoriteClassKeys', JSON.stringify([...favoriteKeys]));
+            updateFavoritesToggleLabel();
+            if (favoritesOnlyFilter.checked) {
+                filterClasses();
+            } else {
+                renderPage();
+            }
+        }
+
+        updateFavoritesToggleLabel();
 
         // Ireland bounding box, used to reject wrong-country geocoding matches
         const IE_BOUNDS = { latMin: 51.0, latMax: 55.5, lonMin: -10.5, lonMax: -5.0 };
@@ -504,6 +551,7 @@
             const ageBracket = ageFilter.value;
             const dayBracket = dayFilter.value;
             const needsDropoff = dropoffFilter.checked;
+            const favoritesOnly = favoritesOnlyFilter.checked;
             const radiusKm = radiusFilter.value ? parseFloat(radiusFilter.value) : null;
             const hasOrigin = userLat !== null && userLon !== null;
 
@@ -532,6 +580,7 @@
 
                 const catMatch = cat === '' || (item.category && item.category === cat);
                 const dropoffMatch = !needsDropoff || (item.parental_requirement === 'Drop-off');
+                const favMatch = !favoritesOnly || favoriteKeys.has(getItemKey(item));
 
                 let ageMatch = true;
                 if (ageBracket !== '') {
@@ -553,7 +602,7 @@
                     }
                 }
 
-                return textMatch && locMatch && catMatch && dropoffMatch && ageMatch && dayMatch;
+                return textMatch && locMatch && catMatch && dropoffMatch && favMatch && ageMatch && dayMatch;
             });
 
             if (sortSelect.value === 'distance' && hasOrigin) {
@@ -595,26 +644,37 @@
                 return;
             }
 
+            const pinIcon = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 21s-7-7.5-7-12a7 7 0 1114 0c0 4.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.3" fill="currentColor" stroke="none"/></svg>';
+            const heartIcon = (filled) => filled
+                ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg>'
+                : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg>';
+
             data.forEach((item, localIndex) => {
                 const card = document.createElement('div');
                 card.className = 'class-card';
-                card.id = `card-${globalStartIndex + localIndex}`; 
-                
+                card.id = `card-${globalStartIndex + localIndex}`;
+
+                const key = getItemKey(item);
+                const isFav = favoriteKeys.has(key);
+
                 // Add the claim button at the bottom of the card content
                 card.innerHTML = `
+                    <button class="favorite-btn${isFav ? ' active' : ''}" data-key="${escapeHtml(key)}" aria-label="${isFav ? 'Remove from shortlist' : 'Add to shortlist'}" title="${isFav ? 'Remove from shortlist' : 'Add to shortlist'}">
+                        ${heartIcon(isFav)}
+                    </button>
                     <div class="card-image"></div>
                     <div class="card-content">
                         <h2>${item.company_name}</h2>
                         <div class="tag-container">
                             <span class="tag">${item.category || 'Class'}</span>
                             ${item.parental_requirement === 'Drop-off' ? '<span class="tag" style="background:#dcfce7; color:#166534;">Drop-off</span>' : ''}
+                            ${item._distanceKm !== undefined ? `<span class="distance-badge">${pinIcon} ${item._distanceKm.toFixed(1)} km</span>` : ''}
                         </div>
                         <p class="description">
                             ${item.description || 'No description available.'}
                         </p>
                         <div class="meta-info">
                             <strong>Where:</strong> ${item.address || 'Contact for details'}<br>
-                            ${item._distanceKm !== undefined ? `<strong>Distance:</strong> ${item._distanceKm.toFixed(1)} km away<br>` : ''}
                         </div>
                         <a href="${item.website_url || '#'}" target="_blank" class="button">Visit Website</a>
                         <button class="claim-btn" data-id="${item.id || item.company_name}" data-name="${escapeHtml(item.company_name)}">Claim this business</button>
@@ -702,6 +762,7 @@
         ageFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
         dayFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
         dropoffFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
+        favoritesOnlyFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
         radiusFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
         sortSelect.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
 
@@ -717,6 +778,11 @@
 
         // Open modal via Event Delegation (handles dynamic buttons)
         document.getElementById('directory-container').addEventListener('click', (e) => {
+            const favBtn = e.target.closest('.favorite-btn');
+            if (favBtn) {
+                toggleFavorite(favBtn.dataset.key);
+                return;
+            }
             if (e.target.classList.contains('claim-btn')) {
                 const businessId = e.target.getAttribute('data-id');
                 const businessName = e.target.getAttribute('data-name');
