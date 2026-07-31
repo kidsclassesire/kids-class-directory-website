@@ -243,13 +243,26 @@
             .map-column { width: 100%; height: 280px; position: relative; top: 0; }
 
             /* Filter pills: one scrollable row instead of wrapping into a tall stack
-               that pushes results far down the page. */
+               that pushes results far down the page. The scrollbar is kept visible
+               (instead of hidden) and the trailing edge fades out so it's obvious
+               there are more filters off-screen to scroll to. */
+            .filter-bar-wrap { position: relative; margin: 0 -1.25rem 1.5rem; }
             .filter-bar {
-                flex-wrap: nowrap; overflow-x: auto; margin: 0 -1.25rem 1.5rem; padding: 0 1.25rem 1rem;
-                -webkit-overflow-scrolling: touch; scrollbar-width: none;
+                flex-wrap: nowrap; overflow-x: auto; margin: 0; padding: 0 1.25rem 0.75rem 1.25rem;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: thin; scrollbar-color: var(--border) transparent;
             }
-            .filter-bar::-webkit-scrollbar { display: none; }
+            .filter-bar::-webkit-scrollbar { height: 6px; }
+            .filter-bar::-webkit-scrollbar-track { background: transparent; }
+            .filter-bar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
+            .filter-bar::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
             .filter-select, .toggle-label { flex-shrink: 0; }
+            /* Trailing fade hints that more filters sit off-screen to the right.
+               No matching fade on the left — nothing is hidden there at rest. */
+            .filter-bar-wrap::after {
+                content: ''; position: absolute; top: 0; right: 0; bottom: 0.75rem; width: 28px;
+                pointer-events: none; z-index: 1; background: linear-gradient(to left, var(--bg-page), transparent);
+            }
         }
 
         @media (max-width: 640px) {
@@ -334,47 +347,49 @@
         <div class="results-column">
             
             <!-- Granular Filter Bar -->
-            <div class="filter-bar">
-                <select id="category-filter" class="filter-select">
-                    <option value="">Any Category</option>
-                </select>
+            <div class="filter-bar-wrap">
+                <div class="filter-bar">
+                    <select id="category-filter" class="filter-select">
+                        <option value="">Any Category</option>
+                    </select>
 
-                <select id="age-filter" class="filter-select">
-                    <option value="">Any Age</option>
-                    <option value="toddler">Under 5 Years</option>
-                    <option value="child">5 - 8 Years</option>
-                    <option value="preteen">9 - 12 Years</option>
-                    <option value="teen">13+ Years</option>
-                </select>
+                    <select id="age-filter" class="filter-select">
+                        <option value="">Any Age</option>
+                        <option value="toddler">Under 5 Years</option>
+                        <option value="child">5 - 8 Years</option>
+                        <option value="preteen">9 - 12 Years</option>
+                        <option value="teen">13+ Years</option>
+                    </select>
 
-                <select id="day-filter" class="filter-select">
-                    <option value="">Any Day</option>
-                    <option value="weekday">Weekdays</option>
-                    <option value="weekend">Weekends</option>
-                </select>
+                    <select id="day-filter" class="filter-select">
+                        <option value="">Any Day</option>
+                        <option value="weekday">Weekdays</option>
+                        <option value="weekend">Weekends</option>
+                    </select>
 
-                <label class="toggle-label">
-                    <input type="checkbox" id="dropoff-filter">
-                    Drop-off Allowed
-                </label>
+                    <label class="toggle-label">
+                        <input type="checkbox" id="dropoff-filter">
+                        Drop-off Allowed
+                    </label>
 
-                <label class="toggle-label">
-                    <input type="checkbox" id="favorites-only-filter">
-                    <span id="favorites-toggle-text">My Shortlist (0)</span>
-                </label>
+                    <label class="toggle-label">
+                        <input type="checkbox" id="favorites-only-filter">
+                        <span id="favorites-toggle-text">My Shortlist (0)</span>
+                    </label>
 
-                <select id="radius-filter" class="filter-select" title="Set a location above to use this">
-                    <option value="">Any Distance</option>
-                    <option value="5">Within 5 km</option>
-                    <option value="10">Within 10 km</option>
-                    <option value="20">Within 20 km</option>
-                    <option value="50">Within 50 km</option>
-                </select>
+                    <select id="radius-filter" class="filter-select" title="Set a location above to use this">
+                        <option value="">Any Distance</option>
+                        <option value="5">Within 5 km</option>
+                        <option value="10">Within 10 km</option>
+                        <option value="20">Within 20 km</option>
+                        <option value="50">Within 50 km</option>
+                    </select>
 
-                <select id="sort-select" class="filter-select" title="Set a location above to sort by distance">
-                    <option value="relevance">Sort: Relevance</option>
-                    <option value="distance">Sort: Nearest First</option>
-                </select>
+                    <select id="sort-select" class="filter-select" title="Set a location above to sort by distance">
+                        <option value="relevance">Sort: Relevance</option>
+                        <option value="distance">Sort: Nearest First</option>
+                    </select>
+                </div>
             </div>
 
             <div id="result-meta"><span id="result-count">Loading classes...</span></div>
@@ -467,6 +482,7 @@
         let hasTriggeredSearch = false;
         let lastGeocodedQuery = null;
         let isGeocoding = false;
+        let sortExplicitlySet = false;
 
         let map;
         let markerClusterGroup = null;
@@ -989,6 +1005,9 @@
                 userLon = coords ? coords.lon : null;
                 searchBtn.style.opacity = originalPlaceholder || '1';
                 isGeocoding = false;
+                // A location was just resolved for this search — default to showing
+                // the closest results first, rather than making the user pick it manually.
+                if (coords && !sortExplicitlySet) sortSelect.value = 'distance';
             }
 
             filterClasses();
@@ -1002,6 +1021,7 @@
                     userLon = pos.coords.longitude;
                     locationInput.value = 'Current Location';
                     lastGeocodedQuery = 'current location';
+                    if (!sortExplicitlySet) sortSelect.value = 'distance';
                     performSearch();
                 }, () => {
                     alert("Location access denied or unavailable.");
@@ -1029,7 +1049,7 @@
         dropoffFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
         favoritesOnlyFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
         radiusFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
-        sortSelect.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
+        sortSelect.addEventListener('change', () => { sortExplicitlySet = true; if (hasTriggeredSearch) filterClasses(); });
 
         // --- Claim Business Logic ---
         const claimModal = document.getElementById('claim-modal');
@@ -1133,7 +1153,7 @@
                 if(params.has('day')) dayFilter.value = params.get('day');
                 if(params.get('dropoff') === 'true') dropoffFilter.checked = true;
                 if(params.has('radius')) radiusFilter.value = params.get('radius');
-                if(params.has('sort')) sortSelect.value = params.get('sort');
+                if(params.has('sort')) { sortSelect.value = params.get('sort'); sortExplicitlySet = true; }
                 performSearch();
             }
         });
