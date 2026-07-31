@@ -139,3 +139,17 @@ Each CDP test run used a fresh `--user-data-dir` profile, so the site's `getOrCr
 ## Deferred: per-class detail pages (2026-07-31)
 
 Discussed adding a page per class (fixes truncated descriptions, surfaces unused fields like pricing/facilities/schedule, gives shareable links). Deliberately **not building yet** — user wants to wait until there's a permanent domain/host, since real SEO benefit needs statically-generated per-class pages, and doing that against a throwaway/temporary domain means redoing the indexing work later. Revisit once hosting is settled.
+
+## Logos and banner images (2026-07-31)
+
+Another agent/pipeline ran a logo-fetching process (brandfetch, website favicons, og:image scraping — see `logo_source`/`image_source` fields) and produced `classes_with_assets.json`, a 564-row export with `logo_path`/`hosted_image_path` fields plus the actual binary files placed directly in the repo under `logos/` (381 files) and `images/` (303 files) at the **repo root** — no `assets/` subfolder.
+
+**Real bug in that pipeline's output, caught before it touched the DB**: every `logo_path`/`hosted_image_path` value in the JSON had a `/assets/` prefix (e.g. `/assets/logos/doodlebox-ie.png`) that doesn't match where the files actually live (`/logos/doodlebox-ie.png`). Confirmed by checking all 434 referenced files against disk after stripping the prefix — 433 matched exactly, one didn't (`asterfamilysupport-ie`: JSON said `.webp`, actual file was `.png` — the pipeline's extension guess was wrong for that one). Both issues were fixed in the update payload before writing anything live, rather than trusting the pipeline's paths as-is.
+
+Added two new columns to `classes` (`logo_path`, `hosted_image_path`, both `text`) via `add_image_columns.sql` — another DDL change requiring the user to run it in the SQL editor, same pattern as `add_ratings_table.sql`. Verified column-existence with a read query first so the "column does not exist" error would be diagnostic, not silent.
+
+Wrote the 434 rows' worth of corrected paths via individual `PATCH /classes?id=eq.N` calls (not a bulk upsert) — deliberately chosen over a single bulk POST-with-merge-duplicates upsert because PATCH's "only touches the columns in the request body" semantics are unambiguous, whereas partial-payload upsert behavior (does it null out unlisted columns, or leave them untouched?) wasn't something to gamble on across all 554 rows without testing first. Tested on one row first, confirmed via a read-back that unrelated columns (`company_name`, `address`, etc.) were untouched, then ran the other 433.
+
+Frontend: added `cardImageHtml()` to `index.html` — renders `hosted_image_path` as a full-width cover banner and `logo_path` as a small badge overlaid bottom-left of the image, both optional and independently gated (some classes have one, the other, both, or neither — 120 of 554 have neither). Each `<img>` has `onerror="this.remove()"` so a bad/missing file just falls back to the gradient placeholder instead of showing a broken-image icon.
+
+Also refreshed `south_dublin_kids_activities.json` (the local Supabase-down fallback) from a fresh live export while touching this, since it didn't have the new image columns. Bonus fix: this export naturally includes `id` now, closing an old gap noted earlier in this file where the local fallback lacked stable ids (favorites/ratings couldn't key off company_name+address alone as reliably).
