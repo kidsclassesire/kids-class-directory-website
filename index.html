@@ -130,14 +130,45 @@
         #result-meta { font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; }
 
         /* Grid inside Results */
-        #directory-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+        #directory-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; align-items: start; }
 
         /* Cards */
         .class-card {
             background: #ffffff; border-radius: 16px; overflow: hidden; border: 2px solid var(--border);
-            display: flex; flex-direction: column; position: relative;
+            display: flex; flex-direction: column; position: relative; cursor: pointer;
             transition: border-color 0.5s ease, transform 0.2s ease, box-shadow 0.2s ease;
         }
+        .class-card.expanded { border-color: var(--text-dark); box-shadow: 0 8px 20px rgba(15,23,42,0.12); }
+        .class-card.expanded .description { -webkit-line-clamp: unset; }
+
+        .expand-toggle {
+            background: none; border: none; color: var(--text-muted); font-size: 0.8rem; font-weight: 700;
+            cursor: pointer; padding: 0.4rem 0; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 4px;
+        }
+        .expand-toggle:hover { color: var(--text-dark); }
+        .expand-toggle svg { width: 12px; height: 12px; transition: transform 0.2s ease; }
+        .class-card.expanded .expand-toggle svg { transform: rotate(180deg); }
+        .expand-toggle .show-less-text { display: none; }
+        .class-card.expanded .expand-toggle .show-more-text { display: none; }
+        .class-card.expanded .expand-toggle .show-less-text { display: inline; }
+
+        .card-details {
+            max-height: 0; overflow: hidden; opacity: 0;
+            transition: max-height 0.35s ease, opacity 0.25s ease;
+        }
+        .class-card.expanded .card-details { max-height: 900px; opacity: 1; margin-bottom: 1rem; }
+
+        .detail-row { font-size: 0.85rem; line-height: 1.6; margin-bottom: 0.5rem; color: var(--text-dark); }
+        .detail-row strong { color: var(--text-muted); font-weight: 700; }
+        .facility-chip {
+            display: inline-block; background: #f1f5f9; color: #475569; padding: 0.15rem 0.55rem;
+            border-radius: 6px; font-size: 0.7rem; font-weight: 600; margin: 2px 4px 2px 0;
+        }
+        .verified-badge {
+            display: inline-flex; align-items: center; gap: 4px; font-size: 0.78rem;
+            color: #166534; font-weight: 700; margin-bottom: 0.5rem;
+        }
+        .verified-badge svg { width: 14px; height: 14px; }
         .card-image { width: 100%; height: 180px; object-fit: cover; background: linear-gradient(135deg, #e2e8f0, #cbd5e1); }
         .card-content { padding: 1.25rem; display: flex; flex-direction: column; flex-grow: 1; }
         .card-content h2 { margin: 0 0 0.5rem; font-size: 1.1rem; }
@@ -714,7 +745,7 @@
 
                 let dayMatch = true;
                 if (dayBracket !== '') {
-                    const days = item.days_of_week || '';
+                    const days = Array.isArray(item.days_of_week) ? item.days_of_week.join(' ') : (item.days_of_week || '');
                     if (dayBracket === 'weekend') {
                         dayMatch = days.toLowerCase().includes('saturday') || days.toLowerCase().includes('sunday');
                     } else if (dayBracket === 'weekday') {
@@ -799,6 +830,61 @@
                 `;
             }
 
+            const chevronIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>';
+            const checkIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>';
+
+            function formatSchedule(item) {
+                const parts = [];
+                if (Array.isArray(item.days_of_week) && item.days_of_week.length) parts.push(item.days_of_week.join(', '));
+                if (item.start_time) parts.push(item.end_time ? `${item.start_time}-${item.end_time}` : `from ${item.start_time}`);
+                if (item.term_structure) parts.push(item.term_structure);
+                return parts.join(' &middot; ');
+            }
+
+            function formatPrice(item) {
+                if (item.price_amount == null) return '';
+                const basis = item.pricing_basis ? ` ${item.pricing_basis.toLowerCase()}` : '';
+                return `${item.price_currency || 'EUR'} ${item.price_amount}${basis}`;
+            }
+
+            function cardDetailsHtml(item) {
+                const rows = [];
+
+                const schedule = formatSchedule(item);
+                if (schedule) rows.push(`<div class="detail-row"><strong>Schedule:</strong> ${schedule}</div>`);
+
+                if (item.age_range_display) rows.push(`<div class="detail-row"><strong>Ages:</strong> ${escapeHtml(item.age_range_display)}</div>`);
+
+                if (item.parental_requirement) rows.push(`<div class="detail-row"><strong>Supervision:</strong> ${escapeHtml(item.parental_requirement)}</div>`);
+
+                const price = formatPrice(item);
+                if (price) rows.push(`<div class="detail-row"><strong>Price:</strong> ${escapeHtml(price)}</div>`);
+                if (item.pricing_details) rows.push(`<div class="detail-row">${escapeHtml(item.pricing_details)}</div>`);
+
+                if (Array.isArray(item.class_types) && item.class_types.length) {
+                    rows.push(`<div class="detail-row"><strong>Class types:</strong> ${escapeHtml(item.class_types.join(', '))}</div>`);
+                }
+
+                const contactParts = [];
+                if (item.phone_number) contactParts.push(escapeHtml(item.phone_number));
+                if (item.email_address) contactParts.push(escapeHtml(item.email_address));
+                if (contactParts.length) rows.push(`<div class="detail-row"><strong>Contact:</strong> ${contactParts.join(' &middot; ')}</div>`);
+
+                if (Array.isArray(item.facilities) && item.facilities.length) {
+                    rows.push(`<div class="detail-row"><strong>Facilities:</strong><br>${item.facilities.map(f => `<span class="facility-chip">${escapeHtml(f)}</span>`).join('')}</div>`);
+                }
+
+                if (item.booking_url && item.booking_url !== item.website_url) {
+                    rows.push(`<div class="detail-row"><a href="${escapeHtml(item.booking_url)}" target="_blank" rel="noopener">Booking page &rarr;</a></div>`);
+                }
+
+                const verifiedHtml = item.date_verified
+                    ? `<div class="verified-badge">${checkIcon} Verified ${escapeHtml(item.date_verified)}</div>`
+                    : '';
+
+                return verifiedHtml + rows.join('');
+            }
+
             data.forEach((item, localIndex) => {
                 const card = document.createElement('div');
                 card.className = 'class-card';
@@ -824,6 +910,14 @@
                             ${item.description || 'No description available.'}
                         </p>
                         ${ratingSectionHtml(item)}
+                        <button class="expand-toggle" type="button">
+                            <span class="show-more-text">Show more details</span>
+                            <span class="show-less-text">Show less</span>
+                            ${chevronIcon}
+                        </button>
+                        <div class="card-details">
+                            ${cardDetailsHtml(item)}
+                        </div>
                         <div class="meta-info">
                             <strong>Where:</strong> ${item.address || 'Contact for details'}<br>
                         </div>
@@ -945,15 +1039,25 @@
             if (e.target.classList.contains('claim-btn')) {
                 const businessId = e.target.getAttribute('data-id');
                 const businessName = e.target.getAttribute('data-name');
-                
+
                 document.getElementById('modal-business-name').textContent = `Claim ${businessName}`;
                 document.getElementById('claim-business-id').value = businessId;
                 document.getElementById('claim-business-title').value = businessName;
-                
+
                 claimForm.style.display = 'block';
                 claimSuccess.style.display = 'none';
                 claimForm.reset();
                 claimModal.classList.add('active');
+                return;
+            }
+            // Visit Website / booking links and the star rating widget have their own
+            // behavior -- clicking them should not also expand/collapse the card.
+            if (e.target.closest('a, .star-input')) {
+                return;
+            }
+            const card = e.target.closest('.class-card');
+            if (card) {
+                card.classList.toggle('expanded');
             }
         });
 
