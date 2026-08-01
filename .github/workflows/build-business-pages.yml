@@ -1,9 +1,9 @@
-name: Build business pages
+name: Build business and landing pages
 
 on:
   push:
     branches: [main]
-    paths: ['scripts/generate_business_pages.py']
+    paths: ['scripts/generate_business_pages.py', 'scripts/generate_landing_pages.py']
   schedule:
     - cron: '0 3 * * *'
   workflow_dispatch:
@@ -28,14 +28,17 @@ jobs:
       - name: Generate business pages, sitemap and manifest
         run: python3 scripts/generate_business_pages.py
 
+      - name: Generate landing pages and merge sitemap
+        run: python3 scripts/generate_landing_pages.py
+
       - name: Commit generated files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add business/ sitemap.xml business-index.json
+          git add business/ classes/ sitemap.xml business-index.json
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
           fi
-          git commit -m "Regenerate business pages [skip ci]"
+          git commit -m "Regenerate business and landing pages [skip ci]"
           git push
