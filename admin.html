@@ -453,7 +453,7 @@
         }
 
         const toastContainer = document.getElementById('toast-container');
-        function showToast(message, type = 'success') {
+        function showToast(message, type = 'success', duration = 3500) {
             const toast = document.createElement('div');
             toast.className = `toast ${type}`;
             toast.textContent = message;
@@ -462,7 +462,7 @@
             setTimeout(() => {
                 toast.classList.remove('show');
                 setTimeout(() => toast.remove(), 250);
-            }, 3500);
+            }, duration);
         }
 
         function skeletonHtml(count = 3, height = 80) {
@@ -739,7 +739,19 @@
                     .eq('id', claimId);
 
                 if (error) throw error;
-                showToast('Claim approved.', 'success');
+
+                // No automated "you're approved" email exists yet -- surface the portal
+                // link here so the admin can paste it into a manual email/message to the
+                // owner. Resolved relative to this page (not hardcoded), so it's correct
+                // whether this is served at a domain root or a GitHub Pages subpath.
+                const portalUrl = new URL('portal.html', window.location.href).href;
+                try {
+                    await navigator.clipboard.writeText(portalUrl);
+                    showToast(`Claim approved. Portal link copied — send it to ${email}.`, 'success', 6000);
+                } catch (clipboardErr) {
+                    showToast(`Claim approved. Send this to ${email}: ${portalUrl}`, 'success', 10000);
+                }
+
                 fetchClaims();
                 refreshOverviewStats();
                 if (claimHistoryLoaded) fetchClaimHistory();
