@@ -229,15 +229,14 @@ def map_section(row):
 def render_page(row, slug):
     company = esc(row.get('company_name'))
     category = row.get('category') or 'Class'
-    title = f"{row.get('company_name')} — {category} classes | Kids Class Directory"
+    title = f"{row.get('company_name')} — {category} classes | Kids Patch"
     desc = meta_description(row)
     canonical = f'{SITE_URL}/business/{slug}.html'
     cat_link = f'../index.html?cat={quote(row.get("category") or "")}'
 
-    og_image = ''
     image_path = row.get('hosted_image_path') or row.get('logo_path')
-    if image_path:
-        og_image = f'<meta property="og:image" content="{SITE_URL}/{image_path}">\n    <meta name="twitter:image" content="{SITE_URL}/{image_path}">'
+    og_image_url = f'{SITE_URL}/{image_path}' if image_path else f'{SITE_URL}/og-image.png'
+    og_image = f'<meta property="og:image" content="{og_image_url}">\n    <meta name="twitter:image" content="{og_image_url}">'
 
     dropoff_tag = ''
     if row.get('parental_requirement') == 'Drop-off':
@@ -281,6 +280,7 @@ def render_page(row, slug):
 </head>
 <body>
     <div class="business-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
         <nav class="breadcrumb">
             <a href="../index.html">Home</a> &rsaquo; <a href="{cat_link}">{esc(category)}</a> &rsaquo; {company}
         </nav>
