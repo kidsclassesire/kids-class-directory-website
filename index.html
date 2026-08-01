@@ -59,6 +59,17 @@
                     </button>
                 </div>
             </div>
+            <div class="search-divider"></div>
+            <div class="search-input-group">
+                <label for="age-filter">Age</label>
+                <select id="age-filter">
+                    <option value="">Any age</option>
+                    <option value="toddler">Under 5 Years</option>
+                    <option value="child">5 - 8 Years</option>
+                    <option value="preteen">9 - 12 Years</option>
+                    <option value="teen">13+ Years</option>
+                </select>
+            </div>
             <button id="search-btn" class="search-btn">
                 <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="none" stroke-width="3"><path d="M13 3C7.477 3 3 7.477 3 13s4.477 10 10 10c2.395 0 4.593-.84 6.31-2.24l6.983 6.982 1.414-1.414-6.982-6.983A9.957 9.957 0 0023 13c0-5.523-4.477-10-10-10zm0 2c4.43 0 8 3.57 8 8s-3.57 8-8 8-8-3.57-8-8 3.57-8 8-8z"/></svg>
             </button>
@@ -67,20 +78,12 @@
 
     <main id="main-content">
         <div class="results-column">
-            
+
             <!-- Granular Filter Bar -->
             <div class="filter-bar-wrap">
                 <div class="filter-bar">
                     <select id="category-filter" class="filter-select">
                         <option value="">Any Category</option>
-                    </select>
-
-                    <select id="age-filter" class="filter-select">
-                        <option value="">Any Age</option>
-                        <option value="toddler">Under 5 Years</option>
-                        <option value="child">5 - 8 Years</option>
-                        <option value="preteen">9 - 12 Years</option>
-                        <option value="teen">13+ Years</option>
                     </select>
 
                     <select id="day-filter" class="filter-select">
@@ -792,7 +795,10 @@
         locationInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') performSearch(); });
 
         categoryFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
-        ageFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
+        // Age now lives in the hero bar alongside Activity/Where, so picking one should
+        // reveal results immediately (like the "near me" button) rather than silently
+        // no-op until the user also presses the separate search button.
+        ageFilter.addEventListener('change', performSearch);
         dayFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
         dropoffFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
         favoritesOnlyFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
