@@ -30,6 +30,9 @@
 
         /* Auth Section */
         #auth-section { display: flex; flex-direction: column; max-width: 400px; margin: 0 auto; }
+        #reset-password-section { display: none; flex-direction: column; max-width: 400px; margin: 0 auto; }
+        .toggle-text { text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem; cursor: pointer; }
+        .toggle-text:hover { color: var(--text-dark); text-decoration: underline; }
         .form-group { margin-bottom: 1rem; }
         .form-group label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem; }
         .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; box-sizing: border-box; font-family: inherit; font-size: 0.95rem; }
@@ -153,12 +156,25 @@
         </div>
         <button class="btn" id="login-btn">Log In</button>
         <p id="auth-error" style="color: #ef4444; font-size: 0.85rem; display: none;"></p>
+        <p id="auth-info" style="color: #10b981; font-size: 0.85rem; display: none;"></p>
+        <p class="toggle-text" id="forgot-password-link">Forgot your password?</p>
     </div>
 
     <div class="container" id="unauthorized-section">
         <h1>Not an admin account</h1>
         <p>This account is signed in, but isn't on the admin list. If you think this is a mistake, contact the site owner.</p>
         <button class="btn" id="unauthorized-logout-btn" style="width: auto;">Log Out</button>
+    </div>
+
+    <div class="container" id="reset-password-section">
+        <h1>Set New Password</h1>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Choose a new password for your admin account.</p>
+        <div class="form-group">
+            <label for="new-password">New Password</label>
+            <input type="password" id="new-password">
+        </div>
+        <button class="btn" id="update-password-btn">Update Password</button>
+        <p id="reset-error" style="color: #ef4444; font-size: 0.85rem; display: none;"></p>
     </div>
 
     <div class="container" id="dashboard-section">
@@ -489,7 +505,17 @@
             }
         }
 
+        // Supabase redirects back here with `#type=recovery&access_token=...` after a
+        // password-reset email link is clicked. That establishes a real session, so the
+        // normal checkSession() below would otherwise show the dashboard straight away --
+        // skip it here and let the PASSWORD_RECOVERY listener show the "set new password"
+        // form instead, exclusively.
+        function isRecoveryRedirect() {
+            return window.location.hash.includes('type=recovery');
+        }
+
         async function checkSession() {
+            if (isRecoveryRedirect()) return;
             const { data: { session } } = await supabaseClient.auth.getSession();
             if (session) {
                 currentUserEmail = session.user.email;
@@ -523,12 +549,92 @@
             currentUserEmail = '';
             dashboardSection.style.display = 'none';
             unauthorizedSection.style.display = 'none';
+            document.getElementById('reset-password-section').style.display = 'none';
             authSection.style.display = 'flex';
             document.getElementById('admin-email').value = '';
             document.getElementById('admin-password').value = '';
         }
         document.getElementById('logout-btn').addEventListener('click', doLogout);
         document.getElementById('unauthorized-logout-btn').addEventListener('click', doLogout);
+
+        // ============================================================
+        // Forgot / reset password
+        // ============================================================
+        const authInfo = document.getElementById('auth-info');
+
+        document.getElementById('forgot-password-link').addEventListener('click', async () => {
+            const email = document.getElementById('admin-email').value.trim();
+            errorMsg.style.display = 'none';
+            authInfo.style.display = 'none';
+
+            if (!email) {
+                errorMsg.textContent = 'Enter your email above first, then click "Forgot your password?" again.';
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            const link = document.getElementById('forgot-password-link');
+            link.textContent = 'Sending...';
+            try {
+                // Redirect back to this same page (origin-relative, so it works on
+                // localhost during dev and on the real domain once deployed) --
+                // Supabase appends the recovery token itself.
+                const redirectTo = window.location.origin + window.location.pathname;
+                const { error } = await supabaseClient.auth.resetPasswordForEmail(email, { redirectTo });
+                if (error) throw error;
+                authInfo.textContent = 'Check your email for a password reset link.';
+                authInfo.style.display = 'block';
+            } catch (err) {
+                errorMsg.textContent = err.message;
+                errorMsg.style.display = 'block';
+            } finally {
+                link.textContent = 'Forgot your password?';
+            }
+        });
+
+        // Fires once Supabase has parsed a `#type=recovery` redirect and established a
+        // session from it -- show the "set new password" form instead of the normal
+        // login/dashboard flow.
+        supabaseClient.auth.onAuthStateChange((event) => {
+            if (event === 'PASSWORD_RECOVERY') {
+                authSection.style.display = 'none';
+                dashboardSection.style.display = 'none';
+                unauthorizedSection.style.display = 'none';
+                document.getElementById('reset-password-section').style.display = 'flex';
+            }
+        });
+
+        document.getElementById('update-password-btn').addEventListener('click', async () => {
+            const newPassword = document.getElementById('new-password').value;
+            const resetError = document.getElementById('reset-error');
+            resetError.style.display = 'none';
+
+            if (newPassword.length < 6) {
+                resetError.textContent = 'Password must be at least 6 characters.';
+                resetError.style.display = 'block';
+                return;
+            }
+
+            const btn = document.getElementById('update-password-btn');
+            btn.textContent = 'Updating...';
+            btn.disabled = true;
+            try {
+                const { data, error } = await supabaseClient.auth.updateUser({ password: newPassword });
+                if (error) throw error;
+                currentUserEmail = data.user.email;
+                // Drop the #type=recovery hash so a later refresh doesn't re-trigger this flow.
+                history.replaceState(null, '', window.location.pathname);
+                document.getElementById('reset-password-section').style.display = 'none';
+                document.getElementById('new-password').value = '';
+                await showDashboardIfAdmin();
+            } catch (err) {
+                resetError.textContent = err.message;
+                resetError.style.display = 'block';
+            } finally {
+                btn.textContent = 'Update Password';
+                btn.disabled = false;
+            }
+        });
 
         // ============================================================
         // Top-level + sub tab wiring
