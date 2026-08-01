@@ -7,7 +7,9 @@
     <style>
         :root {
             --primary: #ff385c;
+            --primary-hover: #d90b34;
             --text-dark: #0f172a;
+            --text-muted: #64748b;
             --bg-page: #f8fafc;
             --border: #e2e8f0;
         }
@@ -21,46 +23,120 @@
         .container {
             background: #ffffff; padding: 2rem; border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            width: 100%; max-width: 800px;
+            width: 100%; max-width: 900px; box-sizing: border-box;
         }
         h1 { margin-top: 0; }
+        h2, h3 { margin-top: 0; }
 
         /* Auth Section */
         #auth-section { display: flex; flex-direction: column; max-width: 400px; margin: 0 auto; }
         .form-group { margin-bottom: 1rem; }
         .form-group label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .form-group input { width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; box-sizing: border-box; }
-        .btn { background: var(--primary); color: white; border: none; padding: 0.85rem; border-radius: 8px; cursor: pointer; font-weight: 600; width: 100%; }
-
-        /* Dashboard Section */
-        #dashboard-section { display: none; }
-        .claim-card { border: 1px solid var(--border); padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; }
-        .claim-details h3 { margin: 0 0 0.5rem; }
-        .claim-details p { margin: 0; color: #64748b; font-size: 0.9rem; line-height: 1.5; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; box-sizing: border-box; font-family: inherit; font-size: 0.95rem; }
+        .form-group textarea { resize: vertical; min-height: 90px; }
+        .form-row { display: flex; gap: 1rem; }
+        .form-row .form-group { flex: 1; }
+        .btn { background: var(--primary); color: white; border: none; padding: 0.85rem; border-radius: 8px; cursor: pointer; font-weight: 600; width: 100%; font-size: 1rem; }
+        .btn:hover { background: var(--primary-hover); }
+        .btn:disabled { opacity: 0.6; cursor: default; }
+        .btn-secondary { background: #ffffff; color: var(--text-dark); border: 1px solid var(--border); padding: 0.6rem 1rem; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.85rem; width: auto; }
+        .btn-danger { background: #ffffff; color: #dc2626; border: 1px solid #fecaca; padding: 0.6rem 1rem; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.85rem; width: auto; }
+        .btn-danger:disabled { opacity: 0.5; cursor: not-allowed; }
+        .btn-small { width: auto; padding: 0.6rem 1rem; font-size: 0.85rem; }
         .approve-btn { background: #10b981; width: auto; padding: 0.75rem 1.5rem; }
+        .approve-btn:hover { background: #0d9668; }
+        .reject-btn { padding: 0.75rem 1.5rem; }
 
         #unauthorized-section { display: none; text-align: center; max-width: 400px; margin: 0 auto; }
-        #unauthorized-section p { color: #64748b; }
+        #unauthorized-section p { color: var(--text-muted); }
+
+        /* Dashboard shell */
+        #dashboard-section { display: none; }
+        .dash-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+
+        /* Tabs (shared visual language for top-level + sub-tabs) */
+        .tabs { display: flex; gap: 0.5rem; border-bottom: 1px solid var(--border); margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .tabs.subtabs { margin-top: -0.5rem; }
+        .tab { background: none; border: none; padding: 0.75rem 1rem; font-weight: 600; font-size: 0.9rem; color: var(--text-muted); cursor: pointer; border-bottom: 2px solid transparent; width: auto; }
+        .tab.active { color: var(--primary); border-bottom-color: var(--primary); }
+        .dq-tabs { display: flex; gap: 0.5rem; margin: 0 0 1.5rem; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+        .dq-tab { background: none; border: none; padding: 0.75rem 1rem; font-weight: 600; font-size: 0.9rem; color: var(--text-muted); cursor: pointer; border-bottom: 2px solid transparent; width: auto; }
+        .dq-tab.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+        .panel { display: none; }
+        .panel.active { display: block; }
+        .subpanel { display: none; }
+        .subpanel.active { display: block; }
+
+        /* Overview stat strip */
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+        .stat-tile { position: relative; border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.5rem; }
+        .stat-tile.attention { border-left: 4px solid var(--primary); }
+        .stat-label { font-size: 0.78rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 0.4rem; }
+        .stat-value { font-size: 2rem; font-weight: 800; color: var(--text-dark); line-height: 1; }
+        .stat-sub { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem; }
+
+        /* Generic list rows (claims, businesses, admins) */
+        .list-row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; border: 1px solid var(--border); padding: 1.1rem 1.4rem; border-radius: 8px; margin-bottom: 0.85rem; }
+        .list-row strong { display: block; margin-bottom: 0.3rem; }
+        .list-row .list-row-actions { display: flex; gap: 0.5rem; flex-shrink: 0; }
+        .claim-details p { margin: 0; color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; }
+        .status-badge { display: inline-block; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.02em; }
+        .status-badge.approved { background: #dcfce7; color: #166534; }
+        .status-badge.rejected { background: #f1f5f9; color: var(--text-muted); }
 
         /* Data Quality Review */
-        .dq-tabs { display: flex; gap: 0.5rem; margin: 2rem 0 1rem; border-bottom: 1px solid var(--border); }
-        .dq-tab { background: none; border: none; padding: 0.75rem 1rem; font-weight: 600; font-size: 0.9rem; color: #64748b; cursor: pointer; border-bottom: 2px solid transparent; width: auto; }
-        .dq-tab.active { color: var(--primary); border-bottom-color: var(--primary); }
         .dq-card { border: 1px solid var(--border); padding: 1.25rem; border-radius: 8px; margin-bottom: 1rem; }
         .dq-card h4 { margin: 0 0 0.25rem; }
-        .dq-card .dq-meta { color: #64748b; font-size: 0.85rem; margin: 0 0 0.75rem; }
+        .dq-card .dq-meta { color: var(--text-muted); font-size: 0.85rem; margin: 0 0 0.75rem; }
         .dq-card .dq-row { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem; }
         .dq-card input[type="text"], .dq-card input[type="number"] { flex: 1; padding: 0.6rem; border: 1px solid var(--border); border-radius: 6px; font-family: inherit; }
-        .dq-card .btn-small { width: auto; padding: 0.6rem 1rem; font-size: 0.85rem; }
-        .dq-card .btn-dismiss { background: #94a3b8; }
-        .dq-card .btn-save { background: #10b981; }
-        .dq-empty { color: #64748b; text-align: center; padding: 2rem; }
+        .dq-card .btn-dismiss { background: #94a3b8; color: white; border: none; }
+        .dq-card .btn-save { background: #10b981; color: white; border: none; }
+        .dq-empty { color: var(--text-muted); text-align: center; padding: 2rem; }
+        .dq-meta { color: var(--text-muted); font-size: 0.85rem; }
 
         .image-field { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem; }
         .image-preview-box { width: 70px; height: 70px; border-radius: 8px; background: #f1f5f9; border: 1px dashed var(--border); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; }
         .image-preview-box img { width: 100%; height: 100%; object-fit: cover; }
-        .image-preview-box .empty-label { font-size: 0.65rem; color: #64748b; text-align: center; padding: 0.4rem; }
+        .image-preview-box .empty-label { font-size: 0.65rem; color: var(--text-muted); text-align: center; padding: 0.4rem; }
         .image-field-actions { display: flex; gap: 0.5rem; }
+
+        /* Search / inline-add rows */
+        .text-input { padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; font-family: inherit; font-size: 0.9rem; box-sizing: border-box; width: 100%; }
+        .inline-form-row { display: flex; gap: 0.75rem; margin-bottom: 1.5rem; }
+        .inline-form-row .text-input { flex: 1; }
+
+        /* Business edit form */
+        fieldset { border: none; padding: 0; margin: 0 0 1.75rem; }
+        fieldset legend { font-weight: 700; font-size: 0.95rem; padding: 0 0 0.6rem; border-bottom: 1px solid var(--border); width: 100%; margin-bottom: 1.1rem; }
+        .checkbox-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.5rem; }
+        .checkbox-grid label { display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; font-weight: 500; }
+        .checkbox-grid input { width: auto; }
+        .save-bar { position: sticky; bottom: 0; background: #ffffff; padding-top: 1rem; display: flex; gap: 0.75rem; align-items: center; border-top: 1px solid var(--border); margin-top: 0.5rem; }
+        .save-bar .btn { width: auto; padding: 0.85rem 1.75rem; }
+        #biz-edit-wrap { border-top: 2px solid var(--border); margin-top: 1.5rem; padding-top: 1.5rem; }
+        .biz-edit-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; }
+        .danger-note { color: var(--text-muted); font-size: 0.8rem; margin: 0.5rem 0 0; }
+
+        /* Skeleton loading placeholders */
+        .skeleton { background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 37%, #f1f5f9 63%); background-size: 400% 100%; animation: skeleton-loading 1.4s ease infinite; border-radius: 8px; }
+        .skeleton-card { height: 80px; margin-bottom: 0.85rem; }
+        @keyframes skeleton-loading { 0% { background-position: 100% 50%; } 100% { background-position: 0 50%; } }
+
+        /* Toasts */
+        #toast-container { position: fixed; bottom: 1.5rem; right: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; z-index: 1000; }
+        .toast { padding: 0.85rem 1.25rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.15); opacity: 0; transform: translateY(8px); transition: opacity 0.2s ease, transform 0.2s ease; max-width: 320px; }
+        .toast.show { opacity: 1; transform: translateY(0); }
+        .toast.success { background: #10b981; }
+        .toast.error { background: #ef4444; }
+
+        @media (max-width: 640px) {
+            body { padding: 1rem; }
+            .container { padding: 1.25rem; }
+            .list-row { flex-direction: column; align-items: flex-start; }
+            .list-row .list-row-actions { width: 100%; }
+        }
     </style>
 </head>
 <body>
@@ -86,23 +162,251 @@
     </div>
 
     <div class="container" id="dashboard-section">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-            <h1>Pending Claims</h1>
+        <div class="dash-header">
+            <h1>Admin Dashboard</h1>
             <button class="btn" id="logout-btn" style="width: auto; background: var(--text-dark);">Log Out</button>
         </div>
-        <div id="claims-container">
-            <p>Loading claims...</p>
+
+        <div class="tabs" id="top-tabs">
+            <button class="tab active" data-tab="overview">Overview</button>
+            <button class="tab" data-tab="claims">Claims</button>
+            <button class="tab" data-tab="businesses">Businesses</button>
+            <button class="tab" data-tab="dataquality">Data Quality</button>
+            <button class="tab" data-tab="admins">Admins</button>
         </div>
 
-        <div class="dq-tabs">
-            <button class="dq-tab active" data-tab="links" id="dq-tab-links">Dead Links (<span id="dq-count-links">0</span>)</button>
-            <button class="dq-tab" data-tab="coords" id="dq-tab-coords">Missing Coordinates (<span id="dq-count-coords">0</span>)</button>
-            <button class="dq-tab" data-tab="images" id="dq-tab-images">Missing Images (<span id="dq-count-images">0</span>)</button>
+        <!-- Overview -->
+        <div class="panel active" data-tab="overview" id="panel-overview">
+            <div class="stat-grid" id="stat-grid">
+                <div class="stat-tile" id="stat-tile-pending">
+                    <div class="stat-label">Pending Claims</div>
+                    <div class="stat-value" id="stat-pending">–</div>
+                </div>
+                <div class="stat-tile">
+                    <div class="stat-label">Total Businesses</div>
+                    <div class="stat-value" id="stat-total">–</div>
+                </div>
+                <div class="stat-tile">
+                    <div class="stat-label">Data Quality Issues</div>
+                    <div class="stat-value" id="stat-dq">–</div>
+                </div>
+                <div class="stat-tile">
+                    <div class="stat-label">Admins</div>
+                    <div class="stat-value" id="stat-admins">–</div>
+                </div>
+            </div>
         </div>
-        <div id="dq-container">
-            <p>Loading data quality review...</p>
+
+        <!-- Claims -->
+        <div class="panel" data-tab="claims" id="panel-claims">
+            <div class="tabs subtabs" id="claims-tabs">
+                <button class="tab active" data-tab="pending">Pending</button>
+                <button class="tab" data-tab="history">History</button>
+            </div>
+            <div class="subpanel active" data-tab="pending" id="claims-pending-panel">
+                <div class="inline-form-row">
+                    <input type="text" class="text-input" id="claims-search" placeholder="Search by business, requester, or email...">
+                </div>
+                <div id="claims-container"><p>Loading claims...</p></div>
+            </div>
+            <div class="subpanel" data-tab="history" id="claims-history-panel">
+                <div id="claims-history-container"><p>Loading claim history...</p></div>
+            </div>
+        </div>
+
+        <!-- Businesses -->
+        <div class="panel" data-tab="businesses" id="panel-businesses">
+            <div class="inline-form-row">
+                <input type="text" class="text-input" id="biz-search-input" placeholder="Search by name or address...">
+            </div>
+            <div id="biz-results"><p>Loading businesses...</p></div>
+
+            <div id="biz-edit-wrap" style="display: none;">
+                <div class="biz-edit-header">
+                    <h3 id="biz-edit-title">Edit business</h3>
+                    <button type="button" class="btn-secondary" id="biz-edit-close">Close</button>
+                </div>
+                <form id="biz-edit-form">
+                    <fieldset>
+                        <legend>Basic Info</legend>
+                        <div class="form-group">
+                            <label for="biz-edit-name">Business Name</label>
+                            <input type="text" id="biz-edit-name" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="biz-edit-category">Category</label>
+                                <input type="text" id="biz-edit-category" placeholder="e.g. Music, Football, Arts and crafts">
+                            </div>
+                            <div class="form-group">
+                                <label for="biz-edit-class-types">Class Types</label>
+                                <input type="text" id="biz-edit-class-types" placeholder="Comma-separated, e.g. Ballet, Tap">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="biz-edit-description">Description</label>
+                            <textarea id="biz-edit-description" required></textarea>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Ages &amp; Supervision</legend>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="biz-edit-min-age">Minimum Age</label>
+                                <input type="number" id="biz-edit-min-age" step="0.1" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="biz-edit-max-age">Maximum Age</label>
+                                <input type="number" id="biz-edit-max-age" step="0.1" min="0">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="biz-edit-age-display">Age Range (display text)</label>
+                                <input type="text" id="biz-edit-age-display" placeholder="e.g. 3-8 years">
+                            </div>
+                            <div class="form-group">
+                                <label for="biz-edit-parental-req">Supervision</label>
+                                <select id="biz-edit-parental-req">
+                                    <option value="">Not stated</option>
+                                    <option value="Drop-off">Drop-off</option>
+                                    <option value="Parent-Accompanied">Parent-Accompanied</option>
+                                    <option value="Varies by Age or Class">Varies by Age or Class</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Schedule</legend>
+                        <div class="form-group">
+                            <label>Days of the Week</label>
+                            <div class="checkbox-grid" id="biz-days-checkbox-grid">
+                                <label><input type="checkbox" value="Monday"> Monday</label>
+                                <label><input type="checkbox" value="Tuesday"> Tuesday</label>
+                                <label><input type="checkbox" value="Wednesday"> Wednesday</label>
+                                <label><input type="checkbox" value="Thursday"> Thursday</label>
+                                <label><input type="checkbox" value="Friday"> Friday</label>
+                                <label><input type="checkbox" value="Saturday"> Saturday</label>
+                                <label><input type="checkbox" value="Sunday"> Sunday</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="biz-edit-start-time">Start Time</label>
+                                <input type="text" id="biz-edit-start-time" placeholder="e.g. 10:00">
+                            </div>
+                            <div class="form-group">
+                                <label for="biz-edit-end-time">End Time</label>
+                                <input type="text" id="biz-edit-end-time" placeholder="e.g. 11:00">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="biz-edit-term-structure">Term Structure</label>
+                            <input type="text" id="biz-edit-term-structure" placeholder="e.g. School-term programme, Drop-in, 6-week term">
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Pricing</legend>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="biz-edit-price-amount">Price Amount</label>
+                                <input type="number" id="biz-edit-price-amount" step="0.01" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="biz-edit-price-currency">Currency</label>
+                                <input type="text" id="biz-edit-price-currency" placeholder="EUR">
+                            </div>
+                            <div class="form-group">
+                                <label for="biz-edit-pricing-basis">Basis</label>
+                                <input type="text" id="biz-edit-pricing-basis" placeholder="e.g. Per term, Per class">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="biz-edit-pricing-details">Pricing Details</label>
+                            <textarea id="biz-edit-pricing-details" placeholder="Any extra detail on pricing, sibling discounts, etc."></textarea>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Contact &amp; Links</legend>
+                        <div class="form-group">
+                            <label for="biz-edit-website">Website URL</label>
+                            <input type="url" id="biz-edit-website">
+                        </div>
+                        <div class="form-group">
+                            <label for="biz-edit-booking-url">Booking URL</label>
+                            <input type="url" id="biz-edit-booking-url">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="biz-edit-email">Contact Email</label>
+                                <input type="email" id="biz-edit-email">
+                            </div>
+                            <div class="form-group">
+                                <label for="biz-edit-phone">Phone Number</label>
+                                <input type="text" id="biz-edit-phone">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="biz-edit-address">Address</label>
+                            <input type="text" id="biz-edit-address">
+                        </div>
+                        <div class="form-group">
+                            <label for="biz-edit-eircode">Eircode</label>
+                            <input type="text" id="biz-edit-eircode">
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Facilities</legend>
+                        <div class="checkbox-grid" id="biz-facilities-checkbox-grid">
+                            <label><input type="checkbox" value="Indoor Venue"> Indoor Venue</label>
+                            <label><input type="checkbox" value="Outdoor Venue"> Outdoor Venue</label>
+                            <label><input type="checkbox" value="Wheelchair Accessible"> Wheelchair Accessible</label>
+                            <label><input type="checkbox" value="Buggy Accessible"> Buggy Accessible</label>
+                            <label><input type="checkbox" value="Cafe On-site"> Cafe On-site</label>
+                            <label><input type="checkbox" value="Changing Facilities"> Changing Facilities</label>
+                            <label><input type="checkbox" value="Free Parking"> Free Parking</label>
+                            <label><input type="checkbox" value="Paid Parking"> Paid Parking</label>
+                            <label><input type="checkbox" value="Parent Viewing Area"> Parent Viewing Area</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="save-bar">
+                        <button type="submit" class="btn" id="biz-save-btn">Save Changes</button>
+                        <button type="button" class="btn-danger" id="biz-delete-btn">Delete business</button>
+                    </div>
+                    <p class="danger-note">Deleting a business removes it permanently from the directory. This cannot be undone.</p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Data Quality -->
+        <div class="panel" data-tab="dataquality" id="panel-dataquality">
+            <div class="dq-tabs">
+                <button class="dq-tab active" data-tab="links" id="dq-tab-links">Dead Links (<span id="dq-count-links">0</span>)</button>
+                <button class="dq-tab" data-tab="coords" id="dq-tab-coords">Missing Coordinates (<span id="dq-count-coords">0</span>)</button>
+                <button class="dq-tab" data-tab="images" id="dq-tab-images">Missing Images (<span id="dq-count-images">0</span>)</button>
+            </div>
+            <div id="dq-container">
+                <p>Loading data quality review...</p>
+            </div>
+        </div>
+
+        <!-- Admins -->
+        <div class="panel" data-tab="admins" id="panel-admins">
+            <div class="inline-form-row">
+                <input type="email" class="text-input" id="admin-add-email" placeholder="email@example.com">
+                <button class="btn btn-small" id="admin-add-btn">Add admin</button>
+            </div>
+            <div id="admins-list"><p>Loading admins...</p></div>
         </div>
     </div>
+
+    <div id="toast-container"></div>
 
     <!-- Supabase JS -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -117,6 +421,50 @@
         const claimsContainer = document.getElementById('claims-container');
         const loginBtn = document.getElementById('login-btn');
         const errorMsg = document.getElementById('auth-error');
+
+        let currentUserEmail = '';
+
+        // ============================================================
+        // Shared helpers: escaping, toasts, skeletons, tab wiring
+        // ============================================================
+        function escapeHtml(unsafe) {
+            return (unsafe || '').toString()
+                 .replace(/&/g, "&amp;")
+                 .replace(/</g, "&lt;")
+                 .replace(/>/g, "&gt;")
+                 .replace(/"/g, "&quot;")
+                 .replace(/'/g, "&#039;");
+        }
+
+        const toastContainer = document.getElementById('toast-container');
+        function showToast(message, type = 'success') {
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.textContent = message;
+            toastContainer.appendChild(toast);
+            requestAnimationFrame(() => toast.classList.add('show'));
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 250);
+            }, 3500);
+        }
+
+        function skeletonHtml(count = 3, height = 80) {
+            return Array.from({ length: count }, () => `<div class="skeleton skeleton-card" style="height:${height}px"></div>`).join('');
+        }
+
+        function wireTabGroup(tabSelector, panelSelector, onActivate) {
+            const tabs = document.querySelectorAll(tabSelector);
+            const panels = document.querySelectorAll(panelSelector);
+            tabs.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const key = btn.dataset.tab;
+                    tabs.forEach(b => b.classList.toggle('active', b === btn));
+                    panels.forEach(p => p.classList.toggle('active', p.dataset.tab === key));
+                    if (onActivate) onActivate(key);
+                });
+            });
+        }
 
         // The RLS policy on `admins` only lets a user see their OWN row (if it exists),
         // so this doubles as both the UI gate and confirmation the server-side checks
@@ -133,7 +481,8 @@
                 unauthorizedSection.style.display = 'none';
                 dashboardSection.style.display = 'block';
                 fetchClaims();
-                loadDataQuality();
+                loadDataQuality().then(refreshOverviewStats);
+                refreshOverviewStats();
             } else {
                 dashboardSection.style.display = 'none';
                 unauthorizedSection.style.display = 'block';
@@ -143,6 +492,7 @@
         async function checkSession() {
             const { data: { session } } = await supabaseClient.auth.getSession();
             if (session) {
+                currentUserEmail = session.user.email;
                 await showDashboardIfAdmin();
             }
         }
@@ -155,8 +505,9 @@
             loginBtn.disabled = true;
 
             try {
-                const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
+                const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
                 if (error) throw error;
+                currentUserEmail = data.user.email;
                 await showDashboardIfAdmin();
             } catch (err) {
                 errorMsg.textContent = err.message;
@@ -169,6 +520,7 @@
 
         async function doLogout() {
             await supabaseClient.auth.signOut();
+            currentUserEmail = '';
             dashboardSection.style.display = 'none';
             unauthorizedSection.style.display = 'none';
             authSection.style.display = 'flex';
@@ -178,41 +530,98 @@
         document.getElementById('logout-btn').addEventListener('click', doLogout);
         document.getElementById('unauthorized-logout-btn').addEventListener('click', doLogout);
 
+        // ============================================================
+        // Top-level + sub tab wiring
+        // ============================================================
+        let businessesLoaded = false;
+        let claimHistoryLoaded = false;
+        let adminsLoaded = false;
+
+        wireTabGroup('#top-tabs .tab', '#dashboard-section > .panel', (key) => {
+            if (key === 'businesses' && !businessesLoaded) { businessesLoaded = true; searchBusinesses(''); }
+            if (key === 'admins' && !adminsLoaded) { adminsLoaded = true; fetchAdmins(); }
+        });
+        wireTabGroup('#claims-tabs .tab', '#panel-claims .subpanel', (key) => {
+            if (key === 'history' && !claimHistoryLoaded) { claimHistoryLoaded = true; fetchClaimHistory(); }
+        });
+
+        // ============================================================
+        // Overview stats
+        // ============================================================
+        async function refreshOverviewStats() {
+            try {
+                const [pendingRes, totalRes, adminsRes] = await Promise.all([
+                    supabaseClient.from('claim_requests').select('*', { count: 'exact', head: true }).eq('status', 'pending'),
+                    supabaseClient.from('classes').select('*', { count: 'exact', head: true }),
+                    supabaseClient.from('admins').select('*', { count: 'exact', head: true }),
+                ]);
+                const pending = pendingRes.count ?? 0;
+                document.getElementById('stat-pending').textContent = pending;
+                document.getElementById('stat-total').textContent = totalRes.count ?? '–';
+                document.getElementById('stat-admins').textContent = adminsRes.count ?? '–';
+                document.getElementById('stat-dq').textContent = dqData.links.length + dqData.coords.length + dqData.images.length;
+                document.getElementById('stat-tile-pending').classList.toggle('attention', pending > 0);
+            } catch (err) {
+                // Overview stats are a nice-to-have summary; a failure here shouldn't block the rest of the dashboard.
+            }
+        }
+
+        // ============================================================
+        // Claims: Pending
+        // ============================================================
+        let allPendingClaims = [];
+
         async function fetchClaims() {
-            claimsContainer.innerHTML = '<p>Loading claims...</p>';
+            claimsContainer.innerHTML = skeletonHtml(3, 90);
             try {
                 const { data, error } = await supabaseClient
                     .from('claim_requests')
                     .select('*')
-                    .eq('status', 'pending');
+                    .eq('status', 'pending')
+                    .order('created_at', { ascending: false });
 
                 if (error) throw error;
-
-                if (data.length === 0) {
-                    claimsContainer.innerHTML = '<p>No pending claims right now.</p>';
-                    return;
-                }
-
-                claimsContainer.innerHTML = '';
-                data.forEach(claim => {
-                    const card = document.createElement('div');
-                    card.className = 'claim-card';
-                    card.innerHTML = `
-                        <div class="claim-details">
-                            <h3>${claim.business_name}</h3>
-                            <p><strong>Requester:</strong> ${claim.requester_name} (${claim.requester_position})</p>
-                            <p><strong>Email:</strong> ${claim.requester_email}</p>
-                            <p><strong>Submitted:</strong> ${new Date(claim.created_at).toLocaleDateString()}</p>
-                        </div>
-                        <button class="btn approve-btn" data-claim-id="${claim.id}">Approve</button>
-                    `;
-                    card.querySelector('.approve-btn').addEventListener('click', () => approveClaim(claim.id, claim.requester_email));
-                    claimsContainer.appendChild(card);
-                });
+                allPendingClaims = data;
+                renderPendingClaims(document.getElementById('claims-search').value);
             } catch (err) {
-                claimsContainer.innerHTML = `<p style="color:red;">Error loading claims: ${err.message}</p>`;
+                claimsContainer.innerHTML = `<p style="color:#ef4444;">Error loading claims: ${escapeHtml(err.message)}</p>`;
             }
         }
+
+        function renderPendingClaims(filterText) {
+            const q = (filterText || '').trim().toLowerCase();
+            const rows = q
+                ? allPendingClaims.filter(c => [c.business_name, c.requester_name, c.requester_email].some(v => (v || '').toLowerCase().includes(q)))
+                : allPendingClaims;
+
+            if (!rows.length) {
+                claimsContainer.innerHTML = `<p>${allPendingClaims.length ? 'No claims match your search.' : 'No pending claims right now.'}</p>`;
+                return;
+            }
+
+            claimsContainer.innerHTML = '';
+            rows.forEach(claim => {
+                const card = document.createElement('div');
+                card.className = 'list-row';
+                card.innerHTML = `
+                    <div class="claim-details">
+                        <h3>${escapeHtml(claim.business_name)}</h3>
+                        <p><strong>Requester:</strong> ${escapeHtml(claim.requester_name)} (${escapeHtml(claim.requester_position)})</p>
+                        <p><strong>Email:</strong> ${escapeHtml(claim.requester_email)}</p>
+                        <p><strong>Submitted:</strong> ${new Date(claim.created_at).toLocaleDateString()}</p>
+                    </div>
+                    <div class="list-row-actions">
+                        <button class="btn approve-btn">Approve</button>
+                        <button class="btn-danger reject-btn">Reject</button>
+                    </div>
+                `;
+                card.querySelector('.approve-btn').addEventListener('click', () => approveClaim(claim.id, claim.requester_email));
+                card.querySelector('.reject-btn').addEventListener('click', () => rejectClaim(claim.id, claim.business_name));
+                claimsContainer.appendChild(card);
+            });
+        }
+
+        document.getElementById('claims-search').addEventListener('input', (e) => renderPendingClaims(e.target.value));
 
         async function approveClaim(claimId, email) {
             if (!confirm(`Are you sure you want to approve ${email}?`)) return;
@@ -224,9 +633,334 @@
                     .eq('id', claimId);
 
                 if (error) throw error;
+                showToast('Claim approved.', 'success');
                 fetchClaims();
+                refreshOverviewStats();
+                if (claimHistoryLoaded) fetchClaimHistory();
             } catch (err) {
-                alert('Failed to approve claim: ' + err.message);
+                showToast('Failed to approve claim: ' + err.message, 'error');
+            }
+        }
+
+        async function rejectClaim(claimId, businessName) {
+            if (!confirm(`Reject the claim for "${businessName}"?`)) return;
+
+            try {
+                const { error } = await supabaseClient
+                    .from('claim_requests')
+                    .update({ status: 'rejected' })
+                    .eq('id', claimId);
+
+                if (error) throw error;
+                showToast('Claim rejected.', 'success');
+                fetchClaims();
+                refreshOverviewStats();
+                if (claimHistoryLoaded) fetchClaimHistory();
+            } catch (err) {
+                showToast('Failed to reject claim: ' + err.message, 'error');
+            }
+        }
+
+        // ============================================================
+        // Claims: History
+        // ============================================================
+        async function fetchClaimHistory() {
+            const container = document.getElementById('claims-history-container');
+            container.innerHTML = skeletonHtml(3, 90);
+            try {
+                const { data, error } = await supabaseClient
+                    .from('claim_requests')
+                    .select('*')
+                    .in('status', ['approved', 'rejected'])
+                    .order('created_at', { ascending: false })
+                    .limit(200);
+
+                if (error) throw error;
+
+                if (!data.length) {
+                    container.innerHTML = '<p class="dq-empty">No resolved claims yet.</p>';
+                    return;
+                }
+
+                container.innerHTML = '';
+                data.forEach(claim => {
+                    const badgeClass = claim.status === 'approved' ? 'approved' : 'rejected';
+                    const row = document.createElement('div');
+                    row.className = 'list-row';
+                    row.innerHTML = `
+                        <div class="claim-details">
+                            <h3>${escapeHtml(claim.business_name)} <span class="status-badge ${badgeClass}">${escapeHtml(claim.status)}</span></h3>
+                            <p><strong>Requester:</strong> ${escapeHtml(claim.requester_name)} (${escapeHtml(claim.requester_position)})</p>
+                            <p><strong>Email:</strong> ${escapeHtml(claim.requester_email)}</p>
+                            <p><strong>Submitted:</strong> ${new Date(claim.created_at).toLocaleDateString()}</p>
+                        </div>
+                    `;
+                    container.appendChild(row);
+                });
+            } catch (err) {
+                container.innerHTML = `<p style="color:#ef4444;">Error loading claim history: ${escapeHtml(err.message)}</p>`;
+            }
+        }
+
+        // ============================================================
+        // Businesses: search / edit / delete
+        // ============================================================
+        const bizResultsEl = document.getElementById('biz-results');
+        const bizEditWrap = document.getElementById('biz-edit-wrap');
+        const bizEditForm = document.getElementById('biz-edit-form');
+        let currentEditBusinessId = null;
+        let currentEditBusinessName = '';
+        let bizSearchTimeout = null;
+
+        function setCheckboxGroup(gridId, values) {
+            const set = new Set((values || []).map(v => v.toLowerCase()));
+            document.querySelectorAll(`#${gridId} input[type="checkbox"]`).forEach(cb => {
+                cb.checked = set.has(cb.value.toLowerCase());
+            });
+        }
+        function getCheckboxGroup(gridId) {
+            return Array.from(document.querySelectorAll(`#${gridId} input[type="checkbox"]:checked`)).map(cb => cb.value);
+        }
+        function csvToArray(str) {
+            return (str || '').split(',').map(s => s.trim()).filter(Boolean);
+        }
+
+        document.getElementById('biz-search-input').addEventListener('input', (e) => {
+            clearTimeout(bizSearchTimeout);
+            const q = e.target.value;
+            bizSearchTimeout = setTimeout(() => searchBusinesses(q), 300);
+        });
+
+        async function searchBusinesses(rawQuery) {
+            bizResultsEl.innerHTML = skeletonHtml(4, 60);
+            // Strip characters that would otherwise break the PostgREST .or() filter syntax.
+            const q = (rawQuery || '').replace(/[,()%]/g, ' ').trim();
+
+            try {
+                let query = supabaseClient.from('classes').select('id,company_name,address,category').order('company_name').limit(50);
+                if (q) query = query.or(`company_name.ilike.%${q}%,address.ilike.%${q}%`);
+                const { data, error } = await query;
+                if (error) throw error;
+
+                if (!data.length) {
+                    bizResultsEl.innerHTML = '<p class="dq-empty">No businesses found.</p>';
+                    return;
+                }
+
+                bizResultsEl.innerHTML = '';
+                data.forEach(biz => {
+                    const row = document.createElement('div');
+                    row.className = 'list-row';
+                    row.innerHTML = `
+                        <div>
+                            <strong>${escapeHtml(biz.company_name)}</strong>
+                            <p class="dq-meta">${escapeHtml(biz.category || 'Uncategorized')}${biz.address ? ' &middot; ' + escapeHtml(biz.address) : ''}</p>
+                        </div>
+                        <div class="list-row-actions">
+                            <button class="btn-small">Edit</button>
+                        </div>
+                    `;
+                    row.querySelector('button').addEventListener('click', () => openBusinessEditor(biz.id));
+                    bizResultsEl.appendChild(row);
+                });
+            } catch (err) {
+                bizResultsEl.innerHTML = `<p style="color:#ef4444;">Error searching businesses: ${escapeHtml(err.message)}</p>`;
+            }
+        }
+
+        async function openBusinessEditor(id) {
+            try {
+                const { data: business, error } = await supabaseClient.from('classes').select('*').eq('id', id).single();
+                if (error) throw error;
+
+                currentEditBusinessId = business.id;
+                currentEditBusinessName = business.company_name || '';
+
+                document.getElementById('biz-edit-title').textContent = currentEditBusinessName || '(untitled business)';
+                document.getElementById('biz-edit-name').value = business.company_name || '';
+                document.getElementById('biz-edit-category').value = business.category || '';
+                document.getElementById('biz-edit-class-types').value = (business.class_types || []).join(', ');
+                document.getElementById('biz-edit-description').value = business.description || '';
+                document.getElementById('biz-edit-min-age').value = business.minimum_age ?? '';
+                document.getElementById('biz-edit-max-age').value = business.maximum_age ?? '';
+                document.getElementById('biz-edit-age-display').value = business.age_range_display || '';
+                document.getElementById('biz-edit-parental-req').value = business.parental_requirement || '';
+                setCheckboxGroup('biz-days-checkbox-grid', business.days_of_week);
+                document.getElementById('biz-edit-start-time').value = business.start_time || '';
+                document.getElementById('biz-edit-end-time').value = business.end_time || '';
+                document.getElementById('biz-edit-term-structure').value = business.term_structure || '';
+                document.getElementById('biz-edit-price-amount').value = business.price_amount ?? '';
+                document.getElementById('biz-edit-price-currency').value = business.price_currency || 'EUR';
+                document.getElementById('biz-edit-pricing-basis').value = business.pricing_basis || '';
+                document.getElementById('biz-edit-pricing-details').value = business.pricing_details || '';
+                document.getElementById('biz-edit-website').value = business.website_url || '';
+                document.getElementById('biz-edit-booking-url').value = business.booking_url || '';
+                document.getElementById('biz-edit-email').value = business.email_address || '';
+                document.getElementById('biz-edit-phone').value = business.phone_number || '';
+                document.getElementById('biz-edit-address').value = business.address || '';
+                document.getElementById('biz-edit-eircode').value = business.eircode || '';
+                setCheckboxGroup('biz-facilities-checkbox-grid', business.facilities);
+
+                bizEditWrap.style.display = 'block';
+                bizEditWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } catch (err) {
+                showToast('Failed to load business: ' + err.message, 'error');
+            }
+        }
+
+        document.getElementById('biz-edit-close').addEventListener('click', () => {
+            bizEditWrap.style.display = 'none';
+            currentEditBusinessId = null;
+        });
+
+        bizEditForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if (!currentEditBusinessId) return;
+
+            const saveBtn = document.getElementById('biz-save-btn');
+            saveBtn.textContent = 'Saving...';
+            saveBtn.disabled = true;
+
+            const numOrNull = (v) => (v === '' ? null : Number(v));
+            const strOrNull = (v) => (v === '' ? null : v);
+
+            const updates = {
+                company_name: document.getElementById('biz-edit-name').value,
+                category: strOrNull(document.getElementById('biz-edit-category').value),
+                class_types: csvToArray(document.getElementById('biz-edit-class-types').value),
+                description: document.getElementById('biz-edit-description').value,
+                minimum_age: numOrNull(document.getElementById('biz-edit-min-age').value),
+                maximum_age: numOrNull(document.getElementById('biz-edit-max-age').value),
+                age_range_display: strOrNull(document.getElementById('biz-edit-age-display').value),
+                parental_requirement: strOrNull(document.getElementById('biz-edit-parental-req').value),
+                days_of_week: getCheckboxGroup('biz-days-checkbox-grid'),
+                start_time: strOrNull(document.getElementById('biz-edit-start-time').value),
+                end_time: strOrNull(document.getElementById('biz-edit-end-time').value),
+                term_structure: strOrNull(document.getElementById('biz-edit-term-structure').value),
+                price_amount: numOrNull(document.getElementById('biz-edit-price-amount').value),
+                price_currency: strOrNull(document.getElementById('biz-edit-price-currency').value),
+                pricing_basis: strOrNull(document.getElementById('biz-edit-pricing-basis').value),
+                pricing_details: strOrNull(document.getElementById('biz-edit-pricing-details').value),
+                website_url: strOrNull(document.getElementById('biz-edit-website').value),
+                booking_url: strOrNull(document.getElementById('biz-edit-booking-url').value),
+                email_address: strOrNull(document.getElementById('biz-edit-email').value),
+                phone_number: strOrNull(document.getElementById('biz-edit-phone').value),
+                address: strOrNull(document.getElementById('biz-edit-address').value),
+                eircode: strOrNull(document.getElementById('biz-edit-eircode').value),
+                facilities: getCheckboxGroup('biz-facilities-checkbox-grid'),
+            };
+
+            try {
+                const { error } = await supabaseClient.from('classes').update(updates).eq('id', currentEditBusinessId);
+                if (error) throw error;
+
+                currentEditBusinessName = updates.company_name;
+                document.getElementById('biz-edit-title').textContent = currentEditBusinessName || '(untitled business)';
+                showToast('Business updated.', 'success');
+                searchBusinesses(document.getElementById('biz-search-input').value);
+            } catch (err) {
+                showToast('Failed to save: ' + err.message, 'error');
+            } finally {
+                saveBtn.textContent = 'Save Changes';
+                saveBtn.disabled = false;
+            }
+        });
+
+        document.getElementById('biz-delete-btn').addEventListener('click', async () => {
+            if (!currentEditBusinessId) return;
+            if (!confirm(`Delete "${currentEditBusinessName}"? This cannot be undone.`)) return;
+
+            try {
+                const { error } = await supabaseClient.from('classes').delete().eq('id', currentEditBusinessId);
+                if (error) throw error;
+
+                showToast('Business deleted.', 'success');
+                bizEditWrap.style.display = 'none';
+                currentEditBusinessId = null;
+                searchBusinesses(document.getElementById('biz-search-input').value);
+                refreshOverviewStats();
+            } catch (err) {
+                showToast('Failed to delete: ' + err.message, 'error');
+            }
+        });
+
+        // ============================================================
+        // Admins management
+        // ============================================================
+        const adminsListEl = document.getElementById('admins-list');
+        let currentAdminsList = [];
+        const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        async function fetchAdmins() {
+            adminsListEl.innerHTML = skeletonHtml(3, 60);
+            try {
+                const { data, error } = await supabaseClient.from('admins').select('email, created_at').order('created_at');
+                if (error) throw error;
+                currentAdminsList = data;
+                renderAdmins();
+            } catch (err) {
+                adminsListEl.innerHTML = `<p style="color:#ef4444;">Error loading admins: ${escapeHtml(err.message)}</p>`;
+            }
+        }
+
+        function renderAdmins() {
+            if (!currentAdminsList.length) {
+                adminsListEl.innerHTML = '<p class="dq-empty">No admins found.</p>';
+                return;
+            }
+            adminsListEl.innerHTML = '';
+            currentAdminsList.forEach(a => {
+                const isSelf = a.email.toLowerCase() === currentUserEmail.toLowerCase();
+                const isLast = currentAdminsList.length === 1;
+                const disableReason = isLast ? 'At least one admin must remain' : (isSelf ? "You can't remove yourself" : '');
+
+                const row = document.createElement('div');
+                row.className = 'list-row';
+                row.innerHTML = `
+                    <div>
+                        <strong>${escapeHtml(a.email)}</strong>
+                        <p class="dq-meta">Added ${a.created_at ? new Date(a.created_at).toLocaleDateString() : 'unknown'}</p>
+                    </div>
+                    <div class="list-row-actions">
+                        <button class="btn-danger btn-small"${disableReason ? ` disabled title="${escapeHtml(disableReason)}"` : ''}>Remove</button>
+                    </div>
+                `;
+                if (!disableReason) {
+                    row.querySelector('button').addEventListener('click', () => removeAdmin(a.email));
+                }
+                adminsListEl.appendChild(row);
+            });
+        }
+
+        document.getElementById('admin-add-btn').addEventListener('click', async () => {
+            const input = document.getElementById('admin-add-email');
+            const email = input.value.trim().toLowerCase();
+            if (!EMAIL_RE.test(email)) {
+                showToast('Enter a valid email address.', 'error');
+                return;
+            }
+            try {
+                const { error } = await supabaseClient.from('admins').insert({ email });
+                if (error) throw error;
+                input.value = '';
+                showToast('Admin added.', 'success');
+                fetchAdmins();
+                refreshOverviewStats();
+            } catch (err) {
+                showToast('Failed to add admin: ' + err.message, 'error');
+            }
+        });
+
+        async function removeAdmin(email) {
+            if (!confirm(`Remove admin access for ${email}?`)) return;
+            try {
+                const { error } = await supabaseClient.from('admins').delete().eq('email', email);
+                if (error) throw error;
+                showToast('Admin removed.', 'success');
+                fetchAdmins();
+                refreshOverviewStats();
+            } catch (err) {
+                showToast('Failed to remove admin: ' + err.message, 'error');
             }
         }
 
@@ -298,15 +1032,17 @@
             document.getElementById(`dq-count-${listKey}`).textContent = dqData[listKey].length;
             card.remove();
             if (!dqData[listKey].length) renderDqTab();
+            refreshOverviewStats();
         }
 
         async function saveDqUpdate(id, updates, card, listKey) {
             try {
                 const { error } = await supabaseClient.from('classes').update(updates).eq('id', id);
                 if (error) throw error;
+                showToast('Saved.', 'success');
                 removeDqRow(listKey, id, card);
             } catch (err) {
-                alert('Failed to save: ' + err.message);
+                showToast('Failed to save: ' + err.message, 'error');
             }
         }
 
@@ -319,7 +1055,7 @@
                 if (error) throw error;
                 removeDqRow(listKey, id, card);
             } catch (err) {
-                alert('Failed to dismiss: ' + err.message);
+                showToast('Failed to dismiss: ' + err.message, 'error');
             }
         }
 
@@ -343,15 +1079,15 @@
             const box = document.getElementById(boxId);
             if (!box) return;
             if (path) {
-                box.innerHTML = `<img src="${path}" alt="" onerror="this.parentElement.innerHTML='<span class=&quot;empty-label&quot;>Failed to load</span>'">`;
+                box.innerHTML = `<img src="${escapeHtml(path)}" alt="" onerror="this.parentElement.innerHTML='<span class=&quot;empty-label&quot;>Failed to load</span>'">`;
             } else {
                 box.innerHTML = `<span class="empty-label">${boxId.startsWith('logo') ? 'No logo' : 'No banner'}</span>`;
             }
         }
 
         async function uploadDqImage(businessId, kind, file, card, row) {
-            if (!file.type.startsWith('image/')) { alert('Please choose an image file.'); return; }
-            if (file.size > 5 * 1024 * 1024) { alert('Image is too large (max 5MB).'); return; }
+            if (!file.type.startsWith('image/')) { showToast('Please choose an image file.', 'error'); return; }
+            if (file.size > 5 * 1024 * 1024) { showToast('Image is too large (max 5MB).', 'error'); return; }
 
             const btn = card.querySelector(`#${kind}-upload-btn-${businessId}`);
             btn.textContent = 'Uploading...';
@@ -379,13 +1115,14 @@
 
                 renderDqImagePreview(`${kind}-preview-${businessId}`, publicUrl);
                 row[column] = publicUrl;
+                showToast(`${kind === 'logo' ? 'Logo' : 'Banner'} uploaded.`, 'success');
 
                 // The "missing images" query requires BOTH to be null, so filling in
                 // either one already makes this row drop out of a fresh fetch --
                 // remove it from view now to match, rather than waiting for both.
                 removeDqRow('images', businessId, card);
             } catch (err) {
-                alert('Failed to upload: ' + err.message);
+                showToast('Failed to upload: ' + err.message, 'error');
             } finally {
                 btn.textContent = kind === 'logo' ? 'Upload logo' : 'Upload banner';
                 btn.disabled = false;
@@ -401,12 +1138,12 @@
                 card.className = 'dq-card';
                 const checkedDate = row.website_checked_at ? new Date(row.website_checked_at).toLocaleDateString() : 'unknown';
                 card.innerHTML = `
-                    <h4>${row.company_name}</h4>
+                    <h4>${escapeHtml(row.company_name)}</h4>
                     <p class="dq-meta">Flagged dead as of ${checkedDate}</p>
                     <div class="dq-row">
-                        <input type="text" value="${(row.website_url || '').replace(/"/g, '&quot;')}" id="link-input-${row.id}">
-                        <button class="btn btn-small btn-save">Save</button>
-                        <button class="btn btn-small btn-dismiss">Dismiss</button>
+                        <input type="text" value="${escapeHtml(row.website_url || '')}" id="link-input-${row.id}">
+                        <button class="btn-small btn-save">Save</button>
+                        <button class="btn-small btn-dismiss">Dismiss</button>
                     </div>
                 `;
                 card.querySelector('.btn-save').addEventListener('click', () => {
@@ -428,26 +1165,26 @@
                 const card = document.createElement('div');
                 card.className = 'dq-card';
                 card.innerHTML = `
-                    <h4>${row.company_name}</h4>
-                    <p class="dq-meta">${row.address || '(no address on file)'}</p>
+                    <h4>${escapeHtml(row.company_name)}</h4>
+                    <p class="dq-meta">${escapeHtml(row.address || '(no address on file)')}</p>
                     <div class="dq-row">
-                        <button class="btn btn-small" id="geocode-btn-${row.id}">Geocode from address</button>
+                        <button class="btn-small" id="geocode-btn-${row.id}">Geocode from address</button>
                     </div>
                     <div class="dq-row">
                         <input type="number" step="any" placeholder="Latitude" value="${row.latitude ?? ''}" id="lat-input-${row.id}">
                         <input type="number" step="any" placeholder="Longitude" value="${row.longitude ?? ''}" id="lon-input-${row.id}">
-                        <button class="btn btn-small btn-save">Save</button>
-                        <button class="btn btn-small btn-dismiss">Dismiss</button>
+                        <button class="btn-small btn-save">Save</button>
+                        <button class="btn-small btn-dismiss">Dismiss</button>
                     </div>
                 `;
                 card.querySelector(`#geocode-btn-${row.id}`).addEventListener('click', async (e) => {
-                    if (!row.address) { alert('No address on file to geocode.'); return; }
+                    if (!row.address) { showToast('No address on file to geocode.', 'error'); return; }
                     e.target.textContent = 'Geocoding...';
                     e.target.disabled = true;
                     const coords = await geocodeAddress(row.address);
                     e.target.textContent = 'Geocode from address';
                     e.target.disabled = false;
-                    if (!coords) { alert('Could not geocode this address.'); return; }
+                    if (!coords) { showToast('Could not geocode this address.', 'error'); return; }
                     document.getElementById(`lat-input-${row.id}`).value = coords.lat;
                     document.getElementById(`lon-input-${row.id}`).value = coords.lon;
                 });
@@ -474,21 +1211,21 @@
                 const card = document.createElement('div');
                 card.className = 'dq-card';
                 card.innerHTML = `
-                    <h4>${row.company_name}</h4>
+                    <h4>${escapeHtml(row.company_name)}</h4>
                     <div class="image-field">
                         <div class="image-preview-box" id="logo-preview-${row.id}"><span class="empty-label">No logo</span></div>
                         <div class="image-field-actions">
-                            <button class="btn btn-small" id="logo-upload-btn-${row.id}">Upload logo</button>
+                            <button class="btn-small" id="logo-upload-btn-${row.id}">Upload logo</button>
                             <input type="file" accept="image/*" id="logo-file-${row.id}" style="display:none;">
                         </div>
                         <div class="image-preview-box" id="banner-preview-${row.id}"><span class="empty-label">No banner</span></div>
                         <div class="image-field-actions">
-                            <button class="btn btn-small" id="banner-upload-btn-${row.id}">Upload banner</button>
+                            <button class="btn-small" id="banner-upload-btn-${row.id}">Upload banner</button>
                             <input type="file" accept="image/*" id="banner-file-${row.id}" style="display:none;">
                         </div>
                     </div>
                     <div class="dq-row">
-                        <button class="btn btn-small btn-dismiss">Dismiss</button>
+                        <button class="btn-small btn-dismiss">Dismiss</button>
                     </div>
                 `;
                 card.querySelector(`#logo-upload-btn-${row.id}`).addEventListener('click', () => document.getElementById(`logo-file-${row.id}`).click());
