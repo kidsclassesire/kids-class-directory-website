@@ -56,17 +56,18 @@
             <div class="search-input-group">
                 <label for="search-input">Activity</label>
                 <input id="search-input" type="text" placeholder="e.g. athletics, coding" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="search-suggestions" aria-autocomplete="list">
-                <div id="search-suggestions" class="search-suggestions" role="listbox"></div>
+                <div id="search-suggestions" class="field-suggestions" role="listbox"></div>
             </div>
             <div class="search-divider"></div>
             <div class="search-input-group">
                 <label for="location-input">Where</label>
                 <div style="display: flex; align-items: center; width: 100%;">
-                    <input id="location-input" type="text" placeholder="e.g. Dublin 16" style="flex: 1;">
+                    <input id="location-input" type="text" placeholder="e.g. Dublin 16" style="flex: 1;" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="location-suggestions" aria-autocomplete="list">
                     <button id="near-me-btn" class="near-me-btn" aria-label="Use my location" title="Find near me">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.364-7.364l-1.414 1.414M6.05 17.95l-1.414 1.414m13.314 0l-1.414-1.414M6.05 6.05L4.636 4.636"></path></svg>
                     </button>
                 </div>
+                <div id="location-suggestions" class="field-suggestions" role="listbox"></div>
             </div>
             <button id="search-btn" class="search-btn">
                 <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="none" stroke-width="3"><path d="M13 3C7.477 3 3 7.477 3 13s4.477 10 10 10c2.395 0 4.593-.84 6.31-2.24l6.983 6.982 1.414-1.414-6.982-6.983A9.957 9.957 0 0023 13c0-5.523-4.477-10-10-10zm0 2c4.43 0 8 3.57 8 8s-3.57 8-8 8-8-3.57-8-8 3.57-8 8-8z"/></svg>
@@ -216,6 +217,7 @@
         const searchInput = document.getElementById('search-input');
         const searchSuggestions = document.getElementById('search-suggestions');
         const locationInput = document.getElementById('location-input');
+        const locationSuggestions = document.getElementById('location-suggestions');
         const nearMeBtn = document.getElementById('near-me-btn');
         const searchBtn = document.getElementById('search-btn');
         
@@ -378,6 +380,38 @@
             } catch (err) {
                 console.warn('Geocoding failed:', err);
                 return null;
+            }
+        }
+
+        // Address typeahead for the Where field, backed by Photon (photon.komoot.io) --
+        // a free, keyless geocoder built for exactly this live-suggestion use case.
+        // (Nominatim, used above for the one-shot geocode on Search, explicitly asks
+        // callers not to use its public instance for autocomplete-style querying.)
+        function formatAddressLabel(props) {
+            const primary = [props.housenumber, props.street].filter(Boolean).join(' ') || props.name;
+            return [primary, props.city || props.district, props.county, props.postcode]
+                .filter((part, i, all) => part && all.indexOf(part) === i)
+                .join(', ');
+        }
+
+        async function fetchAddressMatches(query) {
+            try {
+                const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&limit=6&lang=en` +
+                    `&lat=53.35&lon=-8&bbox=-10.75,51.2,-5.3,55.6`;
+                const res = await fetch(url);
+                if (!res.ok) return [];
+                const data = await res.json();
+                return (data.features || [])
+                    .filter(f => !f.properties.countrycode || f.properties.countrycode.toUpperCase() === 'IE')
+                    .map(f => ({
+                        label: formatAddressLabel(f.properties),
+                        lat: f.geometry.coordinates[1],
+                        lon: f.geometry.coordinates[0],
+                    }))
+                    .filter(item => item.label);
+            } catch (err) {
+                console.warn('Address suggestion lookup failed:', err);
+                return [];
             }
         }
 
@@ -956,91 +990,136 @@
 
         searchBtn.addEventListener('click', performSearch);
 
-        // Activity typeahead: as the user types, suggest known categories whose
-        // name starts with what's typed (e.g. "sw" -> "Swimming"), so they can
-        // land on the exact category rather than a loose text search for it.
-        let currentSuggestions = [];
-        let activeSuggestionIndex = -1;
+        // Generic dropdown-of-matches-while-typing behaviour, shared by the Activity
+        // field (local category prefix match) and the Where field (address lookup).
+        // Selecting a suggestion only fills the field -- searching is still the
+        // Search button's job, so the user can still adjust other fields first.
+        function createTypeahead({ input, container, minLength = 1, debounceMs = 0, getMatches, renderItem, onSelect, onEnterFallback }) {
+            let items = [];
+            let activeIndex = -1;
+            let debounceTimer = null;
+            let requestSeq = 0;
 
-        function renderSuggestions(matches) {
-            currentSuggestions = matches;
-            activeSuggestionIndex = -1;
-            if (!matches.length) { hideSuggestions(); return; }
-            const q = searchInput.value.trim();
-            searchSuggestions.innerHTML = matches.map((c, i) =>
-                `<div class="search-suggestion" role="option" id="suggestion-${i}" data-value="${escapeHtml(c)}">` +
-                `<mark>${escapeHtml(c.slice(0, q.length))}</mark>${escapeHtml(c.slice(q.length))}</div>`
-            ).join('');
-            searchSuggestions.classList.add('visible');
-            searchInput.setAttribute('aria-expanded', 'true');
-        }
-
-        function hideSuggestions() {
-            currentSuggestions = [];
-            activeSuggestionIndex = -1;
-            searchSuggestions.innerHTML = '';
-            searchSuggestions.classList.remove('visible');
-            searchInput.setAttribute('aria-expanded', 'false');
-        }
-
-        function updateActiveSuggestion() {
-            [...searchSuggestions.children].forEach((el, i) => el.classList.toggle('active', i === activeSuggestionIndex));
-            if (activeSuggestionIndex >= 0) searchSuggestions.children[activeSuggestionIndex].scrollIntoView({ block: 'nearest' });
-        }
-
-        function selectSuggestion(value) {
-            searchInput.value = value;
-            if ([...categoryFilter.options].some(o => o.value === value)) categoryFilter.value = value;
-            hideSuggestions();
-            // Just fill the field -- searching is still the Search button's job,
-            // so the user can also adjust Where/Age/etc. before running it.
-            searchInput.focus();
-        }
-
-        searchInput.addEventListener('input', () => {
-            const q = searchInput.value.trim();
-            if (!q) { hideSuggestions(); return; }
-            renderSuggestions(availableCategories.filter(c => c.toLowerCase().startsWith(q.toLowerCase())).slice(0, 8));
-        });
-
-        searchInput.addEventListener('keydown', (e) => {
-            if (!searchSuggestions.classList.contains('visible')) return;
-            if (e.key === 'ArrowDown') {
-                e.preventDefault();
-                activeSuggestionIndex = Math.min(activeSuggestionIndex + 1, currentSuggestions.length - 1);
-                updateActiveSuggestion();
-            } else if (e.key === 'ArrowUp') {
-                e.preventDefault();
-                activeSuggestionIndex = Math.max(activeSuggestionIndex - 1, -1);
-                updateActiveSuggestion();
-            } else if (e.key === 'Escape') {
-                hideSuggestions();
+            function render() {
+                if (!items.length) { hide(); return; }
+                container.innerHTML = items.map((item, i) =>
+                    `<div class="field-suggestion" role="option" id="${input.id}-suggestion-${i}" data-index="${i}">${renderItem(item)}</div>`
+                ).join('');
+                container.classList.add('visible');
+                input.setAttribute('aria-expanded', 'true');
             }
-        });
 
-        // mousedown (not click) fires before the input's blur, so the selected
-        // value survives instead of being wiped by blur-driven cleanup.
-        searchSuggestions.addEventListener('mousedown', (e) => {
-            const item = e.target.closest('.search-suggestion');
-            if (!item) return;
-            e.preventDefault();
-            selectSuggestion(item.dataset.value);
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.search-input-group')) hideSuggestions();
-        });
-
-        searchInput.addEventListener('keypress', (e) => {
-            if (e.key !== 'Enter') return;
-            if (activeSuggestionIndex >= 0 && currentSuggestions[activeSuggestionIndex]) {
-                selectSuggestion(currentSuggestions[activeSuggestionIndex]);
-            } else {
-                hideSuggestions();
-                performSearch();
+            function hide() {
+                items = [];
+                activeIndex = -1;
+                container.innerHTML = '';
+                container.classList.remove('visible');
+                input.setAttribute('aria-expanded', 'false');
+                input.removeAttribute('aria-activedescendant');
             }
+
+            function setActive(i) {
+                activeIndex = i;
+                [...container.children].forEach((el, idx) => el.classList.toggle('active', idx === i));
+                if (i >= 0) {
+                    container.children[i].scrollIntoView({ block: 'nearest' });
+                    input.setAttribute('aria-activedescendant', `${input.id}-suggestion-${i}`);
+                } else {
+                    input.removeAttribute('aria-activedescendant');
+                }
+            }
+
+            function select(item) {
+                hide();
+                onSelect(item);
+            }
+
+            async function runQuery(q) {
+                const seq = ++requestSeq;
+                const matches = await getMatches(q);
+                if (seq !== requestSeq) return; // a newer keystroke already superseded this lookup
+                items = matches;
+                activeIndex = -1;
+                render();
+            }
+
+            input.addEventListener('input', () => {
+                const q = input.value.trim();
+                clearTimeout(debounceTimer);
+                if (q.length < minLength) { requestSeq++; hide(); return; }
+                if (debounceMs) debounceTimer = setTimeout(() => runQuery(q), debounceMs);
+                else runQuery(q);
+            });
+
+            input.addEventListener('keydown', (e) => {
+                if (!container.classList.contains('visible')) return;
+                if (e.key === 'ArrowDown') { e.preventDefault(); setActive(Math.min(activeIndex + 1, items.length - 1)); }
+                else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(Math.max(activeIndex - 1, -1)); }
+                else if (e.key === 'Escape') hide();
+            });
+
+            // mousedown (not click) fires before the input's blur, so the selected
+            // value survives instead of being wiped by blur-driven cleanup.
+            container.addEventListener('mousedown', (e) => {
+                const el = e.target.closest('.field-suggestion');
+                if (!el) return;
+                e.preventDefault();
+                select(items[parseInt(el.dataset.index, 10)]);
+            });
+
+            document.addEventListener('click', (e) => {
+                const group = input.closest('.search-input-group');
+                if (group && !group.contains(e.target)) hide();
+            });
+
+            input.addEventListener('keypress', (e) => {
+                if (e.key !== 'Enter') return;
+                if (activeIndex >= 0 && items[activeIndex]) {
+                    e.preventDefault();
+                    select(items[activeIndex]);
+                } else {
+                    hide();
+                    if (onEnterFallback) onEnterFallback();
+                }
+            });
+        }
+
+        createTypeahead({
+            input: searchInput,
+            container: searchSuggestions,
+            getMatches: (q) => availableCategories.filter(c => c.toLowerCase().startsWith(q.toLowerCase())).slice(0, 8),
+            renderItem: (category) => {
+                const q = searchInput.value.trim();
+                return `<mark>${escapeHtml(category.slice(0, q.length))}</mark>${escapeHtml(category.slice(q.length))}`;
+            },
+            onSelect: (category) => {
+                searchInput.value = category;
+                if ([...categoryFilter.options].some(o => o.value === category)) categoryFilter.value = category;
+                searchInput.focus();
+            },
+            onEnterFallback: performSearch,
         });
-        locationInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') performSearch(); });
+
+        createTypeahead({
+            input: locationInput,
+            container: locationSuggestions,
+            minLength: 3,
+            debounceMs: 300,
+            getMatches: fetchAddressMatches,
+            renderItem: (place) => escapeHtml(place.label),
+            onSelect: (place) => {
+                locationInput.value = place.label;
+                userLat = place.lat;
+                userLon = place.lon;
+                // Matches what performSearch() will re-derive from the input, so it
+                // skips a redundant geocode of an address we've already resolved.
+                lastGeocodedQuery = place.label.trim().toLowerCase();
+                nearMeBtn.style.color = '#94a3b8';
+                if (!sortExplicitlySet) sortSelect.value = 'distance';
+                locationInput.focus();
+            },
+            onEnterFallback: performSearch,
+        });
 
         categoryFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
         // Age lives in the hero bar alongside Activity/Where, but like those fields it

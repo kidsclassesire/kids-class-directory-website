@@ -77,22 +77,22 @@
         .search-input-group label { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--text-dark); margin-bottom: 4px; }
         .search-input-group input { border: none; outline: none; background: transparent; font-size: 1rem; width: 100%; }
 
-        /* Category typeahead for the Activity field -- prefix matches against the
-           known category list, e.g. "sw" surfaces "Swimming". */
-        .search-suggestions {
+        /* Shared typeahead dropdown, used by the Activity field (known-category
+           prefix match) and the Where field (address suggestions). */
+        .field-suggestions {
             display: none; position: absolute; top: calc(100% + 10px); left: 0; right: 0;
             background: #ffffff; border: 1px solid var(--border); border-radius: 16px;
             box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12); padding: 6px; z-index: 20;
             max-height: 260px; overflow-y: auto; min-width: 180px;
         }
-        .search-suggestions.visible { display: block; }
-        .search-suggestion {
+        .field-suggestions.visible { display: block; }
+        .field-suggestion {
             padding: 10px 12px; border-radius: 10px; cursor: pointer; font-size: 0.95rem; color: var(--text-dark);
             min-height: 40px; box-sizing: border-box; display: flex; align-items: center;
         }
-        .search-suggestion + .search-suggestion { margin-top: 2px; }
-        .search-suggestion:hover, .search-suggestion.active { background: var(--bg-page); }
-        .search-suggestion mark { background: none; color: var(--primary); font-weight: 700; }
+        .field-suggestion + .field-suggestion { margin-top: 2px; }
+        .field-suggestion:hover, .field-suggestion.active { background: var(--bg-page); }
+        .field-suggestion mark { background: none; color: var(--primary); font-weight: 700; }
         .search-input-group select {
             border: none; outline: none; background: transparent; font-size: 1rem; width: 100%;
             appearance: none; -webkit-appearance: none; cursor: pointer; font-family: inherit; color: var(--text-dark);
@@ -369,15 +369,20 @@
 
             /* Bigger tap targets for the suggestion list, and more breathing room
                between rows so adjacent options aren't a mis-tap away from each other. */
-            .search-suggestion { padding: 13px 14px; font-size: 1rem; min-height: 46px; }
-            .search-suggestion + .search-suggestion { margin-top: 4px; }
+            .field-suggestion { padding: 13px 14px; font-size: 1rem; min-height: 46px; }
+            .field-suggestion + .field-suggestion { margin-top: 4px; }
 
-            /* In the compact .hero-active bar the Activity field itself is squeezed
-               to roughly half the pill's width -- anchoring the dropdown to that
-               narrow box would squeeze the suggestions with it. Detach it from the
-               parent's width and size it off the viewport instead. */
-            .hero-active .search-suggestions {
+            /* In the compact .hero-active bar both fields are squeezed to roughly
+               half the pill's width -- anchoring a dropdown to that narrow box
+               would squeeze the suggestions with it. Detach it from the parent's
+               width and size it off the viewport instead. Left-anchored (Activity,
+               the first field) grows rightward; the second field (Where) would
+               overflow the screen doing that, so it grows leftward instead. */
+            .hero-active .field-suggestions {
                 left: -8px; right: auto; width: min(300px, calc(100vw - 48px));
+            }
+            .hero-active #location-suggestions {
+                left: auto; right: -8px;
             }
         }
 
