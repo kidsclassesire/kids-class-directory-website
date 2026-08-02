@@ -926,8 +926,13 @@
                 // The hero collapses from a full-height 100vh block down to its
                 // compact sticky size right as this runs. Without resetting scroll
                 // first, the browser keeps the same pixel offset, which now lands
-                // partway down the results instead of at the top.
+                // partway down the results instead of at the top. On mobile, tapping
+                // Search right after picking a suggestion also dismisses the on-screen
+                // keyboard -- that dismissal resizes the viewport a moment later and
+                // can nudge the scroll position again after our initial reset, so
+                // reassert once more once it's had time to settle.
                 window.scrollTo({ top: 0, behavior: 'instant' });
+                setTimeout(() => window.scrollTo({ top: 0, behavior: 'instant' }), 350);
                 heroSection.classList.remove('hero-initial');
                 heroSection.classList.add('hero-active');
                 mainContent.classList.add('visible');
