@@ -72,10 +72,20 @@
                 <label for="age-filter">Age</label>
                 <select id="age-filter">
                     <option value="">Any age</option>
-                    <option value="toddler">Under 5 Years</option>
-                    <option value="child">5 - 8 Years</option>
-                    <option value="preteen">9 - 12 Years</option>
-                    <option value="teen">13+ Years</option>
+                    <option value="under1">Under 1</option>
+                    <option value="1">1 Year</option>
+                    <option value="2">2 Years</option>
+                    <option value="3">3 Years</option>
+                    <option value="4">4 Years</option>
+                    <option value="5">5 Years</option>
+                    <option value="6">6 Years</option>
+                    <option value="7">7 Years</option>
+                    <option value="8">8 Years</option>
+                    <option value="9">9 Years</option>
+                    <option value="10">10 Years</option>
+                    <option value="11">11 Years</option>
+                    <option value="12">12 Years</option>
+                    <option value="13plus">13+ Years</option>
                 </select>
             </div>
             <button id="search-btn" class="search-btn">
@@ -561,10 +571,15 @@
                 if (ageBracket !== '') {
                     const min = item.minimum_age !== null ? item.minimum_age : 0;
                     const max = item.maximum_age !== null ? item.maximum_age : 99;
-                    if (ageBracket === 'toddler') ageMatch = (min <= 4);
-                    if (ageBracket === 'child') ageMatch = (min <= 8 && max >= 5);
-                    if (ageBracket === 'preteen') ageMatch = (min <= 12 && max >= 9);
-                    if (ageBracket === 'teen') ageMatch = (max >= 13);
+                    if (ageBracket === '13plus') {
+                        ageMatch = (max >= 13);
+                    } else {
+                        // "Under 1" and each whole year are matched against a representative
+                        // age (0.5 for "Under 1") since minimum/maximum_age can be fractional
+                        // (e.g. 0.11 years for a class open from ~6 weeks old).
+                        const age = ageBracket === 'under1' ? 0.5 : parseFloat(ageBracket);
+                        ageMatch = (min <= age && max >= age);
+                    }
                 }
 
                 let dayMatch = true;
@@ -935,10 +950,9 @@
         locationInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') performSearch(); });
 
         categoryFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
-        // Age now lives in the hero bar alongside Activity/Where, so picking one should
-        // reveal results immediately (like the "near me" button) rather than silently
-        // no-op until the user also presses the separate search button.
-        ageFilter.addEventListener('change', performSearch);
+        // Age lives in the hero bar alongside Activity/Where, but like those fields it
+        // should only take effect once the user presses Search, not on every selection.
+        ageFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
         dayFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
         dropoffFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
         favoritesOnlyFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
