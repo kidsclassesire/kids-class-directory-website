@@ -67,27 +67,6 @@
                     </button>
                 </div>
             </div>
-            <div class="search-divider"></div>
-            <div class="search-input-group">
-                <label for="age-filter">Age</label>
-                <select id="age-filter">
-                    <option value="">Any age</option>
-                    <option value="under1">Under 1</option>
-                    <option value="1">1 Year</option>
-                    <option value="2">2 Years</option>
-                    <option value="3">3 Years</option>
-                    <option value="4">4 Years</option>
-                    <option value="5">5 Years</option>
-                    <option value="6">6 Years</option>
-                    <option value="7">7 Years</option>
-                    <option value="8">8 Years</option>
-                    <option value="9">9 Years</option>
-                    <option value="10">10 Years</option>
-                    <option value="11">11 Years</option>
-                    <option value="12">12 Years</option>
-                    <option value="13plus">13+ Years</option>
-                </select>
-            </div>
             <button id="search-btn" class="search-btn">
                 <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="none" stroke-width="3"><path d="M13 3C7.477 3 3 7.477 3 13s4.477 10 10 10c2.395 0 4.593-.84 6.31-2.24l6.983 6.982 1.414-1.414-6.982-6.983A9.957 9.957 0 0023 13c0-5.523-4.477-10-10-10zm0 2c4.43 0 8 3.57 8 8s-3.57 8-8 8-8-3.57-8-8 3.57-8 8-8z"/></svg>
             </button>
@@ -102,6 +81,24 @@
                 <div class="filter-bar">
                     <select id="category-filter" class="filter-select">
                         <option value="">Any Category</option>
+                    </select>
+
+                    <select id="age-filter" class="filter-select">
+                        <option value="">Any Age</option>
+                        <option value="under1">Under 1</option>
+                        <option value="1">1 Year</option>
+                        <option value="2">2 Years</option>
+                        <option value="3">3 Years</option>
+                        <option value="4">4 Years</option>
+                        <option value="5">5 Years</option>
+                        <option value="6">6 Years</option>
+                        <option value="7">7 Years</option>
+                        <option value="8">8 Years</option>
+                        <option value="9">9 Years</option>
+                        <option value="10">10 Years</option>
+                        <option value="11">11 Years</option>
+                        <option value="12">12 Years</option>
+                        <option value="13plus">13+ Years</option>
                     </select>
 
                     <select id="day-filter" class="filter-select">
@@ -885,6 +882,11 @@
         async function performSearch() {
             if (!hasTriggeredSearch) {
                 hasTriggeredSearch = true;
+                // The hero collapses from a full-height 100vh block down to its
+                // compact sticky size right as this runs. Without resetting scroll
+                // first, the browser keeps the same pixel offset, which now lands
+                // partway down the results instead of at the top.
+                window.scrollTo({ top: 0, behavior: 'instant' });
                 heroSection.classList.remove('hero-initial');
                 heroSection.classList.add('hero-active');
                 mainContent.classList.add('visible');

@@ -324,15 +324,16 @@
             /* Once a search has run, the header goes sticky (.hero-active) and stays
                pinned while the results scroll -- so on mobile the stacked, full-height
                search form above would otherwise eat a large chunk of the screen for the
-               entire scroll session. Collapse it to a single compact row instead,
-               mirroring the .filter-bar's horizontal-scroll pattern below. */
+               entire scroll session. Collapse it to a single compact row instead. Only
+               Activity + Where live here (Age moved to the filter bar below), and both
+               share the row's width via flex: 1 1 0 rather than sizing to content, so
+               the row always fits the viewport with no side-scrolling needed. */
             .hero-active { padding: 0.75rem 1rem; }
             .hero-active .search-bar {
-                flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
-                border-radius: 9999px; padding: 6px 6px 6px 16px; gap: 4px;
+                flex-wrap: nowrap; border-radius: 9999px; padding: 6px 6px 6px 16px; gap: 4px;
             }
             .hero-active .search-input-group {
-                flex: 0 0 auto; width: auto; min-width: 100px; padding-right: 10px;
+                flex: 1 1 0; width: auto; min-width: 0; padding-right: 8px;
             }
             /* Visually hidden, not display:none -- keeps the label in the
                accessibility tree for screen readers even though placeholders
@@ -342,7 +343,8 @@
                 overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
             }
             .hero-active .search-input-group input,
-            .hero-active .search-input-group select { font-size: 0.85rem; }
+            .hero-active .search-input-group select { font-size: 0.85rem; min-width: 0; }
+            .hero-active .near-me-btn { padding: 4px 0 4px 4px; flex-shrink: 0; }
             .hero-active .near-me-btn svg { width: 16px; height: 16px; }
             .hero-active .search-divider { display: block; height: 28px; margin: 0 4px 0 0; flex-shrink: 0; }
             .hero-active .search-btn { width: 40px; height: 40px; border-radius: 50%; order: 0; flex-shrink: 0; }
