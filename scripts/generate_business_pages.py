@@ -85,6 +85,19 @@ def format_phone(value):
     return value
 
 
+def tel_href(value):
+    # DB numbers are domestic-format ("086 311 0668"); tel: links need E.164
+    # so the number dials correctly regardless of the device's home region.
+    digits = re.sub(r'\D', '', value or '')
+    if not digits:
+        return ''
+    if digits.startswith('353'):
+        return f'+{digits}'
+    if digits.startswith('0'):
+        return f'+353{digits[1:]}'
+    return f'+{digits}'
+
+
 def format_price(row):
     if row.get('price_amount') is None:
         return ''
@@ -118,7 +131,9 @@ def detail_rows_html(row):
 
     contact_parts = []
     if row.get('phone_number'):
-        contact_parts.append(esc(format_phone(row['phone_number'])))
+        phone_display = esc(format_phone(row['phone_number']))
+        href = tel_href(row['phone_number'])
+        contact_parts.append(f'<a href="tel:{href}">{phone_display}</a>' if href else phone_display)
     if row.get('email_address'):
         contact_parts.append(esc(row['email_address']))
     if contact_parts:
@@ -178,7 +193,7 @@ def json_ld(row, slug):
     if image_path:
         ld['image'] = f'{SITE_URL}/{image_path}'
     if row.get('phone_number'):
-        ld['telephone'] = format_phone(row['phone_number'])
+        ld['telephone'] = tel_href(row['phone_number']) or format_phone(row['phone_number'])
     if row.get('email_address'):
         ld['email'] = row['email_address']
     if row.get('address'):
@@ -265,6 +280,14 @@ def render_page(row, slug):
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){{dataLayer.push(arguments);}}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{esc(title)}</title>

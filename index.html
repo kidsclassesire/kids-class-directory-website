@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kids Patch | Find Local Classes &amp; Activities for Children in Ireland</title>
@@ -696,6 +704,16 @@
                 return `${item.price_currency || 'EUR'} ${item.price_amount}${basis}`;
             }
 
+            function telHref(value) {
+                // DB numbers are domestic-format ("086 311 0668"); tel: links need
+                // E.164 so the number dials correctly regardless of device region.
+                const digits = (value || '').replace(/\D/g, '');
+                if (!digits) return '';
+                if (digits.startsWith('353')) return `+${digits}`;
+                if (digits.startsWith('0')) return `+353${digits.slice(1)}`;
+                return `+${digits}`;
+            }
+
             function cardDetailsHtml(item) {
                 const rows = [];
 
@@ -715,7 +733,10 @@
                 }
 
                 const contactParts = [];
-                if (item.phone_number) contactParts.push(escapeHtml(item.phone_number));
+                if (item.phone_number) {
+                    const href = telHref(item.phone_number);
+                    contactParts.push(href ? `<a href="tel:${href}">${escapeHtml(item.phone_number)}</a>` : escapeHtml(item.phone_number));
+                }
                 if (item.email_address) contactParts.push(escapeHtml(item.email_address));
                 if (contactParts.length) rows.push(`<div class="detail-row"><strong>Contact:</strong> ${contactParts.join(' &middot; ')}</div>`);
 

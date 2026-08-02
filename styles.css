@@ -195,6 +195,8 @@
 
         .detail-row { font-size: 0.85rem; line-height: 1.6; margin-bottom: 0.5rem; color: var(--text-dark); }
         .detail-row strong { color: var(--text-muted); font-weight: 700; }
+        .detail-row a { color: var(--primary); font-weight: 600; text-decoration: none; }
+        .detail-row a:hover { text-decoration: underline; }
         .facility-chip {
             display: inline-block; background: #f1f5f9; color: #475569; padding: 0.15rem 0.55rem;
             border-radius: 6px; font-size: 0.7rem; font-weight: 600; margin: 2px 4px 2px 0;
