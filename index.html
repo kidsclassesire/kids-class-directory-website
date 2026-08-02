@@ -114,6 +114,8 @@
                         <option value="relevance">Sort: Relevance</option>
                         <option value="distance">Sort: Nearest First</option>
                     </select>
+
+                    <button type="button" id="clear-filters-btn" class="clear-filters-btn">Clear filters</button>
                 </div>
             </div>
 
@@ -126,6 +128,11 @@
             <div id="map"></div>
         </div>
     </main>
+
+    <button type="button" id="mobile-map-fab" class="mobile-map-fab">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 21s-7-7.5-7-12a7 7 0 1114 0c0 4.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.3" fill="currentColor" stroke="none"/></svg>
+        <span id="mobile-map-fab-label">Map</span>
+    </button>
 
     <footer class="site-footer">
         <a href="classes/index.html">Browse all classes by category &amp; county</a>
@@ -205,11 +212,20 @@
 
         const heroSection = document.getElementById('hero');
         const mainContent = document.getElementById('main-content');
+        const mobileMapFab = document.getElementById('mobile-map-fab');
+        const mobileMapFabLabel = document.getElementById('mobile-map-fab-label');
+        let mapInView = false;
 
         let classesData = [];
         let filteredData = [];
         const pageSize = 12;
         let currentPage = 1;
+        // Mobile uses progressive loading instead of pagination (small screens don't
+        // have room for prev/next controls, and scrolling to load more feels native
+        // there). loadedCount tracks how many of filteredData are currently rendered.
+        let loadedCount = pageSize;
+        let loadMoreObserver = null;
+        const isMobileLayout = () => window.matchMedia('(max-width: 640px)').matches;
         let hasTriggeredSearch = false;
         let lastGeocodedQuery = null;
         let isGeocoding = false;
@@ -390,6 +406,23 @@
             }).addTo(map);
         }
 
+        // On mobile the map sits below the (potentially long, progressively-loaded)
+        // results list, so a floating shortcut jumps between the two instead of
+        // making the user scroll past everything. Flips label/direction based on
+        // which side is currently in view.
+        function setupMobileMapFab() {
+            mobileMapFab.classList.add('visible');
+            new IntersectionObserver((entries) => {
+                mapInView = entries[0].isIntersecting;
+                mobileMapFabLabel.textContent = mapInView ? 'List' : 'Map';
+            }, { threshold: 0.3 }).observe(document.querySelector('.map-column'));
+        }
+
+        mobileMapFab.addEventListener('click', () => {
+            document.querySelector(mapInView ? '.results-column' : '.map-column')
+                .scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
         async function loadClasses() {
             try {
                 if (window.SUPABASE_ANON_KEY && window.SUPABASE_URL) {
@@ -428,6 +461,17 @@
             }
         }
 
+        // The slice of filteredData currently rendered as cards -- mirrors exactly
+        // what renderPage()/ensureLoaded() put in the DOM, so the map never shows a
+        // pin for a class the user can't also scroll to in the results list.
+        function currentlyVisibleSlice() {
+            if (isMobileLayout()) {
+                return { start: 0, items: filteredData.slice(0, loadedCount) };
+            }
+            const start = (currentPage - 1) * pageSize;
+            return { start, items: filteredData.slice(start, start + pageSize) };
+        }
+
         function updateMap() {
             if (markerClusterGroup) {
                 map.removeLayer(markerClusterGroup);
@@ -437,20 +481,19 @@
             // map an unreadable wall of overlapping markers.
             markerClusterGroup = L.markerClusterGroup({ maxClusterRadius: 50 });
 
-            filteredData.forEach((item, index) => {
+            const { start, items } = currentlyVisibleSlice();
+            items.forEach((item, i) => {
                 const lat = item.latitude;
                 const lng = item.longitude;
                 if (!lat || !lng) return; // Skip: no verified coordinates, don't fabricate a pin location
 
+                const index = start + i;
                 const marker = L.marker([lat, lng]);
-                marker.bindPopup(`<b>${item.company_name}</b><br>${item.category || 'Class'}`);
+                marker.bindPopup(`<b>${escapeHtml(item.company_name)}</b><br>${escapeHtml(item.category) || 'Class'}`);
 
+                // The card is always already rendered -- every pin here comes from the
+                // currently visible slice -- so clicking just needs to scroll to it.
                 marker.on('click', () => {
-                    const pageNum = Math.floor(index / pageSize) + 1;
-                    if (currentPage !== pageNum) {
-                        currentPage = pageNum;
-                        renderPage();
-                    }
                     const card = document.getElementById(`card-${index}`);
                     if (card) {
                         card.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -538,11 +581,15 @@
             }
 
             currentPage = 1;
-            let countMsg = `${filteredData.length} classes found`;
+            // Deliberately no total-result-count text here -- just a status
+            // message when there's something the user needs to know, e.g. a
+            // failed geocode. Never surface "N classes found".
+            let statusMsg = '';
             if (l && !hasOrigin && lastGeocodedQuery === l) {
-                countMsg += ` — couldn't pinpoint "${locationInput.value}", showing text matches instead`;
+                statusMsg = `Couldn't pinpoint "${locationInput.value}" — showing text matches instead`;
             }
-            document.getElementById('result-count').textContent = countMsg;
+            document.getElementById('result-meta').style.display = statusMsg ? '' : 'none';
+            document.getElementById('result-count').textContent = statusMsg;
             renderPage();
 
             setTimeout(() => { if (map) { map.invalidateSize(); updateMap(); } }, 100);
@@ -556,15 +603,33 @@
             if (needsDropoff) params.set('dropoff', 'true');
             if (radiusKm) params.set('radius', radiusKm);
             if (sortSelect.value !== 'relevance') params.set('sort', sortSelect.value);
-            window.history.pushState(null, '', '?' + params.toString());
+            window.history.pushState(null, '', params.toString() ? '?' + params.toString() : window.location.pathname);
         }
 
-        function renderClasses(data, globalStartIndex) {
+        // Placeholder cards shown while performSearch() is waiting on something
+        // (initial data load and/or geocoding) -- renderClasses() replaces them
+        // outright the moment real results are ready.
+        function showResultsSkeleton(count = 6) {
             const container = document.getElementById('directory-container');
-            container.innerHTML = '';
-            
+            container.innerHTML = Array.from({ length: count }, () => `
+                <div class="class-card skeleton-card">
+                    <div class="card-image skeleton-shimmer"></div>
+                    <div class="card-content">
+                        <div class="skeleton-line skeleton-shimmer" style="width: 70%; height: 20px;"></div>
+                        <div class="skeleton-line skeleton-shimmer" style="width: 40%;"></div>
+                        <div class="skeleton-line skeleton-shimmer"></div>
+                        <div class="skeleton-line skeleton-shimmer" style="width: 80%;"></div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderClasses(data, globalStartIndex, append = false) {
+            const container = document.getElementById('directory-container');
+            if (!append) container.innerHTML = '';
+
             if (!data.length) {
-                container.innerHTML = '<p style="grid-column: 1/-1; padding: 2rem 0; color: #64748b;">No classes match these exact filters. Try adjusting your selections.</p>';
+                if (!append) container.innerHTML = '<p style="grid-column: 1/-1; padding: 2rem 0; color: #64748b;">No classes match these exact filters. Try adjusting your selections.</p>';
                 return;
             }
 
@@ -576,10 +641,10 @@
             function cardImageHtml(item) {
                 const alt = escapeHtml(item.company_name);
                 const banner = item.hosted_image_path
-                    ? `<img class="banner-img" src="${item.hosted_image_path}" alt="${alt}" loading="lazy" onerror="this.remove()">`
+                    ? `<img class="banner-img" src="${escapeHtml(item.hosted_image_path)}" alt="${alt}" loading="lazy" onerror="this.remove()">`
                     : '';
                 const logo = item.logo_path
-                    ? `<img class="logo-badge" src="${item.logo_path}" alt="${alt} logo" loading="lazy" onerror="this.remove()">`
+                    ? `<img class="logo-badge" src="${escapeHtml(item.logo_path)}" alt="${alt} logo" loading="lazy" onerror="this.remove()">`
                     : '';
                 return banner + logo;
             }
@@ -619,9 +684,9 @@
 
             function formatSchedule(item) {
                 const parts = [];
-                if (Array.isArray(item.days_of_week) && item.days_of_week.length) parts.push(item.days_of_week.join(', '));
-                if (item.start_time) parts.push(item.end_time ? `${item.start_time}-${item.end_time}` : `from ${item.start_time}`);
-                if (item.term_structure) parts.push(item.term_structure);
+                if (Array.isArray(item.days_of_week) && item.days_of_week.length) parts.push(escapeHtml(item.days_of_week.join(', ')));
+                if (item.start_time) parts.push(item.end_time ? `${escapeHtml(item.start_time)}-${escapeHtml(item.end_time)}` : `from ${escapeHtml(item.start_time)}`);
+                if (item.term_structure) parts.push(escapeHtml(item.term_structure));
                 return parts.join(' &middot; ');
             }
 
@@ -684,14 +749,14 @@
                     </button>
                     <div class="card-image">${cardImageHtml(item)}</div>
                     <div class="card-content">
-                        <h2>${item.company_name}</h2>
+                        <h2>${escapeHtml(item.company_name)}</h2>
                         <div class="tag-container">
-                            <span class="tag">${item.category || 'Class'}</span>
+                            <span class="tag">${escapeHtml(item.category) || 'Class'}</span>
                             ${item.parental_requirement === 'Drop-off' ? '<span class="tag" style="background:#dcfce7; color:#166534;">Drop-off</span>' : ''}
                             ${item._distanceKm !== undefined ? `<span class="distance-badge">${pinIcon} ${item._distanceKm.toFixed(1)} km</span>` : ''}
                         </div>
                         <p class="description">
-                            ${item.description || 'No description available.'}
+                            ${escapeHtml(item.description) || 'No description available.'}
                         </p>
                         ${ratingSectionHtml(item)}
                         <button class="expand-toggle" type="button">
@@ -703,13 +768,13 @@
                             ${cardDetailsHtml(item)}
                         </div>
                         <div class="meta-info">
-                            <strong>Where:</strong> ${item.address || 'Contact for details'}<br>
+                            <strong>Where:</strong> ${escapeHtml(item.address) || 'Contact for details'}<br>
                         </div>
                         ${item.id != null && businessIndex.has(String(item.id))
                             ? `<a href="${businessIndex.get(String(item.id))}" class="button" style="background:#f1f5f9; color:var(--text-dark);">Full details</a>`
                             : ''}
-                        <a href="${item.website_url || '#'}" target="_blank" class="button">Visit Website</a>
-                        <button class="claim-btn" data-id="${item.id || item.company_name}" data-name="${escapeHtml(item.company_name)}">Claim this business</button>
+                        <a href="${escapeHtml(item.website_url) || '#'}" target="_blank" class="button">Visit Website</a>
+                        <button class="claim-btn" data-id="${escapeHtml(item.id || item.company_name)}" data-name="${escapeHtml(item.company_name)}">Claim this business</button>
                     </div>
                 `;
                 container.appendChild(card);
@@ -731,9 +796,54 @@
         }
 
         function renderPage() {
-            const start = (currentPage - 1) * pageSize;
-            renderClasses(filteredData.slice(start, start + pageSize), start);
-            renderPagination();
+            if (loadMoreObserver) { loadMoreObserver.disconnect(); loadMoreObserver = null; }
+
+            if (isMobileLayout()) {
+                loadedCount = Math.min(pageSize, filteredData.length);
+                renderClasses(filteredData.slice(0, loadedCount), 0, false);
+                setupInfiniteScroll();
+            } else {
+                const start = (currentPage - 1) * pageSize;
+                renderClasses(filteredData.slice(start, start + pageSize), start);
+                renderPagination();
+            }
+
+            // Keep pins in sync with whatever just got rendered above -- a class only
+            // gets a pin once its card is actually on the page.
+            if (map) updateMap();
+        }
+
+        // Renders filteredData[loadedCount..uptoIndex] (if not already rendered) and
+        // appends it without touching the cards already on the page.
+        function ensureLoaded(uptoIndex) {
+            if (uptoIndex < loadedCount) return;
+            const newCount = Math.min(filteredData.length, uptoIndex + 1);
+            if (newCount <= loadedCount) return;
+            renderClasses(filteredData.slice(loadedCount, newCount), loadedCount, true);
+            loadedCount = newCount;
+            setupInfiniteScroll();
+            if (map) updateMap();
+        }
+
+        // Mobile "load more" trigger: a sentinel at the bottom of the results that,
+        // once scrolled near, loads the next batch. No total/remaining count is shown
+        // here by design -- just whether there's more to load or the list has ended.
+        function setupInfiniteScroll() {
+            const controls = document.getElementById('pagination-controls');
+            if (loadMoreObserver) { loadMoreObserver.disconnect(); loadMoreObserver = null; }
+
+            if (loadedCount >= filteredData.length) {
+                controls.innerHTML = filteredData.length
+                    ? '<p class="load-more-status">You&rsquo;ve reached the end of the results.</p>'
+                    : '';
+                return;
+            }
+
+            controls.innerHTML = '<p class="load-more-status" id="load-more-sentinel">Loading more classes&hellip;</p>';
+            loadMoreObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) ensureLoaded(loadedCount + pageSize - 1);
+            }, { rootMargin: '400px' });
+            loadMoreObserver.observe(document.getElementById('load-more-sentinel'));
         }
 
         async function performSearch() {
@@ -743,10 +853,19 @@
                 heroSection.classList.add('hero-active');
                 mainContent.classList.add('visible');
                 initMap();
+                setupMobileMapFab();
             }
 
             const locText = locationInput.value.trim().toLowerCase();
-            if (locText && locText !== 'current location' && locText !== lastGeocodedQuery && !isGeocoding) {
+            const needsGeocode = locText && locText !== 'current location' && locText !== lastGeocodedQuery && !isGeocoding;
+
+            // Only flash placeholders if there's an actual wait ahead (initial data
+            // fetch and/or geocoding) -- a plain re-search once everything's already
+            // loaded should update instantly, not flicker the grid.
+            if (!dataReady || needsGeocode) showResultsSkeleton();
+            await dataLoadPromise;
+
+            if (needsGeocode) {
                 isGeocoding = true;
                 const originalPlaceholder = searchBtn.style.opacity;
                 searchBtn.style.opacity = '0.6';
@@ -804,6 +923,23 @@
         favoritesOnlyFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
         radiusFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
         sortSelect.addEventListener('change', () => { sortExplicitlySet = true; if (hasTriggeredSearch) filterClasses(); });
+
+        document.getElementById('clear-filters-btn').addEventListener('click', () => {
+            searchInput.value = '';
+            locationInput.value = '';
+            categoryFilter.value = '';
+            ageFilter.value = '';
+            dayFilter.value = '';
+            dropoffFilter.checked = false;
+            favoritesOnlyFilter.checked = false;
+            radiusFilter.value = '';
+            sortSelect.value = 'relevance';
+            sortExplicitlySet = false;
+            userLat = null;
+            userLon = null;
+            lastGeocodedQuery = null;
+            if (hasTriggeredSearch) filterClasses();
+        });
 
         // --- Claim Business Logic ---
         const claimModal = document.getElementById('claim-modal');
@@ -895,8 +1031,13 @@
             }
         });
 
-        // Load Initial Data
-        Promise.all([loadClasses(), loadRatings(), loadBusinessIndex()]).then(() => {
+        // Load Initial Data. performSearch() awaits this directly (see above) so a
+        // click that lands before the fetches finish doesn't search against an
+        // empty classesData -- previously only the URL-param auto-search path waited.
+        let dataReady = false;
+        const dataLoadPromise = Promise.all([loadClasses(), loadRatings(), loadBusinessIndex()]);
+        dataLoadPromise.then(() => {
+            dataReady = true;
             populateCategoryFilter();
             const params = new URLSearchParams(window.location.search);
             if (Array.from(params.keys()).length > 0) {

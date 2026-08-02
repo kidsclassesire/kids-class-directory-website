@@ -58,15 +58,18 @@ def make_slug(row):
 
 
 def format_schedule(row):
+    # Each part is escaped individually (not the joined result) so the
+    # ' &middot; ' separator entity survives -- escaping it after joining
+    # would double-encode it into '&amp;middot;'.
     parts = []
     days = row.get('days_of_week')
     if isinstance(days, list) and days:
-        parts.append(', '.join(days))
+        parts.append(esc(', '.join(days)))
     start, end = row.get('start_time'), row.get('end_time')
     if start:
-        parts.append(f"{start}-{end}" if end else f"from {start}")
+        parts.append(f"{esc(start)}-{esc(end)}" if end else f"from {esc(start)}")
     if row.get('term_structure'):
-        parts.append(row['term_structure'])
+        parts.append(esc(row['term_structure']))
     return ' &middot; '.join(parts)
 
 
@@ -144,10 +147,10 @@ def image_html(row):
     alt = esc(row.get('company_name'))
     banner = ''
     if row.get('hosted_image_path'):
-        banner = f'<img class="banner-img" src="../{row["hosted_image_path"]}" alt="{alt}" loading="lazy" onerror="this.remove()">'
+        banner = f'<img class="banner-img" src="../{esc(row["hosted_image_path"])}" alt="{alt}" loading="lazy" onerror="this.remove()">'
     logo = ''
     if row.get('logo_path'):
-        logo = f'<img class="logo-badge" src="../{row["logo_path"]}" alt="{alt} logo" loading="lazy" onerror="this.remove()">'
+        logo = f'<img class="logo-badge" src="../{esc(row["logo_path"])}" alt="{alt} logo" loading="lazy" onerror="this.remove()">'
     return banner + logo
 
 

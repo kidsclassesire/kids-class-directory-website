@@ -94,6 +94,16 @@
         }
         .near-me-btn:hover { color: var(--primary); }
 
+        /* Mobile-only shortcut between the results list and the map (which the
+           results/map columns stack into, map last) -- see the 968px breakpoint
+           below and the IntersectionObserver in index.html that flips its label. */
+        .mobile-map-fab {
+            display: none; position: fixed; bottom: 20px; right: 20px; z-index: 500;
+            background-color: var(--primary); color: white; border: none; border-radius: 9999px;
+            padding: 0.75rem 1.25rem; font-size: 0.9rem; font-weight: 700; cursor: pointer;
+            align-items: center; gap: 6px; box-shadow: 0 8px 20px rgba(15,23,42,0.25);
+        }
+
         /* Split Layout for Main Content */
         #main-content { display: none; flex-grow: 1; max-width: 1600px; margin: 0 auto; width: 100%; }
         #main-content.visible { display: flex; }
@@ -123,6 +133,13 @@
         .toggle-label:hover { border-color: var(--text-dark); }
         .toggle-label input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--primary); cursor: pointer; }
 
+        .clear-filters-btn {
+            background: #ffffff; border: 1px solid var(--border); border-radius: 9999px;
+            padding: 0.6rem 1.25rem; font-size: 0.9rem; font-weight: 600; color: var(--text-muted);
+            cursor: pointer; transition: all 0.2s; flex-shrink: 0;
+        }
+        .clear-filters-btn:hover { border-color: var(--text-dark); color: var(--text-dark); }
+
         /* Right Column: Map */
         .map-column { width: 45%; position: sticky; top: 90px; height: calc(100vh - 90px); background: #e2e8f0; }
         #map { width: 100%; height: 100%; }
@@ -140,6 +157,24 @@
         }
         .class-card.expanded { border-color: var(--text-dark); box-shadow: 0 8px 20px rgba(15,23,42,0.12); }
         .class-card.expanded .description { -webkit-line-clamp: unset; }
+
+        /* Loading placeholders shown by showResultsSkeleton() while a search is
+           waiting on data (initial fetch and/or geocoding). */
+        .skeleton-card { cursor: default; }
+        .skeleton-card .card-content { gap: 10px; display: flex; flex-direction: column; }
+        .skeleton-line { height: 12px; border-radius: 4px; }
+        .skeleton-shimmer {
+            background: linear-gradient(90deg, #eef1f4 25%, #e2e8f0 37%, #eef1f4 63%);
+            background-size: 400% 100%;
+            animation: skeleton-shimmer 1.4s ease infinite;
+        }
+        @keyframes skeleton-shimmer {
+            0% { background-position: 100% 50%; }
+            100% { background-position: 0 50%; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .skeleton-shimmer { animation: none; }
+        }
 
         .expand-toggle {
             background: none; border: none; color: var(--text-muted); font-size: 0.8rem; font-weight: 700;
@@ -234,6 +269,10 @@
         .pagination { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: 2rem; padding-bottom: 2rem; }
         .page-button { border: 1px solid var(--text-dark); background: #ffffff; border-radius: 8px; padding: 0.5rem 1rem; cursor: pointer; font-weight: 600; }
 
+        /* Mobile progressive-loading sentinel/status (replaces prev/next pagination
+           inside the same #pagination-controls element -- see setupInfiniteScroll). */
+        .load-more-status { color: var(--text-muted); font-size: 0.9rem; font-weight: 600; margin: 0; }
+
         /* Responsive */
         @media (max-width: 968px) {
             /* Show the results list before the map — parents scan classes first,
@@ -256,13 +295,15 @@
             .filter-bar::-webkit-scrollbar-track { background: transparent; }
             .filter-bar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
             .filter-bar::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
-            .filter-select, .toggle-label { flex-shrink: 0; }
+            .filter-select, .toggle-label, .clear-filters-btn { flex-shrink: 0; }
             /* Trailing fade hints that more filters sit off-screen to the right.
                No matching fade on the left — nothing is hidden there at rest. */
             .filter-bar-wrap::after {
                 content: ''; position: absolute; top: 0; right: 0; bottom: 0.75rem; width: 28px;
                 pointer-events: none; z-index: 1; background: linear-gradient(to left, var(--bg-page), transparent);
             }
+
+            .mobile-map-fab.visible { display: flex; }
         }
 
         @media (max-width: 640px) {
@@ -277,6 +318,33 @@
             .search-input-group { flex: 1 1 100%; padding-right: 0; }
             .search-divider { display: none; }
             .search-btn { width: 100%; border-radius: 12px; order: 3; }
+
+            /* Once a search has run, the header goes sticky (.hero-active) and stays
+               pinned while the results scroll -- so on mobile the stacked, full-height
+               search form above would otherwise eat a large chunk of the screen for the
+               entire scroll session. Collapse it to a single compact row instead,
+               mirroring the .filter-bar's horizontal-scroll pattern below. */
+            .hero-active { padding: 0.75rem 1rem; }
+            .hero-active .search-bar {
+                flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch;
+                border-radius: 9999px; padding: 6px 6px 6px 16px; gap: 4px;
+            }
+            .hero-active .search-input-group {
+                flex: 0 0 auto; width: auto; min-width: 100px; padding-right: 10px;
+            }
+            /* Visually hidden, not display:none -- keeps the label in the
+               accessibility tree for screen readers even though placeholders
+               carry the visible hint in this compact layout. */
+            .hero-active .search-input-group label {
+                position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+                overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+            }
+            .hero-active .search-input-group input,
+            .hero-active .search-input-group select { font-size: 0.85rem; }
+            .hero-active .near-me-btn svg { width: 16px; height: 16px; }
+            .hero-active .search-divider { display: block; height: 28px; margin: 0 4px 0 0; flex-shrink: 0; }
+            .hero-active .search-btn { width: 40px; height: 40px; border-radius: 50%; order: 0; flex-shrink: 0; }
+            .hero-active .search-btn svg { width: 18px; height: 18px; }
         }
 
         /* Modal Styles */

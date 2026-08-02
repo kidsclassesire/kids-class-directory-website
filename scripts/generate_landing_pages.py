@@ -72,7 +72,9 @@ def landing_card_html(row, tag_kind):
     elif tag_kind == 'county' and row.get('_county'):
         tag_html = f'<div class="tag-container"><span class="tag">{esc(row["_county"])}</span></div>'
 
-    meta_bits = [b for b in [format_schedule(row), format_price(row)] if b]
+    # format_schedule() already escapes its own parts internally (see its
+    # docstring comment) -- format_price() doesn't, so it's escaped here.
+    meta_bits = [b for b in [format_schedule(row), esc(format_price(row))] if b]
     meta_line = f'<div class="landing-card-meta">{" &middot; ".join(meta_bits)}</div>' if meta_bits else ''
 
     return f'''<div class="landing-card">
