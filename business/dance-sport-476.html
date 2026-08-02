@@ -23,8 +23,9 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Dance Sport — Dance classes | Kids Patch">
     <meta name="twitter:description" content="Whether your child is interested in learning hip hop, latin, ballroom or even stage and theatre, Kids Dance Classes have various styles to choose from. The...">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="../styles.css">
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Dance Sport", "url": "https://www.kidspatch.ie/business/dance-sport-476.html", "description": "Whether your child is interested in learning hip hop, latin, ballroom or even stage and theatre, Kids Dance Classes have various styles to choose from. The earliest a child can start is 3. There are different age groups and levels. Simply get in touch and we will find a school that is close and suitable for your child or children.", "image": "https://www.kidspatch.ie/images/dancesport-ie.jpg", "address": {"@type": "PostalAddress", "streetAddress": "Tallaght and Rialto", "addressCountry": "IE"}, "makesOffer": {"@type": "Offer", "itemOffered": {"@type": "Course", "name": "Dance", "provider": {"@type": "Organization", "name": "Dance Sport"}, "description": "Whether your child is interested in learning hip hop, latin, ballroom or even stage and theatre, Kids Dance Classes have various styles to choose from. The earliest a child can start is 3. There are different age groups and levels. Simply get in touch and we will find a school that is close and suitable for your child or children."}}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Dance Sport", "url": "https://www.kidspatch.ie/business/dance-sport-476.html", "description": "Whether your child is interested in learning hip hop, latin, ballroom or even stage and theatre, Kids Dance Classes have various styles to choose from. The earliest a child can start is 3. There are different age groups and levels. Simply get in touch and we will find a school that is close and suitable for your child or children.", "image": "https://www.kidspatch.ie/images/dancesport-ie.jpg", "address": {"@type": "PostalAddress", "streetAddress": "Tallaght, Dublin", "addressCountry": "IE"}, "geo": {"@type": "GeoCoordinates", "latitude": 53.2878082, "longitude": -6.362355}, "makesOffer": {"@type": "Offer", "itemOffered": {"@type": "Course", "name": "Dance", "provider": {"@type": "Organization", "name": "Dance Sport"}, "description": "Whether your child is interested in learning hip hop, latin, ballroom or even stage and theatre, Kids Dance Classes have various styles to choose from. The earliest a child can start is 3. There are different age groups and levels. Simply get in touch and we will find a school that is close and suitable for your child or children."}}}</script>
 </head>
 <body>
     <div class="business-page">
@@ -43,7 +44,7 @@
                     </div>
                     <p class="description" style="-webkit-line-clamp: unset;">Whether your child is interested in learning hip hop, latin, ballroom or even stage and theatre, Kids Dance Classes have various styles to choose from. The earliest a child can start is 3. There are different age groups and levels. Simply get in touch and we will find a school that is close and suitable for your child or children.</p>
                     
-                    <div class="business-address"><strong>Address:</strong> Tallaght and Rialto<br><a href="https://www.google.com/maps/search/?api=1&query=Tallaght%20and%20Rialto" target="_blank" rel="noopener">View on Google Maps &rarr;</a></div>
+                    <div class="business-address"><strong>Address:</strong> Tallaght, Dublin<br><a href="https://www.google.com/maps/search/?api=1&query=Tallaght%2C%20Dublin" target="_blank" rel="noopener">View on Google Maps &rarr;</a></div><div id="business-map" class="business-map" data-lat="53.2878082" data-lon="-6.362355"></div>
                     <a href="https://dancesport.ie/get-in-touch/" target="_blank" rel="noopener" class="button">Visit Website</a>
                 </div>
             </div>
@@ -54,5 +55,14 @@
         </main>
     </div>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script>
+        const mapEl = document.getElementById('business-map');
+        if (mapEl) {
+            const m = L.map('business-map').setView([53.2878082, -6.362355], 15);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap' }).addTo(m);
+            L.marker([53.2878082, -6.362355]).addTo(m);
+        }
+    </script>
 </body>
 </html>

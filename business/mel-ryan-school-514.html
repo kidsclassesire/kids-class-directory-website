@@ -23,8 +23,9 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mel Ryan School — Dance classes | Kids Patch">
     <meta name="twitter:description" content="Mel Ryan School offers a vibrant mix of dance, drama, and singing classes for children of all ages, with a warm, family-friendly atmosphere that encourages...">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="../styles.css">
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Mel Ryan School", "url": "https://www.kidspatch.ie/business/mel-ryan-school-514.html", "description": "Mel Ryan School offers a vibrant mix of dance, drama, and singing classes for children of all ages, with a warm, family-friendly atmosphere that encourages confidence and creativity. Based in Dublin, the school blends professional training with a focus on fun, ensuring every child feels welcome whether they’re taking their first steps in ballet or performing on stage. Classes are taught by experienced teachers who nurture both skills and self-expression, making it a perfect choice for young dancers who want to learn, grow, and shine.", "image": "https://www.kidspatch.ie/images/melryanschool-ie.png", "telephone": "+353868372364", "address": {"@type": "PostalAddress", "streetAddress": "Various Locations", "addressCountry": "IE"}, "makesOffer": {"@type": "Offer", "itemOffered": {"@type": "Course", "name": "Dance", "provider": {"@type": "Organization", "name": "Mel Ryan School"}, "description": "Mel Ryan School offers a vibrant mix of dance, drama, and singing classes for children of all ages, with a warm, family-friendly atmosphere that encourages confidence and creativity. Based in Dublin, the school blends professional training with a focus on fun, ensuring every child feels welcome whether they’re taking their first steps in ballet or performing on stage. Classes are taught by experienced teachers who nurture both skills and self-expression, making it a perfect choice for young dancers who want to learn, grow, and shine."}}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Mel Ryan School", "url": "https://www.kidspatch.ie/business/mel-ryan-school-514.html", "description": "Mel Ryan School offers a vibrant mix of dance, drama, and singing classes for children of all ages, with a warm, family-friendly atmosphere that encourages confidence and creativity. Based in Dublin, the school blends professional training with a focus on fun, ensuring every child feels welcome whether they’re taking their first steps in ballet or performing on stage. Classes are taught by experienced teachers who nurture both skills and self-expression, making it a perfect choice for young dancers who want to learn, grow, and shine.", "image": "https://www.kidspatch.ie/images/melryanschool-ie.png", "telephone": "+353868372364", "address": {"@type": "PostalAddress", "streetAddress": "Mount Merrion Community Centre, Mount Merrion, Co. Dublin", "addressCountry": "IE"}, "geo": {"@type": "GeoCoordinates", "latitude": 53.2959279, "longitude": -6.2093475}, "makesOffer": {"@type": "Offer", "itemOffered": {"@type": "Course", "name": "Dance", "provider": {"@type": "Organization", "name": "Mel Ryan School"}, "description": "Mel Ryan School offers a vibrant mix of dance, drama, and singing classes for children of all ages, with a warm, family-friendly atmosphere that encourages confidence and creativity. Based in Dublin, the school blends professional training with a focus on fun, ensuring every child feels welcome whether they’re taking their first steps in ballet or performing on stage. Classes are taught by experienced teachers who nurture both skills and self-expression, making it a perfect choice for young dancers who want to learn, grow, and shine."}}}</script>
 </head>
 <body>
     <div class="business-page">
@@ -43,7 +44,7 @@
                     </div>
                     <p class="description" style="-webkit-line-clamp: unset;">Mel Ryan School offers a vibrant mix of dance, drama, and singing classes for children of all ages, with a warm, family-friendly atmosphere that encourages confidence and creativity. Based in Dublin, the school blends professional training with a focus on fun, ensuring every child feels welcome whether they’re taking their first steps in ballet or performing on stage. Classes are taught by experienced teachers who nurture both skills and self-expression, making it a perfect choice for young dancers who want to learn, grow, and shine.</p>
                     <div class="detail-row"><strong>Contact:</strong> <a href="tel:+353868372364">086 837 2364</a></div>
-                    <div class="business-address"><strong>Address:</strong> Various Locations<br><a href="https://www.google.com/maps/search/?api=1&query=Various%20Locations" target="_blank" rel="noopener">View on Google Maps &rarr;</a></div>
+                    <div class="business-address"><strong>Address:</strong> Mount Merrion Community Centre, Mount Merrion, Co. Dublin<br><a href="https://www.google.com/maps/search/?api=1&query=Mount%20Merrion%20Community%20Centre%2C%20Mount%20Merrion%2C%20Co.%20Dublin" target="_blank" rel="noopener">View on Google Maps &rarr;</a></div><div id="business-map" class="business-map" data-lat="53.2959279" data-lon="-6.2093475"></div>
                     <a href="https://www.melryanschool.ie/" target="_blank" rel="noopener" class="button">Visit Website</a>
                 </div>
             </div>
@@ -54,5 +55,14 @@
         </main>
     </div>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script>
+        const mapEl = document.getElementById('business-map');
+        if (mapEl) {
+            const m = L.map('business-map').setView([53.2959279, -6.2093475], 15);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap' }).addTo(m);
+            L.marker([53.2959279, -6.2093475]).addTo(m);
+        }
+    </script>
 </body>
 </html>
