@@ -73,9 +73,24 @@
             width: 100%;
             max-width: 800px;
         }
-        .search-input-group { display: flex; flex-direction: column; flex: 1; padding-right: 16px; }
+        .search-input-group { display: flex; flex-direction: column; flex: 1; padding-right: 16px; position: relative; }
         .search-input-group label { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--text-dark); margin-bottom: 4px; }
         .search-input-group input { border: none; outline: none; background: transparent; font-size: 1rem; width: 100%; }
+
+        /* Category typeahead for the Activity field -- prefix matches against the
+           known category list, e.g. "sw" surfaces "Swimming". */
+        .search-suggestions {
+            display: none; position: absolute; top: calc(100% + 10px); left: 0; right: 0;
+            background: #ffffff; border: 1px solid var(--border); border-radius: 16px;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12); padding: 6px; z-index: 20;
+            max-height: 260px; overflow-y: auto; min-width: 180px;
+        }
+        .search-suggestions.visible { display: block; }
+        .search-suggestion {
+            padding: 8px 12px; border-radius: 10px; cursor: pointer; font-size: 0.95rem; color: var(--text-dark);
+        }
+        .search-suggestion:hover, .search-suggestion.active { background: var(--bg-page); }
+        .search-suggestion mark { background: none; color: var(--primary); font-weight: 700; }
         .search-input-group select {
             border: none; outline: none; background: transparent; font-size: 1rem; width: 100%;
             appearance: none; -webkit-appearance: none; cursor: pointer; font-family: inherit; color: var(--text-dark);

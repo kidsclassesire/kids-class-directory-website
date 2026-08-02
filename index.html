@@ -55,7 +55,8 @@
         <div class="search-bar">
             <div class="search-input-group">
                 <label for="search-input">Activity</label>
-                <input id="search-input" type="text" placeholder="e.g. athletics, coding">
+                <input id="search-input" type="text" placeholder="e.g. athletics, coding" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="search-suggestions" aria-autocomplete="list">
+                <div id="search-suggestions" class="search-suggestions" role="listbox"></div>
             </div>
             <div class="search-divider"></div>
             <div class="search-input-group">
@@ -213,6 +214,7 @@
         }
 
         const searchInput = document.getElementById('search-input');
+        const searchSuggestions = document.getElementById('search-suggestions');
         const locationInput = document.getElementById('location-input');
         const nearMeBtn = document.getElementById('near-me-btn');
         const searchBtn = document.getElementById('search-btn');
@@ -388,8 +390,13 @@
             ['Camps & Outdoor', ['Camps', 'Outdoor']],
         ];
 
+        // Flat, sorted list of category names for the Activity field's typeahead --
+        // kept in sync with populateCategoryFilter() below, which computes the same set.
+        let availableCategories = [];
+
         function populateCategoryFilter() {
             const present = new Set(classesData.map(item => item.category).filter(Boolean));
+            availableCategories = [...present].sort();
             let html = '<option value="">Any Category</option>';
             const grouped = new Set();
 
@@ -948,7 +955,89 @@
         });
 
         searchBtn.addEventListener('click', performSearch);
-        searchInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') performSearch(); });
+
+        // Activity typeahead: as the user types, suggest known categories whose
+        // name starts with what's typed (e.g. "sw" -> "Swimming"), so they can
+        // land on the exact category rather than a loose text search for it.
+        let currentSuggestions = [];
+        let activeSuggestionIndex = -1;
+
+        function renderSuggestions(matches) {
+            currentSuggestions = matches;
+            activeSuggestionIndex = -1;
+            if (!matches.length) { hideSuggestions(); return; }
+            const q = searchInput.value.trim();
+            searchSuggestions.innerHTML = matches.map((c, i) =>
+                `<div class="search-suggestion" role="option" id="suggestion-${i}" data-value="${escapeHtml(c)}">` +
+                `<mark>${escapeHtml(c.slice(0, q.length))}</mark>${escapeHtml(c.slice(q.length))}</div>`
+            ).join('');
+            searchSuggestions.classList.add('visible');
+            searchInput.setAttribute('aria-expanded', 'true');
+        }
+
+        function hideSuggestions() {
+            currentSuggestions = [];
+            activeSuggestionIndex = -1;
+            searchSuggestions.innerHTML = '';
+            searchSuggestions.classList.remove('visible');
+            searchInput.setAttribute('aria-expanded', 'false');
+        }
+
+        function updateActiveSuggestion() {
+            [...searchSuggestions.children].forEach((el, i) => el.classList.toggle('active', i === activeSuggestionIndex));
+            if (activeSuggestionIndex >= 0) searchSuggestions.children[activeSuggestionIndex].scrollIntoView({ block: 'nearest' });
+        }
+
+        function selectSuggestion(value) {
+            searchInput.value = value;
+            if ([...categoryFilter.options].some(o => o.value === value)) categoryFilter.value = value;
+            hideSuggestions();
+            performSearch();
+        }
+
+        searchInput.addEventListener('input', () => {
+            const q = searchInput.value.trim();
+            if (!q) { hideSuggestions(); return; }
+            renderSuggestions(availableCategories.filter(c => c.toLowerCase().startsWith(q.toLowerCase())).slice(0, 8));
+        });
+
+        searchInput.addEventListener('keydown', (e) => {
+            if (!searchSuggestions.classList.contains('visible')) return;
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                activeSuggestionIndex = Math.min(activeSuggestionIndex + 1, currentSuggestions.length - 1);
+                updateActiveSuggestion();
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                activeSuggestionIndex = Math.max(activeSuggestionIndex - 1, -1);
+                updateActiveSuggestion();
+            } else if (e.key === 'Escape') {
+                hideSuggestions();
+            }
+        });
+
+        // mousedown (not click) fires before the input's blur, so the selected
+        // value survives instead of being wiped by blur-driven cleanup.
+        searchSuggestions.addEventListener('mousedown', (e) => {
+            const item = e.target.closest('.search-suggestion');
+            if (!item) return;
+            e.preventDefault();
+            selectSuggestion(item.dataset.value);
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.search-input-group')) hideSuggestions();
+        });
+
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key !== 'Enter') return;
+            if (activeSuggestionIndex >= 0 && currentSuggestions[activeSuggestionIndex]) {
+                selectSuggestion(currentSuggestions[activeSuggestionIndex]);
+            } else {
+                hideSuggestions();
+                performSearch();
+            }
+        });
         locationInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') performSearch(); });
 
         categoryFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
