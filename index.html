@@ -992,7 +992,9 @@
             searchInput.value = value;
             if ([...categoryFilter.options].some(o => o.value === value)) categoryFilter.value = value;
             hideSuggestions();
-            performSearch();
+            // Just fill the field -- searching is still the Search button's job,
+            // so the user can also adjust Where/Age/etc. before running it.
+            searchInput.focus();
         }
 
         searchInput.addEventListener('input', () => {

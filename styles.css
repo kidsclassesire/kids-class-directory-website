@@ -87,8 +87,10 @@
         }
         .search-suggestions.visible { display: block; }
         .search-suggestion {
-            padding: 8px 12px; border-radius: 10px; cursor: pointer; font-size: 0.95rem; color: var(--text-dark);
+            padding: 10px 12px; border-radius: 10px; cursor: pointer; font-size: 0.95rem; color: var(--text-dark);
+            min-height: 40px; box-sizing: border-box; display: flex; align-items: center;
         }
+        .search-suggestion + .search-suggestion { margin-top: 2px; }
         .search-suggestion:hover, .search-suggestion.active { background: var(--bg-page); }
         .search-suggestion mark { background: none; color: var(--primary); font-weight: 700; }
         .search-input-group select {
@@ -364,6 +366,19 @@
             .hero-active .search-divider { display: block; height: 28px; margin: 0 4px 0 0; flex-shrink: 0; }
             .hero-active .search-btn { width: 40px; height: 40px; border-radius: 50%; order: 0; flex-shrink: 0; }
             .hero-active .search-btn svg { width: 18px; height: 18px; }
+
+            /* Bigger tap targets for the suggestion list, and more breathing room
+               between rows so adjacent options aren't a mis-tap away from each other. */
+            .search-suggestion { padding: 13px 14px; font-size: 1rem; min-height: 46px; }
+            .search-suggestion + .search-suggestion { margin-top: 4px; }
+
+            /* In the compact .hero-active bar the Activity field itself is squeezed
+               to roughly half the pill's width -- anchoring the dropdown to that
+               narrow box would squeeze the suggestions with it. Detach it from the
+               parent's width and size it off the viewport instead. */
+            .hero-active .search-suggestions {
+                left: -8px; right: auto; width: min(300px, calc(100vw - 48px));
+            }
         }
 
         /* Modal Styles */
