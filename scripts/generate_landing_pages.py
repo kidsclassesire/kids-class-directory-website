@@ -35,6 +35,32 @@ IRISH_COUNTIES = [
 ]
 COUNTY_RE = re.compile(r'\b(' + '|'.join(IRISH_COUNTIES) + r')\b', re.IGNORECASE)
 
+# Counties whose namesake town/city is a distinct, high-volume search target of its
+# own (e.g. "Cork city" vs "county Cork"). Label/slug pairs mirror how these are
+# actually referred to locally -- "City" for the five with city status, "Town" for
+# the rest -- and are distinct from the plain county slug on purpose so they don't
+# collide with e.g. classes/cork.html.
+COUNTY_TOWN_PAGES = {
+    'Cork': ('Cork City', 'cork-city'),
+    'Galway': ('Galway City', 'galway-city'),
+    'Limerick': ('Limerick City', 'limerick-city'),
+    'Waterford': ('Waterford City', 'waterford-city'),
+    'Kilkenny': ('Kilkenny City', 'kilkenny-city'),
+    'Wexford': ('Wexford Town', 'wexford-town'),
+    'Sligo': ('Sligo Town', 'sligo-town'),
+    'Carlow': ('Carlow Town', 'carlow-town'),
+}
+
+
+def is_county_town_address(address, county):
+    # Irish addresses reliably distinguish the county town itself from the rest of
+    # the county by whether "Co."/"County" prefixes the name: "Cork, T23 ..." is
+    # the city; "Bandon, County Cork" is not. A bare comma-segment exactly matching
+    # the county name (no Co./County prefix in that segment) signals the former.
+    if not address:
+        return False
+    return any(part.strip().lower() == county.lower() for part in address.split(','))
+
 
 def derive_county(address):
     # Rightmost county-name match wins: Irish addresses put the real locality
@@ -200,7 +226,7 @@ def render_category_page(cat, rows, combo_counties_for_cat):
     return slug, page_html
 
 
-def render_county_page(county, rows, combo_cats_for_county):
+def render_county_page(county, rows, combo_cats_for_county, citytown=None):
     slug = county_slug(county)
     canonical = f'{SITE_URL}/classes/{slug}.html'
     title = f'Kids Classes in {county} | Kids Patch'
@@ -232,6 +258,48 @@ def render_county_page(county, rows, combo_cats_for_county):
     if combo_links:
         links_html = ''.join(f'<a href="{path}">{esc(cat)}</a>' for cat, path in combo_links)
         crosslinks = f'<div class="landing-crosslinks"><h2>Browse classes in {esc(county)} by category</h2><div class="crosslink-list">{links_html}</div></div>'
+
+    if citytown:
+        citytown_label, citytown_slug = citytown
+        crosslinks += (
+            '<div class="landing-crosslinks">'
+            f'<a href="{citytown_slug}.html">See classes in {esc(citytown_label)} specifically &rarr;</a>'
+            '</div>'
+        )
+
+    grid = landing_grid_html(rows, tag_kind='category')
+    ld = landing_json_ld(h1, canonical, meta_desc, rows)
+
+    page_html = render_landing_page(title, canonical, meta_desc, breadcrumb, h1, intro, crosslinks, grid, ld)
+    self_validate_json_ld(page_html, f'classes/{slug}')
+    return slug, page_html
+
+
+def render_citytown_page(county, label, slug, rows):
+    canonical = f'{SITE_URL}/classes/{slug}.html'
+    title = f'Kids Classes in {label} | Kids Patch'
+    count = len(rows)
+    meta_desc = truncate(
+        f'Browse {count} kids classes and activities in {label}, Ireland. '
+        'Filter by category, age and schedule to find the right class.'
+    )
+
+    county_slug_ = county_slug(county)
+    breadcrumb = (
+        f'<nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; '
+        f'<a href="index.html">All Classes</a> &rsaquo; '
+        f'<a href="{county_slug_}.html">{esc(county)}</a> &rsaquo; {esc(label)}</nav>'
+    )
+    h1 = f'Kids Classes in {label}'
+    intro = (
+        f'<p class="landing-intro">Browse {count} kids classes and activities in {esc(label)}. '
+        'Compare schedules, ages and pricing below, or contact a provider directly to book.</p>'
+    )
+    crosslinks = (
+        '<div class="business-backlinks">'
+        f'<a href="{county_slug_}.html">&larr; All classes in County {esc(county)}</a>'
+        '</div>'
+    )
 
     grid = landing_grid_html(rows, tag_kind='category')
     ld = landing_json_ld(h1, canonical, meta_desc, rows)
@@ -337,13 +405,28 @@ def main():
         landing_paths.append(f'classes/{slug}.html')
         category_pages.append((cat, slug))
 
+    rows_by_citytown = defaultdict(list)
+    for r in rows:
+        county = r.get('_county')
+        if county in COUNTY_TOWN_PAGES and is_county_town_address(r.get('address'), county):
+            rows_by_citytown[county].append(r)
+
     for county, county_rows in sorted(rows_by_county.items()):
         if len(county_rows) < MIN_COUNTY:
             continue
-        slug, page_html = render_county_page(county, county_rows, combo_cats_by_county.get(county, {}))
+        citytown = COUNTY_TOWN_PAGES.get(county) if len(rows_by_citytown.get(county, [])) >= MIN_COUNTY else None
+        slug, page_html = render_county_page(county, county_rows, combo_cats_by_county.get(county, {}), citytown)
         (CLASSES_DIR / f'{slug}.html').write_text(page_html, encoding='utf-8')
         landing_paths.append(f'classes/{slug}.html')
         county_pages.append((county, slug))
+
+    for county, (label, ct_slug) in sorted(COUNTY_TOWN_PAGES.items()):
+        ct_rows = rows_by_citytown.get(county, [])
+        if len(ct_rows) < MIN_COUNTY:
+            continue
+        _, page_html = render_citytown_page(county, label, ct_slug, ct_rows)
+        (CLASSES_DIR / f'{ct_slug}.html').write_text(page_html, encoding='utf-8')
+        landing_paths.append(f'classes/{ct_slug}.html')
 
     combo_count = 0
     for (cat, county), combo_rows in sorted(rows_by_combo.items()):
