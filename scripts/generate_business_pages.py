@@ -245,6 +245,22 @@ def map_section(row):
     return section
 
 
+def share_widget_html(row, canonical):
+    share_title = esc(row.get('company_name'))
+    whatsapp_icon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 003.4 17.4L2 22l4.7-1.4A11 11 0 1020.5 3.5zm-8.5 17a9 9 0 01-4.6-1.3l-.3-.2-3 .9.9-2.9-.2-.3A9 9 0 1112 20.5zm4.9-6.6c-.3-.1-1.6-.8-1.8-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5 0-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.6 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.5-.3z"/></svg>'
+    email_icon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>'
+    copy_icon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>'
+    share_icon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.6" x2="15.4" y2="6.4"/><line x1="8.6" y1="13.4" x2="15.4" y2="17.6"/></svg>'
+    return f'''<div class="share-wrap">
+                        <button type="button" class="share-toggle" aria-haspopup="true" aria-expanded="false">{share_icon} Share</button>
+                        <div class="share-menu" hidden data-title="{share_title}" data-url="{canonical}">
+                            <a class="share-option" data-share="whatsapp" href="#" target="_blank" rel="noopener">{whatsapp_icon} WhatsApp</a>
+                            <a class="share-option" data-share="email" href="#">{email_icon} Email</a>
+                            <button type="button" class="share-option" data-share="copy">{copy_icon} <span class="share-copy-label">Copy link</span></button>
+                        </div>
+                    </div>'''
+
+
 def render_page(row, slug):
     company = esc(row.get('company_name'))
     category = row.get('category') or 'Class'
@@ -303,6 +319,7 @@ def render_page(row, slug):
     <meta name="twitter:title" content="{esc(title)}">
     <meta name="twitter:description" content="{esc(desc)}">
     {leaflet_css}<link rel="stylesheet" href="../styles.css">
+    <script src="../share.js" defer></script>
     <script type="application/ld+json">{json_ld(row, slug)}</script>
 </head>
 <body>
@@ -324,6 +341,7 @@ def render_page(row, slug):
                     {detail_rows_html(row)}
                     {map_section(row)}
                     <a href="{esc(row.get("website_url")) or "#"}" target="_blank" rel="noopener" class="button">Visit Website</a>
+                    {share_widget_html(row, canonical)}
                 </div>
             </div>
             <div class="business-backlinks">
