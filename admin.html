@@ -6,12 +6,12 @@
     <title>Admin Dashboard - Directory</title>
     <style>
         :root {
-            --primary: #ff385c;
-            --primary-hover: #d90b34;
-            --text-dark: #0f172a;
-            --text-muted: #64748b;
-            --bg-page: #f8fafc;
-            --border: #e2e8f0;
+            --primary: #FF7A5C;
+            --primary-hover: #E85F41;
+            --text-dark: #212B2B;
+            --text-muted: #5C6B6B;
+            --bg-page: #FAF9F6;
+            --border: #DCE3E3;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -94,7 +94,7 @@
         .dq-card .dq-meta { color: var(--text-muted); font-size: 0.85rem; margin: 0 0 0.75rem; }
         .dq-card .dq-row { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem; }
         .dq-card input[type="text"], .dq-card input[type="number"] { flex: 1; padding: 0.6rem; border: 1px solid var(--border); border-radius: 6px; font-family: inherit; }
-        .dq-card .btn-dismiss { background: #94a3b8; color: white; border: none; }
+        .dq-card .btn-dismiss { background: var(--text-muted); color: white; border: none; }
         .dq-card .btn-save { background: #10b981; color: white; border: none; }
         .dq-empty { color: var(--text-muted); text-align: center; padding: 2rem; }
         .dq-meta { color: var(--text-muted); font-size: 0.85rem; }
@@ -123,7 +123,7 @@
         .danger-note { color: var(--text-muted); font-size: 0.8rem; margin: 0.5rem 0 0; }
 
         /* Skeleton loading placeholders */
-        .skeleton { background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 37%, #f1f5f9 63%); background-size: 400% 100%; animation: skeleton-loading 1.4s ease infinite; border-radius: 8px; }
+        .skeleton { background: linear-gradient(90deg, #f1f5f9 25%, var(--border) 37%, #f1f5f9 63%); background-size: 400% 100%; animation: skeleton-loading 1.4s ease infinite; border-radius: 8px; }
         .skeleton-card { height: 80px; margin-bottom: 0.85rem; }
         @keyframes skeleton-loading { 0% { background-position: 100% 50%; } 100% { background-position: 0 50%; } }
 

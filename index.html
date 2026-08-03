@@ -29,6 +29,8 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script type="application/ld+json">
     {
@@ -46,11 +48,28 @@
 </head>
 <body>
 
+    <header class="site-header">
+        <div class="site-header-inner">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                    <path d="M20 2 L26 6 L34 6 L34 14 L38 20 L34 26 L34 34 L26 34 L20 38 L14 34 L6 34 L6 26 L2 20 L6 14 L6 6 L14 6 Z" fill="#0F6E6E"/>
+                    <circle cx="20" cy="20" r="8" fill="#FFC857"/>
+                </svg>
+                Kids Patch
+            </a>
+            <nav class="site-nav">
+                <a href="#" id="nav-browse">Browse classes</a>
+                <a href="classes/index.html">Categories</a>
+            </nav>
+            <a href="portal.html" class="btn-ghost">Manage your listing</a>
+        </div>
+    </header>
+
     <header id="hero" class="hero-initial">
-        <div class="brand-logo">Kids Patch</div>
+        <div class="eyebrow">Ireland's largest children's directory</div>
         <div class="hero-text">
-            <h1>Discover Kids Classes</h1>
-            <p>Find the best local activities for your children.</p>
+            <h1>Find the right class for your <em>kid</em>, nearby.</h1>
+            <p>We help children have fun by matching them to the classes they need — thousands of classes, camps and activities across Ireland, from swimming to Irish dancing to coding club.</p>
         </div>
         <div class="search-bar">
             <div class="search-input-group">
@@ -75,8 +94,20 @@
         </div>
     </header>
 
+    <section class="category-patches">
+        <div class="section-head">
+            <h2>Browse by category</h2>
+            <a href="classes/index.html" class="see-all">See all &rarr;</a>
+        </div>
+        <div class="patch-grid" id="patch-grid"></div>
+    </section>
+
     <main id="main-content">
         <div class="results-column">
+
+            <div class="section-head">
+                <h2>All classes</h2>
+            </div>
 
             <!-- Granular Filter Bar -->
             <div class="filter-bar-wrap">
@@ -152,9 +183,19 @@
     </button>
 
     <footer class="site-footer">
-        <a href="classes/index.html">Browse all classes by category &amp; county</a>
-        &nbsp;&middot;&nbsp;
-        <a href="portal.html">Business owner? Manage your listing</a>
+        <div class="site-footer-inner">
+            <div class="logo">
+                <svg viewBox="0 0 40 40" fill="none" width="26" height="26" aria-hidden="true">
+                    <path d="M20 2 L26 6 L34 6 L34 14 L38 20 L34 26 L34 34 L26 34 L20 38 L14 34 L6 34 L6 26 L2 20 L6 14 L6 6 L14 6 Z" fill="#FAF9F6"/>
+                    <circle cx="20" cy="20" r="8" fill="#FFC857"/>
+                </svg>
+                Kids Patch
+            </div>
+            <div class="site-footer-links">
+                <a href="classes/index.html">Browse all classes by category &amp; county</a>
+                <a href="portal.html">Business owner? Manage your listing</a>
+            </div>
+        </div>
     </footer>
 
     <!-- Claim Business Modal -->
@@ -175,7 +216,7 @@
                 <div class="form-group">
                     <label for="claim-email">Business Email Address</label>
                     <input type="email" id="claim-email" required placeholder="e.g. jane@yourbusiness.ie">
-                    <small style="color:#64748b; font-size: 0.75rem; display:block; margin-top:4px;">Must be an official business domain.</small>
+                    <small style="color:var(--text-muted); font-size: 0.75rem; display:block; margin-top:4px;">Must be an official business domain.</small>
                 </div>
                 <div class="form-group">
                     <label for="claim-position">Your Position / Role</label>
@@ -453,6 +494,60 @@
             categoryFilter.innerHTML = html;
         }
 
+        // Emoji icons for the homepage "Browse by category" tiles, keyed by the
+        // exact category strings used in the data (see CATEGORY_GROUPS above).
+        // Anything not listed falls back to CATEGORY_ICON_DEFAULT.
+        const CATEGORY_ICONS = {
+            'Swimming': '🏊', 'Football': '⚽', 'GAA': '🏐', 'Sports': '🏅', 'Gymnastics': '🤸',
+            'Athletics': '🏃', 'Tennis': '🎾', 'Hockey': '🏑', 'Horse Riding': '🐎',
+            'Martial Arts': '🥋', 'Rugby': '🏉', 'Watersports': '🏄', 'Basketball': '🏀',
+            'Team Sports': '🏆', 'Dance': '💃', 'Music': '🎵', 'Arts and crafts': '🎨',
+            'Drama': '🎭', 'Cooking': '🍳', 'Developmental': '🌱', 'Parent-and-toddler': '🧸',
+            'Academic Support': '📚', 'Languages': '🗣️', 'STEM': '💻',
+            'Camps': '🏕️', 'Outdoor': '🌳',
+        };
+        const CATEGORY_ICON_DEFAULT = '🎈';
+        const PATCH_TILE_COUNT = 8;
+
+        // Populates the homepage category tiles from live data (mirrors
+        // populateCategoryFilter()'s counting logic) so the numbers shown never
+        // drift from what's actually in classesData.
+        function renderCategoryPatches() {
+            const counts = new Map();
+            classesData.forEach(item => {
+                if (!item.category) return;
+                counts.set(item.category, (counts.get(item.category) || 0) + 1);
+            });
+
+            const top = [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, PATCH_TILE_COUNT);
+
+            document.getElementById('patch-grid').innerHTML = top.map(([category, count]) => `
+                <a href="#" class="patch" data-category="${escapeHtml(category)}">
+                    <div class="patch-icon">${CATEGORY_ICONS[category] || CATEGORY_ICON_DEFAULT}</div>
+                    <div class="patch-label">${escapeHtml(category)}</div>
+                    <div class="patch-count">${count} class${count === 1 ? '' : 'es'}</div>
+                </a>
+            `).join('');
+        }
+
+        document.getElementById('patch-grid').addEventListener('click', (e) => {
+            const patch = e.target.closest('.patch');
+            if (!patch) return;
+            e.preventDefault();
+            const category = patch.dataset.category;
+            searchInput.value = category;
+            if ([...categoryFilter.options].some(o => o.value === category)) categoryFilter.value = category;
+            performSearch();
+        });
+
+        // "Browse classes" in the top nav just runs an empty search -- same as
+        // pressing Search with both fields blank -- to reveal the results below
+        // the (now-collapsed) hero, exactly like today's first-search behaviour.
+        document.getElementById('nav-browse').addEventListener('click', (e) => {
+            e.preventDefault();
+            performSearch();
+        });
+
         function initMap() {
             if (map) return;
             map = L.map('map').setView([53.3498, -6.2603], 10);
@@ -690,7 +785,7 @@
             if (!append) container.innerHTML = '';
 
             if (!data.length) {
-                if (!append) container.innerHTML = '<p style="grid-column: 1/-1; padding: 2rem 0; color: #64748b;">No classes match these exact filters. Try adjusting your selections.</p>';
+                if (!append) container.innerHTML = '<p style="grid-column: 1/-1; padding: 2rem 0; color: var(--text-muted);">No classes match these exact filters. Try adjusting your selections.</p>';
                 return;
             }
 
@@ -845,7 +940,7 @@
                             <strong>Where:</strong> ${escapeHtml(item.address) || 'Contact for details'}<br>
                         </div>
                         ${item.id != null && businessIndex.has(String(item.id))
-                            ? `<a href="${businessIndex.get(String(item.id))}" class="button" style="background:#f1f5f9; color:var(--text-dark);">Full details</a>`
+                            ? `<a href="${businessIndex.get(String(item.id))}" class="button" style="background:#EEF0EA; color:var(--text-dark);">Full details</a>`
                             : ''}
                         <a href="${escapeHtml(item.website_url) || '#'}" target="_blank" class="button">Visit Website</a>
                         <button class="claim-btn" data-id="${escapeHtml(item.id || item.company_name)}" data-name="${escapeHtml(item.company_name)}">Claim this business</button>
@@ -979,7 +1074,7 @@
                     performSearch();
                 }, () => {
                     alert("Location access denied or unavailable.");
-                    nearMeBtn.style.color = '#94a3b8';
+                    nearMeBtn.style.color = 'var(--text-muted)';
                 });
             } else {
                 alert("Geolocation is not supported by this browser.");
@@ -990,7 +1085,7 @@
             userLat = null;
             userLon = null;
             lastGeocodedQuery = null;
-            nearMeBtn.style.color = '#94a3b8';
+            nearMeBtn.style.color = 'var(--text-muted)';
         });
 
         searchBtn.addEventListener('click', performSearch);
@@ -1119,7 +1214,7 @@
                 // Matches what performSearch() will re-derive from the input, so it
                 // skips a redundant geocode of an address we've already resolved.
                 lastGeocodedQuery = place.label.trim().toLowerCase();
-                nearMeBtn.style.color = '#94a3b8';
+                nearMeBtn.style.color = 'var(--text-muted)';
                 if (!sortExplicitlySet) sortSelect.value = 'distance';
                 locationInput.focus();
             },
@@ -1251,6 +1346,7 @@
         dataLoadPromise.then(() => {
             dataReady = true;
             populateCategoryFilter();
+            renderCategoryPatches();
             const params = new URLSearchParams(window.location.search);
             if (Array.from(params.keys()).length > 0) {
                 if(params.has('q')) searchInput.value = params.get('q');
