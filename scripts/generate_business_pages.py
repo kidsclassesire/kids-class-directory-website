@@ -135,7 +135,8 @@ def detail_rows_html(row):
         href = tel_href(row['phone_number'])
         contact_parts.append(f'<a href="tel:{href}">{phone_display}</a>' if href else phone_display)
     if row.get('email_address'):
-        contact_parts.append(esc(row['email_address']))
+        email = esc(row['email_address'])
+        contact_parts.append(f'<a href="mailto:{email}">{email}</a>')
     if contact_parts:
         rows.append(f'<div class="detail-row"><strong>Contact:</strong> {" &middot; ".join(contact_parts)}</div>')
 
