@@ -28,6 +28,12 @@
         .btn-danger { background: #ffffff; color: #dc2626; border: 1px solid #fecaca; padding: 0.6rem 1rem; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.85rem; width: auto; }
         .toggle-text { text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem; cursor: pointer; }
         .toggle-text:hover { color: var(--text-dark); text-decoration: underline; }
+        .info-callout {
+            background: #FFF3EE; border: 1px solid var(--border); border-left: 4px solid var(--primary);
+            border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; font-size: 0.9rem; line-height: 1.55;
+        }
+        .info-callout a { color: var(--primary); font-weight: 700; text-decoration: none; }
+        .info-callout a:hover { text-decoration: underline; }
         .alert { padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; display: none; }
         .alert-error { background: #fee2e2; color: #991b1b; border: 1px solid #f87171; }
         .alert-success { background: #dcfce7; color: #166534; border: 1px solid #4ade80; }
@@ -52,7 +58,10 @@
     <!-- Auth Section -->
     <div class="container" id="auth-section">
         <h1 id="auth-title">Owner Sign Up</h1>
-        <p style="color: var(--text-muted); margin-bottom: 2rem;">Sign up using the email address you used to claim your business.</p>
+        <div class="info-callout">
+            <strong>New here?</strong> This account is for managing a listing you've already claimed. If you haven't yet, find your business on the <a href="index.html">Kids Patch directory</a> and click "Claim this business" on your listing first. Once an admin approves your claim, come back here and sign up below using that same email address.
+        </div>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Already claimed your business? Sign up or log in below with that email address.</p>
 
         <div class="alert alert-error" id="auth-error"></div>
         <div class="alert alert-success" id="auth-success"></div>
@@ -67,6 +76,19 @@
         </div>
         <button class="btn" id="auth-btn">Create Account</button>
         <div class="toggle-text" id="toggle-auth">Already have an account? Log In here.</div>
+        <div class="toggle-text" id="forgot-password-link">Forgot your password?</div>
+    </div>
+
+    <!-- Reset Password Section (shown after clicking a password-reset email link) -->
+    <div class="container" id="reset-password-section" style="display: none;">
+        <h1>Set New Password</h1>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Choose a new password for your account.</p>
+        <div class="form-group">
+            <label for="new-password">New Password</label>
+            <input type="password" id="new-password">
+        </div>
+        <button class="btn" id="update-password-btn">Update Password</button>
+        <p id="reset-error" style="color: #ef4444; font-size: 0.85rem; display: none;"></p>
     </div>
 
     <!-- Edit Business Section -->
@@ -80,7 +102,7 @@
         <div class="alert alert-success" id="dash-success"></div>
 
         <div id="unauthorized-msg" style="display: none; text-align: center; padding: 2rem 0; color: var(--text-muted);">
-            Your account is pending approval by an admin. Check back later.
+            Your account is pending approval. If you haven't already, find your business on the <a href="index.html" style="color: var(--primary); font-weight: 700;">directory</a> and click "Claim this business" so an admin can verify you — log out and back in once that's approved to start managing your listing.
         </div>
 
         <form id="edit-business-form" style="display: none;">
@@ -343,13 +365,90 @@
         document.getElementById('logout-btn').addEventListener('click', async () => {
             await supabaseClient.auth.signOut();
             dashboardSection.style.display = 'none';
+            document.getElementById('reset-password-section').style.display = 'none';
             authSection.style.display = 'block';
             document.getElementById('owner-email').value = '';
             document.getElementById('owner-password').value = '';
         });
 
+        // ---- Forgot / reset password ----
+        document.getElementById('forgot-password-link').addEventListener('click', async () => {
+            const email = document.getElementById('owner-email').value.trim();
+            authError.style.display = 'none';
+            authSuccess.style.display = 'none';
+
+            if (!email) {
+                authError.textContent = 'Enter your email above first, then click "Forgot your password?" again.';
+                authError.style.display = 'block';
+                return;
+            }
+
+            const link = document.getElementById('forgot-password-link');
+            link.textContent = 'Sending...';
+            try {
+                // Redirect back to this same page -- Supabase appends the recovery token.
+                const redirectTo = window.location.origin + window.location.pathname;
+                const { error } = await supabaseClient.auth.resetPasswordForEmail(email, { redirectTo });
+                if (error) throw error;
+                authSuccess.textContent = 'Check your email for a password reset link.';
+                authSuccess.style.display = 'block';
+            } catch (err) {
+                authError.textContent = err.message;
+                authError.style.display = 'block';
+            } finally {
+                link.textContent = 'Forgot your password?';
+            }
+        });
+
+        // Supabase redirects back here with `#type=recovery&access_token=...` after a
+        // password-reset email link is clicked, establishing a real session -- show the
+        // "set new password" form instead of the normal login/dashboard flow.
+        function isRecoveryRedirect() {
+            return window.location.hash.includes('type=recovery');
+        }
+
+        supabaseClient.auth.onAuthStateChange((event) => {
+            if (event === 'PASSWORD_RECOVERY') {
+                authSection.style.display = 'none';
+                dashboardSection.style.display = 'none';
+                document.getElementById('reset-password-section').style.display = 'block';
+            }
+        });
+
+        document.getElementById('update-password-btn').addEventListener('click', async () => {
+            const newPassword = document.getElementById('new-password').value;
+            const resetError = document.getElementById('reset-error');
+            resetError.style.display = 'none';
+
+            if (newPassword.length < 6) {
+                resetError.textContent = 'Password must be at least 6 characters.';
+                resetError.style.display = 'block';
+                return;
+            }
+
+            const btn = document.getElementById('update-password-btn');
+            btn.textContent = 'Updating...';
+            btn.disabled = true;
+            try {
+                const { error } = await supabaseClient.auth.updateUser({ password: newPassword });
+                if (error) throw error;
+                // Drop the #type=recovery hash so a later refresh doesn't re-trigger this flow.
+                history.replaceState(null, '', window.location.pathname);
+                document.getElementById('reset-password-section').style.display = 'none';
+                document.getElementById('new-password').value = '';
+                checkSession();
+            } catch (err) {
+                resetError.textContent = err.message;
+                resetError.style.display = 'block';
+            } finally {
+                btn.textContent = 'Update Password';
+                btn.disabled = false;
+            }
+        });
+
         // Check Session & Fetch Business
         async function checkSession() {
+            if (isRecoveryRedirect()) return;
             const { data: { session } } = await supabaseClient.auth.getSession();
             if (session) {
                 currentUserEmail = session.user.email;
