@@ -172,11 +172,12 @@
         }
         .near-me-btn:hover { color: var(--primary); }
 
-        /* Mobile-only shortcut between the results list and the map (which the
-           results/map columns stack into, map last) -- see the 968px breakpoint
-           below and the IntersectionObserver in index.html that flips its label. */
+        /* Mobile-only toggle between the results list and a full-screen map
+           overlay -- see the 968px breakpoint below and setMapOverlayOpen() in
+           index.html. Sits above .mobile-map-overlay (z-index: 800) so it stays
+           usable as a "back to list" control while the overlay is open. */
         .mobile-map-fab {
-            display: none; position: fixed; bottom: 20px; right: 20px; z-index: 500;
+            display: none; position: fixed; bottom: 20px; right: 20px; z-index: 900;
             background-color: var(--primary); color: white; border: none; border-radius: 9999px;
             padding: 0.75rem 1.25rem; font-size: 0.9rem; font-weight: 700; cursor: pointer;
             align-items: center; gap: 6px; box-shadow: 0 8px 20px rgba(15,23,42,0.25);
@@ -387,6 +388,15 @@
             #main-content.visible { flex-direction: column; }
             .results-column { width: 100%; padding: 1.25rem; }
             .map-column { width: 100%; height: 280px; position: relative; top: 0; }
+
+            /* Full-screen map, toggled by the mobile-map-fab -- see
+               setMapOverlayOpen() in index.html. Avoids scrolling down to the
+               inline map above, which fights with infinite-scroll loading more
+               results along the way. */
+            .map-column.mobile-map-overlay {
+                position: fixed; inset: 0; width: 100%; height: 100%; z-index: 800;
+            }
+            body.map-overlay-open { overflow: hidden; }
 
             /* Filter pills: one scrollable row instead of wrapping into a tall stack
                that pushes results far down the page. The scrollbar is kept visible

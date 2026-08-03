@@ -31,7 +31,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="stylesheet" href="styles.css?v=4">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -274,7 +274,8 @@
         const mainContent = document.getElementById('main-content');
         const mobileMapFab = document.getElementById('mobile-map-fab');
         const mobileMapFabLabel = document.getElementById('mobile-map-fab-label');
-        let mapInView = false;
+        const mapColumnEl = document.querySelector('.map-column');
+        let mapOverlayOpen = false;
 
         let classesData = [];
         let filteredData = [];
@@ -558,21 +559,28 @@
         }
 
         // On mobile the map sits below the (potentially long, progressively-loaded)
-        // results list, so a floating shortcut jumps between the two instead of
-        // making the user scroll past everything. Flips label/direction based on
-        // which side is currently in view.
+        // results list -- scrolling down to it used to fight with infinite-scroll
+        // loading more cards along the way (the sentinel kept re-triggering mid-
+        // scroll, so the map's position kept moving further away). Showing it as a
+        // full-screen overlay instead sidesteps that entirely: no scrolling needed.
         function setupMobileMapFab() {
             mobileMapFab.classList.add('visible');
-            new IntersectionObserver((entries) => {
-                mapInView = entries[0].isIntersecting;
-                mobileMapFabLabel.textContent = mapInView ? 'List' : 'Map';
-            }, { threshold: 0.3 }).observe(document.querySelector('.map-column'));
         }
 
-        mobileMapFab.addEventListener('click', () => {
-            document.querySelector(mapInView ? '.results-column' : '.map-column')
-                .scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
+        function setMapOverlayOpen(open) {
+            mapOverlayOpen = open;
+            mapColumnEl.classList.toggle('mobile-map-overlay', open);
+            document.body.classList.toggle('map-overlay-open', open);
+            mobileMapFabLabel.textContent = open ? 'List' : 'Map';
+            if (open && map) {
+                // Leaflet measures its container on load/last resize -- it still thinks
+                // it's the old 280px-tall inline map until told to re-measure now that
+                // the container has grown to fill the screen.
+                setTimeout(() => map.invalidateSize(), 50);
+            }
+        }
+
+        mobileMapFab.addEventListener('click', () => setMapOverlayOpen(!mapOverlayOpen));
 
         async function loadClasses() {
             try {
@@ -644,7 +652,10 @@
 
                 // The card is always already rendered -- every pin here comes from the
                 // currently visible slice -- so clicking just needs to scroll to it.
+                // On mobile the map may be showing as a full-screen overlay, in which
+                // case close it first so the list (and the scroll) is actually visible.
                 marker.on('click', () => {
+                    if (mapOverlayOpen) setMapOverlayOpen(false);
                     const card = document.getElementById(`card-${index}`);
                     if (card) {
                         card.scrollIntoView({ behavior: 'smooth', block: 'center' });
