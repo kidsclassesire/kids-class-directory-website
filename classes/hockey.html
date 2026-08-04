@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
-    <link rel="stylesheet" href="../styles.css?v=25db7f02b3">
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Hockey Classes in Ireland", "description": "Find 13 Hockey classes and activities for kids across Ireland. Compare schedules, ages and pricing, then contact providers directly.", "url": "https://www.kidspatch.ie/classes/hockey.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 13, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/avoca-hockey-club-444.html", "name": "Avoca Hockey Club"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/clontarf-hockey-club-470.html", "name": "Clontarf Hockey Club"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/dmcg-hockey-475.html", "name": "DMcG Hockey"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/genesis-hockey-club-490.html", "name": "Genesis Hockey Club"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/monkstown-hockey-club-519.html", "name": "Monkstown Hockey Club"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/muckross-hockey-club-521.html", "name": "Muckross Hockey Club"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/pembroke-531.html", "name": "Pembroke"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/railway-union-hockey-club-535.html", "name": "Railway Union Hockey Club"}, {"@type": "ListItem", "position": 9, "url": "https://www.kidspatch.ie/business/rathgar-hockey-club-536.html", "name": "Rathgar Hockey Club"}, {"@type": "ListItem", "position": 10, "url": "https://www.kidspatch.ie/business/three-rock-rovers-557.html", "name": "Three Rock Rovers"}, {"@type": "ListItem", "position": 11, "url": "https://www.kidspatch.ie/business/ennis-hockey-club-junior-hockey-1405.html", "name": "Ennis Hockey Club - Junior Hockey"}, {"@type": "ListItem", "position": 12, "url": "https://www.kidspatch.ie/business/skerries-hockey-club-1587.html", "name": "Skerries Hockey Club"}, {"@type": "ListItem", "position": 13, "url": "https://www.kidspatch.ie/business/hockey-express-summer-hockey-camp-thurles-1639.html", "name": "Hockey Express - Summer Hockey Camp, Thurles"}]}}</script>
 </head>
 <body>
@@ -35,8 +35,32 @@
         <h1>Hockey Classes in Ireland</h1>
         <p class="landing-intro">Explore 13 Hockey classes and activities for kids across Ireland. Hockey classes are most widely available in Dublin.</p>
         <div class="landing-crosslinks"><h2>Browse Hockey by county</h2><div class="crosslink-list"><a href="hockey-dublin.html">Dublin</a></div></div>
-        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div><script type="application/json" id="landing-map-data">[{"lat": 53.2896327, "lon": -6.1744603, "name": "Avoca Hockey Club", "category": "Hockey", "url": "../business/avoca-hockey-club-444.html"}, {"lat": 53.3664848, "lon": -6.228478, "name": "Clontarf Hockey Club", "category": "Hockey", "url": "../business/clontarf-hockey-club-470.html"}, {"lat": 53.2839018, "lon": -6.2079519, "name": "Genesis Hockey Club", "category": "Hockey", "url": "../business/genesis-hockey-club-490.html"}, {"lat": 53.274781, "lon": -6.1355672, "name": "Monkstown Hockey Club", "category": "Hockey", "url": "../business/monkstown-hockey-club-519.html"}, {"lat": 53.3242901, "lon": -6.2417986, "name": "Muckross Hockey Club", "category": "Hockey", "url": "../business/muckross-hockey-club-521.html"}, {"lat": 53.3306525, "lon": -6.2243381, "name": "Pembroke", "category": "Hockey", "url": "../business/pembroke-531.html"}, {"lat": 53.3237567, "lon": -6.2121005, "name": "Railway Union Hockey Club", "category": "Hockey", "url": "../business/railway-union-hockey-club-535.html"}, {"lat": 53.3060093, "lon": -6.2735905, "name": "Rathgar Hockey Club", "category": "Hockey", "url": "../business/rathgar-hockey-club-536.html"}, {"lat": 53.2813987, "lon": -6.2775802, "name": "Three Rock Rovers", "category": "Hockey", "url": "../business/three-rock-rovers-557.html"}]</script></div>
-        <div class="landing-grid"><div class="landing-card">
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="444">
         <div class="card-image"><img class="banner-img" src="../images/avocahockeyclub-ie.jpg" alt="Avoca Hockey Club" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/avocahockeyclub-ie.webp" alt="Avoca Hockey Club logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Avoca Hockey Club</h3>
@@ -45,7 +69,7 @@
             
             <a href="../business/avoca-hockey-club-444.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="470">
         <div class="card-image"><img class="banner-img" src="../images/clontarfhc-com.jpg" alt="Clontarf Hockey Club" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/clontarfhc-com.png" alt="Clontarf Hockey Club logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Clontarf Hockey Club</h3>
@@ -54,7 +78,7 @@
             
             <a href="../business/clontarf-hockey-club-470.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="475">
         <div class="card-image"><img class="banner-img" src="../images/dmcghockey-ie.jpg" alt="DMcG Hockey" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/dmcghockey-ie.png" alt="DMcG Hockey logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>DMcG Hockey</h3>
@@ -63,7 +87,7 @@
             
             <a href="../business/dmcg-hockey-475.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="490">
         <div class="card-image"><img class="logo-badge" src="../logos/genesishockeyclub-ie.webp" alt="Genesis Hockey Club logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Genesis Hockey Club</h3>
@@ -72,7 +96,7 @@
             
             <a href="../business/genesis-hockey-club-490.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="519">
         <div class="card-image"><img class="logo-badge" src="../logos/monkstownhockeyclub-com.png" alt="Monkstown Hockey Club logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Monkstown Hockey Club</h3>
@@ -81,7 +105,7 @@
             
             <a href="../business/monkstown-hockey-club-519.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="521">
         <div class="card-image"><img class="banner-img" src="../images/muckrosshockeyclub-com.jpg" alt="Muckross Hockey Club" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/muckrosshockeyclub-com.png" alt="Muckross Hockey Club logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Muckross Hockey Club</h3>
@@ -90,7 +114,7 @@
             
             <a href="../business/muckross-hockey-club-521.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="531">
         <div class="card-image"><img class="banner-img" src="../images/pembrokewanderers-ie.jpg" alt="Pembroke" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/pembrokewanderers-ie.png" alt="Pembroke logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Pembroke</h3>
@@ -99,7 +123,7 @@
             
             <a href="../business/pembroke-531.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="535">
         <div class="card-image"><img class="banner-img" src="../images/railwayunionhockey-ie.jpg" alt="Railway Union Hockey Club" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/railwayunionhockey-ie.png" alt="Railway Union Hockey Club logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Railway Union Hockey Club</h3>
@@ -108,7 +132,7 @@
             
             <a href="../business/railway-union-hockey-club-535.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="536">
         <div class="card-image"><img class="banner-img" src="../images/rathgarhc-com.jpg" alt="Rathgar Hockey Club" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/rathgarhc-com.png" alt="Rathgar Hockey Club logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Rathgar Hockey Club</h3>
@@ -117,7 +141,7 @@
             
             <a href="../business/rathgar-hockey-club-536.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="557">
         <div class="card-image"><img class="logo-badge" src="../logos/threerockrovershc-com.png" alt="Three Rock Rovers logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Three Rock Rovers</h3>
@@ -126,7 +150,7 @@
             
             <a href="../business/three-rock-rovers-557.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="1405">
         <div class="card-image"></div>
         <div class="card-content">
             <h3>Ennis Hockey Club - Junior Hockey</h3>
@@ -135,7 +159,7 @@
             
             <a href="../business/ennis-hockey-club-junior-hockey-1405.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="1587">
         <div class="card-image"></div>
         <div class="card-content">
             <h3>Skerries Hockey Club</h3>
@@ -144,7 +168,7 @@
             
             <a href="../business/skerries-hockey-club-1587.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="1639">
         <div class="card-image"></div>
         <div class="card-content">
             <h3>Hockey Express - Summer Hockey Camp, Thurles</h3>
@@ -153,10 +177,11 @@
             
             <a href="../business/hockey-express-summer-hockey-camp-thurles-1639.html" class="button">View full details &rarr;</a>
         </div>
-    </div></div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 444, "lat": 53.2896327, "lon": -6.1744603, "name": "Avoca Hockey Club", "category": "Hockey", "url": "../business/avoca-hockey-club-444.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 470, "lat": 53.3664848, "lon": -6.228478, "name": "Clontarf Hockey Club", "category": "Hockey", "url": "../business/clontarf-hockey-club-470.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 475, "lat": null, "lon": null, "name": "DMcG Hockey", "category": "Hockey", "url": "../business/dmcg-hockey-475.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 490, "lat": 53.2839018, "lon": -6.2079519, "name": "Genesis Hockey Club", "category": "Hockey", "url": "../business/genesis-hockey-club-490.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 519, "lat": 53.274781, "lon": -6.1355672, "name": "Monkstown Hockey Club", "category": "Hockey", "url": "../business/monkstown-hockey-club-519.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 521, "lat": 53.3242901, "lon": -6.2417986, "name": "Muckross Hockey Club", "category": "Hockey", "url": "../business/muckross-hockey-club-521.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 531, "lat": 53.3306525, "lon": -6.2243381, "name": "Pembroke", "category": "Hockey", "url": "../business/pembroke-531.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 535, "lat": 53.3237567, "lon": -6.2121005, "name": "Railway Union Hockey Club", "category": "Hockey", "url": "../business/railway-union-hockey-club-535.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 536, "lat": 53.3060093, "lon": -6.2735905, "name": "Rathgar Hockey Club", "category": "Hockey", "url": "../business/rathgar-hockey-club-536.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 557, "lat": 53.2813987, "lon": -6.2775802, "name": "Three Rock Rovers", "category": "Hockey", "url": "../business/three-rock-rovers-557.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1405, "lat": null, "lon": null, "name": "Ennis Hockey Club - Junior Hockey", "category": "Hockey", "url": "../business/ennis-hockey-club-junior-hockey-1405.html", "minAge": 5.0, "maxAge": null, "price": null, "free": false}, {"id": 1587, "lat": null, "lon": null, "name": "Skerries Hockey Club", "category": "Hockey", "url": "../business/skerries-hockey-club-1587.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1639, "lat": null, "lon": null, "name": "Hockey Express - Summer Hockey Camp, Thurles", "category": "Hockey", "url": "../business/hockey-express-summer-hockey-camp-thurles-1639.html", "minAge": 6.0, "maxAge": 15.0, "price": null, "free": false}]</script>
     </div>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-    <script src="../landing-map.js?v=f5f0846bad" defer></script>
+    <script src="../landing-filters.js?v=32b79dc211" defer></script>
 </body>
 </html>

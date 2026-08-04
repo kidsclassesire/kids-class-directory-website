@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
-    <link rel="stylesheet" href="../styles.css?v=25db7f02b3">
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Martial Arts Classes in Dublin", "description": "Find 8 Martial Arts classes for kids in Dublin. Compare schedules, ages and pricing, then contact providers directly.", "url": "https://www.kidspatch.ie/classes/martial-arts-dublin.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 8, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/wskf-karate-academy-skerries-298.html", "name": "WSKF Karate Academy Skerries"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/master-doyle-taekwon-do-schools-1185.html", "name": "Master Doyle Taekwon-Do Schools"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/dublin-tomiki-aikido-1323.html", "name": "Dublin Tomiki Aikido"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/jsbjj-training-centre-1327.html", "name": "JSBJJ Training Centre"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/dublin-capoeira-capoeira-kids-1333.html", "name": "Dublin Capoeira - Capoeira Kids"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/dublin-kendo-kids-kendo-1334.html", "name": "Dublin Kendo - Kids Kendo"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/wskf-sedai-after-school-karate-clubs-1434.html", "name": "WSKF SEDAI - After school karate clubs"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/crank-bjj-kids-academy-blessington-1709.html", "name": "CRANK BJJ - Kids Academy, Blessington"}]}}</script>
 </head>
 <body>
@@ -35,8 +35,32 @@
         <h1>Martial Arts Classes in Dublin</h1>
         <p class="landing-intro">Explore 8 Martial Arts classes for kids in Dublin, Ireland. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
         <div class="business-backlinks"><a href="martial-arts.html">&larr; All Martial Arts classes in Ireland</a><a href="dublin.html">&larr; All classes in Dublin</a></div>
-        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div><script type="application/json" id="landing-map-data">[{"lat": 53.57762, "lon": -6.11107, "name": "WSKF Karate Academy Skerries", "category": "Martial Arts", "url": "../business/wskf-karate-academy-skerries-298.html"}, {"lat": 53.274458, "lon": -6.3658655, "name": "Master Doyle Taekwon-Do Schools", "category": "Martial Arts", "url": "../business/master-doyle-taekwon-do-schools-1185.html"}, {"lat": 53.2990953, "lon": -6.3736187, "name": "Dublin Tomiki Aikido", "category": "Martial Arts", "url": "../business/dublin-tomiki-aikido-1323.html"}, {"lat": 53.3521, "lon": -6.2624422, "name": "JSBJJ Training Centre", "category": "Martial Arts", "url": "../business/jsbjj-training-centre-1327.html"}, {"lat": 53.5739887, "lon": -6.1191749, "name": "WSKF SEDAI - After school karate clubs", "category": "Martial Arts", "url": "../business/wskf-sedai-after-school-karate-clubs-1434.html"}]</script></div>
-        <div class="landing-grid"><div class="landing-card">
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="298">
         <div class="card-image"><img class="banner-img" src="../images/wskfskerries-ie.jpg" alt="WSKF Karate Academy Skerries" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/wskfskerries-ie.png" alt="WSKF Karate Academy Skerries logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>WSKF Karate Academy Skerries</h3>
@@ -45,7 +69,7 @@
             
             <a href="../business/wskf-karate-academy-skerries-298.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="1185">
         <div class="card-image"></div>
         <div class="card-content">
             <h3>Master Doyle Taekwon-Do Schools</h3>
@@ -54,7 +78,7 @@
             
             <a href="../business/master-doyle-taekwon-do-schools-1185.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="1323">
         <div class="card-image"></div>
         <div class="card-content">
             <h3>Dublin Tomiki Aikido</h3>
@@ -63,7 +87,7 @@
             
             <a href="../business/dublin-tomiki-aikido-1323.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="1327">
         <div class="card-image"></div>
         <div class="card-content">
             <h3>JSBJJ Training Centre</h3>
@@ -72,7 +96,7 @@
             
             <a href="../business/jsbjj-training-centre-1327.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="1333">
         <div class="card-image"></div>
         <div class="card-content">
             <h3>Dublin Capoeira - Capoeira Kids</h3>
@@ -81,7 +105,7 @@
             
             <a href="../business/dublin-capoeira-capoeira-kids-1333.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="1334">
         <div class="card-image"></div>
         <div class="card-content">
             <h3>Dublin Kendo - Kids Kendo</h3>
@@ -90,7 +114,7 @@
             
             <a href="../business/dublin-kendo-kids-kendo-1334.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="1434">
         <div class="card-image"></div>
         <div class="card-content">
             <h3>WSKF SEDAI - After school karate clubs</h3>
@@ -99,7 +123,7 @@
             
             <a href="../business/wskf-sedai-after-school-karate-clubs-1434.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="1709">
         <div class="card-image"></div>
         <div class="card-content">
             <h3>CRANK BJJ - Kids Academy, Blessington</h3>
@@ -108,10 +132,11 @@
             
             <a href="../business/crank-bjj-kids-academy-blessington-1709.html" class="button">View full details &rarr;</a>
         </div>
-    </div></div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 298, "lat": 53.57762, "lon": -6.11107, "name": "WSKF Karate Academy Skerries", "category": "Martial Arts", "url": "../business/wskf-karate-academy-skerries-298.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 1185, "lat": 53.274458, "lon": -6.3658655, "name": "Master Doyle Taekwon-Do Schools", "category": "Martial Arts", "url": "../business/master-doyle-taekwon-do-schools-1185.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1323, "lat": 53.2990953, "lon": -6.3736187, "name": "Dublin Tomiki Aikido", "category": "Martial Arts", "url": "../business/dublin-tomiki-aikido-1323.html", "minAge": 6.0, "maxAge": 9.0, "price": null, "free": false}, {"id": 1327, "lat": 53.3521, "lon": -6.2624422, "name": "JSBJJ Training Centre", "category": "Martial Arts", "url": "../business/jsbjj-training-centre-1327.html", "minAge": 4.0, "maxAge": 13.0, "price": null, "free": false}, {"id": 1333, "lat": null, "lon": null, "name": "Dublin Capoeira - Capoeira Kids", "category": "Martial Arts", "url": "../business/dublin-capoeira-capoeira-kids-1333.html", "minAge": 5.0, "maxAge": 11.0, "price": null, "free": false}, {"id": 1334, "lat": null, "lon": null, "name": "Dublin Kendo - Kids Kendo", "category": "Martial Arts", "url": "../business/dublin-kendo-kids-kendo-1334.html", "minAge": 8.0, "maxAge": 16.0, "price": null, "free": false}, {"id": 1434, "lat": 53.5739887, "lon": -6.1191749, "name": "WSKF SEDAI - After school karate clubs", "category": "Martial Arts", "url": "../business/wskf-sedai-after-school-karate-clubs-1434.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1709, "lat": null, "lon": null, "name": "CRANK BJJ - Kids Academy, Blessington", "category": "Martial Arts", "url": "../business/crank-bjj-kids-academy-blessington-1709.html", "minAge": 5.0, "maxAge": 13.0, "price": null, "free": false}]</script>
     </div>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-    <script src="../landing-map.js?v=f5f0846bad" defer></script>
+    <script src="../landing-filters.js?v=32b79dc211" defer></script>
 </body>
 </html>

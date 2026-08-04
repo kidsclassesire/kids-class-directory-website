@@ -12,6 +12,7 @@ Also run by .github/workflows/build-business-pages.yml.
 """
 
 import json
+import math
 import re
 from collections import Counter, defaultdict
 from datetime import date
@@ -22,7 +23,23 @@ from generate_business_pages import (
 )
 
 CLASSES_DIR = REPO_ROOT / 'classes'
-LANDING_MAP_JS_VERSION = file_version('landing-map.js')
+LANDING_FILTERS_JS_VERSION = file_version('landing-filters.js')
+
+# Structured price_amount is only populated on ~2% of rows -- the far more
+# common signal for "this is free" is prose in pricing_details/pricing_basis
+# ("Price: Free", "Per Family: FREE", etc, mostly library/council listings).
+# Checked by hand against a sample: this combination doesn't false-positive on
+# "free trial then paid" language because that phrasing lives in the long-form
+# description field, not these two structured fields.
+FREE_TEXT_RE = re.compile(r'\bfree\b', re.IGNORECASE)
+
+
+def is_free(row):
+    if row.get('price_amount') == 0:
+        return True
+    text = ' '.join(filter(None, [row.get('pricing_details'), row.get('pricing_basis')]))
+    return bool(FREE_TEXT_RE.search(text))
+
 
 MIN_NATIONWIDE = 3
 MIN_COUNTY = 3
@@ -104,7 +121,7 @@ def landing_card_html(row, tag_kind):
     meta_bits = [b for b in [format_schedule(row), esc(format_price(row))] if b]
     meta_line = f'<div class="landing-card-meta">{" &middot; ".join(meta_bits)}</div>' if meta_bits else ''
 
-    return f'''<div class="landing-card">
+    return f'''<div class="landing-card" data-id="{row['id']}">
         <div class="card-image">{image_html(row)}</div>
         <div class="card-content">
             <h3>{company}</h3>
@@ -117,31 +134,81 @@ def landing_card_html(row, tag_kind):
 
 
 def landing_grid_html(rows, tag_kind):
+    cards = landing_grid_html_cards(rows, tag_kind)
+    no_results = (
+        '<p class="no-results" id="no-results-message" hidden>'
+        'No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p>'
+    )
+    return f'{cards}{no_results}'
+
+
+def landing_grid_html_cards(rows, tag_kind):
     return ''.join(landing_card_html(r, tag_kind) for r in rows)
 
 
-def landing_map_html(rows):
-    points = []
-    for r in rows:
-        lat, lon = r.get('latitude'), r.get('longitude')
-        if lat is None or lon is None:
-            continue  # No verified coordinates, don't fabricate a pin location.
-        points.append({
-            'lat': lat,
-            'lon': lon,
+def landing_dataset_json(rows):
+    # Single embedded dataset shared by the map and the age/price/free
+    # filters (landing-filters.js) -- one source of truth instead of
+    # duplicating fields across data-* attributes and a separate map-only
+    # blob. Includes every row, not just geocoded ones, since filtering
+    # must apply to cards with no coordinates too.
+    points = [
+        {
+            'id': r['id'],
+            'lat': r.get('latitude'),
+            'lon': r.get('longitude'),
             'name': r.get('company_name') or '',
             'category': r.get('category') or '',
-            'url': f'../business/{make_slug(r)}.html',
-        })
-    if not points:
-        return ''
+            'url': f"../business/{make_slug(r)}.html",
+            'minAge': r.get('minimum_age'),
+            'maxAge': r.get('maximum_age'),
+            'price': r.get('price_amount'),
+            'free': is_free(r),
+        }
+        for r in rows
+    ]
     data_json = json.dumps(points, ensure_ascii=False).replace('</', '<\\/')
-    return (
-        '<div class="landing-map-wrap">'
-        '<div id="landing-map" class="landing-map"></div>'
-        f'<script type="application/json" id="landing-map-data">{data_json}</script>'
-        '</div>'
-    )
+    return f'<script type="application/json" id="landing-data">{data_json}</script>'
+
+
+def landing_map_div_html(rows):
+    has_geo = any(r.get('latitude') is not None and r.get('longitude') is not None for r in rows)
+    if not has_geo:
+        return ''
+    return '<div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>'
+
+
+def landing_filters_html(rows):
+    known_prices = [r['price_amount'] for r in rows if isinstance(r.get('price_amount'), (int, float))]
+    max_price = max(50, int(math.ceil(max(known_prices) / 10.0)) * 10) if known_prices else 50
+
+    known_ages = [a for r in rows for a in (r.get('minimum_age'), r.get('maximum_age')) if isinstance(a, (int, float))]
+    max_age = max(18, int(math.ceil(max(known_ages)))) if known_ages else 18
+
+    return f'''<div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="{max_age}">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="{max_age}" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="{max_age}" value="{max_age}" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="{max_price}">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="{max_price}" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="{max_price}" value="{max_price}" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>'''
 
 
 def landing_json_ld(name, canonical, desc, rows):
@@ -168,7 +235,7 @@ def landing_json_ld(name, canonical, desc, rows):
     return json.dumps(ld, ensure_ascii=False).replace('</', '<\\/')
 
 
-def render_landing_page(title, canonical, meta_desc, breadcrumb_html, h1, intro_html, crosslinks_html, grid_html, json_ld_str, map_html=''):
+def render_landing_page(title, canonical, meta_desc, breadcrumb_html, h1, intro_html, crosslinks_html, grid_html, json_ld_str, map_html='', filters_html='', dataset_html=''):
     json_ld_block = f'<script type="application/ld+json">{json_ld_str}</script>' if json_ld_str else ''
     leaflet_css = ''
     leaflet_scripts = ''
@@ -181,8 +248,10 @@ def render_landing_page(title, canonical, meta_desc, breadcrumb_html, h1, intro_
         leaflet_scripts = (
             '\n    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>'
             '\n    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>'
-            '\n    <script src="../landing-map.js?v=' + LANDING_MAP_JS_VERSION + '" defer></script>'
         )
+    filters_scripts = ''
+    if dataset_html:
+        filters_scripts = '\n    <script src="../landing-filters.js?v=' + LANDING_FILTERS_JS_VERSION + '" defer></script>'
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -217,9 +286,11 @@ def render_landing_page(title, canonical, meta_desc, breadcrumb_html, h1, intro_
         <h1>{esc(h1)}</h1>
         {intro_html}
         {crosslinks_html}
+        {filters_html}
         {map_html}
         <div class="landing-grid">{grid_html}</div>
-    </div>{leaflet_scripts}
+        {dataset_html}
+    </div>{leaflet_scripts}{filters_scripts}
 </body>
 </html>'''
 
@@ -258,10 +329,12 @@ def render_category_page(cat, rows, combo_counties_for_cat):
         crosslinks = f'<div class="landing-crosslinks"><h2>Browse {esc(cat)} by county</h2><div class="crosslink-list">{links_html}</div></div>'
 
     grid = landing_grid_html(rows, tag_kind='county')
-    map_html = landing_map_html(rows)
+    map_html = landing_map_div_html(rows)
+    filters_html = landing_filters_html(rows)
+    dataset_html = landing_dataset_json(rows)
     ld = landing_json_ld(h1, canonical, meta_desc, rows)
 
-    page_html = render_landing_page(title, canonical, meta_desc, breadcrumb, h1, intro, crosslinks, grid, ld, map_html=map_html)
+    page_html = render_landing_page(title, canonical, meta_desc, breadcrumb, h1, intro, crosslinks, grid, ld, map_html=map_html, filters_html=filters_html, dataset_html=dataset_html)
     self_validate_json_ld(page_html, f'classes/{slug}')
     return slug, page_html
 
@@ -308,10 +381,12 @@ def render_county_page(county, rows, combo_cats_for_county, citytown=None):
         )
 
     grid = landing_grid_html(rows, tag_kind='category')
-    map_html = landing_map_html(rows)
+    map_html = landing_map_div_html(rows)
+    filters_html = landing_filters_html(rows)
+    dataset_html = landing_dataset_json(rows)
     ld = landing_json_ld(h1, canonical, meta_desc, rows)
 
-    page_html = render_landing_page(title, canonical, meta_desc, breadcrumb, h1, intro, crosslinks, grid, ld, map_html=map_html)
+    page_html = render_landing_page(title, canonical, meta_desc, breadcrumb, h1, intro, crosslinks, grid, ld, map_html=map_html, filters_html=filters_html, dataset_html=dataset_html)
     self_validate_json_ld(page_html, f'classes/{slug}')
     return slug, page_html
 
@@ -343,10 +418,12 @@ def render_citytown_page(county, label, slug, rows):
     )
 
     grid = landing_grid_html(rows, tag_kind='category')
-    map_html = landing_map_html(rows)
+    map_html = landing_map_div_html(rows)
+    filters_html = landing_filters_html(rows)
+    dataset_html = landing_dataset_json(rows)
     ld = landing_json_ld(h1, canonical, meta_desc, rows)
 
-    page_html = render_landing_page(title, canonical, meta_desc, breadcrumb, h1, intro, crosslinks, grid, ld, map_html=map_html)
+    page_html = render_landing_page(title, canonical, meta_desc, breadcrumb, h1, intro, crosslinks, grid, ld, map_html=map_html, filters_html=filters_html, dataset_html=dataset_html)
     self_validate_json_ld(page_html, f'classes/{slug}')
     return slug, page_html
 
@@ -380,10 +457,12 @@ def render_combo_page(cat, county, rows):
     )
 
     grid = landing_grid_html(rows, tag_kind=None)
-    map_html = landing_map_html(rows)
+    map_html = landing_map_div_html(rows)
+    filters_html = landing_filters_html(rows)
+    dataset_html = landing_dataset_json(rows)
     ld = landing_json_ld(h1, canonical, meta_desc, rows)
 
-    page_html = render_landing_page(title, canonical, meta_desc, breadcrumb, h1, intro, crosslinks, grid, ld, map_html=map_html)
+    page_html = render_landing_page(title, canonical, meta_desc, breadcrumb, h1, intro, crosslinks, grid, ld, map_html=map_html, filters_html=filters_html, dataset_html=dataset_html)
     self_validate_json_ld(page_html, f'classes/{slug}')
     return slug, page_html
 

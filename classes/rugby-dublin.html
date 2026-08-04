@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
-    <link rel="stylesheet" href="../styles.css?v=25db7f02b3">
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Rugby Classes in Dublin", "description": "Find 4 Rugby classes for kids in Dublin. Compare schedules, ages and pricing, then contact providers directly.", "url": "https://www.kidspatch.ie/classes/rugby-dublin.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 4, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/de-la-salle-palmerston-fc-dlsp-66.html", "name": "De La Salle Palmerston FC (DLSP)"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/de-la-salle-palmerston-fc-dlsp-67.html", "name": "De La Salle Palmerston FC (DLSP)"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/st-brigid-s-rugby-club-426.html", "name": "St. Brigid's Rugby Club"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/seapoint-rugby-club-427.html", "name": "Seapoint Rugby Club"}]}}</script>
 </head>
 <body>
@@ -35,8 +35,32 @@
         <h1>Rugby Classes in Dublin</h1>
         <p class="landing-intro">Explore 4 Rugby classes for kids in Dublin, Ireland. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
         <div class="business-backlinks"><a href="rugby.html">&larr; All Rugby classes in Ireland</a><a href="dublin.html">&larr; All classes in Dublin</a></div>
-        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div><script type="application/json" id="landing-map-data">[{"lat": 53.2467012, "lon": -6.1975246, "name": "De La Salle Palmerston FC (DLSP)", "category": "Rugby", "url": "../business/de-la-salle-palmerston-fc-dlsp-66.html"}, {"lat": 53.2467012, "lon": -6.1975246, "name": "De La Salle Palmerston FC (DLSP)", "category": "Rugby", "url": "../business/de-la-salle-palmerston-fc-dlsp-67.html"}, {"lat": 53.3018639, "lon": -6.1788342, "name": "St. Brigid's Rugby Club", "category": "Rugby", "url": "../business/st-brigid-s-rugby-club-426.html"}, {"lat": 53.259219, "lon": -6.1389962, "name": "Seapoint Rugby Club", "category": "Rugby", "url": "../business/seapoint-rugby-club-427.html"}]</script></div>
-        <div class="landing-grid"><div class="landing-card">
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="66">
         <div class="card-image"><img class="banner-img" src="../images/dlspfc-ie.jpg" alt="De La Salle Palmerston FC (DLSP)" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/dlspfc-ie.png" alt="De La Salle Palmerston FC (DLSP) logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>De La Salle Palmerston FC (DLSP)</h3>
@@ -45,7 +69,7 @@
             <div class="landing-card-meta">Ongoing membership</div>
             <a href="../business/de-la-salle-palmerston-fc-dlsp-66.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="67">
         <div class="card-image"><img class="banner-img" src="../images/dlspfc-ie.jpg" alt="De La Salle Palmerston FC (DLSP)" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/dlspfc-ie.png" alt="De La Salle Palmerston FC (DLSP) logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>De La Salle Palmerston FC (DLSP)</h3>
@@ -54,7 +78,7 @@
             <div class="landing-card-meta">Ongoing membership</div>
             <a href="../business/de-la-salle-palmerston-fc-dlsp-67.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="426">
         <div class="card-image"><img class="banner-img" src="../images/stbrigidsrfc-ie.png" alt="St. Brigid&#x27;s Rugby Club" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/stbrigidsrfc-ie.png" alt="St. Brigid&#x27;s Rugby Club logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>St. Brigid&#x27;s Rugby Club</h3>
@@ -63,7 +87,7 @@
             <div class="landing-card-meta">Ongoing membership</div>
             <a href="../business/st-brigid-s-rugby-club-426.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="427">
         <div class="card-image"><img class="logo-badge" src="../logos/seapointrugby-club.png" alt="Seapoint Rugby Club logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Seapoint Rugby Club</h3>
@@ -72,10 +96,11 @@
             <div class="landing-card-meta">Ongoing membership</div>
             <a href="../business/seapoint-rugby-club-427.html" class="button">View full details &rarr;</a>
         </div>
-    </div></div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 66, "lat": 53.2467012, "lon": -6.1975246, "name": "De La Salle Palmerston FC (DLSP)", "category": "Rugby", "url": "../business/de-la-salle-palmerston-fc-dlsp-66.html", "minAge": 3, "maxAge": 4, "price": null, "free": false}, {"id": 67, "lat": 53.2467012, "lon": -6.1975246, "name": "De La Salle Palmerston FC (DLSP)", "category": "Rugby", "url": "../business/de-la-salle-palmerston-fc-dlsp-67.html", "minAge": 6, "maxAge": 12, "price": null, "free": false}, {"id": 426, "lat": 53.3018639, "lon": -6.1788342, "name": "St. Brigid's Rugby Club", "category": "Rugby", "url": "../business/st-brigid-s-rugby-club-426.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 427, "lat": 53.259219, "lon": -6.1389962, "name": "Seapoint Rugby Club", "category": "Rugby", "url": "../business/seapoint-rugby-club-427.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
     </div>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-    <script src="../landing-map.js?v=f5f0846bad" defer></script>
+    <script src="../landing-filters.js?v=32b79dc211" defer></script>
 </body>
 </html>

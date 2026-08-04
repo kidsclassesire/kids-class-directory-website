@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
-    <link rel="stylesheet" href="../styles.css?v=25db7f02b3">
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Tennis Classes in Dublin", "description": "Find 9 Tennis classes for kids in Dublin. Compare schedules, ages and pricing, then contact providers directly.", "url": "https://www.kidspatch.ie/classes/tennis-dublin.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 9, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/all-court-tennis-440.html", "name": "All Court Tennis"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/bective-tennis-452.html", "name": "Bective Tennis"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/bushy-park-tennis-academy-457.html", "name": "Bushy Park Tennis Academy"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/lansdown-lawn-508.html", "name": "Lansdown Lawn"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/parks-tennis-530.html", "name": "Parks Tennis"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/tennis4kids-547.html", "name": "Tennis4Kids"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/donnybrook-lawn-990.html", "name": "Donnybrook Lawn"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/rathgar-tennis-club-991.html", "name": "Rathgar Tennis Club"}, {"@type": "ListItem", "position": 9, "url": "https://www.kidspatch.ie/business/stratford-lawn-992.html", "name": "Stratford Lawn"}]}}</script>
 </head>
 <body>
@@ -35,8 +35,32 @@
         <h1>Tennis Classes in Dublin</h1>
         <p class="landing-intro">Explore 9 Tennis classes for kids in Dublin, Ireland. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
         <div class="business-backlinks"><a href="tennis.html">&larr; All Tennis classes in Ireland</a><a href="dublin.html">&larr; All classes in Dublin</a></div>
-        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div><script type="application/json" id="landing-map-data">[{"lat": 53.3237567, "lon": -6.2121005, "name": "All Court Tennis", "category": "Tennis", "url": "../business/all-court-tennis-440.html"}, {"lat": 53.3220419, "lon": -6.236355, "name": "Bective Tennis", "category": "Tennis", "url": "../business/bective-tennis-452.html"}, {"lat": 53.3093049, "lon": -6.2884924, "name": "Bushy Park Tennis Academy", "category": "Tennis", "url": "../business/bushy-park-tennis-academy-457.html"}, {"lat": 53.3377464, "lon": -6.2263544, "name": "Lansdown Lawn", "category": "Tennis", "url": "../business/lansdown-lawn-508.html"}, {"lat": 53.3645753, "lon": -6.2034591, "name": "Tennis4Kids", "category": "Tennis", "url": "../business/tennis4kids-547.html"}, {"lat": 53.3199267, "lon": -6.2350847, "name": "Donnybrook Lawn", "category": "Tennis", "url": "../business/donnybrook-lawn-990.html"}, {"lat": 53.3098566, "lon": -6.2757427, "name": "Rathgar Tennis Club", "category": "Tennis", "url": "../business/rathgar-tennis-club-991.html"}, {"lat": 53.3243976, "lon": -6.2731305, "name": "Stratford Lawn", "category": "Tennis", "url": "../business/stratford-lawn-992.html"}]</script></div>
-        <div class="landing-grid"><div class="landing-card">
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="440">
         <div class="card-image"><img class="logo-badge" src="../logos/allcourt-tennis-com.png" alt="All Court Tennis logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>All Court Tennis</h3>
@@ -45,7 +69,7 @@
             
             <a href="../business/all-court-tennis-440.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="452">
         <div class="card-image"><img class="banner-img" src="../images/bectivetennis-com.jpg" alt="Bective Tennis" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/bectivetennis-com.png" alt="Bective Tennis logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Bective Tennis</h3>
@@ -54,7 +78,7 @@
             
             <a href="../business/bective-tennis-452.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="457">
         <div class="card-image"><img class="banner-img" src="../images/bushytennispadel-ie.webp" alt="Bushy Park Tennis Academy" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/bushytennispadel-ie.webp" alt="Bushy Park Tennis Academy logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Bushy Park Tennis Academy</h3>
@@ -63,7 +87,7 @@
             
             <a href="../business/bushy-park-tennis-academy-457.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="508">
         <div class="card-image"><img class="banner-img" src="../images/lansdowneltc-com.jpg" alt="Lansdown Lawn" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/lansdowneltc-com.png" alt="Lansdown Lawn logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Lansdown Lawn</h3>
@@ -72,7 +96,7 @@
             
             <a href="../business/lansdown-lawn-508.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="530">
         <div class="card-image"><img class="banner-img" src="../images/parkstennis-com.jpg" alt="Parks Tennis" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/parkstennis-com.png" alt="Parks Tennis logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Parks Tennis</h3>
@@ -81,7 +105,7 @@
             
             <a href="../business/parks-tennis-530.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="547">
         <div class="card-image"><img class="banner-img" src="../images/tennis4kids-ie.png" alt="Tennis4Kids" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/tennis4kids-ie.png" alt="Tennis4Kids logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Tennis4Kids</h3>
@@ -90,7 +114,7 @@
             
             <a href="../business/tennis4kids-547.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="990">
         <div class="card-image"></div>
         <div class="card-content">
             <h3>Donnybrook Lawn</h3>
@@ -99,7 +123,7 @@
             
             <a href="../business/donnybrook-lawn-990.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="991">
         <div class="card-image"></div>
         <div class="card-content">
             <h3>Rathgar Tennis Club</h3>
@@ -108,7 +132,7 @@
             
             <a href="../business/rathgar-tennis-club-991.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="992">
         <div class="card-image"></div>
         <div class="card-content">
             <h3>Stratford Lawn</h3>
@@ -117,10 +141,11 @@
             
             <a href="../business/stratford-lawn-992.html" class="button">View full details &rarr;</a>
         </div>
-    </div></div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 440, "lat": 53.3237567, "lon": -6.2121005, "name": "All Court Tennis", "category": "Tennis", "url": "../business/all-court-tennis-440.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 452, "lat": 53.3220419, "lon": -6.236355, "name": "Bective Tennis", "category": "Tennis", "url": "../business/bective-tennis-452.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 457, "lat": 53.3093049, "lon": -6.2884924, "name": "Bushy Park Tennis Academy", "category": "Tennis", "url": "../business/bushy-park-tennis-academy-457.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 508, "lat": 53.3377464, "lon": -6.2263544, "name": "Lansdown Lawn", "category": "Tennis", "url": "../business/lansdown-lawn-508.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 530, "lat": null, "lon": null, "name": "Parks Tennis", "category": "Tennis", "url": "../business/parks-tennis-530.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 547, "lat": 53.3645753, "lon": -6.2034591, "name": "Tennis4Kids", "category": "Tennis", "url": "../business/tennis4kids-547.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 990, "lat": 53.3199267, "lon": -6.2350847, "name": "Donnybrook Lawn", "category": "Tennis", "url": "../business/donnybrook-lawn-990.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 991, "lat": 53.3098566, "lon": -6.2757427, "name": "Rathgar Tennis Club", "category": "Tennis", "url": "../business/rathgar-tennis-club-991.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 992, "lat": 53.3243976, "lon": -6.2731305, "name": "Stratford Lawn", "category": "Tennis", "url": "../business/stratford-lawn-992.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
     </div>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-    <script src="../landing-map.js?v=f5f0846bad" defer></script>
+    <script src="../landing-filters.js?v=32b79dc211" defer></script>
 </body>
 </html>

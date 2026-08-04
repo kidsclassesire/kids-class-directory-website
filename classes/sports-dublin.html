@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
-    <link rel="stylesheet" href="../styles.css?v=25db7f02b3">
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Sports Classes in Dublin", "description": "Find 11 Sports classes for kids in Dublin. Compare schedules, ages and pricing, then contact providers directly.", "url": "https://www.kidspatch.ie/classes/sports-dublin.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 11, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/monkstown-lawn-tennis-club-409.html", "name": "Monkstown Lawn Tennis Club"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/carrickmines-equestrian-centre-411.html", "name": "Carrickmines Equestrian Centre"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/carrickmines-croquet-lawn-tennis-club-428.html", "name": "Carrickmines Croquet & Lawn Tennis Club"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/deerpark-tennis-club-429.html", "name": "Deerpark Tennis Club"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/shankill-tennis-club-430.html", "name": "Shankill Tennis Club"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/ballinteer-kenpo-karate-club-434.html", "name": "Ballinteer Kenpo Karate Club"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/tae-kwon-do-tigers-435.html", "name": "Tae Kwon Do Tigers"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/bravehearts-halloween-camp-at-trinity-sports-centre-dublin-c-456.html", "name": "Bravehearts Halloween Camp at Trinity Sports Centre, Dublin city centre"}, {"@type": "ListItem", "position": 9, "url": "https://www.kidspatch.ie/business/leopardstown-lawn-tennis-club-988.html", "name": "Leopardstown Lawn Tennis Club"}, {"@type": "ListItem", "position": 10, "url": "https://www.kidspatch.ie/business/west-wood-club-leopardstown-989.html", "name": "West Wood Club Leopardstown"}, {"@type": "ListItem", "position": 11, "url": "https://www.kidspatch.ie/business/skerries-community-centre-junior-activities-1586.html", "name": "Skerries Community Centre - Junior Activities"}]}}</script>
 </head>
 <body>
@@ -35,8 +35,32 @@
         <h1>Sports Classes in Dublin</h1>
         <p class="landing-intro">Explore 11 Sports classes for kids in Dublin, Ireland. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
         <div class="business-backlinks"><a href="sports.html">&larr; All Sports classes in Ireland</a><a href="dublin.html">&larr; All classes in Dublin</a></div>
-        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div><script type="application/json" id="landing-map-data">[{"lat": 53.2890362, "lon": -6.1472597, "name": "Monkstown Lawn Tennis Club", "category": "Sports", "url": "../business/monkstown-lawn-tennis-club-409.html"}, {"lat": 53.2517211, "lon": -6.1794646, "name": "Carrickmines Equestrian Centre", "category": "Sports", "url": "../business/carrickmines-equestrian-centre-411.html"}, {"lat": 53.2571034, "lon": -6.1709811, "name": "Carrickmines Croquet & Lawn Tennis Club", "category": "Sports", "url": "../business/carrickmines-croquet-lawn-tennis-club-428.html"}, {"lat": 53.2963332, "lon": -6.2136602, "name": "Deerpark Tennis Club", "category": "Sports", "url": "../business/deerpark-tennis-club-429.html"}, {"lat": 53.2302137, "lon": -6.1196705, "name": "Shankill Tennis Club", "category": "Sports", "url": "../business/shankill-tennis-club-430.html"}, {"lat": 53.2813987, "lon": -6.2775802, "name": "Ballinteer Kenpo Karate Club", "category": "Sports", "url": "../business/ballinteer-kenpo-karate-club-434.html"}, {"lat": 53.2869192, "lon": -6.1631364, "name": "Tae Kwon Do Tigers", "category": "Sports", "url": "../business/tae-kwon-do-tigers-435.html"}, {"lat": 53.344333, "lon": -6.249719, "name": "Bravehearts Halloween Camp at Trinity Sports Centre, Dublin city centre", "category": "Sports", "url": "../business/bravehearts-halloween-camp-at-trinity-sports-centre-dublin-c-456.html"}, {"lat": 53.2794284, "lon": -6.1940425, "name": "Leopardstown Lawn Tennis Club", "category": "Sports", "url": "../business/leopardstown-lawn-tennis-club-988.html"}, {"lat": 53.266813, "lon": -6.1838379, "name": "West Wood Club Leopardstown", "category": "Sports", "url": "../business/west-wood-club-leopardstown-989.html"}]</script></div>
-        <div class="landing-grid"><div class="landing-card">
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="409">
         <div class="card-image"><img class="banner-img" src="../images/monkstownltc-ie.jpg" alt="Monkstown Lawn Tennis Club" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/monkstownltc-ie.png" alt="Monkstown Lawn Tennis Club logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Monkstown Lawn Tennis Club</h3>
@@ -45,7 +69,7 @@
             <div class="landing-card-meta">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday &middot; School-term programme</div>
             <a href="../business/monkstown-lawn-tennis-club-409.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="411">
         <div class="card-image"><img class="banner-img" src="../images/carrickminesequestrian-ie.jpg" alt="Carrickmines Equestrian Centre" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/carrickminesequestrian-ie.png" alt="Carrickmines Equestrian Centre logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Carrickmines Equestrian Centre</h3>
@@ -54,7 +78,7 @@
             <div class="landing-card-meta">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday &middot; Ongoing membership</div>
             <a href="../business/carrickmines-equestrian-centre-411.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="428">
         <div class="card-image"><img class="banner-img" src="../images/carrickmines-com.jpg" alt="Carrickmines Croquet &amp; Lawn Tennis Club" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/carrickmines-com.png" alt="Carrickmines Croquet &amp; Lawn Tennis Club logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Carrickmines Croquet &amp; Lawn Tennis Club</h3>
@@ -63,7 +87,7 @@
             <div class="landing-card-meta">Ongoing membership</div>
             <a href="../business/carrickmines-croquet-lawn-tennis-club-428.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="429">
         <div class="card-image"><img class="logo-badge" src="../logos/clubspark-net.png" alt="Deerpark Tennis Club logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Deerpark Tennis Club</h3>
@@ -72,7 +96,7 @@
             <div class="landing-card-meta">Ongoing membership</div>
             <a href="../business/deerpark-tennis-club-429.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="430">
         <div class="card-image"><img class="banner-img" src="../images/shankilltennisclub-com.jpg" alt="Shankill Tennis Club" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/shankilltennisclub-com.png" alt="Shankill Tennis Club logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Shankill Tennis Club</h3>
@@ -81,7 +105,7 @@
             <div class="landing-card-meta">Ongoing membership</div>
             <a href="../business/shankill-tennis-club-430.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="434">
         <div class="card-image"><img class="logo-badge" src="../logos/bkka-ie.png" alt="Ballinteer Kenpo Karate Club logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Ballinteer Kenpo Karate Club</h3>
@@ -90,7 +114,7 @@
             <div class="landing-card-meta">Ongoing membership</div>
             <a href="../business/ballinteer-kenpo-karate-club-434.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="435">
         <div class="card-image"><img class="banner-img" src="../images/irishtaekwondotigers-com.jpg" alt="Tae Kwon Do Tigers" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/irishtaekwondotigers-com.png" alt="Tae Kwon Do Tigers logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Tae Kwon Do Tigers</h3>
@@ -99,7 +123,7 @@
             <div class="landing-card-meta">Ongoing membership</div>
             <a href="../business/tae-kwon-do-tigers-435.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="456">
         <div class="card-image"><img class="banner-img" src="../images/tcd-ie.jpg" alt="Bravehearts Halloween Camp at Trinity Sports Centre, Dublin city centre" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/tcd-ie.svg" alt="Bravehearts Halloween Camp at Trinity Sports Centre, Dublin city centre logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Bravehearts Halloween Camp at Trinity Sports Centre, Dublin city centre</h3>
@@ -108,7 +132,7 @@
             
             <a href="../business/bravehearts-halloween-camp-at-trinity-sports-centre-dublin-c-456.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="988">
         <div class="card-image"></div>
         <div class="card-content">
             <h3>Leopardstown Lawn Tennis Club</h3>
@@ -117,7 +141,7 @@
             <div class="landing-card-meta">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday &middot; from 14:00 &middot; Ongoing membership</div>
             <a href="../business/leopardstown-lawn-tennis-club-988.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="989">
         <div class="card-image"></div>
         <div class="card-content">
             <h3>West Wood Club Leopardstown</h3>
@@ -126,7 +150,7 @@
             <div class="landing-card-meta">Monday, Tuesday, Wednesday, Thursday, Friday &middot; Summer camp</div>
             <a href="../business/west-wood-club-leopardstown-989.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="1586">
         <div class="card-image"></div>
         <div class="card-content">
             <h3>Skerries Community Centre - Junior Activities</h3>
@@ -135,10 +159,11 @@
             
             <a href="../business/skerries-community-centre-junior-activities-1586.html" class="button">View full details &rarr;</a>
         </div>
-    </div></div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 409, "lat": 53.2890362, "lon": -6.1472597, "name": "Monkstown Lawn Tennis Club", "category": "Sports", "url": "../business/monkstown-lawn-tennis-club-409.html", "minAge": null, "maxAge": 18.0, "price": null, "free": false}, {"id": 411, "lat": 53.2517211, "lon": -6.1794646, "name": "Carrickmines Equestrian Centre", "category": "Sports", "url": "../business/carrickmines-equestrian-centre-411.html", "minAge": 6.0, "maxAge": null, "price": null, "free": false}, {"id": 428, "lat": 53.2571034, "lon": -6.1709811, "name": "Carrickmines Croquet & Lawn Tennis Club", "category": "Sports", "url": "../business/carrickmines-croquet-lawn-tennis-club-428.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 429, "lat": 53.2963332, "lon": -6.2136602, "name": "Deerpark Tennis Club", "category": "Sports", "url": "../business/deerpark-tennis-club-429.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 430, "lat": 53.2302137, "lon": -6.1196705, "name": "Shankill Tennis Club", "category": "Sports", "url": "../business/shankill-tennis-club-430.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 434, "lat": 53.2813987, "lon": -6.2775802, "name": "Ballinteer Kenpo Karate Club", "category": "Sports", "url": "../business/ballinteer-kenpo-karate-club-434.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 435, "lat": 53.2869192, "lon": -6.1631364, "name": "Tae Kwon Do Tigers", "category": "Sports", "url": "../business/tae-kwon-do-tigers-435.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 456, "lat": 53.344333, "lon": -6.249719, "name": "Bravehearts Halloween Camp at Trinity Sports Centre, Dublin city centre", "category": "Sports", "url": "../business/bravehearts-halloween-camp-at-trinity-sports-centre-dublin-c-456.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 988, "lat": 53.2794284, "lon": -6.1940425, "name": "Leopardstown Lawn Tennis Club", "category": "Sports", "url": "../business/leopardstown-lawn-tennis-club-988.html", "minAge": 5.0, "maxAge": 18.0, "price": null, "free": false}, {"id": 989, "lat": 53.266813, "lon": -6.1838379, "name": "West Wood Club Leopardstown", "category": "Sports", "url": "../business/west-wood-club-leopardstown-989.html", "minAge": 6.0, "maxAge": 10.0, "price": null, "free": false}, {"id": 1586, "lat": null, "lon": null, "name": "Skerries Community Centre - Junior Activities", "category": "Sports", "url": "../business/skerries-community-centre-junior-activities-1586.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
     </div>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-    <script src="../landing-map.js?v=f5f0846bad" defer></script>
+    <script src="../landing-filters.js?v=32b79dc211" defer></script>
 </body>
 </html>

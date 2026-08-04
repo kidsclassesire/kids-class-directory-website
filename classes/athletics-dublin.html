@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
-    <link rel="stylesheet" href="../styles.css?v=25db7f02b3">
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Athletics Classes in Dublin", "description": "Find 7 Athletics classes for kids in Dublin. Compare schedules, ages and pricing, then contact providers directly.", "url": "https://www.kidspatch.ie/classes/athletics-dublin.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 7, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/dundrum-south-dublin-athletic-club-dsd-64.html", "name": "Dundrum South Dublin Athletic Club (DSD)"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/blackrock-athletic-club-423.html", "name": "Blackrock Athletic Club"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/cabinteely-athletic-club-424.html", "name": "Cabinteely Athletic Club"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/rathfarnham-wsaf-athletic-club-425.html", "name": "Rathfarnham WSAF Athletic Club"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/mini-athletics-dundalk-drogheda-and-swords-1056.html", "name": "Mini Athletics Dundalk Drogheda and Swords"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/balbriggan-district-ac-kids-training-1435.html", "name": "Balbriggan & District AC - Kids Training"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/lusk-athletic-club-little-athletics-1631.html", "name": "Lusk Athletic Club - Little Athletics"}]}}</script>
 </head>
 <body>
@@ -35,8 +35,32 @@
         <h1>Athletics Classes in Dublin</h1>
         <p class="landing-intro">Explore 7 Athletics classes for kids in Dublin, Ireland. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
         <div class="business-backlinks"><a href="athletics.html">&larr; All Athletics classes in Ireland</a><a href="dublin.html">&larr; All classes in Dublin</a></div>
-        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div><script type="application/json" id="landing-map-data">[{"lat": 53.2678414, "lon": -6.2627252, "name": "Dundrum South Dublin Athletic Club (DSD)", "category": "Athletics", "url": "../business/dundrum-south-dublin-athletic-club-dsd-64.html"}, {"lat": 53.2957579, "lon": -6.1806668, "name": "Blackrock Athletic Club", "category": "Athletics", "url": "../business/blackrock-athletic-club-423.html"}, {"lat": 53.2585566, "lon": -6.1377869, "name": "Cabinteely Athletic Club", "category": "Athletics", "url": "../business/cabinteely-athletic-club-424.html"}, {"lat": 53.2990166, "lon": -6.2853196, "name": "Rathfarnham WSAF Athletic Club", "category": "Athletics", "url": "../business/rathfarnham-wsaf-athletic-club-425.html"}, {"lat": 53.419495, "lon": -6.2291894, "name": "Mini Athletics Dundalk Drogheda and Swords", "category": "Athletics", "url": "../business/mini-athletics-dundalk-drogheda-and-swords-1056.html"}]</script></div>
-        <div class="landing-grid"><div class="landing-card">
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="64">
         <div class="card-image"><img class="banner-img" src="../images/dsdac-com.jpg" alt="Dundrum South Dublin Athletic Club (DSD)" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/dsdac-com.png" alt="Dundrum South Dublin Athletic Club (DSD) logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Dundrum South Dublin Athletic Club (DSD)</h3>
@@ -45,7 +69,7 @@
             <div class="landing-card-meta">Ongoing membership</div>
             <a href="../business/dundrum-south-dublin-athletic-club-dsd-64.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="423">
         <div class="card-image"><img class="banner-img" src="../images/blackrockac-ie.jpg" alt="Blackrock Athletic Club" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/blackrockac-ie.png" alt="Blackrock Athletic Club logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Blackrock Athletic Club</h3>
@@ -54,7 +78,7 @@
             <div class="landing-card-meta">Ongoing membership</div>
             <a href="../business/blackrock-athletic-club-423.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="424">
         <div class="card-image"><img class="banner-img" src="../images/cabinteelyac-ie.jpg" alt="Cabinteely Athletic Club" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/cabinteelyac-ie.png" alt="Cabinteely Athletic Club logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Cabinteely Athletic Club</h3>
@@ -63,7 +87,7 @@
             <div class="landing-card-meta">Ongoing membership</div>
             <a href="../business/cabinteely-athletic-club-424.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="425">
         <div class="card-image"><img class="banner-img" src="../images/athleticsrathfarnham-ie.png" alt="Rathfarnham WSAF Athletic Club" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/athleticsrathfarnham-ie.png" alt="Rathfarnham WSAF Athletic Club logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Rathfarnham WSAF Athletic Club</h3>
@@ -72,7 +96,7 @@
             <div class="landing-card-meta">Ongoing membership</div>
             <a href="../business/rathfarnham-wsaf-athletic-club-425.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="1056">
         <div class="card-image"><img class="logo-badge" src="../logos/ie-miniathletics-com.svg" alt="Mini Athletics Dundalk Drogheda and Swords logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
             <h3>Mini Athletics Dundalk Drogheda and Swords</h3>
@@ -81,7 +105,7 @@
             
             <a href="../business/mini-athletics-dundalk-drogheda-and-swords-1056.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="1435">
         <div class="card-image"></div>
         <div class="card-content">
             <h3>Balbriggan &amp; District AC - Kids Training</h3>
@@ -90,7 +114,7 @@
             
             <a href="../business/balbriggan-district-ac-kids-training-1435.html" class="button">View full details &rarr;</a>
         </div>
-    </div><div class="landing-card">
+    </div><div class="landing-card" data-id="1631">
         <div class="card-image"></div>
         <div class="card-content">
             <h3>Lusk Athletic Club - Little Athletics</h3>
@@ -99,10 +123,11 @@
             
             <a href="../business/lusk-athletic-club-little-athletics-1631.html" class="button">View full details &rarr;</a>
         </div>
-    </div></div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 64, "lat": 53.2678414, "lon": -6.2627252, "name": "Dundrum South Dublin Athletic Club (DSD)", "category": "Athletics", "url": "../business/dundrum-south-dublin-athletic-club-dsd-64.html", "minAge": 6, "maxAge": 17, "price": null, "free": false}, {"id": 423, "lat": 53.2957579, "lon": -6.1806668, "name": "Blackrock Athletic Club", "category": "Athletics", "url": "../business/blackrock-athletic-club-423.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 424, "lat": 53.2585566, "lon": -6.1377869, "name": "Cabinteely Athletic Club", "category": "Athletics", "url": "../business/cabinteely-athletic-club-424.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 425, "lat": 53.2990166, "lon": -6.2853196, "name": "Rathfarnham WSAF Athletic Club", "category": "Athletics", "url": "../business/rathfarnham-wsaf-athletic-club-425.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1056, "lat": 53.419495, "lon": -6.2291894, "name": "Mini Athletics Dundalk Drogheda and Swords", "category": "Athletics", "url": "../business/mini-athletics-dundalk-drogheda-and-swords-1056.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1435, "lat": null, "lon": null, "name": "Balbriggan & District AC - Kids Training", "category": "Athletics", "url": "../business/balbriggan-district-ac-kids-training-1435.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1631, "lat": null, "lon": null, "name": "Lusk Athletic Club - Little Athletics", "category": "Athletics", "url": "../business/lusk-athletic-club-little-athletics-1631.html", "minAge": 6.0, "maxAge": 9.0, "price": null, "free": false}]</script>
     </div>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-    <script src="../landing-map.js?v=f5f0846bad" defer></script>
+    <script src="../landing-filters.js?v=32b79dc211" defer></script>
 </body>
 </html>
