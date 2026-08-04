@@ -63,20 +63,30 @@ function claimRequestExists(businessId, email, status) {
 function doPost(e) {
   try {
     const payload = JSON.parse(e.postData.contents);
+    console.log('doPost received type=%s business_id=%s email=%s', payload.type, payload.business_id, payload.requester_email);
     switch (payload.type) {
       case 'new_claim':
         if (claimRequestExists(payload.business_id, payload.requester_email, 'pending')) {
           sendNewClaimEmail(payload);
+          console.log('sendNewClaimEmail: sent');
+        } else {
+          console.log('sendNewClaimEmail: skipped, no matching pending claim_requests row');
         }
         break;
       case 'claim_approved':
         if (claimRequestExists(payload.business_id, payload.requester_email, 'approved')) {
           sendClaimApprovedEmail(payload);
+          console.log('sendClaimApprovedEmail: sent');
+        } else {
+          console.log('sendClaimApprovedEmail: skipped, no matching approved claim_requests row');
         }
         break;
       case 'claim_rejected':
         if (claimRequestExists(payload.business_id, payload.requester_email, 'rejected')) {
           sendClaimRejectedEmail(payload);
+          console.log('sendClaimRejectedEmail: sent');
+        } else {
+          console.log('sendClaimRejectedEmail: skipped, no matching rejected claim_requests row');
         }
         break;
     }
@@ -85,6 +95,7 @@ function doPost(e) {
     // already safely stored in Supabase regardless of whether this email
     // sends), and a thrown error here has no caller listening anyway since
     // the site calls this with fetch(..., {mode: 'no-cors'}).
+    console.error('doPost error: ' + err + (err && err.stack ? '\n' + err.stack : ''));
   }
   return ContentService.createTextOutput('ok');
 }
