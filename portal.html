@@ -51,6 +51,16 @@
         .image-field-actions .btn-row { display: flex; gap: 0.5rem; }
         .image-hint { font-size: 0.75rem; color: var(--text-muted); margin: 0; }
         .save-bar { position: sticky; bottom: 0; background: #ffffff; padding-top: 1rem; }
+        .business-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+        .business-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; background: #ffffff; }
+        .business-card-banner, .business-card-banner-empty { width: 100%; height: 110px; }
+        .business-card-banner { object-fit: cover; display: block; }
+        .business-card-banner-empty { background: #f1f5f9; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.8rem; }
+        .business-card-body { padding: 0.9rem 1rem 1rem; display: flex; flex-direction: column; gap: 0.4rem; flex: 1; }
+        .business-card-body h3 { margin: 0; font-size: 1rem; }
+        .business-card-body .category { font-size: 0.8rem; color: var(--text-muted); min-height: 1.1em; }
+        .business-card-body .btn-secondary { margin-top: auto; }
+        #back-to-list-row { margin-bottom: 1.25rem; }
     </style>
 </head>
 <body>
@@ -103,6 +113,15 @@
 
         <div id="unauthorized-msg" style="display: none; text-align: center; padding: 2rem 0; color: var(--text-muted);">
             Your account is pending approval. If you haven't already, find your business on the <a href="index.html" style="color: var(--primary); font-weight: 700;">directory</a> and click "Claim this business" so an admin can verify you — log out and back in once that's approved to start managing your listing.
+        </div>
+
+        <div id="business-list-section" style="display: none;">
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">You manage more than one listing — pick one to edit:</p>
+            <div class="business-cards" id="business-cards"></div>
+        </div>
+
+        <div id="back-to-list-row" style="display: none;">
+            <button type="button" class="btn-secondary" id="back-to-list-btn">&larr; Back to your businesses</button>
         </div>
 
         <form id="edit-business-form" style="display: none;">
@@ -306,12 +325,16 @@
         let isSignUp = true;
         let currentUserEmail = '';
         let currentBusinessId = null;
+        let cachedBusinesses = [];
 
         // UI Elements
         const authSection = document.getElementById('auth-section');
         const dashboardSection = document.getElementById('dashboard-section');
         const editForm = document.getElementById('edit-business-form');
         const unauthorizedMsg = document.getElementById('unauthorized-msg');
+        const businessListSection = document.getElementById('business-list-section');
+        const businessCardsEl = document.getElementById('business-cards');
+        const backToListRow = document.getElementById('back-to-list-row');
         const authError = document.getElementById('auth-error');
         const authSuccess = document.getElementById('auth-success');
         const dashError = document.getElementById('dash-error');
@@ -465,7 +488,7 @@
                 currentUserEmail = session.user.email;
                 authSection.style.display = 'none';
                 dashboardSection.style.display = 'block';
-                loadOwnerBusiness();
+                loadOwnerBusinesses();
             }
         }
 
@@ -502,69 +525,118 @@
         }
 
         // Load Business Details if Approved
-        async function loadOwnerBusiness() {
+        async function loadOwnerBusinesses() {
             try {
-                // 1. Check if they have an approved claim
-                // Case-insensitive match via RPC (see claim_status_check.sql) -- the claim
-                // form doesn't normalize email casing at submission time, so an owner who
-                // claimed as "Info@Biz.ie" but signs in as "info@biz.ie" must still match
-                // here; a plain .eq() is case-sensitive and would silently show
-                // "unauthorized" for an already-approved claim.
-                const { data: businessId, error: claimError } = await supabaseClient
-                    .rpc('my_approved_business_id');
+                // 1. Check which approved claims they have (an owner can have more than
+                // one, e.g. running several venues). Case-insensitive match via RPC (see
+                // portal_multi_business.sql) -- the claim form doesn't normalize email
+                // casing at submission time, so an owner who claimed as "Info@Biz.ie" but
+                // signs in as "info@biz.ie" must still match here; a plain .eq() is
+                // case-sensitive and would silently show "unauthorized" for an
+                // already-approved claim.
+                const { data: businessIds, error: claimError } = await supabaseClient
+                    .rpc('my_approved_business_ids');
 
-                if (claimError || !businessId) {
+                if (claimError || !businessIds || !businessIds.length) {
                     unauthorizedMsg.style.display = 'block';
+                    businessListSection.style.display = 'none';
+                    backToListRow.style.display = 'none';
                     editForm.style.display = 'none';
                     return;
                 }
 
                 // 2. Fetch their actual business details
-                const { data: business, error: bizError } = await supabaseClient
+                const { data: businesses, error: bizError } = await supabaseClient
                     .from('classes')
                     .select('*')
-                    .eq('id', businessId)
-                    .single();
+                    .in('id', businessIds);
 
                 if (bizError) throw bizError;
 
-                currentBusinessId = business.id;
-
-                // Populate Form
-                document.getElementById('edit-id').value = business.id;
-                document.getElementById('edit-name').value = business.company_name || '';
-                document.getElementById('edit-category').value = business.category || '';
-                document.getElementById('edit-class-types').value = (business.class_types || []).join(', ');
-                document.getElementById('edit-description').value = business.description || '';
-                document.getElementById('edit-min-age').value = business.minimum_age ?? '';
-                document.getElementById('edit-max-age').value = business.maximum_age ?? '';
-                document.getElementById('edit-age-display').value = business.age_range_display || '';
-                document.getElementById('edit-parental-req').value = business.parental_requirement || '';
-                setCheckboxGroup('days-checkbox-grid', business.days_of_week);
-                document.getElementById('edit-start-time').value = business.start_time || '';
-                document.getElementById('edit-end-time').value = business.end_time || '';
-                document.getElementById('edit-term-structure').value = business.term_structure || '';
-                document.getElementById('edit-price-amount').value = business.price_amount ?? '';
-                document.getElementById('edit-price-currency').value = business.price_currency || 'EUR';
-                document.getElementById('edit-pricing-basis').value = business.pricing_basis || '';
-                document.getElementById('edit-pricing-details').value = business.pricing_details || '';
-                document.getElementById('edit-website').value = business.website_url || '';
-                document.getElementById('edit-booking-url').value = business.booking_url || '';
-                document.getElementById('edit-email').value = business.email_address || '';
-                document.getElementById('edit-phone').value = business.phone_number || '';
-                document.getElementById('edit-address').value = business.address || '';
-                document.getElementById('edit-eircode').value = business.eircode || '';
-                setCheckboxGroup('facilities-checkbox-grid', business.facilities);
-
-                renderImagePreview('logo-preview-box', business.logo_path, 'No logo');
-                renderImagePreview('banner-preview-box', business.hosted_image_path, 'No banner');
-
                 unauthorizedMsg.style.display = 'none';
-                editForm.style.display = 'block';
+                cachedBusinesses = businesses;
 
+                // Skip straight to the editor for the common case of a single approved
+                // business -- the card picker only earns its keep once there's a choice
+                // to make.
+                if (businesses.length === 1) {
+                    showBusinessEditor(businesses[0], false);
+                } else {
+                    renderBusinessCards(businesses);
+                }
             } catch (err) {
                 showDashError("Error loading business details.");
             }
+        }
+
+        function renderBusinessCards(businesses) {
+            editForm.style.display = 'none';
+            backToListRow.style.display = 'none';
+            businessListSection.style.display = 'block';
+            businessCardsEl.innerHTML = businesses.map(b => `
+                <div class="business-card">
+                    ${b.hosted_image_path
+                        ? `<img class="business-card-banner" src="${escapeHtml(b.hosted_image_path)}" alt="">`
+                        : `<div class="business-card-banner-empty">No banner</div>`}
+                    <div class="business-card-body">
+                        <h3>${escapeHtml(b.company_name || 'Untitled business')}</h3>
+                        <div class="category">${escapeHtml(b.category || '')}</div>
+                        <button type="button" class="btn-secondary" data-business-id="${escapeHtml(b.id)}">Manage</button>
+                    </div>
+                </div>
+            `).join('');
+            businessCardsEl.querySelectorAll('button[data-business-id]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const business = cachedBusinesses.find(b => String(b.id) === btn.getAttribute('data-business-id'));
+                    if (business) showBusinessEditor(business, true);
+                });
+            });
+        }
+
+        function showBusinessEditor(business, showBackLink) {
+            businessListSection.style.display = 'none';
+            backToListRow.style.display = showBackLink ? 'block' : 'none';
+            populateEditForm(business);
+            editForm.style.display = 'block';
+        }
+
+        document.getElementById('back-to-list-btn').addEventListener('click', () => {
+            editForm.style.display = 'none';
+            backToListRow.style.display = 'none';
+            renderBusinessCards(cachedBusinesses);
+        });
+
+        function populateEditForm(business) {
+            currentBusinessId = business.id;
+
+            // Populate Form
+            document.getElementById('edit-id').value = business.id;
+            document.getElementById('edit-name').value = business.company_name || '';
+            document.getElementById('edit-category').value = business.category || '';
+            document.getElementById('edit-class-types').value = (business.class_types || []).join(', ');
+            document.getElementById('edit-description').value = business.description || '';
+            document.getElementById('edit-min-age').value = business.minimum_age ?? '';
+            document.getElementById('edit-max-age').value = business.maximum_age ?? '';
+            document.getElementById('edit-age-display').value = business.age_range_display || '';
+            document.getElementById('edit-parental-req').value = business.parental_requirement || '';
+            setCheckboxGroup('days-checkbox-grid', business.days_of_week);
+            document.getElementById('edit-start-time').value = business.start_time || '';
+            document.getElementById('edit-end-time').value = business.end_time || '';
+            document.getElementById('edit-term-structure').value = business.term_structure || '';
+            document.getElementById('edit-price-amount').value = business.price_amount ?? '';
+            document.getElementById('edit-price-currency').value = business.price_currency || 'EUR';
+            document.getElementById('edit-pricing-basis').value = business.pricing_basis || '';
+            document.getElementById('edit-pricing-details').value = business.pricing_details || '';
+            document.getElementById('edit-website').value = business.website_url || '';
+            document.getElementById('edit-booking-url').value = business.booking_url || '';
+            document.getElementById('edit-email').value = business.email_address || '';
+            document.getElementById('edit-phone').value = business.phone_number || '';
+            document.getElementById('edit-address').value = business.address || '';
+            document.getElementById('edit-eircode').value = business.eircode || '';
+            setCheckboxGroup('facilities-checkbox-grid', business.facilities);
+
+            renderImagePreview('logo-preview-box', business.logo_path, 'No logo');
+            renderImagePreview('banner-preview-box', business.hosted_image_path, 'No banner');
         }
 
         // ---- Image upload / delete ----
@@ -699,6 +771,11 @@
                     .eq('id', id);
 
                 if (error) throw error;
+
+                // Keep the card list in sync so "Back to your businesses" reflects the
+                // name/category just saved, without a refetch.
+                const cached = cachedBusinesses.find(b => String(b.id) === id);
+                if (cached) Object.assign(cached, updates);
 
                 showDashSuccess("Your listing has been updated! It's live on the main search right away — your dedicated business page can take up to 24 hours to catch up.");
             } catch (err) {
