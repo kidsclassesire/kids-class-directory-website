@@ -119,6 +119,30 @@ def landing_grid_html(rows, tag_kind):
     return ''.join(landing_card_html(r, tag_kind) for r in rows)
 
 
+def landing_map_html(rows):
+    points = []
+    for r in rows:
+        lat, lon = r.get('latitude'), r.get('longitude')
+        if lat is None or lon is None:
+            continue  # No verified coordinates, don't fabricate a pin location.
+        points.append({
+            'lat': lat,
+            'lon': lon,
+            'name': r.get('company_name') or '',
+            'category': r.get('category') or '',
+            'url': f'../business/{make_slug(r)}.html',
+        })
+    if not points:
+        return ''
+    data_json = json.dumps(points, ensure_ascii=False).replace('</', '<\\/')
+    return (
+        '<div class="landing-map-wrap">'
+        '<div id="landing-map" class="landing-map"></div>'
+        f'<script type="application/json" id="landing-map-data">{data_json}</script>'
+        '</div>'
+    )
+
+
 def landing_json_ld(name, canonical, desc, rows):
     ld = {
         '@context': 'https://schema.org',
@@ -143,8 +167,21 @@ def landing_json_ld(name, canonical, desc, rows):
     return json.dumps(ld, ensure_ascii=False).replace('</', '<\\/')
 
 
-def render_landing_page(title, canonical, meta_desc, breadcrumb_html, h1, intro_html, crosslinks_html, grid_html, json_ld_str):
+def render_landing_page(title, canonical, meta_desc, breadcrumb_html, h1, intro_html, crosslinks_html, grid_html, json_ld_str, map_html=''):
     json_ld_block = f'<script type="application/ld+json">{json_ld_str}</script>' if json_ld_str else ''
+    leaflet_css = ''
+    leaflet_scripts = ''
+    if map_html:
+        leaflet_css = (
+            '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>\n'
+            '    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>\n'
+            '    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>\n    '
+        )
+        leaflet_scripts = (
+            '\n    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>'
+            '\n    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>'
+            '\n    <script src="../landing-map.js" defer></script>'
+        )
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -169,7 +206,7 @@ def render_landing_page(title, canonical, meta_desc, breadcrumb_html, h1, intro_
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{esc(title)}">
     <meta name="twitter:description" content="{esc(meta_desc)}">
-    <link rel="stylesheet" href="../styles.css">
+    {leaflet_css}<link rel="stylesheet" href="../styles.css">
     {json_ld_block}
 </head>
 <body>
@@ -179,8 +216,9 @@ def render_landing_page(title, canonical, meta_desc, breadcrumb_html, h1, intro_
         <h1>{esc(h1)}</h1>
         {intro_html}
         {crosslinks_html}
+        {map_html}
         <div class="landing-grid">{grid_html}</div>
-    </div>
+    </div>{leaflet_scripts}
 </body>
 </html>'''
 
@@ -219,9 +257,10 @@ def render_category_page(cat, rows, combo_counties_for_cat):
         crosslinks = f'<div class="landing-crosslinks"><h2>Browse {esc(cat)} by county</h2><div class="crosslink-list">{links_html}</div></div>'
 
     grid = landing_grid_html(rows, tag_kind='county')
+    map_html = landing_map_html(rows)
     ld = landing_json_ld(h1, canonical, meta_desc, rows)
 
-    page_html = render_landing_page(title, canonical, meta_desc, breadcrumb, h1, intro, crosslinks, grid, ld)
+    page_html = render_landing_page(title, canonical, meta_desc, breadcrumb, h1, intro, crosslinks, grid, ld, map_html=map_html)
     self_validate_json_ld(page_html, f'classes/{slug}')
     return slug, page_html
 
@@ -268,9 +307,10 @@ def render_county_page(county, rows, combo_cats_for_county, citytown=None):
         )
 
     grid = landing_grid_html(rows, tag_kind='category')
+    map_html = landing_map_html(rows)
     ld = landing_json_ld(h1, canonical, meta_desc, rows)
 
-    page_html = render_landing_page(title, canonical, meta_desc, breadcrumb, h1, intro, crosslinks, grid, ld)
+    page_html = render_landing_page(title, canonical, meta_desc, breadcrumb, h1, intro, crosslinks, grid, ld, map_html=map_html)
     self_validate_json_ld(page_html, f'classes/{slug}')
     return slug, page_html
 
@@ -302,9 +342,10 @@ def render_citytown_page(county, label, slug, rows):
     )
 
     grid = landing_grid_html(rows, tag_kind='category')
+    map_html = landing_map_html(rows)
     ld = landing_json_ld(h1, canonical, meta_desc, rows)
 
-    page_html = render_landing_page(title, canonical, meta_desc, breadcrumb, h1, intro, crosslinks, grid, ld)
+    page_html = render_landing_page(title, canonical, meta_desc, breadcrumb, h1, intro, crosslinks, grid, ld, map_html=map_html)
     self_validate_json_ld(page_html, f'classes/{slug}')
     return slug, page_html
 
@@ -338,9 +379,10 @@ def render_combo_page(cat, county, rows):
     )
 
     grid = landing_grid_html(rows, tag_kind=None)
+    map_html = landing_map_html(rows)
     ld = landing_json_ld(h1, canonical, meta_desc, rows)
 
-    page_html = render_landing_page(title, canonical, meta_desc, breadcrumb, h1, intro, crosslinks, grid, ld)
+    page_html = render_landing_page(title, canonical, meta_desc, breadcrumb, h1, intro, crosslinks, grid, ld, map_html=map_html)
     self_validate_json_ld(page_html, f'classes/{slug}')
     return slug, page_html
 

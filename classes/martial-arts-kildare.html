@@ -22,6 +22,9 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Martial Arts Classes in Kildare | Kids Patch">
     <meta name="twitter:description" content="Find 6 Martial Arts classes for kids in Kildare. Compare schedules, ages and pricing, then contact providers directly.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
     <link rel="stylesheet" href="../styles.css">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Martial Arts Classes in Kildare", "description": "Find 6 Martial Arts classes for kids in Kildare. Compare schedules, ages and pricing, then contact providers directly.", "url": "https://www.kidspatch.ie/classes/martial-arts-kildare.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 6, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/master-doyle-taekwon-do-schools-706.html", "name": "Master Doyle Taekwon-Do Schools"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/master-doyle-taekwon-do-schools-1184.html", "name": "Master Doyle Taekwon-Do Schools"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/sbg-naas-kids-martial-arts-1418.html", "name": "SBG Naas - Kids Martial Arts"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/kenpo-karate-academy-celbridge-1487.html", "name": "Kenpo Karate Academy - Celbridge"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/ace-martial-arts-maynooth-1508.html", "name": "Ace Martial Arts - Maynooth"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/monasterevin-shotokan-karate-club-1732.html", "name": "Monasterevin Shotokan Karate Club"}]}}</script>
 </head>
@@ -32,6 +35,7 @@
         <h1>Martial Arts Classes in Kildare</h1>
         <p class="landing-intro">Explore 6 Martial Arts classes for kids in Kildare, Ireland. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
         <div class="business-backlinks"><a href="martial-arts.html">&larr; All Martial Arts classes in Ireland</a><a href="kildare.html">&larr; All classes in Kildare</a></div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div><script type="application/json" id="landing-map-data">[{"lat": 53.2142203, "lon": -6.6729831, "name": "Master Doyle Taekwon-Do Schools", "category": "Martial Arts", "url": "../business/master-doyle-taekwon-do-schools-706.html"}, {"lat": 53.3830239, "lon": -6.5922806, "name": "Master Doyle Taekwon-Do Schools", "category": "Martial Arts", "url": "../business/master-doyle-taekwon-do-schools-1184.html"}, {"lat": 53.1544581, "lon": -6.8183615, "name": "SBG Naas - Kids Martial Arts", "category": "Martial Arts", "url": "../business/sbg-naas-kids-martial-arts-1418.html"}, {"lat": 53.364152, "lon": -6.4893468, "name": "Kenpo Karate Academy - Celbridge", "category": "Martial Arts", "url": "../business/kenpo-karate-academy-celbridge-1487.html"}, {"lat": 53.3810858, "lon": -6.5760869, "name": "Ace Martial Arts - Maynooth", "category": "Martial Arts", "url": "../business/ace-martial-arts-maynooth-1508.html"}]</script></div>
         <div class="landing-grid"><div class="landing-card">
         <div class="card-image"></div>
         <div class="card-content">
@@ -88,5 +92,8 @@
         </div>
     </div></div>
     </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../landing-map.js" defer></script>
 </body>
 </html>

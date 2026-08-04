@@ -22,6 +22,9 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kids Classes in Sligo Town | Kids Patch">
     <meta name="twitter:description" content="Browse 8 kids classes and activities in Sligo Town, Ireland. Filter by category, age and schedule to find the right class.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
     <link rel="stylesheet" href="../styles.css">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Classes in Sligo Town", "description": "Browse 8 kids classes and activities in Sligo Town, Ireland. Filter by category, age and schedule to find the right class.", "url": "https://www.kidspatch.ie/classes/sligo-town.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 8, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/abbeyquarter-parent-baby-and-toddler-group-923.html", "name": "Abbeyquarter Parent, Baby and Toddler Group"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/ballymote-parent-baby-and-toddler-group-925.html", "name": "Ballymote Parent, Baby and Toddler Group"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/cleaveragh-parent-baby-and-toddler-group-927.html", "name": "Cleaveragh Parent, Baby and Toddler Group"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/rathedmond-parent-baby-and-toddler-group-931.html", "name": "Rathedmond Parent, Baby and Toddler Group"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/sligo-parent-baby-and-toddler-group-932.html", "name": "Sligo Parent, Baby and Toddler Group"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/the-imagination-934.html", "name": "The ImagiNation"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/kids-connect-sligo-1272.html", "name": "Kids Connect Sligo"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/sligo-academy-of-music-musical-explorers-1481.html", "name": "Sligo Academy of Music - Musical Explorers"}]}}</script>
 </head>
@@ -32,6 +35,7 @@
         <h1>Kids Classes in Sligo Town</h1>
         <p class="landing-intro">Browse 8 kids classes and activities in Sligo Town. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
         <div class="business-backlinks"><a href="sligo.html">&larr; All classes in County Sligo</a></div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div><script type="application/json" id="landing-map-data">[{"lat": 54.2696059, "lon": -8.4643444, "name": "Abbeyquarter Parent, Baby and Toddler Group", "category": "Parent-and-toddler", "url": "../business/abbeyquarter-parent-baby-and-toddler-group-923.html"}, {"lat": 54.085878, "lon": -8.5114267, "name": "Ballymote Parent, Baby and Toddler Group", "category": "Parent-and-toddler", "url": "../business/ballymote-parent-baby-and-toddler-group-925.html"}, {"lat": 54.2635871, "lon": -8.4528934, "name": "Cleaveragh Parent, Baby and Toddler Group", "category": "Parent-and-toddler", "url": "../business/cleaveragh-parent-baby-and-toddler-group-927.html"}, {"lat": 54.2722984, "lon": -8.4780032, "name": "Rathedmond Parent, Baby and Toddler Group", "category": "Parent-and-toddler", "url": "../business/rathedmond-parent-baby-and-toddler-group-931.html"}, {"lat": 54.2744544, "lon": -8.4637286, "name": "Sligo Parent, Baby and Toddler Group", "category": "Parent-and-toddler", "url": "../business/sligo-parent-baby-and-toddler-group-932.html"}, {"lat": 53.3411249, "lon": -6.2545, "name": "The ImagiNation", "category": "Parent-and-toddler", "url": "../business/the-imagination-934.html"}, {"lat": 54.2720696, "lon": -8.4751357, "name": "Kids Connect Sligo", "category": "Arts and crafts", "url": "../business/kids-connect-sligo-1272.html"}, {"lat": 54.2720696, "lon": -8.4751357, "name": "Sligo Academy of Music - Musical Explorers", "category": "Music", "url": "../business/sligo-academy-of-music-musical-explorers-1481.html"}]</script></div>
         <div class="landing-grid"><div class="landing-card">
         <div class="card-image"></div>
         <div class="card-content">
@@ -106,5 +110,8 @@
         </div>
     </div></div>
     </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../landing-map.js" defer></script>
 </body>
 </html>

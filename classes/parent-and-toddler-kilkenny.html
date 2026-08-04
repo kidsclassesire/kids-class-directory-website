@@ -22,6 +22,9 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Parent-and-toddler Classes in Kilkenny | Kids Patch">
     <meta name="twitter:description" content="Find 7 Parent-and-toddler classes for kids in Kilkenny. Compare schedules, ages and pricing, then contact providers directly.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
     <link rel="stylesheet" href="../styles.css">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Parent-and-toddler Classes in Kilkenny", "description": "Find 7 Parent-and-toddler classes for kids in Kilkenny. Compare schedules, ages and pricing, then contact providers directly.", "url": "https://www.kidspatch.ie/classes/parent-and-toddler-kilkenny.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 7, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/callan-kilkenny-baby-toddler-group-droichead-family-resource-782.html", "name": "Callan Kilkenny - Baby & Toddler Group- Droichead Family Resource Centre"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/cellarstown-new-park-kilkenny-baby-toddler-group-783.html", "name": "Cellarstown / New Park / Kilkenny - Baby & Toddler Group"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/inistioge-kilkenny-baby-toddler-group-785.html", "name": "Inistioge Kilkenny - Baby & Toddler Group"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/mooncoin-kilkenny-baby-toddler-group-786.html", "name": "Mooncoin Kilkenny - Baby & Toddler Group"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/newpark-kilkenny-baby-toddler-group-787.html", "name": "Newpark Kilkenny - Baby & Toddler Group"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/woodkids-forest-school-790.html", "name": "Woodkids Forest School"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/ready-to-play-1299.html", "name": "Ready to Play"}]}}</script>
 </head>
@@ -32,6 +35,7 @@
         <h1>Parent-and-toddler Classes in Kilkenny</h1>
         <p class="landing-intro">Explore 7 Parent-and-toddler classes for kids in Kilkenny, Ireland. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
         <div class="business-backlinks"><a href="parent-and-toddler.html">&larr; All Parent-and-toddler classes in Ireland</a><a href="kilkenny.html">&larr; All classes in Kilkenny</a></div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div><script type="application/json" id="landing-map-data">[{"lat": 52.5426855, "lon": -7.3878857, "name": "Callan Kilkenny - Baby & Toddler Group- Droichead Family Resource Centre", "category": "Parent-and-toddler", "url": "../business/callan-kilkenny-baby-toddler-group-droichead-family-resource-782.html"}, {"lat": 52.6617926, "lon": -7.2262194, "name": "Cellarstown / New Park / Kilkenny - Baby & Toddler Group", "category": "Parent-and-toddler", "url": "../business/cellarstown-new-park-kilkenny-baby-toddler-group-783.html"}, {"lat": 52.4885452, "lon": -7.0654872, "name": "Inistioge Kilkenny - Baby & Toddler Group", "category": "Parent-and-toddler", "url": "../business/inistioge-kilkenny-baby-toddler-group-785.html"}, {"lat": 52.2908987, "lon": -7.2514947, "name": "Mooncoin Kilkenny - Baby & Toddler Group", "category": "Parent-and-toddler", "url": "../business/mooncoin-kilkenny-baby-toddler-group-786.html"}, {"lat": 52.6613973, "lon": -7.2477552, "name": "Newpark Kilkenny - Baby & Toddler Group", "category": "Parent-and-toddler", "url": "../business/newpark-kilkenny-baby-toddler-group-787.html"}, {"lat": 52.7284761, "lon": -7.2865406, "name": "Woodkids Forest School", "category": "Parent-and-toddler", "url": "../business/woodkids-forest-school-790.html"}, {"lat": 52.5910514, "lon": -7.250923, "name": "Ready to Play", "category": "Parent-and-toddler", "url": "../business/ready-to-play-1299.html"}]</script></div>
         <div class="landing-grid"><div class="landing-card">
         <div class="card-image"></div>
         <div class="card-content">
@@ -97,5 +101,8 @@
         </div>
     </div></div>
     </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../landing-map.js" defer></script>
 </body>
 </html>

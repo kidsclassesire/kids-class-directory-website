@@ -22,6 +22,9 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Horse Riding Classes for Kids in Ireland | Kids Patch">
     <meta name="twitter:description" content="Find 10 Horse Riding classes and activities for kids across Ireland. Compare schedules, ages and pricing, then contact providers directly.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
     <link rel="stylesheet" href="../styles.css">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Horse Riding Classes in Ireland", "description": "Find 10 Horse Riding classes and activities for kids across Ireland. Compare schedules, ages and pricing, then contact providers directly.", "url": "https://www.kidspatch.ie/classes/horse-riding.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 10, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/barleyhill-icelandics-96.html", "name": "Barleyhill Icelandics"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/balcultry-stables-448.html", "name": "Balcultry Stables"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/cherry-orchard-equine-centre-462.html", "name": "Cherry Orchard Equine Centre"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/child-vision-463.html", "name": "Child Vision"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/kellystown-riding-school-500.html", "name": "Kellystown Riding School"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/kilronan-equestrian-centre-504.html", "name": "Kilronan Equestrian Centre"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/the-paddocks-riding-centre-555.html", "name": "The Paddocks Riding Centre"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/whitethorn-equestrian-centre-843.html", "name": "Whitethorn Equestrian Centre"}, {"@type": "ListItem", "position": 9, "url": "https://www.kidspatch.ie/business/crana-stables-beach-horse-trekking-buncrana-1663.html", "name": "Crana Stables - Beach Horse Trekking, Buncrana"}, {"@type": "ListItem", "position": 10, "url": "https://www.kidspatch.ie/business/kinsale-equestrian-centre-1687.html", "name": "Kinsale Equestrian Centre"}]}}</script>
 </head>
@@ -32,6 +35,7 @@
         <h1>Horse Riding Classes in Ireland</h1>
         <p class="landing-intro">Explore 10 Horse Riding classes and activities for kids across Ireland. Horse Riding classes are most widely available in Dublin, Limerick.</p>
         <div class="landing-crosslinks"><h2>Browse Horse Riding by county</h2><div class="crosslink-list"><a href="horse-riding-dublin.html">Dublin</a></div></div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div><script type="application/json" id="landing-map-data">[{"lat": 53.9189028, "lon": -9.0458783, "name": "Barleyhill Icelandics", "category": "Horse Riding", "url": "../business/barleyhill-icelandics-96.html"}, {"lat": 53.4594799, "lon": -6.219175, "name": "Balcultry Stables", "category": "Horse Riding", "url": "../business/balcultry-stables-448.html"}, {"lat": 53.3299859, "lon": -6.2761844, "name": "Cherry Orchard Equine Centre", "category": "Horse Riding", "url": "../business/cherry-orchard-equine-centre-462.html"}, {"lat": 53.3715252, "lon": -6.2454314, "name": "Child Vision", "category": "Horse Riding", "url": "../business/child-vision-463.html"}, {"lat": 53.2578209, "lon": -6.2547108, "name": "Kellystown Riding School", "category": "Horse Riding", "url": "../business/kellystown-riding-school-500.html"}, {"lat": 53.4594799, "lon": -6.219175, "name": "Kilronan Equestrian Centre", "category": "Horse Riding", "url": "../business/kilronan-equestrian-centre-504.html"}, {"lat": 53.2570811, "lon": -6.2323114, "name": "The Paddocks Riding Centre", "category": "Horse Riding", "url": "../business/the-paddocks-riding-centre-555.html"}, {"lat": 52.4147349, "lon": -9.2926354, "name": "Whitethorn Equestrian Centre", "category": "Horse Riding", "url": "../business/whitethorn-equestrian-centre-843.html"}]</script></div>
         <div class="landing-grid"><div class="landing-card">
         <div class="card-image"><img class="banner-img" src="../images/barleyhill-icelandics.jpg" alt="Barleyhill Icelandics" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/barleyhill-icelandics.webp" alt="Barleyhill Icelandics logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
@@ -124,5 +128,8 @@
         </div>
     </div></div>
     </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../landing-map.js" defer></script>
 </body>
 </html>

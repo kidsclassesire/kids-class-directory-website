@@ -22,6 +22,9 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Swimming Classes in Kerry | Kids Patch">
     <meta name="twitter:description" content="Find 6 Swimming classes for kids in Kerry. Compare schedules, ages and pricing, then contact providers directly.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
     <link rel="stylesheet" href="../styles.css">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Swimming Classes in Kerry", "description": "Find 6 Swimming classes for kids in Kerry. Compare schedules, ages and pricing, then contact providers directly.", "url": "https://www.kidspatch.ie/classes/swimming-kerry.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 6, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/turtle-tots-swimming-classes-kerry-780.html", "name": "Turtle Tots Swimming Classes - Kerry"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/turtle-tots-swimming-classes-kerry-1228.html", "name": "Turtle Tots Swimming Classes - Kerry"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/turtle-tots-swimming-classes-kerry-1229.html", "name": "Turtle Tots Swimming Classes - Kerry"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/turtle-tots-swimming-classes-kerry-1230.html", "name": "Turtle Tots Swimming Classes - Kerry"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/turtle-tots-swimming-classes-kerry-1231.html", "name": "Turtle Tots Swimming Classes - Kerry"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/tralee-sports-complex-pre-school-swimming-1422.html", "name": "Tralee Sports Complex - Pre-School Swimming"}]}}</script>
 </head>
@@ -32,6 +35,7 @@
         <h1>Swimming Classes in Kerry</h1>
         <p class="landing-intro">Explore 6 Swimming classes for kids in Kerry, Ireland. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
         <div class="business-backlinks"><a href="swimming.html">&larr; All Swimming classes in Ireland</a><a href="kerry.html">&larr; All classes in Kerry</a></div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div><script type="application/json" id="landing-map-data">[{"lat": 52.2692116, "lon": -9.7057047, "name": "Turtle Tots Swimming Classes - Kerry", "category": "Swimming", "url": "../business/turtle-tots-swimming-classes-kerry-780.html"}, {"lat": 52.5103039, "lon": -9.6740364, "name": "Turtle Tots Swimming Classes - Kerry", "category": "Swimming", "url": "../business/turtle-tots-swimming-classes-kerry-1228.html"}, {"lat": 52.0606406, "lon": -9.4832442, "name": "Turtle Tots Swimming Classes - Kerry", "category": "Swimming", "url": "../business/turtle-tots-swimming-classes-kerry-1229.html"}, {"lat": 52.054869, "lon": -9.488977, "name": "Turtle Tots Swimming Classes - Kerry", "category": "Swimming", "url": "../business/turtle-tots-swimming-classes-kerry-1230.html"}, {"lat": 52.2815239, "lon": -9.6735584, "name": "Turtle Tots Swimming Classes - Kerry", "category": "Swimming", "url": "../business/turtle-tots-swimming-classes-kerry-1231.html"}, {"lat": 52.1453345, "lon": -9.5174011, "name": "Tralee Sports Complex - Pre-School Swimming", "category": "Swimming", "url": "../business/tralee-sports-complex-pre-school-swimming-1422.html"}]</script></div>
         <div class="landing-grid"><div class="landing-card">
         <div class="card-image"></div>
         <div class="card-content">
@@ -88,5 +92,8 @@
         </div>
     </div></div>
     </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../landing-map.js" defer></script>
 </body>
 </html>

@@ -22,6 +22,9 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Watersports Classes for Kids in Ireland | Kids Patch">
     <meta name="twitter:description" content="Find 13 Watersports classes and activities for kids across Ireland. Compare schedules, ages and pricing, then contact providers directly.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
     <link rel="stylesheet" href="../styles.css">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Watersports Classes in Ireland", "description": "Find 13 Watersports classes and activities for kids across Ireland. Compare schedules, ages and pricing, then contact providers directly.", "url": "https://www.kidspatch.ie/classes/watersports.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 13, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/skerries-sailing-club-540.html", "name": "Skerries Sailing Club"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/surfdock-542.html", "name": "Surfdock"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/the-irish-national-sailing-powerboat-school-551.html", "name": "The Irish National Sailing & Powerboat School"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/the-national-yacht-club-553.html", "name": "The National Yacht Club"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/cove-sailing-club-junior-sailing-1345.html", "name": "Cove Sailing Club - Junior Sailing"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/sailcork-junior-courses-1347.html", "name": "SailCork - Junior Courses"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/freedom-surf-school-kids-teen-surf-camps-1375.html", "name": "Freedom Surf School - Kids & Teen Surf Camps"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/meath-local-sports-partnership-east-meath-amenity-hub-1519.html", "name": "Meath Local Sports Partnership - East Meath Amenity Hub"}, {"@type": "ListItem", "position": 9, "url": "https://www.kidspatch.ie/business/mayo-sports-kids-kayak-summer-camp-1544.html", "name": "Mayo Sports - Kids Kayak Summer Camp"}, {"@type": "ListItem", "position": 10, "url": "https://www.kidspatch.ie/business/tramore-surf-school-kids-teen-surf-lessons-1571.html", "name": "Tramore Surf School - Kids & Teen Surf Lessons"}, {"@type": "ListItem", "position": 11, "url": "https://www.kidspatch.ie/business/dungarvan-harbour-sailing-club-cara-na-mara-1607.html", "name": "Dungarvan Harbour Sailing Club - Cara na Mara"}, {"@type": "ListItem", "position": 12, "url": "https://www.kidspatch.ie/business/kilcock-canoe-polo-club-1634.html", "name": "Kilcock Canoe Polo Club"}, {"@type": "ListItem", "position": 13, "url": "https://www.kidspatch.ie/business/kinsale-surf-adventures-summer-camps-1684.html", "name": "Kinsale Surf Adventures - Summer Camps"}]}}</script>
 </head>
@@ -32,6 +35,7 @@
         <h1>Watersports Classes in Ireland</h1>
         <p class="landing-intro">Explore 13 Watersports classes and activities for kids across Ireland. Watersports classes are most widely available in Cork, Waterford, Dublin.</p>
         
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div><script type="application/json" id="landing-map-data">[{"lat": 53.583732, "lon": -6.104615, "name": "Skerries Sailing Club", "category": "Watersports", "url": "../business/skerries-sailing-club-540.html"}, {"lat": 51.8519672, "lon": -8.2830787, "name": "SailCork - Junior Courses", "category": "Watersports", "url": "../business/sailcork-junior-courses-1347.html"}, {"lat": 53.8544614, "lon": -9.2983364, "name": "Mayo Sports - Kids Kayak Summer Camp", "category": "Watersports", "url": "../business/mayo-sports-kids-kayak-summer-camp-1544.html"}]</script></div>
         <div class="landing-grid"><div class="landing-card">
         <div class="card-image"><img class="logo-badge" src="../logos/skerriessailingclub-com.png" alt="Skerries Sailing Club logo" loading="lazy" onerror="this.remove()"></div>
         <div class="card-content">
@@ -151,5 +155,8 @@
         </div>
     </div></div>
     </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../landing-map.js" defer></script>
 </body>
 </html>

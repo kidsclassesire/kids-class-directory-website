@@ -598,6 +598,16 @@
         }
         .crosslink-list a:hover { background: var(--border); }
 
+        /* Map view (classes/*.html landing pages) -- overview of this page's
+           own result set, sits between the intro/crosslinks and the card
+           grid. Behaviour lives in landing-map.js (one shared file, pin data
+           embedded per-page as JSON, same convention as share.js/styles.css). */
+        .landing-map-wrap { margin: 0 0 2rem; }
+        .landing-map { width: 100%; height: 400px; border-radius: 12px; border: 1px solid var(--border); }
+        @media (max-width: 640px) {
+            .landing-map { height: 280px; }
+        }
+
         .landing-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; align-items: start; }
         .landing-card {
             background: #ffffff; border-radius: 16px; overflow: hidden; border: 2px solid var(--border);
