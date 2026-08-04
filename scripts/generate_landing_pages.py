@@ -17,11 +17,12 @@ from collections import Counter, defaultdict
 from datetime import date
 
 from generate_business_pages import (
-    esc, fetch_all_rows, format_price, format_schedule, image_html,
-    make_slug, self_validate_json_ld, slugify, REPO_ROOT, SITE_URL,
+    esc, fetch_all_rows, file_version, format_price, format_schedule, image_html,
+    make_slug, self_validate_json_ld, slugify, REPO_ROOT, SITE_URL, STYLES_VERSION,
 )
 
 CLASSES_DIR = REPO_ROOT / 'classes'
+LANDING_MAP_JS_VERSION = file_version('landing-map.js')
 
 MIN_NATIONWIDE = 3
 MIN_COUNTY = 3
@@ -180,7 +181,7 @@ def render_landing_page(title, canonical, meta_desc, breadcrumb_html, h1, intro_
         leaflet_scripts = (
             '\n    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>'
             '\n    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>'
-            '\n    <script src="../landing-map.js" defer></script>'
+            '\n    <script src="../landing-map.js?v=' + LANDING_MAP_JS_VERSION + '" defer></script>'
         )
     return f'''<!DOCTYPE html>
 <html lang="en">
@@ -206,7 +207,7 @@ def render_landing_page(title, canonical, meta_desc, breadcrumb_html, h1, intro_
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{esc(title)}">
     <meta name="twitter:description" content="{esc(meta_desc)}">
-    {leaflet_css}<link rel="stylesheet" href="../styles.css">
+    {leaflet_css}<link rel="stylesheet" href="../styles.css?v={STYLES_VERSION}">
     {json_ld_block}
 </head>
 <body>

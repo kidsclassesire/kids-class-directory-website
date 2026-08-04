@@ -7,6 +7,7 @@ Run locally any time: python3 scripts/generate_business_pages.py
 Also run nightly + on push by .github/workflows/build-business-pages.yml.
 """
 
+import hashlib
 import html
 import json
 import re
@@ -22,6 +23,25 @@ SITE_URL = 'https://www.kidspatch.ie'
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 BUSINESS_DIR = REPO_ROOT / 'business'
+
+
+def file_version(relative_path):
+    """Short content hash for cache-busting a shared static asset (styles.css,
+    share.js, landing-map.js) referenced with a relative ../ path from every
+    generated page. Without this, a browser can cache one of these files
+    indefinitely and keep showing stale styling/behaviour after a deploy --
+    real bug, hit in practice (see LEARNINGS.md, 2026-08-04). index.html
+    already did this by hand (styles.css?v=4); this makes it automatic and
+    covers the generated pages too, which previously had no cache-busting
+    at all.
+    """
+    path = REPO_ROOT / relative_path
+    digest = hashlib.sha256(path.read_bytes()).hexdigest()
+    return digest[:10]
+
+
+STYLES_VERSION = file_version('styles.css')
+SHARE_JS_VERSION = file_version('share.js')
 
 
 def fetch_all_rows():
@@ -319,8 +339,8 @@ def render_page(row, slug):
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{esc(title)}">
     <meta name="twitter:description" content="{esc(desc)}">
-    {leaflet_css}<link rel="stylesheet" href="../styles.css">
-    <script src="../share.js" defer></script>
+    {leaflet_css}<link rel="stylesheet" href="../styles.css?v={STYLES_VERSION}">
+    <script src="../share.js?v={SHARE_JS_VERSION}" defer></script>
     <script type="application/ld+json">{json_ld(row, slug)}</script>
 </head>
 <body>
