@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Drumcondra | Kids Patch</title>
+    <meta name="description" content="Browse 6 kids activities and classes in Drumcondra, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/drumcondra.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Drumcondra | Kids Patch">
+    <meta property="og:description" content="Browse 6 kids activities and classes in Drumcondra, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/drumcondra.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Drumcondra | Kids Patch">
+    <meta name="twitter:description" content="Browse 6 kids activities and classes in Drumcondra, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Drumcondra", "description": "Browse 6 kids activities and classes in Drumcondra, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/drumcondra.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 6, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/claphandies-204.html", "name": "Claphandies"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/fox-c-play-cafe-d1-d3-228.html", "name": "Fox-C Play Cafe - D1/D3"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/child-vision-463.html", "name": "Child Vision"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/tempo-music-school-546.html", "name": "Tempo Music School"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/claphandies-playlabs-dublin-1021.html", "name": "ClapHandies PlayLabs - Dublin"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/toddle-sense-1082.html", "name": "Toddle Sense"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Drumcondra</nav>
+        <h1>Kids Activities in Drumcondra</h1>
+        <p class="landing-intro">Browse 6 kids activities and classes in Drumcondra. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="204">
+        <div class="card-image"><img class="banner-img" src="../images/claphandies-com-271ddb.png" alt="Claphandies" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/claphandies-com-271ddb.png" alt="Claphandies logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Claphandies</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">ClapHandies PlayLabs offer babies, wobblers and toddlers (birth to 3.5 years) a chance to play, meet other children and develop new skills. Sessions include music, song and rhyme time, and a class teaching the core baby massage techniques. We also focus on gross motor skills and language development, teaching baby sign language. The weekly classes offer a wide variety of engaging experiences tailored to the needs of each age group, and are also a chance for children to socialise with children of their own age, while giving parents/caregivers the opportunity to get to know others in their area too. Each term runs for 7 weeks, with a 50% sibling discount. Classes are offered in various locations across Ireland.</p>
+            
+            <a href="../business/claphandies-204.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="228">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Fox-C Play Cafe - D1/D3</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Dublin 1/Dublin 3 parent and toddler group is hosted by Fox-C&#x27;s Play Café twice a week, an indoor play centre where mums, dads, grandparents and childminders can pop along with babies and children up to 5 years and enjoy a tea/coffee while the kids play. The group operates on a walk-in basis, so no need to book in advance, and you can stay as long as you want. This group operates during school holidays. Location: Barbara Ward Clonliffe and Croke Park Community Centre, 9A Richmond Industrial Estate, D3. Time: every Thursday and Friday, 9.30am-1.30pm. Cost: €4 for babies, €6 for 1-5 years, adults go free. Contact: foxcplaycafe@gmail.com</p>
+            
+            <a href="../business/fox-c-play-cafe-d1-d3-228.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="463">
+        <div class="card-image"><img class="banner-img" src="../images/childvision-ie.jpg" alt="Child Vision" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/childvision-ie.svg" alt="Child Vision logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Child Vision</h3>
+            <div class="tag-container"><span class="tag">Horse Riding</span></div>
+            <p class="description">ChildVision is the only place in Ireland totally dedicated to the education and therapy needs of blind and multi-disabled children. Thousands of children with sight loss and other profound disabilities have bravely overcome their obstacles and grown up to reach their full potential, guided by their expertise and support. ChildVision is primarily an equine therapy facility with a very limited number of horse riding lessons open to the public. Equine therapy lasts 30 minutes or 1 hour, in group blocks available subject to assessment by their occupational therapist. This input provides horsemanship experiences to people with physical, sensory, mental health, psychological and intellectual disabilities, in order to enhance the quality and productivity of their lives.</p>
+            
+            <a href="../business/child-vision-463.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="546">
+        <div class="card-image"><img class="banner-img" src="../images/tempomusicschool-ie.jpg" alt="Tempo Music School" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/tempomusicschool-ie.png" alt="Tempo Music School logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Tempo Music School</h3>
+            <div class="tag-container"><span class="tag">Music</span></div>
+            <p class="description">Tempo Music School offers music appreciation classes for children and parents together in our Baby Beats and Mini Beats classes. &#x27;Baby Beats&#x27; is a fun and interactive music class for young children between 9 months and 3 years of age - our super friendly facilitator will awaken the musicality in children using song and percussion. In the &#x27;Mini Beats&#x27; class, kids from 4 to 6 years old experience a wide range of instruments, songs and compositions in a comfortable class setting, while having plenty of fun doing so. Benefits to the children include exercising their sensory motor ability, developing coordination, rhythm, listening and speaking, while promoting interaction between the children, and also between the child and their parent. Music appreciation classes also prepare children for an instrument class in the future, as kids will be introduced to strings, percussion and wind instruments. Class structure: a Welcome Song, a delightful way to start the session and help your child feel comfortable; Nursery Rhymes, singing along to classics that engage your baby&#x27;s listening and language skills; Sound Exploration, introducing your child to new sounds with percussion instruments; Action Songs, enjoying dynamic and interactive movements with music; and a Goodbye Song, ending the class on a positive note with a fun and soothing farewell.</p>
+            
+            <a href="../business/tempo-music-school-546.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1021">
+        <div class="card-image"><img class="banner-img" src="../images/claphandies-com-0de07d.png" alt="ClapHandies PlayLabs - Dublin" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/claphandies-com-0de07d.png" alt="ClapHandies PlayLabs - Dublin logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>ClapHandies PlayLabs - Dublin</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">The PlayLabs are weekly developmental sensory play classes for babies, wobblers and/or toddlers. The classes are designed to provide a fun and engaging environment for both children and adults! With music, learning, social interaction, and sensory play, you and your little one are sure to have a great time together. They are also a chance for children to socialise with children of their own age, while offering parents/caregivers the opportunity to get to know others in their area too. Baby PlayLabs (6 weeks - 7 months) - 55 minute class duration Wobbler PlayLabs (8 months - 15 months) - 50 minute class duration Toddler PlayLabs (16 months - 3.5 years) - 50 minute class duration We typically run toddlers at 9.45am/10am, wobblers at 10.45am/11am and babies at 11.45am/12pm - venue dependent. You can check out more information about our classes on our website: https://site.claphandies.com/ In addition to your term&#x27;s booking, we also offer you 3 months free access to ClapHandies at Home which is an online resource filled with hours of follow-along music and guided playtime videos for you and your little ones to enjoy at home. So if you miss any of your classes during a term, you can run your own PlayLab at home or just tune in to have some extra fun during the week. If you are signing up for our Baby PlayLabs in particular, we also provide you with a link to our informative Baby Massage e-manual so you can continue practising the massage strokes at home.</p>
+            
+            <a href="../business/claphandies-playlabs-dublin-1021.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1082">
+        <div class="card-image"><img class="banner-img" src="../images/toddlersense-ie-bcec42.png" alt="Toddle Sense" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/toddlersense-ie-bcec42.webp" alt="Toddle Sense logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Toddle Sense</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">Classes range from 13 months to 4.5 years. From Space to Under the Sea, to an Ugly Bug Ball and a trek in the Jungle, Toddler Sense explores it all. All activities are designed to work on a range of skills and developmental milestones, including hand-eye coordination, gross motor, fine motor, visual stimulation, emotional regulation, exploring the world around us, and social and emotional development, to name a few. A twin/sibling discount is available for all classes, and Baby Sensory graduates can avail of a discount when booking a class within the first 12 months of graduation. Multiple locations across Dublin: Balgriffin Hall, Malahide Road, Dublin; Fingallians GAA Club, Seatown West, Swords, Dublin; Gracepark Educate Together, DCU Campus, All Hallows, D09 KDW4, Dublin.</p>
+            
+            <a href="../business/toddle-sense-1082.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 204, "lat": 53.3680988, "lon": -6.2554727, "name": "Claphandies", "category": "Developmental", "url": "../business/claphandies-204.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 228, "lat": 53.36338, "lon": -6.24823, "name": "Fox-C Play Cafe - D1/D3", "category": "Parent-and-toddler", "url": "../business/fox-c-play-cafe-d1-d3-228.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 463, "lat": 53.3715252, "lon": -6.2454314, "name": "Child Vision", "category": "Horse Riding", "url": "../business/child-vision-463.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 546, "lat": 53.3634374, "lon": -6.2583091, "name": "Tempo Music School", "category": "Music", "url": "../business/tempo-music-school-546.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1021, "lat": 53.3680988, "lon": -6.2554727, "name": "ClapHandies PlayLabs - Dublin", "category": "Developmental", "url": "../business/claphandies-playlabs-dublin-1021.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1082, "lat": 53.3680988, "lon": -6.2554727, "name": "Toddle Sense", "category": "Developmental", "url": "../business/toddle-sense-1082.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

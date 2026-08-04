@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Shannon | Kids Patch</title>
+    <meta name="description" content="Browse 7 kids activities and classes in Shannon, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/shannon.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Shannon | Kids Patch">
+    <meta property="og:description" content="Browse 7 kids activities and classes in Shannon, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/shannon.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Shannon | Kids Patch">
+    <meta name="twitter:description" content="Browse 7 kids activities and classes in Shannon, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Shannon", "description": "Browse 7 kids activities and classes in Shannon, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/shannon.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 7, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/baby-massage-class-in-shannon-co-clare-602.html", "name": "Baby Massage Class in Shannon Co Clare"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/shannon-baby-toddler-storytime-groups-shannon-library-615.html", "name": "Shannon Baby & Toddler Storytime Groups - Shannon Library"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/shannon-parent-baby-toddler-group-616.html", "name": "Shannon Parent, Baby & Toddler Group"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/shannon-parent-baby-toddler-group-resource-centre-617.html", "name": "Shannon Parent, Baby & Toddler Group - Resource Centre"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/maia-purposeful-play-1146.html", "name": "Maia Purposeful Play"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/sense-of-wonder-sensory-play-1152.html", "name": "Sense of Wonder Sensory Play"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/shannon-swimming-leisure-centre-kids-lessons-1602.html", "name": "Shannon Swimming & Leisure Centre - Kids Lessons"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="clare.html">Clare</a> &rsaquo; Shannon</nav>
+        <h1>Kids Activities in Shannon</h1>
+        <p class="landing-intro">Browse 7 kids activities and classes in Shannon. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="clare.html">&larr; All activities in County Clare</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="602">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Baby Massage Class in Shannon Co Clare</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">Brand new Baby Massage Classes, led by a Certified Infant Massage Instructor, are starting in the Family Resource Centre in Shannon, Co. Clare - perfect for babies from birth to pre-crawlers. The term runs for 5 weeks, with classes usually lasting about an hour and a half, including time for tea/coffee and chats at the end. It&#x27;s a great way for moms to socialise with other new moms, sharing tips and tricks. Classes are baby-led, so no need to worry if baby cries, needs a feed/change, or just needs a cuddle - these classes are extremely relaxed. Stay up to date on social media to hear about upcoming classes and locations.</p>
+            
+            <a href="../business/baby-massage-class-in-shannon-co-clare-602.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="615">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Shannon Baby &amp; Toddler Storytime Groups - Shannon Library</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Shannon Library has lots to offer families with babies, toddlers and kids. Below are some of the regular groups, but be sure to check out the library during school holidays, as they usually have great activities on for the kids. Location: Shannon Library, Sean Lemass Public Library, Town Centre, Shannon, Co. Clare, V14 WK50. Cost: free. Contact: 061-364266 or shannonlibrary@clarecoco.ie. Baby Book Club: meet other parents/carers with their babies/toddlers and share book recommendations, read books and tell stories, as well as introduce your child to the library from a young age. New members welcome. Time: every Saturday, 10-11am. Storytime: gather to hear fun stories together, a special time to enjoy exciting tales and discover the joy of reading with friends. Children&#x27;s Storytime &amp; Colouring for ages 3-6 years. Time: every Tuesday, 3-3.30pm.</p>
+            
+            <a href="../business/shannon-baby-toddler-storytime-groups-shannon-library-615.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="616">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Shannon Parent, Baby &amp; Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Shannon Parent, Baby &amp; Toddler Group in Clare welcomes all parents/grandparents/guardians and childminders and their tots up to 3 years old. There&#x27;s lots of space, a great cup of tea or coffee (and toast), and a wide range of activities on offer, from the Ark soft-play area, painting and play-dough, big blocks and balloon art, to a baby zone and lil&#x27; kidz disco-dancing. Please book in advance to secure a place. Location: Hope Café Shannon, Unit 2, Main Road, Smithstown, Shannon, V14 KX52. Day/Time: every Tuesday and Thursday morning, 10-11:30am (during term time). Cost: €3 for 1-3 years, or €1 for under-1s. Contact: Elton, 086 300 9450.</p>
+            
+            <a href="../business/shannon-parent-baby-toddler-group-616.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="617">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Shannon Parent, Baby &amp; Toddler Group - Resource Centre</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Shannon Parent, Baby &amp; Toddler Group in Clare is hosted by Shannon Family Resource Centre, welcoming mams, dads, grandparents, guardians and all caregivers to pop along with their babies and kids. There are toys, games, crafts and more for the little ones to enjoy, with snacks provided for the children and tea and coffee for the adults. Location: Shannon Family Resource Centre, Community Building, Rineanna View Estate, Shannon, Clare. Day/Time: every Friday, 10am-12pm (during term time). Cost: €2 per family. Contact: 061707600.</p>
+            
+            <a href="../business/shannon-parent-baby-toddler-group-resource-centre-617.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1146">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Maia Purposeful Play</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Discover a world of child-led play, learning and meaningful engagement for your little ones at Maia Purposeful Play. Our mission is to nurture curious minds and foster holistic development through child-led, interactive and carefully planned play experiences. From sensory play to imaginative play and creative exploration, we offer a range of thoughtfully curated experiences that spark imagination, encourage critical thinking, and promote social skills. Our carefully designed activities are aimed at enhancing children&#x27;s cognitive, emotional, and physical development while making every moment a memorable adventure. Maia Purposeful Play classes are child-led, meaning children choose their play path and can move freely between the play areas and resources. This empowering approach not only fosters independence but also allows children to unearth their passions, cultivate curiosity, and create their own meaningful play experiences. During each 60-minute session, parents/caregivers and children are invited to embark on this play journey together.</p>
+            
+            <a href="../business/maia-purposeful-play-1146.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1152">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Sense of Wonder Sensory Play</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">Welcome to Sense of Wonder Sensory Play. Our sensory play sessions are more than just fun - they&#x27;re a powerful way to support your child&#x27;s development and learning. Through hands-on exploration, babies and toddlers develop essential fine motor skills, hand-eye coordination, and problem-solving abilities. These sessions also stimulate cognitive growth, encourage language development, and build social skills through interactive play. Sensory play ignites curiosity, fosters creativity, and lays the foundation for lifelong learning. Let&#x27;s dive into the mess and watch your little ones grow! Follow us on Facebook and Instagram.</p>
+            
+            <a href="../business/sense-of-wonder-sensory-play-1152.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1602">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Shannon Swimming &amp; Leisure Centre - Kids Lessons</h3>
+            <div class="tag-container"><span class="tag">Swimming</span></div>
+            <p class="description">Swim Ireland Learn to Swim programme for ages 5-12, weekend/midweek/lane-swim options, €76-90 per 8 weeks.</p>
+            
+            <a href="../business/shannon-swimming-leisure-centre-kids-lessons-1602.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 602, "lat": 52.7102948, "lon": -8.8587661, "name": "Baby Massage Class in Shannon Co Clare", "category": "Developmental", "url": "../business/baby-massage-class-in-shannon-co-clare-602.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 615, "lat": 52.7035042, "lon": -8.866761, "name": "Shannon Baby & Toddler Storytime Groups - Shannon Library", "category": "Parent-and-toddler", "url": "../business/shannon-baby-toddler-storytime-groups-shannon-library-615.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 616, "lat": 52.7191462, "lon": -8.8745666, "name": "Shannon Parent, Baby & Toddler Group", "category": "Parent-and-toddler", "url": "../business/shannon-parent-baby-toddler-group-616.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 617, "lat": 52.7102948, "lon": -8.8587661, "name": "Shannon Parent, Baby & Toddler Group - Resource Centre", "category": "Parent-and-toddler", "url": "../business/shannon-parent-baby-toddler-group-resource-centre-617.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1146, "lat": 52.6913222, "lon": -8.6186233, "name": "Maia Purposeful Play", "category": "Parent-and-toddler", "url": "../business/maia-purposeful-play-1146.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1152, "lat": 52.6913222, "lon": -8.6186233, "name": "Sense of Wonder Sensory Play", "category": "Developmental", "url": "../business/sense-of-wonder-sensory-play-1152.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1602, "lat": 52.6913222, "lon": -8.6186233, "name": "Shannon Swimming & Leisure Centre - Kids Lessons", "category": "Swimming", "url": "../business/shannon-swimming-leisure-centre-kids-lessons-1602.html", "minAge": 5.0, "maxAge": 12.0, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

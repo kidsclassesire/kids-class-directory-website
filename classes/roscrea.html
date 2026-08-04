@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Roscrea | Kids Patch</title>
+    <meta name="description" content="Browse 5 kids activities and classes in Roscrea, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/roscrea.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Roscrea | Kids Patch">
+    <meta property="og:description" content="Browse 5 kids activities and classes in Roscrea, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/roscrea.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Roscrea | Kids Patch">
+    <meta name="twitter:description" content="Browse 5 kids activities and classes in Roscrea, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Roscrea", "description": "Browse 5 kids activities and classes in Roscrea, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/roscrea.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 5, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/gentle-touch-baby-massage-with-roisin-943.html", "name": "Gentle Touch Baby Massage with Roisin"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/roscrea-corville-parent-baby-and-toddler-group-950.html", "name": "Roscrea / Corville Parent, Baby and Toddler Group"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/little-kickers-county-laois-carlow-and-kilkenny-1268.html", "name": "Little Kickers County Laois, Carlow and Kilkenny"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/roscrea-leisure-centre-teen-kids-classes-1715.html", "name": "Roscrea Leisure Centre - Teen & Kids Classes"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/ikki-roscrea-itosu-kai-karate-1726.html", "name": "Ikki Roscrea - Itosu-kai Karate"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="tipperary.html">Tipperary</a> &rsaquo; Roscrea</nav>
+        <h1>Kids Activities in Roscrea</h1>
+        <p class="landing-intro">Browse 5 kids activities and classes in Roscrea. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="tipperary.html">&larr; All activities in County Tipperary</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="943">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Gentle Touch Baby Massage with Roisin</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">Baby massage has arrived in Roscrea, and the next block starts on 24th April. It&#x27;s a fabulous way for new parents to meet other parents while learning massage strokes for their baby. €100 can be redeemed back through most health insurance.</p>
+            
+            <a href="../business/gentle-touch-baby-massage-with-roisin-943.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="950">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Roscrea / Corville Parent, Baby and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Roscrea Parent, Baby and Toddler Group in Tipperary is a welcoming setting for adults and children alike. Mums, dads, grandparents and childminders are all welcome to pop along with their little one, with plenty of toys and a perfect opportunity for children to interact with others their age. The group operates pop-in style, so no need to sign up for a term. Location: Scoil Iosef Naofa, Corville, Cor an Bhile, Roscrea, Co. Tipperary. Time: every Thursday, 9.30-10.30am (during school term time). Cost: free. Contact: Lisa, 086 1913383, or the Facebook page.</p>
+            
+            <a href="../business/roscrea-corville-parent-baby-and-toddler-group-950.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1268">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Little Kickers County Laois, Carlow and Kilkenny</h3>
+            <div class="tag-container"><span class="tag">Football</span></div>
+            <p class="description">Locations: Vitality Hub, Abbeyleix, Co. Laois; Treo Nua Centre, Portlaoise, Co. Laois; Holycross Church Hall, Co. Tipperary; Sacred Heart Primary, Roscrea, Co. Tipperary; Premier Hall, Thurles, Co. Tipperary; Oxmantown National School, Birr, Co. Offaly. Little Kickers, 1.5-2.5 years, 9am. Junior Kickers, 2.5-3.5 years, 10am. Mighty Kickers, 3.5-5 years, 11am. All parents and family are welcome to attend, watch and encourage the child during the class. Children will need comfortable runners and a drink for the breaks. All classes are held indoors and are not weather dependent.</p>
+            
+            <a href="../business/little-kickers-county-laois-carlow-and-kilkenny-1268.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1715">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Roscrea Leisure Centre - Teen &amp; Kids Classes</h3>
+            <div class="tag-container"><span class="tag">Athletics</span></div>
+            <p class="description">Teen Fit sessions (11-16) throughout the week, plus flexible booking for kids activities.</p>
+            
+            <a href="../business/roscrea-leisure-centre-teen-kids-classes-1715.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1726">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Ikki Roscrea - Itosu-kai Karate</h3>
+            <div class="tag-container"><span class="tag">Martial Arts</span></div>
+            <p class="description">Karate led by Sensei Aoife O&#x27;Grady (3rd Dan), Tuesdays 7-8:30pm at Scoil Eoin Naofa, Roscrea.</p>
+            
+            <a href="../business/ikki-roscrea-itosu-kai-karate-1726.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 943, "lat": 52.9551598, "lon": -7.7990264, "name": "Gentle Touch Baby Massage with Roisin", "category": "Developmental", "url": "../business/gentle-touch-baby-massage-with-roisin-943.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 950, "lat": 52.9551598, "lon": -7.7990264, "name": "Roscrea / Corville Parent, Baby and Toddler Group", "category": "Parent-and-toddler", "url": "../business/roscrea-corville-parent-baby-and-toddler-group-950.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 1268, "lat": 52.9551598, "lon": -7.7990264, "name": "Little Kickers County Laois, Carlow and Kilkenny", "category": "Football", "url": "../business/little-kickers-county-laois-carlow-and-kilkenny-1268.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1715, "lat": null, "lon": null, "name": "Roscrea Leisure Centre - Teen & Kids Classes", "category": "Athletics", "url": "../business/roscrea-leisure-centre-teen-kids-classes-1715.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1726, "lat": null, "lon": null, "name": "Ikki Roscrea - Itosu-kai Karate", "category": "Martial Arts", "url": "../business/ikki-roscrea-itosu-kai-karate-1726.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

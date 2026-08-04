@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Greystones | Kids Patch</title>
+    <meta name="description" content="Browse 7 kids activities and classes in Greystones, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/greystones.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Greystones | Kids Patch">
+    <meta property="og:description" content="Browse 7 kids activities and classes in Greystones, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/greystones.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Greystones | Kids Patch">
+    <meta name="twitter:description" content="Browse 7 kids activities and classes in Greystones, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Greystones", "description": "Browse 7 kids activities and classes in Greystones, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/greystones.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 7, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/fitclub-390.html", "name": "Fitclub"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/greystones-presbyterian-church-parent-baby-and-toddler-group-395.html", "name": "Greystones Presbyterian Church Parent, Baby and Toddler Group"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/bloom-baby-classes-wicklow-and-south-dublin-1007.html", "name": "Bloom Baby Classes Wicklow and South Dublin"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/little-kickers-dublin-south-wicklow-1047.html", "name": "Little Kickers Dublin South & Wicklow"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/senseable-tots-sensory-class-in-dublin-and-wicklow-1068.html", "name": "SENSEable Tots Sensory Class in Dublin and Wicklow"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/david-lewis-golf-junior-golf-camps-greystones-1462.html", "name": "David Lewis Golf - Junior Golf Camps Greystones"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/greystones-lawn-tennis-club-junior-play-n-stay-1463.html", "name": "Greystones Lawn Tennis Club - Junior Play N Stay"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="wicklow.html">Wicklow</a> &rsaquo; Greystones</nav>
+        <h1>Kids Activities in Greystones</h1>
+        <p class="landing-intro">Browse 7 kids activities and classes in Greystones. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="wicklow.html">&larr; All activities in County Wicklow</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="390">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Fitclub</h3>
+            <div class="tag-container"><span class="tag">Athletics</span></div>
+            <p class="description">Fitclub &amp; Playball offer a unique experience for parents and children, combining movement and play for all the family - a great way to stay active together. Classes start with a warm-up suited to all ages, then split: parents go outside for a circuit-style fitness class, while children stay inside for a fun Playball class with a different coach. Playball is a great way for children to learn the movement and skills required for all sports as they get older. Fitclub runs every Monday and Wednesday, 4:30-5:30pm, at St Patrick&#x27;s National School in Greystones. Anyone above the age of 3 is welcome to try the class, and all adults are welcome - you don&#x27;t need to be a parent to try our fitness classes. Just bring a bottle of water and get ready to sweat.</p>
+            
+            <a href="../business/fitclub-390.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="395">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Greystones Presbyterian Church Parent, Baby and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Greystones Parent, Baby &amp; Toddler Group, hosted by the Presbyterian Church, is a popular playgroup for children and their parents/minders - everyone is welcome, with coffee and tea for the grown-ups and fruit, biscuits and music for the kids. Day/Time: every Wednesday, 10-11.30am (during term time). Cost: €3.50. Location: Presbyterian Church, Trafalgar Rd, Rathdown Lower, Greystones, Co. Wicklow.</p>
+            
+            <a href="../business/greystones-presbyterian-church-parent-baby-and-toddler-group-395.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1007">
+        <div class="card-image"><img class="banner-img" src="../images/bloombabyclasses-com-694feb.jpg" alt="Bloom Baby Classes Wicklow and South Dublin" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/bloombabyclasses-com-694feb.png" alt="Bloom Baby Classes Wicklow and South Dublin logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Bloom Baby Classes Wicklow and South Dublin</h3>
+            <div class="tag-container"><span class="tag">Music</span></div>
+            <p class="description">Classes suitable from 6 weeks to 14 months, or until baby begins to confidently walk. Venues in Dun Laoghaire, Blackrock, Mount Merrion, Bray, Greystones, Wicklow Town &amp; Arklow. We use catchy music and beautiful bespoke props to support baby&#x27;s development in all areas. With a strong focus on parent and baby bonding, we encourage lots of eye contact and cuddles throughout class. There is also time for those much-needed mum chats, of course!</p>
+            
+            <a href="../business/bloom-baby-classes-wicklow-and-south-dublin-1007.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1047">
+        <div class="card-image"><img class="logo-badge" src="../logos/littlekickers-ie-5bd0cf.png" alt="Little Kickers Dublin South &amp; Wicklow logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Little Kickers Dublin South &amp; Wicklow</h3>
+            <div class="tag-container"><span class="tag">Football</span></div>
+            <p class="description">Join the world&#x27;s No. 1 preschool football programme, with over 100,000 children participating every week. Our play-orientated classes are fun, engaging, and nurture a love of sport from an early age. We are proud to be more than just football - while football is the tool we use, our goal is to develop the fundamentals of movement (balance, agility &amp; coordination), fundamental movement skills (running, hopping, skipping, jumping), social skills such as listening, sharing and taking turns, and early learning concepts like numbers, colours and body parts. We have 4 different age groups to ensure children participate with their peers at around the same developmental level. Our Little Kickers programme is suitable for children aged 18 months to 2.5 years - it&#x27;s a parent-toddler programme requiring active parental participation, which ensures your child gets the very best out of the sessions; learning to listen and follow instructions through engaging, fun games is the goal at this level. Our Junior Kickers classes are for 2.5 to 3.5 year olds, who are starting to get more independent at this stage - children participate more by themselves, though many will still like to have their parents close to them at the magic wall, with Play, Practice, Understand as the learning outcome. The next stage is Mighty Kickers, suitable for 3.5 to 5 year olds, where most children participate independently with parents encouraged to support from the sidelines, further developing Play, Practice, Understand. The Mega Kickers programme brings together all the learning outcomes from the previous levels, relying less on the play-orientated structure of earlier stages, with a 20-minute match at the end of each session preparing children to move onto football academies and continue their football journey. Throughout all stages, our core philosophy of Play not Push is embodied - we believe children should be gently encouraged to participate and allowed to watch if they are unsure, in the hope that seeing other children in the class participating will spur them on to join in the fun.</p>
+            
+            <a href="../business/little-kickers-dublin-south-wicklow-1047.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1068">
+        <div class="card-image"><img class="banner-img" src="../images/senseabletots-ie-1945d8.png" alt="SENSEable Tots Sensory Class in Dublin and Wicklow" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/senseabletots-ie-1945d8.png" alt="SENSEable Tots Sensory Class in Dublin and Wicklow logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>SENSEable Tots Sensory Class in Dublin and Wicklow</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">SENSEable Tots is a fun sensory class for 6 months to 4 years. Classes are offered in Shankill and Greystones - enjoy a supportive and relaxed environment where children can explore different sensory materials and engage in fun action songs, using their imaginations, laughing and socialising with other children. Time: Mondays at 10am in Shankill, Stonebridge Community Centre. Time: Thursdays at 10am in Greystones, Nazarene Church. Check out our social media for locations and to stay up to date with new terms. Children must be accompanied by a parent/guardian who must stay for the duration of the class. It&#x27;s recommended that you bring a change of clothes.</p>
+            
+            <a href="../business/senseable-tots-sensory-class-in-dublin-and-wicklow-1068.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1462">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>David Lewis Golf - Junior Golf Camps Greystones</h3>
+            <div class="tag-container"><span class="tag">Sports</span></div>
+            <p class="description">After-school golf programme (Sept-May, ages 7+) and Easter/summer camps at Greystones Golf Course; 140+ weekly juniors.</p>
+            
+            <a href="../business/david-lewis-golf-junior-golf-camps-greystones-1462.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1463">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Greystones Lawn Tennis Club - Junior Play N Stay</h3>
+            <div class="tag-container"><span class="tag">Tennis</span></div>
+            <p class="description">Junior practice sessions Thursday afternoons for various age groups; €24-48 per 12 weeks, 1 free trial for non-members.</p>
+            
+            <a href="../business/greystones-lawn-tennis-club-junior-play-n-stay-1463.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 390, "lat": 53.14886, "lon": -6.06924, "name": "Fitclub", "category": "Athletics", "url": "../business/fitclub-390.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 395, "lat": 53.1472, "lon": -6.06409, "name": "Greystones Presbyterian Church Parent, Baby and Toddler Group", "category": "Parent-and-toddler", "url": "../business/greystones-presbyterian-church-parent-baby-and-toddler-group-395.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1007, "lat": 53.150461, "lon": -6.0830837, "name": "Bloom Baby Classes Wicklow and South Dublin", "category": "Music", "url": "../business/bloom-baby-classes-wicklow-and-south-dublin-1007.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1047, "lat": 53.1504365, "lon": -6.0716092, "name": "Little Kickers Dublin South & Wicklow", "category": "Football", "url": "../business/little-kickers-dublin-south-wicklow-1047.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1068, "lat": 53.1367546, "lon": -6.0664215, "name": "SENSEable Tots Sensory Class in Dublin and Wicklow", "category": "Parent-and-toddler", "url": "../business/senseable-tots-sensory-class-in-dublin-and-wicklow-1068.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1462, "lat": 52.9802376, "lon": -6.0414184, "name": "David Lewis Golf - Junior Golf Camps Greystones", "category": "Sports", "url": "../business/david-lewis-golf-junior-golf-camps-greystones-1462.html", "minAge": 6.0, "maxAge": null, "price": null, "free": false}, {"id": 1463, "lat": null, "lon": null, "name": "Greystones Lawn Tennis Club - Junior Play N Stay", "category": "Tennis", "url": "../business/greystones-lawn-tennis-club-junior-play-n-stay-1463.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Lusk | Kids Patch</title>
+    <meta name="description" content="Browse 5 kids activities and classes in Lusk, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/lusk.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Lusk | Kids Patch">
+    <meta property="og:description" content="Browse 5 kids activities and classes in Lusk, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/lusk.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Lusk | Kids Patch">
+    <meta name="twitter:description" content="Browse 5 kids activities and classes in Lusk, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Lusk", "description": "Browse 5 kids activities and classes in Lusk, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/lusk.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 5, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/lusk-parent-and-toddler-group-246.html", "name": "Lusk Parent and Toddler Group"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/rosey-stars-271.html", "name": "Rosey Stars 🌟"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/parent-and-toddler-group-fingal-sports-hub-1065.html", "name": "Parent and Toddler Group - Fingal Sports Hub"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/tina-mation-1075.html", "name": "Tina Mation"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/lusk-athletic-club-little-athletics-1631.html", "name": "Lusk Athletic Club - Little Athletics"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Lusk</nav>
+        <h1>Kids Activities in Lusk</h1>
+        <p class="landing-intro">Browse 5 kids activities and classes in Lusk. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="246">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Lusk Parent and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Lusk Parent and Toddler Group is open to mums, dads, caregivers and grandparents - come and connect with other local families. The group is for babies up to 3 years of age. Come have a chat and a cuppa (bring a reusable cup with a lid) in a cosy venue while the kids play. Location: The Cottage Community Centre, 1 Church Rd, Lusk, Co. Dublin, K45 VE83 (beside the tree on Lusk Square, across from Murray&#x27;s). Time: every Monday, 9.45-11.45am (during term time). Cost: €3 for 1 child, €5 for 2 children, €7 for 3 children. Contact: lptglusk@gmail.com. Keep an eye on social media for when the group starts back up after school holidays, as it may not always align with term time.</p>
+            
+            <a href="../business/lusk-parent-and-toddler-group-246.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="271">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Rosey Stars 🌟</h3>
+            <div class="tag-container"><span class="tag">Dance</span></div>
+            <p class="description">Kids Zumba Classes led by a licensed and insured instructor. This high-energy class blends dance, movement, music, and fun, designed especially for children. Classes are run by Rosey Stars, a small local business, with a passionate acting and singing coach with years of experience on stage and screen. The focus is on fun, confidence, coordination, creativity, and having a great time in a safe, supportive environment. Location: Lusk Parish Hall. Day: Fridays. Class times by age group: ages 4-6, 4pm; ages 7-10, 5pm. Children are welcome to attend with support from their caregivers, including mum, dad, grandparents, or legal guardians - we love a supportive audience! Caregivers are welcome to stay, especially for younger children, but are not required to remain for the full class once the child is settled and comfortable. Kids should wear comfortable shoes suitable for dancing and comfortable clothes that allow free movement, and bring a water bottle to stay hydrated - no special equipment needed, just energy and smiles. Sibling discounts are available, classes are age-appropriate, structured, and fun, and it&#x27;s a great way for kids to have fun, stay active, socialise, and build confidence.</p>
+            
+            <a href="../business/rosey-stars-271.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1065">
+        <div class="card-image"><img class="banner-img" src="../images/sports-fingal-ie.jpg" alt="Parent and Toddler Group - Fingal Sports Hub" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/sports-fingal-ie.png" alt="Parent and Toddler Group - Fingal Sports Hub logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Parent and Toddler Group - Fingal Sports Hub</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Balbriggan, Swords, Baldoyle, Lusk and Meakstown Parent and Toddler Movement Classes are brought to you by Fingal Sports Office. The group is suitable for babies who are walking, up to 3-4 years old. Movement classes promote development through exercise, yoga and fun games. Registration is required (check their socials) - classes operate on a drop-in basis, but you must register ahead of time. Keep an eye on social media for when the group starts back up after school holidays, as it does not always align with term time. Cost: free. Contact: sports@fingal.ie. Balbriggan: Balbriggan Combined Club, every Thursday at 9.30am (during term time). Baldoyle/Howth: Baldoyle Community Centre, every Thursday at 10am (during term time). Swords: Applewood Community Centre, every Tuesday at 10.30am (during term time), and Holywell Community Centre, every Tuesday at 9.15am (during term time). Lusk: St Macullin&#x27;s Centre, Lusk Parish Hall, every Friday at 9.15am (during term time). Meakstown: Meakstown Community Centre, every Tuesday at 10am (during term time).</p>
+            
+            <a href="../business/parent-and-toddler-group-fingal-sports-hub-1065.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1075">
+        <div class="card-image"><img class="logo-badge" src="../logos/tinamation-net.png" alt="Tina Mation logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Tina Mation</h3>
+            <div class="tag-container"><span class="tag">Arts and crafts</span></div>
+            <p class="description">For over 30 years, children across Dublin and Meath have enjoyed learning to draw with Tina, the much-loved artist and presenter behind the long-running RTÉ children&#x27;s art television series &#x27;Let&#x27;s Draw with Tina&#x27;. Tina&#x27;s fun and encouraging art classes help children build confidence, creativity and drawing skills in a relaxed and supportive environment. Each one-hour class is carefully designed to guide children step-by-step through exciting drawing and art projects, making it easy for all abilities to take part and enjoy. Tina&#x27;s unique teaching method has inspired thousands of children over three decades, both on television and in person. All materials are supplied, so children simply arrive ready to create, learn and have fun. Classes take place in Lusk, Donabate, Glasnevin, Ashbourne, Ballyboughal, and Swords. Perfect for children who love drawing, cartoons, creativity and imaginative art activities.</p>
+            
+            <a href="../business/tina-mation-1075.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1631">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Lusk Athletic Club - Little Athletics</h3>
+            <div class="tag-container"><span class="tag">Athletics</span></div>
+            <p class="description">Little Athletics for ages 6-9, Tuesdays 7-8pm at Lusk National School; biannual tournaments.</p>
+            
+            <a href="../business/lusk-athletic-club-little-athletics-1631.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 246, "lat": 53.52573, "lon": -6.16601, "name": "Lusk Parent and Toddler Group", "category": "Parent-and-toddler", "url": "../business/lusk-parent-and-toddler-group-246.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 271, "lat": 53.52995, "lon": -6.17142, "name": "Rosey Stars 🌟", "category": "Dance", "url": "../business/rosey-stars-271.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1065, "lat": 53.5255827, "lon": -6.1658125, "name": "Parent and Toddler Group - Fingal Sports Hub", "category": "Parent-and-toddler", "url": "../business/parent-and-toddler-group-fingal-sports-hub-1065.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 1075, "lat": 53.5256804, "lon": -6.167649, "name": "Tina Mation", "category": "Arts and crafts", "url": "../business/tina-mation-1075.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1631, "lat": null, "lon": null, "name": "Lusk Athletic Club - Little Athletics", "category": "Athletics", "url": "../business/lusk-athletic-club-little-athletics-1631.html", "minAge": 6.0, "maxAge": 9.0, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

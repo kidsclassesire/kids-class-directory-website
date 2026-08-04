@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Mullingar | Kids Patch</title>
+    <meta name="description" content="Browse 8 kids activities and classes in Mullingar, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/mullingar.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Mullingar | Kids Patch">
+    <meta property="og:description" content="Browse 8 kids activities and classes in Mullingar, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/mullingar.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Mullingar | Kids Patch">
+    <meta name="twitter:description" content="Browse 8 kids activities and classes in Mullingar, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Mullingar", "description": "Browse 8 kids activities and classes in Mullingar, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/mullingar.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 8, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/mullingar-mum-and-baby-group-382.html", "name": "Mullingar Mum and Baby Group"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/mullingar-parent-and-toddler-group-383.html", "name": "Mullingar Parent and Toddler Group"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/mullingar-parent-baby-and-toddler-group-384.html", "name": "Mullingar Parent, Baby and Toddler Group"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/babywearing-ireland-1205.html", "name": "Babywearing ireland"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/bloom-baby-classes-midlands-1262.html", "name": "Bloom Baby Classes - Midlands"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/bloom-baby-classes-midlands-ireland-1265.html", "name": "Bloom Baby Classes Midlands Ireland"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/ready-to-play-1306.html", "name": "Ready to Play"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/mullingar-arts-centre-kinder-stage-school-1453.html", "name": "Mullingar Arts Centre - Kinder Stage School"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="westmeath.html">Westmeath</a> &rsaquo; Mullingar</nav>
+        <h1>Kids Activities in Mullingar</h1>
+        <p class="landing-intro">Browse 8 kids activities and classes in Mullingar. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="westmeath.html">&larr; All activities in County Westmeath</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="382">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Mullingar Mum and Baby Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Mullingar Mum and Baby Group, also known as Baby Café, is open to new mums who would like to meet other new mums. Baby Café is an opportunity to meet new mums, exchange stories of being a new mum, and let baby get lots of tummy time on the mat. The group is suitable for babies up to 10 months. Location: Community Games Hall (beside Town Band Hall), Mullingar. Day/Time: every Wednesday, 11am-12.15pm (during school term time - keep up to date on social media as dates change and are posted on Facebook). Cost: free. This group also runs Baby Massage Classes at times, offered at an affordable rate - keep an eye on their social media page to sign up.</p>
+            
+            <a href="../business/mullingar-mum-and-baby-group-382.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="383">
+        <div class="card-image"><img class="logo-badge" src="../logos/westcd-ie.jpg" alt="Mullingar Parent and Toddler Group logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Mullingar Parent and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Mullingar Parent and Toddler Group allows kids to have free play time, stories, songs and snack time, while parents and carers get to mingle and meet new people. It&#x27;s a popular group as it&#x27;s a drop-in group, so no pressure to be on time or attend each week. Location: Mullingar Parish Community Centre, Mullingar, Co. Westmeath. Day/Time: every Thursday, 10-11.30am (during school term time). Cost: €2 per session. This group also runs Baby Massage Classes at times, offered at an affordable rate - keep an eye on their social media page to sign up.</p>
+            
+            <a href="../business/mullingar-parent-and-toddler-group-383.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="384">
+        <div class="card-image"><img class="banner-img" src="../images/mullingarpresbyterian-com.png" alt="Mullingar Parent, Baby and Toddler Group" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/mullingarpresbyterian-com.png" alt="Mullingar Parent, Baby and Toddler Group logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Mullingar Parent, Baby and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Mullingar Parent, Baby and Toddler Group, also known as Oodles &amp; Doodles, is for parents/carers and their pre-schoolers, with toys to play with, refreshments for all to enjoy, singing, and the opportunity to chat with and meet new people. Location: Mullingar Presbyterian Church. Day/Time: every Wednesday, 10.30am-12pm (during school term time). Cost: free per family.</p>
+            
+            <a href="../business/mullingar-parent-baby-and-toddler-group-384.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1205">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Babywearing ireland</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Babywearing Ireland Sling Meets are peer-to-peer support meetings, facilitated by volunteers who are baby wearers. Peer-to-peer support allows those who attend to help each other and share their experiences - sling meets are informal gatherings, so it&#x27;s not possible for BWI volunteers to give any professional advice. Our sling meets also offer a sling library service, so if you like a particular sling, you can rent it for a small fee, take it home and try it for a month. Our sling categories are stretchy wrap, woven wrap, ring sling, mei tai, and soft structured carriers (SSC). In addition to our in-person meets, we have a national library from which slings can be rented and delivered via courier. Meet-ups are usually monthly - keep an eye on social media to find out the date of the next one.</p>
+            
+            <a href="../business/babywearing-ireland-1205.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1262">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Bloom Baby Classes - Midlands</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">Classes are held on various days and times in multiple locations - see website for more information. Caterpillar Club is an introductory baby class for babies 0-6 months. Watch your baby gaze in delight at our bespoke, bright props, with a different theme each week to treasure memories from baby&#x27;s first, most important year of life. Each baby class ends in a gentle baby massage to relax baby and prepare them for a nice long nap. Busy Bees: at theme time, your baby gets to explore our fun range of bright props and exciting heuristic treasure baskets while developing social skills with fellow Bloom babies - suitable for babies from 6 months to walking, or 15 months. Bloom Toddler Classes: with our own bespoke music, including a phonics song, numbers song and calming zen track, our back-to-back activities for toddlers aid development and focus on first early learning goals.</p>
+            
+            <a href="../business/bloom-baby-classes-midlands-1262.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1265">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Bloom Baby Classes Midlands Ireland</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Locations: Athlone, Edgeworthstown, Longford, Mullingar, Tullamore. Two classes are on offer: Caterpillar Club for babies aged 0-6 months, and Busy Bees for babies aged 6-15 months. Caterpillar Club (birth-6 months) is a gentle and calm introduction to our musical sensory classes, with activities designed to aid all areas of baby development and a strong focus on parent and baby bonding. The class awakens baby&#x27;s first senses and stimulates them in a fun yet soothing way using music, sensory props and lights, ending with a chill parachute and a short guided baby massage to encourage a long nap. Busy Bees (6-15 months) is a fun, lively musical baby development class that focuses on growing baby&#x27;s confidence for the world around them, encouraging fine and gross motor skills, body awareness, early language skills and rhythm. Building on the gentle activities of Caterpillar Club, this session uses instruments and branded props to support development in all areas. Classes feature a new theme every week for a whole year: during theme time, there are fun props, dress-up and music related to that week&#x27;s theme, a great opportunity for Busy Bees to interact with each other while exploring props, heuristic treasure baskets and sensory lights, while Caterpillar babies work on tummy time alongside the sensory lights and themed props. It&#x27;s also a great time for Bloom parents to catch up and get to know one another. Classes run: Tuesday, Mucklagh Community Centre, Tullamore; Wednesday, Mullingar Shamrocks GAA Club; Thursday, Drum Community Centre, Athlone; Friday, St Mary&#x27;s Community Campus, Edgeworthstown.</p>
+            
+            <a href="../business/bloom-baby-classes-midlands-ireland-1265.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1306">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Ready to Play</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Child development experts and teachers create a unique experience weekly, encouraging early learning and development. In class we pride ourselves on forging a sense of community where parents and caregivers build personal connections and lifelong friendships, with classes throughout the Midlands. Through socialisation, your child will explore and discover the world around them. Our classes are great fun for parents, caregivers and children alike, to share together in the vital first five years. Each week you and your little one will go on a new play and musical adventure into the rainforest, under the sea, practising circus skills and many more, with over 30 themes to explore during the year. Our Baby classes are suitable from newborn to pre-walkers, while our Walkers-Toddlers Play &amp; Music classes are suitable for pre-walkers to 3.5 year olds.</p>
+            
+            <a href="../business/ready-to-play-1306.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1453">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Mullingar Arts Centre - Kinder Stage School</h3>
+            <div class="tag-container"><span class="tag">Drama</span></div>
+            <p class="description">Drama, dance and music for ages 3-6, Mon/Thu sessions at Mullingar Arts Centre.</p>
+            
+            <a href="../business/mullingar-arts-centre-kinder-stage-school-1453.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 382, "lat": 53.52232, "lon": -7.34457, "name": "Mullingar Mum and Baby Group", "category": "Parent-and-toddler", "url": "../business/mullingar-mum-and-baby-group-382.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 383, "lat": 53.52706, "lon": -7.34581, "name": "Mullingar Parent and Toddler Group", "category": "Parent-and-toddler", "url": "../business/mullingar-parent-and-toddler-group-383.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 384, "lat": 53.52561, "lon": -7.34188, "name": "Mullingar Parent, Baby and Toddler Group", "category": "Parent-and-toddler", "url": "../business/mullingar-parent-baby-and-toddler-group-384.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 1205, "lat": 53.525822, "lon": -7.341304, "name": "Babywearing ireland", "category": "Parent-and-toddler", "url": "../business/babywearing-ireland-1205.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1262, "lat": 53.525822, "lon": -7.341304, "name": "Bloom Baby Classes - Midlands", "category": "Developmental", "url": "../business/bloom-baby-classes-midlands-1262.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1265, "lat": 53.525822, "lon": -7.341304, "name": "Bloom Baby Classes Midlands Ireland", "category": "Parent-and-toddler", "url": "../business/bloom-baby-classes-midlands-ireland-1265.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1306, "lat": 53.5182334, "lon": -7.3609067, "name": "Ready to Play", "category": "Parent-and-toddler", "url": "../business/ready-to-play-1306.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1453, "lat": 53.5251912, "lon": -7.3415469, "name": "Mullingar Arts Centre - Kinder Stage School", "category": "Drama", "url": "../business/mullingar-arts-centre-kinder-stage-school-1453.html", "minAge": 3.0, "maxAge": 6.0, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

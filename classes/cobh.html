@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Cobh | Kids Patch</title>
+    <meta name="description" content="Browse 7 kids activities and classes in Cobh, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/cobh.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Cobh | Kids Patch">
+    <meta property="og:description" content="Browse 7 kids activities and classes in Cobh, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/cobh.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Cobh | Kids Patch">
+    <meta name="twitter:description" content="Browse 7 kids activities and classes in Cobh, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Cobh", "description": "Browse 7 kids activities and classes in Cobh, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/cobh.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 7, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/cobh-parent-baby-toddler-group-635.html", "name": "Cobh Parent, Baby & Toddler Group"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/fundamental-football-643.html", "name": "Fundamental Football"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/cork-judo-club-1343.html", "name": "Cork Judo Club"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/cork-sports-partnership-try-track-field-cobh-1344.html", "name": "Cork Sports Partnership - Try Track & Field Cobh"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/cove-sailing-club-junior-sailing-1345.html", "name": "Cove Sailing Club - Junior Sailing"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/sailcork-junior-courses-1347.html", "name": "SailCork - Junior Courses"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/cobh-ramblers-fc-junior-academy-1527.html", "name": "Cobh Ramblers FC - Junior Academy"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="cork.html">Cork</a> &rsaquo; Cobh</nav>
+        <h1>Kids Activities in Cobh</h1>
+        <p class="landing-intro">Browse 7 kids activities and classes in Cobh. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="cork.html">&larr; All activities in County Cork</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="635">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Cobh Parent, Baby &amp; Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Cobh Parent, Baby and Toddler Group in Cork is hosted by Cobh Family Resource Centre, for parents/carers of babies and children up to age 3. It&#x27;s an opportunity to meet in a safe, friendly environment while children play and socialise together, with arts and crafts facilities in place if you want to get creative. Location: Cobh Family Resource Centre, Park House, Cloyne Terrace, Cobh, Co. Cork. Time: every Tuesday, 10.30am-12pm (during school term time). Cost: free per family. Contact: 021 4816103.</p>
+            
+            <a href="../business/cobh-parent-baby-toddler-group-635.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="643">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Fundamental Football</h3>
+            <div class="tag-container"><span class="tag">Football</span></div>
+            <p class="description">Our fun football classes for boys &amp; girls aged 3-6 focus on learning the basics of football in a positive, energetic environment where kids can build confidence, make friends, and, most importantly, have fun. We are the only football classes in Cobh dedicated specifically to 3-6 year olds, focusing on fun &amp; confidence, basic football skills, teamwork &amp; friendships, and a safe, positive environment. Location: Bunscoil Rinn an Chabhlaigh, Cobh. New term starting 7th June. Time: 10am &amp; 11am.</p>
+            
+            <a href="../business/fundamental-football-643.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1343">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Cork Judo Club</h3>
+            <div class="tag-container"><span class="tag">Martial Arts</span></div>
+            <p class="description">Judo for all ages at Cobh Great Island Community Centre; kids sessions Thursdays 6-7pm, ages 5-16.</p>
+            
+            <a href="../business/cork-judo-club-1343.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1344">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Cork Sports Partnership - Try Track &amp; Field Cobh</h3>
+            <div class="tag-container"><span class="tag">Athletics</span></div>
+            <p class="description">Free 8-week Try Track &amp; Field programme for ages 7+ in Cobh, beginner coaching in running, jumping and throwing; starts Wednesdays 7-8pm.</p>
+            
+            <a href="../business/cork-sports-partnership-try-track-field-cobh-1344.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1345">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Cove Sailing Club - Junior Sailing</h3>
+            <div class="tag-container"><span class="tag">Watersports</span></div>
+            <p class="description">Junior sailing at Whitepoint, Cobh since 2009, dedicated dinghy fleet and qualified instructors; three Saturday sessions weekly.</p>
+            
+            <a href="../business/cove-sailing-club-junior-sailing-1345.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1347">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>SailCork - Junior Courses</h3>
+            <div class="tag-container"><span class="tag">Watersports</span></div>
+            <p class="description">Junior sailing, powerboating, rafting and kayaking for ages 4-16 at East Ferry Marina, Cobh; weekly Saturday sessions and holiday camps.</p>
+            
+            <a href="../business/sailcork-junior-courses-1347.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1527">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Cobh Ramblers FC - Junior Academy</h3>
+            <div class="tag-container"><span class="tag">Football</span></div>
+            <p class="description">Junior football academy Sundays 6-7pm for outfield players and goalkeepers ages 7-14 at St. Colman&#x27;s Park; €120 + €50/month.</p>
+            
+            <a href="../business/cobh-ramblers-fc-junior-academy-1527.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 635, "lat": 51.8581581, "lon": -8.3005774, "name": "Cobh Parent, Baby & Toddler Group", "category": "Parent-and-toddler", "url": "../business/cobh-parent-baby-toddler-group-635.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 643, "lat": 51.8502284, "lon": -8.2950649, "name": "Fundamental Football", "category": "Football", "url": "../business/fundamental-football-643.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1343, "lat": null, "lon": null, "name": "Cork Judo Club", "category": "Martial Arts", "url": "../business/cork-judo-club-1343.html", "minAge": 5.0, "maxAge": 16.0, "price": null, "free": false}, {"id": 1344, "lat": null, "lon": null, "name": "Cork Sports Partnership - Try Track & Field Cobh", "category": "Athletics", "url": "../business/cork-sports-partnership-try-track-field-cobh-1344.html", "minAge": 7.0, "maxAge": null, "price": null, "free": false}, {"id": 1345, "lat": null, "lon": null, "name": "Cove Sailing Club - Junior Sailing", "category": "Watersports", "url": "../business/cove-sailing-club-junior-sailing-1345.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1347, "lat": 51.8519672, "lon": -8.2830787, "name": "SailCork - Junior Courses", "category": "Watersports", "url": "../business/sailcork-junior-courses-1347.html", "minAge": 4.0, "maxAge": 16.0, "price": null, "free": false}, {"id": 1527, "lat": 51.8510323, "lon": -8.2931122, "name": "Cobh Ramblers FC - Junior Academy", "category": "Football", "url": "../business/cobh-ramblers-fc-junior-academy-1527.html", "minAge": 7.0, "maxAge": 14.0, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

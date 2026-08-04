@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Rathmines | Kids Patch</title>
+    <meta name="description" content="Browse 11 kids activities and classes in Rathmines, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/rathmines.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Rathmines | Kids Patch">
+    <meta property="og:description" content="Browse 11 kids activities and classes in Rathmines, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/rathmines.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Rathmines | Kids Patch">
+    <meta name="twitter:description" content="Browse 11 kids activities and classes in Rathmines, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Rathmines", "description": "Browse 11 kids activities and classes in Rathmines, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/rathmines.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 11, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/b-a-n-t-s-445.html", "name": "B.A.N.T.S"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/dada-474.html", "name": "DADA"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/leeson-park-school-of-music-510.html", "name": "Leeson Park School of Music"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/swan-leisure-543.html", "name": "Swan Leisure"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/stratford-lawn-992.html", "name": "Stratford Lawn"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/claphandies-playlabs-dublin-1018.html", "name": "ClapHandies PlayLabs - Dublin"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/claphandies-playlabs-dublin-1019.html", "name": "ClapHandies PlayLabs - Dublin"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/claphandies-1026.html", "name": "Claphandies"}, {"@type": "ListItem", "position": 9, "url": "https://www.kidspatch.ie/business/claphandies-1032.html", "name": "Claphandies"}, {"@type": "ListItem", "position": 10, "url": "https://www.kidspatch.ie/business/little-kickers-dublin-south-wicklow-1043.html", "name": "Little Kickers Dublin South & Wicklow"}, {"@type": "ListItem", "position": 11, "url": "https://www.kidspatch.ie/business/music-cubs-1060.html", "name": "Music Cubs"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Rathmines</nav>
+        <h1>Kids Activities in Rathmines</h1>
+        <p class="landing-intro">Browse 11 kids activities and classes in Rathmines. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="445">
+        <div class="card-image"><img class="banner-img" src="../images/bants-ie.png" alt="B.A.N.T.S" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/bants-ie.png" alt="B.A.N.T.S logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>B.A.N.T.S</h3>
+            <div class="tag-container"><span class="tag">Drama</span></div>
+            <p class="description">With over 65 years of experience, B.A.N.T.S is Ireland&#x27;s oldest theatre school, offering Speech and Drama classes for children and teenagers aged 4 to 18 in Dublin. Founded in 1951, the school has a rich legacy of excellence and a reputation for fostering a lifelong love of drama. Classes focus on building confidence, clear speech, and creativity, whether students are beginners or more advanced. Small class sizes ensure individual attention, and students have the opportunity to take grade examinations with Trinity College London and participate in solo and group competitions throughout the year.</p>
+            
+            <a href="../business/b-a-n-t-s-445.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="474">
+        <div class="card-image"><img class="logo-badge" src="../logos/dada-ie.png" alt="DADA logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>DADA</h3>
+            <div class="tag-container"><span class="tag">Drama</span></div>
+            <p class="description">DADA has been nurturing young talent for 25 years, offering a wide range of classes for kids aged 3 to 18. Led by Hilary Cahill, their experienced and dedicated teaching staff focus on building confidence and creativity in a safe, fun environment. Students have the chance to perform in the annual show at the Civic Theatre, with recent productions including Oliver!, Chitty Chitty Bang Bang, Matilda, and Bugsy Malone. Plus, advanced students in &#x27;Your Theatre&#x27; take part in their own productions at Smock Alley Theatre, with past shows like Into The Woods and The Secret Garden.</p>
+            
+            <a href="../business/dada-474.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="510">
+        <div class="card-image"><img class="banner-img" src="../images/lpsm-ie.jpg" alt="Leeson Park School of Music" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/lpsm-ie.png" alt="Leeson Park School of Music logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Leeson Park School of Music</h3>
+            <div class="tag-container"><span class="tag">Music</span></div>
+            <p class="description">Music Kindergarten takes the young child on a wonderful adventure through &#x27;Musicland&#x27;, where their sense of pitch and rhythm is developed alongside training of the inner ear. All classes introduce different musical concepts such as pitch, rhythm, melody, dynamics, tempo, character, form and style, in a playful way through a carefully chosen selection of well-known rhymes and children&#x27;s songs. Music Kindergarten classes (1-4 years) take young children on this adventure through &#x27;Musicland&#x27; via the Colourstrings approach. The Pre-Instrumental Programme (4-7 years) is the after-school introductory music class, a 2-year programme - these weekly classes allow children to attend on their own, which encourages them to build a relationship with music.</p>
+            
+            <a href="../business/leeson-park-school-of-music-510.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="543">
+        <div class="card-image"><img class="banner-img" src="../images/swanleisure-ie.jpg" alt="Swan Leisure" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/swanleisure-ie.png" alt="Swan Leisure logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Swan Leisure</h3>
+            <div class="tag-container"><span class="tag">Swimming</span></div>
+            <p class="description">Swan Leisure in Rathmines offers high-quality children’s swimming lessons in a welcoming, family-friendly environment. With a strong focus on water safety, skill development, and fun, their structured programme supports swimmers of all levels—from beginners to more advanced. Led by experienced instructors, Swan Leisure’s lessons take place in a modern, well-maintained pool with a warm and supportive atmosphere that encourages confidence and progression. Conveniently located and loved by local families, it’s an ideal spot for children to learn essential swimming skills while enjoying every splash along the way.</p>
+            
+            <a href="../business/swan-leisure-543.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="992">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Stratford Lawn</h3>
+            <div class="tag-container"><span class="tag">Tennis</span></div>
+            <p class="description">Stratford LTC offers year-round junior coaching on four floodlit all-weather courts, with access to four grass courts during summer. Coaching is available for children aged 5 and up, with lessons grouped by age and skill level. Classes follow the school year in 6-week blocks, focusing on technique, drills, and gameplay. Each 60-minute session uses the ITF Tennis 10s system, with red, orange, and green balls to support skill development. Summer camps replace weekly lessons during school holidays. All coaches are experienced, Garda vetted, and trained in child safeguarding.</p>
+            
+            <a href="../business/stratford-lawn-992.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1018">
+        <div class="card-image"><img class="banner-img" src="../images/claphandies-com-0de07d.png" alt="ClapHandies PlayLabs - Dublin" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/claphandies-com-0de07d.png" alt="ClapHandies PlayLabs - Dublin logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>ClapHandies PlayLabs - Dublin</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">The PlayLabs are weekly developmental sensory play classes for babies, wobblers and/or toddlers. The classes are designed to provide a fun and engaging environment for both children and adults! With music, learning, social interaction, and sensory play, you and your little one are sure to have a great time together. They are also a chance for children to socialise with children of their own age, while offering parents/caregivers the opportunity to get to know others in their area too. Baby PlayLabs (6 weeks - 7 months) - 55 minute class duration Wobbler PlayLabs (8 months - 15 months) - 50 minute class duration Toddler PlayLabs (16 months - 3.5 years) - 50 minute class duration We typically run toddlers at 9.45am/10am, wobblers at 10.45am/11am and babies at 11.45am/12pm - venue dependent. You can check out more information about our classes on our website: https://site.claphandies.com/ In addition to your term&#x27;s booking, we also offer you 3 months free access to ClapHandies at Home which is an online resource filled with hours of follow-along music and guided playtime videos for you and your little ones to enjoy at home. So if you miss any of your classes during a term, you can run your own PlayLab at home or just tune in to have some extra fun during the week. If you are signing up for our Baby PlayLabs in particular, we also provide you with a link to our informative Baby Massage e-manual so you can continue practising the massage strokes at home.</p>
+            
+            <a href="../business/claphandies-playlabs-dublin-1018.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1019">
+        <div class="card-image"><img class="banner-img" src="../images/claphandies-com-0de07d.png" alt="ClapHandies PlayLabs - Dublin" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/claphandies-com-0de07d.png" alt="ClapHandies PlayLabs - Dublin logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>ClapHandies PlayLabs - Dublin</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">The PlayLabs are weekly developmental sensory play classes for babies, wobblers and/or toddlers. The classes are designed to provide a fun and engaging environment for both children and adults! With music, learning, social interaction, and sensory play, you and your little one are sure to have a great time together. They are also a chance for children to socialise with children of their own age, while offering parents/caregivers the opportunity to get to know others in their area too. Baby PlayLabs (6 weeks - 7 months) - 55 minute class duration Wobbler PlayLabs (8 months - 15 months) - 50 minute class duration Toddler PlayLabs (16 months - 3.5 years) - 50 minute class duration We typically run toddlers at 9.45am/10am, wobblers at 10.45am/11am and babies at 11.45am/12pm - venue dependent. You can check out more information about our classes on our website: https://site.claphandies.com/ In addition to your term&#x27;s booking, we also offer you 3 months free access to ClapHandies at Home which is an online resource filled with hours of follow-along music and guided playtime videos for you and your little ones to enjoy at home. So if you miss any of your classes during a term, you can run your own PlayLab at home or just tune in to have some extra fun during the week. If you are signing up for our Baby PlayLabs in particular, we also provide you with a link to our informative Baby Massage e-manual so you can continue practising the massage strokes at home.</p>
+            
+            <a href="../business/claphandies-playlabs-dublin-1019.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1026">
+        <div class="card-image"><img class="banner-img" src="../images/claphandies-com-271ddb.png" alt="Claphandies" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/claphandies-com-271ddb.png" alt="Claphandies logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Claphandies</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">ClapHandies PlayLabs offer babies, wobblers and toddlers (birth to 3.5 years) a chance to play, meet other children and develop new skills. Sessions include music, song and rhyme time, and a class teaching the core baby massage techniques. We also focus on gross motor skills and language development, teaching baby sign language. The weekly classes offer a wide variety of engaging experiences tailored to the needs of each age group, and are also a chance for children to socialise with children of their own age, while giving parents/caregivers the opportunity to get to know others in their area too. Each term runs for 7 weeks, with a 50% sibling discount. Classes are offered in various locations across Ireland.</p>
+            
+            <a href="../business/claphandies-1026.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1032">
+        <div class="card-image"><img class="banner-img" src="../images/claphandies-com-271ddb.png" alt="Claphandies" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/claphandies-com-271ddb.png" alt="Claphandies logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Claphandies</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">ClapHandies PlayLabs offer babies, wobblers and toddlers (birth to 3.5 years) a chance to play, meet other children and develop new skills. Sessions include music, song and rhyme time, and a class teaching the core baby massage techniques. We also focus on gross motor skills and language development, teaching baby sign language. The weekly classes offer a wide variety of engaging experiences tailored to the needs of each age group, and are also a chance for children to socialise with children of their own age, while giving parents/caregivers the opportunity to get to know others in their area too. Each term runs for 7 weeks, with a 50% sibling discount. Classes are offered in various locations across Ireland.</p>
+            
+            <a href="../business/claphandies-1032.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1043">
+        <div class="card-image"><img class="logo-badge" src="../logos/littlekickers-ie-5bd0cf.png" alt="Little Kickers Dublin South &amp; Wicklow logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Little Kickers Dublin South &amp; Wicklow</h3>
+            <div class="tag-container"><span class="tag">Football</span></div>
+            <p class="description">Join the world&#x27;s No. 1 preschool football programme, with over 100,000 children participating every week. Our play-orientated classes are fun, engaging, and nurture a love of sport from an early age. We are proud to be more than just football - while football is the tool we use, our goal is to develop the fundamentals of movement (balance, agility &amp; coordination), fundamental movement skills (running, hopping, skipping, jumping), social skills such as listening, sharing and taking turns, and early learning concepts like numbers, colours and body parts. We have 4 different age groups to ensure children participate with their peers at around the same developmental level. Our Little Kickers programme is suitable for children aged 18 months to 2.5 years - it&#x27;s a parent-toddler programme requiring active parental participation, which ensures your child gets the very best out of the sessions; learning to listen and follow instructions through engaging, fun games is the goal at this level. Our Junior Kickers classes are for 2.5 to 3.5 year olds, who are starting to get more independent at this stage - children participate more by themselves, though many will still like to have their parents close to them at the magic wall, with Play, Practice, Understand as the learning outcome. The next stage is Mighty Kickers, suitable for 3.5 to 5 year olds, where most children participate independently with parents encouraged to support from the sidelines, further developing Play, Practice, Understand. The Mega Kickers programme brings together all the learning outcomes from the previous levels, relying less on the play-orientated structure of earlier stages, with a 20-minute match at the end of each session preparing children to move onto football academies and continue their football journey. Throughout all stages, our core philosophy of Play not Push is embodied - we believe children should be gently encouraged to participate and allowed to watch if they are unsure, in the hope that seeing other children in the class participating will spur them on to join in the fun.</p>
+            
+            <a href="../business/little-kickers-dublin-south-wicklow-1043.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1060">
+        <div class="card-image"><img class="banner-img" src="../images/happycubs-ie-575e6e.png" alt="Music Cubs" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/happycubs-ie-575e6e.png" alt="Music Cubs logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Music Cubs</h3>
+            <div class="tag-container"><span class="tag">Music</span></div>
+            <p class="description">Parent &amp; child music classes for babies, toddlers and big cubs aged 0 to 5 years. Music Cubs classes are 30 minutes of fun, melody and play, introducing musical rhythms, beats and tempos, and teaching simple percussion to your bear cub. Enjoy live performances on a variety of instruments, and a time to immerse yourselves in music together. Little ones have a natural love of music - grow that love in a gentle, fun way. Classes in various locations across Dublin.</p>
+            
+            <a href="../business/music-cubs-1060.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 445, "lat": 53.3265199, "lon": -6.2648571, "name": "B.A.N.T.S", "category": "Drama", "url": "../business/b-a-n-t-s-445.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 474, "lat": 53.3194584, "lon": -6.2708917, "name": "DADA", "category": "Drama", "url": "../business/dada-474.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 510, "lat": 53.3291709, "lon": -6.2674421, "name": "Leeson Park School of Music", "category": "Music", "url": "../business/leeson-park-school-of-music-510.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 543, "lat": 53.3248426, "lon": -6.266509, "name": "Swan Leisure", "category": "Swimming", "url": "../business/swan-leisure-543.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 992, "lat": 53.3243976, "lon": -6.2731305, "name": "Stratford Lawn", "category": "Tennis", "url": "../business/stratford-lawn-992.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1018, "lat": 53.3265199, "lon": -6.2648571, "name": "ClapHandies PlayLabs - Dublin", "category": "Developmental", "url": "../business/claphandies-playlabs-dublin-1018.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1019, "lat": 53.3265199, "lon": -6.2648571, "name": "ClapHandies PlayLabs - Dublin", "category": "Developmental", "url": "../business/claphandies-playlabs-dublin-1019.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1026, "lat": 53.3265199, "lon": -6.2648571, "name": "Claphandies", "category": "Developmental", "url": "../business/claphandies-1026.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1032, "lat": 53.3265199, "lon": -6.2648571, "name": "Claphandies", "category": "Developmental", "url": "../business/claphandies-1032.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1043, "lat": 53.3220295, "lon": -6.2693584, "name": "Little Kickers Dublin South & Wicklow", "category": "Football", "url": "../business/little-kickers-dublin-south-wicklow-1043.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1060, "lat": 53.3134969, "lon": -6.2386593, "name": "Music Cubs", "category": "Music", "url": "../business/music-cubs-1060.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

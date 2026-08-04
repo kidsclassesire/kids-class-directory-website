@@ -91,12 +91,80 @@ def derive_county(address):
     return matches[-1].group(1).title() if matches else None
 
 
+# Curated candidate towns for their own landing page, each tied to its county so a
+# town match can be cross-checked against the row's already-derived county (guards
+# against a same-named place in a different county being mis-filed). None of these
+# share a name with their own county -- those (Cork, Galway, Sligo, etc.) are
+# handled separately by COUNTY_TOWN_PAGES/is_county_town_address, since a bare
+# regex match on e.g. "Cork" can't tell "Cork city" apart from "County Cork".
+# Deliberately curated rather than derived from raw address parsing (which also
+# turns up street names, school names and townlands as false positives) -- adding
+# a town here doesn't guarantee it gets a page, MIN_TOWN below still gates that.
+TOWN_COUNTY = {
+    'Drogheda': 'Louth', 'Dundalk': 'Louth',
+    'Portlaoise': 'Laois', 'Portarlington': 'Laois',
+    'Tralee': 'Kerry', 'Killarney': 'Kerry',
+    'Clonmel': 'Tipperary', 'Nenagh': 'Tipperary', 'Roscrea': 'Tipperary',
+    'Thurles': 'Tipperary', 'Carrick-on-Suir': 'Tipperary',
+    'Navan': 'Meath', 'Dunboyne': 'Meath', 'Ratoath': 'Meath', 'Kells': 'Meath',
+    'Mullingar': 'Westmeath', 'Athlone': 'Westmeath',
+    'Ennis': 'Clare', 'Shannon': 'Clare',
+    'Cobh': 'Cork', 'Clonakilty': 'Cork', 'Ballincollig': 'Cork', 'Midleton': 'Cork',
+    'Carrigtwohill': 'Cork', 'Kinsale': 'Cork', 'Mallow': 'Cork',
+    'Ballinasloe': 'Galway', 'Oranmore': 'Galway', 'Tuam': 'Galway',
+    'Letterkenny': 'Donegal', 'Buncrana': 'Donegal',
+    'Bray': 'Wicklow', 'Greystones': 'Wicklow', 'Arklow': 'Wicklow',
+    'Ballina': 'Mayo', 'Castlebar': 'Mayo', 'Westport': 'Mayo',
+    'Dungarvan': 'Waterford', 'Tramore': 'Waterford',
+    'New Ross': 'Wexford', 'Enniscorthy': 'Wexford', 'Gorey': 'Wexford',
+    'Tullamore': 'Offaly', 'Birr': 'Offaly',
+    'Naas': 'Kildare', 'Maynooth': 'Kildare', 'Celbridge': 'Kildare',
+    'Newbridge': 'Kildare', 'Leixlip': 'Kildare',
+    # Dublin suburbs with their own independent search identity, distinct from a
+    # generic "Dublin" search -- these dominate the raw address-frequency counts.
+    'Tallaght': 'Dublin', 'Swords': 'Dublin', 'Balbriggan': 'Dublin', 'Dundrum': 'Dublin',
+    'Rathfarnham': 'Dublin', 'Rathmines': 'Dublin', 'Blanchardstown': 'Dublin',
+    'Terenure': 'Dublin', 'Malahide': 'Dublin', 'Templeogue': 'Dublin',
+    'Stillorgan': 'Dublin', 'Firhouse': 'Dublin', 'Dalkey': 'Dublin', 'Clontarf': 'Dublin',
+    'Clondalkin': 'Dublin', 'Skerries': 'Dublin', 'Castleknock': 'Dublin',
+    'Knocklyon': 'Dublin', 'Drumcondra': 'Dublin', 'Monkstown': 'Dublin',
+    'Sandymount': 'Dublin', 'Lucan': 'Dublin', 'Mount Merrion': 'Dublin',
+    'Kilternan': 'Dublin', 'Shankill': 'Dublin', 'Foxrock': 'Dublin', 'Ballsbridge': 'Dublin',
+    'Lusk': 'Dublin', 'Dun Laoghaire': 'Dublin', 'Ballinteer': 'Dublin',
+    'Blackrock': 'Dublin', 'Sandyford': 'Dublin',
+}
+TOWN_LABEL_BY_LOWER = {name.lower(): name for name in TOWN_COUNTY}
+TOWN_RE = re.compile(
+    r'\b(' + '|'.join(re.escape(n) for n in sorted(TOWN_COUNTY, key=len, reverse=True)) + r')\b',
+    re.IGNORECASE,
+)
+MIN_TOWN = 4
+
+
+def derive_town(address, expected_county):
+    # Same rightmost-match convention as derive_county, plus a cross-check against
+    # the county already derived for this row -- a coincidental match against the
+    # wrong county's town (e.g. a same-named street) is discarded rather than
+    # mis-filing the row under the wrong town page.
+    if not address or not expected_county:
+        return None
+    matches = list(TOWN_RE.finditer(address))
+    if not matches:
+        return None
+    label = TOWN_LABEL_BY_LOWER[matches[-1].group(1).lower()]
+    return label if TOWN_COUNTY[label] == expected_county else None
+
+
 def category_slug(cat):
     return slugify(cat)
 
 
 def county_slug(county):
     return slugify(county)
+
+
+def town_slug(town):
+    return slugify(town)
 
 
 def combo_slug(cat, county):
@@ -349,7 +417,7 @@ def render_category_page(cat, rows, combo_counties_for_cat):
     return slug, page_html
 
 
-def render_county_page(county, rows, combo_cats_for_county, citytown=None):
+def render_county_page(county, rows, combo_cats_for_county, citytowns=None):
     slug = county_slug(county)
     canonical = f'{SITE_URL}/classes/{slug}.html'
     title = f'Kids Activities in {county} | Kids Patch'
@@ -382,13 +450,9 @@ def render_county_page(county, rows, combo_cats_for_county, citytown=None):
         links_html = ''.join(f'<a href="{path}">{esc(cat)}</a>' for cat, path in combo_links)
         crosslinks = f'<div class="landing-crosslinks"><h2>Browse activities in {esc(county)} by category</h2><div class="crosslink-list">{links_html}</div></div>'
 
-    if citytown:
-        citytown_label, citytown_slug = citytown
-        crosslinks += (
-            '<div class="landing-crosslinks">'
-            f'<a href="{citytown_slug}.html">See activities in {esc(citytown_label)} specifically &rarr;</a>'
-            '</div>'
-        )
+    if citytowns:
+        town_links_html = ''.join(f'<a href="{ct_slug}.html">{esc(label)}</a>' for label, ct_slug in sorted(citytowns))
+        crosslinks += f'<div class="landing-crosslinks"><h2>Browse activities in {esc(county)} by town</h2><div class="crosslink-list">{town_links_html}</div></div>'
 
     grid = landing_grid_html(rows, tag_kind='category')
     map_html = landing_map_div_html(rows)
@@ -537,25 +601,52 @@ def main():
         landing_paths.append(f'classes/{slug}.html')
         category_pages.append((cat, slug))
 
+    # County-town (namesake) pages: Cork City vs county Cork, etc. Can't use a
+    # plain regex match here -- "Cork" also substring-matches "County Cork" --
+    # so is_county_town_address() disambiguates via comma-segment instead.
     rows_by_citytown = defaultdict(list)
     for r in rows:
         county = r.get('_county')
         if county in COUNTY_TOWN_PAGES and is_county_town_address(r.get('address'), county):
             rows_by_citytown[county].append(r)
 
+    # Generic town pages (Drogheda, Tralee, Dublin suburbs, ...): a plain regex
+    # match against the curated TOWN_COUNTY list is safe here since none of these
+    # share a name with their own county.
+    rows_by_town = defaultdict(list)
+    for r in rows:
+        town = derive_town(r.get('address'), r.get('_county'))
+        if town:
+            rows_by_town[town].append(r)
+
+    town_pages_by_county = defaultdict(list)  # county -> [(label, slug), ...] for county-page crosslinks
+    town_page_jobs = []  # (county, label, slug, rows) actually worth rendering
+
+    for county, (label, ct_slug) in COUNTY_TOWN_PAGES.items():
+        ct_rows = rows_by_citytown.get(county, [])
+        if len(ct_rows) >= MIN_COUNTY:
+            town_pages_by_county[county].append((label, ct_slug))
+            town_page_jobs.append((county, label, ct_slug, ct_rows))
+
+    for town, town_rows in rows_by_town.items():
+        if len(town_rows) < MIN_TOWN:
+            continue
+        county = TOWN_COUNTY[town]
+        slug = town_slug(town)
+        town_pages_by_county[county].append((town, slug))
+        town_page_jobs.append((county, town, slug, town_rows))
+
     for county, county_rows in sorted(rows_by_county.items()):
         if len(county_rows) < MIN_COUNTY:
             continue
-        citytown = COUNTY_TOWN_PAGES.get(county) if len(rows_by_citytown.get(county, [])) >= MIN_COUNTY else None
-        slug, page_html = render_county_page(county, county_rows, combo_cats_by_county.get(county, {}), citytown)
+        slug, page_html = render_county_page(
+            county, county_rows, combo_cats_by_county.get(county, {}), town_pages_by_county.get(county)
+        )
         (CLASSES_DIR / f'{slug}.html').write_text(page_html, encoding='utf-8')
         landing_paths.append(f'classes/{slug}.html')
         county_pages.append((county, slug))
 
-    for county, (label, ct_slug) in sorted(COUNTY_TOWN_PAGES.items()):
-        ct_rows = rows_by_citytown.get(county, [])
-        if len(ct_rows) < MIN_COUNTY:
-            continue
+    for county, label, ct_slug, ct_rows in sorted(town_page_jobs, key=lambda job: (job[0], job[1])):
         _, page_html = render_citytown_page(county, label, ct_slug, ct_rows)
         (CLASSES_DIR / f'{ct_slug}.html').write_text(page_html, encoding='utf-8')
         landing_paths.append(f'classes/{ct_slug}.html')
@@ -576,7 +667,8 @@ def main():
     assert len(landing_paths) == len(set(landing_paths)), 'duplicate landing page path(s) detected'
 
     print(f'Wrote {len(landing_paths)} landing pages '
-          f'({len(category_pages)} category, {len(county_pages)} county, {combo_count} combo, 1 hub).')
+          f'({len(category_pages)} category, {len(county_pages)} county, {len(town_page_jobs)} town, '
+          f'{combo_count} combo, 1 hub).')
 
     manifest = json.loads((REPO_ROOT / 'business-index.json').read_text())
     today = date.today().isoformat()

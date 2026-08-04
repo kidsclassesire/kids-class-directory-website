@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Portarlington | Kids Patch</title>
+    <meta name="description" content="Browse 6 kids activities and classes in Portarlington, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/portarlington.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Portarlington | Kids Patch">
+    <meta property="og:description" content="Browse 6 kids activities and classes in Portarlington, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/portarlington.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Portarlington | Kids Patch">
+    <meta name="twitter:description" content="Browse 6 kids activities and classes in Portarlington, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Portarlington", "description": "Browse 6 kids activities and classes in Portarlington, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/portarlington.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 6, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/zumbini-584.html", "name": "Zumbini"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/portarlington-parent-baby-toddler-group-801.html", "name": "Portarlington Parent, Baby & Toddler Group"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/portarlington-toddler-group-buggy-group-802.html", "name": "Portarlington Toddler Group & Buggy Group"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/portarlington-baby-group-kids-book-clubs-lego-group-803.html", "name": "Portarlington- Baby Group / Kids Book Clubs / Lego Group"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/little-kickers-county-laois-carlow-and-kilkenny-1267.html", "name": "Little Kickers County Laois, Carlow and Kilkenny"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/portarlington-afterschools-1625.html", "name": "Portarlington Afterschools"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="laois.html">Laois</a> &rsaquo; Portarlington</nav>
+        <h1>Kids Activities in Portarlington</h1>
+        <p class="landing-intro">Browse 6 kids activities and classes in Portarlington. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="laois.html">&larr; All activities in County Laois</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="584">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Zumbini</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Zumbini Class, a toddlers/parents group for kids (ages 0-5 years) and their caregivers. The Zumbini programme combines music, dance and educational tools for 45 minutes of nonstop bonding and fun - a great opportunity to spend time together with your child, combining development, activity, lots of fun and learning. Activities include dancing, singing, and playing instruments (drums/sticks etc). At the first class, your child receives a gift from Zumbini; at the last class, your child receives a certificate. Saturdays: Portarlington, 12.15pm; Monasterevin, 10.30am; Athy, 11.30am; Carlow, 12.30pm. Contact for a new session.</p>
+            
+            <a href="../business/zumbini-584.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="801">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Portarlington Parent, Baby &amp; Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Portarlington Parent, Baby and Toddler Group in Laois currently operates twice a week, on a drop-in basis, so no need to book, just pop along. Open to mums, dads, childminders and babies/toddlers - the perfect place for playtime, storytelling and fun educational activities too. Location: Portarlington Community Centre, Link Road, Portarlington. Time: every Tuesday, 9.30-10.30am, and every Friday, 10.45am-12.15pm (check times during school holidays, as they may change). Cost: free. Contact: portplaygroup@gmail.com</p>
+            
+            <a href="../business/portarlington-parent-baby-toddler-group-801.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="802">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Portarlington Toddler Group &amp; Buggy Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Portarlington Parent, Baby and Toddler Group in Laois runs activities on a monthly basis, viewable on their social media accounts (Facebook &amp; Instagram) and their Members WhatsApp group - keep an eye out for special events planned throughout the year. A light healthy snack is provided (e.g. crackers, or toast with ham, cheese etc.) for both adults and children, along with hot drinks for adults and water and diluted juice for the children. Classes are limited to 35 children per class, so it&#x27;s essential to pre-book in advance, as they wouldn&#x27;t like to turn people away. Membership of the group offers a discounted class rate, priority on activities, and a loyalty programme. Each child must register their details at the first class, for insurance purposes. Location: Parochial Hall, Portarlington, R32 YK24. Time: every Friday, 9-11am (check times during school holidays, as they may change). Cost: between €2-4 per child. Contact: portplaygroup@gmail.com. The Buggy Group, a walking group, takes place on Tuesday mornings, meeting at 10am at Costa.</p>
+            
+            <a href="../business/portarlington-toddler-group-buggy-group-802.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="803">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Portarlington- Baby Group / Kids Book Clubs / Lego Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Portarlington Library offers great groups for babies and kids, all for free. The groups listed below are regular events, but the library runs many pop-up classes/workshops throughout the year (especially around school holidays), so sign up to their newsletter to stay up to date. Location: Portarlington Library, 2 Main Street, Cooltederry, Portarlington, Co. Laois, R32 F9WF. Cost: free. Contact: portarlingtonlibrary@laoiscoco.ie / 057 8643751. Baby and Toddler Book Club is for 0-3 year olds and their parents/carers - a great place to read, sing and play with the little ones. Places are limited, so call or email the library for more details. Time: every Wednesday, 10.30-11.30am (confirm with the library, as dates may change around school holidays). Junior Book Club is suitable for ages 9-12 - places are limited, so call or email the library for more details. Time: last Wednesday of the month. Lego Free Play: no need to book, just drop in to meet and create together. Time: every Saturday morning at 10.30am. Note: all the libraries in Laois share the same social media account.</p>
+            
+            <a href="../business/portarlington-baby-group-kids-book-clubs-lego-group-803.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1267">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Little Kickers County Laois, Carlow and Kilkenny</h3>
+            <div class="tag-container"><span class="tag">Football</span></div>
+            <p class="description">Locations: Vitality Hub, Abbeyleix, Co. Laois; Treo Nua Centre, Portlaoise, Co. Laois; Holycross Church Hall, Co. Tipperary; Sacred Heart Primary, Roscrea, Co. Tipperary; Premier Hall, Thurles, Co. Tipperary; Oxmantown National School, Birr, Co. Offaly. Little Kickers, 1.5-2.5 years, 9am. Junior Kickers, 2.5-3.5 years, 10am. Mighty Kickers, 3.5-5 years, 11am. All parents and family are welcome to attend, watch and encourage the child during the class. Children will need comfortable runners and a drink for the breaks. All classes are held indoors and are not weather dependent.</p>
+            
+            <a href="../business/little-kickers-county-laois-carlow-and-kilkenny-1267.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1625">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Portarlington Afterschools</h3>
+            <div class="tag-container"><span class="tag">Sports</span></div>
+            <p class="description">Afterschool programmes for kids since 2002, Portarlington Community Centre.</p>
+            
+            <a href="../business/portarlington-afterschools-1625.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 584, "lat": 53.1524492, "lon": -7.1889641, "name": "Zumbini", "category": "Parent-and-toddler", "url": "../business/zumbini-584.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 801, "lat": 53.1524492, "lon": -7.1889641, "name": "Portarlington Parent, Baby & Toddler Group", "category": "Parent-and-toddler", "url": "../business/portarlington-parent-baby-toddler-group-801.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 802, "lat": 53.1524492, "lon": -7.1889641, "name": "Portarlington Toddler Group & Buggy Group", "category": "Parent-and-toddler", "url": "../business/portarlington-toddler-group-buggy-group-802.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 803, "lat": 53.1524492, "lon": -7.1889641, "name": "Portarlington- Baby Group / Kids Book Clubs / Lego Group", "category": "Parent-and-toddler", "url": "../business/portarlington-baby-group-kids-book-clubs-lego-group-803.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 1267, "lat": 53.1524492, "lon": -7.1889641, "name": "Little Kickers County Laois, Carlow and Kilkenny", "category": "Football", "url": "../business/little-kickers-county-laois-carlow-and-kilkenny-1267.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1625, "lat": null, "lon": null, "name": "Portarlington Afterschools", "category": "Sports", "url": "../business/portarlington-afterschools-1625.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

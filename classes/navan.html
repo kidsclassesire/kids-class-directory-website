@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Navan | Kids Patch</title>
+    <meta name="description" content="Browse 7 kids activities and classes in Navan, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/navan.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Navan | Kids Patch">
+    <meta property="og:description" content="Browse 7 kids activities and classes in Navan, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/navan.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Navan | Kids Patch">
+    <meta name="twitter:description" content="Browse 7 kids activities and classes in Navan, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Navan", "description": "Browse 7 kids activities and classes in Navan, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/navan.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 7, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/baby-massage-with-laura-341.html", "name": "Baby Massage With Laura"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/kids-french-classes-in-navan-3-to-12-years-old-348.html", "name": "Kids French classes in Navan (3 to 12 years old)"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/mum-baby-french-classes-353.html", "name": "Mum & Baby French Classes"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/navan-library-parent-and-toddler-group-355.html", "name": "Navan Library Parent and Toddler Group"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/play-and-music-meath-358.html", "name": "Play and Music Meath"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/pregnancy-post-natal-pilates-359.html", "name": "Pregnancy/Post-Natal Pilates"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/aura-leisure-centre-1182.html", "name": "Aura Leisure Centre"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="meath.html">Meath</a> &rsaquo; Navan</nav>
+        <h1>Kids Activities in Navan</h1>
+        <p class="landing-intro">Browse 7 kids activities and classes in Navan. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="meath.html">&larr; All activities in County Meath</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="341">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Baby Massage With Laura</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">Baby massage classes with a PICU/NICU nurse, in 2 locations: Navan and Wilkinstown. Come meet other parents and bond with your baby in a relaxed and calm environment. Every class is followed by tea/coffee/a sweet treat, giving time to chat and get to know other parents. All babies welcome, 0-12 months. Babies with additional needs, complex needs, or life-limiting conditions are welcomed and encouraged to attend, with plenty of space for medical equipment such as portable ventilators, suction machines, and feeding pumps. Massage can be adapted for all needs, e.g. stoma bags or feeding tubes. As a PICU/NICU nurse, I&#x27;m very experienced in caring for babies with additional needs and their families. 1:1 classes also available. Currently Monday mornings at Wilkinstown Community Centre, 10am, and in Navan at the Red River Yoga Studio on Wednesdays at 10am (check socials in case time/location changes).</p>
+            
+            <a href="../business/baby-massage-with-laura-341.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="348">
+        <div class="card-image"><img class="banner-img" src="../images/rendezvousfrancais-com-05d683.jpg" alt="Kids French classes in Navan (3 to 12 years old)" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/rendezvousfrancais-com-05d683.png" alt="Kids French classes in Navan (3 to 12 years old) logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Kids French classes in Navan (3 to 12 years old)</h3>
+            <div class="tag-container"><span class="tag">Languages</span></div>
+            <p class="description">Rendez-vous français offers a fun introduction to French for children. Children will discover the language and culture through games, stories, songs, art and craft, and even baking - our motto is that we learn better when we&#x27;re having fun. Caroline is a French-qualified native teacher who has been teaching French in preschools, primary schools, and Rendez-vous français in Ireland for 15 years. We run 3 different age groups: 3 years old up to Senior Infants; 1st class up to 3rd class; and 4th class up to 6th class. Check our website for dates &amp; times or get in touch. Location: Rendez-vous français, St Mary&#x27;s Community Centre, Navan, Co. Meath.</p>
+            
+            <a href="../business/kids-french-classes-in-navan-3-to-12-years-old-348.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="353">
+        <div class="card-image"><img class="banner-img" src="../images/rendezvousfrancais-com-5a4d08.jpg" alt="Mum &amp; Baby French Classes" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/rendezvousfrancais-com-5a4d08.png" alt="Mum &amp; Baby French Classes logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Mum &amp; Baby French Classes</h3>
+            <div class="tag-container"><span class="tag">Languages</span></div>
+            <p class="description">Through nursery rhymes and stories, your baby will discover the sounds of a new language while having a lot of fun. What makes our classes different from any others? You&#x27;ll be learning French too. As a new mum, I know how you need to do things just for yourself, whether it&#x27;s exercising, reading, or learning French - but it&#x27;s not always easy to have someone mind your baby while you go to a class. Our classes are made so you can come and learn French, and bring your little one with you. The classes are baby-led: if your baby is hungry, tired or grumpy, don&#x27;t worry at all, we&#x27;ve all been there - feel free to feed, stand up, walk, rock and bounce. It&#x27;s not only a class for your baby, but for yourself too, and you definitely deserve it. Caroline is a French-qualified native teacher who has been teaching French to all ages in Ireland for 15 years. She is also mum to a little girl, with whom she started the mum &amp; baby classes 3 years ago. Tuesdays, 10.30-11.30am. From birth to pre-crawlers. Location: Rendez-vous français, St Mary&#x27;s Community Centre, Navan, Co. Meath.</p>
+            
+            <a href="../business/mum-baby-french-classes-353.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="355">
+        <div class="card-image"><img class="banner-img" src="../images/meath-ie-03f773.jpg" alt="Navan Library Parent and Toddler Group" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/meath-ie-03f773.svg" alt="Navan Library Parent and Toddler Group logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Navan Library Parent and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Navan Parent &amp; Toddler Group is hosted by Navan Library. Come along for stories and rhymes at this Parent and Toddler session every Wednesday at Navan Library, followed by free play with toys and games provided. It&#x27;s a way to keep the little ones entertained while equipping them with early literacy skills, and you can meet other parents for a chat too. Location: Navan Library, Railway St, Dillonsland, Navan, Co. Meath, C15 RW31. Day/Time: every Wednesday, 10.15-11.15am (check during school term breaks, as the group may sometimes be cancelled to facilitate kids&#x27; camps). Cost: free. Contact: 046 9021134.</p>
+            
+            <a href="../business/navan-library-parent-and-toddler-group-355.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="358">
+        <div class="card-image"><img class="logo-badge" src="../logos/playandmusicmeath-ie.png" alt="Play and Music Meath logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Play and Music Meath</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Classes created by experts in early childhood development. Run by a highly experienced facilitator with a background in music who specialises in play therapy. Classes are child led, building on each child&#x27;s own abilities. Wednesday, Friday and Saturday mornings in Navan Town Centre. Parents, grandparents and caregivers welcome and are required to stay for the duration of the class and to participate as much as possible.</p>
+            
+            <a href="../business/play-and-music-meath-358.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="359">
+        <div class="card-image"><img class="banner-img" src="../images/bodybalancephysiotherapy-ie.jpg" alt="Pregnancy/Post-Natal Pilates" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/bodybalancephysiotherapy-ie.png" alt="Pregnancy/Post-Natal Pilates logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Pregnancy/Post-Natal Pilates</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">We are a physio and pelvic health clinic in Navan with a studio offering a range of classes, including Post-Natal Pilates: geared to those who have had their baby, this class is tailored to improving pelvic ligament stability after the birthing process, and you can continue in this class for 1-2 years after labour. We also offer Baby Massage Classes: meeting once a week for 5 weeks, designed for parents, grandparents and other caregivers with their babies, ideally from birth to pre-crawling. Participants massage their babies while being guided through a step-by-step massage routine, with individual attention for each participant. Classes include relaxation techniques and talks on issues such as crying, sleeping and baby emotions. All participants receive handouts, massage oil and refreshments.</p>
+            
+            <a href="../business/pregnancy-post-natal-pilates-359.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1182">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Aura Leisure Centre</h3>
+            <div class="tag-container"><span class="tag">Swimming</span></div>
+            <p class="description">Swim Baby: developed for babies who have received their 2nd inoculation, up to 30 months, delivered over an 8-week course of 30-minute lessons - have fun and nurture the bond with your baby by introducing them to the water. Using a gentle and gradual approach, our specially trained swim instructors work with you to ensure your baby feels comfortable in the warm water of our learner pool. Swim Tots is for toddlers ready for the next step - our instructors work closely with each child, focusing on water awareness, confidence and safety to help a smoother transition into the higher levels of the Aura Swim Academy. Kids Swimming Lessons: at the Aura Swim Academy, our goal is not only to teach your children to swim, but to help them develop an understanding of the water. We believe learning to swim can be fun, and with our 10 levels, we cater for all ages and abilities.</p>
+            
+            <a href="../business/aura-leisure-centre-1182.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 341, "lat": 53.64709, "lon": -6.69666, "name": "Baby Massage With Laura", "category": "Developmental", "url": "../business/baby-massage-with-laura-341.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 348, "lat": 53.65205, "lon": -6.68692, "name": "Kids French classes in Navan (3 to 12 years old)", "category": "Languages", "url": "../business/kids-french-classes-in-navan-3-to-12-years-old-348.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 353, "lat": 53.65205, "lon": -6.687, "name": "Mum & Baby French Classes", "category": "Languages", "url": "../business/mum-baby-french-classes-353.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 355, "lat": 53.65038, "lon": -6.68541, "name": "Navan Library Parent and Toddler Group", "category": "Parent-and-toddler", "url": "../business/navan-library-parent-and-toddler-group-355.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 358, "lat": 53.65397, "lon": -6.68769, "name": "Play and Music Meath", "category": "Parent-and-toddler", "url": "../business/play-and-music-meath-358.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 359, "lat": 53.65359, "lon": -6.69141, "name": "Pregnancy/Post-Natal Pilates", "category": "Developmental", "url": "../business/pregnancy-post-natal-pilates-359.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1182, "lat": 53.6657426, "lon": -6.6977175, "name": "Aura Leisure Centre", "category": "Swimming", "url": "../business/aura-leisure-centre-1182.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Ballinasloe | Kids Patch</title>
+    <meta name="description" content="Browse 5 kids activities and classes in Ballinasloe, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/ballinasloe.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Ballinasloe | Kids Patch">
+    <meta property="og:description" content="Browse 5 kids activities and classes in Ballinasloe, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/ballinasloe.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Ballinasloe | Kids Patch">
+    <meta name="twitter:description" content="Browse 5 kids activities and classes in Ballinasloe, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Ballinasloe", "description": "Browse 5 kids activities and classes in Ballinasloe, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/ballinasloe.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 5, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/ballinasloe-library-story-time-for-toddlers-to-under-5s-714.html", "name": "Ballinasloe Library - Story time for toddlers to under 5s"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/ballinasloe-killalaghton-parent-baby-toddler-group-715.html", "name": "Ballinasloe/Killalaghton Parent Baby & Toddler Group"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/water-babies-1311.html", "name": "Water Babies"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/ballinasloe-gaa-easter-camp-1671.html", "name": "Ballinasloe GAA - Easter Camp"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/rugbytots-ballinasloe-1673.html", "name": "Rugbytots - Ballinasloe"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="galway.html">Galway</a> &rsaquo; Ballinasloe</nav>
+        <h1>Kids Activities in Ballinasloe</h1>
+        <p class="landing-intro">Browse 5 kids activities and classes in Ballinasloe. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="galway.html">&larr; All activities in County Galway</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="714">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Ballinasloe Library - Story time for toddlers to under 5s</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Ballinasloe Library has fantastic groups on offer for young children. Listed below are some of the weekly events, but check in during school holidays, as the library runs great events for kids. Location: Ballinasloe Library, Society St, Townparks, Ballinasloe, Co. Galway, H53 T320. Cost: free per family. Contact: ballinasloe@galwaylibrary.ie. Storytime at Ballinasloe Library is a relaxing time for parents/childminders and kids up to school age to attend and listen to some stories. Time: every Friday at 14:15.</p>
+            
+            <a href="../business/ballinasloe-library-story-time-for-toddlers-to-under-5s-714.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="715">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Ballinasloe/Killalaghton Parent Baby &amp; Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Please check the Facebook group, as this class may no longer be running. Ballinasloe/Killalaghton Parent, Baby and Toddler Group in Galway is a group for mums with babies and preschool children in the Ballinasloe area - we meet once a week for coffee and an informal chat. Keep an eye on the page for more info. Location: Killalaghton Hall, Killoran, Ballinasloe, Galway. Time: every Thursday, 10am-12pm (during school term). Cost: free. Contact: via the Facebook page.</p>
+            
+            <a href="../business/ballinasloe-killalaghton-parent-baby-toddler-group-715.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1311">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Water Babies</h3>
+            <div class="tag-container"><span class="tag">Swimming</span></div>
+            <p class="description">There are so many benefits to baby swimming - not only are our lessons brilliant for your child&#x27;s development, they&#x27;re also the perfect place to bond with your little one. Classes are 30 minutes long, with a maximum of 10 children (one carer per child) per class, teaching water skills through song, play and repetition.</p>
+            
+            <a href="../business/water-babies-1311.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1671">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Ballinasloe GAA - Easter Camp</h3>
+            <div class="tag-container"><span class="tag">GAA</span></div>
+            <p class="description">3-day Easter hurling and football camp for ages 5-13, hosted with Galway hurlers; €50/child, free jersey.</p>
+            
+            <a href="../business/ballinasloe-gaa-easter-camp-1671.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1673">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Rugbytots - Ballinasloe</h3>
+            <div class="tag-container"><span class="tag">Rugby</span></div>
+            <p class="description">Rugbytots sessions for ages 2-3.5, Saturdays, at Ballinasloe Ardscoil Mhuire.</p>
+            
+            <a href="../business/rugbytots-ballinasloe-1673.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 714, "lat": 53.3307051, "lon": -8.2248519, "name": "Ballinasloe Library - Story time for toddlers to under 5s", "category": "Parent-and-toddler", "url": "../business/ballinasloe-library-story-time-for-toddlers-to-under-5s-714.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 715, "lat": 53.3435047, "lon": -8.8733741, "name": "Ballinasloe/Killalaghton Parent Baby & Toddler Group", "category": "Parent-and-toddler", "url": "../business/ballinasloe-killalaghton-parent-baby-toddler-group-715.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 1311, "lat": 53.3235356, "lon": -8.2251366, "name": "Water Babies", "category": "Swimming", "url": "../business/water-babies-1311.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1671, "lat": null, "lon": null, "name": "Ballinasloe GAA - Easter Camp", "category": "GAA", "url": "../business/ballinasloe-gaa-easter-camp-1671.html", "minAge": 5.0, "maxAge": 13.0, "price": null, "free": false}, {"id": 1673, "lat": null, "lon": null, "name": "Rugbytots - Ballinasloe", "category": "Rugby", "url": "../business/rugbytots-ballinasloe-1673.html", "minAge": 2.0, "maxAge": 3.0, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

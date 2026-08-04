@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Athlone | Kids Patch</title>
+    <meta name="description" content="Browse 6 kids activities and classes in Athlone, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/athlone.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Athlone | Kids Patch">
+    <meta property="og:description" content="Browse 6 kids activities and classes in Athlone, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/athlone.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Athlone | Kids Patch">
+    <meta name="twitter:description" content="Browse 6 kids activities and classes in Athlone, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Athlone", "description": "Browse 6 kids activities and classes in Athlone, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/athlone.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 6, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/cuidiu-athlone-support-group-373.html", "name": "Cuidiu Athlone Support Group"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/athlone-mum-and-baby-group-374.html", "name": "Athlone Mum and Baby Group"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/sheraton-hotel-kids-group-swimming-lessons-385.html", "name": "Sheraton Hotel Kids Group Swimming Lessons"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/lasting-touch-baby-massage-1213.html", "name": "Lasting Touch Baby Massage"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/bloom-baby-classes-midlands-1261.html", "name": "Bloom Baby Classes - Midlands"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/athlone-gymnastics-club-1449.html", "name": "Athlone Gymnastics Club"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="westmeath.html">Westmeath</a> &rsaquo; Athlone</nav>
+        <h1>Kids Activities in Athlone</h1>
+        <p class="landing-intro">Browse 6 kids activities and classes in Athlone. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="westmeath.html">&larr; All activities in County Westmeath</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="373">
+        <div class="card-image"><img class="banner-img" src="../images/www2-hse-ie.jpg" alt="Cuidiu Athlone Support Group" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/www2-hse-ie.png" alt="Cuidiu Athlone Support Group logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Cuidiu Athlone Support Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Breastfeeding Support Group: breastfeeding support and advice, meeting breastfeeding mothers from the area - mums-to-be, babies and toddlers welcome. Check Facebook for location, as location changes. Baby and Toddler Playgroup: a social setting for babies and kids to play and parents to chat. Check Facebook, as dates/times change.</p>
+            
+            <a href="../business/cuidiu-athlone-support-group-373.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="374">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Athlone Mum and Baby Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Athlone Parent and Baby Group, also known as Baby Café, is open to new mums who would like to meet other new mums. Baby Café is an opportunity to meet new mums, exchange stories of being a new mum, and let baby get lots of tummy time on the mat. The group is suitable for babies up to 1 year. Location: St Kiernan&#x27;s Community Centre, Tormey Villas, Athlone, Co. Westmeath, N37 W7P3. Day/Time: every 2nd Monday, 11am-12.15pm (during school term time - keep up to date on social media as dates change and are posted on Facebook). Cost: free. This group also runs Baby Massage Classes at times, offered at an affordable rate - keep an eye on their social media page to sign up.</p>
+            
+            <a href="../business/athlone-mum-and-baby-group-374.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="385">
+        <div class="card-image"><img class="banner-img" src="../images/planmysheratonstay-com.jpg" alt="Sheraton Hotel Kids Group Swimming Lessons" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/planmysheratonstay-com.png" alt="Sheraton Hotel Kids Group Swimming Lessons logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Sheraton Hotel Kids Group Swimming Lessons</h3>
+            <div class="tag-container"><span class="tag">Swimming</span></div>
+            <p class="description">Kids Group Swimming Lessons in Athlone We offer a six-week course teaching kids to swim using the correct technique. We pride ourselves on teaching kids how to swim effectively and safely. Our skilled instructors will help your child learn how to swim from scratch or improve upon what they already know. We also provide private swimming lessons for kids. If interested, you can book at a time that suits you</p>
+            
+            <a href="../business/sheraton-hotel-kids-group-swimming-lessons-385.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1213">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Lasting Touch Baby Massage</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">Baby massage classes in Athlone, Ballinasloe and Craughwell, facilitated by a registered midwife/certified infant massage instructor. Ballinasloe classes: every Thursday, 18th June-16th July, 10-11.30am. Athlone classes: every Friday, 19th June-17th July, 10-11.30am. Craughwell classes: every Wednesday, 1st-29th July, 10-11.30am. Up to €100 redeemable with health insurers. Tea/coffee and a sweet treat provided - a lovely opportunity to bond with your baby and meet other mums in the area. Group classes are limited to one parent and one baby per booking. Private classes are available in your own home if additional parents or children would like to be present. Contact Emily for more info and to book. Instagram: @lastingtouch_babymassge. Email: lastingtouchbabymassage@gmail.com</p>
+            
+            <a href="../business/lasting-touch-baby-massage-1213.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1261">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Bloom Baby Classes - Midlands</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">Classes are held on various days and times in multiple locations - see website for more information. Caterpillar Club is an introductory baby class for babies 0-6 months. Watch your baby gaze in delight at our bespoke, bright props, with a different theme each week to treasure memories from baby&#x27;s first, most important year of life. Each baby class ends in a gentle baby massage to relax baby and prepare them for a nice long nap. Busy Bees: at theme time, your baby gets to explore our fun range of bright props and exciting heuristic treasure baskets while developing social skills with fellow Bloom babies - suitable for babies from 6 months to walking, or 15 months. Bloom Toddler Classes: with our own bespoke music, including a phonics song, numbers song and calming zen track, our back-to-back activities for toddlers aid development and focus on first early learning goals.</p>
+            
+            <a href="../business/bloom-baby-classes-midlands-1261.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1449">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Athlone Gymnastics Club</h3>
+            <div class="tag-container"><span class="tag">Gymnastics</span></div>
+            <p class="description">Recreational gymnastics for beginners aged 6+, drop-in basis; Easter/summer camps for members and non-members.</p>
+            
+            <a href="../business/athlone-gymnastics-club-1449.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 373, "lat": 53.42422, "lon": -7.93741, "name": "Cuidiu Athlone Support Group", "category": "Parent-and-toddler", "url": "../business/cuidiu-athlone-support-group-373.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 374, "lat": 53.43159, "lon": -7.94548, "name": "Athlone Mum and Baby Group", "category": "Parent-and-toddler", "url": "../business/athlone-mum-and-baby-group-374.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 385, "lat": 53.42356, "lon": -7.93497, "name": "Sheraton Hotel Kids Group Swimming Lessons", "category": "Swimming", "url": "../business/sheraton-hotel-kids-group-swimming-lessons-385.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1213, "lat": 53.4228434, "lon": -7.9425897, "name": "Lasting Touch Baby Massage", "category": "Developmental", "url": "../business/lasting-touch-baby-massage-1213.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1261, "lat": 53.4319577, "lon": -7.9208066, "name": "Bloom Baby Classes - Midlands", "category": "Developmental", "url": "../business/bloom-baby-classes-midlands-1261.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1449, "lat": 53.4228434, "lon": -7.9425897, "name": "Athlone Gymnastics Club", "category": "Gymnastics", "url": "../business/athlone-gymnastics-club-1449.html", "minAge": 6.0, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Foxrock | Kids Patch</title>
+    <meta name="description" content="Browse 4 kids activities and classes in Foxrock, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/foxrock.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Foxrock | Kids Patch">
+    <meta property="og:description" content="Browse 4 kids activities and classes in Foxrock, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/foxrock.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Foxrock | Kids Patch">
+    <meta name="twitter:description" content="Browse 4 kids activities and classes in Foxrock, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Foxrock", "description": "Browse 4 kids activities and classes in Foxrock, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/foxrock.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 4, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/junior-einsteins-science-club-south-dublin-58.html", "name": "Junior Einsteins Science Club (South Dublin)"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/junior-einsteins-science-club-south-dublin-59.html", "name": "Junior Einsteins Science Club (South Dublin)"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/west-wood-club-leopardstown-989.html", "name": "West Wood Club Leopardstown"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/westwood-club-1132.html", "name": "Westwood Club"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Foxrock</nav>
+        <h1>Kids Activities in Foxrock</h1>
+        <p class="landing-intro">Browse 4 kids activities and classes in Foxrock. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="58">
+        <div class="card-image"><img class="banner-img" src="../images/junioreinsteinsscienceclub-com.jpg" alt="Junior Einsteins Science Club (South Dublin)" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/junioreinsteinsscienceclub-com.png" alt="Junior Einsteins Science Club (South Dublin) logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Junior Einsteins Science Club (South Dublin)</h3>
+            <div class="tag-container"><span class="tag">STEM</span></div>
+            <p class="description">Hands-on after-school science club for young children, using messy, high-energy experiments to build early curiosity about science, run weekly during the school term inside the school.</p>
+            <div class="landing-card-meta">Monday &middot; 15:00-16:00 &middot; School-term programme</div>
+            <a href="../business/junior-einsteins-science-club-south-dublin-58.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="59">
+        <div class="card-image"><img class="banner-img" src="../images/junioreinsteinsscienceclub-com.jpg" alt="Junior Einsteins Science Club (South Dublin)" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/junioreinsteinsscienceclub-com.png" alt="Junior Einsteins Science Club (South Dublin) logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Junior Einsteins Science Club (South Dublin)</h3>
+            <div class="tag-container"><span class="tag">STEM</span></div>
+            <p class="description">Hands-on after-school science club for early primary school children, using messy, high-energy experiments to build curiosity and early scientific thinking, run weekly during the school term inside the school.</p>
+            <div class="landing-card-meta">Thursday &middot; 15:00-16:00 &middot; School-term programme</div>
+            <a href="../business/junior-einsteins-science-club-south-dublin-59.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="989">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>West Wood Club Leopardstown</h3>
+            <div class="tag-container"><span class="tag">Sports</span></div>
+            <p class="description">Week-long summer tennis camp for children held inside Ireland&#x27;s largest indoor tennis centre, combining coaching, games and skill-building for young beginner-to-intermediate players.</p>
+            <div class="landing-card-meta">Monday, Tuesday, Wednesday, Thursday, Friday &middot; Summer camp</div>
+            <a href="../business/west-wood-club-leopardstown-989.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1132">
+        <div class="card-image"><img class="banner-img" src="../images/westwood-ie.jpg" alt="Westwood Club" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/westwood-ie.png" alt="Westwood Club logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Westwood Club</h3>
+            <div class="tag-container"><span class="tag">Swimming</span></div>
+            <p class="description">West Wood Club offers expert-led children&#x27;s swimming lessons across three premier Dublin locations: Clontarf Road, Leopardstown, and Westmanstown. With over 25 years of experience, their structured programme caters to all ages and abilities, guiding children through nine progressive levels, from first splashes to mastering strokes like butterfly and breaststroke. Classes are divided by ability rather than age, ensuring each child receives personalised instruction in small groups led by qualified and experienced teachers. Free assessments help place your child at the right level, and all lessons adhere to Swim Ireland guidelines. With a focus on fun and safety, West Wood Club provides a supportive environment where children can build confidence and enjoy their swimming journey.</p>
+            
+            <a href="../business/westwood-club-1132.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 58, "lat": 53.2786477, "lon": -6.1749969, "name": "Junior Einsteins Science Club (South Dublin)", "category": "STEM", "url": "../business/junior-einsteins-science-club-south-dublin-58.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 59, "lat": 53.2786477, "lon": -6.1749969, "name": "Junior Einsteins Science Club (South Dublin)", "category": "STEM", "url": "../business/junior-einsteins-science-club-south-dublin-59.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 989, "lat": 53.266813, "lon": -6.1838379, "name": "West Wood Club Leopardstown", "category": "Sports", "url": "../business/west-wood-club-leopardstown-989.html", "minAge": 6.0, "maxAge": 10.0, "price": null, "free": false}, {"id": 1132, "lat": 53.266813, "lon": -6.1838379, "name": "Westwood Club", "category": "Swimming", "url": "../business/westwood-club-1132.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

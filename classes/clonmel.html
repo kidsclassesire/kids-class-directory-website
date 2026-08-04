@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Clonmel | Kids Patch</title>
+    <meta name="description" content="Browse 8 kids activities and classes in Clonmel, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/clonmel.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Clonmel | Kids Patch">
+    <meta property="og:description" content="Browse 8 kids activities and classes in Clonmel, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/clonmel.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Clonmel | Kids Patch">
+    <meta name="twitter:description" content="Browse 8 kids activities and classes in Clonmel, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Clonmel", "description": "Browse 8 kids activities and classes in Clonmel, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/clonmel.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 8, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/clonmel-mother-and-baby-walking-buggy-group-942.html", "name": "Clonmel Mother and Baby Walking/Buggy Group"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/sensory-play-studio-951.html", "name": "Sensory Play Studio"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/zen-baby-by-grace-956.html", "name": "Zen Baby by Grace"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/archaeology-camps-booking-now-1000.html", "name": "Archaeology Camps – Booking Now"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/clonmel-cashel-parent-and-baby-group-1275.html", "name": "Clonmel & Cashel Parent and Baby Group"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/clonmel-cahir-parent-baby-toddler-group-1276.html", "name": "Clonmel / Cahir Parent, Baby & Toddler Group"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/clonmel-cahir-parent-baby-toddler-group-1277.html", "name": "Clonmel / Cahir Parent, Baby & Toddler Group"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/little-kickers-1295.html", "name": "Little Kickers"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="tipperary.html">Tipperary</a> &rsaquo; Clonmel</nav>
+        <h1>Kids Activities in Clonmel</h1>
+        <p class="landing-intro">Browse 8 kids activities and classes in Clonmel. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="tipperary.html">&larr; All activities in County Tipperary</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="942">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Clonmel Mother and Baby Walking/Buggy Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">The Wandering Mothers is a mother and baby walking group for mums who meet up for a walk and a chat with their babies. We walk down the blueway and back (about 5km altogether), and some stay back afterwards for a coffee or treat. Note: day/time may change - if you&#x27;re not in the WhatsApp group, message me on Instagram so I can add you, or fill out the form in my bio. Being part of the group is handy, as we run a poll the night before to figure out numbers, which determines whether it&#x27;s going ahead. Location: meet outside Fetch Coffee, The Quay, Quay St, Burgagery-Lands West, Clonmel, Co. Tipperary, E91 WV40. Time: every Thursday at 9.30am (during the good weather months). Cost: free. Contact: to be added to the WhatsApp group, contact via thesaucysoul-coachingstudio on Instagram.</p>
+            
+            <a href="../business/clonmel-mother-and-baby-walking-buggy-group-942.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="951">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Sensory Play Studio</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Sensory Play Studio offers sensory play classes for children aged 4 months onwards. We believe in the power of child-led play, offering a &#x27;yes&#x27; environment where children are free to explore and engage with the toys and resources as they wish. This is a stay-and-play class - grown-ups can interact, observe and join in the play while enjoying a cup of tea or coffee. We always recommend wearing old clothes to our classes; the option to buy a class t-shirt or jumper is also available.</p>
+            
+            <a href="../business/sensory-play-studio-951.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="956">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Zen Baby by Grace</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">Baby massage course, run over 5 weeks - a great way for parents to bond with their infant and connect with other parents. Located at On Your Toes Dance Studio, Fethard Road, Clonmel. Booking is essential - contact 0863770022 to reserve your spot.</p>
+            
+            <a href="../business/zen-baby-by-grace-956.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1000">
+        <div class="card-image"><img class="banner-img" src="../images/sia-ie.png" alt="Archaeology Camps – Booking Now" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/sia-ie.png" alt="Archaeology Camps – Booking Now logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Archaeology Camps – Booking Now</h3>
+            <div class="tag-container"><span class="tag">Camps</span></div>
+            <p class="description">Our camps provide a fascinating alternative to sports-themed camps and other school break activities for children aged 7-12 years old. If your child is a curious explorer with a thirst for knowledge about the past, this is the camp for them! Running all year round, the camps introduce children to the mysteries and adventures of our past in a fun, practical and hands-on way that sparks their imagination.</p>
+            
+            <a href="../business/archaeology-camps-booking-now-1000.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1275">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Clonmel &amp; Cashel Parent and Baby Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Mother and Baby Group in Cashel &amp; Clonmel, run by the Community Mothers Programme, a programme designed for all parents with children 0-5 years. It&#x27;s an opportunity to meet other mums and babies, with community mothers on hand to provide support and information. Clonmel. Location: Clonmel Resource Centre, Kickham St, Clonmel. Day/Time: every Monday, 2-3:30pm. Cost: free. Cashel. Location: Our Lady of Lourdes Hospital, Cashel. Day/Time: every Thursday, 10-11:30am. Cost: free.</p>
+            
+            <a href="../business/clonmel-cashel-parent-and-baby-group-1275.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1276">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Clonmel / Cahir Parent, Baby &amp; Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Clonmel/Cahir Parent, Baby and Toddler Group in Tipperary is hosted by the Clonmel Community Mother Programme. Parents no longer need to feel isolated, and children have the opportunity to play in a safe, happy environment - Mother &amp; Baby/Parent &amp; Toddler groups form the stepping stones to preschool/primary school. Everyone is welcome; it&#x27;s a good place to meet other mothers and let the babies and toddlers play. Please contact the phone number for more information and to secure a spot. Cost: €3 per family. Contact: call (052) 6128199. Toddler Group - Cahir. Location: Catherine McAuley Day Care Centre, Cahir (between the Credit Union and St Mary&#x27;s Church). Time: every Tuesday, 2-3.30pm (during school term time). Toddler Group - Clonmel. Location: St Mary&#x27;s Church, Clonmel. Time: every Wednesday &amp; Thursday, 10-11.30am (during school term time). Baby Group - Clonmel. Location: Clonmel Community Resource Centre, Kickham St, Clonmel. Time: every Monday, 2-3.30pm (during school term time). Baby Group - Cashel. Location: Our Lady of Lourdes Hospital, Cashel. Time: every Thursday, 10-11.30am (during school term time). Note: there is no social media to stay up to date with for this group.</p>
+            
+            <a href="../business/clonmel-cahir-parent-baby-toddler-group-1276.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1277">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Clonmel / Cahir Parent, Baby &amp; Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Clonmel/Cahir Parent, Baby and Toddler Group in Tipperary is hosted by the Clonmel Community Mother Programme. Parents no longer need to feel isolated, and children have the opportunity to play in a safe, happy environment - Mother &amp; Baby/Parent &amp; Toddler groups form the stepping stones to preschool/primary school. Everyone is welcome; it&#x27;s a good place to meet other mothers and let the babies and toddlers play. Please contact the phone number for more information and to secure a spot. Cost: €3 per family. Contact: call (052) 6128199. Toddler Group - Cahir. Location: Catherine McAuley Day Care Centre, Cahir (between the Credit Union and St Mary&#x27;s Church). Time: every Tuesday, 2-3.30pm (during school term time). Toddler Group - Clonmel. Location: St Mary&#x27;s Church, Clonmel. Time: every Wednesday &amp; Thursday, 10-11.30am (during school term time). Baby Group - Clonmel. Location: Clonmel Community Resource Centre, Kickham St, Clonmel. Time: every Monday, 2-3.30pm (during school term time). Baby Group - Cashel. Location: Our Lady of Lourdes Hospital, Cashel. Time: every Thursday, 10-11.30am (during school term time). Note: there is no social media to stay up to date with for this group.</p>
+            
+            <a href="../business/clonmel-cahir-parent-baby-toddler-group-1277.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1295">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Little Kickers</h3>
+            <div class="tag-container"><span class="tag">Football</span></div>
+            <p class="description">Join the world&#x27;s No. 1 preschool football programme, with over 100,000 children participating every week. Our play-orientated classes are fun, engaging, and nurture a love of sport from an early age. We are proud to be more than just football - while football is the tool we use, our goal is to develop the fundamentals of movement (balance, agility &amp; coordination), fundamental movement skills (running, hopping, skipping, jumping), social skills such as listening, sharing and taking turns, and early learning concepts like numbers, colours and body parts. We have 4 different age groups to ensure children participate with their peers at around the same developmental level. Our Little Kickers programme is suitable for children aged 18 months to 2.5 years - it&#x27;s a parent-toddler programme requiring active parental participation, which ensures your child gets the very best out of the sessions; learning to listen and follow instructions through engaging, fun games is the goal at this level. Our Junior Kickers classes are for 2.5 to 3.5 year olds, who are starting to get more independent at this stage - children participate more by themselves, though many will still like to have their parents close to them at the magic wall, with Play, Practice, Understand as the learning outcome. The next stage is Mighty Kickers, suitable for 3.5 to 5 year olds, where most children participate independently with parents encouraged to support from the sidelines, further developing Play, Practice, Understand. The Mega Kickers programme brings together all the learning outcomes from the previous levels, relying less on the play-orientated structure of earlier stages, with a 20-minute match at the end of each session preparing children to move onto football academies and continue their football journey. Throughout all stages, our core philosophy of Play not Push is embodied - we believe children should be gently encouraged to participate and allowed to watch if they are unsure, in the hope that seeing other children in the class participating will spur them on to join in the fun.</p>
+            
+            <a href="../business/little-kickers-1295.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 942, "lat": 52.359573, "lon": -7.703782, "name": "Clonmel Mother and Baby Walking/Buggy Group", "category": "Parent-and-toddler", "url": "../business/clonmel-mother-and-baby-walking-buggy-group-942.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 951, "lat": 52.359573, "lon": -7.703782, "name": "Sensory Play Studio", "category": "Parent-and-toddler", "url": "../business/sensory-play-studio-951.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 956, "lat": 52.372862, "lon": -7.7020845, "name": "Zen Baby by Grace", "category": "Developmental", "url": "../business/zen-baby-by-grace-956.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1000, "lat": 52.3611052, "lon": -7.6991779, "name": "Archaeology Camps – Booking Now", "category": "Camps", "url": "../business/archaeology-camps-booking-now-1000.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1275, "lat": 52.3611052, "lon": -7.6991779, "name": "Clonmel & Cashel Parent and Baby Group", "category": "Parent-and-toddler", "url": "../business/clonmel-cashel-parent-and-baby-group-1275.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 1276, "lat": 52.3611052, "lon": -7.6991779, "name": "Clonmel / Cahir Parent, Baby & Toddler Group", "category": "Parent-and-toddler", "url": "../business/clonmel-cahir-parent-baby-toddler-group-1276.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1277, "lat": 52.3519428, "lon": -7.7104147, "name": "Clonmel / Cahir Parent, Baby & Toddler Group", "category": "Parent-and-toddler", "url": "../business/clonmel-cahir-parent-baby-toddler-group-1277.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1295, "lat": 52.359573, "lon": -7.703782, "name": "Little Kickers", "category": "Football", "url": "../business/little-kickers-1295.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

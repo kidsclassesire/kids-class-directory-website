@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Kilternan | Kids Patch</title>
+    <meta name="description" content="Browse 4 kids activities and classes in Kilternan, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/kilternan.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Kilternan | Kids Patch">
+    <meta property="og:description" content="Browse 4 kids activities and classes in Kilternan, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/kilternan.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Kilternan | Kids Patch">
+    <meta name="twitter:description" content="Browse 4 kids activities and classes in Kilternan, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Kilternan", "description": "Browse 4 kids activities and classes in Kilternan, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/kilternan.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 4, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/play-cafe-bumps-and-babes-15.html", "name": "Play Cafe / Bumps and Babes"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/de-la-salle-palmerston-fc-dlsp-66.html", "name": "De La Salle Palmerston FC (DLSP)"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/de-la-salle-palmerston-fc-dlsp-67.html", "name": "De La Salle Palmerston FC (DLSP)"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/stretch-n-grow-parent-me-fun-fitness-707.html", "name": "Stretch n Grow Parent & Me Fun Fitness"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Kilternan</nav>
+        <h1>Kids Activities in Kilternan</h1>
+        <p class="landing-intro">Browse 4 kids activities and classes in Kilternan. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="15">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Play Cafe / Bumps and Babes</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Community parent and toddler group offering informal weekly playtime and social contact for local parents, carers and young children in Kilternan.</p>
+            <div class="landing-card-meta">Wednesday &middot; 10:00-11:30 &middot; Drop-in</div>
+            <a href="../business/play-cafe-bumps-and-babes-15.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="66">
+        <div class="card-image"><img class="banner-img" src="../images/dlspfc-ie.jpg" alt="De La Salle Palmerston FC (DLSP)" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/dlspfc-ie.png" alt="De La Salle Palmerston FC (DLSP) logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>De La Salle Palmerston FC (DLSP)</h3>
+            <div class="tag-container"><span class="tag">Rugby</span></div>
+            <p class="description">Entry-level introduction to rugby for the very youngest children, teaching basic movement and ball skills in a fun, non-contact, family-friendly format at one of Leinster&#x27;s oldest mini rugby sections.</p>
+            <div class="landing-card-meta">Ongoing membership</div>
+            <a href="../business/de-la-salle-palmerston-fc-dlsp-66.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="67">
+        <div class="card-image"><img class="banner-img" src="../images/dlspfc-ie.jpg" alt="De La Salle Palmerston FC (DLSP)" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/dlspfc-ie.png" alt="De La Salle Palmerston FC (DLSP) logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>De La Salle Palmerston FC (DLSP)</h3>
+            <div class="tag-container"><span class="tag">Rugby</span></div>
+            <p class="description">Mini rugby programme teaching age-appropriate rugby skills and teamwork to boys and girls, part of one of Leinster&#x27;s largest and oldest mini-youth sections with IRFU-certified, Garda-vetted coaches.</p>
+            <div class="landing-card-meta">Ongoing membership</div>
+            <a href="../business/de-la-salle-palmerston-fc-dlsp-67.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="707">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Stretch n Grow Parent &amp; Me Fun Fitness</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Our Parent and Me Fun Fitness classes take place every Saturday morning at 9.15am in Kilternan Parish Centre, suitable for all little ones once they are walking. These fun Fitness Stars classes are non-stop, action-packed fun. We use props, music, imagination, obstacle courses, games and parachute fun to get little hearts and lungs pumping while strengthening muscles and improving flexibility. We hope to further develop motor skills through instruction, practice and fun.</p>
+            
+            <a href="../business/stretch-n-grow-parent-me-fun-fitness-707.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 15, "lat": 53.2355191, "lon": -6.1933991, "name": "Play Cafe / Bumps and Babes", "category": "Parent-and-toddler", "url": "../business/play-cafe-bumps-and-babes-15.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 66, "lat": 53.2467012, "lon": -6.1975246, "name": "De La Salle Palmerston FC (DLSP)", "category": "Rugby", "url": "../business/de-la-salle-palmerston-fc-dlsp-66.html", "minAge": 3, "maxAge": 4, "price": null, "free": false}, {"id": 67, "lat": 53.2467012, "lon": -6.1975246, "name": "De La Salle Palmerston FC (DLSP)", "category": "Rugby", "url": "../business/de-la-salle-palmerston-fc-dlsp-67.html", "minAge": 6, "maxAge": 12, "price": null, "free": false}, {"id": 707, "lat": 53.4065148, "lon": -6.2866677, "name": "Stretch n Grow Parent & Me Fun Fitness", "category": "Parent-and-toddler", "url": "../business/stretch-n-grow-parent-me-fun-fitness-707.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in New Ross | Kids Patch</title>
+    <meta name="description" content="Browse 4 kids activities and classes in New Ross, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/new-ross.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in New Ross | Kids Patch">
+    <meta property="og:description" content="Browse 4 kids activities and classes in New Ross, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/new-ross.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in New Ross | Kids Patch">
+    <meta name="twitter:description" content="Browse 4 kids activities and classes in New Ross, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in New Ross", "description": "Browse 4 kids activities and classes in New Ross, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/new-ross.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 4, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/new-ross-library-972.html", "name": "New Ross Library"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/new-ross-parent-baby-and-toddler-group-973.html", "name": "New Ross Parent, Baby and Toddler Group"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/turtle-tots-swimming-classes-wexford-wicklow-1317.html", "name": "Turtle Tots Swimming Classes - Wexford/Wicklow"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/turtle-tots-swimming-classes-wexford-wicklow-1319.html", "name": "Turtle Tots Swimming Classes - Wexford/Wicklow"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="wexford.html">Wexford</a> &rsaquo; New Ross</nav>
+        <h1>Kids Activities in New Ross</h1>
+        <p class="landing-intro">Browse 4 kids activities and classes in New Ross. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="wexford.html">&larr; All activities in County Wexford</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="972">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>New Ross Library</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">New Ross Library offers fantastic groups for babies and kids. Rhymetime: every Thursday at 11am, a fun-packed session with lots of stories, rhymes and songs.</p>
+            
+            <a href="../business/new-ross-library-972.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="973">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>New Ross Parent, Baby and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">New Ross Parent, Baby and Toddler Group, Wexford, is an opportunity for parents to meet for a cup of tea/coffee and a chat while the children play. If you&#x27;d like to attend, please come along - registration or sign-up is not required. Location: Youth New Ross, The Bullawn, New Ross, Co. Wexford. Day/Time: every Friday, 9.30-11am (during school term time). Cost: free/donation per family. Contact: drop in on a Friday morning, or contact Lauren or Hayley at info@ynr.ie or phone the office on 051 425 415 ext. 16.</p>
+            
+            <a href="../business/new-ross-parent-baby-and-toddler-group-973.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1317">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Turtle Tots Swimming Classes - Wexford/Wicklow</h3>
+            <div class="tag-container"><span class="tag">Swimming</span></div>
+            <p class="description">Turtle Tots lessons are truly child-centred. Each child is nurtured and activities are adapted to meet each individual’s needs. By the time you have reached the end of our baby programme we have taught you all the separate techniques and practices necessary for independent swimming. Our highly trained and skilled teachers ensure lessons are fun and sociable for everyone, whilst teaching your child essential life-saving skills. Babies from 3 months to 4.5 year olds can partake in Turtle Tot swimming lessons.</p>
+            
+            <a href="../business/turtle-tots-swimming-classes-wexford-wicklow-1317.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1319">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Turtle Tots Swimming Classes - Wexford/Wicklow</h3>
+            <div class="tag-container"><span class="tag">Swimming</span></div>
+            <p class="description">Turtle Tots lessons are truly child-centred. Each child is nurtured and activities are adapted to meet each individual’s needs. By the time you have reached the end of our baby programme we have taught you all the separate techniques and practices necessary for independent swimming. Our highly trained and skilled teachers ensure lessons are fun and sociable for everyone, whilst teaching your child essential life-saving skills. Babies from 3 months to 4.5 year olds can partake in Turtle Tot swimming lessons.</p>
+            
+            <a href="../business/turtle-tots-swimming-classes-wexford-wicklow-1319.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 972, "lat": 52.3955671, "lon": -6.9446066, "name": "New Ross Library", "category": "Parent-and-toddler", "url": "../business/new-ross-library-972.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 973, "lat": 52.3970977, "lon": -6.9409486, "name": "New Ross Parent, Baby and Toddler Group", "category": "Parent-and-toddler", "url": "../business/new-ross-parent-baby-and-toddler-group-973.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 1317, "lat": 52.3883127, "lon": -6.9439662, "name": "Turtle Tots Swimming Classes - Wexford/Wicklow", "category": "Swimming", "url": "../business/turtle-tots-swimming-classes-wexford-wicklow-1317.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1319, "lat": 52.3963638, "lon": -6.9335534, "name": "Turtle Tots Swimming Classes - Wexford/Wicklow", "category": "Swimming", "url": "../business/turtle-tots-swimming-classes-wexford-wicklow-1319.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

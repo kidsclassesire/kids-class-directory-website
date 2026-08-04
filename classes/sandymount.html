@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Sandymount | Kids Patch</title>
+    <meta name="description" content="Browse 5 kids activities and classes in Sandymount, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/sandymount.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Sandymount | Kids Patch">
+    <meta property="og:description" content="Browse 5 kids activities and classes in Sandymount, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/sandymount.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Sandymount | Kids Patch">
+    <meta name="twitter:description" content="Browse 5 kids activities and classes in Sandymount, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Sandymount", "description": "Browse 5 kids activities and classes in Sandymount, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/sandymount.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 5, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/all-court-tennis-440.html", "name": "All Court Tennis"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/railway-union-hockey-club-535.html", "name": "Railway Union Hockey Club"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/happy-cubs-1121.html", "name": "Happy Cubs"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/npas-1128.html", "name": "NPAS"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/playact-drama-school-1130.html", "name": "PlayAct Drama School"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Sandymount</nav>
+        <h1>Kids Activities in Sandymount</h1>
+        <p class="landing-intro">Browse 5 kids activities and classes in Sandymount. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="440">
+        <div class="card-image"><img class="logo-badge" src="../logos/allcourt-tennis-com.png" alt="All Court Tennis logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>All Court Tennis</h3>
+            <div class="tag-container"><span class="tag">Tennis</span></div>
+            <p class="description">All Court Tennis, based at the Railway Union Sports Grounds in Sandymount, Dublin 4, offers dynamic, confidence-building tennis coaching for children of all skill levels. Their programmes emphasize not just athletic growth—improving coordination, agility, balance, and focus—but also personal development through lessons in sportsmanship, problem-solving, independence, and teamwork. With a warm, inclusive philosophy, they aim to nurture not only skilled players but well-rounded individuals who love the game for life.</p>
+            
+            <a href="../business/all-court-tennis-440.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="535">
+        <div class="card-image"><img class="banner-img" src="../images/railwayunionhockey-ie.jpg" alt="Railway Union Hockey Club" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/railwayunionhockey-ie.png" alt="Railway Union Hockey Club logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Railway Union Hockey Club</h3>
+            <div class="tag-container"><span class="tag">Hockey</span></div>
+            <p class="description">Railway Union Hockey Club has a long-standing tradition of family and community values, earning its reputation as &#x27;the family club&#x27; in Irish hockey circles. The junior section is open to boys aged 5+ and girls from 1st class (age 7+), offering a supportive and fun environment to learn and enjoy hockey. With a strong focus on playing the game the right way, the club fosters respect, teamwork, and a lifelong love of the sport.</p>
+            
+            <a href="../business/railway-union-hockey-club-535.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1121">
+        <div class="card-image"><img class="banner-img" src="../images/happycubs-ie-bfdd9d.png" alt="Happy Cubs" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/happycubs-ie-bfdd9d.png" alt="Happy Cubs logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Happy Cubs</h3>
+            <div class="tag-container"><span class="tag">Swimming</span></div>
+            <p class="description">Fun, confidence-building activities for your little ones with Happy Cubs. With swim classes and music classes across Dublin, Wicklow &amp; Cork, they&#x27;re all about helping babies, toddlers and preschoolers develop life skills at their own pace, through play, songs and plenty of smiles. Their Swim Cubs classes teach water safety, basic swim technique and confidence in the water, while Music Cubs gives kids aged as young as 3-6 months up to about 5-6 years a chance to explore rhythm, sounds and social connection with others. Whether your child is ready to splash or just loves to move and sing, it&#x27;s a lovely way to bond, grow and have fun as a family.</p>
+            
+            <a href="../business/happy-cubs-1121.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1128">
+        <div class="card-image"><img class="logo-badge" src="../logos/npas-ie.png" alt="NPAS logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>NPAS</h3>
+            <div class="tag-container"><span class="tag">Drama</span></div>
+            <p class="description">The National Performing Arts School is located in the Docklands and Sandymount, and is open to students aged from 2 to 22 years old. Drama/acting classes include dramatic play, story enactment, imagination journeys, improvisation, theatre games, music, and dance - &#x27;let&#x27;s pretend&#x27; is the norm in creative drama class, not just a child&#x27;s game. A show is performed in the Olympia Theatre every two years.</p>
+            
+            <a href="../business/npas-1128.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1130">
+        <div class="card-image"><img class="banner-img" src="../images/playact-classforkids-io.jpg" alt="PlayAct Drama School" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/playact-classforkids-io.svg" alt="PlayAct Drama School logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>PlayAct Drama School</h3>
+            <div class="tag-container"><span class="tag">Drama</span></div>
+            <p class="description">PlayAct Drama School offers dynamic and creative drama workshops where kids and teens can build confidence, express themselves, and make new friends. Through acting, writing, and creating props, students develop social skills and learn to communicate in a fun and relaxed environment. The workshops are designed to meet students where they are, focusing on their interests and strengths to help them grow and explore their creativity - it&#x27;s all about adventure, discovery, and learning through play.</p>
+            
+            <a href="../business/playact-drama-school-1130.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 440, "lat": 53.3237567, "lon": -6.2121005, "name": "All Court Tennis", "category": "Tennis", "url": "../business/all-court-tennis-440.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 535, "lat": 53.3237567, "lon": -6.2121005, "name": "Railway Union Hockey Club", "category": "Hockey", "url": "../business/railway-union-hockey-club-535.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1121, "lat": 53.3279999, "lon": -6.2209624, "name": "Happy Cubs", "category": "Swimming", "url": "../business/happy-cubs-1121.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1128, "lat": 53.3279999, "lon": -6.2209624, "name": "NPAS", "category": "Drama", "url": "../business/npas-1128.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1130, "lat": 53.3279999, "lon": -6.2209624, "name": "PlayAct Drama School", "category": "Drama", "url": "../business/playact-drama-school-1130.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

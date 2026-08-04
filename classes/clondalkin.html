@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Clondalkin | Kids Patch</title>
+    <meta name="description" content="Browse 6 kids activities and classes in Clondalkin, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/clondalkin.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Clondalkin | Kids Patch">
+    <meta property="og:description" content="Browse 6 kids activities and classes in Clondalkin, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/clondalkin.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Clondalkin | Kids Patch">
+    <meta name="twitter:description" content="Browse 6 kids activities and classes in Clondalkin, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Clondalkin", "description": "Browse 6 kids activities and classes in Clondalkin, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/clondalkin.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 6, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/clondalkin-library-baby-and-toddler-group-205.html", "name": "Clondalkin Library Baby and Toddler Group"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/clondalkin-parent-and-toddler-group-207.html", "name": "Clondalkin Parent and Toddler Group"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/clondalkin-parent-baby-and-toddler-group-208.html", "name": "Clondalkin Parent, Baby and Toddler Group"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/lullababy-west-dublin-245.html", "name": "Lullababy West Dublin"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/round-towers-gaa-club-clondalkin-407.html", "name": "Round Towers GAA Club (Clondalkin)"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/clondalkin-leisure-centre-468.html", "name": "Clondalkin Leisure Centre"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Clondalkin</nav>
+        <h1>Kids Activities in Clondalkin</h1>
+        <p class="landing-intro">Browse 6 kids activities and classes in Clondalkin. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="205">
+        <div class="card-image"><img class="banner-img" src="../images/sdcc-ie-3991e9.jpg" alt="Clondalkin Library Baby and Toddler Group" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/sdcc-ie-3991e9.png" alt="Clondalkin Library Baby and Toddler Group logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Clondalkin Library Baby and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Clondalkin Library Baby and Toddler Group meets every Tuesday from 10-11.30am. It is self-led: Clondalkin Library provides the space and toys, you provide the playtime. There is no cost to attend. Keep an eye on the library&#x27;s social media for fun family activities like story time, baby reflexology and more.</p>
+            
+            <a href="../business/clondalkin-library-baby-and-toddler-group-205.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="207">
+        <div class="card-image"><img class="banner-img" src="../images/knockmittencenter-weebly-com.png" alt="Clondalkin Parent and Toddler Group" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Clondalkin Parent and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Clondalkin/Knockmitten Parent, Baby and Toddler Group, Dublin. Also known as the 2S Group, this is for preschool-aged kids to have free time to play, enjoy messy/sensory play and do some arts and crafts, while parents can mingle and chat to feel less alone in parenting. Location: Knockmitten Community Centre, Monksfield Lawns, Clondalkin, Dublin. Day/Time: every Monday, 10am-11.30pm (during school term time). Cost: €2.50 per family.</p>
+            
+            <a href="../business/clondalkin-parent-and-toddler-group-207.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="208">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Clondalkin Parent, Baby and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Clondalkin Parent, Baby and Toddler Group, Dublin. The Bawnogue Parent, Baby and Toddler Group is growing from strength to strength each week - all welcome, come join us on Friday to meet new people, have a chat and let the kids play. Location: Bawnogue Community Centre, Bawnogue Rd, Clondalkin, Dublin 22. Day/Time: every Friday, 9.30am-11pm (during school term time). Cost: €3 per family.</p>
+            
+            <a href="../business/clondalkin-parent-baby-and-toddler-group-208.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="245">
+        <div class="card-image"><img class="banner-img" src="../images/lullababyclasses-com.jpg" alt="Lullababy West Dublin" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/lullababyclasses-com.png" alt="Lullababy West Dublin logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Lullababy West Dublin</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">The Green Isle Hotel in Clondalkin, on Fridays, with times varying throughout the day. Caregivers stay and participate in the activities, which include baby massage, yoga, sensory play, movement and music, and first aid.</p>
+            
+            <a href="../business/lullababy-west-dublin-245.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="407">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Round Towers GAA Club (Clondalkin)</h3>
+            <div class="tag-container"><span class="tag">GAA</span></div>
+            <p class="description">Nursery programme introducing young children to Gaelic football and hurling fundamentals in a fun, friendship-focused environment at one of Clondalkin&#x27;s oldest GAA clubs.</p>
+            <div class="landing-card-meta">Saturday &middot; from 10:00 &middot; Ongoing membership</div>
+            <a href="../business/round-towers-gaa-club-clondalkin-407.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="468">
+        <div class="card-image"><img class="logo-badge" src="../logos/clondalkinleisure-com.png" alt="Clondalkin Leisure Centre logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Clondalkin Leisure Centre</h3>
+            <div class="tag-container"><span class="tag">Swimming</span></div>
+            <p class="description">Clondalkin Leisure Centre offers a comprehensive range of children&#x27;s swimming lessons designed to build confidence, safety, and skill in the water. Starting from 3.5 years old, their structured programmes cater to all levels, from beginners to advanced swimmers and junior lifesavers. Led by certified instructors in a modern, award-winning facility, each lesson focuses on fun, progression, and water safety. With classes available every day, it&#x27;s an ideal choice for families in Dublin 22 seeking quality swim instruction in a supportive environment.</p>
+            
+            <a href="../business/clondalkin-leisure-centre-468.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 205, "lat": 53.32072, "lon": -6.38853, "name": "Clondalkin Library Baby and Toddler Group", "category": "Parent-and-toddler", "url": "../business/clondalkin-library-baby-and-toddler-group-205.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 207, "lat": 53.32427, "lon": -6.37559, "name": "Clondalkin Parent and Toddler Group", "category": "Parent-and-toddler", "url": "../business/clondalkin-parent-and-toddler-group-207.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 208, "lat": 53.3251, "lon": -6.41248, "name": "Clondalkin Parent, Baby and Toddler Group", "category": "Parent-and-toddler", "url": "../business/clondalkin-parent-baby-and-toddler-group-208.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 245, "lat": 53.30956, "lon": -6.40368, "name": "Lullababy West Dublin", "category": "Parent-and-toddler", "url": "../business/lullababy-west-dublin-245.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 407, "lat": 53.3167284, "lon": -6.3735662, "name": "Round Towers GAA Club (Clondalkin)", "category": "GAA", "url": "../business/round-towers-gaa-club-clondalkin-407.html", "minAge": 4.0, "maxAge": 7.0, "price": null, "free": false}, {"id": 468, "lat": 53.3214965, "lon": -6.3993159, "name": "Clondalkin Leisure Centre", "category": "Swimming", "url": "../business/clondalkin-leisure-centre-468.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

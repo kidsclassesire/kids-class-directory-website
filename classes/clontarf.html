@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Clontarf | Kids Patch</title>
+    <meta name="description" content="Browse 9 kids activities and classes in Clontarf, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/clontarf.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Clontarf | Kids Patch">
+    <meta property="og:description" content="Browse 9 kids activities and classes in Clontarf, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/clontarf.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Clontarf | Kids Patch">
+    <meta name="twitter:description" content="Browse 9 kids activities and classes in Clontarf, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Clontarf", "description": "Browse 9 kids activities and classes in Clontarf, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/clontarf.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 9, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/baby-massage-first-aid-181.html", "name": "Baby Massage & First Aid"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/cj-cookery-458.html", "name": "CJ Cookery"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/clontarf-gaa-club-469.html", "name": "Clontarf GAA Club"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/clontarf-hockey-club-470.html", "name": "Clontarf Hockey Club"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/dublin-cookery-school-480.html", "name": "Dublin Cookery School"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/tennis4kids-547.html", "name": "Tennis4Kids"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/westwood-club-562.html", "name": "Westwood Club"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/claphandies-1031.html", "name": "Claphandies"}, {"@type": "ListItem", "position": 9, "url": "https://www.kidspatch.ie/business/messy-adventures-1055.html", "name": "Messy Adventures"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Clontarf</nav>
+        <h1>Kids Activities in Clontarf</h1>
+        <p class="landing-intro">Browse 9 kids activities and classes in Clontarf. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="181">
+        <div class="card-image"><img class="logo-badge" src="../logos/calminglittlefeet-com.png" alt="Baby Massage &amp; First Aid logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Baby Massage &amp; First Aid</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">Calming Little Feet offers a 6-week course where you will learn infant massage and the benefits of baby massage, which builds bonding and connection, in a supportive, non-judgemental environment. Gain useful tips and support along the way from a paediatric nurse and mam to 4 children. Everything is provided, just come along with your baby. There are also monthly Daddy &amp; Baby classes on a Saturday, for dads to enjoy some bonding time with baby, and monthly parent/grandparent first aid courses.</p>
+            
+            <a href="../business/baby-massage-first-aid-181.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="458">
+        <div class="card-image"><img class="banner-img" src="../images/cjcookery-com.jpg" alt="CJ Cookery" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/cjcookery-com.png" alt="CJ Cookery logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>CJ Cookery</h3>
+            <div class="tag-container"><span class="tag">Cooking</span></div>
+            <p class="description">CJ Cookery offers weekly baking classes for children in a fun, safe and relaxed environment in Clontarf, encouraging discovery and creativity. During my baking classes, all children work independently to create their own masterpiece from start to finish.</p>
+            
+            <a href="../business/cj-cookery-458.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="469">
+        <div class="card-image"><img class="banner-img" src="../images/clontarfgaa-com.jpg" alt="Clontarf GAA Club" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/clontarfgaa-com.png" alt="Clontarf GAA Club logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Clontarf GAA Club</h3>
+            <div class="tag-container"><span class="tag">GAA</span></div>
+            <p class="description">Clontarf GAA Club has been at the heart of the community since 1961 and is now the largest sports club in the area, with over 2,100 members playing Gaelic football, hurling, camogie, and ladies football. Our Saturday morning Nursery welcomes boys and girls aged 4-8, introducing them to Gaelic games in a fun, inclusive environment. We also run All Stars, a Friday evening session for children with additional needs. With a growing number of teams across all age groups, Clontarf GAA is a fantastic place for kids to develop skills, make friends, and be part of a thriving club.</p>
+            
+            <a href="../business/clontarf-gaa-club-469.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="470">
+        <div class="card-image"><img class="banner-img" src="../images/clontarfhc-com.jpg" alt="Clontarf Hockey Club" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/clontarfhc-com.png" alt="Clontarf Hockey Club logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Clontarf Hockey Club</h3>
+            <div class="tag-container"><span class="tag">Hockey</span></div>
+            <p class="description">Clontarf Hockey Club runs a welcoming and fun junior hockey programme for both boys and girls, from Junior Infants to 6th Class. Sessions are held at Mount Temple Comprehensive School, with groupings based on age and gender to support development and enjoyment. Session times: 10:45-11:45am, 5th &amp; 6th Class Girls; 12:00-12:45pm, Junior &amp; Senior Infant Girls; 12:00-1:00pm, 1st-4th Class Girls; 1:00-1:45pm, Junior &amp; Senior Infant Boys; 1:00-2:00pm, 1st-6th Class Boys.</p>
+            
+            <a href="../business/clontarf-hockey-club-470.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="480">
+        <div class="card-image"><img class="banner-img" src="../images/dublincookeryschool-ie.jpg" alt="Dublin Cookery School" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/dublincookeryschool-ie.png" alt="Dublin Cookery School logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Dublin Cookery School</h3>
+            <div class="tag-container"><span class="tag">Cooking</span></div>
+            <p class="description">Dublin Cookery School offers hands-on culinary experiences for young food enthusiasts, with classes designed to build lifelong skills in a fun and supportive environment. Located in Blackrock, this award-winning school combines tradition with innovation to help kids and teens discover their passion for cooking. Join the Growing Gourmets Summer 2025 programme, with sessions available for both Juniors and Seniors. For those with a busy schedule, they&#x27;ve also introduced 2-day courses to fit in some quick culinary learning. With expert tutors guiding every step, students get the chance to create dishes from scratch and build confidence in the kitchen.</p>
+            
+            <a href="../business/dublin-cookery-school-480.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="547">
+        <div class="card-image"><img class="banner-img" src="../images/tennis4kids-ie.png" alt="Tennis4Kids" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/tennis4kids-ie.png" alt="Tennis4Kids logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Tennis4Kids</h3>
+            <div class="tag-container"><span class="tag">Tennis</span></div>
+            <p class="description">Tennis4Kids is a specially designed programme for children aged 5 to 12, helping kids of all abilities enjoy and learn tennis in a fun, supportive environment. Using smaller courts, softer balls, and junior-sized rackets, children can develop skills at their own pace while building confidence and coordination. The friendly coaching team gets to know each player, encouraging progress and a love for the game - perfect for beginners and experienced young players alike.</p>
+            
+            <a href="../business/tennis4kids-547.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="562">
+        <div class="card-image"><img class="banner-img" src="../images/westwood-ie.jpg" alt="Westwood Club" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/westwood-ie.png" alt="Westwood Club logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Westwood Club</h3>
+            <div class="tag-container"><span class="tag">Swimming</span></div>
+            <p class="description">West Wood Club offers expert-led children&#x27;s swimming lessons across three premier Dublin locations: Clontarf Road, Leopardstown, and Westmanstown. With over 25 years of experience, their structured programme caters to all ages and abilities, guiding children through nine progressive levels, from first splashes to mastering strokes like butterfly and breaststroke. Classes are divided by ability rather than age, ensuring each child receives personalised instruction in small groups led by qualified and experienced teachers. Free assessments help place your child at the right level, and all lessons adhere to Swim Ireland guidelines. With a focus on fun and safety, West Wood Club provides a supportive environment where children can build confidence and enjoy their swimming journey.</p>
+            
+            <a href="../business/westwood-club-562.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1031">
+        <div class="card-image"><img class="banner-img" src="../images/claphandies-com-271ddb.png" alt="Claphandies" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/claphandies-com-271ddb.png" alt="Claphandies logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Claphandies</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">ClapHandies PlayLabs offer babies, wobblers and toddlers (birth to 3.5 years) a chance to play, meet other children and develop new skills. Sessions include music, song and rhyme time, and a class teaching the core baby massage techniques. We also focus on gross motor skills and language development, teaching baby sign language. The weekly classes offer a wide variety of engaging experiences tailored to the needs of each age group, and are also a chance for children to socialise with children of their own age, while giving parents/caregivers the opportunity to get to know others in their area too. Each term runs for 7 weeks, with a 50% sibling discount. Classes are offered in various locations across Ireland.</p>
+            
+            <a href="../business/claphandies-1031.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1055">
+        <div class="card-image"><img class="banner-img" src="../images/messyadventures-ie.png" alt="Messy Adventures" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/messyadventures-ie.png" alt="Messy Adventures logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Messy Adventures</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">Play promotes physical development, encouraging children to practise their fine and gross motor skills as well as hand-eye coordination. Children are given the opportunity to explore their senses by using their whole bodies and developing these movements. Our classes allow parents and carers to play one-on-one with their children, and also encourage children to learn how to engage in activities independently as well as with other children - all vital skills for their development. We pride ourselves on providing classes which are fully inclusive, warmly welcoming all babies and children. Tuesday: Malahide, 11am (messy play). Thursday: Malahide, 10am &amp; 11:20am (Role Play Village Active). Friday: Swords, 9:30am &amp; 11:15am (messy play). Friday: Raheny, 9:30am &amp; 11:15am (messy play). A 30% sibling discount is automatically applied at checkout.</p>
+            
+            <a href="../business/messy-adventures-1055.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 181, "lat": 53.37955, "lon": -6.17538, "name": "Baby Massage & First Aid", "category": "Developmental", "url": "../business/baby-massage-first-aid-181.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 458, "lat": 53.3608138, "lon": -6.1968538, "name": "CJ Cookery", "category": "Cooking", "url": "../business/cj-cookery-458.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 469, "lat": 53.3645753, "lon": -6.2034591, "name": "Clontarf GAA Club", "category": "GAA", "url": "../business/clontarf-gaa-club-469.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 470, "lat": 53.3664848, "lon": -6.228478, "name": "Clontarf Hockey Club", "category": "Hockey", "url": "../business/clontarf-hockey-club-470.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 480, "lat": 53.3608138, "lon": -6.1968538, "name": "Dublin Cookery School", "category": "Cooking", "url": "../business/dublin-cookery-school-480.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 547, "lat": 53.3645753, "lon": -6.2034591, "name": "Tennis4Kids", "category": "Tennis", "url": "../business/tennis4kids-547.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 562, "lat": 53.3632123, "lon": -6.2290091, "name": "Westwood Club", "category": "Swimming", "url": "../business/westwood-club-562.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1031, "lat": 53.3661768, "lon": -6.2222809, "name": "Claphandies", "category": "Developmental", "url": "../business/claphandies-1031.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1055, "lat": 53.3630675, "lon": -6.2268626, "name": "Messy Adventures", "category": "Developmental", "url": "../business/messy-adventures-1055.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Leixlip | Kids Patch</title>
+    <meta name="description" content="Browse 5 kids activities and classes in Leixlip, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/leixlip.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Leixlip | Kids Patch">
+    <meta property="og:description" content="Browse 5 kids activities and classes in Leixlip, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/leixlip.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Leixlip | Kids Patch">
+    <meta name="twitter:description" content="Browse 5 kids activities and classes in Leixlip, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Leixlip", "description": "Browse 5 kids activities and classes in Leixlip, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/leixlip.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 5, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/fireflies-leixlip-parent-and-kids-group-308.html", "name": "Fireflies Leixlip Parent and Kids Group"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/happy-peeps-sensory-play-309.html", "name": "Happy Peeps Sensory Play"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/leixlip-library-baby-and-toddler-group-313.html", "name": "Leixlip Library Baby and Toddler Group"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/leixlip-parent-baby-and-toddler-group-314.html", "name": "Leixlip Parent, Baby and Toddler Group"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/leixlip-parent-baby-and-toddler-group-315.html", "name": "Leixlip Parent, Baby and Toddler Group"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="kildare.html">Kildare</a> &rsaquo; Leixlip</nav>
+        <h1>Kids Activities in Leixlip</h1>
+        <p class="landing-intro">Browse 5 kids activities and classes in Leixlip. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="kildare.html">&larr; All activities in County Kildare</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="308">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Fireflies Leixlip Parent and Kids Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Fireflies Leixlip Parent and Kids Group is a social club for children with autism and complex needs, aged 3-7 years. It&#x27;s a free play group with different sensory stations for the children to explore as they wish. The hall is large and secure, offering a safe space for children and parents to meet each week. &#x27;Let&#x27;s play the sensory way!&#x27; Location: Leixlip Youth &amp; Community Centre, Leixlip, Co. Kildare. Day/Time: every Wednesday, 5.30-7pm (during term time).</p>
+            
+            <a href="../business/fireflies-leixlip-parent-and-kids-group-308.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="309">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Happy Peeps Sensory Play</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">Location: Leixlip Youth &amp; Community Centre. Time: 10.30-11.30am. Children have the opportunity to regulate, engage in messy play and express themselves in a safe and supportive environment with smaller group sizes. Classes are child-led, relaxed, and full of fun and things to explore. Caregivers such as parents, grandparents and childminders can attend and are required to stay for the duration of the class. Bring a spare change of clothes and a small towel/baby wipes. I also run Babies &amp; Toddlers Sensory Play in a different location - keep an eye on our Instagram page for location updates, where you can also book, or contact Vicky on 0857377109 for any questions.</p>
+            
+            <a href="../business/happy-peeps-sensory-play-309.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="313">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Leixlip Library Baby and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Leixlip Baby &amp; Toddler Time is a social event for little ones and their grown-ups. Come along for a story or two and a big room of toys for your little ones to play with, with tea and coffee for the grown-ups. Children up to preschool age are welcome, with storytelling and songs from 11am. No need to book, just come along. Location: Leixlip Library, Captain&#x27;s Hill, Newtown, Leixlip, Co. Kildare, W23 WR96. Day/Time: every Friday, 10-11.30am. Cost: free.</p>
+            
+            <a href="../business/leixlip-library-baby-and-toddler-group-313.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="314">
+        <div class="card-image"><img class="banner-img" src="../images/lycc-ie.jpg" alt="Leixlip Parent, Baby and Toddler Group" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/lycc-ie.jpg" alt="Leixlip Parent, Baby and Toddler Group logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Leixlip Parent, Baby and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Leixlip Parent, Baby and Toddler Group welcomes parents, grandparents and minders to come along with babies/toddlers from birth to 4 years old, for a change of scenery and a chance for the little ones to play while the grown-ups chat. New members always welcome. Location: Our Lady&#x27;s Parish Centre, Old Hill, Leixlip, Co. Kildare. Day/Time: every Thursday at 10am (during school term time). Cost: free.</p>
+            
+            <a href="../business/leixlip-parent-baby-and-toddler-group-314.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="315">
+        <div class="card-image"><img class="banner-img" src="../images/lycc-ie.jpg" alt="Leixlip Parent, Baby and Toddler Group" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/lycc-ie.jpg" alt="Leixlip Parent, Baby and Toddler Group logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Leixlip Parent, Baby and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Leixlip Parent, Baby and Toddler Group is an independent parent &amp; toddler group affiliated with the Kildare County Childcare Commission. All staff involved in the group are Garda vetted. The group is well equipped with age-appropriate, educational and sensory toys (mostly new), which are rotated between sessions after being fully cleaned. Bathrooms with baby changing areas are located outside the hall. Location: Leixlip Youth and Community Centre, Newtown House, Captain&#x27;s Hill, Newtown, Leixlip, Co. Kildare, W23 T8W5. Day/Time: 10am on Mondays and 11am on Tuesdays (during term time). Cost: €2 per family.</p>
+            
+            <a href="../business/leixlip-parent-baby-and-toddler-group-315.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 308, "lat": 53.3724, "lon": -6.48643, "name": "Fireflies Leixlip Parent and Kids Group", "category": "Parent-and-toddler", "url": "../business/fireflies-leixlip-parent-and-kids-group-308.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 309, "lat": 53.3724, "lon": -6.48643, "name": "Happy Peeps Sensory Play", "category": "Developmental", "url": "../business/happy-peeps-sensory-play-309.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 313, "lat": 53.37201, "lon": -6.48644, "name": "Leixlip Library Baby and Toddler Group", "category": "Parent-and-toddler", "url": "../business/leixlip-library-baby-and-toddler-group-313.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 314, "lat": 53.36524, "lon": -6.49504, "name": "Leixlip Parent, Baby and Toddler Group", "category": "Parent-and-toddler", "url": "../business/leixlip-parent-baby-and-toddler-group-314.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 315, "lat": 53.3724, "lon": -6.48643, "name": "Leixlip Parent, Baby and Toddler Group", "category": "Parent-and-toddler", "url": "../business/leixlip-parent-baby-and-toddler-group-315.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

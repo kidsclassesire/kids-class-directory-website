@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Dun Laoghaire | Kids Patch</title>
+    <meta name="description" content="Browse 4 kids activities and classes in Dun Laoghaire, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/dun-laoghaire.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Dun Laoghaire | Kids Patch">
+    <meta property="og:description" content="Browse 4 kids activities and classes in Dun Laoghaire, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/dun-laoghaire.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Dun Laoghaire | Kids Patch">
+    <meta name="twitter:description" content="Browse 4 kids activities and classes in Dun Laoghaire, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Dun Laoghaire", "description": "Browse 4 kids activities and classes in Dun Laoghaire, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/dun-laoghaire.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 4, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/turtle-tots-417.html", "name": "Turtle Tots"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/me-you-music-513.html", "name": "Me & You Music"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/b-a-n-t-s-1108.html", "name": "B.A.N.T.S"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/playact-drama-school-1131.html", "name": "PlayAct Drama School"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Dun Laoghaire</nav>
+        <h1>Kids Activities in Dun Laoghaire</h1>
+        <p class="landing-intro">Browse 4 kids activities and classes in Dun Laoghaire. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="417">
+        <div class="card-image"><img class="banner-img" src="../images/turtletots-com.jpg" alt="Turtle Tots" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/turtletots-com.png" alt="Turtle Tots logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Turtle Tots</h3>
+            <div class="tag-container"><span class="tag">Swimming</span></div>
+            <p class="description">Progressive baby and toddler swimming programme starting from birth, developed with personal trainers, combining water confidence activities with a toning workout for accompanying parents.</p>
+            <div class="landing-card-meta">10-week term</div>
+            <a href="../business/turtle-tots-417.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="513">
+        <div class="card-image"><img class="logo-badge" src="../logos/meandyoumusic-com.webp" alt="Me &amp; You Music logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Me &amp; You Music</h3>
+            <div class="tag-container"><span class="tag">Music</span></div>
+            <p class="description">Me &amp; You Music (suitable from 4 months to 6 years) is about playfully introducing the wonderful world of music and encouraging children to sing, dance, explore and, most importantly, have fun. Mischa takes her music classes and workshops all around Dublin.</p>
+            
+            <a href="../business/me-you-music-513.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1108">
+        <div class="card-image"><img class="banner-img" src="../images/bants-ie.png" alt="B.A.N.T.S" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/bants-ie.png" alt="B.A.N.T.S logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>B.A.N.T.S</h3>
+            <div class="tag-container"><span class="tag">Drama</span></div>
+            <p class="description">With over 65 years of experience, B.A.N.T.S is Ireland&#x27;s oldest theatre school, offering Speech and Drama classes for children and teenagers aged 4 to 18 in Dublin. Founded in 1951, the school has a rich legacy of excellence and a reputation for fostering a lifelong love of drama. Classes focus on building confidence, clear speech, and creativity, whether students are beginners or more advanced. Small class sizes ensure individual attention, and students have the opportunity to take grade examinations with Trinity College London and participate in solo and group competitions throughout the year.</p>
+            
+            <a href="../business/b-a-n-t-s-1108.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1131">
+        <div class="card-image"><img class="banner-img" src="../images/playact-classforkids-io.jpg" alt="PlayAct Drama School" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/playact-classforkids-io.svg" alt="PlayAct Drama School logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>PlayAct Drama School</h3>
+            <div class="tag-container"><span class="tag">Drama</span></div>
+            <p class="description">PlayAct Drama School offers dynamic and creative drama workshops where kids and teens can build confidence, express themselves, and make new friends. Through acting, writing, and creating props, students develop social skills and learn to communicate in a fun and relaxed environment. The workshops are designed to meet students where they are, focusing on their interests and strengths to help them grow and explore their creativity - it&#x27;s all about adventure, discovery, and learning through play.</p>
+            
+            <a href="../business/playact-drama-school-1131.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 417, "lat": 53.2922794, "lon": -6.1360079, "name": "Turtle Tots", "category": "Swimming", "url": "../business/turtle-tots-417.html", "minAge": 0.0, "maxAge": 4.0, "price": null, "free": false}, {"id": 513, "lat": 53.2922794, "lon": -6.1360079, "name": "Me & You Music", "category": "Music", "url": "../business/me-you-music-513.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1108, "lat": 53.2922794, "lon": -6.1360079, "name": "B.A.N.T.S", "category": "Drama", "url": "../business/b-a-n-t-s-1108.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1131, "lat": 53.2922794, "lon": -6.1360079, "name": "PlayAct Drama School", "category": "Drama", "url": "../business/playact-drama-school-1131.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

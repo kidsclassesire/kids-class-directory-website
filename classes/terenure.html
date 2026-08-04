@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Terenure | Kids Patch</title>
+    <meta name="description" content="Browse 9 kids activities and classes in Terenure, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/terenure.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Terenure | Kids Patch">
+    <meta property="og:description" content="Browse 9 kids activities and classes in Terenure, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/terenure.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Terenure | Kids Patch">
+    <meta name="twitter:description" content="Browse 9 kids activities and classes in Terenure, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Terenure", "description": "Browse 9 kids activities and classes in Terenure, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/terenure.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 9, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/dublin-school-of-music-4.html", "name": "Dublin School of Music"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/stagekidz-academy-282.html", "name": "Stagekidz Academy"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/bushy-park-tennis-academy-457.html", "name": "Bushy Park Tennis Academy"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/messy-fun-515.html", "name": "Messy Fun"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/turtle-tots-570.html", "name": "Turtle Tots"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/archaeology-camps-booking-now-997.html", "name": "Archaeology Camps – Booking Now"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/claphandies-playlabs-dublin-1017.html", "name": "ClapHandies PlayLabs - Dublin"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/turtle-tots-dublin-1090.html", "name": "Turtle Tots Dublin"}, {"@type": "ListItem", "position": 9, "url": "https://www.kidspatch.ie/business/playact-drama-school-1129.html", "name": "PlayAct Drama School"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Terenure</nav>
+        <h1>Kids Activities in Terenure</h1>
+        <p class="landing-intro">Browse 9 kids activities and classes in Terenure. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="4">
+        <div class="card-image"><img class="banner-img" src="../images/dublinschoolofmusic-ie.jpg" alt="Dublin School of Music" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/dublinschoolofmusic-ie.png" alt="Dublin School of Music logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Dublin School of Music</h3>
+            <div class="tag-container"><span class="tag">Music</span></div>
+            <p class="description">One-to-one instrumental and vocal lessons (piano, guitar, violin, voice, flute, drums) for children and adults of all abilities, taught by concert performers and examiners, with exam preparation available.</p>
+            <div class="landing-card-meta">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday &middot; Weekly subscription &middot; EUR 30 per class</div>
+            <a href="../business/dublin-school-of-music-4.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="282">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Stagekidz Academy</h3>
+            <div class="tag-container"><span class="tag">Dance</span></div>
+            <p class="description">Classes in Terenure, Lucan, &amp; Blanchardstown! For ages 4yrs+, classes led by industry professionals where all children are encouraged to develop confidence and self belief. No term fees, weekly payment!</p>
+            
+            <a href="../business/stagekidz-academy-282.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="457">
+        <div class="card-image"><img class="banner-img" src="../images/bushytennispadel-ie.webp" alt="Bushy Park Tennis Academy" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/bushytennispadel-ie.webp" alt="Bushy Park Tennis Academy logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Bushy Park Tennis Academy</h3>
+            <div class="tag-container"><span class="tag">Tennis</span></div>
+            <p class="description">Bushy Park Tennis Academy offers fun and engaging tennis lessons for children aged 5 to 17. Classes are organised by age and skill level to ensure an enjoyable and supportive experience for all players. Lesson times: Monday to Thursday, 3-6pm; Saturday, 9am-1pm. Lessons take place at Bushy Park Tennis and Padel Club, providing a great environment for learning and playing.</p>
+            
+            <a href="../business/bushy-park-tennis-academy-457.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="515">
+        <div class="card-image"><img class="logo-badge" src="../logos/messyfun-ie.jpg" alt="Messy Fun logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Messy Fun</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">Messy Fun is a sensory play class designed especially for babies and toddlers that gives children the opportunity to experience a wide range of sensory experiences. Prepared solutions such as fingerpaint, slime and gloop give children a wonderful opportunity to experiment with different textures and materials. During messy play, babies and toddlers develop eye-hand coordination and fine motor skills - what looks like a mess on the surface is truly a learning experience for your child. For adults, messy play can be a lot of work and feel stressful, but early childhood education experts say that play is the work of the child, especially for babies and toddlers - don&#x27;t be afraid of the mess, roll up your sleeves and enjoy some messy play time with your little one. Keep an eye on Messy Fun&#x27;s social media pages for themed events throughout the year (Halloween, Easter etc.).</p>
+            
+            <a href="../business/messy-fun-515.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="570">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Turtle Tots</h3>
+            <div class="tag-container"><span class="tag">Swimming</span></div>
+            <p class="description">Teach your little one a skill for life with our inspiring and supportive baby, toddler, and preschool swimming lessons. From the first dip of the toe, Turtle Tots is a magical journey between parent and child. Develop water confidence, safety, and swimming skills through our unique and multi award-winning, child-led programme.</p>
+            
+            <a href="../business/turtle-tots-570.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="997">
+        <div class="card-image"><img class="banner-img" src="../images/sia-ie.png" alt="Archaeology Camps – Booking Now" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/sia-ie.png" alt="Archaeology Camps – Booking Now logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Archaeology Camps – Booking Now</h3>
+            <div class="tag-container"><span class="tag">Camps</span></div>
+            <p class="description">Our camps provide a fascinating alternative to sports-themed camps and other school break activities for children aged 7-12 years old. If your child is a curious explorer with a thirst for knowledge about the past, this is the camp for them! Running all year round, the camps introduce children to the mysteries and adventures of our past in a fun, practical and hands-on way that sparks their imagination.</p>
+            
+            <a href="../business/archaeology-camps-booking-now-997.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1017">
+        <div class="card-image"><img class="banner-img" src="../images/claphandies-com-0de07d.png" alt="ClapHandies PlayLabs - Dublin" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/claphandies-com-0de07d.png" alt="ClapHandies PlayLabs - Dublin logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>ClapHandies PlayLabs - Dublin</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">The PlayLabs are weekly developmental sensory play classes for babies, wobblers and/or toddlers. The classes are designed to provide a fun and engaging environment for both children and adults! With music, learning, social interaction, and sensory play, you and your little one are sure to have a great time together. They are also a chance for children to socialise with children of their own age, while offering parents/caregivers the opportunity to get to know others in their area too. Baby PlayLabs (6 weeks - 7 months) - 55 minute class duration Wobbler PlayLabs (8 months - 15 months) - 50 minute class duration Toddler PlayLabs (16 months - 3.5 years) - 50 minute class duration We typically run toddlers at 9.45am/10am, wobblers at 10.45am/11am and babies at 11.45am/12pm - venue dependent. You can check out more information about our classes on our website: https://site.claphandies.com/ In addition to your term&#x27;s booking, we also offer you 3 months free access to ClapHandies at Home which is an online resource filled with hours of follow-along music and guided playtime videos for you and your little ones to enjoy at home. So if you miss any of your classes during a term, you can run your own PlayLab at home or just tune in to have some extra fun during the week. If you are signing up for our Baby PlayLabs in particular, we also provide you with a link to our informative Baby Massage e-manual so you can continue practising the massage strokes at home.</p>
+            
+            <a href="../business/claphandies-playlabs-dublin-1017.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1090">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Turtle Tots Dublin</h3>
+            <div class="tag-container"><span class="tag">Swimming</span></div>
+            <p class="description">Turtle Tots lessons are truly child-centred. Each child is nurtured and activities are adapted to meet each individual’s needs. By the time you have reached the end of our baby programme we have taught you all the separate techniques and practices necessary for independent swimming. Our highly trained and skilled teachers ensure lessons are fun and sociable for everyone, whilst teaching your child essential life-saving skills. Babies from 3 months to 4.5 year olds can partake in Turtle Tot swimming lessons.</p>
+            
+            <a href="../business/turtle-tots-dublin-1090.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1129">
+        <div class="card-image"><img class="banner-img" src="../images/playact-classforkids-io.jpg" alt="PlayAct Drama School" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/playact-classforkids-io.svg" alt="PlayAct Drama School logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>PlayAct Drama School</h3>
+            <div class="tag-container"><span class="tag">Drama</span></div>
+            <p class="description">PlayAct Drama School offers dynamic and creative drama workshops where kids and teens can build confidence, express themselves, and make new friends. Through acting, writing, and creating props, students develop social skills and learn to communicate in a fun and relaxed environment. The workshops are designed to meet students where they are, focusing on their interests and strengths to help them grow and explore their creativity - it&#x27;s all about adventure, discovery, and learning through play.</p>
+            
+            <a href="../business/playact-drama-school-1129.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 4, "lat": 53.3115981, "lon": -6.282925, "name": "Dublin School of Music", "category": "Music", "url": "../business/dublin-school-of-music-4.html", "minAge": null, "maxAge": null, "price": 30, "free": false}, {"id": 282, "lat": 53.3098292, "lon": -6.2832703, "name": "Stagekidz Academy", "category": "Dance", "url": "../business/stagekidz-academy-282.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 457, "lat": 53.3093049, "lon": -6.2884924, "name": "Bushy Park Tennis Academy", "category": "Tennis", "url": "../business/bushy-park-tennis-academy-457.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 515, "lat": 53.3233115, "lon": -6.2786667, "name": "Messy Fun", "category": "Developmental", "url": "../business/messy-fun-515.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 570, "lat": 53.3222703, "lon": -6.2800697, "name": "Turtle Tots", "category": "Swimming", "url": "../business/turtle-tots-570.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 997, "lat": 53.3098292, "lon": -6.2832703, "name": "Archaeology Camps – Booking Now", "category": "Camps", "url": "../business/archaeology-camps-booking-now-997.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1017, "lat": 53.3093049, "lon": -6.2884924, "name": "ClapHandies PlayLabs - Dublin", "category": "Developmental", "url": "../business/claphandies-playlabs-dublin-1017.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1090, "lat": 53.3051029, "lon": -6.2965078, "name": "Turtle Tots Dublin", "category": "Swimming", "url": "../business/turtle-tots-dublin-1090.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1129, "lat": 53.3098292, "lon": -6.2832703, "name": "PlayAct Drama School", "category": "Drama", "url": "../business/playact-drama-school-1129.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

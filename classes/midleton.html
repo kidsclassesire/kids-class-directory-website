@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Midleton | Kids Patch</title>
+    <meta name="description" content="Browse 4 kids activities and classes in Midleton, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/midleton.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Midleton | Kids Patch">
+    <meta property="og:description" content="Browse 4 kids activities and classes in Midleton, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/midleton.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Midleton | Kids Patch">
+    <meta name="twitter:description" content="Browse 4 kids activities and classes in Midleton, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Midleton", "description": "Browse 4 kids activities and classes in Midleton, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/midleton.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 4, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/little-puckers-gaa-class-for-preschoolers-in-cork-1159.html", "name": "Little Puckers - GAA class for preschoolers in Cork"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/toddler-sense-cork-1168.html", "name": "Toddler Sense Cork"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/little-kickers-1285.html", "name": "Little Kickers"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/project-fashion-midleton-1530.html", "name": "Project Fashion - Midleton"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="cork.html">Cork</a> &rsaquo; Midleton</nav>
+        <h1>Kids Activities in Midleton</h1>
+        <p class="landing-intro">Browse 4 kids activities and classes in Midleton. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="cork.html">&larr; All activities in County Cork</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="1159">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Little Puckers - GAA class for preschoolers in Cork</h3>
+            <div class="tag-container"><span class="tag">GAA</span></div>
+            <p class="description">Join Little Puckers in creating a welcoming and inclusive environment for all children to learn and grow through the joy of Gaelic Games (GAA). Little Puckers is a fun and inclusive Gaelic Games-based programme for children aged 1.5-5 years old, committed to providing easy access to hurling and football for every child. Parents are key stakeholders in their child&#x27;s enjoyment at Little Puckers - you&#x27;ll be asked to play with your child for most of the session, and these collaborative activities help develop strong bonds with your child, leading to a stronger relationship. All equipment is provided at the classes, so there&#x27;s no need to bring anything except a drink. 9 locations in Cork: Blarney (Scoil Mhuire Gan Smal), Bandon (Bandon Grammar School), Macroom (Macroom Community Centre), Kinsale (Saile Community Centre), Carrigaline (Carrigaline Community Complex), Ballinlough (St Anthony&#x27;s BNS), Midleton (Midleton Educate Together), Fermoy (Gaelscoil de hÍde), and Glanmire (Upper Glanmire Community Hall).</p>
+            
+            <a href="../business/little-puckers-gaa-class-for-preschoolers-in-cork-1159.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1168">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Toddler Sense Cork</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">Our classes are parent led so it’s a great opportunity to have some special time with your toddler. If you can’t make a class then why not ask a grandparent or childminder to bring them along!</p>
+            
+            <a href="../business/toddler-sense-cork-1168.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1285">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Little Kickers</h3>
+            <div class="tag-container"><span class="tag">Football</span></div>
+            <p class="description">Join the world&#x27;s No. 1 preschool football programme, with over 100,000 children participating every week. Our play-orientated classes are fun, engaging, and nurture a love of sport from an early age. We are proud to be more than just football - while football is the tool we use, our goal is to develop the fundamentals of movement (balance, agility &amp; coordination), fundamental movement skills (running, hopping, skipping, jumping), social skills such as listening, sharing and taking turns, and early learning concepts like numbers, colours and body parts. We have 4 different age groups to ensure children participate with their peers at around the same developmental level. Our Little Kickers programme is suitable for children aged 18 months to 2.5 years - it&#x27;s a parent-toddler programme requiring active parental participation, which ensures your child gets the very best out of the sessions; learning to listen and follow instructions through engaging, fun games is the goal at this level. Our Junior Kickers classes are for 2.5 to 3.5 year olds, who are starting to get more independent at this stage - children participate more by themselves, though many will still like to have their parents close to them at the magic wall, with Play, Practice, Understand as the learning outcome. The next stage is Mighty Kickers, suitable for 3.5 to 5 year olds, where most children participate independently with parents encouraged to support from the sidelines, further developing Play, Practice, Understand. The Mega Kickers programme brings together all the learning outcomes from the previous levels, relying less on the play-orientated structure of earlier stages, with a 20-minute match at the end of each session preparing children to move onto football academies and continue their football journey. Throughout all stages, our core philosophy of Play not Push is embodied - we believe children should be gently encouraged to participate and allowed to watch if they are unsure, in the hope that seeing other children in the class participating will spur them on to join in the fun.</p>
+            
+            <a href="../business/little-kickers-1285.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1530">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Project Fashion - Midleton</h3>
+            <div class="tag-container"><span class="tag">Arts and crafts</span></div>
+            <p class="description">Kids and teens fashion classes, Wednesday sessions at My Place Community Centre, Midleton.</p>
+            
+            <a href="../business/project-fashion-midleton-1530.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 1159, "lat": 51.9175359, "lon": -8.5859773, "name": "Little Puckers - GAA class for preschoolers in Cork", "category": "GAA", "url": "../business/little-puckers-gaa-class-for-preschoolers-in-cork-1159.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1168, "lat": 51.9148279, "lon": -8.1733222, "name": "Toddler Sense Cork", "category": "Developmental", "url": "../business/toddler-sense-cork-1168.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1285, "lat": 51.9148279, "lon": -8.1733222, "name": "Little Kickers", "category": "Football", "url": "../business/little-kickers-1285.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1530, "lat": null, "lon": null, "name": "Project Fashion - Midleton", "category": "Arts and crafts", "url": "../business/project-fashion-midleton-1530.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

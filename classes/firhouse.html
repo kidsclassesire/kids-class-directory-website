@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Firhouse | Kids Patch</title>
+    <meta name="description" content="Browse 6 kids activities and classes in Firhouse, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/firhouse.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Firhouse | Kids Patch">
+    <meta property="og:description" content="Browse 6 kids activities and classes in Firhouse, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/firhouse.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Firhouse | Kids Patch">
+    <meta name="twitter:description" content="Browse 6 kids activities and classes in Firhouse, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Firhouse", "description": "Browse 6 kids activities and classes in Firhouse, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/firhouse.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 6, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/baby-sensory-dublin-southwest-12.html", "name": "Baby Sensory Dublin Southwest"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/ballyboden-st-endas-gaa-camogie-ladies-football-club-31.html", "name": "Ballyboden St Endas GAA, Camogie & Ladies Football Club"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/little-kickers-dublin-meath-34.html", "name": "Little Kickers Dublin & Meath"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/little-kickers-dublin-meath-35.html", "name": "Little Kickers Dublin & Meath"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/little-kickers-dublin-meath-36.html", "name": "Little Kickers Dublin & Meath"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/the-brickx-club-1105.html", "name": "The Brickx Club"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Firhouse</nav>
+        <h1>Kids Activities in Firhouse</h1>
+        <p class="landing-intro">Browse 6 kids activities and classes in Firhouse. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="70">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="70" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="70" value="70" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="12">
+        <div class="card-image"><img class="banner-img" src="../images/babysensory-ie-5923d8.jpg" alt="Baby Sensory Dublin Southwest" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/babysensory-ie-5923d8.png" alt="Baby Sensory Dublin Southwest logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Baby Sensory Dublin Southwest</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">Multi-sensory baby development classes for babies aged 0-13 months, featuring baby signing, music, light shows, bubbles and puppets to support bonding and early development.</p>
+            
+            <a href="../business/baby-sensory-dublin-southwest-12.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="31">
+        <div class="card-image"><img class="banner-img" src="../images/ballyboden-ie.jpg" alt="Ballyboden St Endas GAA, Camogie &amp; Ladies Football Club" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/ballyboden-ie.png" alt="Ballyboden St Endas GAA, Camogie &amp; Ladies Football Club logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Ballyboden St Endas GAA, Camogie &amp; Ladies Football Club</h3>
+            <div class="tag-container"><span class="tag">Camps</span></div>
+            <p class="description">Club-run Gaelic games summer camp (Campa Samhraidh) teaching football, hurling and camogie skills through coaching, small-sided games and team activities at one of Dublin&#x27;s largest GAA clubs.</p>
+            <div class="landing-card-meta">Monday, Tuesday, Wednesday, Thursday, Friday &middot; Summer camp &middot; EUR 70 per camp</div>
+            <a href="../business/ballyboden-st-endas-gaa-camogie-ladies-football-club-31.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="34">
+        <div class="card-image"><img class="logo-badge" src="../logos/littlekickers-ie-3696a4.png" alt="Little Kickers Dublin &amp; Meath logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Little Kickers Dublin &amp; Meath</h3>
+            <div class="tag-container"><span class="tag">Football</span></div>
+            <p class="description">Structured pre-school football classes focused on building confidence, coordination and social skills in a fun, pressure-free environment, led by specially trained coaches.</p>
+            <div class="landing-card-meta">Sunday &middot; 09:00-09:45 &middot; Weekly subscription &middot; EUR 57 per month</div>
+            <a href="../business/little-kickers-dublin-meath-34.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="35">
+        <div class="card-image"><img class="logo-badge" src="../logos/littlekickers-ie-3696a4.png" alt="Little Kickers Dublin &amp; Meath logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Little Kickers Dublin &amp; Meath</h3>
+            <div class="tag-container"><span class="tag">Football</span></div>
+            <p class="description">Structured pre-school football classes focused on building confidence, coordination and social skills in a fun, pressure-free environment, led by specially trained coaches.</p>
+            <div class="landing-card-meta">Sunday &middot; 10:00-10:45 &middot; Weekly subscription &middot; EUR 57 per month</div>
+            <a href="../business/little-kickers-dublin-meath-35.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="36">
+        <div class="card-image"><img class="logo-badge" src="../logos/littlekickers-ie-3696a4.png" alt="Little Kickers Dublin &amp; Meath logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Little Kickers Dublin &amp; Meath</h3>
+            <div class="tag-container"><span class="tag">Football</span></div>
+            <p class="description">Structured pre-school football classes focused on building confidence, coordination and social skills in a fun, pressure-free environment, led by specially trained coaches.</p>
+            <div class="landing-card-meta">Sunday &middot; 11:00-11:45 &middot; Weekly subscription &middot; EUR 57 per month</div>
+            <a href="../business/little-kickers-dublin-meath-36.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1105">
+        <div class="card-image"><img class="logo-badge" src="../logos/thebrickxclub-com.png" alt="The Brickx Club logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>The Brickx Club</h3>
+            <div class="tag-container"><span class="tag">STEM</span></div>
+            <p class="description">Creative brick-building (LEGO-based) and STEM activity club for children, offering pre-school clubs, after-school clubs, Saturday workshops, parties and popular Easter, summer and midterm camps.</p>
+            <div class="landing-card-meta">School-term programme</div>
+            <a href="../business/the-brickx-club-1105.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 12, "lat": 53.2740278, "lon": -6.3434547, "name": "Baby Sensory Dublin Southwest", "category": "Developmental", "url": "../business/baby-sensory-dublin-southwest-12.html", "minAge": 0, "maxAge": 1.08, "price": null, "free": false}, {"id": 31, "lat": 53.2875214, "lon": -6.3278175, "name": "Ballyboden St Endas GAA, Camogie & Ladies Football Club", "category": "Camps", "url": "../business/ballyboden-st-endas-gaa-camogie-ladies-football-club-31.html", "minAge": 6, "maxAge": 13, "price": 70, "free": false}, {"id": 34, "lat": 53.2763447, "lon": -6.3409028, "name": "Little Kickers Dublin & Meath", "category": "Football", "url": "../business/little-kickers-dublin-meath-34.html", "minAge": 1.5, "maxAge": 2.5, "price": 57, "free": false}, {"id": 35, "lat": 53.2763447, "lon": -6.3409028, "name": "Little Kickers Dublin & Meath", "category": "Football", "url": "../business/little-kickers-dublin-meath-35.html", "minAge": 2.5, "maxAge": 3.5, "price": 57, "free": false}, {"id": 36, "lat": 53.2763447, "lon": -6.3409028, "name": "Little Kickers Dublin & Meath", "category": "Football", "url": "../business/little-kickers-dublin-meath-36.html", "minAge": 3.5, "maxAge": 5, "price": 57, "free": false}, {"id": 1105, "lat": 53.2814825, "lon": -6.3447432, "name": "The Brickx Club", "category": "STEM", "url": "../business/the-brickx-club-1105.html", "minAge": 3.0, "maxAge": 12.0, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

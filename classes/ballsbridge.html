@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Ballsbridge | Kids Patch</title>
+    <meta name="description" content="Browse 4 kids activities and classes in Ballsbridge, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/ballsbridge.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Ballsbridge | Kids Patch">
+    <meta property="og:description" content="Browse 4 kids activities and classes in Ballsbridge, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/ballsbridge.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Ballsbridge | Kids Patch">
+    <meta name="twitter:description" content="Browse 4 kids activities and classes in Ballsbridge, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Ballsbridge", "description": "Browse 4 kids activities and classes in Ballsbridge, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/ballsbridge.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 4, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/ballsbridge-baby-toddler-group-pembroke-library-187.html", "name": "Ballsbridge Baby & Toddler Group - Pembroke Library"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/rathmines-baby-toddler-group-junior-book-club-rathmines-libr-269.html", "name": "Rathmines Baby & Toddler Group & Junior Book Club - Rathmines Library"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/alix-gardner-s-cookery-school-439.html", "name": "Alix Gardner's Cookery School"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/coderdojo-leman-solicitors-ballsbridge-1335.html", "name": "CoderDojo Leman Solicitors Ballsbridge"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Ballsbridge</nav>
+        <h1>Kids Activities in Ballsbridge</h1>
+        <p class="landing-intro">Browse 4 kids activities and classes in Ballsbridge. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="187">
+        <div class="card-image"><img class="banner-img" src="../images/dublincity-ie-e164c4.jpg" alt="Ballsbridge Baby &amp; Toddler Group - Pembroke Library" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/dublincity-ie-e164c4.svg" alt="Ballsbridge Baby &amp; Toddler Group - Pembroke Library logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Ballsbridge Baby &amp; Toddler Group - Pembroke Library</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Pembroke Library toddler group offers stories, sing-songs and places toys in a circle on the floor to encourage children to socialise under the supervision of their parent or guardian. Location: Pembroke Library, Anglesea Road, Dublin 4. Time: every Thursday morning, 10.30-11.30am. Cost: free. Contact: 01 222 8450 / pembrokelibrary@dublincity.ie</p>
+            
+            <a href="../business/ballsbridge-baby-toddler-group-pembroke-library-187.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="269">
+        <div class="card-image"><img class="banner-img" src="../images/dublincity-ie-e9a9f0.jpg" alt="Rathmines Baby &amp; Toddler Group &amp; Junior Book Club - Rathmines Library" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/dublincity-ie-e9a9f0.svg" alt="Rathmines Baby &amp; Toddler Group &amp; Junior Book Club - Rathmines Library logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Rathmines Baby &amp; Toddler Group &amp; Junior Book Club - Rathmines Library</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Rathmines Library toddler group offers stories, sing-songs and toys as a fun and safe place to meet up, for babies to preschoolers - no need to book, just drop in. Time: every Thursday at 1pm. Keep an eye on social media for when the group may not be operating. Children&#x27;s Book Club: a space for children aged 7-12 to gather and discuss books. Nicknamed the &#x27;Greedy Readers&#x27;, they love to read and love to eat - join the library to discuss books and enjoy some delicious snacks. Please get in touch to put your name down and receive this month&#x27;s book. Time: last Thursday of every month at 3pm, in the exhibition room. Location: Rathmines Library, 157 Lower Rathmines Road, Dublin 6. Cost: free. Contact: rathmineslibrary@dublincity.ie</p>
+            
+            <a href="../business/rathmines-baby-toddler-group-junior-book-club-rathmines-libr-269.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="439">
+        <div class="card-image"><img class="logo-badge" src="../logos/dublincookery-com.png" alt="Alix Gardner&#x27;s Cookery School logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Alix Gardner&#x27;s Cookery School</h3>
+            <div class="tag-container"><span class="tag">Cooking</span></div>
+            <p class="description">This is where young foodies are discovered. Alix Gardner&#x27;s Cookery shows children the fun and wonder of cooking - they learn traditional cooking skills and have fun with good, honest, delicious food. From artisan kitchen crafts to experimenting with flavour combinations and exploring food cultures and kitchen traditions, their children&#x27;s cookery courses are specifically designed to educate, inspire and engage young chefs into the world of cookery, while having a great time in the kitchen in a safe and warm environment.</p>
+            
+            <a href="../business/alix-gardner-s-cookery-school-439.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1335">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>CoderDojo Leman Solicitors Ballsbridge</h3>
+            <div class="tag-container"><span class="tag">STEM</span></div>
+            <p class="description">Free, volunteer-led coding club for ages 7-17 at 34 Percy Place, Ballsbridge; sessions run Saturdays, parent/guardian must stay on site.</p>
+            
+            <a href="../business/coderdojo-leman-solicitors-ballsbridge-1335.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 187, "lat": 53.324, "lon": -6.23034, "name": "Ballsbridge Baby & Toddler Group - Pembroke Library", "category": "Parent-and-toddler", "url": "../business/ballsbridge-baby-toddler-group-pembroke-library-187.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 269, "lat": 53.324, "lon": -6.23034, "name": "Rathmines Baby & Toddler Group & Junior Book Club - Rathmines Library", "category": "Parent-and-toddler", "url": "../business/rathmines-baby-toddler-group-junior-book-club-rathmines-libr-269.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 439, "lat": 53.3291947, "lon": -6.2313316, "name": "Alix Gardner's Cookery School", "category": "Cooking", "url": "../business/alix-gardner-s-cookery-school-439.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1335, "lat": null, "lon": null, "name": "CoderDojo Leman Solicitors Ballsbridge", "category": "STEM", "url": "../business/coderdojo-leman-solicitors-ballsbridge-1335.html", "minAge": 7.0, "maxAge": 17.0, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

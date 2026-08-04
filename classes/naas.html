@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Naas | Kids Patch</title>
+    <meta name="description" content="Browse 4 kids activities and classes in Naas, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/naas.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Naas | Kids Patch">
+    <meta property="og:description" content="Browse 4 kids activities and classes in Naas, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/naas.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Naas | Kids Patch">
+    <meta name="twitter:description" content="Browse 4 kids activities and classes in Naas, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Naas", "description": "Browse 4 kids activities and classes in Naas, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/naas.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 4, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/master-doyle-taekwon-do-schools-706.html", "name": "Master Doyle Taekwon-Do Schools"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/ready-steady-play-midlands-781.html", "name": "Ready Steady Play Midlands"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/turtle-tots-swimming-classes-1232.html", "name": "Turtle Tots Swimming Classes"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/k-leisure-kids-activities-athy-1593.html", "name": "K Leisure - Kids Activities, Athy"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="kildare.html">Kildare</a> &rsaquo; Naas</nav>
+        <h1>Kids Activities in Naas</h1>
+        <p class="landing-intro">Browse 4 kids activities and classes in Naas. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="kildare.html">&larr; All activities in County Kildare</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="706">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Master Doyle Taekwon-Do Schools</h3>
+            <div class="tag-container"><span class="tag">Martial Arts</span></div>
+            <p class="description">The Master Doyle Taekwon-Do Schools have classes in Tallaght (Old Bawn), Kildare (Maynooth &amp; Naas) and Carlow. Our schools have produced World, European &amp; National champions, and our students have won medals representing Ireland both home and abroad. We offer both traditional and sport Taekwon-Do classes to children and adults, with special classes for younger children that give them an introduction to the martial arts in a fun way. We offer special rates for families wishing to join together. All our instructors are Garda vetted, qualified and recognised by the Irish Martial Arts Council. The school&#x27;s senior instructor is 8th Dan Master Stephen Doyle, who has worked as Irish national coach for over 20 years and is a former European gold medallist. Whether it&#x27;s for fitness or self-defence, if you or your children are interested in joining, drop along for a free class or contact Stephen on 087-6986491 / info@masterdoyle.com</p>
+            
+            <a href="../business/master-doyle-taekwon-do-schools-706.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="781">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Ready Steady Play Midlands</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">Our child development experts and play leaders create a unique experience weekly, encouraging early learning and development. In class we pride ourselves on forging a sense of community where parents and caregivers build personal connections and lifelong friendships, with classes throughout the Midlands. Through socialisation, your child will explore and discover the world around them. Our classes are great fun for parents, caregivers and children alike to share together in the vital first five years. Each week you and your little one will go on a new play and musical adventure into the rainforest, under the sea, practising circus skills, and many more, with over 30 themes to explore during the year. Our Sensory Baby Play classes are suitable from newborn to pre-walkers, while our Toddler Play classes are suitable for pre-walkers to 3.5 year olds. Classes run 6 days a week across the Midlands: Athlone, Mondays &amp; Saturdays; Mullingar, Tuesdays &amp; Wednesdays; Portlaoise, Wednesdays &amp; Thursdays; Tullamore, Thursdays &amp; Fridays; Naas, Fridays.</p>
+            
+            <a href="../business/ready-steady-play-midlands-781.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1232">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Turtle Tots Swimming Classes</h3>
+            <div class="tag-container"><span class="tag">Swimming</span></div>
+            <p class="description">Turtle Tots lessons are truly child-centred. Each child is nurtured and activities are adapted to meet each individual’s needs. By the time you have reached the end of our baby programme we have taught you all the separate techniques and practices necessary for independent swimming. Our highly trained and skilled teachers ensure lessons are fun and sociable for everyone, whilst teaching your child essential life-saving skills. Babies from 3 months to 4.5 year olds can partake in Turtle Tot swimming lessons.</p>
+            
+            <a href="../business/turtle-tots-swimming-classes-1232.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1593">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>K Leisure - Kids Activities, Athy</h3>
+            <div class="tag-container"><span class="tag">Camps</span></div>
+            <p class="description">Multi Activity Camp (5-12, €85) and Intensive Swim Camp (5-12, €65) at K Leisure Athy.</p>
+            
+            <a href="../business/k-leisure-kids-activities-athy-1593.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 706, "lat": 53.2142203, "lon": -6.6729831, "name": "Master Doyle Taekwon-Do Schools", "category": "Martial Arts", "url": "../business/master-doyle-taekwon-do-schools-706.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 781, "lat": 53.249033, "lon": -6.665686, "name": "Ready Steady Play Midlands", "category": "Developmental", "url": "../business/ready-steady-play-midlands-781.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1232, "lat": 53.2154946, "lon": -6.6763472, "name": "Turtle Tots Swimming Classes", "category": "Swimming", "url": "../business/turtle-tots-swimming-classes-1232.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1593, "lat": 53.2171155, "lon": -6.6802956, "name": "K Leisure - Kids Activities, Athy", "category": "Camps", "url": "../business/k-leisure-kids-activities-athy-1593.html", "minAge": 5.0, "maxAge": 12.0, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

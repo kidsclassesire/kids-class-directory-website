@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Shankill | Kids Patch</title>
+    <meta name="description" content="Browse 4 kids activities and classes in Shankill, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/shankill.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Shankill | Kids Patch">
+    <meta property="og:description" content="Browse 4 kids activities and classes in Shankill, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/shankill.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Shankill | Kids Patch">
+    <meta name="twitter:description" content="Browse 4 kids activities and classes in Shankill, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Shankill", "description": "Browse 4 kids activities and classes in Shankill, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/shankill.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 4, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/shankill-library-parent-and-toddler-group-21.html", "name": "Shankill Library Parent and Toddler Group"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/senseable-tots-sensory-class-in-dublin-and-wicklow-274.html", "name": "SENSEable Tots Sensory Class in Dublin and Wicklow"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/shankill-tennis-club-430.html", "name": "Shankill Tennis Club"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/shankill-gaa-club-433.html", "name": "Shankill GAA Club"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Shankill</nav>
+        <h1>Kids Activities in Shankill</h1>
+        <p class="landing-intro">Browse 4 kids activities and classes in Shankill. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="21">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Shankill Library Parent and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Free community parent and toddler group hosted at Shankill Library, offering weekly informal playtime and social contact for local parents, carers and young children.</p>
+            <div class="landing-card-meta">Monday &middot; 10:30-11:45 &middot; Drop-in</div>
+            <a href="../business/shankill-library-parent-and-toddler-group-21.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="274">
+        <div class="card-image"><img class="banner-img" src="../images/senseabletots-ie-1945d8.png" alt="SENSEable Tots Sensory Class in Dublin and Wicklow" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/senseabletots-ie-1945d8.png" alt="SENSEable Tots Sensory Class in Dublin and Wicklow logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>SENSEable Tots Sensory Class in Dublin and Wicklow</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">SENSEable Tots is a fun sensory class for 6 months to 4 years. Classes are offered in Shankill and Greystones - enjoy a supportive and relaxed environment where children can explore different sensory materials and engage in fun action songs, using their imaginations, laughing and socialising with other children. Time: Mondays at 10am in Shankill, Stonebridge Community Centre. Time: Thursdays at 10am in Greystones, Nazarene Church. Check out our social media for locations and to stay up to date with new terms. Children must be accompanied by a parent/guardian who must stay for the duration of the class. It&#x27;s recommended that you bring a change of clothes.</p>
+            
+            <a href="../business/senseable-tots-sensory-class-in-dublin-and-wicklow-274.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="430">
+        <div class="card-image"><img class="banner-img" src="../images/shankilltennisclub-com.jpg" alt="Shankill Tennis Club" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/shankilltennisclub-com.png" alt="Shankill Tennis Club logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Shankill Tennis Club</h3>
+            <div class="tag-container"><span class="tag">Sports</span></div>
+            <p class="description">Community tennis club with seven courts offering junior tennis coaching, registered with the Dun Laoghaire-Rathdown Sports Partnership club directory.</p>
+            <div class="landing-card-meta">Ongoing membership</div>
+            <a href="../business/shankill-tennis-club-430.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="433">
+        <div class="card-image"><img class="logo-badge" src="../logos/shankillgaa-ie.jpg" alt="Shankill GAA Club logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Shankill GAA Club</h3>
+            <div class="tag-container"><span class="tag">GAA</span></div>
+            <p class="description">Community GAA club offering juvenile Gaelic football and hurling training and nursery sections for children, registered with the Dun Laoghaire-Rathdown Sports Partnership club directory.</p>
+            <div class="landing-card-meta">Ongoing membership</div>
+            <a href="../business/shankill-gaa-club-433.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 21, "lat": 53.2335312, "lon": -6.127023, "name": "Shankill Library Parent and Toddler Group", "category": "Parent-and-toddler", "url": "../business/shankill-library-parent-and-toddler-group-21.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 274, "lat": 53.2330387, "lon": -6.1308449, "name": "SENSEable Tots Sensory Class in Dublin and Wicklow", "category": "Parent-and-toddler", "url": "../business/senseable-tots-sensory-class-in-dublin-and-wicklow-274.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 430, "lat": 53.2302137, "lon": -6.1196705, "name": "Shankill Tennis Club", "category": "Sports", "url": "../business/shankill-tennis-club-430.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 433, "lat": 53.2355796, "lon": -6.1358998, "name": "Shankill GAA Club", "category": "GAA", "url": "../business/shankill-gaa-club-433.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

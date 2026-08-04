@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Ballina | Kids Patch</title>
+    <meta name="description" content="Browse 5 kids activities and classes in Ballina, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/ballina.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Ballina | Kids Patch">
+    <meta property="og:description" content="Browse 5 kids activities and classes in Ballina, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/ballina.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Ballina | Kids Patch">
+    <meta name="twitter:description" content="Browse 5 kids activities and classes in Ballina, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Ballina", "description": "Browse 5 kids activities and classes in Ballina, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/ballina.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 5, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/baby-boppers-music-movement-sensory-baby-toddler-classes-856.html", "name": "Baby Boppers - Music, movement & sensory baby/toddler classes"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/ballina-parent-baby-and-toddler-group-857.html", "name": "Ballina Parent, Baby and Toddler Group"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/bloom-baby-classes-north-west-ireland-863.html", "name": "Bloom Baby Classes North West Ireland"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/messy-tots-for-little-ones-874.html", "name": "Messy Tots for Little Ones"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/play-group-in-irish-gaeilge-877.html", "name": "Play group in Irish/Gaeilge"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="mayo.html">Mayo</a> &rsaquo; Ballina</nav>
+        <h1>Kids Activities in Ballina</h1>
+        <p class="landing-intro">Browse 5 kids activities and classes in Ballina. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="mayo.html">&larr; All activities in County Mayo</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="856">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Baby Boppers - Music, movement &amp; sensory baby/toddler classes</h3>
+            <div class="tag-container"><span class="tag">Dance</span></div>
+            <p class="description">Baby Boppers is a music, movement and sensory class for babies and toddlers across the northwest of Ireland. Our classes encourage creativity, imagination, exercise and, most importantly, fun in a safe and friendly environment, using props such as scarves, pom poms, ribbons and more, set to music. Classes are lively and feel-good, and also a great chance for parents/carers to get to know others in their area. Classes are currently across Mayo and Sligo, but we also travel further for parent &amp; toddler groups, school visits, birthday parties, etc. Follow us on Instagram &#x27;Baby.boppers&#x27; for more information.</p>
+            
+            <a href="../business/baby-boppers-music-movement-sensory-baby-toddler-classes-856.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="857">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Ballina Parent, Baby and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Ballina Parent and Toddler Group, Co. Mayo, is brought to you by the Ballina Family Resource Centre - a relaxed and safe space to meet new friends, have a cuppa and a chat, and the kids have a great time too. Location: Ballina Family Resource Centre, Unit 2 Abbey Street, Ardnaree, Ballina, Co. Mayo, F26 C6P6. Day/Time: every Thursday, 10-11.30am (during school term). Cost: €3 per family, or donations. Contact: admin@ballinafrc.com</p>
+            
+            <a href="../business/ballina-parent-baby-and-toddler-group-857.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="863">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Bloom Baby Classes North West Ireland</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Bloom Baby Classes Ballina offer gentle, research-based baby development sessions designed to support bonding, early learning, and sensory exploration. Each week introduces new themes, songs, activities, and opportunities for connection with other parents and caregivers. Any primary caregiver is welcome - mum, dad, grandparents, guardians, or trusted caregivers - and siblings can attend if the class allows (please message to confirm). Caregivers must stay for the full duration of the class to support their baby, join in with activities, and ensure safety. Babies should wear comfortable clothing suitable for movement and sensory play, and you may bring a blanket or small mat for baby to lie on (optional); for Caterpillar Club, massage oil can be provided, or caregivers may bring their preferred baby-safe oil. Caterpillar Club (6 weeks-6 months) is a calm, nurturing class for younger babies focusing on early bonding, baby massage, gentle sensory play, and age-appropriate developmental activities - perfect for pre-sitters. Busy Bees (6-15 months) is a more active, engaging class for babies who are sitting, moving, or exploring, including music, sensory play, early movement activities, and opportunities to practise emerging developmental skills in a safe environment. Location: Ballina Sean Duffy Community Centre. Weekly sessions on Mondays: Busy Bees, 11-11.45am, and Caterpillar Club, 12.15-1pm.</p>
+            
+            <a href="../business/bloom-baby-classes-north-west-ireland-863.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="874">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Messy Tots for Little Ones</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">Toddler classes (1-4 years) in Co. Mayo - visit my Facebook page &#x27;Messy Tots for Little Ones&#x27; to find out about class times and locations. Parents must stay with their child. Bring tissues and clothes to change into, as the classes can be messy.</p>
+            
+            <a href="../business/messy-tots-for-little-ones-874.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="877">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Play group in Irish/Gaeilge</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Thosaigh muid - we started. A grúpa spraoi - a playgroup. Tá sé sa leabharlann - it&#x27;s in the library. i mbéal an Átha - in Ballina. Gach Satharn - every Saturday. ón 10.30-11.30 ar maidin - morning, 10.30-11.30. Beidh tuismitheoirí/guardians agus páistí ann - parents and children attend. Fáilte romhat gach duine - everyone welcome. Saor in aisce - it&#x27;s free. Canaimid cúpla amhrán - we sing a few songs. Tá sé an deas - it&#x27;s very nice.</p>
+            
+            <a href="../business/play-group-in-irish-gaeilge-877.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 856, "lat": 54.126783, "lon": -9.1591173, "name": "Baby Boppers - Music, movement & sensory baby/toddler classes", "category": "Dance", "url": "../business/baby-boppers-music-movement-sensory-baby-toddler-classes-856.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 857, "lat": 54.1130195, "lon": -9.1391942, "name": "Ballina Parent, Baby and Toddler Group", "category": "Parent-and-toddler", "url": "../business/ballina-parent-baby-and-toddler-group-857.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 863, "lat": 54.1130195, "lon": -9.1391942, "name": "Bloom Baby Classes North West Ireland", "category": "Parent-and-toddler", "url": "../business/bloom-baby-classes-north-west-ireland-863.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 874, "lat": 54.1143359, "lon": -9.1532099, "name": "Messy Tots for Little Ones", "category": "Developmental", "url": "../business/messy-tots-for-little-ones-874.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 877, "lat": 54.1143359, "lon": -9.1532099, "name": "Play group in Irish/Gaeilge", "category": "Parent-and-toddler", "url": "../business/play-group-in-irish-gaeilge-877.html", "minAge": null, "maxAge": null, "price": null, "free": true}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

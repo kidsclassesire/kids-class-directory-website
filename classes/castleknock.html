@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Castleknock | Kids Patch</title>
+    <meta name="description" content="Browse 10 kids activities and classes in Castleknock, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/castleknock.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Castleknock | Kids Patch">
+    <meta property="og:description" content="Browse 10 kids activities and classes in Castleknock, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/castleknock.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Castleknock | Kids Patch">
+    <meta name="twitter:description" content="Browse 10 kids activities and classes in Castleknock, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Castleknock", "description": "Browse 10 kids activities and classes in Castleknock, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/castleknock.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 10, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/irish-dance-classes-236.html", "name": "Irish Dance Classes"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/kidcreate-arts-crafts-238.html", "name": "KidCREATE Arts & Crafts"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/pop-up-play-caf-at-the-lock-keeper-263.html", "name": "Pop-up play café at The Lock Keeper"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/active-mum-ie-436.html", "name": "Active Mum .ie"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/castleknock-hurling-and-football-club-460.html", "name": "Castleknock Hurling and Football Club"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/claphandies-playlabs-dublin-1016.html", "name": "ClapHandies PlayLabs - Dublin"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/claphandies-1030.html", "name": "Claphandies"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/b-a-n-t-s-1109.html", "name": "B.A.N.T.S"}, {"@type": "ListItem", "position": 9, "url": "https://www.kidspatch.ie/business/dublin-stage-school-1114.html", "name": "Dublin Stage School"}, {"@type": "ListItem", "position": 10, "url": "https://www.kidspatch.ie/business/me-you-music-1124.html", "name": "Me & You Music"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Castleknock</nav>
+        <h1>Kids Activities in Castleknock</h1>
+        <p class="landing-intro">Browse 10 kids activities and classes in Castleknock. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="236">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Irish Dance Classes</h3>
+            <div class="tag-container"><span class="tag">Dance</span></div>
+            <p class="description">Classes open to children aged 3+. Every Wednesday at 5:30 - 6:30pm</p>
+            
+            <a href="../business/irish-dance-classes-236.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="238">
+        <div class="card-image"><img class="logo-badge" src="../logos/kidcreate-ie.png" alt="KidCREATE Arts &amp; Crafts logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>KidCREATE Arts &amp; Crafts</h3>
+            <div class="tag-container"><span class="tag">Arts and crafts</span></div>
+            <p class="description">KidCREATE is dedicated to encouraging children to explore their creativity through arts and crafts. Established with the mission of providing a nurturing and inspiring environment, our classes are designed to impart not only artistic skills but also to enhance cognitive development, problem-solving skills, and self-expression. I am committed to making every class a fun and enriching experience. In addition to our regular classes, we also offer workshops, camps, themed events and parties. At KidCREATE, we believe that every child is an artist in the making. Join us and watch your child’s creativity flourish! Term classes begin 9th September 2024 in Castleknock / Carpenterstown, Dublin 15 area. Visit www.kidcreate.ie for more information.</p>
+            
+            <a href="../business/kidcreate-arts-crafts-238.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="263">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Pop-up play café at The Lock Keeper</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Join our popup playcafé every second Tuesday from 12pm to 3pm at The Lock Keeper in Ashtown, Dublin 15. Babies play on our clean, safe play area with premium toys while you connect with other parents or simply relax and enjoy a hot coffee or lunch. No fee to play and no need to book. Just show up and enjoy!</p>
+            
+            <a href="../business/pop-up-play-caf-at-the-lock-keeper-263.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="436">
+        <div class="card-image"><img class="banner-img" src="../images/activemum-ie.png" alt="Active Mum .ie" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/activemum-ie.png" alt="Active Mum .ie logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Active Mum .ie</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">Spend quality time with your baby - learn how to give your baby a massage, and meet other local mums for friendship and support. There are 3 classes on offer: Baby Massage, Story Massage &amp; Sensory Play, and Massage in Schools.</p>
+            
+            <a href="../business/active-mum-ie-436.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="460">
+        <div class="card-image"><img class="banner-img" src="../images/castleknock-net.jpg" alt="Castleknock Hurling and Football Club" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/castleknock-net.png" alt="Castleknock Hurling and Football Club logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Castleknock Hurling and Football Club</h3>
+            <div class="tag-container"><span class="tag">GAA</span></div>
+            <p class="description">Castleknock Hurling and Football Club has been a cornerstone of the Carpenterstown, Castleknock, and Clonsilla communities since 1998, offering Gaelic football, hurling, camogie, and ladies football for all ages. With top-class facilities at Somerton Park and additional pitches in Porterstown, St Catherine&#x27;s Park, and Tír na nÓg, the club provides a welcoming environment for players of all levels. For younger children, the Nursery runs every Saturday morning in Tír na nÓg, catering to boys and girls aged 4 to 8, with a focus on fun, teamwork, and skill development - the perfect introduction to Gaelic games.</p>
+            
+            <a href="../business/castleknock-hurling-and-football-club-460.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1016">
+        <div class="card-image"><img class="banner-img" src="../images/claphandies-com-0de07d.png" alt="ClapHandies PlayLabs - Dublin" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/claphandies-com-0de07d.png" alt="ClapHandies PlayLabs - Dublin logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>ClapHandies PlayLabs - Dublin</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">The PlayLabs are weekly developmental sensory play classes for babies, wobblers and/or toddlers. The classes are designed to provide a fun and engaging environment for both children and adults! With music, learning, social interaction, and sensory play, you and your little one are sure to have a great time together. They are also a chance for children to socialise with children of their own age, while offering parents/caregivers the opportunity to get to know others in their area too. Baby PlayLabs (6 weeks - 7 months) - 55 minute class duration Wobbler PlayLabs (8 months - 15 months) - 50 minute class duration Toddler PlayLabs (16 months - 3.5 years) - 50 minute class duration We typically run toddlers at 9.45am/10am, wobblers at 10.45am/11am and babies at 11.45am/12pm - venue dependent. You can check out more information about our classes on our website: https://site.claphandies.com/ In addition to your term&#x27;s booking, we also offer you 3 months free access to ClapHandies at Home which is an online resource filled with hours of follow-along music and guided playtime videos for you and your little ones to enjoy at home. So if you miss any of your classes during a term, you can run your own PlayLab at home or just tune in to have some extra fun during the week. If you are signing up for our Baby PlayLabs in particular, we also provide you with a link to our informative Baby Massage e-manual so you can continue practising the massage strokes at home.</p>
+            
+            <a href="../business/claphandies-playlabs-dublin-1016.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1030">
+        <div class="card-image"><img class="banner-img" src="../images/claphandies-com-271ddb.png" alt="Claphandies" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/claphandies-com-271ddb.png" alt="Claphandies logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Claphandies</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">ClapHandies PlayLabs offer babies, wobblers and toddlers (birth to 3.5 years) a chance to play, meet other children and develop new skills. Sessions include music, song and rhyme time, and a class teaching the core baby massage techniques. We also focus on gross motor skills and language development, teaching baby sign language. The weekly classes offer a wide variety of engaging experiences tailored to the needs of each age group, and are also a chance for children to socialise with children of their own age, while giving parents/caregivers the opportunity to get to know others in their area too. Each term runs for 7 weeks, with a 50% sibling discount. Classes are offered in various locations across Ireland.</p>
+            
+            <a href="../business/claphandies-1030.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1109">
+        <div class="card-image"><img class="banner-img" src="../images/bants-ie.png" alt="B.A.N.T.S" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/bants-ie.png" alt="B.A.N.T.S logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>B.A.N.T.S</h3>
+            <div class="tag-container"><span class="tag">Drama</span></div>
+            <p class="description">With over 65 years of experience, B.A.N.T.S is Ireland&#x27;s oldest theatre school, offering Speech and Drama classes for children and teenagers aged 4 to 18 in Dublin. Founded in 1951, the school has a rich legacy of excellence and a reputation for fostering a lifelong love of drama. Classes focus on building confidence, clear speech, and creativity, whether students are beginners or more advanced. Small class sizes ensure individual attention, and students have the opportunity to take grade examinations with Trinity College London and participate in solo and group competitions throughout the year.</p>
+            
+            <a href="../business/b-a-n-t-s-1109.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1114">
+        <div class="card-image"><img class="logo-badge" src="../logos/dublinstageschool-ie.png" alt="Dublin Stage School logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Dublin Stage School</h3>
+            <div class="tag-container"><span class="tag">Drama</span></div>
+            <p class="description">Dublin Stage School offers acting, singing, and dance classes for young performers aged 4 to 18 in Blackrock, Killiney, and Castleknock. Their professional coaching helps build confidence and creativity in a fun, safe, and supportive environment. Students have the opportunity to perform at prestigious venues like the Bord Gáis Energy Theatre, The National Concert Hall, and The Gaiety Theatre. They have also appeared in major stage productions such as Miss Saigon, Les Misérables, Matilda, and Joseph and the Amazing Technicolor Dreamcoat, as well as TV and film projects including Vikings, Penny Dreadful, and Angela&#x27;s Ashes.</p>
+            
+            <a href="../business/dublin-stage-school-1114.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1124">
+        <div class="card-image"><img class="logo-badge" src="../logos/meandyoumusic-com.webp" alt="Me &amp; You Music logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Me &amp; You Music</h3>
+            <div class="tag-container"><span class="tag">Music</span></div>
+            <p class="description">Me &amp; You Music (suitable from 4 months to 6 years) is about playfully introducing the wonderful world of music and encouraging children to sing, dance, explore and, most importantly, have fun. Mischa takes her music classes and workshops all around Dublin.</p>
+            
+            <a href="../business/me-you-music-1124.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 236, "lat": 53.37615, "lon": -6.34976, "name": "Irish Dance Classes", "category": "Dance", "url": "../business/irish-dance-classes-236.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 238, "lat": 53.3699, "lon": -6.36196, "name": "KidCREATE Arts & Crafts", "category": "Arts and crafts", "url": "../business/kidcreate-arts-crafts-238.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 263, "lat": 53.37573, "lon": -6.33237, "name": "Pop-up play café at The Lock Keeper", "category": "Parent-and-toddler", "url": "../business/pop-up-play-caf-at-the-lock-keeper-263.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 436, "lat": 53.3773431, "lon": -6.3785934, "name": "Active Mum .ie", "category": "Developmental", "url": "../business/active-mum-ie-436.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 460, "lat": 53.3729581, "lon": -6.3624744, "name": "Castleknock Hurling and Football Club", "category": "GAA", "url": "../business/castleknock-hurling-and-football-club-460.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1016, "lat": 53.3625914, "lon": -6.3333486, "name": "ClapHandies PlayLabs - Dublin", "category": "Developmental", "url": "../business/claphandies-playlabs-dublin-1016.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1030, "lat": 53.3625914, "lon": -6.3333486, "name": "Claphandies", "category": "Developmental", "url": "../business/claphandies-1030.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1109, "lat": 53.3729581, "lon": -6.3624744, "name": "B.A.N.T.S", "category": "Drama", "url": "../business/b-a-n-t-s-1109.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1114, "lat": 53.3729581, "lon": -6.3624744, "name": "Dublin Stage School", "category": "Drama", "url": "../business/dublin-stage-school-1114.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1124, "lat": 53.3729581, "lon": -6.3624744, "name": "Me & You Music", "category": "Music", "url": "../business/me-you-music-1124.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

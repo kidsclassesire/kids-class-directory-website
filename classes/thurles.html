@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Thurles | Kids Patch</title>
+    <meta name="description" content="Browse 4 kids activities and classes in Thurles, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/thurles.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Thurles | Kids Patch">
+    <meta property="og:description" content="Browse 4 kids activities and classes in Thurles, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/thurles.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Thurles | Kids Patch">
+    <meta name="twitter:description" content="Browse 4 kids activities and classes in Thurles, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Thurles", "description": "Browse 4 kids activities and classes in Thurles, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/thurles.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 4, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/thurles-parent-baby-and-toddler-group-954.html", "name": "Thurles Parent, Baby and Toddler Group"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/thurles-roscrea-cashel-tipperary-town-toddler-group-story-ti-1278.html", "name": "Thurles / Roscrea / Cashel /Tipperary Town Toddler Group Story Time"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/dwan-academy-dance-drama-music-thurles-1638.html", "name": "Dwan Academy - Dance Drama Music, Thurles"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/thurles-town-kids-dance-classes-1640.html", "name": "Thurles Town - Kids Dance Classes"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="tipperary.html">Tipperary</a> &rsaquo; Thurles</nav>
+        <h1>Kids Activities in Thurles</h1>
+        <p class="landing-intro">Browse 4 kids activities and classes in Thurles. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="tipperary.html">&larr; All activities in County Tipperary</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="954">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Thurles Parent, Baby and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Thurles Parent, Baby and Toddler Group in Tipperary is run by Silver Arch Family Resource Centre. Come along for a cup of tea and a chat with other parents, while babies and toddlers enjoy the chance to play and interact with each other. The class operates on a pop-in basis, so no pressure to attend every week. Location: The Source Arts Centre, Cathedral St, Thurles Townparks, Thurles, Co. Tipperary, E41 A4E8. Time: every Tuesday, 10.30-11.30am (during school term time). Cost: €2 contribution. Contact: call 067 31800, or the Facebook page. Keep an eye on social media for when the group starts back up after school holidays, as it may not align with term time.</p>
+            
+            <a href="../business/thurles-parent-baby-and-toddler-group-954.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1278">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Thurles / Roscrea / Cashel /Tipperary Town Toddler Group Story Time</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Libraries across Tipperary have great classes on offer for babies, toddlers and kids. Toddler Storytime is a great toddler group with a quieter, calmer atmosphere - libraries have some toys, and staff read lovely books and often do nursery rhymes too. Pop down to your local library to see what&#x27;s on offer. Location: Cashel Library, Friar Street, Cashel, Co. Tipperary, E25 K798. Time: one Thursday a month at 10am (usually towards the end of the month). Cost: free. Contact: cashellibrary@tipperarycoco.ie / (062) 63825. Location: Tipperary Town Library, The Excel Centre, Mitchel Street, Tipperary Town, Co. Tipperary, E34 KP60. Time: every Friday at 10.30am. Cost: free. Contact: tipperarylibrary@tipperarycoco.ie / 052 616 6126. Location: Thurles Library, The Source, Cathedral Street, Thurles, Co. Tipperary, E41 K802. Time: every Wednesday at 11am. Cost: free. Contact: thurleslibrary@tipperarycoco.ie / 052 616 6131. Location: Roscrea Library, Birr Road, Roscrea, Co. Tipperary, E53 N129. Time: one Thursday a month at 12pm (usually towards the end of the month). Cost: free. Contact: roscrealibrary@tipperarycoco.ie / (0505) 22032.</p>
+            
+            <a href="../business/thurles-roscrea-cashel-tipperary-town-toddler-group-story-ti-1278.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1638">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Dwan Academy - Dance Drama Music, Thurles</h3>
+            <div class="tag-container"><span class="tag">Drama</span></div>
+            <p class="description">Performing arts programme ages 4-18: Theatre School, Boys Musical Theatre, Ballet, Drama, Hip Hop, Acro and instrument lessons.</p>
+            
+            <a href="../business/dwan-academy-dance-drama-music-thurles-1638.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1640">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Thurles Town - Kids Dance Classes</h3>
+            <div class="tag-container"><span class="tag">Dance</span></div>
+            <p class="description">6-week Acrobatic Rock&#x27;n&#x27;Roll dance course for ages 5+, €85, limited places.</p>
+            
+            <a href="../business/thurles-town-kids-dance-classes-1640.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 954, "lat": 52.6788894, "lon": -7.8127778, "name": "Thurles Parent, Baby and Toddler Group", "category": "Parent-and-toddler", "url": "../business/thurles-parent-baby-and-toddler-group-954.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1278, "lat": 52.6788894, "lon": -7.8127778, "name": "Thurles / Roscrea / Cashel /Tipperary Town Toddler Group Story Time", "category": "Parent-and-toddler", "url": "../business/thurles-roscrea-cashel-tipperary-town-toddler-group-story-ti-1278.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 1638, "lat": 52.6766937, "lon": -7.8219058, "name": "Dwan Academy - Dance Drama Music, Thurles", "category": "Drama", "url": "../business/dwan-academy-dance-drama-music-thurles-1638.html", "minAge": 4.0, "maxAge": 18.0, "price": null, "free": false}, {"id": 1640, "lat": null, "lon": null, "name": "Thurles Town - Kids Dance Classes", "category": "Dance", "url": "../business/thurles-town-kids-dance-classes-1640.html", "minAge": 5.0, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

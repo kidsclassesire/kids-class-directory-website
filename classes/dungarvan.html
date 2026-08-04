@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Dungarvan | Kids Patch</title>
+    <meta name="description" content="Browse 8 kids activities and classes in Dungarvan, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/dungarvan.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Dungarvan | Kids Patch">
+    <meta property="og:description" content="Browse 8 kids activities and classes in Dungarvan, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/dungarvan.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Dungarvan | Kids Patch">
+    <meta name="twitter:description" content="Browse 8 kids activities and classes in Dungarvan, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Dungarvan", "description": "Browse 8 kids activities and classes in Dungarvan, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/dungarvan.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 8, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/turtle-tots-swimming-classes-louth-limerick-laois-waterford-1245.html", "name": "Turtle Tots Swimming Classes /Louth/Limerick/Laois/Waterford"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/little-kickers-1294.html", "name": "Little Kickers"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/ready-steady-play-south-east-1298.html", "name": "Ready Steady Play South East"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/ready-to-play-1301.html", "name": "Ready to Play"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/dungarvan-gymnastics-club-1378.html", "name": "Dungarvan Gymnastics Club"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/harmony-children-s-choir-1381.html", "name": "Harmony Children's Choir"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/integrity-martial-arts-dungarvan-1382.html", "name": "Integrity Martial Arts, Dungarvan"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/designer-minds-dungarvan-steam-summer-camp-1608.html", "name": "Designer Minds - Dungarvan STEAM Summer Camp"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="waterford.html">Waterford</a> &rsaquo; Dungarvan</nav>
+        <h1>Kids Activities in Dungarvan</h1>
+        <p class="landing-intro">Browse 8 kids activities and classes in Dungarvan. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="waterford.html">&larr; All activities in County Waterford</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="1245">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Turtle Tots Swimming Classes /Louth/Limerick/Laois/Waterford</h3>
+            <div class="tag-container"><span class="tag">Swimming</span></div>
+            <p class="description">Turtle Tots lessons are truly child-centred. Each child is nurtured and activities are adapted to meet each individual’s needs. By the time you have reached the end of our baby programme we have taught you all the separate techniques and practices necessary for independent swimming. Our highly trained and skilled teachers ensure lessons are fun and sociable for everyone, whilst teaching your child essential life-saving skills. Babies from 3 months to 4.5 year olds can partake in Turtle Tot swimming lessons.</p>
+            
+            <a href="../business/turtle-tots-swimming-classes-louth-limerick-laois-waterford-1245.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1294">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Little Kickers</h3>
+            <div class="tag-container"><span class="tag">Football</span></div>
+            <p class="description">Join the world&#x27;s No. 1 preschool football programme, with over 100,000 children participating every week. Our play-orientated classes are fun, engaging, and nurture a love of sport from an early age. We are proud to be more than just football - while football is the tool we use, our goal is to develop the fundamentals of movement (balance, agility &amp; coordination), fundamental movement skills (running, hopping, skipping, jumping), social skills such as listening, sharing and taking turns, and early learning concepts like numbers, colours and body parts. We have 4 different age groups to ensure children participate with their peers at around the same developmental level. Our Little Kickers programme is suitable for children aged 18 months to 2.5 years - it&#x27;s a parent-toddler programme requiring active parental participation, which ensures your child gets the very best out of the sessions; learning to listen and follow instructions through engaging, fun games is the goal at this level. Our Junior Kickers classes are for 2.5 to 3.5 year olds, who are starting to get more independent at this stage - children participate more by themselves, though many will still like to have their parents close to them at the magic wall, with Play, Practice, Understand as the learning outcome. The next stage is Mighty Kickers, suitable for 3.5 to 5 year olds, where most children participate independently with parents encouraged to support from the sidelines, further developing Play, Practice, Understand. The Mega Kickers programme brings together all the learning outcomes from the previous levels, relying less on the play-orientated structure of earlier stages, with a 20-minute match at the end of each session preparing children to move onto football academies and continue their football journey. Throughout all stages, our core philosophy of Play not Push is embodied - we believe children should be gently encouraged to participate and allowed to watch if they are unsure, in the hope that seeing other children in the class participating will spur them on to join in the fun.</p>
+            
+            <a href="../business/little-kickers-1294.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1298">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Ready Steady Play South East</h3>
+            <div class="tag-container"><span class="tag">Music</span></div>
+            <p class="description">Ready Steady Play and Music classes provide a range of developmentally appropriate activities through play, music and movement for children from newborn to primary school age. Our child development experts and teachers create a unique experience weekly, encouraging early learning and development. In class we pride ourselves on forging a sense of community where parents and caregivers build personal connections and lifelong friendships. Through socialisation, your child will explore and discover the world around them, and our classes are great fun for parents, caregivers and children alike. The activities support your child&#x27;s 5 key areas of development: social, emotional, cognitive, physical, and language. Our play educators guide you and your child through nurturing activities and exercises to stimulate your little one&#x27;s brain development, in an inviting environment to meet new parents, share bonding experiences, ask questions and create memories. Every week you&#x27;ll go on a play and musical adventure where your little one is encouraged to express themselves through play, music, and movement, and overcome new challenges to reach developmental milestones. Our Sensory Baby Play and Music classes are suitable from newborn to pre-walkers, while our Toddler Play and Music classes are suitable for walkers to preschoolers. Classes run weekly in Waterford, Dungarvan, Wexford and Kilkenny. Visit www.ready2play.ie for more information and bookings.</p>
+            
+            <a href="../business/ready-steady-play-south-east-1298.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1301">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Ready to Play</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Child development experts and teachers create a unique experience weekly, encouraging early learning and development. In class we pride ourselves on forging a sense of community where parents and caregivers build personal connections and lifelong friendships, with classes throughout the Midlands. Through socialisation, your child will explore and discover the world around them. Our classes are great fun for parents, caregivers and children alike, to share together in the vital first five years. Each week you and your little one will go on a new play and musical adventure into the rainforest, under the sea, practising circus skills and many more, with over 30 themes to explore during the year. Our Baby classes are suitable from newborn to pre-walkers, while our Walkers-Toddlers Play &amp; Music classes are suitable for pre-walkers to 3.5 year olds.</p>
+            
+            <a href="../business/ready-to-play-1301.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1378">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Dungarvan Gymnastics Club</h3>
+            <div class="tag-container"><span class="tag">Gymnastics</span></div>
+            <p class="description">Recreational and competitive gymnastics for ages 4+, Tuesday-Saturday, affiliated with Gymnastics Ireland.</p>
+            
+            <a href="../business/dungarvan-gymnastics-club-1378.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1381">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Harmony Children&#x27;s Choir</h3>
+            <div class="tag-container"><span class="tag">Music</span></div>
+            <p class="description">Three choir levels for ages 5-17 in Dungarvan: Music FUNdamentals (5+), Crescendo Singers, and Voca Loca (teens); Wednesdays.</p>
+            
+            <a href="../business/harmony-children-s-choir-1381.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1382">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Integrity Martial Arts, Dungarvan</h3>
+            <div class="tag-container"><span class="tag">Martial Arts</span></div>
+            <p class="description">Kids-friendly martial arts classes at Dungarvan Shopping Centre, focused on skill progression, mindfulness and community.</p>
+            
+            <a href="../business/integrity-martial-arts-dungarvan-1382.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1608">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Designer Minds - Dungarvan STEAM Summer Camp</h3>
+            <div class="tag-container"><span class="tag">Camps</span></div>
+            <p class="description">Junior/Senior STEAM camp groups at Dungarvan Fusion Centre; €180.</p>
+            
+            <a href="../business/designer-minds-dungarvan-steam-summer-camp-1608.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 1245, "lat": 52.0963701, "lon": -7.6264291, "name": "Turtle Tots Swimming Classes /Louth/Limerick/Laois/Waterford", "category": "Swimming", "url": "../business/turtle-tots-swimming-classes-louth-limerick-laois-waterford-1245.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1294, "lat": 52.0897488, "lon": -7.6210306, "name": "Little Kickers", "category": "Football", "url": "../business/little-kickers-1294.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1298, "lat": 52.0897488, "lon": -7.6210306, "name": "Ready Steady Play South East", "category": "Music", "url": "../business/ready-steady-play-south-east-1298.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1301, "lat": 52.093096, "lon": -7.6223878, "name": "Ready to Play", "category": "Parent-and-toddler", "url": "../business/ready-to-play-1301.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1378, "lat": null, "lon": null, "name": "Dungarvan Gymnastics Club", "category": "Gymnastics", "url": "../business/dungarvan-gymnastics-club-1378.html", "minAge": 4.0, "maxAge": null, "price": null, "free": false}, {"id": 1381, "lat": null, "lon": null, "name": "Harmony Children's Choir", "category": "Music", "url": "../business/harmony-children-s-choir-1381.html", "minAge": 5.0, "maxAge": 17.0, "price": null, "free": false}, {"id": 1382, "lat": null, "lon": null, "name": "Integrity Martial Arts, Dungarvan", "category": "Martial Arts", "url": "../business/integrity-martial-arts-dungarvan-1382.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1608, "lat": null, "lon": null, "name": "Designer Minds - Dungarvan STEAM Summer Camp", "category": "Camps", "url": "../business/designer-minds-dungarvan-steam-summer-camp-1608.html", "minAge": 6.0, "maxAge": 12.0, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

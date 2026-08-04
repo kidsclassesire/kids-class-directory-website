@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Bray | Kids Patch</title>
+    <meta name="description" content="Browse 6 kids activities and classes in Bray, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/bray.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Bray | Kids Patch">
+    <meta property="og:description" content="Browse 6 kids activities and classes in Bray, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/bray.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Bray | Kids Patch">
+    <meta name="twitter:description" content="Browse 6 kids activities and classes in Bray, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Bray", "description": "Browse 6 kids activities and classes in Bray, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/bray.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 6, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/bloom-baby-classes-wicklow-and-south-dublin-197.html", "name": "Bloom Baby Classes Wicklow and South Dublin"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/scoil-rince-f-inne-irish-dancing-for-kids-399.html", "name": "Scoil Rince Fáinne Irish Dancing for kids"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/moo-music-wicklow-986.html", "name": "Moo Music Wicklow"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/little-kickers-dublin-south-wicklow-1044.html", "name": "Little Kickers Dublin South & Wicklow"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/moo-music-wicklow-1316.html", "name": "Moo Music Wicklow"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/shoreline-leisure-bray-children-s-swim-lessons-1399.html", "name": "Shoreline Leisure - Bray Children's Swim Lessons"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="wicklow.html">Wicklow</a> &rsaquo; Bray</nav>
+        <h1>Kids Activities in Bray</h1>
+        <p class="landing-intro">Browse 6 kids activities and classes in Bray. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="wicklow.html">&larr; All activities in County Wicklow</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="197">
+        <div class="card-image"><img class="banner-img" src="../images/bloombabyclasses-com-694feb.jpg" alt="Bloom Baby Classes Wicklow and South Dublin" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/bloombabyclasses-com-694feb.png" alt="Bloom Baby Classes Wicklow and South Dublin logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Bloom Baby Classes Wicklow and South Dublin</h3>
+            <div class="tag-container"><span class="tag">Music</span></div>
+            <p class="description">Classes suitable from 6 weeks to 14 months, or until baby begins to confidently walk. Venues in Dun Laoghaire, Blackrock, Mount Merrion, Bray, Greystones, Wicklow Town &amp; Arklow. We use catchy music and beautiful bespoke props to support baby&#x27;s development in all areas. With a strong focus on parent and baby bonding, we encourage lots of eye contact and cuddles throughout class. There is also time for those much-needed mum chats, of course!</p>
+            
+            <a href="../business/bloom-baby-classes-wicklow-and-south-dublin-197.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="399">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Scoil Rince Fáinne Irish Dancing for kids</h3>
+            <div class="tag-container"><span class="tag">Dance</span></div>
+            <p class="description">Irish dance classes for boys and girls aged 3+, available in two locations: Tuesdays 5pm at New Court School Hall, and Fridays 4.30pm at Bray Bowl Studios. First class free. Scoil Rince Fáinne is an established Irish dance school in Bray - Regional, All Ireland, World Cup and medal-winning, taught by three champion teachers. Garda vetted and insured. Classes for beginners through to champion dancers.</p>
+            
+            <a href="../business/scoil-rince-f-inne-irish-dancing-for-kids-399.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="986">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Moo Music Wicklow</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Hello and welcome to Moo Music Wicklow, the home of moosical fun for the under-5s. We sing, we dance, we move, we learn and we have fun. Moo Music is a great fun and interactive regular music session for 0 to 5 year old children and their parents, grandparents or carers too, where the children sing, dance, play, learn and have fun while doing it. Music is an essential part of every child&#x27;s development, and the 125+ original Moo Music songs used at the sessions are positive, uplifting, fun and educational. The interactive sessions help your child gain confidence and develop memory, language and coordination skills in an exciting, enjoyable and multi-sensory way - a great way to make new friends, both for the children and the adults too. Current classes: Baby Moo (non-walkers), Mini Moo (little ones confidently walking), Mixed Moo (all ages), and Moosical Messy Play (9 months-5 years). We run classes in preschools and local playgroups, as well as public classes on Wednesdays, Thursdays, Fridays and Saturdays, and also provide party entertainment for under-6s.</p>
+            
+            <a href="../business/moo-music-wicklow-986.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1044">
+        <div class="card-image"><img class="logo-badge" src="../logos/littlekickers-ie-5bd0cf.png" alt="Little Kickers Dublin South &amp; Wicklow logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Little Kickers Dublin South &amp; Wicklow</h3>
+            <div class="tag-container"><span class="tag">Football</span></div>
+            <p class="description">Join the world&#x27;s No. 1 preschool football programme, with over 100,000 children participating every week. Our play-orientated classes are fun, engaging, and nurture a love of sport from an early age. We are proud to be more than just football - while football is the tool we use, our goal is to develop the fundamentals of movement (balance, agility &amp; coordination), fundamental movement skills (running, hopping, skipping, jumping), social skills such as listening, sharing and taking turns, and early learning concepts like numbers, colours and body parts. We have 4 different age groups to ensure children participate with their peers at around the same developmental level. Our Little Kickers programme is suitable for children aged 18 months to 2.5 years - it&#x27;s a parent-toddler programme requiring active parental participation, which ensures your child gets the very best out of the sessions; learning to listen and follow instructions through engaging, fun games is the goal at this level. Our Junior Kickers classes are for 2.5 to 3.5 year olds, who are starting to get more independent at this stage - children participate more by themselves, though many will still like to have their parents close to them at the magic wall, with Play, Practice, Understand as the learning outcome. The next stage is Mighty Kickers, suitable for 3.5 to 5 year olds, where most children participate independently with parents encouraged to support from the sidelines, further developing Play, Practice, Understand. The Mega Kickers programme brings together all the learning outcomes from the previous levels, relying less on the play-orientated structure of earlier stages, with a 20-minute match at the end of each session preparing children to move onto football academies and continue their football journey. Throughout all stages, our core philosophy of Play not Push is embodied - we believe children should be gently encouraged to participate and allowed to watch if they are unsure, in the hope that seeing other children in the class participating will spur them on to join in the fun.</p>
+            
+            <a href="../business/little-kickers-dublin-south-wicklow-1044.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1316">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Moo Music Wicklow</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Hello and welcome to Moo Music Wicklow, the home of moosical fun for the under-5s. We sing, we dance, we move, we learn and we have fun. Moo Music is a great fun and interactive regular music session for 0 to 5 year old children and their parents, grandparents or carers too, where the children sing, dance, play, learn and have fun while doing it. Music is an essential part of every child&#x27;s development, and the 125+ original Moo Music songs used at the sessions are positive, uplifting, fun and educational. The interactive sessions help your child gain confidence and develop memory, language and coordination skills in an exciting, enjoyable and multi-sensory way - a great way to make new friends, both for the children and the adults too. Current classes: Baby Moo (non-walkers), Mini Moo (little ones confidently walking), Mixed Moo (all ages), and Moosical Messy Play (9 months-5 years). We run classes in preschools and local playgroups, as well as public classes on Wednesdays, Thursdays, Fridays and Saturdays, and also provide party entertainment for under-6s.</p>
+            
+            <a href="../business/moo-music-wicklow-1316.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1399">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Shoreline Leisure - Bray Children&#x27;s Swim Lessons</h3>
+            <div class="tag-container"><span class="tag">Swimming</span></div>
+            <p class="description">Progressive 8-week swim terms (Levels 1-5) for ages 4-12, small groups with qualified instructors.</p>
+            
+            <a href="../business/shoreline-leisure-bray-children-s-swim-lessons-1399.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 197, "lat": 53.2016047, "lon": -6.1131296, "name": "Bloom Baby Classes Wicklow and South Dublin", "category": "Music", "url": "../business/bloom-baby-classes-wicklow-and-south-dublin-197.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 399, "lat": 53.20483, "lon": -6.10198, "name": "Scoil Rince Fáinne Irish Dancing for kids", "category": "Dance", "url": "../business/scoil-rince-f-inne-irish-dancing-for-kids-399.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 986, "lat": 53.2014604, "lon": -6.1105049, "name": "Moo Music Wicklow", "category": "Parent-and-toddler", "url": "../business/moo-music-wicklow-986.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1044, "lat": 53.1918127, "lon": -6.1142574, "name": "Little Kickers Dublin South & Wicklow", "category": "Football", "url": "../business/little-kickers-dublin-south-wicklow-1044.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1316, "lat": 53.1827429, "lon": -6.1315003, "name": "Moo Music Wicklow", "category": "Parent-and-toddler", "url": "../business/moo-music-wicklow-1316.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1399, "lat": 53.1814122, "lon": -6.1300734, "name": "Shoreline Leisure - Bray Children's Swim Lessons", "category": "Swimming", "url": "../business/shoreline-leisure-bray-children-s-swim-lessons-1399.html", "minAge": 4.0, "maxAge": 12.0, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Skerries | Kids Patch</title>
+    <meta name="description" content="Browse 7 kids activities and classes in Skerries, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/skerries.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Skerries | Kids Patch">
+    <meta property="og:description" content="Browse 7 kids activities and classes in Skerries, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/skerries.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Skerries | Kids Patch">
+    <meta name="twitter:description" content="Browse 7 kids activities and classes in Skerries, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Skerries", "description": "Browse 7 kids activities and classes in Skerries, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/skerries.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 7, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/fingal-additional-needs-225.html", "name": "Fingal Additional Needs"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/skerries-parent-and-toddler-group-279.html", "name": "Skerries Parent and Toddler Group"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/wskf-karate-academy-skerries-298.html", "name": "WSKF Karate Academy Skerries"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/skerries-sailing-club-540.html", "name": "Skerries Sailing Club"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/wskf-sedai-after-school-karate-clubs-1434.html", "name": "WSKF SEDAI - After school karate clubs"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/searsol-typing-centre-skerries-1585.html", "name": "Searsol - Typing Centre, Skerries"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/skerries-community-centre-junior-activities-1586.html", "name": "Skerries Community Centre - Junior Activities"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Skerries</nav>
+        <h1>Kids Activities in Skerries</h1>
+        <p class="landing-intro">Browse 7 kids activities and classes in Skerries. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="225">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Fingal Additional Needs</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Fingal Additional Needs is a fun and inclusive experience for children with additional needs. Spaces are limited, so book your spot today. Location: The Band Room, Skerries. My name is David, and I started Fingal Additional Needs after leaving my previous job. Many parents asked me to continue supporting their loved ones with 1-1 outings, and as a parent of a child with ASD and ADHD, I know how valuable a break can be. For over 10 years, I&#x27;ve worked with children and adults with additional needs. After a successful year offering 1-1 support and two years running Football4All with Skerries Town, I introduced summer camps that were a huge success, leading to extra classes, and I&#x27;ve recently set up an afterschool class. My goal is to give parents and carers a well-deserved break while providing a fun and engaging environment for children. I&#x27;m not a therapist, but I focus on creating meaningful and enjoyable experiences for the kids - whether it&#x27;s getting active, socialising, or just being happy in their own space, these sessions are designed with your child&#x27;s needs in mind, whether they have ADHD, autism, Down syndrome, or other additional needs. You can check out some of the work I&#x27;ve done on Instagram and Facebook @fingaladditionalneeds.</p>
+            
+            <a href="../business/fingal-additional-needs-225.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="279">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Skerries Parent and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Skerries Parent and Toddler Group: join us for a fun-filled morning of play, crafts, and social time for both parents and toddlers. It&#x27;s a great chance to meet other families in the community, let the little ones make friends, and enjoy some quality time together - new faces are always welcome. Location: Skerries Community Centre. Day/Time: every Wednesday during school terms, 10-11.30am. Cost: €5.</p>
+            
+            <a href="../business/skerries-parent-and-toddler-group-279.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="298">
+        <div class="card-image"><img class="banner-img" src="../images/wskfskerries-ie.jpg" alt="WSKF Karate Academy Skerries" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/wskfskerries-ie.png" alt="WSKF Karate Academy Skerries logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>WSKF Karate Academy Skerries</h3>
+            <div class="tag-container"><span class="tag">Martial Arts</span></div>
+            <p class="description">Volunteer-run club teaching traditional Shotokan and sports karate, strength and fitness. Ages 5 upwards. Come down and try a free class any time - sit in and see what goes on, or join in straight away. All you need is loose-fitting trousers and bare feet. Parents/caregivers can stay and watch or leave for the class. We always have beginner special offers too. All our volunteer coaches have coaching and child protection qualifications and are Garda vetted. Classes: Saturday, 2:30pm Beginners, 3:30pm Juniors; Monday, 6:45pm Juniors; Wednesday, 6:30pm Juniors. Location: Skerries Community Centre, Skerries. Find out more at wskfskerries.ie</p>
+            
+            <a href="../business/wskf-karate-academy-skerries-298.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="540">
+        <div class="card-image"><img class="logo-badge" src="../logos/skerriessailingclub-com.png" alt="Skerries Sailing Club logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Skerries Sailing Club</h3>
+            <div class="tag-container"><span class="tag">Watersports</span></div>
+            <p class="description">Skerries Sailing Club (SSC) located off the coast of north County Dublin, offers a wide variety of classes. SSC Clubhouse Dinghy and keelboat racing for adults and juniors takes place up to three times weekly in season. SSC prides itself on its friendly atmosphere. Newcomers to sailing are warmly welcomed.</p>
+            
+            <a href="../business/skerries-sailing-club-540.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1434">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>WSKF SEDAI - After school karate clubs</h3>
+            <div class="tag-container"><span class="tag">Martial Arts</span></div>
+            <p class="description">Kids karate after-school in Skerries (Mon/Wed 6:20pm) with additional sessions in Lusk and Balbriggan.</p>
+            
+            <a href="../business/wskf-sedai-after-school-karate-clubs-1434.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1585">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Searsol - Typing Centre, Skerries</h3>
+            <div class="tag-container"><span class="tag">Academic Support</span></div>
+            <p class="description">After-school touch-typing classes for ages 8+ (incl. dyslexia/dyspraxia support) using Typewiz software; free trial.</p>
+            
+            <a href="../business/searsol-typing-centre-skerries-1585.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1586">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Skerries Community Centre - Junior Activities</h3>
+            <div class="tag-container"><span class="tag">Sports</span></div>
+            <p class="description">Directory of Skerries kids activities: football, hockey, gymnastics, tennis, karate, dance and PlayBall.</p>
+            
+            <a href="../business/skerries-community-centre-junior-activities-1586.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 225, "lat": 53.58018, "lon": -6.11085, "name": "Fingal Additional Needs", "category": "Parent-and-toddler", "url": "../business/fingal-additional-needs-225.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 279, "lat": 53.58055, "lon": -6.10788, "name": "Skerries Parent and Toddler Group", "category": "Parent-and-toddler", "url": "../business/skerries-parent-and-toddler-group-279.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 298, "lat": 53.57762, "lon": -6.11107, "name": "WSKF Karate Academy Skerries", "category": "Martial Arts", "url": "../business/wskf-karate-academy-skerries-298.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 540, "lat": 53.583732, "lon": -6.104615, "name": "Skerries Sailing Club", "category": "Watersports", "url": "../business/skerries-sailing-club-540.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1434, "lat": 53.5739887, "lon": -6.1191749, "name": "WSKF SEDAI - After school karate clubs", "category": "Martial Arts", "url": "../business/wskf-sedai-after-school-karate-clubs-1434.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1585, "lat": null, "lon": null, "name": "Searsol - Typing Centre, Skerries", "category": "Academic Support", "url": "../business/searsol-typing-centre-skerries-1585.html", "minAge": 8.0, "maxAge": null, "price": null, "free": false}, {"id": 1586, "lat": null, "lon": null, "name": "Skerries Community Centre - Junior Activities", "category": "Sports", "url": "../business/skerries-community-centre-junior-activities-1586.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

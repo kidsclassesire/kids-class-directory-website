@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Letterkenny | Kids Patch</title>
+    <meta name="description" content="Browse 5 kids activities and classes in Letterkenny, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/letterkenny.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Letterkenny | Kids Patch">
+    <meta property="og:description" content="Browse 5 kids activities and classes in Letterkenny, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/letterkenny.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Letterkenny | Kids Patch">
+    <meta name="twitter:description" content="Browse 5 kids activities and classes in Letterkenny, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Letterkenny", "description": "Browse 5 kids activities and classes in Letterkenny, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/letterkenny.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 5, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/conwal-letterkenny-parent-baby-and-toddler-group-683.html", "name": "Conwal Letterkenny Parent, Baby and Toddler Group"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/letterkenny-mums-and-tots-playgroup-691.html", "name": "Letterkenny - Mums and Tots Playgroup"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/letterkenny-parent-baby-and-toddler-group-692.html", "name": "Letterkenny Parent, Baby and Toddler Group"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/citadel-gymnastics-letterkenny-gweedore-1457.html", "name": "Citadel Gymnastics - Letterkenny & Gweedore"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/letterkenny-community-centre-kids-classes-1458.html", "name": "Letterkenny Community Centre - Kids Classes"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="donegal.html">Donegal</a> &rsaquo; Letterkenny</nav>
+        <h1>Kids Activities in Letterkenny</h1>
+        <p class="landing-intro">Browse 5 kids activities and classes in Letterkenny. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="donegal.html">&larr; All activities in County Donegal</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="683">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Conwal Letterkenny Parent, Baby and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Conwal Letterkenny Parent and Toddler Group, Co. Donegal, is also known as Conway Tots - a play-based session for children from birth to 3 years, and for parents or guardians looking to meet for a cuppa and a chat. Everyone welcome. Keep an eye on social media for when the group starts back up after school holidays, as it may not always align with term time. Location: Conway Hall (behind Conway Church), Donegal, F92 CTF4. Day/Time: every Friday, 10-11.30am (during school term). Cost: €3 per family. Contact: louisetoner18@gmail.com</p>
+            
+            <a href="../business/conwal-letterkenny-parent-baby-and-toddler-group-683.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="691">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Letterkenny - Mums and Tots Playgroup</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Letterkenny Parent and Toddler Group in Donegal, also known as Little Blessings Mums n Tots playgroup, is for babies and toddlers up to school age. They meet during school term time and close for school holidays, with loads of toys for the kids to play with, snacks and drinks for the kids, and coffee/tea and treats for the adults. No need to book, just pop in. Location: Letterkenny Baptist Church, Letterkenny, Donegal. Day/Time: every Thursday, 10am-12pm (during school term - note times can change, so stay up to date with their Facebook page). Cost: €2 per family. Contact: lkbaptist2020@hotmail.com. Keep an eye on social media for when the group starts back up after school holidays, as it may not always align with term time.</p>
+            
+            <a href="../business/letterkenny-mums-and-tots-playgroup-691.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="692">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Letterkenny Parent, Baby and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Letterkenny Parent and Toddler Group, Co. Donegal, is hosted by Cara House Family Resource Centre. The group offers a chance to meet new parents, grandparents and childminders in the community, and a great opportunity for your toddlers to mix with others, with lots of toys and activities for the kids. Refreshments are provided for children and adults. Note: you must book your place by contacting Janet on 0749123986 or 0861223029. Keep an eye on social media for when the group starts back up after school holidays, as it does not always align with term time. Location: Cara House Family Resource Centre, Pearse Road, Letterkenny, Co. Donegal, F92 YA21. Day/Time: every Monday, 10-11.30am (during school term). Cost: €3 per family. Contact: 0749123986 or 0861223029.</p>
+            
+            <a href="../business/letterkenny-parent-baby-and-toddler-group-692.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1457">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Citadel Gymnastics - Letterkenny &amp; Gweedore</h3>
+            <div class="tag-container"><span class="tag">Gymnastics</span></div>
+            <p class="description">Recreational and competitive gymnastics for all ages/abilities with adaptive equipment; purpose-built Letterkenny facility.</p>
+            
+            <a href="../business/citadel-gymnastics-letterkenny-gweedore-1457.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1458">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Letterkenny Community Centre - Kids Classes</h3>
+            <div class="tag-container"><span class="tag">Sports</span></div>
+            <p class="description">Junior soccer, gymnastics, martial arts (jiu jitsu, karate) and RINKA fitness for kids, various weekly slots.</p>
+            
+            <a href="../business/letterkenny-community-centre-kids-classes-1458.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 683, "lat": 54.9517941, "lon": -7.7354368, "name": "Conwal Letterkenny Parent, Baby and Toddler Group", "category": "Parent-and-toddler", "url": "../business/conwal-letterkenny-parent-baby-and-toddler-group-683.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 691, "lat": 54.9511377, "lon": -7.7220159, "name": "Letterkenny - Mums and Tots Playgroup", "category": "Parent-and-toddler", "url": "../business/letterkenny-mums-and-tots-playgroup-691.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 692, "lat": 54.9517941, "lon": -7.7354368, "name": "Letterkenny Parent, Baby and Toddler Group", "category": "Parent-and-toddler", "url": "../business/letterkenny-parent-baby-and-toddler-group-692.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1457, "lat": 54.9517941, "lon": -7.7354368, "name": "Citadel Gymnastics - Letterkenny & Gweedore", "category": "Gymnastics", "url": "../business/citadel-gymnastics-letterkenny-gweedore-1457.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1458, "lat": null, "lon": null, "name": "Letterkenny Community Centre - Kids Classes", "category": "Sports", "url": "../business/letterkenny-community-centre-kids-classes-1458.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>
