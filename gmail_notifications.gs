@@ -1,20 +1,20 @@
-// Google Apps Script Web App: sends claim-flow notification emails from your
-// own Gmail account (GmailApp.sendEmail), triggered by a fire-and-forget
-// fetch() from the static site (notify.js). No backend, no third-party email
-// service, no secret keys in page source -- the only thing exposed client-side
-// is this script's public Web App URL, which can only send these three fixed
-// email shapes, not arbitrary mail.
+// Google Apps Script Web App: sends claim-flow notification emails from
+// info@kidspatch.ie (GmailApp.sendEmail, run under that Google Workspace
+// account), triggered by a fire-and-forget fetch() from the static site
+// (notify.js). No backend, no third-party email service, no secret keys in
+// page source -- the only thing exposed client-side is this script's public
+// Web App URL, which can only send these three fixed email shapes, not
+// arbitrary mail.
 //
 // SETUP (one-time, ~5 minutes):
-//   1. Go to https://script.google.com, click "New project".
-//   2. Delete the placeholder code, paste this whole file in.
-//   3. Change ADMIN_EMAIL below if you want claim alerts sent somewhere
-//      other than the Google account you deploy this under.
+//   1. Log into Google as info@kidspatch.ie (not your personal account).
+//   2. Go to https://script.google.com, click "New project".
+//   3. Delete the placeholder code, paste this whole file in.
 //   4. Click Deploy > New deployment > gear icon > "Web app".
-//        - Execute as: Me
+//        - Execute as: Me (info@kidspatch.ie)
 //        - Who has access: Anyone
 //   5. Click Deploy, authorize the requested Gmail-send permission (it'll
-//      warn "Google hasn't verified this app" since it's your own personal
+//      warn "Google hasn't verified this app" since it's your own Workspace
 //      script -- click Advanced > Go to (project name) to proceed).
 //   6. Copy the resulting Web App URL (ends in /exec).
 //   7. Paste that URL into APPS_SCRIPT_URL at the top of notify.js in this
@@ -24,7 +24,7 @@
 // deployments > edit (pencil) icon > New version > Deploy -- the URL stays
 // the same, so no change needed on the notify.js side.
 
-const ADMIN_EMAIL = 'davidmacmahon1@gmail.com';
+const ADMIN_EMAIL = 'info@kidspatch.ie';
 const SITE_URL = 'https://www.kidspatch.ie';
 
 function doPost(e) {
