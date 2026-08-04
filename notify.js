@@ -3,13 +3,13 @@
 // account -- no backend, no third-party email service. One shared static
 // file, same convention as analytics.js/share.js.
 //
-// APPS_SCRIPT_URL is blank until gmail_notifications.gs is deployed (see the
-// setup steps at the top of that file) -- until then, notifyClaim() is a
-// silent no-op, same "never break the real feature" philosophy as
-// trackEvent() in analytics.js. The claim itself is already safely stored in
-// Supabase regardless of whether this email sends.
+// APPS_SCRIPT_URL points at the deployed Web App from gmail_notifications.gs
+// (running under info@kidspatch.ie) -- if it's ever redeployed as a new
+// project the URL changes and this needs updating, but redeploying an
+// existing project as a new *version* (Deploy > Manage deployments > edit >
+// New version) keeps the same URL, so that path needs no change here.
 (function () {
-    var APPS_SCRIPT_URL = '';
+    var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyqvG-2CC5ARJ56f9GBa-nnDHhL5Wn7c-GWeYQi52Ra5Rmy5RkA3D2RKPkWWjMLb121/exec';
 
     window.notifyClaim = function (type, payload) {
         if (!APPS_SCRIPT_URL) return;
