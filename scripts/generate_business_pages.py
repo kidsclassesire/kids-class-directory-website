@@ -15,7 +15,7 @@ import urllib.error
 import urllib.request
 from datetime import date, timezone
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import parse_qsl, quote, urlencode, urlsplit, urlunsplit
 
 SUPABASE_URL = 'https://gnozodfteywsiwcnbwch.supabase.co'
 SUPABASE_ANON_KEY = 'sb_publishable_eduvbMySPxHPT0iZjE_LqQ_w6nyjnjY'
@@ -42,6 +42,7 @@ def file_version(relative_path):
 
 STYLES_VERSION = file_version('styles.css')
 SHARE_JS_VERSION = file_version('share.js')
+ANALYTICS_JS_VERSION = file_version('analytics.js')
 
 
 def fetch_all_rows():
@@ -63,6 +64,34 @@ def fetch_all_rows():
 
 def esc(value):
     return html.escape(str(value), quote=True) if value not in (None, '') else ''
+
+
+def with_utm(url, medium='referral'):
+    # Tags outbound links (Visit Website, booking page) so a business owner
+    # can see in their own analytics that a click came from Kids Patch --
+    # separate from (and complementary to) the outbound_click GA event fired
+    # alongside it via track_onclick().
+    if not url:
+        return url
+    try:
+        parts = urlsplit(url if '://' in url else f'https://{url}')
+        query = dict(parse_qsl(parts.query))
+        query['utm_source'] = 'kidspatch'
+        query['utm_medium'] = medium
+        return urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(query), parts.fragment))
+    except ValueError:
+        return url
+
+
+def track_onclick(event_name, **params):
+    # A static generated page has no post-load init step to wire up listeners
+    # against, so click tracking here is a plain inline onclick -- htmlescaped
+    # (via esc(), same helper as everywhere else in this file) rather than
+    # trusted as-is, since company_name/category are free-text DB fields that
+    # can contain quotes. json.dumps produces valid JS literal syntax for both
+    # the event name and the params object.
+    js = f'trackEvent({json.dumps(event_name)}, {json.dumps(params, ensure_ascii=False)})'
+    return f'onclick="{esc(js)}"'
 
 
 def slugify(text):
@@ -153,10 +182,12 @@ def detail_rows_html(row):
     if row.get('phone_number'):
         phone_display = esc(format_phone(row['phone_number']))
         href = tel_href(row['phone_number'])
-        contact_parts.append(f'<a href="tel:{href}">{phone_display}</a>' if href else phone_display)
+        phone_track = track_onclick('phone_click', business_id=row.get('id'), business_name=row.get('company_name'))
+        contact_parts.append(f'<a href="tel:{href}" {phone_track}>{phone_display}</a>' if href else phone_display)
     if row.get('email_address'):
         email = esc(row['email_address'])
-        contact_parts.append(f'<a href="mailto:{email}">{email}</a>')
+        email_track = track_onclick('email_click', business_id=row.get('id'), business_name=row.get('company_name'))
+        contact_parts.append(f'<a href="mailto:{email}" {email_track}>{email}</a>')
     if contact_parts:
         rows.append(f'<div class="detail-row"><strong>Contact:</strong> {" &middot; ".join(contact_parts)}</div>')
 
@@ -166,7 +197,9 @@ def detail_rows_html(row):
         rows.append(f'<div class="detail-row"><strong>Facilities:</strong><br>{chips}</div>')
 
     if row.get('booking_url') and row.get('booking_url') != row.get('website_url'):
-        rows.append(f'<div class="detail-row"><a href="{esc(row["booking_url"])}" target="_blank" rel="noopener">Booking page &rarr;</a></div>')
+        booking_href = esc(with_utm(row['booking_url'], 'referral'))
+        booking_track = track_onclick('outbound_click', business_id=row.get('id'), business_name=row.get('company_name'), category=row.get('category'), link_type='booking')
+        rows.append(f'<div class="detail-row"><a href="{booking_href}" target="_blank" rel="noopener" {booking_track}>Booking page &rarr;</a></div>')
 
     verified = ''
     if row.get('date_verified'):
@@ -254,10 +287,11 @@ def json_ld(row, slug):
 def map_section(row):
     lat, lon = row.get('latitude'), row.get('longitude')
     maps_link = f'https://www.google.com/maps/search/?api=1&query={quote(row.get("address") or row.get("company_name") or "")}'
+    directions_track = track_onclick('directions_click', business_id=row.get('id'), business_name=row.get('company_name'))
     section = (
         '<div class="business-address">'
         f'<strong>Address:</strong> {esc(row.get("address") or "Contact for details")}<br>'
-        f'<a href="{maps_link}" target="_blank" rel="noopener">View on Google Maps &rarr;</a>'
+        f'<a href="{maps_link}" target="_blank" rel="noopener" {directions_track}>View on Google Maps &rarr;</a>'
         '</div>'
     )
     if lat is not None and lon is not None:
@@ -272,7 +306,7 @@ def share_widget_html(row, canonical):
     x_icon = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2h3.2l-7 8 8.2 12h-6.4l-5-6.8L5.4 22H2.2l7.5-8.6L1.8 2h6.6l4.5 6.2L18.9 2zm-1.1 18h1.8L7.2 4H5.3l12.5 16z"/></svg>'
     email_icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>'
     copy_icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 13.5a4 4 0 005.66 0l3-3a4 4 0 00-5.66-5.66l-1.5 1.5"/><path d="M13.5 10.5a4 4 0 00-5.66 0l-3 3a4 4 0 005.66 5.66l1.5-1.5"/></svg>'
-    return f'''<div class="share-row" data-title="{share_title}" data-url="{canonical}">
+    return f'''<div class="share-row" data-title="{share_title}" data-url="{canonical}" data-business-id="{esc(row.get('id'))}">
                         <span class="share-label">Share:</span>
                         <a class="share-icon share-whatsapp" data-share="whatsapp" href="#" target="_blank" rel="noopener" aria-label="Share on WhatsApp" title="Share on WhatsApp">{whatsapp_icon}</a>
                         <a class="share-icon share-facebook" data-share="facebook" href="#" target="_blank" rel="noopener" aria-label="Share on Facebook" title="Share on Facebook">{facebook_icon}</a>
@@ -340,6 +374,7 @@ def render_page(row, slug):
     <meta name="twitter:title" content="{esc(title)}">
     <meta name="twitter:description" content="{esc(desc)}">
     {leaflet_css}<link rel="stylesheet" href="../styles.css?v={STYLES_VERSION}">
+    <script src="../analytics.js?v={ANALYTICS_JS_VERSION}" defer></script>
     <script src="../share.js?v={SHARE_JS_VERSION}" defer></script>
     <script type="application/ld+json">{json_ld(row, slug)}</script>
 </head>
@@ -361,7 +396,7 @@ def render_page(row, slug):
                     <p class="description" style="-webkit-line-clamp: unset;">{esc(row.get("description")) or 'No description available.'}</p>
                     {detail_rows_html(row)}
                     {map_section(row)}
-                    <a href="{esc(row.get("website_url")) or "#"}" target="_blank" rel="noopener" class="button">Visit Website</a>
+                    <a href="{esc(with_utm(row.get("website_url"))) or "#"}" target="_blank" rel="noopener" class="button" {track_onclick('outbound_click', business_id=row.get('id'), business_name=row.get('company_name'), category=row.get('category'), link_type='website')}>Visit Website</a>
                     {share_widget_html(row, canonical)}
                 </div>
             </div>

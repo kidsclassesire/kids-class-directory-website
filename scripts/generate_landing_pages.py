@@ -20,6 +20,7 @@ from datetime import date
 from generate_business_pages import (
     esc, fetch_all_rows, file_version, format_price, format_schedule, image_html,
     make_slug, self_validate_json_ld, slugify, REPO_ROOT, SITE_URL, STYLES_VERSION,
+    ANALYTICS_JS_VERSION,
 )
 
 CLASSES_DIR = REPO_ROOT / 'classes'
@@ -251,7 +252,10 @@ def render_landing_page(title, canonical, meta_desc, breadcrumb_html, h1, intro_
         )
     filters_scripts = ''
     if dataset_html:
-        filters_scripts = '\n    <script src="../landing-filters.js?v=' + LANDING_FILTERS_JS_VERSION + '" defer></script>'
+        filters_scripts = (
+            '\n    <script src="../analytics.js?v=' + ANALYTICS_JS_VERSION + '" defer></script>'
+            '\n    <script src="../landing-filters.js?v=' + LANDING_FILTERS_JS_VERSION + '" defer></script>'
+        )
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>

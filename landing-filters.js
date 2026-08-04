@@ -25,7 +25,7 @@
     // itself (CSS) and re-enabled only on the ::-webkit-slider-thumb/
     // ::-moz-range-thumb, so each handle stays independently draggable
     // regardless of DOM order or z-index.
-    function setupRangeSlider(container, onChange) {
+    function setupRangeSlider(container, onChange, onCommit) {
         var minInput = container.querySelector('input:first-of-type');
         var maxInput = container.querySelector('input:last-of-type');
         var fill = container.querySelector('.range-track-fill');
@@ -57,6 +57,14 @@
 
         minInput.addEventListener('input', update);
         maxInput.addEventListener('input', update);
+        // 'change' (not 'input') fires once on release/keyup rather than on
+        // every drag tick, so this is where analytics tracking hooks in --
+        // an 'input'-driven trackEvent call would spam GA with a call per
+        // pixel of drag.
+        if (onCommit) {
+            minInput.addEventListener('change', onCommit);
+            maxInput.addEventListener('change', onCommit);
+        }
         // Paint-only, deliberately not calling update()/onChange() here: at
         // construction time the caller's `var ageSlider = setupRangeSlider(...)`
         // assignment hasn't completed yet, so a callback that reads
@@ -78,6 +86,10 @@
     function init() {
         var points = readDataset();
         if (!points.length) return;
+
+        function track(eventName, params) {
+            if (typeof window.trackEvent === 'function') window.trackEvent(eventName, params);
+        }
 
         var filtersEl = document.getElementById('landing-filters');
         var cards = document.querySelectorAll('.landing-card[data-id]');
@@ -112,6 +124,7 @@
                 if (p.category) popup += '<br>' + escapeHtml(p.category);
                 popup += '<br><a href="' + p.url + '">View details &rarr;</a>';
                 marker.bindPopup(popup);
+                marker.on('click', function () { track('map_interaction', { action: 'marker_click', business_id: p.id }); });
                 markerGroup.addLayer(marker);
             });
             map.addLayer(markerGroup);
@@ -141,12 +154,16 @@
             ageValueEl.textContent = (min === boundMin && max === boundMax)
                 ? 'Any age' : (min + ' – ' + max + ' years');
             applyFilters();
+        }, function () {
+            track('filter_used', { filter_type: 'age', min: ageState.min, max: ageState.max });
         });
         var priceSlider = setupRangeSlider(document.querySelector('#landing-filters .filter-group:nth-child(2) .range-slider'), function (min, max, boundMin, boundMax) {
             priceState = { min: min, max: max };
             priceValueEl.textContent = (min === boundMin && max === boundMax)
                 ? 'Any price' : ('€' + min + ' – €' + max + (max === boundMax ? '+' : ''));
             applyFilters();
+        }, function () {
+            track('filter_used', { filter_type: 'price', min: priceState.min, max: priceState.max });
         });
 
         function isDefaultState() {
@@ -208,7 +225,10 @@
             applyFilters();
         }
 
-        freeOnlyEl.addEventListener('change', applyFilters);
+        freeOnlyEl.addEventListener('change', function () {
+            track('filter_used', { filter_type: 'free', value: freeOnlyEl.checked });
+            applyFilters();
+        });
         if (resetBtn) resetBtn.addEventListener('click', resetAll);
         if (noResultsReset) noResultsReset.addEventListener('click', resetAll);
     }

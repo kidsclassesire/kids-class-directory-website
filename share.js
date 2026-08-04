@@ -18,6 +18,13 @@
     function initShareRow(row) {
         var title = row.dataset.title || document.title;
         var url = row.dataset.url || window.location.href;
+        var businessId = row.dataset.businessId;
+
+        function track(platform) {
+            if (typeof window.trackEvent === 'function') {
+                window.trackEvent('share_click', { platform: platform, business_id: businessId });
+            }
+        }
 
         var links = {
             whatsapp: 'https://wa.me/?text=' + encodeURIComponent(title + ' — ' + url),
@@ -27,12 +34,16 @@
         };
         Object.keys(links).forEach(function (key) {
             var el = row.querySelector('[data-share="' + key + '"]');
-            if (el) el.href = links[key];
+            if (el) {
+                el.href = links[key];
+                el.addEventListener('click', function () { track(key); });
+            }
         });
 
         var copyBtn = row.querySelector('[data-share="copy"]');
         if (copyBtn) {
             copyBtn.addEventListener('click', function () {
+                track('copy');
                 var showCopied = function () {
                     copyBtn.classList.add('copied');
                     setTimeout(function () { copyBtn.classList.remove('copied'); }, 1600);

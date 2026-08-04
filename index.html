@@ -32,6 +32,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css?v=4">
+    <script src="analytics.js?v=1" defer></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -655,6 +656,7 @@
                 // On mobile the map may be showing as a full-screen overlay, in which
                 // case close it first so the list (and the scroll) is actually visible.
                 marker.on('click', () => {
+                    if (window.trackEvent) window.trackEvent('map_interaction', { action: 'marker_click', business_id: item.id });
                     if (mapOverlayOpen) setMapOverlayOpen(false);
                     const card = document.getElementById(`card-${index}`);
                     if (card) {
@@ -894,9 +896,9 @@
                 const contactParts = [];
                 if (item.phone_number) {
                     const href = telHref(item.phone_number);
-                    contactParts.push(href ? `<a href="tel:${href}">${escapeHtml(item.phone_number)}</a>` : escapeHtml(item.phone_number));
+                    contactParts.push(href ? `<a href="tel:${href}" data-track="phone_click" data-business-id="${escapeHtml(item.id)}">${escapeHtml(item.phone_number)}</a>` : escapeHtml(item.phone_number));
                 }
-                if (item.email_address) contactParts.push(`<a href="mailto:${escapeHtml(item.email_address)}">${escapeHtml(item.email_address)}</a>`);
+                if (item.email_address) contactParts.push(`<a href="mailto:${escapeHtml(item.email_address)}" data-track="email_click" data-business-id="${escapeHtml(item.id)}">${escapeHtml(item.email_address)}</a>`);
                 if (contactParts.length) rows.push(`<div class="detail-row"><strong>Contact:</strong> ${contactParts.join(' &middot; ')}</div>`);
 
                 if (Array.isArray(item.facilities) && item.facilities.length) {
@@ -904,7 +906,8 @@
                 }
 
                 if (item.booking_url && item.booking_url !== item.website_url) {
-                    rows.push(`<div class="detail-row"><a href="${escapeHtml(item.booking_url)}" target="_blank" rel="noopener">Booking page &rarr;</a></div>`);
+                    const bookingHref = window.withUtm ? window.withUtm(item.booking_url) : item.booking_url;
+                    rows.push(`<div class="detail-row"><a href="${escapeHtml(bookingHref)}" target="_blank" rel="noopener" data-track="outbound_click" data-link-type="booking" data-business-id="${escapeHtml(item.id)}" data-business-name="${escapeHtml(item.company_name)}" data-category="${escapeHtml(item.category)}">Booking page &rarr;</a></div>`);
                 }
 
                 const verifiedHtml = item.date_verified
@@ -953,7 +956,7 @@
                         ${item.id != null && businessIndex.has(String(item.id))
                             ? `<a href="${businessIndex.get(String(item.id))}" class="button" style="background:#EEF0EA; color:var(--text-dark);">Full details</a>`
                             : ''}
-                        <a href="${escapeHtml(item.website_url) || '#'}" target="_blank" class="button">Visit Website</a>
+                        <a href="${escapeHtml(window.withUtm ? window.withUtm(item.website_url) : item.website_url) || '#'}" target="_blank" class="button" data-track="outbound_click" data-link-type="website" data-business-id="${escapeHtml(item.id)}" data-business-name="${escapeHtml(item.company_name)}" data-category="${escapeHtml(item.category)}">Visit Website</a>
                         <button class="claim-btn" data-id="${escapeHtml(item.id || item.company_name)}" data-name="${escapeHtml(item.company_name)}">Claim this business</button>
                     </div>
                 `;
@@ -1071,6 +1074,13 @@
             }
 
             filterClasses();
+            if (window.trackEvent) {
+                window.trackEvent('search', {
+                    search_term: searchInput.value.trim(),
+                    location: locationInput.value.trim(),
+                    result_count: filteredData.length,
+                });
+            }
         }
 
         nearMeBtn.addEventListener('click', () => {
@@ -1232,15 +1242,19 @@
             onEnterFallback: performSearch,
         });
 
-        categoryFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
+        function trackFilter(filterType, value) {
+            if (window.trackEvent) window.trackEvent('filter_used', { filter_type: filterType, value: value });
+        }
+
+        categoryFilter.addEventListener('change', () => { trackFilter('category', categoryFilter.value); if (hasTriggeredSearch) filterClasses(); });
         // Age lives in the hero bar alongside Activity/Where, but like those fields it
         // should only take effect once the user presses Search, not on every selection.
-        ageFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
-        dayFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
-        dropoffFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
-        favoritesOnlyFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
-        radiusFilter.addEventListener('change', () => { if (hasTriggeredSearch) filterClasses(); });
-        sortSelect.addEventListener('change', () => { sortExplicitlySet = true; if (hasTriggeredSearch) filterClasses(); });
+        ageFilter.addEventListener('change', () => { trackFilter('age', ageFilter.value); if (hasTriggeredSearch) filterClasses(); });
+        dayFilter.addEventListener('change', () => { trackFilter('day', dayFilter.value); if (hasTriggeredSearch) filterClasses(); });
+        dropoffFilter.addEventListener('change', () => { trackFilter('dropoff', dropoffFilter.checked); if (hasTriggeredSearch) filterClasses(); });
+        favoritesOnlyFilter.addEventListener('change', () => { trackFilter('favorites_only', favoritesOnlyFilter.checked); if (hasTriggeredSearch) filterClasses(); });
+        radiusFilter.addEventListener('change', () => { trackFilter('radius', radiusFilter.value); if (hasTriggeredSearch) filterClasses(); });
+        sortSelect.addEventListener('change', () => { sortExplicitlySet = true; trackFilter('sort', sortSelect.value); if (hasTriggeredSearch) filterClasses(); });
 
         document.getElementById('clear-filters-btn').addEventListener('click', () => {
             searchInput.value = '';
@@ -1287,6 +1301,7 @@
             if (e.target.classList.contains('claim-btn')) {
                 const businessId = e.target.getAttribute('data-id');
                 const businessName = e.target.getAttribute('data-name');
+                if (window.trackEvent) window.trackEvent('claim_started', { business_id: businessId, business_name: businessName });
 
                 document.getElementById('modal-business-name').textContent = `Claim ${businessName}`;
                 document.getElementById('claim-business-id').value = businessId;
@@ -1302,6 +1317,15 @@
             // average display, the "Rate this:" label, and the star input itself) have
             // their own behavior -- clicking any of them should not also expand/collapse
             // the card.
+            const trackedLink = e.target.closest('a[data-track]');
+            if (trackedLink && window.trackEvent) {
+                window.trackEvent(trackedLink.dataset.track, {
+                    business_id: trackedLink.dataset.businessId,
+                    business_name: trackedLink.dataset.businessName,
+                    category: trackedLink.dataset.category,
+                    link_type: trackedLink.dataset.linkType,
+                });
+            }
             if (e.target.closest('a, .rating-summary, .rate-row')) {
                 return;
             }
@@ -1340,6 +1364,7 @@
 
                 claimForm.style.display = 'none';
                 claimSuccess.style.display = 'block';
+                if (window.trackEvent) window.trackEvent('claim_submitted', { business_id: requestData.business_id, business_name: requestData.business_name });
             } catch (err) {
                 alert('There was an error submitting your claim. Please check your connection and try again.');
                 console.error(err);
