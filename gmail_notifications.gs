@@ -3,21 +3,32 @@
 // account), triggered by a fire-and-forget fetch() from the static site
 // (notify.js). No backend, no third-party email service, no secret keys in
 // page source -- the only thing exposed client-side is this script's public
-// Web App URL, which can only send these three fixed email shapes, not
-// arbitrary mail.
+// Web App URL.
+//
+// That URL sitting in public JS source means anyone can POST to it directly
+// (not just this site), so every send is gated on claimRequestExists() below
+// actually finding a matching row in Supabase first -- otherwise this would
+// be an open relay letting anyone make info@kidspatch.ie email an arbitrary
+// address ("your claim was approved, log in at portal.html...") on demand.
 //
 // SETUP (one-time, ~5 minutes):
 //   1. Log into Google as info@kidspatch.ie (not your personal account).
 //   2. Go to https://script.google.com, click "New project".
 //   3. Delete the placeholder code, paste this whole file in.
-//   4. Click Deploy > New deployment > gear icon > "Web app".
+//   4. Project Settings (gear icon) > Script Properties > add
+//      SUPABASE_SERVICE_ROLE_KEY = <service_role key from Supabase
+//      Project Settings > API>. This key bypasses RLS, which is required
+//      here (this script has no end-user session/JWT to satisfy the normal
+//      claim_requests policies) -- it must live ONLY in Script Properties,
+//      never in this file or the site repo.
+//   5. Click Deploy > New deployment > gear icon > "Web app".
 //        - Execute as: Me (info@kidspatch.ie)
 //        - Who has access: Anyone
-//   5. Click Deploy, authorize the requested Gmail-send permission (it'll
+//   6. Click Deploy, authorize the requested Gmail-send permission (it'll
 //      warn "Google hasn't verified this app" since it's your own Workspace
 //      script -- click Advanced > Go to (project name) to proceed).
-//   6. Copy the resulting Web App URL (ends in /exec).
-//   7. Paste that URL into APPS_SCRIPT_URL at the top of notify.js in this
+//   7. Copy the resulting Web App URL (ends in /exec).
+//   8. Paste that URL into APPS_SCRIPT_URL at the top of notify.js in this
 //      repo, then commit/push.
 //
 // To change the email wording later, edit this file, then Deploy > Manage
@@ -26,19 +37,47 @@
 
 const ADMIN_EMAIL = 'info@kidspatch.ie';
 const SITE_URL = 'https://www.kidspatch.ie';
+const SUPABASE_URL = 'https://gnozodfteywsiwcnbwch.supabase.co';
+
+// True only if a claim_requests row with this exact business_id/email/status
+// combination really exists -- confirms the payload matches something that
+// actually happened in Supabase rather than being fabricated by whoever is
+// POSTing to this Web App URL.
+function claimRequestExists(businessId, email, status) {
+  var key = PropertiesService.getScriptProperties().getProperty('SUPABASE_SERVICE_ROLE_KEY');
+  if (!key || !businessId || !email) return false;
+  var url = SUPABASE_URL + '/rest/v1/claim_requests'
+    + '?business_id=eq.' + encodeURIComponent(businessId)
+    + '&requester_email=eq.' + encodeURIComponent(email)
+    + '&status=eq.' + encodeURIComponent(status)
+    + '&select=id&limit=1';
+  var res = UrlFetchApp.fetch(url, {
+    headers: { apikey: key, Authorization: 'Bearer ' + key },
+    muteHttpExceptions: true,
+  });
+  if (res.getResponseCode() !== 200) return false;
+  var rows = JSON.parse(res.getContentText());
+  return rows.length > 0;
+}
 
 function doPost(e) {
   try {
     const payload = JSON.parse(e.postData.contents);
     switch (payload.type) {
       case 'new_claim':
-        sendNewClaimEmail(payload);
+        if (claimRequestExists(payload.business_id, payload.requester_email, 'pending')) {
+          sendNewClaimEmail(payload);
+        }
         break;
       case 'claim_approved':
-        sendClaimApprovedEmail(payload);
+        if (claimRequestExists(payload.business_id, payload.requester_email, 'approved')) {
+          sendClaimApprovedEmail(payload);
+        }
         break;
       case 'claim_rejected':
-        sendClaimRejectedEmail(payload);
+        if (claimRequestExists(payload.business_id, payload.requester_email, 'rejected')) {
+          sendClaimRejectedEmail(payload);
+        }
         break;
     }
   } catch (err) {

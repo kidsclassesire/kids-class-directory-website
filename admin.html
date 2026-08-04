@@ -722,15 +722,15 @@
                         <button class="btn-danger reject-btn">Reject</button>
                     </div>
                 `;
-                card.querySelector('.approve-btn').addEventListener('click', () => approveClaim(claim.id, claim.requester_email, claim.business_name));
-                card.querySelector('.reject-btn').addEventListener('click', () => rejectClaim(claim.id, claim.business_name, claim.requester_email));
+                card.querySelector('.approve-btn').addEventListener('click', () => approveClaim(claim.id, claim.requester_email, claim.business_name, claim.business_id));
+                card.querySelector('.reject-btn').addEventListener('click', () => rejectClaim(claim.id, claim.business_name, claim.requester_email, claim.business_id));
                 claimsContainer.appendChild(card);
             });
         }
 
         document.getElementById('claims-search').addEventListener('input', (e) => renderPendingClaims(e.target.value));
 
-        async function approveClaim(claimId, email, businessName) {
+        async function approveClaim(claimId, email, businessName, businessId) {
             if (!confirm(`Are you sure you want to approve ${email}?`)) return;
 
             try {
@@ -747,8 +747,9 @@
                 // fallback either way, since notify.js is fire-and-forget and its
                 // delivery can't be confirmed from here. Resolved relative to this page
                 // (not hardcoded) so it's correct whether served at a domain root or a
-                // GitHub Pages subpath.
-                if (window.notifyClaim) window.notifyClaim('claim_approved', { requester_email: email, business_name: businessName });
+                // GitHub Pages subpath. business_id is required -- gmail_notifications.gs
+                // verifies the claim actually exists in Supabase before sending anything.
+                if (window.notifyClaim) window.notifyClaim('claim_approved', { requester_email: email, business_name: businessName, business_id: businessId });
 
                 const portalUrl = new URL('portal.html', window.location.href).href;
                 try {
@@ -766,7 +767,7 @@
             }
         }
 
-        async function rejectClaim(claimId, businessName, email) {
+        async function rejectClaim(claimId, businessName, email, businessId) {
             if (!confirm(`Reject the claim for "${businessName}"?`)) return;
 
             try {
@@ -776,7 +777,7 @@
                     .eq('id', claimId);
 
                 if (error) throw error;
-                if (window.notifyClaim) window.notifyClaim('claim_rejected', { requester_email: email, business_name: businessName });
+                if (window.notifyClaim) window.notifyClaim('claim_rejected', { requester_email: email, business_name: businessName, business_id: businessId });
                 showToast('Claim rejected.', 'success');
                 fetchClaims();
                 refreshOverviewStats();

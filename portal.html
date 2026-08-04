@@ -482,10 +482,19 @@
             return (str || '').split(',').map(s => s.trim()).filter(Boolean);
         }
 
+        function escapeHtml(unsafe) {
+            return (unsafe || '').toString()
+                 .replace(/&/g, "&amp;")
+                 .replace(/</g, "&lt;")
+                 .replace(/>/g, "&gt;")
+                 .replace(/"/g, "&quot;")
+                 .replace(/'/g, "&#039;");
+        }
+
         function renderImagePreview(boxId, path, emptyLabel) {
             const box = document.getElementById(boxId);
             if (path) {
-                box.innerHTML = `<img src="${path}" alt="" onerror="this.parentElement.innerHTML='<span class=&quot;empty-label&quot;>Image failed to load</span>'">`;
+                box.innerHTML = `<img src="${escapeHtml(path)}" alt="" onerror="this.parentElement.innerHTML='<span class=&quot;empty-label&quot;>Image failed to load</span>'">`;
             } else {
                 box.innerHTML = `<span class="empty-label">${emptyLabel}</span>`;
             }
