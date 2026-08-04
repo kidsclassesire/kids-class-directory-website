@@ -9,7 +9,7 @@
 // existing project as a new *version* (Deploy > Manage deployments > edit >
 // New version) keeps the same URL, so that path needs no change here.
 (function () {
-    var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyqvG-2CC5ARJ56f9GBa-nnDHhL5Wn7c-GWeYQi52Ra5Rmy5RkA3D2RKPkWWjMLb121/exec';
+    var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwNfGviSwkLdnBv-3V2kKXr-GyAzS4JmuHHYWxLekXseUhvdGITjs5IaR1rvbNOUg-z/exec';
 
     window.notifyClaim = function (type, payload) {
         if (!APPS_SCRIPT_URL) return;
