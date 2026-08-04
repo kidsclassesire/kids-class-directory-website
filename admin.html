@@ -426,6 +426,7 @@
 
     <!-- Supabase JS -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="notify.js"></script>
     <script>
         const SUPABASE_URL = 'https://gnozodfteywsiwcnbwch.supabase.co';
         const SUPABASE_ANON_KEY = 'sb_publishable_eduvbMySPxHPT0iZjE_LqQ_w6nyjnjY';
@@ -721,15 +722,15 @@
                         <button class="btn-danger reject-btn">Reject</button>
                     </div>
                 `;
-                card.querySelector('.approve-btn').addEventListener('click', () => approveClaim(claim.id, claim.requester_email));
-                card.querySelector('.reject-btn').addEventListener('click', () => rejectClaim(claim.id, claim.business_name));
+                card.querySelector('.approve-btn').addEventListener('click', () => approveClaim(claim.id, claim.requester_email, claim.business_name));
+                card.querySelector('.reject-btn').addEventListener('click', () => rejectClaim(claim.id, claim.business_name, claim.requester_email));
                 claimsContainer.appendChild(card);
             });
         }
 
         document.getElementById('claims-search').addEventListener('input', (e) => renderPendingClaims(e.target.value));
 
-        async function approveClaim(claimId, email) {
+        async function approveClaim(claimId, email, businessName) {
             if (!confirm(`Are you sure you want to approve ${email}?`)) return;
 
             try {
@@ -740,10 +741,15 @@
 
                 if (error) throw error;
 
-                // No automated "you're approved" email exists yet -- surface the portal
-                // link here so the admin can paste it into a manual email/message to the
-                // owner. Resolved relative to this page (not hardcoded), so it's correct
-                // whether this is served at a domain root or a GitHub Pages subpath.
+                // Fires an automated "you're approved" email via notify.js (Gmail-backed
+                // Apps Script -- see gmail_notifications.gs) if that's been set up; it's a
+                // silent no-op otherwise. The clipboard copy below stays as a manual
+                // fallback either way, since notify.js is fire-and-forget and its
+                // delivery can't be confirmed from here. Resolved relative to this page
+                // (not hardcoded) so it's correct whether served at a domain root or a
+                // GitHub Pages subpath.
+                if (window.notifyClaim) window.notifyClaim('claim_approved', { requester_email: email, business_name: businessName });
+
                 const portalUrl = new URL('portal.html', window.location.href).href;
                 try {
                     await navigator.clipboard.writeText(portalUrl);
@@ -760,7 +766,7 @@
             }
         }
 
-        async function rejectClaim(claimId, businessName) {
+        async function rejectClaim(claimId, businessName, email) {
             if (!confirm(`Reject the claim for "${businessName}"?`)) return;
 
             try {
@@ -770,6 +776,7 @@
                     .eq('id', claimId);
 
                 if (error) throw error;
+                if (window.notifyClaim) window.notifyClaim('claim_rejected', { requester_email: email, business_name: businessName });
                 showToast('Claim rejected.', 'success');
                 fetchClaims();
                 refreshOverviewStats();

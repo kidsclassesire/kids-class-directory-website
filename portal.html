@@ -346,15 +346,26 @@
 
             try {
                 if (isSignUp) {
-                    const { error } = await supabaseClient.auth.signUp({ email, password });
+                    const { data, error } = await supabaseClient.auth.signUp({ email, password });
                     if (error) throw error;
-                    authSuccess.textContent = "Account created! You are now logged in.";
-                    authSuccess.style.display = 'block';
+                    // If email confirmation is required (Supabase Auth default), signUp()
+                    // succeeds but returns no session until the link in that email is
+                    // clicked -- checkSession() would then find nothing and the page would
+                    // just silently sit on the auth form with no explanation. Only claim
+                    // "logged in" when there's actually a session to check.
+                    if (data.session) {
+                        authSuccess.textContent = "Account created! You are now logged in.";
+                        authSuccess.style.display = 'block';
+                        setTimeout(checkSession, 1000);
+                    } else {
+                        authSuccess.textContent = "Account created! Check your email to confirm your address, then log in below.";
+                        authSuccess.style.display = 'block';
+                    }
                 } else {
                     const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
                     if (error) throw error;
+                    setTimeout(checkSession, 1000);
                 }
-                setTimeout(checkSession, 1000);
             } catch (err) {
                 authError.textContent = err.message;
                 authError.style.display = 'block';
@@ -485,14 +496,15 @@
         async function loadOwnerBusiness() {
             try {
                 // 1. Check if they have an approved claim
-                const { data: claim, error: claimError } = await supabaseClient
-                    .from('claim_requests')
-                    .select('business_id')
-                    .eq('requester_email', currentUserEmail)
-                    .eq('status', 'approved')
-                    .maybeSingle();
+                // Case-insensitive match via RPC (see claim_status_check.sql) -- the claim
+                // form doesn't normalize email casing at submission time, so an owner who
+                // claimed as "Info@Biz.ie" but signs in as "info@biz.ie" must still match
+                // here; a plain .eq() is case-sensitive and would silently show
+                // "unauthorized" for an already-approved claim.
+                const { data: businessId, error: claimError } = await supabaseClient
+                    .rpc('my_approved_business_id');
 
-                if (claimError || !claim) {
+                if (claimError || !businessId) {
                     unauthorizedMsg.style.display = 'block';
                     editForm.style.display = 'none';
                     return;
@@ -502,7 +514,7 @@
                 const { data: business, error: bizError } = await supabaseClient
                     .from('classes')
                     .select('*')
-                    .eq('id', claim.business_id)
+                    .eq('id', businessId)
                     .single();
 
                 if (bizError) throw bizError;
@@ -679,7 +691,7 @@
 
                 if (error) throw error;
 
-                showDashSuccess("Your listing has been updated successfully on the main directory!");
+                showDashSuccess("Your listing has been updated! It's live on the main search right away — your dedicated business page can take up to 24 hours to catch up.");
             } catch (err) {
                 showDashError("Failed to update: " + err.message);
             } finally {

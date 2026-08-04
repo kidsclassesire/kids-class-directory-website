@@ -39,6 +39,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css?v=4">
     <script src="analytics.js?v=1" defer></script>
+    <script src="notify.js?v=1" defer></script>
+    <script src="claim.js?v=1" defer></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -212,10 +214,14 @@
             <h3 id="modal-business-name">Claim Business</h3>
             <p>Verify your ownership to manage this page and update your details.</p>
             
-            <form id="claim-form">
+            <div id="claim-loading" style="display:none; text-align:center; padding: 1rem 0; color: var(--text-muted);">Checking claim status&hellip;</div>
+
+            <form id="claim-form" style="display:none;">
                 <input type="hidden" id="claim-business-id">
                 <input type="hidden" id="claim-business-title">
-                
+                <!-- Honeypot: invisible to real visitors, often filled in by bots. -->
+                <input type="text" id="claim-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
+
                 <div class="form-group">
                     <label for="claim-name">Your Full Name</label>
                     <input type="text" id="claim-name" required placeholder="e.g. Jane Doe">
@@ -231,6 +237,8 @@
                 </div>
                 <button type="submit" class="submit-btn" id="claim-submit">Submit Claim Request</button>
             </form>
+
+            <div id="claim-already" style="display:none; text-align:center; background:#fef3c7; color:#92400e; padding:1.5rem; border-radius:8px;"></div>
 
             <div id="claim-success" style="display: none; text-align: center; color: #166534; background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
                 <strong>Request Submitted!</strong><br>We'll review your details. Once approved, come back to <a href="portal.html" style="color:#166534; font-weight:700;">Manage Your Listing</a> and log in with the email address you just gave us to edit your business.
@@ -963,7 +971,7 @@
                             ? `<a href="${businessIndex.get(String(item.id))}" class="button" style="background:#EEF0EA; color:var(--text-dark);">Full details</a>`
                             : ''}
                         <a href="${escapeHtml(window.withUtm ? window.withUtm(item.website_url) : item.website_url) || '#'}" target="_blank" class="button" data-track="outbound_click" data-link-type="website" data-business-id="${escapeHtml(item.id)}" data-business-name="${escapeHtml(item.company_name)}" data-category="${escapeHtml(item.category)}">Visit Website</a>
-                        <button class="claim-btn" data-id="${escapeHtml(item.id || item.company_name)}" data-name="${escapeHtml(item.company_name)}">Claim this business</button>
+                        <button class="claim-btn" data-id="${escapeHtml(item.id)}" data-name="${escapeHtml(item.company_name)}">Claim this business</button>
                     </div>
                 `;
                 container.appendChild(card);
@@ -1279,17 +1287,8 @@
             if (hasTriggeredSearch) filterClasses();
         });
 
-        // --- Claim Business Logic ---
-        const claimModal = document.getElementById('claim-modal');
-        const closeModalBtn = document.getElementById('close-modal');
-        const claimForm = document.getElementById('claim-form');
-        const claimSuccess = document.getElementById('claim-success');
-
-        // Close modal events
-        closeModalBtn.addEventListener('click', () => { claimModal.classList.remove('active'); });
-        claimModal.addEventListener('click', (e) => { if (e.target === claimModal) claimModal.classList.remove('active'); });
-
-        // Open modal via Event Delegation (handles dynamic buttons)
+        // Open/close/submit behavior for #claim-modal lives in claim.js (shared
+        // with the generated business pages) -- this just delegates the click.
         document.getElementById('directory-container').addEventListener('change', (e) => {
             if (e.target.matches('.star-input input[type="radio"]')) {
                 const classId = parseInt(e.target.dataset.classId, 10);
@@ -1305,18 +1304,7 @@
                 return;
             }
             if (e.target.classList.contains('claim-btn')) {
-                const businessId = e.target.getAttribute('data-id');
-                const businessName = e.target.getAttribute('data-name');
-                if (window.trackEvent) window.trackEvent('claim_started', { business_id: businessId, business_name: businessName });
-
-                document.getElementById('modal-business-name').textContent = `Claim ${businessName}`;
-                document.getElementById('claim-business-id').value = businessId;
-                document.getElementById('claim-business-title').value = businessName;
-
-                claimForm.style.display = 'block';
-                claimSuccess.style.display = 'none';
-                claimForm.reset();
-                claimModal.classList.add('active');
+                window.openClaimModal(e.target.getAttribute('data-id'), e.target.getAttribute('data-name'));
                 return;
             }
             // Visit Website / booking links and the whole ratings area (the read-only
@@ -1338,45 +1326,6 @@
             const card = e.target.closest('.class-card');
             if (card) {
                 card.classList.toggle('expanded');
-            }
-        });
-
-        // Form Submission to Supabase
-        claimForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const submitBtn = document.getElementById('claim-submit');
-            submitBtn.textContent = 'Submitting...';
-            submitBtn.disabled = true;
-
-            const requestData = {
-                business_id: document.getElementById('claim-business-id').value,
-                business_name: document.getElementById('claim-business-title').value,
-                requester_name: document.getElementById('claim-name').value,
-                requester_email: document.getElementById('claim-email').value,
-                requester_position: document.getElementById('claim-position').value,
-                status: 'pending'
-            };
-
-            try {
-                if (window.supabase) {
-                    const supabase = window.supabaseClient;
-                    // Insert into the claim_requests table
-                    const { error } = await supabase.from('claim_requests').insert([requestData]);
-                    if (error) throw error;
-                } else {
-                    console.warn("Supabase not fully connected. Simulating submission.");
-                    await new Promise(resolve => setTimeout(resolve, 800)); 
-                }
-
-                claimForm.style.display = 'none';
-                claimSuccess.style.display = 'block';
-                if (window.trackEvent) window.trackEvent('claim_submitted', { business_id: requestData.business_id, business_name: requestData.business_name });
-            } catch (err) {
-                alert('There was an error submitting your claim. Please check your connection and try again.');
-                console.error(err);
-            } finally {
-                submitBtn.textContent = 'Submit Claim Request';
-                submitBtn.disabled = false;
             }
         });
 

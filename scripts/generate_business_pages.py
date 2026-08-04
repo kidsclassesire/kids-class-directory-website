@@ -43,6 +43,8 @@ def file_version(relative_path):
 STYLES_VERSION = file_version('styles.css')
 SHARE_JS_VERSION = file_version('share.js')
 ANALYTICS_JS_VERSION = file_version('analytics.js')
+NOTIFY_JS_VERSION = file_version('notify.js')
+CLAIM_JS_VERSION = file_version('claim.js')
 
 
 def fetch_all_rows():
@@ -316,6 +318,56 @@ def share_widget_html(row, canonical):
                     </div>'''
 
 
+def claim_button_html(row):
+    # openClaimModal() (claim.js) is generic across index.html's dynamically
+    # rendered cards and these static pages -- same function, same modal
+    # markup (CLAIM_MODAL_HTML below), just invoked via onclick here instead
+    # of a data-id/data-name pair read by a delegated listener, since a
+    # static page has no per-card delegation infrastructure to hook into.
+    onclick = f'window.openClaimModal({json.dumps(str(row.get("id")))}, {json.dumps(row.get("company_name"))})'
+    return f'<button type="button" class="button claim-btn" onclick="{esc(onclick)}">Claim this business</button>'
+
+
+# Same modal markup as index.html's #claim-modal -- claim.js is written against
+# this exact structure (element IDs) regardless of which page includes it.
+CLAIM_MODAL_HTML = '''<div id="claim-modal" class="modal-overlay">
+        <div class="modal">
+            <button id="close-modal" class="close-modal">&times;</button>
+            <h3 id="modal-business-name">Claim Business</h3>
+            <p>Verify your ownership to manage this page and update your details.</p>
+
+            <div id="claim-loading" style="display:none; text-align:center; padding: 1rem 0; color: var(--text-muted);">Checking claim status&hellip;</div>
+
+            <form id="claim-form" style="display:none;">
+                <input type="hidden" id="claim-business-id">
+                <input type="hidden" id="claim-business-title">
+                <input type="text" id="claim-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
+
+                <div class="form-group">
+                    <label for="claim-name">Your Full Name</label>
+                    <input type="text" id="claim-name" required placeholder="e.g. Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label for="claim-email">Business Email Address</label>
+                    <input type="email" id="claim-email" required placeholder="e.g. jane@yourbusiness.ie">
+                    <small style="color:var(--text-muted); font-size: 0.75rem; display:block; margin-top:4px;">Must be an official business domain.</small>
+                </div>
+                <div class="form-group">
+                    <label for="claim-position">Your Position / Role</label>
+                    <input type="text" id="claim-position" required placeholder="e.g. Owner, Manager">
+                </div>
+                <button type="submit" class="submit-btn" id="claim-submit">Submit Claim Request</button>
+            </form>
+
+            <div id="claim-already" style="display:none; text-align:center; background:#fef3c7; color:#92400e; padding:1.5rem; border-radius:8px;"></div>
+
+            <div id="claim-success" style="display: none; text-align: center; color: #166534; background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
+                <strong>Request Submitted!</strong><br>We'll review your details. Once approved, come back to <a href="../portal.html" style="color:#166534; font-weight:700;">Manage Your Listing</a> and log in with the email address you just gave us to edit your business.
+            </div>
+        </div>
+    </div>'''
+
+
 def render_page(row, slug):
     company = esc(row.get('company_name'))
     category = row.get('category') or 'Class'
@@ -382,11 +434,14 @@ def render_page(row, slug):
     {leaflet_css}<link rel="stylesheet" href="../styles.css?v={STYLES_VERSION}">
     <script src="../analytics.js?v={ANALYTICS_JS_VERSION}" defer></script>
     <script src="../share.js?v={SHARE_JS_VERSION}" defer></script>
+    <script src="../notify.js?v={NOTIFY_JS_VERSION}" defer></script>
+    <script src="../claim.js?v={CLAIM_JS_VERSION}" defer></script>
     <script type="application/ld+json">{json_ld(row, slug)}</script>
 </head>
 <body>
     <div class="business-page">
         <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <a href="../portal.html" style="float:right; font-size:0.85rem; font-weight:700; color:var(--secondary); text-decoration:none; padding:8px 14px; border:1.5px solid var(--secondary); border-radius:8px;">Manage your listing</a>
         <nav class="breadcrumb">
             <a href="../index.html">Home</a> &rsaquo; <a href="{cat_link}">{esc(category)}</a> &rsaquo; {company}
         </nav>
@@ -403,6 +458,7 @@ def render_page(row, slug):
                     {detail_rows_html(row)}
                     {map_section(row)}
                     <a href="{esc(with_utm(row.get("website_url"))) or "#"}" target="_blank" rel="noopener" class="button" {track_onclick('outbound_click', business_id=row.get('id'), business_name=row.get('company_name'), category=row.get('category'), link_type='website')}>Visit Website</a>
+                    {claim_button_html(row)}
                     {share_widget_html(row, canonical)}
                 </div>
             </div>
@@ -412,6 +468,15 @@ def render_page(row, slug):
             </div>
         </main>
     </div>
+    {CLAIM_MODAL_HTML}
+    <script>
+        window.SUPABASE_URL = window.SUPABASE_URL || 'https://gnozodfteywsiwcnbwch.supabase.co';
+        window.SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'sb_publishable_eduvbMySPxHPT0iZjE_LqQ_w6nyjnjY';
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        window.supabaseClient = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
+    </script>
 {map_script}
 </body>
 </html>'''
