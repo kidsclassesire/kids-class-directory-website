@@ -317,7 +317,7 @@ def render_category_page(cat, rows, combo_counties_for_cat):
 
     breadcrumb = (
         f'<nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; '
-        f'<a href="index.html">All Classes</a> &rsaquo; {esc(cat)}</nav>'
+        f'<a href="index.html">All Activities</a> &rsaquo; {esc(cat)}</nav>'
     )
     h1 = f'{cat} Classes in Ireland'
 
@@ -352,21 +352,21 @@ def render_category_page(cat, rows, combo_counties_for_cat):
 def render_county_page(county, rows, combo_cats_for_county, citytown=None):
     slug = county_slug(county)
     canonical = f'{SITE_URL}/classes/{slug}.html'
-    title = f'Kids Classes in {county} | Kids Patch'
+    title = f'Kids Activities in {county} | Kids Patch'
     count = len(rows)
     meta_desc = truncate(
-        f'Browse {count} kids classes and activities in {county}, Ireland. '
-        'Filter by category, age and schedule to find the right class.'
+        f'Browse {count} kids activities and classes in {county}, Ireland. '
+        'Filter by category, age and schedule to find the right activity.'
     )
 
     breadcrumb = (
         f'<nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; '
-        f'<a href="index.html">All Classes</a> &rsaquo; {esc(county)}</nav>'
+        f'<a href="index.html">All Activities</a> &rsaquo; {esc(county)}</nav>'
     )
-    h1 = f'Kids Classes in {county}'
+    h1 = f'Kids Activities in {county}'
 
     top_cats = Counter(combo_cats_for_county).most_common(3)
-    intro = f'<p class="landing-intro">Browse {count} kids classes and activities in {esc(county)}.'
+    intro = f'<p class="landing-intro">Browse {count} kids activities and classes in {esc(county)}.'
     if top_cats:
         top_txt = ', '.join(c for c, _ in top_cats)
         intro += f' Popular categories in {esc(county)} include {esc(top_txt)}.'
@@ -380,13 +380,13 @@ def render_county_page(county, rows, combo_cats_for_county, citytown=None):
     crosslinks = ''
     if combo_links:
         links_html = ''.join(f'<a href="{path}">{esc(cat)}</a>' for cat, path in combo_links)
-        crosslinks = f'<div class="landing-crosslinks"><h2>Browse classes in {esc(county)} by category</h2><div class="crosslink-list">{links_html}</div></div>'
+        crosslinks = f'<div class="landing-crosslinks"><h2>Browse activities in {esc(county)} by category</h2><div class="crosslink-list">{links_html}</div></div>'
 
     if citytown:
         citytown_label, citytown_slug = citytown
         crosslinks += (
             '<div class="landing-crosslinks">'
-            f'<a href="{citytown_slug}.html">See classes in {esc(citytown_label)} specifically &rarr;</a>'
+            f'<a href="{citytown_slug}.html">See activities in {esc(citytown_label)} specifically &rarr;</a>'
             '</div>'
         )
 
@@ -403,27 +403,27 @@ def render_county_page(county, rows, combo_cats_for_county, citytown=None):
 
 def render_citytown_page(county, label, slug, rows):
     canonical = f'{SITE_URL}/classes/{slug}.html'
-    title = f'Kids Classes in {label} | Kids Patch'
+    title = f'Kids Activities in {label} | Kids Patch'
     count = len(rows)
     meta_desc = truncate(
-        f'Browse {count} kids classes and activities in {label}, Ireland. '
-        'Filter by category, age and schedule to find the right class.'
+        f'Browse {count} kids activities and classes in {label}, Ireland. '
+        'Filter by category, age and schedule to find the right activity.'
     )
 
     county_slug_ = county_slug(county)
     breadcrumb = (
         f'<nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; '
-        f'<a href="index.html">All Classes</a> &rsaquo; '
+        f'<a href="index.html">All Activities</a> &rsaquo; '
         f'<a href="{county_slug_}.html">{esc(county)}</a> &rsaquo; {esc(label)}</nav>'
     )
-    h1 = f'Kids Classes in {label}'
+    h1 = f'Kids Activities in {label}'
     intro = (
-        f'<p class="landing-intro">Browse {count} kids classes and activities in {esc(label)}. '
+        f'<p class="landing-intro">Browse {count} kids activities and classes in {esc(label)}. '
         'Compare schedules, ages and pricing below, or contact a provider directly to book.</p>'
     )
     crosslinks = (
         '<div class="business-backlinks">'
-        f'<a href="{county_slug_}.html">&larr; All classes in County {esc(county)}</a>'
+        f'<a href="{county_slug_}.html">&larr; All activities in County {esc(county)}</a>'
         '</div>'
     )
 
@@ -450,7 +450,7 @@ def render_combo_page(cat, county, rows):
 
     breadcrumb = (
         f'<nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; '
-        f'<a href="index.html">All Classes</a> &rsaquo; '
+        f'<a href="index.html">All Activities</a> &rsaquo; '
         f'<a href="{category_slug(cat)}.html">{esc(cat)}</a> &rsaquo; {esc(county)}</nav>'
     )
     h1 = f'{cat} Classes in {county}'
@@ -479,13 +479,13 @@ def render_combo_page(cat, county, rows):
 
 def render_hub_page(category_pages, county_pages):
     canonical = f'{SITE_URL}/classes/index.html'
-    title = 'Browse All Kids Classes by Category & County | Kids Patch'
+    title = 'Browse All Kids Activities by Category & County | Kids Patch'
     meta_desc = (
-        'Browse kids classes and activities across Ireland by category or county '
+        'Browse kids activities and classes across Ireland by category or county '
         '-- sports, dance, music, STEM and more, in every county.'
     )
-    breadcrumb = '<nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; All Classes</nav>'
-    h1 = 'Browse All Classes by Category & County'
+    breadcrumb = '<nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; All Activities</nav>'
+    h1 = 'Browse All Activities by Category & County'
     intro = '<p class="landing-intro">Pick a category or a county below to see the kids\' classes and activities available there.</p>'
 
     cat_links = ''.join(f'<a href="{slug}.html">{esc(cat)}</a>' for cat, slug in sorted(category_pages))

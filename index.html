@@ -11,8 +11,8 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kids Patch | Find Local Classes &amp; Activities for Children in Ireland</title>
-    <meta name="description" content="Kids Patch: browse 900+ kids classes and activities across Ireland — sports, dance, music, STEM, swimming and more. Filter by age, location and category to find the right class for your child.">
+    <title>Kids Patch | Find Local Activities &amp; Classes for Children in Ireland</title>
+    <meta name="description" content="Kids Patch: browse 2,000+ kids activities and classes across Ireland — sports, dance, music, STEM, swimming and more. Filter by age, location and category to find the right activity for your child.">
     <link rel="canonical" href="https://www.kidspatch.ie/">
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -20,14 +20,14 @@
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
-    <meta property="og:title" content="Kids Patch | Find Local Classes &amp; Activities for Children in Ireland">
-    <meta property="og:description" content="Kids Patch: browse 900+ kids classes and activities across Ireland — sports, dance, music, STEM, swimming and more. Filter by age, location and category to find the right class for your child.">
+    <meta property="og:title" content="Kids Patch | Find Local Activities &amp; Classes for Children in Ireland">
+    <meta property="og:description" content="Kids Patch: browse 2,000+ kids activities and classes across Ireland — sports, dance, music, STEM, swimming and more. Filter by age, location and category to find the right activity for your child.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.kidspatch.ie/">
     <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Kids Patch | Find Local Classes &amp; Activities for Children in Ireland">
-    <meta name="twitter:description" content="Kids Patch: browse 900+ kids classes and activities across Ireland — sports, dance, music, STEM, swimming and more. Filter by age, location and category to find the right class for your child.">
+    <meta name="twitter:title" content="Kids Patch | Find Local Activities &amp; Classes for Children in Ireland">
+    <meta name="twitter:description" content="Kids Patch: browse 2,000+ kids activities and classes across Ireland — sports, dance, music, STEM, swimming and more. Filter by age, location and category to find the right activity for your child.">
     <meta name="twitter:image" content="https://www.kidspatch.ie/og-image.png">
 
     <!-- Leaflet CSS -->
@@ -65,7 +65,7 @@
                 Kids Patch
             </a>
             <nav class="site-nav">
-                <a href="#" id="nav-browse">Browse classes</a>
+                <a href="#" id="nav-browse">Browse activities</a>
                 <a href="classes/index.html">Categories</a>
             </nav>
             <a href="portal.html" class="btn-ghost">Manage your listing</a>
@@ -75,8 +75,8 @@
     <header id="hero" class="hero-initial">
         <div class="eyebrow">Ireland's largest children's directory</div>
         <div class="hero-text">
-            <h1>Find the right class for your <em>kid</em>, nearby.</h1>
-            <p>We help children have fun by matching them to the classes they need — thousands of classes, camps and activities across Ireland, from swimming to Irish dancing to coding club.</p>
+            <h1>Find the right activity for your <em>kid</em>, nearby.</h1>
+            <p>We help children have fun by matching them to the activities they need — thousands of activities, classes and camps across Ireland, from swimming to Irish dancing to coding club.</p>
         </div>
         <div class="search-bar">
             <div class="search-input-group">
@@ -113,7 +113,7 @@
         <div class="results-column">
 
             <div class="section-head">
-                <h2>All classes</h2>
+                <h2>All activities</h2>
             </div>
 
             <!-- Granular Filter Bar -->
@@ -174,7 +174,7 @@
                 </div>
             </div>
 
-            <div id="result-meta"><span id="result-count">Loading classes...</span></div>
+            <div id="result-meta"><span id="result-count">Loading activities...</span></div>
             <div id="directory-container"></div>
             <div id="pagination-controls" class="pagination"></div>
         </div>
@@ -199,7 +199,7 @@
                 Kids Patch
             </div>
             <div class="site-footer-links">
-                <a href="classes/index.html">Browse all classes by category &amp; county</a>
+                <a href="classes/index.html">Browse all activities by category &amp; county</a>
                 <a href="portal.html">Business owner? Manage your listing</a>
             </div>
         </div>
@@ -804,7 +804,7 @@
             if (!append) container.innerHTML = '';
 
             if (!data.length) {
-                if (!append) container.innerHTML = '<p style="grid-column: 1/-1; padding: 2rem 0; color: var(--text-muted);">No classes match these exact filters. Try adjusting your selections.</p>';
+                if (!append) container.innerHTML = '<p style="grid-column: 1/-1; padding: 2rem 0; color: var(--text-muted);">No activities match these exact filters. Try adjusting your selections.</p>';
                 return;
             }
 
