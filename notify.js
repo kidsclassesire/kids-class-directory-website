@@ -11,7 +11,7 @@
 (function () {
     var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwNfGviSwkLdnBv-3V2kKXr-GyAzS4JmuHHYWxLekXseUhvdGITjs5IaR1rvbNOUg-z/exec';
 
-    window.notifyClaim = function (type, payload) {
+    function send(type, payload) {
         if (!APPS_SCRIPT_URL) return;
         try {
             fetch(APPS_SCRIPT_URL, {
@@ -22,5 +22,18 @@
         } catch (e) {
             // best-effort only
         }
+    }
+
+    window.notifyClaim = function (type, payload) {
+        send(type, payload);
+    };
+
+    // Contact form (contact.html) -- unlike notifyClaim, there's no Supabase
+    // row for the Apps Script side to verify this against, since a contact
+    // message isn't stored anywhere; it only ever emails ADMIN_EMAIL itself
+    // (never the sender), so that's an acceptable amount of open-relay
+    // exposure for this one message type.
+    window.notifyContact = function (payload) {
+        send('contact', payload);
     };
 })();

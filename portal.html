@@ -127,6 +127,8 @@
         <form id="edit-business-form" style="display: none;">
             <input type="hidden" id="edit-id">
 
+            <h3 id="editing-business-name" style="margin: -0.5rem 0 1.75rem; color: var(--text-muted); font-weight: 600; font-size: 1rem;"></h3>
+
             <fieldset>
                 <legend>Images</legend>
                 <div class="image-field">
@@ -308,6 +310,8 @@
             </fieldset>
 
             <div class="save-bar">
+                <div class="alert alert-error" id="dash-error-bottom"></div>
+                <div class="alert alert-success" id="dash-success-bottom"></div>
                 <button type="submit" class="btn" id="save-btn">Save Changes</button>
             </div>
         </form>
@@ -339,16 +343,27 @@
         const authSuccess = document.getElementById('auth-success');
         const dashError = document.getElementById('dash-error');
         const dashSuccess = document.getElementById('dash-success');
+        const dashErrorBottom = document.getElementById('dash-error-bottom');
+        const dashSuccessBottom = document.getElementById('dash-success-bottom');
 
+        // Mirrored into the sticky save-bar as well as the top of the page -- on a
+        // long form the Save button is far below the top alert, so without this an
+        // owner who just clicked Save sees no feedback unless they scroll back up.
         function showDashError(message) {
             dashError.textContent = message;
             dashError.style.display = 'block';
             dashSuccess.style.display = 'none';
+            dashErrorBottom.textContent = message;
+            dashErrorBottom.style.display = 'block';
+            dashSuccessBottom.style.display = 'none';
         }
         function showDashSuccess(message) {
             dashSuccess.textContent = message;
             dashSuccess.style.display = 'block';
             dashError.style.display = 'none';
+            dashSuccessBottom.textContent = message;
+            dashSuccessBottom.style.display = 'block';
+            dashErrorBottom.style.display = 'none';
         }
 
         // Toggle Login / Signup
@@ -609,6 +624,8 @@
         function populateEditForm(business) {
             currentBusinessId = business.id;
 
+            document.getElementById('editing-business-name').textContent = `Editing: ${business.company_name || 'Untitled business'}`;
+
             // Populate Form
             document.getElementById('edit-id').value = business.id;
             document.getElementById('edit-name').value = business.company_name || '';
@@ -730,6 +747,8 @@
             e.preventDefault();
             dashError.style.display = 'none';
             dashSuccess.style.display = 'none';
+            dashErrorBottom.style.display = 'none';
+            dashSuccessBottom.style.display = 'none';
             const saveBtn = document.getElementById('save-btn');
             saveBtn.textContent = "Saving...";
             saveBtn.disabled = true;
@@ -776,6 +795,7 @@
                 // name/category just saved, without a refetch.
                 const cached = cachedBusinesses.find(b => String(b.id) === id);
                 if (cached) Object.assign(cached, updates);
+                document.getElementById('editing-business-name').textContent = `Editing: ${updates.company_name || 'Untitled business'}`;
 
                 showDashSuccess("Your listing has been updated! It's live on the main search right away — your dedicated business page can take up to 24 hours to catch up.");
             } catch (err) {

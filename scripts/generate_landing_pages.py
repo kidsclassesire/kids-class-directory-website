@@ -672,7 +672,7 @@ def main():
 
     manifest = json.loads((REPO_ROOT / 'business-index.json').read_text())
     today = date.today().isoformat()
-    url_entries = [f'{SITE_URL}/']
+    url_entries = [f'{SITE_URL}/', f'{SITE_URL}/contact.html']
     url_entries += [f'{SITE_URL}/{path}' for path in manifest.values()]
     url_entries += [f'{SITE_URL}/{path}' for path in landing_paths]
 

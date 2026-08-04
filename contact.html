@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Kids Patch</title>
+    <meta name="description" content="Get in touch with Kids Patch — questions, feedback or business enquiries about Ireland's directory of kids activities and classes.">
+    <link rel="canonical" href="https://www.kidspatch.ie/contact.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Contact Us | Kids Patch">
+    <meta property="og:description" content="Get in touch with Kids Patch — questions, feedback or business enquiries about Ireland's directory of kids activities and classes.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/contact.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Us | Kids Patch">
+    <meta name="twitter:description" content="Get in touch with Kids Patch — questions, feedback or business enquiries about Ireland's directory of kids activities and classes.">
+    <meta name="twitter:image" content="https://www.kidspatch.ie/og-image.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=4">
+    <script src="analytics.js?v=1" defer></script>
+    <script src="notify.js?v=1" defer></script>
+    <style>
+        .contact-page { max-width: 640px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+        .contact-page h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+        .contact-page > p.intro { color: var(--text-muted); margin-bottom: 2rem; }
+        .contact-alert {
+            display: none; text-align: center; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;
+        }
+        .contact-alert.success { background: #dcfce7; color: #166534; }
+        .contact-alert.error { background: #fee2e2; color: #991b1b; }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="site-header-inner">
+            <a href="index.html" class="logo">
+                <svg width="30" height="30" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                    <path d="M20 2 L26 6 L34 6 L34 14 L38 20 L34 26 L34 34 L26 34 L20 38 L14 34 L6 34 L6 26 L2 20 L6 14 L6 6 L14 6 Z" fill="#0F6E6E"/>
+                    <circle cx="20" cy="20" r="8" fill="#FFC857"/>
+                </svg>
+                Kids Patch
+            </a>
+            <nav class="site-nav">
+                <a href="index.html">Browse activities</a>
+                <a href="classes/index.html">Categories</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <a href="portal.html" class="btn-ghost">Manage your listing</a>
+        </div>
+    </header>
+
+    <main class="contact-page">
+        <h1>Contact Us</h1>
+        <p class="intro">Question, feedback, or spotted something wrong with a listing? Send us a message and we'll get back to you.</p>
+
+        <div id="contact-success" class="contact-alert success">
+            <strong>Thanks for getting in touch!</strong><br>We'll reply to your email as soon as we can.
+        </div>
+        <div id="contact-error" class="contact-alert error">
+            There was a problem sending your message. Please try again, or email us directly at <a href="mailto:info@kidspatch.ie" style="color:#991b1b; font-weight:700;">info@kidspatch.ie</a>.
+        </div>
+
+        <form id="contact-form">
+            <!-- Honeypot: invisible to real visitors, often filled in by bots. -->
+            <input type="text" id="contact-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
+
+            <div class="form-group">
+                <label for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" required placeholder="e.g. Jane Doe">
+            </div>
+            <div class="form-group">
+                <label for="contact-email">Your Email Address</label>
+                <input type="email" id="contact-email" required placeholder="e.g. jane@example.com">
+            </div>
+            <div class="form-group">
+                <label for="contact-subject">Subject</label>
+                <input type="text" id="contact-subject" placeholder="e.g. Question about a listing">
+            </div>
+            <div class="form-group">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" required placeholder="How can we help?" rows="6" style="width:100%; padding:0.75rem 1rem; border:1px solid var(--border); border-radius:8px; font-size:1rem; font-family:inherit; box-sizing:border-box; background:var(--bg-page); color:var(--text-dark); resize:vertical;"></textarea>
+            </div>
+            <button type="submit" class="submit-btn" id="contact-submit">Send Message</button>
+        </form>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div class="logo">
+                <svg viewBox="0 0 40 40" fill="none" width="26" height="26" aria-hidden="true">
+                    <path d="M20 2 L26 6 L34 6 L34 14 L38 20 L34 26 L34 34 L26 34 L20 38 L14 34 L6 34 L6 26 L2 20 L6 14 L6 6 L14 6 Z" fill="#FAF9F6"/>
+                    <circle cx="20" cy="20" r="8" fill="#FFC857"/>
+                </svg>
+                Kids Patch
+            </div>
+            <div class="site-footer-links">
+                <a href="classes/index.html">Browse all activities by category &amp; county</a>
+                <a href="portal.html">Business owner? Manage your listing</a>
+                <a href="contact.html">Contact us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var form = document.getElementById('contact-form');
+            var submitBtn = document.getElementById('contact-submit');
+            var success = document.getElementById('contact-success');
+            var error = document.getElementById('contact-error');
+            var honeypot = document.getElementById('contact-hp');
+
+            form.addEventListener('submit', function (ev) {
+                ev.preventDefault();
+
+                // Honeypot: a real visitor never sees or fills this field
+                // (it's positioned off-screen); a form-filling bot typically does.
+                if (honeypot && honeypot.value) return;
+
+                error.style.display = 'none';
+
+                if (typeof window.notifyContact !== 'function') {
+                    error.style.display = 'block';
+                    return;
+                }
+
+                var payload = {
+                    name: document.getElementById('contact-name').value.trim(),
+                    email: document.getElementById('contact-email').value.trim(),
+                    subject: document.getElementById('contact-subject').value.trim(),
+                    message: document.getElementById('contact-message').value.trim(),
+                };
+
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+
+                window.notifyContact(payload);
+
+                if (typeof window.trackEvent === 'function') {
+                    window.trackEvent('contact_submitted', {});
+                }
+
+                // notify.js sends via a fire-and-forget no-cors fetch, so there's
+                // no response to confirm delivery against -- treat submission as
+                // success once it's been dispatched, same as the claim form does.
+                form.style.display = 'none';
+                success.style.display = 'block';
+            });
+        })();
+    </script>
+</body>
+</html>

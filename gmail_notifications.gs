@@ -89,6 +89,10 @@ function doPost(e) {
           console.log('sendClaimRejectedEmail: skipped, no matching rejected claim_requests row');
         }
         break;
+      case 'contact':
+        sendContactEmail(payload);
+        console.log('sendContactEmail: sent');
+        break;
     }
   } catch (err) {
     // Swallow errors -- this endpoint is best-effort (the claim itself is
@@ -126,6 +130,28 @@ function sendClaimApprovedEmail(p) {
     `-- Kids Patch`,
   ].join('\n');
   GmailApp.sendEmail(p.requester_email, subject, body);
+}
+
+// Unlike the claim emails above, this has no claim_requests row to verify
+// against -- it's the contact form's own free-text message, and it always
+// goes to ADMIN_EMAIL (never the sender), so there's no arbitrary-recipient
+// open-relay risk to gate against here, just plain spam, which relies on
+// contact.html's honeypot field to filter.
+function sendContactEmail(p) {
+  var message = (p.message || '').toString().trim();
+  if (!message) return;
+  var subject = `Kids Patch contact form: ${(p.subject || '').toString().trim() || 'New message'}`;
+  var body = [
+    `New message from the Kids Patch contact form.`,
+    ``,
+    `Name: ${p.name || ''}`,
+    `Email: ${p.email || ''}`,
+    ``,
+    message,
+  ].join('\n');
+  var options = {};
+  if (p.email) options.replyTo = p.email;
+  GmailApp.sendEmail(ADMIN_EMAIL, subject, body, options);
 }
 
 function sendClaimRejectedEmail(p) {
