@@ -318,6 +318,29 @@ def share_widget_html(row, canonical):
                     </div>'''
 
 
+def social_widget_html(row):
+    # Only rendered when the DB actually has a facebook_url/instagram_url --
+    # scripts/scrape_social_links_safe.py populates these, but most rows still
+    # don't have one, so this must stay silent (return '') rather than show
+    # empty/placeholder icons.
+    facebook = row.get('facebook_url')
+    instagram = row.get('instagram_url')
+    if not facebook and not instagram:
+        return ''
+    facebook_icon = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.08 5.66 21.23 10.44 22v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22C18.34 21.23 22 17.08 22 12.06z"/></svg>'
+    instagram_icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>'
+    icons = []
+    if facebook:
+        href = esc(with_utm(facebook))
+        track = track_onclick('outbound_click', business_id=row.get('id'), business_name=row.get('company_name'), category=row.get('category'), link_type='facebook')
+        icons.append(f'<a class="social-icon social-facebook" href="{href}" target="_blank" rel="noopener" aria-label="Facebook page" title="Facebook" {track}>{facebook_icon}</a>')
+    if instagram:
+        href = esc(with_utm(instagram))
+        track = track_onclick('outbound_click', business_id=row.get('id'), business_name=row.get('company_name'), category=row.get('category'), link_type='instagram')
+        icons.append(f'<a class="social-icon social-instagram" href="{href}" target="_blank" rel="noopener" aria-label="Instagram page" title="Instagram" {track}>{instagram_icon}</a>')
+    return f'<div class="social-row">{"".join(icons)}</div>'
+
+
 def claim_button_html(row):
     # openClaimModal() (claim.js) is generic across index.html's dynamically
     # rendered cards and these static pages -- same function, same modal
@@ -456,6 +479,7 @@ def render_page(row, slug):
                     </div>
                     <p class="description" style="-webkit-line-clamp: unset;">{esc(row.get("description")) or 'No description available.'}</p>
                     {detail_rows_html(row)}
+                    {social_widget_html(row)}
                     {map_section(row)}
                     <a href="{esc(with_utm(row.get("website_url"))) or "#"}" target="_blank" rel="noopener" class="button" {track_onclick('outbound_click', business_id=row.get('id'), business_name=row.get('company_name'), category=row.get('category'), link_type='website')}>Visit Website</a>
                     {claim_button_html(row)}

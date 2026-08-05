@@ -304,6 +304,16 @@
                     <label for="edit-eircode">Eircode</label>
                     <input type="text" id="edit-eircode">
                 </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-facebook">Facebook Page URL</label>
+                        <input type="url" id="edit-facebook" placeholder="e.g. https://facebook.com/yourbusiness">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-instagram">Instagram Page URL</label>
+                        <input type="url" id="edit-instagram" placeholder="e.g. https://instagram.com/yourbusiness">
+                    </div>
+                </div>
             </fieldset>
 
             <fieldset>
@@ -677,6 +687,8 @@
             document.getElementById('edit-phone').value = business.phone_number || '';
             document.getElementById('edit-address').value = business.address || '';
             document.getElementById('edit-eircode').value = business.eircode || '';
+            document.getElementById('edit-facebook').value = business.facebook_url || '';
+            document.getElementById('edit-instagram').value = business.instagram_url || '';
             setCheckboxGroup('facilities-checkbox-grid', business.facilities);
 
             renderImagePreview('logo-preview-box', business.logo_path, 'No logo');
@@ -807,6 +819,8 @@
                 phone_number: strOrNull(document.getElementById('edit-phone').value),
                 address: strOrNull(document.getElementById('edit-address').value),
                 eircode: strOrNull(document.getElementById('edit-eircode').value),
+                facebook_url: strOrNull(document.getElementById('edit-facebook').value),
+                instagram_url: strOrNull(document.getElementById('edit-instagram').value),
                 facilities: getCheckboxGroup('facilities-checkbox-grid'),
             };
 
