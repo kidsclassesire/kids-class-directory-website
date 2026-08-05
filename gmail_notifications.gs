@@ -31,13 +31,29 @@
 //   8. Paste that URL into APPS_SCRIPT_URL at the top of notify.js in this
 //      repo, then commit/push.
 //
-// To change the email wording later, edit this file, then Deploy > Manage
-// deployments > edit (pencil) icon > New version > Deploy -- the URL stays
-// the same, so no change needed on the notify.js side.
+// To change the email wording or styling later, edit this file, then
+// Deploy > Manage deployments > edit (pencil) icon > New version > Deploy --
+// the URL stays the same, so no change needed on the notify.js side.
 
 const ADMIN_EMAIL = 'info@kidspatch.ie';
 const SITE_URL = 'https://www.kidspatch.ie';
 const SUPABASE_URL = 'https://gnozodfteywsiwcnbwch.supabase.co';
+
+// Mirrors the palette in styles.css (:root) so the emails look like the
+// same product as the website rather than a generic notification.
+const BRAND = {
+  primary: '#FF7A5C',
+  secondary: '#0F6E6E',
+  accent: '#FFC857',
+  textDark: '#212B2B',
+  textMuted: '#5C6B6B',
+  bgPage: '#FAF9F6',
+  border: '#DCE3E3',
+};
+
+// The site's real app icon (teal square, "K", yellow dot) -- already
+// deployed and cacheable, so no extra asset to host just for emails.
+const LOGO_URL = SITE_URL + '/apple-touch-icon.png';
 
 // True only if a claim_requests row with this exact business_id/email/status
 // combination really exists -- confirms the payload matches something that
@@ -104,6 +120,94 @@ function doPost(e) {
   return ContentService.createTextOutput('ok');
 }
 
+// ---------------------------------------------------------------------
+// HTML email template helpers
+//
+// Deliberately old-school table-based markup with inline styles rather
+// than a <style> block or flexbox/grid -- Gmail/Outlook/Apple Mail strip
+// or mis-render modern CSS in HTML email, but this subset is reliably
+// supported everywhere. All user-supplied fields are escaped since this
+// endpoint is public (see claimRequestExists() note above) and the
+// contact form message is free text -- unescaped values could otherwise
+// break the layout or inject markup into an email sent from our account.
+// ---------------------------------------------------------------------
+
+function escapeHtml(str) {
+  return String(str == null ? '' : str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function nl2br(str) {
+  return escapeHtml(str).replace(/\n/g, '<br>');
+}
+
+function firstName(name) {
+  var n = (name || '').toString().trim();
+  return n ? n.split(/\s+/)[0] : 'there';
+}
+
+// rows: array of [label, value] pairs; blank values are skipped.
+function detailBox(rows) {
+  var cells = rows
+    .filter(function (r) { return r[1]; })
+    .map(function (r) {
+      return '<tr>'
+        + '<td style="padding:5px 0; font-family:Helvetica,Arial,sans-serif; font-size:13px; color:' + BRAND.textMuted + '; white-space:nowrap; vertical-align:top; padding-right:12px;">' + escapeHtml(r[0]) + '</td>'
+        + '<td style="padding:5px 0; font-family:Helvetica,Arial,sans-serif; font-size:14px; color:' + BRAND.textDark + '; vertical-align:top;">' + r[1] + '</td>'
+        + '</tr>';
+    })
+    .join('');
+  if (!cells) return '';
+  return '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:' + BRAND.bgPage + '; border:1px solid ' + BRAND.border + '; border-radius:8px; margin:20px 0;">'
+    + '<tr><td style="padding:14px 16px;">'
+    + '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">' + cells + '</table>'
+    + '</td></tr></table>';
+}
+
+// opts: { preheader, heading, bodyHtml, cta: {label, url} | null }
+function emailShell(opts) {
+  var cta = '';
+  if (opts.cta) {
+    cta = '<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:28px auto 4px;">'
+      + '<tr><td align="center" bgcolor="' + BRAND.primary + '" style="border-radius:8px;">'
+      + '<a href="' + opts.cta.url + '" target="_blank" style="display:inline-block; padding:14px 32px; font-family:Helvetica,Arial,sans-serif; font-size:15px; font-weight:bold; color:#ffffff; text-decoration:none; border-radius:8px;">' + escapeHtml(opts.cta.label) + '</a>'
+      + '</td></tr></table>';
+  }
+
+  return '<!DOCTYPE html><html><head><meta charset="utf-8">'
+    + '<meta name="viewport" content="width=device-width, initial-scale=1.0"></head>'
+    + '<body style="margin:0; padding:0; background-color:' + BRAND.bgPage + ';">'
+    + '<div style="display:none; max-height:0; overflow:hidden; opacity:0;">' + escapeHtml(opts.preheader || '') + '</div>'
+    + '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:' + BRAND.bgPage + ';"><tr><td align="center" style="padding:32px 16px;">'
+    + '<table role="presentation" width="480" cellpadding="0" cellspacing="0" border="0" style="max-width:480px; width:100%; background-color:#ffffff; border-radius:12px; overflow:hidden; border:1px solid ' + BRAND.border + ';">'
+    + '<tr><td bgcolor="' + BRAND.secondary + '" style="padding:20px 28px;">'
+    + '<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>'
+    + '<td style="padding-right:10px;"><img src="' + LOGO_URL + '" width="32" height="32" alt="" style="display:block; border-radius:7px;"></td>'
+    + '<td style="font-family:Helvetica,Arial,sans-serif; font-size:18px; font-weight:bold; color:#ffffff; letter-spacing:0.2px;">Kids Patch</td>'
+    + '</tr></table></td></tr>'
+    + '<tr><td style="padding:32px 28px 28px;">'
+    + '<h1 style="margin:0 0 16px; font-family:Helvetica,Arial,sans-serif; font-size:20px; line-height:1.3; color:' + BRAND.textDark + ';">' + opts.heading + '</h1>'
+    + '<div style="font-family:Helvetica,Arial,sans-serif; font-size:15px; line-height:1.65; color:' + BRAND.textDark + ';">' + opts.bodyHtml + '</div>'
+    + cta
+    + '</td></tr>'
+    + '<tr><td bgcolor="' + BRAND.accent + '" style="height:4px; line-height:4px; font-size:0;">&nbsp;</td></tr>'
+    + '</table>'
+    + '<table role="presentation" width="480" cellpadding="0" cellspacing="0" border="0" style="max-width:480px; width:100%;"><tr>'
+    + '<td align="center" style="padding:20px 16px 0; font-family:Helvetica,Arial,sans-serif; font-size:12px; line-height:1.6; color:' + BRAND.textMuted + ';">'
+    + 'Kids Patch &middot; <a href="' + SITE_URL + '" style="color:' + BRAND.secondary + '; text-decoration:none;">kidspatch.ie</a><br>'
+    + "Ireland's directory of kids' classes &amp; activities"
+    + '</td></tr></table>'
+    + '</td></tr></table></body></html>';
+}
+
+// ---------------------------------------------------------------------
+// Emails
+// ---------------------------------------------------------------------
+
 function sendNewClaimEmail(p) {
   const subject = `New claim request: ${p.business_name || 'Unknown business'}`;
   const body = [
@@ -115,7 +219,22 @@ function sendNewClaimEmail(p) {
     ``,
     `Review it here: ${SITE_URL}/admin.html`,
   ].join('\n');
-  GmailApp.sendEmail(ADMIN_EMAIL, subject, body);
+
+  const bodyHtml = '<p style="margin:0;">A new &ldquo;claim this business&rdquo; request just came in on Kids Patch.</p>'
+    + detailBox([
+      ['Business', escapeHtml(p.business_name || '') + (p.business_id ? ' <span style="color:' + BRAND.textMuted + ';">(ID: ' + escapeHtml(p.business_id) + ')</span>' : '')],
+      ['Requester', escapeHtml(p.requester_name || '') + (p.requester_position ? ' &mdash; ' + escapeHtml(p.requester_position) : '')],
+      ['Email', escapeHtml(p.requester_email || '')],
+    ]);
+
+  const htmlBody = emailShell({
+    preheader: `New claim request for ${p.business_name || 'a business'}`,
+    heading: 'New claim request',
+    bodyHtml: bodyHtml,
+    cta: { label: 'Review in admin panel', url: SITE_URL + '/admin.html' },
+  });
+
+  GmailApp.sendEmail(ADMIN_EMAIL, subject, body, { htmlBody: htmlBody });
 }
 
 function sendClaimApprovedEmail(p) {
@@ -129,7 +248,20 @@ function sendClaimApprovedEmail(p) {
     ``,
     `-- Kids Patch`,
   ].join('\n');
-  GmailApp.sendEmail(p.requester_email, subject, body);
+
+  const bodyHtml = '<p style="margin:0 0 12px;">Hi ' + escapeHtml(firstName(p.requester_name)) + ',</p>'
+    + '<p style="margin:0 0 12px;">Good news &mdash; your claim for <strong>' + escapeHtml(p.business_name || 'your business') + '</strong> on Kids Patch has been approved.</p>'
+    + '<p style="margin:0;">You can now manage your listing &mdash; update details, photos and class information any time.</p>'
+    + detailBox([['Log in with', escapeHtml(p.requester_email)]]);
+
+  const htmlBody = emailShell({
+    preheader: `Your claim for ${p.business_name || 'your business'} was approved`,
+    heading: 'Your claim was approved',
+    bodyHtml: bodyHtml,
+    cta: { label: 'Manage your listing', url: SITE_URL + '/portal.html' },
+  });
+
+  GmailApp.sendEmail(p.requester_email, subject, body, { htmlBody: htmlBody });
 }
 
 // Unlike the claim emails above, this has no claim_requests row to verify
@@ -149,7 +281,22 @@ function sendContactEmail(p) {
     ``,
     message,
   ].join('\n');
-  var options = {};
+
+  var bodyHtml = detailBox([
+    ['Name', escapeHtml(p.name || '')],
+    ['Email', escapeHtml(p.email || '')],
+    ['Subject', escapeHtml((p.subject || '').toString().trim())],
+  ])
+    + '<div style="margin-top:4px; padding:14px 16px; border-left:3px solid ' + BRAND.accent + '; background-color:' + BRAND.bgPage + '; border-radius:0 8px 8px 0; font-size:15px; line-height:1.6; color:' + BRAND.textDark + ';">' + nl2br(message) + '</div>';
+
+  var htmlBody = emailShell({
+    preheader: 'New message from the Kids Patch contact form',
+    heading: 'New contact form message',
+    bodyHtml: bodyHtml,
+    cta: null,
+  });
+
+  var options = { htmlBody: htmlBody };
   if (p.email) options.replyTo = p.email;
   GmailApp.sendEmail(ADMIN_EMAIL, subject, body, options);
 }
@@ -165,5 +312,18 @@ function sendClaimRejectedEmail(p) {
     ``,
     `-- Kids Patch`,
   ].join('\n');
-  GmailApp.sendEmail(p.requester_email, subject, body);
+
+  const bodyHtml = '<p style="margin:0 0 12px;">Hi ' + escapeHtml(firstName(p.requester_name)) + ',</p>'
+    + '<p style="margin:0 0 12px;">Thanks for your interest in claiming <strong>' + escapeHtml(p.business_name || 'this business') + '</strong> on Kids Patch.</p>'
+    + '<p style="margin:0 0 12px;">We weren\'t able to verify this claim, so it hasn\'t been approved.</p>'
+    + '<p style="margin:0;">If you believe this is a mistake, just reply to this email and we\'ll take another look.</p>';
+
+  const htmlBody = emailShell({
+    preheader: `An update on your claim for ${p.business_name || 'your business'}`,
+    heading: 'Update on your claim',
+    bodyHtml: bodyHtml,
+    cta: null,
+  });
+
+  GmailApp.sendEmail(p.requester_email, subject, body, { htmlBody: htmlBody });
 }
