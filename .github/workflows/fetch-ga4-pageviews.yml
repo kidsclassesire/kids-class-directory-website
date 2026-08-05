@@ -23,6 +23,10 @@ jobs:
           workload_identity_provider: projects/1073539752476/locations/global/workloadIdentityPools/github-actions-pool/providers/github-provider
           service_account: ga4-reader@kidspatch-analytics.iam.gserviceaccount.com
           token_format: access_token
+          # Default token scope is cloud-platform, which the Analytics Data
+          # API rejects (ACCESS_TOKEN_SCOPE_INSUFFICIENT) -- confirmed by
+          # testing directly against the API, needs this scope explicitly.
+          access_token_scopes: https://www.googleapis.com/auth/analytics.readonly
 
       - uses: actions/setup-python@v5
         with:
