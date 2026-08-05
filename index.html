@@ -788,7 +788,19 @@
             if (needsDropoff) params.set('dropoff', 'true');
             if (radiusKm) params.set('radius', radiusKm);
             if (sortSelect.value !== 'relevance') params.set('sort', sortSelect.value);
+            // Persist geolocation coords alongside the "Current Location" label so a
+            // reload or a Back-navigation from a business page can restore the actual
+            // search origin instead of just the text (the label alone can't be
+            // re-geocoded -- it isn't a real address).
+            if (hasOrigin) { params.set('lat', userLat); params.set('lng', userLon); }
             window.history.pushState(null, '', params.toString() ? '?' + params.toString() : window.location.pathname);
+            // Stashed so a business detail page's "Back to search results" link can
+            // return here with the same filters instead of always landing on the
+            // bare, unfiltered directory.
+            try {
+                if (params.toString()) sessionStorage.setItem('kpLastSearch', params.toString());
+                else sessionStorage.removeItem('kpLastSearch');
+            } catch (e) {}
         }
 
         // Placeholder cards shown while performSearch() is waiting on something
@@ -1350,6 +1362,12 @@
                 if(params.get('dropoff') === 'true') dropoffFilter.checked = true;
                 if(params.has('radius')) radiusFilter.value = params.get('radius');
                 if(params.has('sort')) { sortSelect.value = params.get('sort'); sortExplicitlySet = true; }
+                if(params.has('lat') && params.has('lng')) {
+                    userLat = parseFloat(params.get('lat'));
+                    userLon = parseFloat(params.get('lng'));
+                    lastGeocodedQuery = 'current location';
+                    nearMeBtn.style.color = 'var(--primary)';
+                }
                 performSearch();
             }
         });
