@@ -139,7 +139,8 @@
         <form id="edit-business-form" style="display: none;">
             <input type="hidden" id="edit-id">
 
-            <h3 id="editing-business-name" style="margin: -0.5rem 0 1.75rem; color: var(--text-muted); font-weight: 600; font-size: 1rem;"></h3>
+            <h3 id="editing-business-name" style="margin: -0.5rem 0 0.5rem; color: var(--text-muted); font-weight: 600; font-size: 1rem;"></h3>
+            <p id="page-views-stat" style="display:none; margin: 0 0 1.75rem; font-size: 0.85rem; color: var(--text-muted);"></p>
 
             <fieldset>
                 <legend>Images</legend>
@@ -662,6 +663,20 @@
             currentBusinessId = business.id;
 
             document.getElementById('editing-business-name').textContent = `Editing: ${business.company_name || 'Untitled business'}`;
+
+            // page_views_30d is refreshed nightly from GA4 (see
+            // scripts/fetch_ga4_pageviews.py) -- null/undefined means that
+            // job hasn't run for this row yet (e.g. a brand-new listing),
+            // not that the page genuinely has zero views, so stay hidden
+            // rather than show a misleading "0".
+            const viewsStat = document.getElementById('page-views-stat');
+            if (business.page_views_30d === null || business.page_views_30d === undefined) {
+                viewsStat.style.display = 'none';
+            } else {
+                const n = business.page_views_30d;
+                viewsStat.textContent = `${n.toLocaleString()} page view${n === 1 ? '' : 's'} in the last 30 days`;
+                viewsStat.style.display = 'block';
+            }
 
             // Populate Form
             document.getElementById('edit-id').value = business.id;

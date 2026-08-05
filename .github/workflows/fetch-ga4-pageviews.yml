@@ -1,0 +1,35 @@
+name: Fetch GA4 page views
+
+on:
+  schedule:
+    # 30 min after the business-pages rebuild (build-business-pages.yml runs
+    # at 3am), so any newly-generated pages already exist before this runs.
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/1073539752476/locations/global/workloadIdentityPools/github-actions-pool/providers/github-provider
+          service_account: ga4-reader@kidspatch-analytics.iam.gserviceaccount.com
+          token_format: access_token
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Fetch GA4 pageviews and write to Supabase
+        env:
+          GA4_ACCESS_TOKEN: ${{ steps.auth.outputs.access_token }}
+          SB_SECRET: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: python3 scripts/fetch_ga4_pageviews.py
