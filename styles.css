@@ -727,11 +727,19 @@
         .site-footer-legal {
             max-width: 1280px; margin: 1.5rem auto 0; padding-top: 1.5rem;
             border-top: 1px solid rgba(250,249,246,0.15);
-            display: flex; gap: 1.25rem; flex-wrap: wrap; justify-content: center;
+            display: flex; flex-wrap: wrap; justify-content: center;
             font-size: 0.8rem;
         }
-        .site-footer-legal a { color: rgba(250,249,246,0.55); font-weight: 500; }
+        .site-footer-legal a {
+            color: rgba(250,249,246,0.55); font-weight: 500;
+            padding: 0.35rem 0.9rem; border-right: 1px solid rgba(250,249,246,0.15);
+        }
+        .site-footer-legal a:last-child { border-right: none; }
         .site-footer-legal a:hover { color: var(--accent); }
+        @media (max-width: 640px) {
+            .site-footer-legal { flex-direction: column; align-items: center; gap: 0.6rem; }
+            .site-footer-legal a { border-right: none; padding: 0.2rem 0; }
+        }
 
         /* Static legal pages (privacy-policy.html, terms-of-use.html, cookie-policy.html)
            -- plain prose container, reused as-is by all three rather than duplicating the
