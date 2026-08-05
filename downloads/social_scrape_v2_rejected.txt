@@ -1,0 +1,632 @@
+Candidates found by scraping but rejected because the same URL matched 2+ distinct companies (almost certainly a shared widget, not a real profile).
+
+[Kilmacud Crokes GAA Club] id=33 instagram: https://www.instagram.com/kcpurpleandgold
+  also matched: ['Kilmacud Crokes GAA']
+
+[Adult Beginner Piano Class] id=80 facebook: https://www.facebook.com/MezzoMusicDublin
+  also matched: ['Oboe, Piano, Recorder, Ukulele lessons from age 8 to 88', 'Online Piano & Guitar Lessons for Adults and Children – Music Lessons Ireland']
+
+[Adult Beginner Piano Class] id=80 instagram: https://www.instagram.com/mezzomusicacademy
+  also matched: ['Oboe, Piano, Recorder, Ukulele lessons from age 8 to 88', 'Online Piano & Guitar Lessons for Adults and Children – Music Lessons Ireland']
+
+[Art workshops & Tea] id=87 instagram: https://www.instagram.com/art.in.layers
+  also matched: ['Art in Layers']
+
+[Baby Massage with Emma] id=92 instagram: https://www.instagram.com/yogamammas.ie
+  also matched: ['Baby Massage with Orla', 'Elmm Infant Massage Castledermot', 'Little Lullabies Baby Massage']
+
+[Baby Sensory Dunboyne] id=94 facebook: https://www.facebook.com/babysensorymeath
+  also matched: ['Skryne Navan Parent, Baby and Toddler Group']
+
+[Boyne Babies Sensory Classes] id=100 facebook: https://www.facebook.com/profile.php?id=61581447088095#
+  also matched: ['Boyne Babies']
+
+[Oboe, Piano, Recorder, Ukulele lessons from age 8 to 88] id=139 facebook: https://www.facebook.com/MezzoMusicDublin
+  also matched: ['Adult Beginner Piano Class', 'Online Piano & Guitar Lessons for Adults and Children – Music Lessons Ireland']
+
+[Oboe, Piano, Recorder, Ukulele lessons from age 8 to 88] id=139 instagram: https://www.instagram.com/mezzomusicacademy
+  also matched: ['Adult Beginner Piano Class', 'Online Piano & Guitar Lessons for Adults and Children – Music Lessons Ireland']
+
+[Online Piano & Guitar Lessons for Adults and Children – Music Lessons Ireland] id=141 facebook: https://www.facebook.com/MezzoMusicDublin
+  also matched: ['Adult Beginner Piano Class', 'Oboe, Piano, Recorder, Ukulele lessons from age 8 to 88']
+
+[Online Piano & Guitar Lessons for Adults and Children – Music Lessons Ireland] id=141 instagram: https://www.instagram.com/mezzomusicacademy
+  also matched: ['Adult Beginner Piano Class', 'Oboe, Piano, Recorder, Ukulele lessons from age 8 to 88']
+
+[Tiny Tutus | Ballet & Dance Classes | Ages 2–14] id=168 instagram: https://www.instagram.com/tinytutusie
+  also matched: ['Tiny Tutus']
+
+[Balbriggan Library] id=184 facebook: https://www.facebook.com/fingalcoco
+  also matched: ['Blanchardstown Library', 'Fingal Library - Musical Tots with Karen Donnellan, Donabate']
+
+[Balbriggan Library] id=184 instagram: https://www.instagram.com/fingalcountycouncil
+  also matched: ['Blanchardstown Library', 'Fingal Library - Musical Tots with Karen Donnellan, Donabate']
+
+[Ballsbridge Baby & Toddler Group - Pembroke Library] id=187 facebook: https://www.facebook.com/DublinCityCouncil
+  also matched: ['Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1', 'Coolock Library - Toddler Group/Games Night']
+
+[Ballsbridge Baby & Toddler Group - Pembroke Library] id=187 instagram: https://www.instagram.com/dublincitycouncil/?hl=en
+  also matched: ['Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1', 'Coolock Library - Toddler Group/Games Night']
+
+[Ballyfermot Library - Toddler Group / Book Clubs and More] id=188 facebook: https://www.facebook.com/DublinCityCouncil
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1', 'Coolock Library - Toddler Group/Games Night']
+
+[Ballyfermot Library - Toddler Group / Book Clubs and More] id=188 instagram: https://www.instagram.com/dublincitycouncil/?hl=en
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1', 'Coolock Library - Toddler Group/Games Night']
+
+[Ballymun Library] id=189 facebook: https://www.facebook.com/DublinCityCouncil
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1', 'Coolock Library - Toddler Group/Games Night']
+
+[Ballymun Library] id=189 instagram: https://www.instagram.com/dublincitycouncil/?hl=en
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1', 'Coolock Library - Toddler Group/Games Night']
+
+[Blanchardstown Library] id=195 facebook: https://www.facebook.com/fingalcoco
+  also matched: ['Balbriggan Library', 'Fingal Library - Musical Tots with Karen Donnellan, Donabate']
+
+[Blanchardstown Library] id=195 instagram: https://www.instagram.com/fingalcountycouncil
+  also matched: ['Balbriggan Library', 'Fingal Library - Musical Tots with Karen Donnellan, Donabate']
+
+[Cabra Library - Toddler Group / Book Clubs and More] id=200 facebook: https://www.facebook.com/DublinCityCouncil
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Central Library Dublin 1', 'Coolock Library - Toddler Group/Games Night']
+
+[Cabra Library - Toddler Group / Book Clubs and More] id=200 instagram: https://www.instagram.com/dublincitycouncil/?hl=en
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Central Library Dublin 1', 'Coolock Library - Toddler Group/Games Night']
+
+[Central Library Dublin 1] id=202 facebook: https://www.facebook.com/DublinCityCouncil
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Coolock Library - Toddler Group/Games Night']
+
+[Central Library Dublin 1] id=202 instagram: https://www.instagram.com/dublincitycouncil/?hl=en
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Coolock Library - Toddler Group/Games Night']
+
+[Clondalkin Parent & Toddler Group] id=206 facebook: https://www.facebook.com/quarryvalefrc
+  also matched: ['Irishtown Parent and Toddler Group -Quarryvale Family Resource Centre']
+
+[Coolock Library - Toddler Group/Games Night] id=212 facebook: https://www.facebook.com/DublinCityCouncil
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Coolock Library - Toddler Group/Games Night] id=212 instagram: https://www.instagram.com/dublincitycouncil/?hl=en
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Harold's Cross - Toddler Group / Lego Club - Dolphin's Barn Library] id=232 facebook: https://www.facebook.com/DublinCityCouncil
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Harold's Cross - Toddler Group / Lego Club - Dolphin's Barn Library] id=232 instagram: https://www.instagram.com/dublincitycouncil/?hl=en
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Inchicore Toddler Storytime - Inchicore Library D8] id=235 facebook: https://www.facebook.com/DublinCityCouncil
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Inchicore Toddler Storytime - Inchicore Library D8] id=235 instagram: https://www.instagram.com/dublincitycouncil/?hl=en
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Irishtown Parent and Toddler Group -Quarryvale Family Resource Centre] id=237 facebook: https://www.facebook.com/quarryvalefrc
+  also matched: ['Clondalkin Parent & Toddler Group']
+
+[Little Turtles] id=244 facebook: https://www.facebook.com/Turtletotsireland
+  also matched: ['Turtle Tots', 'Turtle Tots - Kinsale Hotel & Spa', 'Turtle Tots - Lough Lannagh, Castlebar', 'Turtle Tots - Tullamore Court Hotel', 'Westport Parent, Baby and Toddler Group']
+
+[Pearse St Toddler Group & Junior Book Club] id=261 facebook: https://www.facebook.com/DublinCityCouncil
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Pearse St Toddler Group & Junior Book Club] id=261 instagram: https://www.instagram.com/dublincitycouncil/?hl=en
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Phibsboro Toddler Storytime Group - Phibsboro Library] id=262 facebook: https://www.facebook.com/DublinCityCouncil
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Phibsboro Toddler Storytime Group - Phibsboro Library] id=262 instagram: https://www.instagram.com/dublincitycouncil/?hl=en
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Portobello Baby & Toddler Group - Kevin Street Library D8] id=264 facebook: https://www.facebook.com/DublinCityCouncil
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Portobello Baby & Toddler Group - Kevin Street Library D8] id=264 instagram: https://www.instagram.com/dublincitycouncil/?hl=en
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Raheny Library - Toddler Group and Junior Book Clubs] id=265 facebook: https://www.facebook.com/DublinCityCouncil
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Raheny Library - Toddler Group and Junior Book Clubs] id=265 instagram: https://www.instagram.com/dublincitycouncil/?hl=en
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Rathmines Baby & Toddler Group & Junior Book Club - Rathmines Library] id=269 facebook: https://www.facebook.com/DublinCityCouncil
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Rathmines Baby & Toddler Group & Junior Book Club - Rathmines Library] id=269 instagram: https://www.instagram.com/dublincitycouncil/?hl=en
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Ringsend Library - Toddler Group & Lego Group] id=270 facebook: https://www.facebook.com/DublinCityCouncil
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Ringsend Library - Toddler Group & Lego Group] id=270 instagram: https://www.instagram.com/dublincitycouncil/?hl=en
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Tiny Tutus] id=290 instagram: https://www.instagram.com/tinytutusie
+  also matched: ['Tiny Tutus | Ballet & Dance Classes | Ages 2–14']
+
+[Toddler Group Dublin 6 - Terenure Library] id=292 facebook: https://www.facebook.com/DublinCityCouncil
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Toddler Group Dublin 6 - Terenure Library] id=292 instagram: https://www.instagram.com/dublincitycouncil/?hl=en
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Walkinstown Baby & Toddler Storytime / Book clubs] id=299 facebook: https://www.facebook.com/DublinCityCouncil
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Walkinstown Baby & Toddler Storytime / Book clubs] id=299 instagram: https://www.instagram.com/dublincitycouncil/?hl=en
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Elmm Infant Massage Castledermot] id=307 instagram: https://www.instagram.com/yogamammas.ie
+  also matched: ['Baby Massage with Emma', 'Baby Massage with Orla', 'Little Lullabies Baby Massage']
+
+[Fireflies Leixlip Parent and Kids Group] id=308 facebook: https://www.facebook.com/leixlipyouthcommunitycentre
+  also matched: ['Happy Peeps Sensory Play', 'Leixlip Parent, Baby and Toddler Group']
+
+[Happy Peeps Sensory Play] id=309 facebook: https://www.facebook.com/leixlipyouthcommunitycentre
+  also matched: ['Fireflies Leixlip Parent and Kids Group', 'Leixlip Parent, Baby and Toddler Group']
+
+[Leixlip Parent, Baby and Toddler Group] id=314 instagram: https://www.instagram.com/leixlipyouthandcommunityfrc
+  also matched: ['Fireflies Leixlip Parent and Kids Group', 'Happy Peeps Sensory Play']
+
+[Leixlip Parent, Baby and Toddler Group] id=315 facebook: https://www.facebook.com/leixlipyouthcommunitycentre
+  also matched: ['Fireflies Leixlip Parent and Kids Group', 'Happy Peeps Sensory Play']
+
+[Kids Classes in Kells - Kells Family Resource Centre] id=329 facebook: https://www.facebook.com/kellsfrc
+  also matched: ['Kells Parent, Baby and Toddler Group']
+
+[Boyne Babies] id=342 facebook: https://www.facebook.com/profile.php?id=61581447088095#
+  also matched: ['Boyne Babies Sensory Classes']
+
+[Kells Parent, Baby and Toddler Group] id=346 facebook: https://www.facebook.com/kellsfrc
+  also matched: ['Kids Classes in Kells - Kells Family Resource Centre']
+
+[Kids French classes in Navan (3 to 12 years old)] id=348 facebook: http://facebook.com/rendezvousfr
+  also matched: ['Mum & Baby French Classes']
+
+[Kids French classes in Navan (3 to 12 years old)] id=348 instagram: https://www.instagram.com/rendezvousfrancais
+  also matched: ['Mum & Baby French Classes']
+
+[Mum & Baby French Classes] id=353 facebook: http://facebook.com/rendezvousfr
+  also matched: ['Kids French classes in Navan (3 to 12 years old)']
+
+[Mum & Baby French Classes] id=353 instagram: https://www.instagram.com/rendezvousfrancais
+  also matched: ['Kids French classes in Navan (3 to 12 years old)']
+
+[Skryne Navan Parent, Baby and Toddler Group] id=362 instagram: https://instagram.com/babysensorymeath
+  also matched: ['Baby Sensory Dunboyne']
+
+[Arklow Library] id=386 facebook: https://www.facebook.com/WicklowCountyCouncil
+  also matched: ['Blessington Library']
+
+[Arklow Library] id=386 instagram: https://www.instagram.com/Wicklowcoco
+  also matched: ['Blessington Library']
+
+[Blessington Library] id=388 facebook: https://www.facebook.com/WicklowCountyCouncil
+  also matched: ['Arklow Library']
+
+[Blessington Library] id=388 instagram: https://www.instagram.com/Wicklowcoco
+  also matched: ['Arklow Library']
+
+[Kilmacud Crokes GAA] id=503 instagram: https://www.instagram.com/kcpurpleandgold
+  also matched: ['Kilmacud Crokes GAA Club']
+
+[Prima Ballet] id=534 facebook: https://www.facebook.com/ballet.ie
+  also matched: ['Arklow & Gorey Dance Studios', 'Cheryl Corrigan Ballet Academy - Edenderry/Rathangan', 'Dance with Lesley - Cavan/Glaslough', 'Edge Dance Studios - Kilcock', 'Elevate Academy of Dance - Mullingar']
+
+[Prima Ballet] id=534 instagram: https://www.instagram.com/ballet.ie
+  also matched: ['Arklow & Gorey Dance Studios', 'Cheryl Corrigan Ballet Academy - Edenderry/Rathangan', 'Dance with Lesley - Cavan/Glaslough', 'Edge Dance Studios - Kilcock', 'Elevate Academy of Dance - Mullingar']
+
+[Painting and Drawing Classes] id=569 facebook: https://www.facebook.com/hmclarts
+  also matched: ['Kids & Teen Art Classes - Wexford']
+
+[Turtle Tots] id=570 facebook: https://www.facebook.com/Turtletotsireland
+  also matched: ['Little Turtles', 'Turtle Tots - Kinsale Hotel & Spa', 'Turtle Tots - Lough Lannagh, Castlebar', 'Turtle Tots - Tullamore Court Hotel', 'Westport Parent, Baby and Toddler Group']
+
+[Turtle Tots] id=570 instagram: https://www.instagram.com/turtletotsireland
+  also matched: ['Little Turtles', 'Turtle Tots - Kinsale Hotel & Spa', 'Turtle Tots - Lough Lannagh, Castlebar', 'Turtle Tots - Tullamore Court Hotel', 'Westport Parent, Baby and Toddler Group']
+
+[Baby Massage with Orla] id=586 instagram: https://www.instagram.com/yogamammas.ie
+  also matched: ['Baby Massage with Emma', 'Elmm Infant Massage Castledermot', 'Little Lullabies Baby Massage']
+
+[Scariff Baby & Toddler Groups / Kids Book Club - Scariff Library] id=613 facebook: https://www.facebook.com/clarecountylibrary
+  also matched: ['Shannon Baby & Toddler Storytime Groups - Shannon Library']
+
+[Scariff Baby & Toddler Groups / Kids Book Club - Scariff Library] id=613 instagram: https://www.instagram.com/clarecountylibrary
+  also matched: ['Shannon Baby & Toddler Storytime Groups - Shannon Library']
+
+[Shannon Baby & Toddler Storytime Groups - Shannon Library] id=615 facebook: https://www.facebook.com/clarecountylibrary
+  also matched: ['Scariff Baby & Toddler Groups / Kids Book Club - Scariff Library']
+
+[Shannon Baby & Toddler Storytime Groups - Shannon Library] id=615 instagram: https://www.instagram.com/clarecountylibrary
+  also matched: ['Scariff Baby & Toddler Groups / Kids Book Club - Scariff Library']
+
+[Baby Sensory Northwest] id=676 facebook: https://www.facebook.com/nwbabysensory
+  also matched: ['Strandhill Parent, Baby and Toddler Group']
+
+[Finglas Sensory Sessions/ Baby Book Club - Finglas Library] id=705 facebook: https://www.facebook.com/DublinCityCouncil
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Finglas Sensory Sessions/ Baby Book Club - Finglas Library] id=705 instagram: https://www.instagram.com/dublincitycouncil/?hl=en
+  also matched: ['Ballsbridge Baby & Toddler Group - Pembroke Library', 'Ballyfermot Library - Toddler Group / Book Clubs and More', 'Ballymun Library', 'Cabra Library - Toddler Group / Book Clubs and More', 'Central Library Dublin 1']
+
+[Flying High Fitness] id=722 facebook: https://www.facebook.com/profile.php?id=100063775860966
+  also matched: ['Flying High Fitness - Kids Aerial Hoop Course']
+
+[Caherdaniel Parent, Baby & Toddler Group] id=759 instagram: https://instagram.com/@babysensorykerrylimerick
+  also matched: ['Castlemaine Parent, Baby & Toddler Group', 'Kilflynn Parent, Baby & Toddler Group', 'Moyvane Parent, Baby & Toddler Group', 'Reenard (South Kerry) Parent, Baby & Toddler Group', 'Sensory Spraoi']
+
+[Castlemaine Parent, Baby & Toddler Group] id=761 instagram: https://instagram.com/@babysensorykerrylimerick
+  also matched: ['Caherdaniel Parent, Baby & Toddler Group', 'Kilflynn Parent, Baby & Toddler Group', 'Moyvane Parent, Baby & Toddler Group', 'Reenard (South Kerry) Parent, Baby & Toddler Group', 'Sensory Spraoi']
+
+[Kilflynn Parent, Baby & Toddler Group] id=768 instagram: https://instagram.com/@babysensorykerrylimerick
+  also matched: ['Caherdaniel Parent, Baby & Toddler Group', 'Castlemaine Parent, Baby & Toddler Group', 'Moyvane Parent, Baby & Toddler Group', 'Reenard (South Kerry) Parent, Baby & Toddler Group', 'Sensory Spraoi']
+
+[Moyvane Parent, Baby & Toddler Group] id=771 instagram: https://instagram.com/@babysensorykerrylimerick
+  also matched: ['Caherdaniel Parent, Baby & Toddler Group', 'Castlemaine Parent, Baby & Toddler Group', 'Kilflynn Parent, Baby & Toddler Group', 'Reenard (South Kerry) Parent, Baby & Toddler Group', 'Sensory Spraoi']
+
+[Reenard (South Kerry) Parent, Baby & Toddler Group] id=772 facebook: https://www.facebook.com/Baby
+  also matched: ['Caherdaniel Parent, Baby & Toddler Group', 'Castlemaine Parent, Baby & Toddler Group', 'Kilflynn Parent, Baby & Toddler Group', 'Moyvane Parent, Baby & Toddler Group', 'Sensory Spraoi']
+
+[The Unrelated Auntie- Messy Play Group (facilitated by a play therapist)] id=774 facebook: https://www.facebook.com/Baby
+  also matched: ['Caherdaniel Parent, Baby & Toddler Group', 'Castlemaine Parent, Baby & Toddler Group', 'Kilflynn Parent, Baby & Toddler Group', 'Moyvane Parent, Baby & Toddler Group', 'Reenard (South Kerry) Parent, Baby & Toddler Group']
+
+[Ready Steady Play Midlands] id=781 facebook: https://www.facebook.com/Readysteadyplayireland
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play South East', 'Ready to Play']
+
+[Ready Steady Play Midlands] id=781 instagram: https://www.instagram.com/readysteadyplaymusicirl
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play South East', 'Ready to Play']
+
+[Abbeyleix Library - Baby & Toddler Group / Kids Chess Club] id=792 facebook: https://www.facebook.com/LaoisCountyCouncil
+  also matched: ['Laois County Council - Tin Whistle Classes, Mountmellick', 'Mountmellick - Toddler Group / Kids Book Clubs / Lego Group', 'Mountrath - Toddler Group / Kids Book Clubs / STEM Group', 'Portarlington- Baby Group / Kids Book Clubs / Lego Group', 'Portlaoise Library - Baby & Toddler Group / Kids Book Clubs']
+
+[Abbeyleix Library - Baby & Toddler Group / Kids Chess Club] id=792 instagram: https://www.instagram.com/laoiscountycouncil
+  also matched: ['Laois County Council - Tin Whistle Classes, Mountmellick', 'Mountmellick - Toddler Group / Kids Book Clubs / Lego Group', 'Mountrath - Toddler Group / Kids Book Clubs / STEM Group', 'Portarlington- Baby Group / Kids Book Clubs / Lego Group', 'Portlaoise Library - Baby & Toddler Group / Kids Book Clubs']
+
+[Baby Sensory Class - Midwife For You] id=795 facebook: https://www.facebook.com/profile.php?id=61573912435511
+  also matched: ['Midwife For You']
+
+[Midwife For You] id=797 facebook: https://www.facebook.com/profile.php?id=61573912435511
+  also matched: ['Baby Sensory Class - Midwife For You']
+
+[Mountmellick - Toddler Group / Kids Book Clubs / Lego Group] id=799 facebook: https://www.facebook.com/LaoisCountyCouncil
+  also matched: ['Abbeyleix Library - Baby & Toddler Group / Kids Chess Club', 'Laois County Council - Tin Whistle Classes, Mountmellick', 'Mountrath - Toddler Group / Kids Book Clubs / STEM Group', 'Portarlington- Baby Group / Kids Book Clubs / Lego Group', 'Portlaoise Library - Baby & Toddler Group / Kids Book Clubs']
+
+[Mountmellick - Toddler Group / Kids Book Clubs / Lego Group] id=799 instagram: https://www.instagram.com/laoiscountycouncil
+  also matched: ['Abbeyleix Library - Baby & Toddler Group / Kids Chess Club', 'Laois County Council - Tin Whistle Classes, Mountmellick', 'Mountrath - Toddler Group / Kids Book Clubs / STEM Group', 'Portarlington- Baby Group / Kids Book Clubs / Lego Group', 'Portlaoise Library - Baby & Toddler Group / Kids Book Clubs']
+
+[Mountrath - Toddler Group / Kids Book Clubs / STEM Group] id=800 facebook: https://www.facebook.com/LaoisCountyCouncil
+  also matched: ['Abbeyleix Library - Baby & Toddler Group / Kids Chess Club', 'Laois County Council - Tin Whistle Classes, Mountmellick', 'Mountmellick - Toddler Group / Kids Book Clubs / Lego Group', 'Portarlington- Baby Group / Kids Book Clubs / Lego Group', 'Portlaoise Library - Baby & Toddler Group / Kids Book Clubs']
+
+[Mountrath - Toddler Group / Kids Book Clubs / STEM Group] id=800 instagram: https://www.instagram.com/laoiscountycouncil
+  also matched: ['Abbeyleix Library - Baby & Toddler Group / Kids Chess Club', 'Laois County Council - Tin Whistle Classes, Mountmellick', 'Mountmellick - Toddler Group / Kids Book Clubs / Lego Group', 'Portarlington- Baby Group / Kids Book Clubs / Lego Group', 'Portlaoise Library - Baby & Toddler Group / Kids Book Clubs']
+
+[Portarlington- Baby Group / Kids Book Clubs / Lego Group] id=803 facebook: https://www.facebook.com/LaoisCountyCouncil
+  also matched: ['Abbeyleix Library - Baby & Toddler Group / Kids Chess Club', 'Laois County Council - Tin Whistle Classes, Mountmellick', 'Mountmellick - Toddler Group / Kids Book Clubs / Lego Group', 'Mountrath - Toddler Group / Kids Book Clubs / STEM Group', 'Portlaoise Library - Baby & Toddler Group / Kids Book Clubs']
+
+[Portarlington- Baby Group / Kids Book Clubs / Lego Group] id=803 instagram: https://www.instagram.com/laoiscountycouncil
+  also matched: ['Abbeyleix Library - Baby & Toddler Group / Kids Chess Club', 'Laois County Council - Tin Whistle Classes, Mountmellick', 'Mountmellick - Toddler Group / Kids Book Clubs / Lego Group', 'Mountrath - Toddler Group / Kids Book Clubs / STEM Group', 'Portlaoise Library - Baby & Toddler Group / Kids Book Clubs']
+
+[Portlaoise Library - Baby & Toddler Group / Kids Book Clubs] id=805 facebook: https://www.facebook.com/LaoisCountyCouncil
+  also matched: ['Abbeyleix Library - Baby & Toddler Group / Kids Chess Club', 'Laois County Council - Tin Whistle Classes, Mountmellick', 'Mountmellick - Toddler Group / Kids Book Clubs / Lego Group', 'Mountrath - Toddler Group / Kids Book Clubs / STEM Group', 'Portarlington- Baby Group / Kids Book Clubs / Lego Group']
+
+[Portlaoise Library - Baby & Toddler Group / Kids Book Clubs] id=805 instagram: https://www.instagram.com/laoiscountycouncil
+  also matched: ['Abbeyleix Library - Baby & Toddler Group / Kids Chess Club', 'Laois County Council - Tin Whistle Classes, Mountmellick', 'Mountmellick - Toddler Group / Kids Book Clubs / Lego Group', 'Mountrath - Toddler Group / Kids Book Clubs / STEM Group', 'Portarlington- Baby Group / Kids Book Clubs / Lego Group']
+
+[Limerick Library Toddler Group, Storytime & Art] id=836 facebook: https://www.facebook.com/Limerick.ie
+  also matched: ['Stage School Limerick']
+
+[Limerick Library Toddler Group, Storytime & Art] id=836 instagram: https://www.instagram.com/limerick.ie
+  also matched: ['Stage School Limerick']
+
+[Sensory Spraoi] id=840 facebook: https://www.facebook.com/Baby
+  also matched: ['Caherdaniel Parent, Baby & Toddler Group', 'Castlemaine Parent, Baby & Toddler Group', 'Kilflynn Parent, Baby & Toddler Group', 'Moyvane Parent, Baby & Toddler Group', 'Reenard (South Kerry) Parent, Baby & Toddler Group']
+
+[Ballina Parent, Baby and Toddler Group] id=857 facebook: https://www.facebook.com/mayodotie
+  also matched: ['Play group in Irish/Gaeilge']
+
+[Play group in Irish/Gaeilge] id=877 instagram: https://www.instagram.com/mayo.ie
+  also matched: ['Ballina Parent, Baby and Toddler Group']
+
+[Westport Parent, Baby and Toddler Group] id=883 instagram: https://www.instagram.com/turtletotsireland
+  also matched: ['Little Turtles', 'Turtle Tots', 'Turtle Tots - Kinsale Hotel & Spa', 'Turtle Tots - Lough Lannagh, Castlebar', 'Turtle Tots - Tullamore Court Hotel']
+
+[Banagher Library] id=902 facebook: https://www.facebook.com/Offalycoco
+  also matched: ['Birr Library', 'Clara Library', 'Daingean Library', 'Edenderry Library', 'Tullamore Library']
+
+[Banagher Library] id=902 instagram: https://www.instagram.com/offalycountycouncil
+  also matched: ['Birr Library', 'Clara Library', 'Daingean Library', 'Edenderry Library', 'Tullamore Library']
+
+[Birr Library] id=903 facebook: https://www.facebook.com/Offalycoco
+  also matched: ['Banagher Library', 'Clara Library', 'Daingean Library', 'Edenderry Library', 'Tullamore Library']
+
+[Birr Library] id=903 instagram: https://www.instagram.com/offalycountycouncil
+  also matched: ['Banagher Library', 'Clara Library', 'Daingean Library', 'Edenderry Library', 'Tullamore Library']
+
+[Clara Library] id=906 facebook: https://www.facebook.com/Offalycoco
+  also matched: ['Banagher Library', 'Birr Library', 'Daingean Library', 'Edenderry Library', 'Tullamore Library']
+
+[Clara Library] id=906 instagram: https://www.instagram.com/offalycountycouncil
+  also matched: ['Banagher Library', 'Birr Library', 'Daingean Library', 'Edenderry Library', 'Tullamore Library']
+
+[Daingean Library] id=907 facebook: https://www.facebook.com/Offalycoco
+  also matched: ['Banagher Library', 'Birr Library', 'Clara Library', 'Edenderry Library', 'Tullamore Library']
+
+[Daingean Library] id=907 instagram: https://www.instagram.com/offalycountycouncil
+  also matched: ['Banagher Library', 'Birr Library', 'Clara Library', 'Edenderry Library', 'Tullamore Library']
+
+[Edenderry Library] id=908 facebook: https://www.facebook.com/Offalycoco
+  also matched: ['Banagher Library', 'Birr Library', 'Clara Library', 'Daingean Library', 'Tullamore Library']
+
+[Edenderry Library] id=908 instagram: https://www.instagram.com/offalycountycouncil
+  also matched: ['Banagher Library', 'Birr Library', 'Clara Library', 'Daingean Library', 'Tullamore Library']
+
+[Tullamore Library] id=913 facebook: https://www.facebook.com/Offalycoco
+  also matched: ['Banagher Library', 'Birr Library', 'Clara Library', 'Daingean Library', 'Edenderry Library']
+
+[Tullamore Library] id=913 instagram: https://www.instagram.com/offalycountycouncil
+  also matched: ['Banagher Library', 'Birr Library', 'Clara Library', 'Daingean Library', 'Edenderry Library']
+
+[Abbeyquarter Parent, Baby and Toddler Group] id=923 facebook: https://www.facebook.com/The-Avalon-Centre-Sligo-386619688078143
+  also matched: ['Cleaveragh Parent, Baby and Toddler Group']
+
+[Cleaveragh Parent, Baby and Toddler Group] id=927 facebook: https://www.facebook.com/The-Avalon-Centre-Sligo-386619688078143
+  also matched: ['Abbeyquarter Parent, Baby and Toddler Group']
+
+[Strandhill Parent, Baby and Toddler Group] id=933 instagram: https://instagram.com/baby_sensory_northwest
+  also matched: ['Baby Sensory Northwest']
+
+[Thurles / Roscrea / Cashel /Tipperary Town Toddler Group Story Time] id=953 facebook: http://www.facebook.com/pages/Tipperary-Libraries/241612834780
+  also matched: ['Carrick-on-Suir Library - Lego Boost Club', 'Tipperary Libraries - Toddler Storytime']
+
+[Thurles / Roscrea / Cashel /Tipperary Town Toddler Group Story Time] id=953 instagram: https://www.instagram.com/tipperarycocolibraryservice
+  also matched: ['Carrick-on-Suir Library - Lego Boost Club', 'Tipperary Libraries - Toddler Storytime']
+
+[Craanford Parent, Baby and Toddler Group] id=965 instagram: https://www.instagram.com/readysteadyplaymusicirl
+  also matched: ['Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready Steady Play South East', 'Ready to Play']
+
+[Ready Steady Play South East] id=977 facebook: https://www.facebook.com/Readysteadyplayireland
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready to Play']
+
+[Ready Steady Play South East] id=977 instagram: https://www.instagram.com/readysteadyplaymusicirl
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready to Play']
+
+[Ready to Play] id=978 facebook: https://www.facebook.com/Readysteadyplayireland
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready Steady Play South East']
+
+[Ready to Play] id=978 instagram: https://www.instagram.com/readysteadyplaymusicirl
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready Steady Play South East']
+
+[Tiny Tutus] id=1077 instagram: https://www.instagram.com/tinytutusie
+  also matched: ['Tiny Tutus | Ballet & Dance Classes | Ages 2–14']
+
+[Tiny Tutus] id=1078 instagram: https://www.instagram.com/tinytutusie
+  also matched: ['Tiny Tutus | Ballet & Dance Classes | Ages 2–14']
+
+[Tiny Tutus] id=1079 instagram: https://www.instagram.com/tinytutusie
+  also matched: ['Tiny Tutus | Ballet & Dance Classes | Ages 2–14']
+
+[Tiny Tutus] id=1080 instagram: https://www.instagram.com/tinytutusie
+  also matched: ['Tiny Tutus | Ballet & Dance Classes | Ages 2–14']
+
+[Tiny Tutus] id=1081 instagram: https://www.instagram.com/tinytutusie
+  also matched: ['Tiny Tutus | Ballet & Dance Classes | Ages 2–14']
+
+[Turtle Tots] id=1134 facebook: https://www.facebook.com/Turtletotsireland
+  also matched: ['Little Turtles', 'Turtle Tots - Kinsale Hotel & Spa', 'Turtle Tots - Lough Lannagh, Castlebar', 'Turtle Tots - Tullamore Court Hotel', 'Westport Parent, Baby and Toddler Group']
+
+[Turtle Tots] id=1134 instagram: https://www.instagram.com/turtletotsireland
+  also matched: ['Little Turtles', 'Turtle Tots - Kinsale Hotel & Spa', 'Turtle Tots - Lough Lannagh, Castlebar', 'Turtle Tots - Tullamore Court Hotel', 'Westport Parent, Baby and Toddler Group']
+
+[Baby Sensory Northwest] id=1174 facebook: https://www.facebook.com/nwbabysensory
+  also matched: ['Strandhill Parent, Baby and Toddler Group']
+
+[Flying High Fitness] id=1208 facebook: https://www.facebook.com/profile.php?id=100063775860966
+  also matched: ['Flying High Fitness - Kids Aerial Hoop Course']
+
+[Strandhill Parent, Baby and Toddler Group] id=1273 instagram: https://instagram.com/baby_sensory_northwest
+  also matched: ['Baby Sensory Northwest']
+
+[Thurles / Roscrea / Cashel /Tipperary Town Toddler Group Story Time] id=1278 facebook: http://www.facebook.com/pages/Tipperary-Libraries/241612834780
+  also matched: ['Carrick-on-Suir Library - Lego Boost Club', 'Tipperary Libraries - Toddler Storytime']
+
+[Thurles / Roscrea / Cashel /Tipperary Town Toddler Group Story Time] id=1278 instagram: https://www.instagram.com/tipperarycocolibraryservice
+  also matched: ['Carrick-on-Suir Library - Lego Boost Club', 'Tipperary Libraries - Toddler Storytime']
+
+[Thurles / Roscrea / Cashel /Tipperary Town Toddler Group Story Time] id=1279 facebook: http://www.facebook.com/pages/Tipperary-Libraries/241612834780
+  also matched: ['Carrick-on-Suir Library - Lego Boost Club', 'Tipperary Libraries - Toddler Storytime']
+
+[Thurles / Roscrea / Cashel /Tipperary Town Toddler Group Story Time] id=1279 instagram: https://www.instagram.com/tipperarycocolibraryservice
+  also matched: ['Carrick-on-Suir Library - Lego Boost Club', 'Tipperary Libraries - Toddler Storytime']
+
+[Thurles / Roscrea / Cashel /Tipperary Town Toddler Group Story Time] id=1280 facebook: http://www.facebook.com/pages/Tipperary-Libraries/241612834780
+  also matched: ['Carrick-on-Suir Library - Lego Boost Club', 'Tipperary Libraries - Toddler Storytime']
+
+[Thurles / Roscrea / Cashel /Tipperary Town Toddler Group Story Time] id=1280 instagram: https://www.instagram.com/tipperarycocolibraryservice
+  also matched: ['Carrick-on-Suir Library - Lego Boost Club', 'Tipperary Libraries - Toddler Storytime']
+
+[Ready Steady Play South East] id=1296 facebook: https://www.facebook.com/Readysteadyplayireland
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready to Play']
+
+[Ready Steady Play South East] id=1296 instagram: https://www.instagram.com/readysteadyplaymusicirl
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready to Play']
+
+[Ready Steady Play South East] id=1297 facebook: https://www.facebook.com/Readysteadyplayireland
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready to Play']
+
+[Ready Steady Play South East] id=1297 instagram: https://www.instagram.com/readysteadyplaymusicirl
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready to Play']
+
+[Ready Steady Play South East] id=1298 facebook: https://www.facebook.com/Readysteadyplayireland
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready to Play']
+
+[Ready Steady Play South East] id=1298 instagram: https://www.instagram.com/readysteadyplaymusicirl
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready to Play']
+
+[Ready to Play] id=1299 facebook: https://www.facebook.com/Readysteadyplayireland
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready Steady Play South East']
+
+[Ready to Play] id=1299 instagram: https://www.instagram.com/readysteadyplaymusicirl
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready Steady Play South East']
+
+[Ready to Play] id=1300 facebook: https://www.facebook.com/Readysteadyplayireland
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready Steady Play South East']
+
+[Ready to Play] id=1300 instagram: https://www.instagram.com/readysteadyplaymusicirl
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready Steady Play South East']
+
+[Ready to Play] id=1301 facebook: https://www.facebook.com/Readysteadyplayireland
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready Steady Play South East']
+
+[Ready to Play] id=1301 instagram: https://www.instagram.com/readysteadyplaymusicirl
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready Steady Play South East']
+
+[Ready to Play] id=1302 facebook: https://www.facebook.com/Readysteadyplayireland
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready Steady Play South East']
+
+[Ready to Play] id=1302 instagram: https://www.instagram.com/readysteadyplaymusicirl
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready Steady Play South East']
+
+[Ready to Play] id=1303 facebook: https://www.facebook.com/Readysteadyplayireland
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready Steady Play South East']
+
+[Ready to Play] id=1303 instagram: https://www.instagram.com/readysteadyplaymusicirl
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready Steady Play South East']
+
+[Ready to Play] id=1304 facebook: https://www.facebook.com/Readysteadyplayireland
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready Steady Play South East']
+
+[Ready to Play] id=1304 instagram: https://www.instagram.com/readysteadyplaymusicirl
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready Steady Play South East']
+
+[Ready to Play] id=1305 facebook: https://www.facebook.com/Readysteadyplayireland
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready Steady Play South East']
+
+[Ready to Play] id=1305 instagram: https://www.instagram.com/readysteadyplaymusicirl
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready Steady Play South East']
+
+[Ready to Play] id=1306 facebook: https://www.facebook.com/Readysteadyplayireland
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready Steady Play South East']
+
+[Ready to Play] id=1306 instagram: https://www.instagram.com/readysteadyplaymusicirl
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready Steady Play South East']
+
+[Ready to Play] id=1307 facebook: https://www.facebook.com/Readysteadyplayireland
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready Steady Play South East']
+
+[Ready to Play] id=1307 instagram: https://www.instagram.com/readysteadyplaymusicirl
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play & Music - Enniscorthy', 'Ready Steady Play Midlands', 'Ready Steady Play South East']
+
+[Stage School Limerick] id=1353 facebook: https://www.facebook.com/Limerick.ie
+  also matched: ['Limerick Library Toddler Group, Storytime & Art']
+
+[Stage School Limerick] id=1353 instagram: https://www.instagram.com/limerick.ie
+  also matched: ['Limerick Library Toddler Group, Storytime & Art']
+
+[SEA School Saturdays] id=1371 facebook: https://www.facebook.com/profile.php?id=100087184778508
+  also matched: ['SEA School - Tramore SeaSchool Saturday']
+
+[Flying High Fitness - Kids Aerial Hoop Course] id=1406 facebook: https://www.facebook.com/profile.php?id=100063775860966
+  also matched: ['Flying High Fitness']
+
+[Elevate Academy of Dance - Mullingar] id=1454 facebook: https://www.facebook.com/ballet.ie
+  also matched: ['Arklow & Gorey Dance Studios', 'Cheryl Corrigan Ballet Academy - Edenderry/Rathangan', 'Dance with Lesley - Cavan/Glaslough', 'Edge Dance Studios - Kilcock', 'Prima Ballet']
+
+[Elevate Academy of Dance - Mullingar] id=1454 instagram: https://www.instagram.com/ballet.ie
+  also matched: ['Arklow & Gorey Dance Studios', 'Cheryl Corrigan Ballet Academy - Edenderry/Rathangan', 'Dance with Lesley - Cavan/Glaslough', 'Edge Dance Studios - Kilcock', 'Prima Ballet']
+
+[Kids & Teen Art Classes - Wexford] id=1475 facebook: https://www.facebook.com/hmclarts
+  also matched: ['Painting and Drawing Classes']
+
+[Orla Gildea School of Speech and Drama - Celbridge] id=1488 instagram: http://instagram.com/orlagildeadramaschool/?hl=en
+  also matched: ['Orla Gildea - Leixlip Youth & Community Centre']
+
+[Orla Gildea - Leixlip Youth & Community Centre] id=1515 instagram: http://instagram.com/orlagildeadramaschool/?hl=en
+  also matched: ['Orla Gildea School of Speech and Drama - Celbridge']
+
+[Turtle Tots - Tullamore Court Hotel] id=1521 facebook: https://www.facebook.com/Turtletotsireland
+  also matched: ['Little Turtles', 'Turtle Tots', 'Turtle Tots - Kinsale Hotel & Spa', 'Turtle Tots - Lough Lannagh, Castlebar', 'Westport Parent, Baby and Toddler Group']
+
+[Turtle Tots - Tullamore Court Hotel] id=1521 instagram: https://www.instagram.com/turtletotsireland
+  also matched: ['Little Turtles', 'Turtle Tots', 'Turtle Tots - Kinsale Hotel & Spa', 'Turtle Tots - Lough Lannagh, Castlebar', 'Westport Parent, Baby and Toddler Group']
+
+[Arklow & Gorey Dance Studios] id=1541 facebook: https://www.facebook.com/ballet.ie
+  also matched: ['Cheryl Corrigan Ballet Academy - Edenderry/Rathangan', 'Dance with Lesley - Cavan/Glaslough', 'Edge Dance Studios - Kilcock', 'Elevate Academy of Dance - Mullingar', 'Prima Ballet']
+
+[Arklow & Gorey Dance Studios] id=1541 instagram: https://www.instagram.com/ballet.ie
+  also matched: ['Cheryl Corrigan Ballet Academy - Edenderry/Rathangan', 'Dance with Lesley - Cavan/Glaslough', 'Edge Dance Studios - Kilcock', 'Elevate Academy of Dance - Mullingar', 'Prima Ballet']
+
+[Turtle Tots - Lough Lannagh, Castlebar] id=1546 facebook: https://www.facebook.com/Turtletotsireland
+  also matched: ['Little Turtles', 'Turtle Tots', 'Turtle Tots - Kinsale Hotel & Spa', 'Turtle Tots - Tullamore Court Hotel', 'Westport Parent, Baby and Toddler Group']
+
+[Turtle Tots - Lough Lannagh, Castlebar] id=1546 instagram: https://www.instagram.com/turtletotsireland
+  also matched: ['Little Turtles', 'Turtle Tots', 'Turtle Tots - Kinsale Hotel & Spa', 'Turtle Tots - Tullamore Court Hotel', 'Westport Parent, Baby and Toddler Group']
+
+[Ready Steady Play & Music - Enniscorthy] id=1559 facebook: https://www.facebook.com/Readysteadyplayireland
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play Midlands', 'Ready Steady Play South East', 'Ready to Play']
+
+[Ready Steady Play & Music - Enniscorthy] id=1559 instagram: https://www.instagram.com/readysteadyplaymusicirl
+  also matched: ['Craanford Parent, Baby and Toddler Group', 'Ready Steady Play Midlands', 'Ready Steady Play South East', 'Ready to Play']
+
+[Dance with Lesley - Cavan/Glaslough] id=1565 facebook: https://www.facebook.com/ballet.ie
+  also matched: ['Arklow & Gorey Dance Studios', 'Cheryl Corrigan Ballet Academy - Edenderry/Rathangan', 'Edge Dance Studios - Kilcock', 'Elevate Academy of Dance - Mullingar', 'Prima Ballet']
+
+[Dance with Lesley - Cavan/Glaslough] id=1565 instagram: https://www.instagram.com/ballet.ie
+  also matched: ['Arklow & Gorey Dance Studios', 'Cheryl Corrigan Ballet Academy - Edenderry/Rathangan', 'Edge Dance Studios - Kilcock', 'Elevate Academy of Dance - Mullingar', 'Prima Ballet']
+
+[SEA School - Tramore SeaSchool Saturday] id=1569 facebook: https://www.facebook.com/profile.php?id=100087184778508
+  also matched: ['SEA School Saturdays']
+
+[Edge Dance Studios - Kilcock] id=1594 facebook: https://www.facebook.com/ballet.ie
+  also matched: ['Arklow & Gorey Dance Studios', 'Cheryl Corrigan Ballet Academy - Edenderry/Rathangan', 'Dance with Lesley - Cavan/Glaslough', 'Elevate Academy of Dance - Mullingar', 'Prima Ballet']
+
+[Edge Dance Studios - Kilcock] id=1594 instagram: https://www.instagram.com/ballet.ie
+  also matched: ['Arklow & Gorey Dance Studios', 'Cheryl Corrigan Ballet Academy - Edenderry/Rathangan', 'Dance with Lesley - Cavan/Glaslough', 'Elevate Academy of Dance - Mullingar', 'Prima Ballet']
+
+[Fingal Library - Musical Tots with Karen Donnellan, Donabate] id=1616 facebook: https://www.facebook.com/fingalcoco
+  also matched: ['Balbriggan Library', 'Blanchardstown Library']
+
+[Fingal Library - Musical Tots with Karen Donnellan, Donabate] id=1616 instagram: https://www.instagram.com/fingalcountycouncil
+  also matched: ['Balbriggan Library', 'Blanchardstown Library']
+
+[Cheryl Corrigan Ballet Academy - Edenderry/Rathangan] id=1650 facebook: https://www.facebook.com/ballet.ie
+  also matched: ['Arklow & Gorey Dance Studios', 'Dance with Lesley - Cavan/Glaslough', 'Edge Dance Studios - Kilcock', 'Elevate Academy of Dance - Mullingar', 'Prima Ballet']
+
+[Cheryl Corrigan Ballet Academy - Edenderry/Rathangan] id=1650 instagram: https://www.instagram.com/ballet.ie
+  also matched: ['Arklow & Gorey Dance Studios', 'Dance with Lesley - Cavan/Glaslough', 'Edge Dance Studios - Kilcock', 'Elevate Academy of Dance - Mullingar', 'Prima Ballet']
+
+[Shannon Dance Academy - Roscommon/Athlone] id=1678 facebook: https://www.facebook.com/ballet.ie
+  also matched: ['Arklow & Gorey Dance Studios', 'Cheryl Corrigan Ballet Academy - Edenderry/Rathangan', 'Dance with Lesley - Cavan/Glaslough', 'Edge Dance Studios - Kilcock', 'Elevate Academy of Dance - Mullingar']
+
+[Shannon Dance Academy - Roscommon/Athlone] id=1678 instagram: https://www.instagram.com/ballet.ie
+  also matched: ['Arklow & Gorey Dance Studios', 'Cheryl Corrigan Ballet Academy - Edenderry/Rathangan', 'Dance with Lesley - Cavan/Glaslough', 'Edge Dance Studios - Kilcock', 'Elevate Academy of Dance - Mullingar']
+
+[Turtle Tots - Kinsale Hotel & Spa] id=1686 facebook: https://www.facebook.com/Turtletotsireland
+  also matched: ['Little Turtles', 'Turtle Tots', 'Turtle Tots - Lough Lannagh, Castlebar', 'Turtle Tots - Tullamore Court Hotel', 'Westport Parent, Baby and Toddler Group']
+
+[Turtle Tots - Kinsale Hotel & Spa] id=1686 instagram: https://www.instagram.com/turtletotsireland
+  also matched: ['Little Turtles', 'Turtle Tots', 'Turtle Tots - Lough Lannagh, Castlebar', 'Turtle Tots - Tullamore Court Hotel', 'Westport Parent, Baby and Toddler Group']
+
+[Carrick-on-Suir Library - Lego Boost Club] id=1697 facebook: http://www.facebook.com/pages/Tipperary-Libraries/241612834780
+  also matched: ['Thurles / Roscrea / Cashel /Tipperary Town Toddler Group Story Time', 'Tipperary Libraries - Toddler Storytime']
+
+[Carrick-on-Suir Library - Lego Boost Club] id=1697 instagram: https://www.instagram.com/tipperarycocolibraryservice
+  also matched: ['Thurles / Roscrea / Cashel /Tipperary Town Toddler Group Story Time', 'Tipperary Libraries - Toddler Storytime']
+
+[The Dancer's Academy of Performing Arts (DAPA) - Tipperary/Thurles] id=1725 facebook: https://www.facebook.com/ballet.ie
+  also matched: ['Arklow & Gorey Dance Studios', 'Cheryl Corrigan Ballet Academy - Edenderry/Rathangan', 'Dance with Lesley - Cavan/Glaslough', 'Edge Dance Studios - Kilcock', 'Elevate Academy of Dance - Mullingar']
+
+[The Dancer's Academy of Performing Arts (DAPA) - Tipperary/Thurles] id=1725 instagram: https://www.instagram.com/ballet.ie
+  also matched: ['Arklow & Gorey Dance Studios', 'Cheryl Corrigan Ballet Academy - Edenderry/Rathangan', 'Dance with Lesley - Cavan/Glaslough', 'Edge Dance Studios - Kilcock', 'Elevate Academy of Dance - Mullingar']
+
+[Tipperary Libraries - Toddler Storytime] id=1730 facebook: http://www.facebook.com/pages/Tipperary-Libraries/241612834780
+  also matched: ['Carrick-on-Suir Library - Lego Boost Club', 'Thurles / Roscrea / Cashel /Tipperary Town Toddler Group Story Time']
+
+[Tipperary Libraries - Toddler Storytime] id=1730 instagram: https://www.instagram.com/tipperarycocolibraryservice
+  also matched: ['Carrick-on-Suir Library - Lego Boost Club', 'Thurles / Roscrea / Cashel /Tipperary Town Toddler Group Story Time']
+
+[Laois County Council - Tin Whistle Classes, Mountmellick] id=1740 facebook: https://www.facebook.com/LaoisCountyCouncil
+  also matched: ['Abbeyleix Library - Baby & Toddler Group / Kids Chess Club', 'Mountmellick - Toddler Group / Kids Book Clubs / Lego Group', 'Mountrath - Toddler Group / Kids Book Clubs / STEM Group', 'Portarlington- Baby Group / Kids Book Clubs / Lego Group', 'Portlaoise Library - Baby & Toddler Group / Kids Book Clubs']
+
+[Laois County Council - Tin Whistle Classes, Mountmellick] id=1740 instagram: https://www.instagram.com/laoiscountycouncil
+  also matched: ['Abbeyleix Library - Baby & Toddler Group / Kids Chess Club', 'Mountmellick - Toddler Group / Kids Book Clubs / Lego Group', 'Mountrath - Toddler Group / Kids Book Clubs / STEM Group', 'Portarlington- Baby Group / Kids Book Clubs / Lego Group', 'Portlaoise Library - Baby & Toddler Group / Kids Book Clubs']
+
