@@ -132,7 +132,21 @@ TOWN_COUNTY = {
     'Kilternan': 'Dublin', 'Shankill': 'Dublin', 'Foxrock': 'Dublin', 'Ballsbridge': 'Dublin',
     'Lusk': 'Dublin', 'Dun Laoghaire': 'Dublin', 'Ballinteer': 'Dublin',
     'Blackrock': 'Dublin', 'Sandyford': 'Dublin',
-    'Rathgar': 'Dublin', 'Crumlin': 'Dublin', 'Ranelagh': 'Dublin',
+    'Rathgar': 'Dublin', 'Crumlin': 'Dublin', 'Ranelagh': 'Dublin', 'Milltown': 'Dublin',
+    # North County Dublin coast + Southside coastal infill (2026-08-05 expansion batch).
+    'Howth': 'Dublin', 'Sutton': 'Dublin', 'Baldoyle': 'Dublin', 'Portmarnock': 'Dublin',
+    'Donabate': 'Dublin', 'Rush': 'Dublin', 'Killiney': 'Dublin', 'Glenageary': 'Dublin',
+    'Cabinteely': 'Dublin', 'Stepaside': 'Dublin', 'Deansgrange': 'Dublin',
+    'Loughlinstown': 'Dublin',
+    # West Dublin infill.
+    'Palmerstown': 'Dublin', 'Chapelizod': 'Dublin', 'Inchicore': 'Dublin',
+    'Kilmainham': 'Dublin', 'Clonsilla': 'Dublin', 'Ongar': 'Dublin', 'Hartstown': 'Dublin',
+    'Corduff': 'Dublin',
+    # Northside infill.
+    'Glasnevin': 'Dublin', 'Phibsborough': 'Dublin', 'Marino': 'Dublin', 'Fairview': 'Dublin',
+    'Cabra': 'Dublin', 'Raheny': 'Dublin', 'Donaghmede': 'Dublin', 'Kilbarrack': 'Dublin',
+    'Artane': 'Dublin', 'Coolock': 'Dublin', 'Santry': 'Dublin', 'Finglas': 'Dublin',
+    'Ballymun': 'Dublin',
 }
 TOWN_LABEL_BY_LOWER = {name.lower(): name for name in TOWN_COUNTY}
 TOWN_RE = re.compile(

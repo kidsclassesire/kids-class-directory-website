@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Rush | Kids Patch</title>
+    <meta name="description" content="Browse 5 kids activities and classes in Rush, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/rush.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Rush | Kids Patch">
+    <meta property="og:description" content="Browse 5 kids activities and classes in Rush, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/rush.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Rush | Kids Patch">
+    <meta name="twitter:description" content="Browse 5 kids activities and classes in Rush, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=3646260db5">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Rush", "description": "Browse 5 kids activities and classes in Rush, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/rush.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 5, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/rush-parent-and-toddler-group-273.html", "name": "Rush Parent and Toddler Group"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/rush-sailing-club-rsc-1816.html", "name": "Rush Sailing Club (RSC)"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/rush-athletic-fc-rafc-1817.html", "name": "Rush Athletic FC (RAFC)"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/st-maur-s-gaa-naomh-maur-1818.html", "name": "St Maur's GAA (Naomh Maur)"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/rush-multipurpose-youth-facility-1819.html", "name": "Rush Multipurpose Youth Facility"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Rush</nav>
+        <h1>Kids Activities in Rush</h1>
+        <p class="landing-intro">Browse 5 kids activities and classes in Rush. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="273">
+        <div class="card-image"><img class="logo-badge" src="../logos/communitylocals-ie.png" alt="Rush Parent and Toddler Group logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Rush Parent and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Rush Parent, Baby and Toddler Group offers various events throughout the year, including a Halloween box fort, a First Aid course, the Santa van and bauble-making crafts at Christmas, and giant hearts for Valentine&#x27;s Day. They provide tea, coffee and biscuits for adults and small snacks for the babies and toddlers, and have a private Facebook group for more information. Location: Room 2, Rush Community Centre, Upper Main Street, Rush, K56 WF22. Time: most Tuesdays, 10am-12pm (during term time). Cost: €4 per family. Contact: 086 8810807. Keep an eye on social media for when the group starts back up after school holidays, as it may not always align with term time.</p>
+            
+            <a href="../business/rush-parent-and-toddler-group-273.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1816">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Rush Sailing Club (RSC)</h3>
+            <div class="tag-container"><span class="tag">Watersports</span></div>
+            <p class="description">Junior sailing programme, April-September, plus summer camps.</p>
+            
+            <a href="../business/rush-sailing-club-rsc-1816.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1817">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Rush Athletic FC (RAFC)</h3>
+            <div class="tag-container"><span class="tag">Football</span></div>
+            <p class="description">Schoolboy football teams from U7 through U18.</p>
+            
+            <a href="../business/rush-athletic-fc-rafc-1817.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1818">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>St Maur&#x27;s GAA (Naomh Maur)</h3>
+            <div class="tag-container"><span class="tag">GAA</span></div>
+            <p class="description">Community GAA club with juvenile teams, founded 1928.</p>
+            
+            <a href="../business/st-maur-s-gaa-naomh-maur-1818.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1819">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Rush Multipurpose Youth Facility</h3>
+            <div class="tag-container"><span class="tag">Music</span></div>
+            <p class="description">Music club for young children covering singing and instruments.</p>
+            
+            <a href="../business/rush-multipurpose-youth-facility-1819.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 273, "lat": 53.52299, "lon": -6.09656, "name": "Rush Parent and Toddler Group", "category": "Parent-and-toddler", "url": "../business/rush-parent-and-toddler-group-273.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1816, "lat": 53.5115032, "lon": -6.1160353, "name": "Rush Sailing Club (RSC)", "category": "Watersports", "url": "../business/rush-sailing-club-rsc-1816.html", "minAge": 8, "maxAge": 17, "price": null, "free": false}, {"id": 1817, "lat": 53.5279265, "lon": -6.0912046, "name": "Rush Athletic FC (RAFC)", "category": "Football", "url": "../business/rush-athletic-fc-rafc-1817.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1818, "lat": 53.527221, "lon": -6.0979041, "name": "St Maur's GAA (Naomh Maur)", "category": "GAA", "url": "../business/st-maur-s-gaa-naomh-maur-1818.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1819, "lat": 53.5212978, "lon": -6.1048183, "name": "Rush Multipurpose Youth Facility", "category": "Music", "url": "../business/rush-multipurpose-youth-facility-1819.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

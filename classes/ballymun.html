@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Ballymun | Kids Patch</title>
+    <meta name="description" content="Browse 5 kids activities and classes in Ballymun, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/ballymun.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Ballymun | Kids Patch">
+    <meta property="og:description" content="Browse 5 kids activities and classes in Ballymun, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/ballymun.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Ballymun | Kids Patch">
+    <meta name="twitter:description" content="Browse 5 kids activities and classes in Ballymun, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=3646260db5">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Ballymun", "description": "Browse 5 kids activities and classes in Ballymun, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/ballymun.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 5, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/ballymun-library-189.html", "name": "Ballymun Library"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/ballymun-kickhams-450.html", "name": "Ballymun Kickhams"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/axis-ballymun-1918.html", "name": "Axis Ballymun"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/sport-taekwondo-ireland-ballymun-1919.html", "name": "Sport Taekwondo Ireland - Ballymun"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/ballymun-boxing-club-1920.html", "name": "Ballymun Boxing Club"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Ballymun</nav>
+        <h1>Kids Activities in Ballymun</h1>
+        <p class="landing-intro">Browse 5 kids activities and classes in Ballymun. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="189">
+        <div class="card-image"><img class="banner-img" src="../images/dublincity-ie-58ad05.jpg" alt="Ballymun Library" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/dublincity-ie-58ad05.svg" alt="Ballymun Library logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Ballymun Library</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Ballymun Library offers fantastic groups for babies and kids. Baby Book Club: every Monday at 10am, for newborns to 2-year-olds. Toddler Book Club: every Thursday from 10-10.45am, suitable for children aged 2 years to preschool age. Both clubs include stories, activities and toys (note: they take a break during July and August). Ballymun Games Club takes place on Mondays from 5-6.20pm and is open to library members aged 10-16.</p>
+            
+            <a href="../business/ballymun-library-189.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="450">
+        <div class="card-image"><img class="logo-badge" src="../logos/ballymunkickhams-com.png" alt="Ballymun Kickhams logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Ballymun Kickhams</h3>
+            <div class="tag-container"><span class="tag">GAA</span></div>
+            <p class="description">Ballymun Kickhams is one of Dublin&#x27;s most well-known GAA clubs, with a proud tradition of developing talented players and a strong community spirit. The club has produced several Dublin senior footballers and continues to grow with a thriving juvenile section. Their popular Saturday morning nursery welcomes boys and girls aged 3 to 8 years, offering a fun, friendly and supportive environment to learn the basic skills of Gaelic football. It&#x27;s a great way for young children to stay active, make friends, and build confidence.</p>
+            
+            <a href="../business/ballymun-kickhams-450.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1918">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Axis Ballymun</h3>
+            <div class="tag-container"><span class="tag">Drama</span></div>
+            <p class="description">Drama classes (Tuesdays/Fridays); Beldance Irish Dancing and En Pointe Ballet also run at the venue.</p>
+            <div class="landing-card-meta">Tuesday, Friday</div>
+            <a href="../business/axis-ballymun-1918.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1919">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Sport Taekwondo Ireland - Ballymun</h3>
+            <div class="tag-container"><span class="tag">Martial Arts</span></div>
+            <p class="description">Taekwondo classes, Monday and Wednesday.</p>
+            <div class="landing-card-meta">Monday, Wednesday</div>
+            <a href="../business/sport-taekwondo-ireland-ballymun-1919.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1920">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Ballymun Boxing Club</h3>
+            <div class="tag-container"><span class="tag">Martial Arts</span></div>
+            <p class="description">Junior boxing sessions, Tuesday and Thursday evenings.</p>
+            <div class="landing-card-meta">Tuesday, Thursday &middot; from 18:00</div>
+            <a href="../business/ballymun-boxing-club-1920.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 189, "lat": 53.38539, "lon": -6.2652, "name": "Ballymun Library", "category": "Parent-and-toddler", "url": "../business/ballymun-library-189.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 450, "lat": 53.3968675, "lon": -6.2643161, "name": "Ballymun Kickhams", "category": "GAA", "url": "../business/ballymun-kickhams-450.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1918, "lat": 53.3816098, "lon": -6.2465221, "name": "Axis Ballymun", "category": "Drama", "url": "../business/axis-ballymun-1918.html", "minAge": 7, "maxAge": 16, "price": null, "free": false}, {"id": 1919, "lat": 53.3853859, "lon": -6.2651986, "name": "Sport Taekwondo Ireland - Ballymun", "category": "Martial Arts", "url": "../business/sport-taekwondo-ireland-ballymun-1919.html", "minAge": 5, "maxAge": null, "price": null, "free": false}, {"id": 1920, "lat": 53.403063, "lon": -6.2744743, "name": "Ballymun Boxing Club", "category": "Martial Arts", "url": "../business/ballymun-boxing-club-1920.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

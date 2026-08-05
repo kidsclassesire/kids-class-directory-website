@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Fairview | Kids Patch</title>
+    <meta name="description" content="Browse 4 kids activities and classes in Fairview, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/fairview.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Fairview | Kids Patch">
+    <meta property="og:description" content="Browse 4 kids activities and classes in Fairview, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/fairview.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Fairview | Kids Patch">
+    <meta name="twitter:description" content="Browse 4 kids activities and classes in Fairview, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=3646260db5">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Fairview", "description": "Browse 4 kids activities and classes in Fairview, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/fairview.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 4, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/viva-kids-ballet-1341.html", "name": "Viva Kids Ballet"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/belvedere-fc-1875.html", "name": "Belvedere FC"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/st-joseph-s-ocb-gaa-1876.html", "name": "St Joseph's/OCB GAA"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/svj-karate-club-1877.html", "name": "SVJ Karate Club"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Fairview</nav>
+        <h1>Kids Activities in Fairview</h1>
+        <p class="landing-intro">Browse 4 kids activities and classes in Fairview. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="1341">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Viva Kids Ballet</h3>
+            <div class="tag-container"><span class="tag">Dance</span></div>
+            <p class="description">Kids Ballet for ages 3-5 in Fairview, Dublin 3; 60-minute small-group sessions, Tuesdays 18:00-19:00, €50/month.</p>
+            
+            <a href="../business/viva-kids-ballet-1341.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1875">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Belvedere FC</h3>
+            <div class="tag-container"><span class="tag">Football</span></div>
+            <p class="description">Early-years football academy (Little Eagles), plus DDSL Schoolboys U8-U18.</p>
+            
+            <a href="../business/belvedere-fc-1875.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1876">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>St Joseph&#x27;s/OCB GAA</h3>
+            <div class="tag-container"><span class="tag">GAA</span></div>
+            <p class="description">Juvenile GAA section drawing from East Wall, North Wall, Ballybough, Fairview and Marino.</p>
+            
+            <a href="../business/st-joseph-s-ocb-gaa-1876.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1877">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>SVJ Karate Club</h3>
+            <div class="tag-container"><span class="tag">Martial Arts</span></div>
+            <p class="description">Karate club with free introductory classes for children and adults.</p>
+            
+            <a href="../business/svj-karate-club-1877.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 1341, "lat": 53.3628177, "lon": -6.2398252, "name": "Viva Kids Ballet", "category": "Dance", "url": "../business/viva-kids-ballet-1341.html", "minAge": 3.0, "maxAge": 5.0, "price": null, "free": false}, {"id": 1875, "lat": 53.3622225, "lon": -6.2327073, "name": "Belvedere FC", "category": "Football", "url": "../business/belvedere-fc-1875.html", "minAge": 3, "maxAge": 7, "price": null, "free": false}, {"id": 1876, "lat": 53.3622225, "lon": -6.2327073, "name": "St Joseph's/OCB GAA", "category": "GAA", "url": "../business/st-joseph-s-ocb-gaa-1876.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1877, "lat": 53.3648634, "lon": -6.2332586, "name": "SVJ Karate Club", "category": "Martial Arts", "url": "../business/svj-karate-club-1877.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Artane | Kids Patch</title>
+    <meta name="description" content="Browse 4 kids activities and classes in Artane, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/artane.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Artane | Kids Patch">
+    <meta property="og:description" content="Browse 4 kids activities and classes in Artane, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/artane.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Artane | Kids Patch">
+    <meta name="twitter:description" content="Browse 4 kids activities and classes in Artane, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=3646260db5">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Artane", "description": "Browse 4 kids activities and classes in Artane, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/artane.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 4, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/compound-martial-arts-1897.html", "name": "Compound Martial Arts"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/st-paul-s-artane-fc-1898.html", "name": "St. Paul's Artane FC"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/sean-gilligan-performing-arts-artane-1899.html", "name": "Sean Gilligan Performing Arts - Artane"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/elm-mount-chess-club-1900.html", "name": "Elm Mount Chess Club"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Artane</nav>
+        <h1>Kids Activities in Artane</h1>
+        <p class="landing-intro">Browse 4 kids activities and classes in Artane. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="1897">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Compound Martial Arts</h3>
+            <div class="tag-container"><span class="tag">Martial Arts</span></div>
+            <p class="description">Martial arts classes for kids.</p>
+            
+            <a href="../business/compound-martial-arts-1897.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1898">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>St. Paul&#x27;s Artane FC</h3>
+            <div class="tag-container"><span class="tag">Football</span></div>
+            <p class="description">Early-years football academy, Saturdays.</p>
+            <div class="landing-card-meta">Saturday</div>
+            <a href="../business/st-paul-s-artane-fc-1898.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1899">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Sean Gilligan Performing Arts - Artane</h3>
+            <div class="tag-container"><span class="tag">Drama</span></div>
+            <p class="description">Performing arts classes, a separate venue from the Kilbarrack branch of the same company.</p>
+            
+            <a href="../business/sean-gilligan-performing-arts-artane-1899.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1900">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Elm Mount Chess Club</h3>
+            <div class="tag-container"><span class="tag">Other</span></div>
+            <p class="description">Chess club for juniors and novices, Wednesday evenings.</p>
+            <div class="landing-card-meta">Wednesday &middot; 19:30-21:00</div>
+            <a href="../business/elm-mount-chess-club-1900.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 1897, "lat": 53.3849113, "lon": -6.2138399, "name": "Compound Martial Arts", "category": "Martial Arts", "url": "../business/compound-martial-arts-1897.html", "minAge": 8, "maxAge": 12, "price": null, "free": false}, {"id": 1898, "lat": 53.3785323, "lon": -6.1947842, "name": "St. Paul's Artane FC", "category": "Football", "url": "../business/st-paul-s-artane-fc-1898.html", "minAge": 5, "maxAge": 8, "price": null, "free": false}, {"id": 1899, "lat": 53.3825275, "lon": -6.1971549, "name": "Sean Gilligan Performing Arts - Artane", "category": "Drama", "url": "../business/sean-gilligan-performing-arts-artane-1899.html", "minAge": 3, "maxAge": 13, "price": null, "free": false}, {"id": 1900, "lat": 53.384851, "lon": -6.2164807, "name": "Elm Mount Chess Club", "category": "Other", "url": "../business/elm-mount-chess-club-1900.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

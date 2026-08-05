@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Raheny | Kids Patch</title>
+    <meta name="description" content="Browse 6 kids activities and classes in Raheny, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/raheny.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Raheny | Kids Patch">
+    <meta property="og:description" content="Browse 6 kids activities and classes in Raheny, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/raheny.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Raheny | Kids Patch">
+    <meta name="twitter:description" content="Browse 6 kids activities and classes in Raheny, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=3646260db5">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Raheny", "description": "Browse 6 kids activities and classes in Raheny, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/raheny.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 6, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/raheny-parent-baby-and-toddler-group-266.html", "name": "Raheny Parent, Baby and Toddler Group"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/dublin-school-of-dance-and-etiquette-third-arabesque-1881.html", "name": "Dublin School of Dance and Etiquette (Third Arabesque)"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/hombu-dojo-karate-raheny-1882.html", "name": "Hombu Dojo Karate - Raheny"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/st-paul-s-karate-club-1883.html", "name": "St Paul's Karate Club"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/raheny-shamrock-athletic-club-1888.html", "name": "Raheny Shamrock Athletic Club"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/the-jam-art-drama-1889.html", "name": "The Jam - Art & Drama"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Raheny</nav>
+        <h1>Kids Activities in Raheny</h1>
+        <p class="landing-intro">Browse 6 kids activities and classes in Raheny. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="266">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Raheny Parent, Baby and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Raheny Parent, Baby and Toddler Group is run by volunteers, welcoming parents, grandparents and carers to come along with their babies and toddlers. The group has lots of toys and a bit of a sing-song, with tea and coffee for the adults. Note: the space in the hall is limited, so the group operates on a first-come, first-served basis - get there early. Location: Cara Hall Community Centre, Raheny, D05 WY64. Time: every Monday, 9.30-11am (during term time). Cost: €4 per family. Contact: via their Facebook page. Keep an eye on social media for when the group starts back up after school holidays, as it may not align with term time.</p>
+            
+            <a href="../business/raheny-parent-baby-and-toddler-group-266.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1881">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Dublin School of Dance and Etiquette (Third Arabesque)</h3>
+            <div class="tag-container"><span class="tag">Dance</span></div>
+            <p class="description">Dance classes from Baby Ballet through Grade 3+.</p>
+            
+            <a href="../business/dublin-school-of-dance-and-etiquette-third-arabesque-1881.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1882">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Hombu Dojo Karate - Raheny</h3>
+            <div class="tag-container"><span class="tag">Martial Arts</span></div>
+            <p class="description">Kids karate classes.</p>
+            
+            <a href="../business/hombu-dojo-karate-raheny-1882.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1883">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>St Paul&#x27;s Karate Club</h3>
+            <div class="tag-container"><span class="tag">Martial Arts</span></div>
+            <p class="description">Karate club at St Paul&#x27;s College.</p>
+            
+            <a href="../business/st-paul-s-karate-club-1883.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1888">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Raheny Shamrock Athletic Club</h3>
+            <div class="tag-container"><span class="tag">Athletics</span></div>
+            <p class="description">Juvenile athletics section with a large waiting list.</p>
+            
+            <a href="../business/raheny-shamrock-athletic-club-1888.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1889">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>The Jam - Art &amp; Drama</h3>
+            <div class="tag-container"><span class="tag">Arts and crafts</span></div>
+            <p class="description">Art and drama sessions for kids at CARA Hall.</p>
+            
+            <a href="../business/the-jam-art-drama-1889.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 266, "lat": 53.37782, "lon": -6.17918, "name": "Raheny Parent, Baby and Toddler Group", "category": "Parent-and-toddler", "url": "../business/raheny-parent-baby-and-toddler-group-266.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1881, "lat": 53.3778072, "lon": -6.1792437, "name": "Dublin School of Dance and Etiquette (Third Arabesque)", "category": "Dance", "url": "../business/dublin-school-of-dance-and-etiquette-third-arabesque-1881.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1882, "lat": 53.3840559, "lon": -6.1920739, "name": "Hombu Dojo Karate - Raheny", "category": "Martial Arts", "url": "../business/hombu-dojo-karate-raheny-1882.html", "minAge": 5, "maxAge": 11, "price": null, "free": false}, {"id": 1883, "lat": 53.3730031, "lon": -6.1930273, "name": "St Paul's Karate Club", "category": "Martial Arts", "url": "../business/st-paul-s-karate-club-1883.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1888, "lat": 53.3804065, "lon": -6.1750943, "name": "Raheny Shamrock Athletic Club", "category": "Athletics", "url": "../business/raheny-shamrock-athletic-club-1888.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1889, "lat": 53.3778072, "lon": -6.1792437, "name": "The Jam - Art & Drama", "category": "Arts and crafts", "url": "../business/the-jam-art-drama-1889.html", "minAge": 8, "maxAge": 13, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

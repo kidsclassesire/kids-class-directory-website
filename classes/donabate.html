@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Donabate | Kids Patch</title>
+    <meta name="description" content="Browse 8 kids activities and classes in Donabate, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/donabate.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Donabate | Kids Patch">
+    <meta property="og:description" content="Browse 8 kids activities and classes in Donabate, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/donabate.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Donabate | Kids Patch">
+    <meta name="twitter:description" content="Browse 8 kids activities and classes in Donabate, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=3646260db5">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Donabate", "description": "Browse 8 kids activities and classes in Donabate, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/donabate.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 8, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/tina-mation-1074.html", "name": "Tina Mation"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/fingal-library-musical-tots-with-karen-donnellan-donabate-1616.html", "name": "Fingal Library - Musical Tots with Karen Donnellan, Donabate"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/donabate-scouting-cubs-1618.html", "name": "Donabate Scouting - Cubs"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/nature-yoga-art-summer-camp-donabate-1619.html", "name": "Nature, Yoga & Art Summer Camp - Donabate"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/leithinis-donabate-portrane-cc-1620.html", "name": "Leithinis Donabate Portrane CCÉ"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/st-patrick-s-gaa-donabate-1813.html", "name": "St Patrick's GAA Donabate"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/donabate-portrane-tennis-club-1814.html", "name": "Donabate Portrane Tennis Club"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/donabate-golf-club-1815.html", "name": "Donabate Golf Club"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Donabate</nav>
+        <h1>Kids Activities in Donabate</h1>
+        <p class="landing-intro">Browse 8 kids activities and classes in Donabate. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="20">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="20" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="20" value="20" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="1074">
+        <div class="card-image"><img class="logo-badge" src="../logos/tinamation-net.png" alt="Tina Mation logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Tina Mation</h3>
+            <div class="tag-container"><span class="tag">Arts and crafts</span></div>
+            <p class="description">For over 30 years, children across Dublin and Meath have enjoyed learning to draw with Tina, the much-loved artist and presenter behind the long-running RTÉ children&#x27;s art television series &#x27;Let&#x27;s Draw with Tina&#x27;. Tina&#x27;s fun and encouraging art classes help children build confidence, creativity and drawing skills in a relaxed and supportive environment. Each one-hour class is carefully designed to guide children step-by-step through exciting drawing and art projects, making it easy for all abilities to take part and enjoy. Tina&#x27;s unique teaching method has inspired thousands of children over three decades, both on television and in person. All materials are supplied, so children simply arrive ready to create, learn and have fun. Classes take place in Lusk, Donabate, Glasnevin, Ashbourne, Ballyboughal, and Swords. Perfect for children who love drawing, cartoons, creativity and imaginative art activities.</p>
+            
+            <a href="../business/tina-mation-1074.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1616">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Fingal Library - Musical Tots with Karen Donnellan, Donabate</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">1-hour music workshop for ages 0-4 and carers at Donabate Library; singing, dancing and instrument play.</p>
+            
+            <a href="../business/fingal-library-musical-tots-with-karen-donnellan-donabate-1616.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1618">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Donabate Scouting - Cubs</h3>
+            <div class="tag-container"><span class="tag">Adventure/Scouts</span></div>
+            <p class="description">Cub Scouts for boys/girls in 1st-3rd class, weekly Mon/Tue sessions at Donabate Scout Den.</p>
+            
+            <a href="../business/donabate-scouting-cubs-1618.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1619">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Nature, Yoga &amp; Art Summer Camp - Donabate</h3>
+            <div class="tag-container"><span class="tag">Camps</span></div>
+            <p class="description">4-day yoga/mindfulness/art camp for ages 6-10 at Lambay House, Donabate; €140, sibling discount.</p>
+            
+            <a href="../business/nature-yoga-art-summer-camp-donabate-1619.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1620">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Leithinis Donabate Portrane CCÉ</h3>
+            <div class="tag-container"><span class="tag">Music</span></div>
+            <p class="description">Monday-evening Irish trad music classes (whistle, flute, fiddle, banjo, bodhrán and more) at Donabate Portrane ETNS.</p>
+            
+            <a href="../business/leithinis-donabate-portrane-cc-1620.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1813">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>St Patrick&#x27;s GAA Donabate</h3>
+            <div class="tag-container"><span class="tag">GAA</span></div>
+            <p class="description">Juvenile GAA academy (Páistí Pats).</p>
+            
+            <a href="../business/st-patrick-s-gaa-donabate-1813.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1814">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Donabate Portrane Tennis Club</h3>
+            <div class="tag-container"><span class="tag">Tennis</span></div>
+            <p class="description">Junior tennis coaching through red/orange/green/yellow ball progression; members only.</p>
+            
+            <a href="../business/donabate-portrane-tennis-club-1814.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1815">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Donabate Golf Club</h3>
+            <div class="tag-container"><span class="tag">Sports</span></div>
+            <p class="description">Junior golf programme.</p>
+            
+            <a href="../business/donabate-golf-club-1815.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 1074, "lat": 53.4904355, "lon": -6.1424829, "name": "Tina Mation", "category": "Arts and crafts", "url": "../business/tina-mation-1074.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1616, "lat": 53.489027, "lon": -6.1458847, "name": "Fingal Library - Musical Tots with Karen Donnellan, Donabate", "category": "Parent-and-toddler", "url": "../business/fingal-library-musical-tots-with-karen-donnellan-donabate-1616.html", "minAge": 0.0, "maxAge": 4.0, "price": null, "free": false}, {"id": 1618, "lat": 53.4902416, "lon": -6.1411611, "name": "Donabate Scouting - Cubs", "category": "Adventure/Scouts", "url": "../business/donabate-scouting-cubs-1618.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1619, "lat": 53.5219045, "lon": -6.1084003, "name": "Nature, Yoga & Art Summer Camp - Donabate", "category": "Camps", "url": "../business/nature-yoga-art-summer-camp-donabate-1619.html", "minAge": 6.0, "maxAge": 10.0, "price": null, "free": false}, {"id": 1620, "lat": 53.4915645, "lon": -6.1461826, "name": "Leithinis Donabate Portrane CCÉ", "category": "Music", "url": "../business/leithinis-donabate-portrane-cc-1620.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1813, "lat": 53.483589, "lon": -6.1325434, "name": "St Patrick's GAA Donabate", "category": "GAA", "url": "../business/st-patrick-s-gaa-donabate-1813.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1814, "lat": 53.479945, "lon": -6.126744, "name": "Donabate Portrane Tennis Club", "category": "Tennis", "url": "../business/donabate-portrane-tennis-club-1814.html", "minAge": 5, "maxAge": null, "price": null, "free": false}, {"id": 1815, "lat": 53.484266, "lon": -6.1453236, "name": "Donabate Golf Club", "category": "Sports", "url": "../business/donabate-golf-club-1815.html", "minAge": 8, "maxAge": 20, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

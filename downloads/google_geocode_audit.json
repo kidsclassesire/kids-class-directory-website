@@ -1,22 +1,1249 @@
 [
   {
-    "id": 139,
-    "company_name": "Oboe, Piano, Recorder, Ukulele lessons from age 8 to 88",
-    "address": "112 Greenlea Road, Terenure, Dublin 6W",
+    "id": 1801,
+    "company_name": "Howth Yacht Club",
+    "address": "Middle Pier, Howth Harbour, Howth, Co. Dublin, D13 E6V3",
     "updates": {
-      "latitude": 53.3074472,
-      "longitude": -6.300180699999999
+      "latitude": 53.3881401,
+      "longitude": -6.070110499999999
     },
-    "google_formatted_address": "112 Greenlea Rd, Terenure, Dublin, D6W FF95, Ireland"
+    "google_formatted_address": "Howth Harbour, Howth, Dublin, Co. Dublin, Ireland"
   },
   {
-    "id": 141,
-    "company_name": "Online Piano & Guitar Lessons for Adults and Children \u2013 Music Lessons Ireland",
-    "address": "112 Greenlea Road, Terenure, Dublin 6W",
+    "id": 1802,
+    "company_name": "Howth Music School",
+    "address": "14 Abbey Street, Howth, Co. Dublin, D13 EY77",
     "updates": {
-      "latitude": 53.3074472,
-      "longitude": -6.300180699999999
+      "latitude": 53.3871638,
+      "longitude": -6.0653422,
+      "eircode": "D13 EE02"
     },
-    "google_formatted_address": "112 Greenlea Rd, Terenure, Dublin, D6W FF95, Ireland"
+    "google_formatted_address": "14 Abbey St, Howth, Dublin, D13 EE02, Ireland"
+  },
+  {
+    "id": 1803,
+    "company_name": "Metropolitan School of Dance - Howth/Sutton",
+    "address": "Burrow National School, Howth Road, Sutton, Dublin 13",
+    "updates": {
+      "latitude": 53.3910694,
+      "longitude": -6.100100299999999,
+      "eircode": "D13 TC04"
+    },
+    "google_formatted_address": "Howth Rd, Sutton, Dublin 13, D13 TC04, Ireland"
+  },
+  {
+    "id": 1804,
+    "company_name": "Howth Library - Toddler Time",
+    "address": "Howth Library, Howth, Co. Dublin",
+    "updates": {
+      "latitude": 53.3855493,
+      "longitude": -6.064727,
+      "eircode": "D13 VY50"
+    },
+    "google_formatted_address": "Howth Library, 61-65 Main St, Howth, Dublin, D13 VY50, Ireland"
+  },
+  {
+    "id": 1805,
+    "company_name": "Sutton Dinghy Club",
+    "address": "Strand Road, Sutton, Dublin 13",
+    "updates": {
+      "latitude": 53.3816064,
+      "longitude": -6.1017784,
+      "eircode": "D13 F1C9"
+    },
+    "google_formatted_address": "Bright Morning, 13 Strand Rd, Sutton, Dublin 13, D13 F1C9, Ireland"
+  },
+  {
+    "id": 1806,
+    "company_name": "Sutton Lawn Tennis Club",
+    "address": "176 Howth Road, Sutton, Dublin 13",
+    "updates": {
+      "latitude": 53.3891248,
+      "longitude": -6.1064818,
+      "eircode": "D13 H004"
+    },
+    "google_formatted_address": "176 Howth Rd, Sutton, Dublin 13, D13 H004, Ireland"
+  },
+  {
+    "id": 1807,
+    "company_name": "Baldoyle United FC",
+    "address": "Brookstone Road, Baldoyle, Dublin 13",
+    "updates": {
+      "latitude": 53.3971362,
+      "longitude": -6.1353297
+    },
+    "google_formatted_address": "Brookstone Rd, Baldoyle, Dublin, Ireland"
+  },
+  {
+    "id": 1808,
+    "company_name": "Song and Dance Stage School",
+    "address": "27 College Street, Baldoyle, Dublin 13, D13 K034",
+    "updates": {
+      "latitude": 53.3967829,
+      "longitude": -6.1291023,
+      "eircode": "D13 K034"
+    },
+    "google_formatted_address": "27 College St, Baldoyle, Dublin 13, D13 K034, Ireland"
+  },
+  {
+    "id": 1809,
+    "company_name": "The Music Academy - Baldoyle",
+    "address": "St Laurence's NS (Junior Building), Grange Road, Baldoyle, D13 XE37",
+    "updates": {
+      "latitude": 53.397956,
+      "longitude": -6.137765
+    },
+    "google_formatted_address": "Grange Rd, Baldoyle, Dublin 13, Ireland"
+  },
+  {
+    "id": 1810,
+    "company_name": "Odett School of Ballet / DSA - Baldoyle",
+    "address": "Racecourse Community Centre, Baldoyle, D13 X226",
+    "updates": {
+      "latitude": 53.4001893,
+      "longitude": -6.1372319,
+      "eircode": "D13 X226"
+    },
+    "google_formatted_address": "Stapolin, Dublin, Co. Dublin, D13 X226, Ireland"
+  },
+  {
+    "id": 1811,
+    "company_name": "Naomh Mearn\u00f3g GAA",
+    "address": "Naomh Mearn\u00f3g GAA Club, Blackwood Lane, Portmarnock, Co. Dublin",
+    "updates": {
+      "latitude": 53.437636,
+      "longitude": -6.1425446
+    },
+    "google_formatted_address": "Blackwood Ln, Sainthelens, Portmarnock, Co. Dublin, Ireland"
+  },
+  {
+    "id": 1812,
+    "company_name": "Portmarnock Athletic Club",
+    "address": "Portmarnock Sports & Leisure Club, Blackwood Lane, Portmarnock, Co. Dublin",
+    "updates": {
+      "latitude": 53.4343876,
+      "longitude": -6.139184600000001
+    },
+    "google_formatted_address": "Blackwood Ln, Beechwood, Portmarnock, Co. Dublin, Ireland"
+  },
+  {
+    "id": 1813,
+    "company_name": "St Patrick's GAA Donabate",
+    "address": "Robbie Farrell Park, Ballymastone, Donabate, Co. Dublin",
+    "updates": {
+      "latitude": 53.48358899999999,
+      "longitude": -6.132543399999999
+    },
+    "google_formatted_address": "Ballymastone, Co. Dublin, Ireland"
+  },
+  {
+    "id": 1814,
+    "company_name": "Donabate Portrane Tennis Club",
+    "address": "c/o Donabate Golf Club, New Road, Donabate, Co. Dublin, K36 PK70",
+    "updates": {
+      "latitude": 53.479945,
+      "longitude": -6.126744
+    },
+    "google_formatted_address": "Donabate Golf Club, Balcarrick, Co. Dublin, Ireland"
+  },
+  {
+    "id": 1815,
+    "company_name": "Donabate Golf Club",
+    "address": "New Road, Donabate, Co. Dublin",
+    "updates": {
+      "latitude": 53.484266,
+      "longitude": -6.1453236
+    },
+    "google_formatted_address": "New Rd, Donabate, Co. Dublin, Ireland"
+  },
+  {
+    "id": 1816,
+    "company_name": "Rush Sailing Club (RSC)",
+    "address": "Linkside, Rogerstown, Rush, Co. Dublin, K56 RH52",
+    "updates": {
+      "latitude": 53.5115032,
+      "longitude": -6.1160353
+    },
+    "google_formatted_address": "Linkside, Rush, Co. Dublin, Ireland"
+  },
+  {
+    "id": 1817,
+    "company_name": "Rush Athletic FC (RAFC)",
+    "address": "Skerries Road, Rush, Co. Dublin",
+    "updates": {
+      "latitude": 53.5279265,
+      "longitude": -6.0912046
+    },
+    "google_formatted_address": "Skerries Rd, Rush, Co. Dublin, Ireland"
+  },
+  {
+    "id": 1818,
+    "company_name": "St Maur's GAA (Naomh Maur)",
+    "address": "Park Road, Rush, Co. Dublin",
+    "updates": {
+      "latitude": 53.527221,
+      "longitude": -6.0979041
+    },
+    "google_formatted_address": "Park Rd, Rush, Co. Dublin, Ireland"
+  },
+  {
+    "id": 1819,
+    "company_name": "Rush Multipurpose Youth Facility",
+    "address": "Millbank, Rush, Co. Dublin, K56 CC90",
+    "updates": {
+      "latitude": 53.5212978,
+      "longitude": -6.1048183
+    },
+    "google_formatted_address": "Mill Bank, Rush, Co. Dublin, Ireland"
+  },
+  {
+    "id": 1820,
+    "company_name": "Cluny Park Tennis Club",
+    "address": "Cluny Grove (Rochestown Domain), Killiney, Co. Dublin",
+    "updates": {
+      "latitude": 53.2696308,
+      "longitude": -6.1278573
+    },
+    "google_formatted_address": "Cluny Grove, Rochestown Domain, Dublin, Co. Dublin, Ireland"
+  },
+  {
+    "id": 1821,
+    "company_name": "Ballybrack FC",
+    "address": "Coolevin, Ballybrack, Co. Dublin",
+    "updates": {
+      "latitude": 53.2541749,
+      "longitude": -6.1375937
+    },
+    "google_formatted_address": "Coolevin, Loughlinstown, Dublin, Ireland"
+  },
+  {
+    "id": 1822,
+    "company_name": "KidsCraic - Killiney Hill Adventure Camp",
+    "address": "Killiney Hill Park, Killiney, Co. Dublin",
+    "updates": {
+      "latitude": 53.2653787,
+      "longitude": -6.1112422
+    },
+    "google_formatted_address": "Killiney Hill Park, Killiney Hill, Scalpwilliam Or Mount Mapas, Dublin, Ireland"
+  },
+  {
+    "id": 1823,
+    "company_name": "Glenageary Lawn Tennis Club",
+    "address": "Silchester Road, Glenageary, Co. Dublin, A96 YY20",
+    "updates": {
+      "latitude": 53.2825794,
+      "longitude": -6.1290238
+    },
+    "google_formatted_address": "Silchester Rd, Glenageary, Dublin, Ireland"
+  },
+  {
+    "id": 1824,
+    "company_name": "StageSchool Ireland - Glenageary",
+    "address": "Rathdown School, Upper Glenageary Road, Glenageary, Co. Dublin",
+    "updates": {
+      "latitude": 53.27645740000001,
+      "longitude": -6.1298309,
+      "eircode": "A96 NX44"
+    },
+    "google_formatted_address": "Glenageary Rd Upper, Thomastown, Co, Co. Dublin, A96 NX44, Ireland"
+  },
+  {
+    "id": 1825,
+    "company_name": "Cabinteely FC",
+    "address": "Large Astro Pitch, Kilbogget Park, Churchview Road, Cabinteely, Co. Dublin, A96 PC84",
+    "updates": {
+      "latitude": 53.25898309999999,
+      "longitude": -6.1386333
+    },
+    "google_formatted_address": "Kilbogget Park, Churchview Rd, Loughlinstown, Dublin, Ireland"
+  },
+  {
+    "id": 1826,
+    "company_name": "FoxCab GAA (Foxrock-Cabinteely)",
+    "address": "Kilbogget Park, Cabinteely, Co. Dublin",
+    "updates": {
+      "latitude": 53.2627458,
+      "longitude": -6.1601082
+    },
+    "google_formatted_address": "Cabinteely, Dublin, Ireland"
+  },
+  {
+    "id": 1827,
+    "company_name": "Stars of Erin GAA",
+    "address": "Stepaside All Weather Pitch, Stepaside, Dublin 18",
+    "updates": {
+      "latitude": 53.2475602,
+      "longitude": -6.2019965
+    },
+    "google_formatted_address": "Enniskerry Rd, Jamestown, Dublin, Ireland"
+  },
+  {
+    "id": 1828,
+    "company_name": "MorningStar Dojo - Stepaside",
+    "address": "Gaelscoil Shliabh Rua, Ballyogan Road, Dublin 18",
+    "updates": {
+      "latitude": 53.2574632,
+      "longitude": -6.1959523
+    },
+    "google_formatted_address": "Ballyogan Rd, Dublin, Ireland"
+  },
+  {
+    "id": 1829,
+    "company_name": "The Martial Arts Academy",
+    "address": "Unit 1, Block E, Deansgrange Business Park, Deansgrange, Co. Dublin",
+    "updates": {
+      "latitude": 53.2779577,
+      "longitude": -6.1604547
+    },
+    "google_formatted_address": "Unit 10, Deansgrange Business Park, Unit 11, Kill Ln, Kill Of The Grange, Blackrock, Co. Dublin, Ireland"
+  },
+  {
+    "id": 1830,
+    "company_name": "SuperSonic Trampoline Club",
+    "address": "Loughlinstown Leisure Centre, Loughlinstown Drive, Dublin 18, A96 XP60",
+    "updates": {
+      "latitude": 53.2460135,
+      "longitude": -6.1293875,
+      "eircode": "A96 XP60"
+    },
+    "google_formatted_address": "Loughlinstown Dr, Loughlinstown, Dublin, A96 XP60, Ireland"
+  },
+  {
+    "id": 1831,
+    "company_name": "Tanden Shotokan Karate",
+    "address": "Loughlinstown Leisure Centre, Loughlinstown Drive, Dublin 18",
+    "updates": {
+      "latitude": 53.2460135,
+      "longitude": -6.1293875,
+      "eircode": "A96 XP60"
+    },
+    "google_formatted_address": "Loughlinstown Dr, Loughlinstown, Dublin, A96 XP60, Ireland"
+  },
+  {
+    "id": 1832,
+    "company_name": "Ruth Shine School of Dance - Palmerstown",
+    "address": "Parish Centre, Palmerstown village, Dublin 20",
+    "updates": {
+      "latitude": 53.35159669999999,
+      "longitude": -6.3693751
+    },
+    "google_formatted_address": "Redcowfarm, Dublin 20, Ireland"
+  },
+  {
+    "id": 1833,
+    "company_name": "Wojtek Potaszkin Dance Academy",
+    "address": "Unit 1, Old Lucan Road, Palmerstown Lower, Dublin 20",
+    "updates": {
+      "latitude": 53.3557358,
+      "longitude": -6.369022999999999,
+      "eircode": "D20 AC84"
+    },
+    "google_formatted_address": "Clarkeville Terrace, 1 Old Lucan Rd, Palmerston Lower, Dublin 20, D20 AC84, Ireland"
+  },
+  {
+    "id": 1834,
+    "company_name": "St Patrick's GAA - Palmerstown",
+    "address": "St Pats Clubhouse, Glenaulin Green, Redcowfarm, Palmerstown, D20 A292",
+    "updates": {
+      "latitude": 53.3475463,
+      "longitude": -6.3659251
+    },
+    "google_formatted_address": "Glenaulin Green, Dublin, Ireland"
+  },
+  {
+    "id": 1835,
+    "company_name": "St Patrick's Athletic FC",
+    "address": "125 Emmet Road, Inchicore, Dublin 8",
+    "updates": {
+      "latitude": 53.3403942,
+      "longitude": -6.316088300000001,
+      "eircode": "D08 E0Y7"
+    },
+    "google_formatted_address": "125 Emmet Rd, Inchicore, Dublin 8, D08 E0Y7, Ireland"
+  },
+  {
+    "id": 1836,
+    "company_name": "Karen Byrne School of Dance",
+    "address": "Bluebell Business Park, Unit 6 Old Naas Road, Inchicore, Dublin 8",
+    "updates": {
+      "latitude": 53.3299211,
+      "longitude": -6.3427405
+    },
+    "google_formatted_address": "Bluebell Business Park, Old Naas Rd, Inchicore, Dublin 12, Ireland"
+  },
+  {
+    "id": 1837,
+    "company_name": "Marian Lennon School of Ballet - Inchicore",
+    "address": "Inchicore Community Sports Centre, St Michael's Estate, Inchicore, Dublin 8",
+    "updates": {
+      "latitude": 53.3391119,
+      "longitude": -6.316904699999999,
+      "eircode": "D08 T9T7"
+    },
+    "google_formatted_address": "Inchicore Community Sports Centre, Bulfin Rd, Inchicore, Dublin 8, D08 T9T7, Ireland"
+  },
+  {
+    "id": 1838,
+    "company_name": "CIE Boxing Club",
+    "address": "Granite Terrace, Inchicore, Dublin 8, D08 X525",
+    "updates": {
+      "latitude": 53.3397752,
+      "longitude": -6.3232792
+    },
+    "google_formatted_address": "Granite Terrace, Inchicore, Dublin, Ireland"
+  },
+  {
+    "id": 1839,
+    "company_name": "Alonchai Muay Thai & Boxing",
+    "address": "Unit 14D, Goldenbridge Industrial Estate, Tyrconnell Road, Inchicore, D08 R768",
+    "updates": {
+      "latitude": 53.336272,
+      "longitude": -6.3224356,
+      "eircode": "D08 WD50"
+    },
+    "google_formatted_address": "Goldenbridge Industrial Estate, 17b Tyrconnell Rd, Inchicore, Dublin 8, D08 WD50, Ireland"
+  },
+  {
+    "id": 1840,
+    "company_name": "Little Beras",
+    "address": "BERA Hall, Connolly Avenue, Bulfin Estate, Inchicore, Dublin 8",
+    "updates": {
+      "latitude": 53.33617109999999,
+      "longitude": -6.314634
+    },
+    "google_formatted_address": "Bulfin Estate Residents Association Hall, Connolly Ave, Inchicore, Dublin 8, Ireland"
+  },
+  {
+    "id": 1841,
+    "company_name": "St Peregrine's GAA",
+    "address": "Blakestown Road, Clonsilla, Dublin 15",
+    "updates": {
+      "latitude": 53.3969612,
+      "longitude": -6.4033987
+    },
+    "google_formatted_address": "Blakestown Rd, Dublin, Ireland"
+  },
+  {
+    "id": 1842,
+    "company_name": "Erin go Bragh GAA",
+    "address": "Clubhouse adjacent to Mary Mother of Hope NS, Clonsilla, Dublin 15",
+    "updates": {
+      "latitude": 53.38301490000001,
+      "longitude": -6.416528899999999
+    },
+    "google_formatted_address": "Clonee, Dublin 15, Ireland"
+  },
+  {
+    "id": 1843,
+    "company_name": "Coolmine Swim Club",
+    "address": "Coolmine Sports & Leisure Centre, Grove Road, Clonsilla, Dublin 15, D15 XW52",
+    "updates": {
+      "latitude": 53.38711559999999,
+      "longitude": -6.3958631
+    },
+    "google_formatted_address": "Grove Rd, Clonsilla, Dublin, Ireland"
+  },
+  {
+    "id": 1844,
+    "company_name": "Turtle Tots - Coolmine/Clonsilla",
+    "address": "Coolmine Sports & Leisure Centre, Grove Road, Clonsilla, Dublin 15",
+    "updates": {
+      "latitude": 53.38711559999999,
+      "longitude": -6.3958631
+    },
+    "google_formatted_address": "Grove Rd, Clonsilla, Dublin, Ireland"
+  },
+  {
+    "id": 1845,
+    "company_name": "Kantanni Karate-Do - Coolmine",
+    "address": "Coolmine Sports & Leisure Centre, Grove Road, Clonsilla, Dublin 15",
+    "updates": {
+      "latitude": 53.38711559999999,
+      "longitude": -6.3958631
+    },
+    "google_formatted_address": "Grove Rd, Clonsilla, Dublin, Ireland"
+  },
+  {
+    "id": 1846,
+    "company_name": "K-Star Academy - Ongar",
+    "address": "Ongar Community Centre, 15 Ongar Road, Ongar Village, Dublin 15, D15 VR72",
+    "updates": {
+      "latitude": 53.39330289999999,
+      "longitude": -6.4407594,
+      "eircode": "D15 VR72"
+    },
+    "google_formatted_address": "15 Ongar Distributor Road, Ongar Village, Dublin 15, D15 VR72, Ireland"
+  },
+  {
+    "id": 1847,
+    "company_name": "Master Joe Taekwondo - Ongar",
+    "address": "Ongar Community Centre, Dublin 15",
+    "updates": {
+      "latitude": 53.39330289999999,
+      "longitude": -6.4407594,
+      "eircode": "D15 VR72"
+    },
+    "google_formatted_address": "15 Ongar Distributor Road, Ongar Village, Dublin 15, D15 VR72, Ireland"
+  },
+  {
+    "id": 1848,
+    "company_name": "Fusion Elite All Star Cheer & Dance",
+    "address": "Ongar Community Centre, Dublin 15",
+    "updates": {
+      "latitude": 53.39330289999999,
+      "longitude": -6.4407594,
+      "eircode": "D15 VR72"
+    },
+    "google_formatted_address": "15 Ongar Distributor Road, Ongar Village, Dublin 15, D15 VR72, Ireland"
+  },
+  {
+    "id": 1849,
+    "company_name": "Ongar Chasers Basketball Club",
+    "address": "Ongar Community Centre / HETSS outdoor courts, Dublin 15",
+    "updates": {
+      "latitude": 53.39330289999999,
+      "longitude": -6.4407594,
+      "eircode": "D15 VR72"
+    },
+    "google_formatted_address": "15 Ongar Distributor Road, Ongar Village, Dublin 15, D15 VR72, Ireland"
+  },
+  {
+    "id": 1850,
+    "company_name": "Clare Connolly Dance & Ballet School",
+    "address": "Ongar Community Centre, Dublin 15",
+    "updates": {
+      "latitude": 53.39330289999999,
+      "longitude": -6.4407594,
+      "eircode": "D15 VR72"
+    },
+    "google_formatted_address": "15 Ongar Distributor Road, Ongar Village, Dublin 15, D15 VR72, Ireland"
+  },
+  {
+    "id": 1851,
+    "company_name": "Anne Walsh School of Irish Dancing",
+    "address": "Ongar Community Centre, Dublin 15",
+    "updates": {
+      "latitude": 53.39330289999999,
+      "longitude": -6.4407594,
+      "eircode": "D15 VR72"
+    },
+    "google_formatted_address": "15 Ongar Distributor Road, Ongar Village, Dublin 15, D15 VR72, Ireland"
+  },
+  {
+    "id": 1852,
+    "company_name": "Little Kickers - Ongar",
+    "address": "Ongar Community Centre, Dublin 15",
+    "updates": {
+      "latitude": 53.39330289999999,
+      "longitude": -6.4407594,
+      "eircode": "D15 VR72"
+    },
+    "google_formatted_address": "15 Ongar Distributor Road, Ongar Village, Dublin 15, D15 VR72, Ireland"
+  },
+  {
+    "id": 1853,
+    "company_name": "KidsComp - Ongar",
+    "address": "Ongar Community Centre, Dublin 15",
+    "updates": {
+      "latitude": 53.39330289999999,
+      "longitude": -6.4407594,
+      "eircode": "D15 VR72"
+    },
+    "google_formatted_address": "15 Ongar Distributor Road, Ongar Village, Dublin 15, D15 VR72, Ireland"
+  },
+  {
+    "id": 1854,
+    "company_name": "Fit Kids/Fit Teens (FKFT) - Hartstown",
+    "address": "Hartstown Sport & Leisure Community Centre, Hartstown Road, Dublin 15, D15 CY60",
+    "updates": {
+      "latitude": 53.3908906,
+      "longitude": -6.4109998
+    },
+    "google_formatted_address": "Hartstown Rd, Hartstown, Dublin, Ireland"
+  },
+  {
+    "id": 1855,
+    "company_name": "Power Academy of Irish Dance - Hartstown",
+    "address": "Hartstown Sport & Leisure Community Centre, Hartstown Road, Dublin 15",
+    "updates": {
+      "latitude": 53.3908906,
+      "longitude": -6.4109998
+    },
+    "google_formatted_address": "Hartstown Rd, Hartstown, Dublin, Ireland"
+  },
+  {
+    "id": 1856,
+    "company_name": "Dance Fusion Empire - Hartstown",
+    "address": "Hartstown Sport & Leisure Community Centre, Hartstown Road, Dublin 15",
+    "updates": {
+      "latitude": 53.3908906,
+      "longitude": -6.4109998
+    },
+    "google_formatted_address": "Hartstown Rd, Hartstown, Dublin, Ireland"
+  },
+  {
+    "id": 1857,
+    "company_name": "Corduff Karate Club",
+    "address": "Corduff Sports Centre, Blackcourt Road, Corduff, Dublin 15, D15 T861",
+    "updates": {
+      "latitude": 53.3982823,
+      "longitude": -6.3780199,
+      "eircode": "D15 T861"
+    },
+    "google_formatted_address": "Blackcourt Road, Corduff, Dublin 15, D15 T861, Ireland"
+  },
+  {
+    "id": 1858,
+    "company_name": "Na Fianna GAA (CLG Na Fianna)",
+    "address": "St Mobhi Road, Glasnevin, Dublin 9, D09 AY09",
+    "updates": {
+      "latitude": 53.3790859,
+      "longitude": -6.265715999999999,
+      "eircode": "D09 H7V0"
+    },
+    "google_formatted_address": "9 St Mobhi Rd, Glasnevin, Dublin 9, D09 H7V0, Ireland"
+  },
+  {
+    "id": 1859,
+    "company_name": "Glasnevin Lawn Tennis Club",
+    "address": "Ballymun Road, Glasnevin, Dublin 9, D09 DR76",
+    "updates": {
+      "latitude": 53.37811139999999,
+      "longitude": -6.268315599999999,
+      "eircode": "D09 A4N8"
+    },
+    "google_formatted_address": "9 Ballymun Rd, Botanic, Dublin 9, D09 A4N8, Ireland"
+  },
+  {
+    "id": 1860,
+    "company_name": "Glasnevin FC (The Diggers)",
+    "address": "Albert College Park, Ballymun Road, Glasnevin, Dublin 9, D09 A4N8",
+    "updates": {
+      "latitude": 53.37811139999999,
+      "longitude": -6.268315599999999,
+      "eircode": "D09 A4N8"
+    },
+    "google_formatted_address": "9 Ballymun Rd, Botanic, Dublin 9, D09 A4N8, Ireland"
+  },
+  {
+    "id": 1861,
+    "company_name": "Artzone - Glasnevin",
+    "address": "Na Fianna GAA Club, Glasnevin, Dublin 9",
+    "updates": {
+      "latitude": 53.3750401,
+      "longitude": -6.2650956
+    },
+    "google_formatted_address": "Na Fianna GAA Club, Drumcondra, Dublin, Co. Dublin, Ireland"
+  },
+  {
+    "id": 1862,
+    "company_name": "PlayAct Drama School - Glasnevin",
+    "address": "Glasnevin Educate Together NS, Griffith Avenue, Glasnevin, D11 A2YT",
+    "updates": {
+      "latitude": 53.3789756,
+      "longitude": -6.2697481,
+      "eircode": "D11 A2YT"
+    },
+    "google_formatted_address": "Griffith Ave, Glasnevin, Dublin, D11 A2YT, Ireland"
+  },
+  {
+    "id": 1863,
+    "company_name": "Glasnevin Academy of Music",
+    "address": "210 Botanic Avenue, Dublin 9, D09 FN70",
+    "updates": {
+      "latitude": 53.37259299999999,
+      "longitude": -6.2681341,
+      "eircode": "D09 FN70"
+    },
+    "google_formatted_address": "210 Botanic Ave, Botanic, Dublin 9, D09 FN70, Ireland"
+  },
+  {
+    "id": 1864,
+    "company_name": "Playright Music Ltd - Glasnevin",
+    "address": "Glasnevin Avenue, Dublin 9",
+    "updates": {
+      "latitude": 53.3901693,
+      "longitude": -6.2744222
+    },
+    "google_formatted_address": "Glasnevin Ave, Dublin, Ireland"
+  },
+  {
+    "id": 1865,
+    "company_name": "Phibsboro Chess Club",
+    "address": "Clareville Community Centre, Claremont Lawns, Glasnevin, D11 F8K1",
+    "updates": {
+      "latitude": 53.3680915,
+      "longitude": -6.276471099999999,
+      "eircode": "D11 F8K1"
+    },
+    "google_formatted_address": "26-32 Claremont Lawns, Cabra East, Dublin, D11 F8K1, Ireland"
+  },
+  {
+    "id": 1866,
+    "company_name": "DCU Sport Summer Camps - Glasnevin",
+    "address": "DCU Glasnevin Campus, Dublin 9",
+    "updates": {
+      "latitude": 53.3858429,
+      "longitude": -6.2589636,
+      "eircode": "9"
+    },
+    "google_formatted_address": "630-, Administration building, 672 Collins Ave Ext, Artane - Whitehall, Dublin 9, 9, Ireland"
+  },
+  {
+    "id": 1867,
+    "company_name": "Miss Eileene Ballet",
+    "address": "All Saint's Church Hall, 30 Phibsborough Road, Dublin 7",
+    "updates": {
+      "latitude": 53.3580646,
+      "longitude": -6.273737199999999,
+      "eircode": "D07 P3X0"
+    },
+    "google_formatted_address": "All Saints Church Hall, 30A Phibsborough Rd, Phibsborough, Dublin 7, D07 P3X0, Ireland"
+  },
+  {
+    "id": 1868,
+    "company_name": "Phibsboro Library - Toddler Storytime",
+    "address": "Phibsboro Library, Blacquiere Bridge, off North Circular Road, Dublin 7",
+    "updates": {
+      "latitude": 53.3606764,
+      "longitude": -6.271145799999999,
+      "eircode": "D07 H4X2"
+    },
+    "google_formatted_address": "Blaquiere bridge, 380 N Circular Rd, Cabra East, Dublin 7, D07 H4X2, Ireland"
+  },
+  {
+    "id": 1869,
+    "company_name": "Livingi Club Phibsboro",
+    "address": "Unit 2 & 3, Crossguns Business Park, Royal Canal Bank, Phibsborough, Dublin 7",
+    "updates": {
+      "latitude": 53.3639614,
+      "longitude": -6.2716115
+    },
+    "google_formatted_address": "Cross Guns Business Park, Royal Canal Bank, Phibsborough, Dublin 7, Ireland"
+  },
+  {
+    "id": 1870,
+    "company_name": "Taking Flight - Aerial Arts",
+    "address": "Unit 4, Cross Guns Business Park, Royal Canal Bank, Phibsborough, Dublin 7",
+    "updates": {
+      "latitude": 53.3639614,
+      "longitude": -6.2716115
+    },
+    "google_formatted_address": "Cross Guns Business Park, Royal Canal Bank, Phibsborough, Dublin 7, Ireland"
+  },
+  {
+    "id": 1871,
+    "company_name": "St Vincents GAA",
+    "address": "P\u00e1irc Naomh Uinsionn, Malahide Road, Marino, Dublin 3, D03 YX08",
+    "updates": {
+      "latitude": 53.3652811,
+      "longitude": -6.2295083,
+      "eircode": "D03 H277"
+    },
+    "google_formatted_address": "3 Malahide Rd, Marino, Dublin 3, D03 H277, Ireland"
+  },
+  {
+    "id": 1872,
+    "company_name": "Hombu Dojo Karate - Marino",
+    "address": "Carleton Hall, Marino Community Centre, 53a Shelmartin Avenue, Marino, Dublin 3",
+    "updates": {
+      "latitude": 53.3673371,
+      "longitude": -6.2374997,
+      "eircode": "D03 X684"
+    },
+    "google_formatted_address": "53A Shelmartin Ave, Dublin 3, D03 X684, Ireland"
+  },
+  {
+    "id": 1873,
+    "company_name": "Clontarf School of Music - Marino",
+    "address": "6b Saint Aidan's Park Road, Marino, Dublin 3",
+    "updates": {
+      "latitude": 53.3648866,
+      "longitude": -6.2303684,
+      "eircode": "D03 Y062"
+    },
+    "google_formatted_address": "6b St Aidan's Park Rd, Marino, Dublin, D03 Y062, Ireland"
+  },
+  {
+    "id": 1874,
+    "company_name": "Marino Music Studio",
+    "address": "13 Saint Declan's Road, Marino, Dublin 3, D03 P960",
+    "updates": {
+      "latitude": 53.368311,
+      "longitude": -6.2295412,
+      "eircode": "D03 P960"
+    },
+    "google_formatted_address": "13 St Declan's Rd, Dublin 3, D03 P960, Ireland"
+  },
+  {
+    "id": 1875,
+    "company_name": "Belvedere FC",
+    "address": "Fairview Park / Clontarf Road Complex, Fairview, Dublin 3",
+    "updates": {
+      "latitude": 53.3622225,
+      "longitude": -6.2327073,
+      "eircode": "D03 XF90"
+    },
+    "google_formatted_address": "Fairview Park, Fairview, Dublin, D03 XF90, Ireland"
+  },
+  {
+    "id": 1876,
+    "company_name": "St Joseph's/OCB GAA",
+    "address": "Fairview Park, Clontarf Road, Fairview, Dublin 3",
+    "updates": {
+      "latitude": 53.3622225,
+      "longitude": -6.2327073,
+      "eircode": "D03 XF90"
+    },
+    "google_formatted_address": "Fairview Park, Fairview, Dublin, D03 XF90, Ireland"
+  },
+  {
+    "id": 1877,
+    "company_name": "SVJ Karate Club",
+    "address": "St. Joseph's Primary School, Fairview, Dublin 3",
+    "updates": {
+      "latitude": 53.3648634,
+      "longitude": -6.2332586
+    },
+    "google_formatted_address": "Marino Park Ave, Dublin, Ireland"
+  },
+  {
+    "id": 1878,
+    "company_name": "Naomh Fionnbarra GAA",
+    "address": "Fassaugh Avenue, Cabra, Dublin 7",
+    "updates": {
+      "latitude": 53.3671235,
+      "longitude": -6.2953144
+    },
+    "google_formatted_address": "Faussagh Ave, Dublin, Ireland"
+  },
+  {
+    "id": 1879,
+    "company_name": "Bohemian FC Youths",
+    "address": "Inspire Fitness Centre astro pitches, Ratoath Road, Cabra West, Dublin 7, D07 V4KP",
+    "updates": {
+      "latitude": 53.3642007,
+      "longitude": -6.3009536,
+      "eircode": "D07 V4KP"
+    },
+    "google_formatted_address": "Ratoath Rd, Cabra West, Dublin 7, D07 V4KP, Ireland"
+  },
+  {
+    "id": 1880,
+    "company_name": "Inspire Splash Academy",
+    "address": "Inspire Fitness Centre, Ratoath Road, Cabra West, Dublin 7, D07 V4KP",
+    "updates": {
+      "latitude": 53.3642007,
+      "longitude": -6.3009536,
+      "eircode": "D07 V4KP"
+    },
+    "google_formatted_address": "Ratoath Rd, Cabra West, Dublin 7, D07 V4KP, Ireland"
+  },
+  {
+    "id": 1881,
+    "company_name": "Dublin School of Dance and Etiquette (Third Arabesque)",
+    "address": "Cara Hall, Raheny, Dublin 5",
+    "updates": {
+      "latitude": 53.3778072,
+      "longitude": -6.1792437
+    },
+    "google_formatted_address": "Cara Hall Community Centre, All Saints Dr, Clontarf East, Dublin 5, Ireland"
+  },
+  {
+    "id": 1882,
+    "company_name": "Hombu Dojo Karate - Raheny",
+    "address": "All Saints Hall, Raheny, Dublin 5",
+    "updates": {
+      "latitude": 53.3840559,
+      "longitude": -6.1920739
+    },
+    "google_formatted_address": "Donaghmede, Dublin 5, Ireland"
+  },
+  {
+    "id": 1883,
+    "company_name": "St Paul's Karate Club",
+    "address": "St Paul's College, Raheny, Dublin 5",
+    "updates": {
+      "latitude": 53.3730031,
+      "longitude": -6.1930273,
+      "eircode": "D05 C673"
+    },
+    "google_formatted_address": "Sybil Hill Rd, Clontarf East, Dublin, D05 C673, Ireland"
+  },
+  {
+    "id": 1884,
+    "company_name": "Raheny GAA",
+    "address": "C.L.G Rath \u00c9anna, 2 All Saints Drive, Raheny, D05 WF44",
+    "updates": {
+      "latitude": 53.3785381,
+      "longitude": -6.1785087,
+      "eircode": "D05 WF44"
+    },
+    "google_formatted_address": "2 All Saints Dr, Raheny, Dublin, D05 WF44, Ireland"
+  },
+  {
+    "id": 1885,
+    "company_name": "Raheny United FC",
+    "address": "RSA Astro Pitch, St Anne's Park / All Saints Drive, Raheny",
+    "updates": {
+      "latitude": 53.3718307,
+      "longitude": -6.179344599999999
+    },
+    "google_formatted_address": "St. Anne's Park, Clontarf East, Dublin, Ireland"
+  },
+  {
+    "id": 1886,
+    "company_name": "St Anne's Park Tennis Club",
+    "address": "All Saints Road, Raheny, D05 X6Y3",
+    "updates": {
+      "latitude": 53.3753468,
+      "longitude": -6.1804259
+    },
+    "google_formatted_address": "All Saints Rd, Clontarf East, Dublin, Ireland"
+  },
+  {
+    "id": 1887,
+    "company_name": "Raheny Piano School",
+    "address": "616 Howth Road, Dublin 5",
+    "updates": {
+      "latitude": 53.3801302,
+      "longitude": -6.1679534,
+      "eircode": "D05 CY26"
+    },
+    "google_formatted_address": "616 Howth Rd, Raheny - St. Assam, Dublin 5, D05 CY26, Ireland"
+  },
+  {
+    "id": 1888,
+    "company_name": "Raheny Shamrock Athletic Club",
+    "address": "Raheny, Dublin 5",
+    "updates": {
+      "latitude": 53.3804065,
+      "longitude": -6.1750943
+    },
+    "google_formatted_address": "Raheny, Dublin, Ireland"
+  },
+  {
+    "id": 1889,
+    "company_name": "The Jam - Art & Drama",
+    "address": "CARA Hall, Raheny, Dublin 5",
+    "updates": {
+      "latitude": 53.3778072,
+      "longitude": -6.1792437
+    },
+    "google_formatted_address": "Cara Hall Community Centre, All Saints Dr, Clontarf East, Dublin 5, Ireland"
+  },
+  {
+    "id": 1890,
+    "company_name": "Trinity Gaels GAA",
+    "address": "Drumnigh, Donaghmede, Dublin 13",
+    "updates": {
+      "latitude": 53.3944487,
+      "longitude": -6.149467899999999
+    },
+    "google_formatted_address": "Kilbarrack Upper, Dublin 13, Ireland"
+  },
+  {
+    "id": 1891,
+    "company_name": "Trinity Donaghmede FC",
+    "address": "Father Collins Park, Hole in the Wall Road, Donaghmede, Dublin 13",
+    "updates": {
+      "latitude": 53.404747,
+      "longitude": -6.1630996
+    },
+    "google_formatted_address": "Hole in The Wall Rd, Co. Dublin, Ireland"
+  },
+  {
+    "id": 1892,
+    "company_name": "Trinity Sports & Leisure Club",
+    "address": "Hole in the Wall Road, Donaghmede, Dublin 13, D13 X651",
+    "updates": {
+      "latitude": 53.4035692,
+      "longitude": -6.1628038
+    },
+    "google_formatted_address": "Hole in The Wall Rd, Donaghmede, Dublin, Ireland"
+  },
+  {
+    "id": 1893,
+    "company_name": "Cormorant Swimming Club",
+    "address": "Trinity Sports & Leisure Club, Hole in the Wall Road, Donaghmede",
+    "updates": {
+      "latitude": 53.4023063,
+      "longitude": -6.1613704
+    },
+    "google_formatted_address": "Father Collins Park, Hole in The Wall Rd, Donaghmede, Dublin, Ireland"
+  },
+  {
+    "id": 1894,
+    "company_name": "Naomh Barr\u00f3g GAA",
+    "address": "Kilbarrack Parade, Kilbarrack Upper, Dublin 5",
+    "updates": {
+      "latitude": 53.3906516,
+      "longitude": -6.1521191
+    },
+    "google_formatted_address": "Kilbarrack Parade, Kilbarrack Upper, Dublin, Ireland"
+  },
+  {
+    "id": 1895,
+    "company_name": "Naomh Barr\u00f3g Juniors Chess Club",
+    "address": "Kilbarrack Parade, Kilbarrack, Dublin 5",
+    "updates": {
+      "latitude": 53.3906516,
+      "longitude": -6.1521191
+    },
+    "google_formatted_address": "Kilbarrack Parade, Kilbarrack Upper, Dublin, Ireland"
+  },
+  {
+    "id": 1896,
+    "company_name": "Sean Gilligan Performing Arts - Kilbarrack",
+    "address": "Star Studios, Kilbarrack Shopping Centre, Swan's Nest Road, Kilbarrack, Dublin 5, D05 PT86",
+    "updates": {
+      "latitude": 53.3890016,
+      "longitude": -6.1655436
+    },
+    "google_formatted_address": "Swan's Nest Rd, Donaghmede, Dublin, Ireland"
+  },
+  {
+    "id": 1897,
+    "company_name": "Compound Martial Arts",
+    "address": "24 Butterly Business Park, Kilmore Road, Artane, Dublin 5",
+    "updates": {
+      "latitude": 53.3849113,
+      "longitude": -6.2138399
+    },
+    "google_formatted_address": "Unit 66, Butterly Business Park, Unit 67, Kilmore Rd, Artane, Dublin 5, Ireland"
+  },
+  {
+    "id": 1898,
+    "company_name": "St. Paul's Artane FC",
+    "address": "Clubhouse Astropitch, Gracefield Avenue, Artane, Dublin 5",
+    "updates": {
+      "latitude": 53.3785323,
+      "longitude": -6.1947842,
+      "eircode": "D05 DR12"
+    },
+    "google_formatted_address": "5 Gracefield Ave, Donaghmede, Dublin 5, D05 DR12, Ireland"
+  },
+  {
+    "id": 1899,
+    "company_name": "Sean Gilligan Performing Arts - Artane",
+    "address": "Artane, Dublin 5",
+    "updates": {
+      "latitude": 53.38252749999999,
+      "longitude": -6.1971549
+    },
+    "google_formatted_address": "Artane, Dublin, Ireland"
+  },
+  {
+    "id": 1900,
+    "company_name": "Elm Mount Chess Club",
+    "address": "Artane Beaumont Family Recreation Centre, Kilmore Road, Artane, Dublin 5",
+    "updates": {
+      "latitude": 53.384851,
+      "longitude": -6.216480700000001,
+      "eircode": "D05 W603"
+    },
+    "google_formatted_address": "Artane, Dublin, D05 W603, Ireland"
+  },
+  {
+    "id": 1901,
+    "company_name": "Rockfield Tennis Club",
+    "address": "Rockfield Park, Beaumont, Dublin 5",
+    "updates": {
+      "latitude": 53.3812436,
+      "longitude": -6.2194327
+    },
+    "google_formatted_address": "Rockfield Park, Rockfield Park, Thorndale Park, Artane, Dublin 5, Ireland"
+  },
+  {
+    "id": 1902,
+    "company_name": "Parnell's GAA Club",
+    "address": "The Clubhouse, Main Street, Coolock, Dublin 5",
+    "updates": {
+      "latitude": 53.3886471,
+      "longitude": -6.2008298
+    },
+    "google_formatted_address": "Main St, Dublin, Ireland"
+  },
+  {
+    "id": 1903,
+    "company_name": "Coolock Kenpo Karate Club",
+    "address": "Scout Hall, Coolock Village, Coolock, Dublin 5",
+    "updates": {
+      "latitude": 53.3840559,
+      "longitude": -6.1920739
+    },
+    "google_formatted_address": "Donaghmede, Dublin 5, Ireland"
+  },
+  {
+    "id": 1904,
+    "company_name": "Bohemian FC Academy",
+    "address": "Oscar Traynor Centre, Oscar Traynor Road, Coolock, Dublin 17",
+    "updates": {
+      "latitude": 53.3933218,
+      "longitude": -6.2092489
+    },
+    "google_formatted_address": "Oscar Traynor Rd, Dublin, Ireland"
+  },
+  {
+    "id": 1905,
+    "company_name": "Astropark Coolock",
+    "address": "Oscar Traynor Road / Coolock Lane, Coolock, Dublin 17, D17 Y998",
+    "updates": {
+      "latitude": 53.3977995,
+      "longitude": -6.2261027
+    },
+    "google_formatted_address": "Coolock Ln, Dublin, Co. Dublin, Ireland"
+  },
+  {
+    "id": 1906,
+    "company_name": "Olympus Dance & Music School",
+    "address": "Unit 10C, Ringuard House, Malahide Industrial Estate, Greencastle Parade, Dublin 17",
+    "updates": {
+      "latitude": 53.3944668,
+      "longitude": -6.1953992
+    },
+    "google_formatted_address": "Greencastle Parade, Priorswood, Dublin, Ireland"
+  },
+  {
+    "id": 1907,
+    "company_name": "Larkhill Karate Club",
+    "address": "Unit 4, Santry Hall Industrial Estate, Santry, Dublin 9, D09 V409",
+    "updates": {
+      "latitude": 53.3946119,
+      "longitude": -6.2489054,
+      "eircode": "D09 V409"
+    },
+    "google_formatted_address": "Whitehall, Dublin, Co. Dublin, D09 V409, Ireland"
+  },
+  {
+    "id": 1908,
+    "company_name": "Grange Gymnastics Club",
+    "address": "Unit 10D, Airways Industrial Estate, Boeing Road, Santry, Dublin 9",
+    "updates": {
+      "latitude": 53.4056113,
+      "longitude": -6.2339344,
+      "eircode": "D17 P863"
+    },
+    "google_formatted_address": "9 Boeing Rd, Airways Industrial Estate, Dublin, D17 P863, Ireland"
+  },
+  {
+    "id": 1909,
+    "company_name": "Thunderstruck Stage School - Santry",
+    "address": "Unit 5, Santry Hall Industrial Estate, Santry, Dublin 9",
+    "updates": {
+      "latitude": 53.3816098,
+      "longitude": -6.2465221
+    },
+    "google_formatted_address": "Whitehall, Dublin 9, Ireland"
+  },
+  {
+    "id": 1910,
+    "company_name": "Starlights GFC",
+    "address": "St Pappan's Parochial Hall, Santry village, Dublin 9",
+    "updates": {
+      "latitude": 53.4022306,
+      "longitude": -6.2373559
+    },
+    "google_formatted_address": "Santry, Dublin, Ireland"
+  },
+  {
+    "id": 1911,
+    "company_name": "First Swim - Santry/Northwood",
+    "address": "Gulliver's Retail Park, Northwood, Santry, Dublin 9",
+    "updates": {
+      "latitude": 53.4047005,
+      "longitude": -6.2527073
+    },
+    "google_formatted_address": "Northwood Ave, Santry Demesne, Dublin, Ireland"
+  },
+  {
+    "id": 1912,
+    "company_name": "Sportslink - Aqua Tots",
+    "address": "Furry Park, Swords Road, Santry, Dublin 9",
+    "updates": {
+      "latitude": 53.4063935,
+      "longitude": -6.2386708
+    },
+    "google_formatted_address": "Furry Park, Swords Rd, Santry, Dublin 9, Ireland"
+  },
+  {
+    "id": 1913,
+    "company_name": "Finglas Celtic FC",
+    "address": "Finglas Celtic FC, Kilshane Road, Finglas West, Dublin 11, D11 VX43",
+    "updates": {
+      "latitude": 53.3852019,
+      "longitude": -6.3184297
+    },
+    "google_formatted_address": "Kilshane Rd, Finglas South, Dublin, Ireland"
+  },
+  {
+    "id": 1914,
+    "company_name": "Kobukan Kobudo Renmei - Finglas",
+    "address": "Meakstown Community Centre, Lanesborough Park, Finglas, Dublin 11",
+    "updates": {
+      "latitude": 53.4033893,
+      "longitude": -6.3012456
+    },
+    "google_formatted_address": "Lanesborough Park, Dublin, Ireland"
+  },
+  {
+    "id": 1915,
+    "company_name": "House of Swag - Finglas",
+    "address": "2D Century Business Park, Finglas, Dublin 11, D11 VP46",
+    "updates": {
+      "latitude": 53.401622,
+      "longitude": -6.3005146
+    },
+    "google_formatted_address": "Century Business Park, St Margaret's Rd, Finglas, Dublin 11, Ireland"
+  },
+  {
+    "id": 1916,
+    "company_name": "Little Kickers - Meakstown/Finglas",
+    "address": "Meakstown Community Centre, Lanesborough Park, Dublin 11, D11 N23T",
+    "updates": {
+      "latitude": 53.4033893,
+      "longitude": -6.3012456
+    },
+    "google_formatted_address": "Lanesborough Park, Dublin, Ireland"
+  },
+  {
+    "id": 1917,
+    "company_name": "FKFT Dance School - Finglas",
+    "address": "W.F.T.R.A Hall, Finglas, Dublin 11",
+    "updates": {
+      "latitude": 53.3915813,
+      "longitude": -6.2985252
+    },
+    "google_formatted_address": "Gofton Hall, Finglas North, Dublin, Ireland"
+  },
+  {
+    "id": 1918,
+    "company_name": "Axis Ballymun",
+    "address": "Axis, Main Street, Ballymun, Dublin 9, D09 Y9W0",
+    "updates": {
+      "latitude": 53.3816098,
+      "longitude": -6.2465221
+    },
+    "google_formatted_address": "Whitehall, Dublin 9, Ireland"
+  },
+  {
+    "id": 1919,
+    "company_name": "Sport Taekwondo Ireland - Ballymun",
+    "address": "Trinity Comprehensive School, Ballymun Road, Dublin 11",
+    "updates": {
+      "latitude": 53.3853859,
+      "longitude": -6.2651986
+    },
+    "google_formatted_address": "Ballymun Rd, Dublin, Ireland"
+  },
+  {
+    "id": 1920,
+    "company_name": "Ballymun Boxing Club",
+    "address": "Poppintree Community Sports Centre, Balbutcher Lane, Ballymun, Dublin 9, D09 N9X6",
+    "updates": {
+      "latitude": 53.403063,
+      "longitude": -6.2744743
+    },
+    "google_formatted_address": "Balbutcher Ln, Ballymun, Dublin, Ireland"
   }
 ]

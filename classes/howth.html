@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Howth | Kids Patch</title>
+    <meta name="description" content="Browse 9 kids activities and classes in Howth, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/howth.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Howth | Kids Patch">
+    <meta property="og:description" content="Browse 9 kids activities and classes in Howth, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/howth.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Howth | Kids Patch">
+    <meta name="twitter:description" content="Browse 9 kids activities and classes in Howth, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=3646260db5">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Howth", "description": "Browse 9 kids activities and classes in Howth, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/howth.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 9, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/raheny-library-toddler-group-and-junior-book-clubs-265.html", "name": "Raheny Library - Toddler Group and Junior Book Clubs"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/beann-adair-451.html", "name": "Beann Éadair"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/howth-castle-cookery-school-493.html", "name": "Howth Castle Cookery School"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/baby-sensory-ireland-1001.html", "name": "Baby Sensory Ireland"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/gentle-hands-baby-massage-1040.html", "name": "Gentle Hands Baby Massage"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/howth-yacht-club-1801.html", "name": "Howth Yacht Club"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/howth-music-school-1802.html", "name": "Howth Music School"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/howth-library-toddler-time-1804.html", "name": "Howth Library - Toddler Time"}, {"@type": "ListItem", "position": 9, "url": "https://www.kidspatch.ie/business/raheny-piano-school-1887.html", "name": "Raheny Piano School"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Howth</nav>
+        <h1>Kids Activities in Howth</h1>
+        <p class="landing-intro">Browse 9 kids activities and classes in Howth. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="265">
+        <div class="card-image"><img class="banner-img" src="../images/dublincity-ie-cace36.jpg" alt="Raheny Library - Toddler Group and Junior Book Clubs" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/dublincity-ie-cace36.svg" alt="Raheny Library - Toddler Group and Junior Book Clubs logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Raheny Library - Toddler Group and Junior Book Clubs</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Raheny Library offers activities for families free of charge - also grab yourself a library card and borrow some books when you visit. Location: Raheny Library, Howth Road, Dublin 5. Cost: free. Contact: rahenylibrary@dublincity.ie. Parent and Toddler Group: the perfect way to meet new parents/carers of babies and toddlers, no booking required, just pop along. Day/Time: every Tuesday morning (excluding Tuesdays after bank holidays), 10.30-11.30am. &#x27;The Brainy Bees Book Club&#x27; / Junior Book Club: the perfect retreat for book-loving kids, suitable for ages 10-12 years - books are available to borrow from the library, places are limited, and you should check with the library in advance of booking your child&#x27;s place. Day/Time: last Tuesday of every month, 3.15-4pm (confirm with the library, as the day may change).</p>
+            
+            <a href="../business/raheny-library-toddler-group-and-junior-book-clubs-265.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="451">
+        <div class="card-image"><img class="banner-img" src="../images/beanneadair-ie.jpg" alt="Beann Éadair" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/beanneadair-ie.jpg" alt="Beann Éadair logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Beann Éadair</h3>
+            <div class="tag-container"><span class="tag">GAA</span></div>
+            <p class="description">Located in Howth, Beann Éadair GAA is one of Ireland&#x27;s oldest clubs, founded in 1885. With a strong community spirit and deep roots in Gaelic games, the club has grown rapidly in recent years and now boasts over 1,400 members. Beann Éadair offers juvenile football and hurling/camogie for boys and girls from Under 8 to Under 16. All teams play both codes and are led by a dedicated group of mentors.</p>
+            
+            <a href="../business/beann-adair-451.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="493">
+        <div class="card-image"><img class="banner-img" src="../images/howthcastlecookeryschool-ie.jpg" alt="Howth Castle Cookery School" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/howthcastlecookeryschool-ie.png" alt="Howth Castle Cookery School logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Howth Castle Cookery School</h3>
+            <div class="tag-container"><span class="tag">Cooking</span></div>
+            <p class="description">Howth Castle Cookery School offers hands-on workshops designed to inspire the next generation of chefs. Set in the magnificent castle kitchen, these 2-hour classes are perfect for teens and tweens looking to develop their cooking skills in a fun and engaging environment. Workshops cover a range of exciting cuisines, including Mexican street food, sushi, gourmet pizzas, Chinese street food, pasta making, and curry &amp; naan, with new classes added regularly so there&#x27;s always something fresh to try. No matter their experience level, young chefs will learn essential techniques from professional chefs, gaining confidence and independence in the kitchen.</p>
+            
+            <a href="../business/howth-castle-cookery-school-493.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1001">
+        <div class="card-image"><img class="banner-img" src="../images/babysensory-ie-f2c0a4.jpg" alt="Baby Sensory Ireland" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/babysensory-ie-f2c0a4.png" alt="Baby Sensory Ireland logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Baby Sensory Ireland</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">An educational, interactive and developmental programme which will help your baby learn and develop important skills. Classes are built on your baby&#x27;s natural play-rest-play cycle to ensure they are not overstimulated. Classes are located in multiple locations across Ireland - please see the website for dates and times. Classes are also run during school term time. An ideal place to meet new parents, ask questions, and share ideas, experiences and memories together.</p>
+            
+            <a href="../business/baby-sensory-ireland-1001.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1040">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Gentle Hands Baby Massage</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">Baby massage classes teach parents how to use gentle, rhythmic strokes to massage their babies, promoting bonding, relaxation, and potentially aiding in digestion and sleep. Classes run for 5 weeks. Swords term starts Tuesday 2nd September, 10-11.30am. Howth term starts Thursday 4th September, 10-11.30am. Most health insurance will refund up to €100 depending on your level of cover.</p>
+            
+            <a href="../business/gentle-hands-baby-massage-1040.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1801">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Howth Yacht Club</h3>
+            <div class="tag-container"><span class="tag">Watersports</span></div>
+            <p class="description">Junior sailing courses and members&#x27; courses for kids and teens.</p>
+            
+            <a href="../business/howth-yacht-club-1801.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1802">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Howth Music School</h3>
+            <div class="tag-container"><span class="tag">Music</span></div>
+            <p class="description">Music lessons for children and adults, with reduced rates for beginner juniors.</p>
+            
+            <a href="../business/howth-music-school-1802.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1804">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Howth Library - Toddler Time</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Drop-in toddler story and play session, Thursdays.</p>
+            <div class="landing-card-meta">Thursday &middot; from 10:00 &middot; Drop-in</div>
+            <a href="../business/howth-library-toddler-time-1804.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1887">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Raheny Piano School</h3>
+            <div class="tag-container"><span class="tag">Music</span></div>
+            <p class="description">Piano lessons.</p>
+            
+            <a href="../business/raheny-piano-school-1887.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 265, "lat": 53.3646366, "lon": -6.2260629, "name": "Raheny Library - Toddler Group and Junior Book Clubs", "category": "Parent-and-toddler", "url": "../business/raheny-library-toddler-group-and-junior-book-clubs-265.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 451, "lat": 53.3767384, "lon": -6.0633636, "name": "Beann Éadair", "category": "GAA", "url": "../business/beann-adair-451.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 493, "lat": 53.3864313, "lon": -6.0790638, "name": "Howth Castle Cookery School", "category": "Cooking", "url": "../business/howth-castle-cookery-school-493.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1001, "lat": 53.3645733, "lon": -6.2261993, "name": "Baby Sensory Ireland", "category": "Developmental", "url": "../business/baby-sensory-ireland-1001.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1040, "lat": 53.3727617, "lon": -6.0588426, "name": "Gentle Hands Baby Massage", "category": "Developmental", "url": "../business/gentle-hands-baby-massage-1040.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1801, "lat": 53.3881401, "lon": -6.0701105, "name": "Howth Yacht Club", "category": "Watersports", "url": "../business/howth-yacht-club-1801.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1802, "lat": 53.3871638, "lon": -6.0653422, "name": "Howth Music School", "category": "Music", "url": "../business/howth-music-school-1802.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1804, "lat": 53.3855493, "lon": -6.064727, "name": "Howth Library - Toddler Time", "category": "Parent-and-toddler", "url": "../business/howth-library-toddler-time-1804.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1887, "lat": 53.3801302, "lon": -6.1679534, "name": "Raheny Piano School", "category": "Music", "url": "../business/raheny-piano-school-1887.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

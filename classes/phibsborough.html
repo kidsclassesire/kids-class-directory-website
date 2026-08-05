@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Phibsborough | Kids Patch</title>
+    <meta name="description" content="Browse 5 kids activities and classes in Phibsborough, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/phibsborough.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Phibsborough | Kids Patch">
+    <meta property="og:description" content="Browse 5 kids activities and classes in Phibsborough, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/phibsborough.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Phibsborough | Kids Patch">
+    <meta name="twitter:description" content="Browse 5 kids activities and classes in Phibsborough, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=3646260db5">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Phibsborough", "description": "Browse 5 kids activities and classes in Phibsborough, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/phibsborough.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 5, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/yoni-hearts-club-baby-massage-mum-me-yoga-301.html", "name": "Yoni Hearts Club Baby Massage & Mum & Me Yoga"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/balance-ireland-447.html", "name": "Balance Ireland"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/miss-eileene-ballet-1867.html", "name": "Miss Eileene Ballet"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/livingi-club-phibsboro-1869.html", "name": "Livingi Club Phibsboro"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/taking-flight-aerial-arts-1870.html", "name": "Taking Flight - Aerial Arts"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Phibsborough</nav>
+        <h1>Kids Activities in Phibsborough</h1>
+        <p class="landing-intro">Browse 5 kids activities and classes in Phibsborough. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="301">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Yoni Hearts Club Baby Massage &amp; Mum &amp; Me Yoga</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">Location: Dublin City, Dublin (locations may vary - contact us through email or social media). Baby Massage: taught by a certified infant massage instructor with IAIM. Time: Fridays, 10.30am-12pm. Everything provided including refreshments - a 5-week in-person course, with an online option for weeks you&#x27;re unable to attend in person. Mum and Baby Yoga: course/drop-in if available, light snack provided after class. Time: Tuesdays, 10.30-11.30am.</p>
+            
+            <a href="../business/yoni-hearts-club-baby-massage-mum-me-yoga-301.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="447">
+        <div class="card-image"><img class="banner-img" src="../images/tbi-ie.jpg" alt="Balance Ireland" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/tbi-ie.png" alt="Balance Ireland logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Balance Ireland</h3>
+            <div class="tag-container"><span class="tag">Sports</span></div>
+            <p class="description">Aikido is a dynamic martial art that combines practical self-defense techniques with a focus on building confidence and agility. Kids aged 7 to 15 can enjoy getting fit, increasing flexibility, and learning important skills like anti-bullying and coordination in a supportive and fun environment. Classes are led by highly qualified, Garda-vetted instructors with over 20 years of experience. Safety and wellbeing are a top priority, and all classes follow national child protection guidelines. Classes run with the school term and pause during holidays and midterm breaks. Wear tracksuit pants and a t-shirt for your first class.</p>
+            
+            <a href="../business/balance-ireland-447.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1867">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Miss Eileene Ballet</h3>
+            <div class="tag-container"><span class="tag">Dance</span></div>
+            <p class="description">Ballet classes at All Saint&#x27;s Church Hall.</p>
+            
+            <a href="../business/miss-eileene-ballet-1867.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1869">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Livingi Club Phibsboro</h3>
+            <div class="tag-container"><span class="tag">Martial Arts</span></div>
+            <p class="description">Kids jiujitsu classes.</p>
+            
+            <a href="../business/livingi-club-phibsboro-1869.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1870">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Taking Flight - Aerial Arts</h3>
+            <div class="tag-container"><span class="tag">Gymnastics</span></div>
+            <p class="description">Aerial arts classes for kids and teens; summer camps confirmed for ages 7-17.</p>
+            
+            <a href="../business/taking-flight-aerial-arts-1870.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 301, "lat": 53.36383, "lon": -6.27095, "name": "Yoni Hearts Club Baby Massage & Mum & Me Yoga", "category": "Developmental", "url": "../business/yoni-hearts-club-baby-massage-mum-me-yoga-301.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 447, "lat": 53.3639614, "lon": -6.2716115, "name": "Balance Ireland", "category": "Sports", "url": "../business/balance-ireland-447.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1867, "lat": 53.3580646, "lon": -6.2737372, "name": "Miss Eileene Ballet", "category": "Dance", "url": "../business/miss-eileene-ballet-1867.html", "minAge": 3, "maxAge": 5, "price": null, "free": false}, {"id": 1869, "lat": 53.3639614, "lon": -6.2716115, "name": "Livingi Club Phibsboro", "category": "Martial Arts", "url": "../business/livingi-club-phibsboro-1869.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1870, "lat": 53.3639614, "lon": -6.2716115, "name": "Taking Flight - Aerial Arts", "category": "Gymnastics", "url": "../business/taking-flight-aerial-arts-1870.html", "minAge": 7, "maxAge": 17, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

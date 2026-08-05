@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Finglas | Kids Patch</title>
+    <meta name="description" content="Browse 7 kids activities and classes in Finglas, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/finglas.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Finglas | Kids Patch">
+    <meta property="og:description" content="Browse 7 kids activities and classes in Finglas, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/finglas.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Finglas | Kids Patch">
+    <meta name="twitter:description" content="Browse 7 kids activities and classes in Finglas, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=3646260db5">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Finglas", "description": "Browse 7 kids activities and classes in Finglas, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/finglas.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 7, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/finglas-baby-toddler-groups-breastfeeding-baby-massage-226.html", "name": "Finglas Baby & Toddler Groups /Breastfeeding /Baby Massage"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/finglas-sensory-sessions-baby-book-club-finglas-library-705.html", "name": "Finglas Sensory Sessions/ Baby Book Club - Finglas Library"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/turtle-tots-dublin-1091.html", "name": "Turtle Tots Dublin"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/finglas-celtic-fc-1913.html", "name": "Finglas Celtic FC"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/kobukan-kobudo-renmei-finglas-1914.html", "name": "Kobukan Kobudo Renmei - Finglas"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/house-of-swag-finglas-1915.html", "name": "House of Swag - Finglas"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/fkft-dance-school-finglas-1917.html", "name": "FKFT Dance School - Finglas"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Finglas</nav>
+        <h1>Kids Activities in Finglas</h1>
+        <p class="landing-intro">Browse 7 kids activities and classes in Finglas. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="226">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Finglas Baby &amp; Toddler Groups /Breastfeeding /Baby Massage</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">St Helena&#x27;s Family Resource Centre has plenty to offer families in Finglas, from breastfeeding groups and baby massage to baby groups, toddler groups and much more. Many of the groups are free or low cost. Some groups are in demand, so it&#x27;s best to reach out to the centre to register. Keep an eye on Better Finglas socials to stay up to date with classes, especially around school holidays, as times may change or a class may not operate. Contact: 01 880 0500. Baby Group. Time: every Friday at 10am. Location: St Helena&#x27;s Family Resource Centre, St Helena&#x27;s Road, Finglas, Dublin 11. Toddler Group. Time: every Friday at 10am. Location: St Helena&#x27;s Family Resource Centre, St Helena&#x27;s Road, Finglas, Dublin 11. Baby and Toddler Book Club: waitlist in place. Location: St Helena&#x27;s Family Resource Centre, St Helena&#x27;s Road, Finglas, Dublin 11. Baby Massage: waitlist in place. Location: St Helena&#x27;s Family Resource Centre, St Helena&#x27;s Road, Finglas, Dublin 11. Breastfeeding Group: every Monday, 11am-12.30pm. Location: Wellmount Health Centre.</p>
+            
+            <a href="../business/finglas-baby-toddler-groups-breastfeeding-baby-massage-226.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="705">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Finglas Sensory Sessions/ Baby Book Club - Finglas Library</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Location: Finglas Library, Seamus Ennis Road, Dublin 11. Contact: 01 222 8330 / finglaslibrary@dublincity.ie. Baby Book Club: the perfect place to relax with your little one (perfect for 0-2 years) and listen to some stories, and pick up some books to borrow and bring home - booking is advised. Time: Tuesday and Thursday mornings from 10am. Cost: free. Sensory Library Sessions: the library provides a special sensory room, including a soft play area and the interactive Tovertafel games console, in addition to dimmed lighting, lowered noise, and reduced sensory triggers. Time: Saturdays, 10-11.30am. Cost: free.</p>
+            
+            <a href="../business/finglas-sensory-sessions-baby-book-club-finglas-library-705.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1091">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Turtle Tots Dublin</h3>
+            <div class="tag-container"><span class="tag">Swimming</span></div>
+            <p class="description">Turtle Tots lessons are truly child-centred. Each child is nurtured and activities are adapted to meet each individual’s needs. By the time you have reached the end of our baby programme we have taught you all the separate techniques and practices necessary for independent swimming. Our highly trained and skilled teachers ensure lessons are fun and sociable for everyone, whilst teaching your child essential life-saving skills. Babies from 3 months to 4.5 year olds can partake in Turtle Tot swimming lessons.</p>
+            
+            <a href="../business/turtle-tots-dublin-1091.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1913">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Finglas Celtic FC</h3>
+            <div class="tag-container"><span class="tag">Football</span></div>
+            <p class="description">Football academy, Friday evenings and Saturday mornings.</p>
+            <div class="landing-card-meta">Friday, Saturday</div>
+            <a href="../business/finglas-celtic-fc-1913.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1914">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Kobukan Kobudo Renmei - Finglas</h3>
+            <div class="tag-container"><span class="tag">Martial Arts</span></div>
+            <p class="description">Kobudo martial arts classes.</p>
+            
+            <a href="../business/kobukan-kobudo-renmei-finglas-1914.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1915">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>House of Swag - Finglas</h3>
+            <div class="tag-container"><span class="tag">Dance</span></div>
+            <p class="description">Dance, drama and gymnastics classes, Mondays, a new branch of the same company as House of Swag Swords.</p>
+            <div class="landing-card-meta">Monday</div>
+            <a href="../business/house-of-swag-finglas-1915.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1917">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>FKFT Dance School - Finglas</h3>
+            <div class="tag-container"><span class="tag">Dance</span></div>
+            <p class="description">Dance classes, Mondays.</p>
+            <div class="landing-card-meta">Monday</div>
+            <a href="../business/fkft-dance-school-finglas-1917.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 226, "lat": 53.3812737, "lon": -6.3037168, "name": "Finglas Baby & Toddler Groups /Breastfeeding /Baby Massage", "category": "Parent-and-toddler", "url": "../business/finglas-baby-toddler-groups-breastfeeding-baby-massage-226.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 705, "lat": 53.389806, "lon": -6.2956643, "name": "Finglas Sensory Sessions/ Baby Book Club - Finglas Library", "category": "Parent-and-toddler", "url": "../business/finglas-sensory-sessions-baby-book-club-finglas-library-705.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 1091, "lat": 53.3906618, "lon": -6.3056389, "name": "Turtle Tots Dublin", "category": "Swimming", "url": "../business/turtle-tots-dublin-1091.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1913, "lat": 53.3852019, "lon": -6.3184297, "name": "Finglas Celtic FC", "category": "Football", "url": "../business/finglas-celtic-fc-1913.html", "minAge": 4, "maxAge": 7, "price": null, "free": false}, {"id": 1914, "lat": 53.4033893, "lon": -6.3012456, "name": "Kobukan Kobudo Renmei - Finglas", "category": "Martial Arts", "url": "../business/kobukan-kobudo-renmei-finglas-1914.html", "minAge": 5, "maxAge": 12, "price": null, "free": false}, {"id": 1915, "lat": 53.401622, "lon": -6.3005146, "name": "House of Swag - Finglas", "category": "Dance", "url": "../business/house-of-swag-finglas-1915.html", "minAge": 4, "maxAge": null, "price": null, "free": false}, {"id": 1917, "lat": 53.3915813, "lon": -6.2985252, "name": "FKFT Dance School - Finglas", "category": "Dance", "url": "../business/fkft-dance-school-finglas-1917.html", "minAge": 3, "maxAge": 18, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

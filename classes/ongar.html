@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Ongar | Kids Patch</title>
+    <meta name="description" content="Browse 10 kids activities and classes in Ongar, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/ongar.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Ongar | Kids Patch">
+    <meta property="og:description" content="Browse 10 kids activities and classes in Ongar, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/ongar.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Ongar | Kids Patch">
+    <meta name="twitter:description" content="Browse 10 kids activities and classes in Ongar, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=3646260db5">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Ongar", "description": "Browse 10 kids activities and classes in Ongar, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/ongar.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 10, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/mini-music-academy-517.html", "name": "Mini Music Academy"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/the-toy-box-sensory-family-fun-1071.html", "name": "The Toy Box - Sensory Family Fun"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/k-star-academy-ongar-1846.html", "name": "K-Star Academy - Ongar"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/master-joe-taekwondo-ongar-1847.html", "name": "Master Joe Taekwondo - Ongar"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/fusion-elite-all-star-cheer-dance-1848.html", "name": "Fusion Elite All Star Cheer & Dance"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/ongar-chasers-basketball-club-1849.html", "name": "Ongar Chasers Basketball Club"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/clare-connolly-dance-ballet-school-1850.html", "name": "Clare Connolly Dance & Ballet School"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/anne-walsh-school-of-irish-dancing-1851.html", "name": "Anne Walsh School of Irish Dancing"}, {"@type": "ListItem", "position": 9, "url": "https://www.kidspatch.ie/business/little-kickers-ongar-1852.html", "name": "Little Kickers - Ongar"}, {"@type": "ListItem", "position": 10, "url": "https://www.kidspatch.ie/business/kidscomp-ongar-1853.html", "name": "KidsComp - Ongar"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Ongar</nav>
+        <h1>Kids Activities in Ongar</h1>
+        <p class="landing-intro">Browse 10 kids activities and classes in Ongar. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="517">
+        <div class="card-image"><img class="banner-img" src="../images/castleknockschoolofmusic-com.png" alt="Mini Music Academy" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/castleknockschoolofmusic-com.png" alt="Mini Music Academy logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Mini Music Academy</h3>
+            <div class="tag-container"><span class="tag">Music</span></div>
+            <p class="description">Mini Music Academy, at The Castleknock School of Music, is an exciting, structured and educational music programme for children aged 6 months to 7 years. MMA provides your child with a fantastic opportunity to develop a love and understanding of music through an innovative and proven method of teaching. Classes are fun and educational, providing the foundation for your child&#x27;s continued musical education - all the songs have been specially composed for the MMA series of classes. Busy Babies is a fun and educational music class for ages 6-24 months. Bonnie Bluebirds is the class for 2-3 years. Red Robins is the class for 3-4 years.</p>
+            
+            <a href="../business/mini-music-academy-517.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1071">
+        <div class="card-image"><img class="banner-img" src="../images/the-toy-box-sensory-family-fun.png" alt="The Toy Box - Sensory Family Fun" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/the-toy-box-sensory-family-fun.png" alt="The Toy Box - Sensory Family Fun logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>The Toy Box - Sensory Family Fun</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">The Toy Box runs a sensory-friendly playgroup with the addition of a toy library too. They also run events throughout the year, so keep an eye on social media for upcoming events and playgroup dates. Join us for The Toy Box Family Fun Day, a fun, inclusive event for children of all ages, especially suited for ages 6 months to 8 years. Enjoy a Zumbini class, sensory play, face painting, the SENCO sensory van, and surprise character visits. Taking place at Fortlawn Community Centre on Saturday 7th June, 12-2pm. Tickets are €15 per child, with sibling discounts available. A relaxed, neurodiverse-friendly environment for families to connect, play, and explore. Book now on Eventbrite - all ages welcome.</p>
+            
+            <a href="../business/the-toy-box-sensory-family-fun-1071.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1846">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>K-Star Academy - Ongar</h3>
+            <div class="tag-container"><span class="tag">Dance</span></div>
+            <p class="description">Dance studio classes at Ongar Community Centre.</p>
+            
+            <a href="../business/k-star-academy-ongar-1846.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1847">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Master Joe Taekwondo - Ongar</h3>
+            <div class="tag-container"><span class="tag">Martial Arts</span></div>
+            <p class="description">Taekwondo classes at Ongar Community Centre, Monday sessions split by age.</p>
+            <div class="landing-card-meta">Monday</div>
+            <a href="../business/master-joe-taekwondo-ongar-1847.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1848">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Fusion Elite All Star Cheer &amp; Dance</h3>
+            <div class="tag-container"><span class="tag">Dance</span></div>
+            <p class="description">Cheer and dance classes for school-age girls at Ongar Community Centre.</p>
+            
+            <a href="../business/fusion-elite-all-star-cheer-dance-1848.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1849">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Ongar Chasers Basketball Club</h3>
+            <div class="tag-container"><span class="tag">Basketball</span></div>
+            <p class="description">Basketball club for children through adult.</p>
+            
+            <a href="../business/ongar-chasers-basketball-club-1849.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1850">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Clare Connolly Dance &amp; Ballet School</h3>
+            <div class="tag-container"><span class="tag">Dance</span></div>
+            <p class="description">Dance and ballet classes at Ongar Community Centre.</p>
+            
+            <a href="../business/clare-connolly-dance-ballet-school-1850.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1851">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Anne Walsh School of Irish Dancing</h3>
+            <div class="tag-container"><span class="tag">Dance</span></div>
+            <p class="description">Irish dancing classes at Ongar Community Centre.</p>
+            
+            <a href="../business/anne-walsh-school-of-irish-dancing-1851.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1852">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Little Kickers - Ongar</h3>
+            <div class="tag-container"><span class="tag">Football</span></div>
+            <p class="description">Early-years football classes, Sunday mornings.</p>
+            <div class="landing-card-meta">Sunday</div>
+            <a href="../business/little-kickers-ongar-1852.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1853">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>KidsComp - Ongar</h3>
+            <div class="tag-container"><span class="tag">STEM</span></div>
+            <p class="description">Coding classes for kids.</p>
+            
+            <a href="../business/kidscomp-ongar-1853.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 517, "lat": 53.3953687, "lon": -6.4387791, "name": "Mini Music Academy", "category": "Music", "url": "../business/mini-music-academy-517.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1071, "lat": 53.3953687, "lon": -6.4387791, "name": "The Toy Box - Sensory Family Fun", "category": "Parent-and-toddler", "url": "../business/the-toy-box-sensory-family-fun-1071.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 1846, "lat": 53.3933029, "lon": -6.4407594, "name": "K-Star Academy - Ongar", "category": "Dance", "url": "../business/k-star-academy-ongar-1846.html", "minAge": 4, "maxAge": 18, "price": null, "free": false}, {"id": 1847, "lat": 53.3933029, "lon": -6.4407594, "name": "Master Joe Taekwondo - Ongar", "category": "Martial Arts", "url": "../business/master-joe-taekwondo-ongar-1847.html", "minAge": 6, "maxAge": 16, "price": null, "free": false}, {"id": 1848, "lat": 53.3933029, "lon": -6.4407594, "name": "Fusion Elite All Star Cheer & Dance", "category": "Dance", "url": "../business/fusion-elite-all-star-cheer-dance-1848.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1849, "lat": 53.3933029, "lon": -6.4407594, "name": "Ongar Chasers Basketball Club", "category": "Basketball", "url": "../business/ongar-chasers-basketball-club-1849.html", "minAge": 4, "maxAge": null, "price": null, "free": false}, {"id": 1850, "lat": 53.3933029, "lon": -6.4407594, "name": "Clare Connolly Dance & Ballet School", "category": "Dance", "url": "../business/clare-connolly-dance-ballet-school-1850.html", "minAge": 2, "maxAge": null, "price": null, "free": false}, {"id": 1851, "lat": 53.3933029, "lon": -6.4407594, "name": "Anne Walsh School of Irish Dancing", "category": "Dance", "url": "../business/anne-walsh-school-of-irish-dancing-1851.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1852, "lat": 53.3933029, "lon": -6.4407594, "name": "Little Kickers - Ongar", "category": "Football", "url": "../business/little-kickers-ongar-1852.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1853, "lat": 53.3933029, "lon": -6.4407594, "name": "KidsComp - Ongar", "category": "STEM", "url": "../business/kidscomp-ongar-1853.html", "minAge": 6, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

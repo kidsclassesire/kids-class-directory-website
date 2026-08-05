@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Glasnevin | Kids Patch</title>
+    <meta name="description" content="Browse 9 kids activities and classes in Glasnevin, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/glasnevin.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Glasnevin | Kids Patch">
+    <meta property="og:description" content="Browse 9 kids activities and classes in Glasnevin, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/glasnevin.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Glasnevin | Kids Patch">
+    <meta name="twitter:description" content="Browse 9 kids activities and classes in Glasnevin, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=3646260db5">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Glasnevin", "description": "Browse 9 kids activities and classes in Glasnevin, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/glasnevin.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 9, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/baby-sensory-ireland-182.html", "name": "Baby Sensory Ireland"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/tina-mation-289.html", "name": "Tina Mation"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/christ-city-church-summer-kids-club-1330.html", "name": "Christ City Church - Summer Kids Club"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/na-fianna-gaa-clg-na-fianna-1858.html", "name": "Na Fianna GAA (CLG Na Fianna)"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/glasnevin-lawn-tennis-club-1859.html", "name": "Glasnevin Lawn Tennis Club"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/glasnevin-fc-the-diggers-1860.html", "name": "Glasnevin FC (The Diggers)"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/artzone-glasnevin-1861.html", "name": "Artzone - Glasnevin"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/playright-music-ltd-glasnevin-1864.html", "name": "Playright Music Ltd - Glasnevin"}, {"@type": "ListItem", "position": 9, "url": "https://www.kidspatch.ie/business/dcu-sport-summer-camps-glasnevin-1866.html", "name": "DCU Sport Summer Camps - Glasnevin"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Glasnevin</nav>
+        <h1>Kids Activities in Glasnevin</h1>
+        <p class="landing-intro">Browse 9 kids activities and classes in Glasnevin. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="182">
+        <div class="card-image"><img class="banner-img" src="../images/babysensory-ie-f2c0a4.jpg" alt="Baby Sensory Ireland" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/babysensory-ie-f2c0a4.png" alt="Baby Sensory Ireland logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Baby Sensory Ireland</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">An educational, interactive and developmental programme which will help your baby learn and develop important skills. Classes are built on your baby&#x27;s natural play-rest-play cycle to ensure they are not overstimulated. Classes are located in multiple locations across Ireland - please see the website for dates and times. Classes are also run during school term time. An ideal place to meet new parents, ask questions, and share ideas, experiences and memories together.</p>
+            
+            <a href="../business/baby-sensory-ireland-182.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="289">
+        <div class="card-image"><img class="logo-badge" src="../logos/tinamation-net.png" alt="Tina Mation logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Tina Mation</h3>
+            <div class="tag-container"><span class="tag">Arts and crafts</span></div>
+            <p class="description">For over 30 years, children across Dublin and Meath have enjoyed learning to draw with Tina, the much-loved artist and presenter behind the long-running RTÉ children&#x27;s art television series &#x27;Let&#x27;s Draw with Tina&#x27;. Tina&#x27;s fun and encouraging art classes help children build confidence, creativity and drawing skills in a relaxed and supportive environment. Each one-hour class is carefully designed to guide children step-by-step through exciting drawing and art projects, making it easy for all abilities to take part and enjoy. Tina&#x27;s unique teaching method has inspired thousands of children over three decades, both on television and in person. All materials are supplied, so children simply arrive ready to create, learn and have fun. Classes take place in Lusk, Donabate, Glasnevin, Ashbourne, Ballyboughal, and Swords. Perfect for children who love drawing, cartoons, creativity and imaginative art activities.</p>
+            
+            <a href="../business/tina-mation-289.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1330">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Christ City Church - Summer Kids Club</h3>
+            <div class="tag-container"><span class="tag">Camps</span></div>
+            <p class="description">Free Summer Kids Club &quot;Brave Adventurers&quot; for primary-aged children, July 13-17, 9:30am-12pm, at Lindsay Road National School, Glasnevin.</p>
+            
+            <a href="../business/christ-city-church-summer-kids-club-1330.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1858">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Na Fianna GAA (CLG Na Fianna)</h3>
+            <div class="tag-container"><span class="tag">GAA</span></div>
+            <p class="description">GAA nursery for children born 2019-2022.</p>
+            
+            <a href="../business/na-fianna-gaa-clg-na-fianna-1858.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1859">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Glasnevin Lawn Tennis Club</h3>
+            <div class="tag-container"><span class="tag">Tennis</span></div>
+            <p class="description">Junior and intermediate tennis sections.</p>
+            
+            <a href="../business/glasnevin-lawn-tennis-club-1859.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1860">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Glasnevin FC (The Diggers)</h3>
+            <div class="tag-container"><span class="tag">Football</span></div>
+            <p class="description">Football kindergarten and academy programme through to schoolboys/girls U16.</p>
+            
+            <a href="../business/glasnevin-fc-the-diggers-1860.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1861">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Artzone - Glasnevin</h3>
+            <div class="tag-container"><span class="tag">Arts and crafts</span></div>
+            <p class="description">Children&#x27;s art classes at Na Fianna GAA Club, a separate venue from Artzone&#x27;s Dundrum/Malahide rows.</p>
+            
+            <a href="../business/artzone-glasnevin-1861.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1864">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Playright Music Ltd - Glasnevin</h3>
+            <div class="tag-container"><span class="tag">Music</span></div>
+            <p class="description">Introduction to Piano lessons for children.</p>
+            
+            <a href="../business/playright-music-ltd-glasnevin-1864.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1866">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>DCU Sport Summer Camps - Glasnevin</h3>
+            <div class="tag-container"><span class="tag">Camps</span></div>
+            <p class="description">Summer camps covering soccer, dance, basketball, GAA, rock climbing and arts &amp; crafts.</p>
+            
+            <a href="../business/dcu-sport-summer-camps-glasnevin-1866.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 182, "lat": 53.384877, "lon": -6.2652722, "name": "Baby Sensory Ireland", "category": "Developmental", "url": "../business/baby-sensory-ireland-182.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 289, "lat": 53.3785582, "lon": -6.2764723, "name": "Tina Mation", "category": "Arts and crafts", "url": "../business/tina-mation-289.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1330, "lat": 53.3649163, "lon": -6.2647346, "name": "Christ City Church - Summer Kids Club", "category": "Camps", "url": "../business/christ-city-church-summer-kids-club-1330.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1858, "lat": 53.3790859, "lon": -6.265716, "name": "Na Fianna GAA (CLG Na Fianna)", "category": "GAA", "url": "../business/na-fianna-gaa-clg-na-fianna-1858.html", "minAge": 4, "maxAge": 6, "price": null, "free": false}, {"id": 1859, "lat": 53.3781114, "lon": -6.2683156, "name": "Glasnevin Lawn Tennis Club", "category": "Tennis", "url": "../business/glasnevin-lawn-tennis-club-1859.html", "minAge": null, "maxAge": 18, "price": null, "free": false}, {"id": 1860, "lat": 53.3781114, "lon": -6.2683156, "name": "Glasnevin FC (The Diggers)", "category": "Football", "url": "../business/glasnevin-fc-the-diggers-1860.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1861, "lat": 53.3750401, "lon": -6.2650956, "name": "Artzone - Glasnevin", "category": "Arts and crafts", "url": "../business/artzone-glasnevin-1861.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1864, "lat": 53.3901693, "lon": -6.2744222, "name": "Playright Music Ltd - Glasnevin", "category": "Music", "url": "../business/playright-music-ltd-glasnevin-1864.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1866, "lat": 53.3858429, "lon": -6.2589636, "name": "DCU Sport Summer Camps - Glasnevin", "category": "Camps", "url": "../business/dcu-sport-summer-camps-glasnevin-1866.html", "minAge": 4, "maxAge": 15, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

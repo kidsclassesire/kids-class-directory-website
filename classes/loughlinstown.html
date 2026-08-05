@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Loughlinstown | Kids Patch</title>
+    <meta name="description" content="Browse 5 kids activities and classes in Loughlinstown, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/loughlinstown.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Loughlinstown | Kids Patch">
+    <meta property="og:description" content="Browse 5 kids activities and classes in Loughlinstown, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/loughlinstown.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Loughlinstown | Kids Patch">
+    <meta name="twitter:description" content="Browse 5 kids activities and classes in Loughlinstown, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=3646260db5">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Loughlinstown", "description": "Browse 5 kids activities and classes in Loughlinstown, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/loughlinstown.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 5, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/dlr-leisure-478.html", "name": "Dlr Leisure"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/toddler-groups-with-additional-parenting-support-in-dublin-1084.html", "name": "Toddler Groups with additional Parenting Support in Dublin"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/happy-cubs-1120.html", "name": "Happy Cubs"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/supersonic-trampoline-club-1830.html", "name": "SuperSonic Trampoline Club"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/tanden-shotokan-karate-1831.html", "name": "Tanden Shotokan Karate"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Loughlinstown</nav>
+        <h1>Kids Activities in Loughlinstown</h1>
+        <p class="landing-intro">Browse 5 kids activities and classes in Loughlinstown. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="478">
+        <div class="card-image"><img class="banner-img" src="../images/dlrleisure-ie.webp" alt="Dlr Leisure" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/dlrleisure-ie.webp" alt="Dlr Leisure logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Dlr Leisure</h3>
+            <div class="tag-container"><span class="tag">Sports</span></div>
+            <p class="description">dlr Leisure provides a wide range of sports, from indoor and outdoor sports to water sports. All sports activities are delivered by quality coaches who make participation fun for everyone, no matter their current level of ability. All coaches are NGB qualified and Garda screened. Small groups at all sessions ensure maximum attention for all participants. dlr Leisure&#x27;s Sports Section provides all sports equipment at the sessions, but it&#x27;s important for parents/guardians to ensure their child is dressed appropriately to take part in the activity and to bring a non-fizzy drink with them. dlr Leisure also runs various kids&#x27; camps throughout the school holidays.</p>
+            
+            <a href="../business/dlr-leisure-478.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1084">
+        <div class="card-image"><img class="logo-badge" src="../logos/letsparentdlr-ie.png" alt="Toddler Groups with additional Parenting Support in Dublin logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Toddler Groups with additional Parenting Support in Dublin</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Shanganagh, Loughlinstown, Ballyogan, Mounttown, Balally and Hillview have Parent and Toddler Groups provided by Southside Partnership (contact the group to be referred into the PEEP Programme). These are friendly, weekly parent and baby/toddler groups using PEEP (Parents Early Education Learning Together), a programme that helps parents understand baby and toddler development and what it&#x27;s like to become a new parent. Your baby/toddler learns to play with you, their most important person, while also learning to play alongside other very young children. Sessions include free play, snack time, circle time, song and story time, and a chance to talk to other parents and staff. The PEEP+ groups are designed for anyone who feels a bit isolated or excluded, or who wants to attend a smaller group (max 8 parents, 8 babies/toddlers) - we have a lot of experience including and welcoming parents, babies and toddlers like you. Cost: free per family. Contact: 01 7060100 / lorraine.stewart@sspship.ie</p>
+            
+            <a href="../business/toddler-groups-with-additional-parenting-support-in-dublin-1084.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1120">
+        <div class="card-image"><img class="banner-img" src="../images/happycubs-ie-bfdd9d.png" alt="Happy Cubs" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/happycubs-ie-bfdd9d.png" alt="Happy Cubs logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Happy Cubs</h3>
+            <div class="tag-container"><span class="tag">Swimming</span></div>
+            <p class="description">Fun, confidence-building activities for your little ones with Happy Cubs. With swim classes and music classes across Dublin, Wicklow &amp; Cork, they&#x27;re all about helping babies, toddlers and preschoolers develop life skills at their own pace, through play, songs and plenty of smiles. Their Swim Cubs classes teach water safety, basic swim technique and confidence in the water, while Music Cubs gives kids aged as young as 3-6 months up to about 5-6 years a chance to explore rhythm, sounds and social connection with others. Whether your child is ready to splash or just loves to move and sing, it&#x27;s a lovely way to bond, grow and have fun as a family.</p>
+            
+            <a href="../business/happy-cubs-1120.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1830">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>SuperSonic Trampoline Club</h3>
+            <div class="tag-container"><span class="tag">Gymnastics</span></div>
+            <p class="description">Trampoline club with a toddler area for under-3s.</p>
+            
+            <a href="../business/supersonic-trampoline-club-1830.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1831">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Tanden Shotokan Karate</h3>
+            <div class="tag-container"><span class="tag">Martial Arts</span></div>
+            <p class="description">Shotokan karate classes at Loughlinstown Leisure Centre.</p>
+            
+            <a href="../business/tanden-shotokan-karate-1831.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 478, "lat": 53.2513521, "lon": -6.132459, "name": "Dlr Leisure", "category": "Sports", "url": "../business/dlr-leisure-478.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1084, "lat": 53.2513521, "lon": -6.132459, "name": "Toddler Groups with additional Parenting Support in Dublin", "category": "Parent-and-toddler", "url": "../business/toddler-groups-with-additional-parenting-support-in-dublin-1084.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 1120, "lat": 53.2513521, "lon": -6.132459, "name": "Happy Cubs", "category": "Swimming", "url": "../business/happy-cubs-1120.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1830, "lat": 53.2460135, "lon": -6.1293875, "name": "SuperSonic Trampoline Club", "category": "Gymnastics", "url": "../business/supersonic-trampoline-club-1830.html", "minAge": 4, "maxAge": null, "price": null, "free": false}, {"id": 1831, "lat": 53.2460135, "lon": -6.1293875, "name": "Tanden Shotokan Karate", "category": "Martial Arts", "url": "../business/tanden-shotokan-karate-1831.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Killiney | Kids Patch</title>
+    <meta name="description" content="Browse 5 kids activities and classes in Killiney, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/killiney.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Killiney | Kids Patch">
+    <meta property="og:description" content="Browse 5 kids activities and classes in Killiney, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/killiney.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Killiney | Kids Patch">
+    <meta name="twitter:description" content="Browse 5 kids activities and classes in Killiney, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=3646260db5">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Killiney", "description": "Browse 5 kids activities and classes in Killiney, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/killiney.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 5, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/dublin-stage-school-410.html", "name": "Dublin Stage School"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/seapoint-rugby-club-427.html", "name": "Seapoint Rugby Club"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/dublin-stage-school-1113.html", "name": "Dublin Stage School"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/cluny-park-tennis-club-1820.html", "name": "Cluny Park Tennis Club"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/kidscraic-killiney-hill-adventure-camp-1822.html", "name": "KidsCraic - Killiney Hill Adventure Camp"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Killiney</nav>
+        <h1>Kids Activities in Killiney</h1>
+        <p class="landing-intro">Browse 5 kids activities and classes in Killiney. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="410">
+        <div class="card-image"><img class="logo-badge" src="../logos/dublinstageschool-ie.png" alt="Dublin Stage School logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Dublin Stage School</h3>
+            <div class="tag-container"><span class="tag">Drama</span></div>
+            <p class="description">Combined singing, dance and drama class for young children, developing rhythm, role-play confidence and early performance skills in a fun, safe, Garda-vetted environment.</p>
+            <div class="landing-card-meta">School-term programme &middot; EUR 19.0 per class</div>
+            <a href="../business/dublin-stage-school-410.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="427">
+        <div class="card-image"><img class="logo-badge" src="../logos/seapointrugby-club.png" alt="Seapoint Rugby Club logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Seapoint Rugby Club</h3>
+            <div class="tag-container"><span class="tag">Rugby</span></div>
+            <p class="description">Community rugby club with grass pitches offering mini and youth rugby sections for children, registered with the Dun Laoghaire-Rathdown Sports Partnership club directory.</p>
+            <div class="landing-card-meta">Ongoing membership</div>
+            <a href="../business/seapoint-rugby-club-427.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1113">
+        <div class="card-image"><img class="logo-badge" src="../logos/dublinstageschool-ie.png" alt="Dublin Stage School logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Dublin Stage School</h3>
+            <div class="tag-container"><span class="tag">Drama</span></div>
+            <p class="description">Dublin Stage School offers acting, singing, and dance classes for young performers aged 4 to 18 in Blackrock, Killiney, and Castleknock. Their professional coaching helps build confidence and creativity in a fun, safe, and supportive environment. Students have the opportunity to perform at prestigious venues like the Bord Gáis Energy Theatre, The National Concert Hall, and The Gaiety Theatre. They have also appeared in major stage productions such as Miss Saigon, Les Misérables, Matilda, and Joseph and the Amazing Technicolor Dreamcoat, as well as TV and film projects including Vikings, Penny Dreadful, and Angela&#x27;s Ashes.</p>
+            
+            <a href="../business/dublin-stage-school-1113.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1820">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Cluny Park Tennis Club</h3>
+            <div class="tag-container"><span class="tag">Tennis</span></div>
+            <p class="description">Junior tennis coaching groups, Sunday mornings.</p>
+            <div class="landing-card-meta">Sunday</div>
+            <a href="../business/cluny-park-tennis-club-1820.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1822">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>KidsCraic - Killiney Hill Adventure Camp</h3>
+            <div class="tag-container"><span class="tag">Camps</span></div>
+            <p class="description">Outdoor adventure camp at Killiney Hill Park.</p>
+            
+            <a href="../business/kidscraic-killiney-hill-adventure-camp-1822.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 410, "lat": 53.256099, "lon": -6.1283789, "name": "Dublin Stage School", "category": "Drama", "url": "../business/dublin-stage-school-410.html", "minAge": 4.0, "maxAge": 6.0, "price": 19.0, "free": false}, {"id": 427, "lat": 53.259219, "lon": -6.1389962, "name": "Seapoint Rugby Club", "category": "Rugby", "url": "../business/seapoint-rugby-club-427.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1113, "lat": 53.2569756, "lon": -6.1186243, "name": "Dublin Stage School", "category": "Drama", "url": "../business/dublin-stage-school-1113.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1820, "lat": 53.2696308, "lon": -6.1278573, "name": "Cluny Park Tennis Club", "category": "Tennis", "url": "../business/cluny-park-tennis-club-1820.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1822, "lat": 53.2653787, "lon": -6.1112422, "name": "KidsCraic - Killiney Hill Adventure Camp", "category": "Camps", "url": "../business/kidscraic-killiney-hill-adventure-camp-1822.html", "minAge": 5, "maxAge": 12, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>
