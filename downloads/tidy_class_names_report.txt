@@ -1,0 +1,3 @@
+Class name variants that are similar but not identical -- likely the same class
+with a different age range or wording, so not auto-merged. Review manually.
+

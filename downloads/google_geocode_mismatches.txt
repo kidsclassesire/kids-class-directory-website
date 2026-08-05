@@ -1,0 +1,2763 @@
+Rows where stored coordinates differ from Google by more than 300m.
+Not auto-applied -- review and fix manually (existing coordinates are never overwritten automatically).
+
+[Milford Parent, Toddler & Baby Group] id=695 -- 4945m off
+  address: The Acres, Milford, Co. Donegal, Ireland
+  stored:  (55.0879227, -7.6989323)
+  google:  (55.0435318, -7.694370299999999)  (The Acres, Milford, Co. Donegal, Ireland)
+
+[Complete Harmony] id=1322 -- 4862m off
+  address: The Quaker Meeting House, Churchtown, Dublin 14
+  stored:  (53.3437061, -6.2544278)
+  google:  (53.3000325, -6.2509542)  (Friends Meeting House, 82 Churchtown Rd Lower, Churchtown Lower, Dublin 14, D14 F620, Ireland)
+
+[Balcultry Stables] id=448 -- 4733m off
+  address: Balcultry Road, Swords, Co Dublin
+  stored:  (53.4594799, -6.219175)
+  google:  (53.4743813, -6.2861484)  (Balcultry Rd, Co. Dublin, Ireland)
+
+[Aura Leisure Centre] id=1182 -- 4561m off
+  address: Windtown Rd, Windtown, Navan, Co. Meath, Ireland
+  stored:  (53.6657426, -6.6977175)
+  google:  (53.691733, -6.7513013)  (Windtown Rd, Co. Meath, Ireland)
+
+[Flying High Fitness] id=722 -- 4502m off
+  address: Galway, H91 YC61, Ireland
+  stored:  (53.2744122, -9.0490601)
+  google:  (53.2928027, -8.9887319)  (Galway, Co. Galway, H91 YC61, Ireland)
+
+[Baby & Toddler Group/Swimming Group] id=1200 -- 4439m off
+  address: Galway, H91 FEK2, Ireland
+  stored:  (53.2744122, -9.0490601)
+  google:  (53.2901762, -8.987711500000001)  (Galway, Co. Galway, H91 FEK2, Ireland)
+
+[Claregalway Parent, Baby & Toddler Group] id=719 -- 4411m off
+  address: Lakeview, County Galway, H91 THH4, Ireland
+  stored:  (53.3435047, -8.8733741)
+  google:  (53.33752399999999, -8.9390538)  (Lakeview, Co. Galway, H91 THH4, Ireland)
+
+[Little Kickers Dublin South & Wicklow] id=1051 -- 4399m off
+  address: Dublin, D04 E9X5, Ireland
+  stored:  (53.3493795, -6.2605593)
+  google:  (53.3149379, -6.2279594)  (Dublin, Co. Dublin, D04 E9X5, Ireland)
+
+[First Swim] id=487 -- 4329m off
+  address: 10 The Plaza, Beacon South Quarter, Sandyford, Dublin 18
+  stored:  (53.2779841, -6.2161233)
+  google:  (53.2467094, -6.1773541)  (Carrickmines Great, Dublin 18, Ireland)
+
+[Kenpo Karate Academy - Celbridge] id=1487 -- 4308m off
+  address: 3 Main Street, Celbridge, Co. Kildare
+  stored:  (53.364152, -6.4893468)
+  google:  (53.33930179999999, -6.5391517)  (Saint Helenes, 3 Main St, Celbridge, Co. Kildare, W23 DC94, Ireland)
+
+[St. Brigid's Rugby Club] id=426 -- 4279m off
+  address: 15 Monaloe Avenue, Blackrock, Co. Dublin
+  stored:  (53.3018639, -6.1788342)
+  google:  (53.26632979999999, -6.1541327)  (15 Monaloe Ave, Deansgrange, Blackrock, Co. Dublin, A94 W2C5, Ireland)
+
+[Little Kickers Dublin & Meath] id=45 -- 4271m off
+  address: The Spawell Complex, Templeogue, Dublin
+  stored:  (53.3222703, -6.2800697)
+  google:  (53.2938835, -6.323369899999999)  (The Spawell Complex, Templeogue, Wellington Ln, Templeogue, Dublin, D6W HX98, Ireland)
+
+[Little Kickers Dublin & Meath] id=46 -- 4271m off
+  address: The Spawell Complex, Templeogue, Dublin
+  stored:  (53.3222703, -6.2800697)
+  google:  (53.2938835, -6.323369899999999)  (The Spawell Complex, Templeogue, Wellington Ln, Templeogue, Dublin, D6W HX98, Ireland)
+
+[Little Kickers Dublin & Meath] id=47 -- 4271m off
+  address: The Spawell Complex, Templeogue, Dublin
+  stored:  (53.3222703, -6.2800697)
+  google:  (53.2938835, -6.323369899999999)  (The Spawell Complex, Templeogue, Wellington Ln, Templeogue, Dublin, D6W HX98, Ireland)
+
+[Mna Movement mom & baby Fitness Class] id=136 -- 4146m off
+  address: Bounce Sports & Fitness Studio Tralee, Unit 3
+  stored:  (52.2718608, -9.7090724)
+  google:  (52.29704109999999, -9.754031)  (3, Ballyroe, Tralee, Co. Kerry, V92 FE4W, Ireland)
+
+[Music Cubs] id=1062 -- 4130m off
+  address: Dublin, D04 PF86, Ireland
+  stored:  (53.3493795, -6.2605593)
+  google:  (53.3258415, -6.2124425)  (Dublin, Co. Dublin, D04 PF86, Ireland)
+
+[Bective Tennis] id=452 -- 4128m off
+  address: Main Street, Donnybrook, Dublin, D04 A0P1, Ireland
+  stored:  (53.3220419, -6.236355)
+  google:  (53.2991161, -6.2852332)  (Main St, Rathfarnham, Dublin, Ireland)
+
+[The Unrelated Auntie- Messy Play Group (facilitated by a play therapist)] id=774 -- 4062m off
+  address: Kerry, County Kerry, Ireland
+  stored:  (52.1809097, -9.5257797)
+  google:  (52.15446069999999, -9.5668632)  (Kerry, Co. Kerry, Ireland)
+
+[Little Kickers Galway] id=1215 -- 3553m off
+  address: Galway, H91 E622, Ireland
+  stored:  (53.2936337, -9.0750599)
+  google:  (53.26305379999999, -9.0905515)  (Galway, Co. Galway, H91 E622, Ireland)
+
+[Trojan Gymnastic Club] id=60 -- 3481m off
+  address: 7/8 Holly Avenue, Stillorgan Business Park, Blackrock, Co. Dublin
+  stored:  (53.3018639, -6.1788342)
+  google:  (53.2806067, -6.217273899999999)  (Unit 7, 8 Holly Ave, Stillorgan Business Park, Dublin, A94 W283, Ireland)
+
+[Trojan Gymnastic Club] id=61 -- 3481m off
+  address: 7/8 Holly Avenue, Stillorgan Business Park, Blackrock, Co. Dublin
+  stored:  (53.3018639, -6.1788342)
+  google:  (53.2806067, -6.217273899999999)  (Unit 7, 8 Holly Ave, Stillorgan Business Park, Dublin, A94 W283, Ireland)
+
+[Trojan Gymnastic Club] id=62 -- 3481m off
+  address: 7/8 Holly Avenue, Stillorgan Business Park, Blackrock, Co. Dublin
+  stored:  (53.3018639, -6.1788342)
+  google:  (53.2806067, -6.217273899999999)  (Unit 7, 8 Holly Ave, Stillorgan Business Park, Dublin, A94 W283, Ireland)
+
+[Trojan Gymnastic Club] id=63 -- 3481m off
+  address: 7/8 Holly Avenue, Stillorgan Business Park, Blackrock, Co. Dublin
+  stored:  (53.3018639, -6.1788342)
+  google:  (53.2806067, -6.217273899999999)  (Unit 7, 8 Holly Ave, Stillorgan Business Park, Dublin, A94 W283, Ireland)
+
+[Mini Me Massage] id=251 -- 3234m off
+  address: Mountview, Flemington Rd, Flemingtown, Balbriggan, Co. Dublin, Ireland
+  stored:  (53.6118769, -6.1823282)
+  google:  (53.6235677, -6.227232)  (Mountview, Flemington Rd, Flemingtown, Balbriggan, Co. Dublin, Ireland)
+
+[Drogheda/Dundalk Parent & Toddler Groups -FREE] id=1094 -- 3081m off
+  address: Townparks, County Louth, A92 XH22, Ireland
+  stored:  (53.8597285, -6.5881141)
+  google:  (53.8586153, -6.5411771)  (Townparks, Co. Louth, A92 XH22, Ireland)
+
+[Claphandies] id=1028 -- 2920m off
+  address: Dublin, D04 CP80, Ireland
+  stored:  (53.3493795, -6.2605593)
+  google:  (53.33605679999999, -6.2226503)  (Dublin, Co. Dublin, D04 CP80, Ireland)
+
+[Claphandies] id=1029 -- 2920m off
+  address: Dublin, D04 CP80, Ireland
+  stored:  (53.3493795, -6.2605593)
+  google:  (53.33605679999999, -6.2226503)  (Dublin, Co. Dublin, D04 CP80, Ireland)
+
+[B.A.N.T.S] id=1109 -- 2818m off
+  address: Castleknock, Dublin
+  stored:  (53.3729581, -6.3624744)
+  google:  (53.3601343, -6.3258357)  (Castleknock (part of Phoenix Park), Dublin, Ireland)
+
+[Dublin Stage School] id=1114 -- 2818m off
+  address: Castleknock, Dublin
+  stored:  (53.3729581, -6.3624744)
+  google:  (53.3601343, -6.3258357)  (Castleknock (part of Phoenix Park), Dublin, Ireland)
+
+[Me & You Music] id=1124 -- 2818m off
+  address: Castleknock, Dublin 15
+  stored:  (53.3729581, -6.3624744)
+  google:  (53.3601343, -6.3258357)  (Castleknock (part of Phoenix Park), Dublin, Ireland)
+
+[Rathanna Parent & Toddler Group/ Walking Group Carlow] id=579 -- 2800m off
+  address: Rathanna, County Carlow, R95 HH68, Ireland
+  stored:  (52.6037702, -6.7902439)
+  google:  (52.6009827, -6.8314555)  (Rathanna, Co. Carlow, R95 HH68, Ireland)
+
+[Raheny Library - Toddler Group and Junior Book Clubs] id=265 -- 2791m off
+  address: Howth Road, Dublin 5, Ireland
+  stored:  (53.37622, -6.18874)
+  google:  (53.3646366, -6.2260629)  (Saint Marys, 5 Howth Rd, Clontarf, Dublin, D03 H344, Ireland)
+
+[Universal Rhythmic Gymnastics Club -Salthill] id=751 -- 2743m off
+  address: Galway, H91 T0F6, Ireland
+  stored:  (53.2744122, -9.0490601)
+  google:  (53.2635044, -9.0860515)  (Galway, Co. Galway, H91 T0F6, Ireland)
+
+[Toddler Groups with additional Parenting Support in Dublin] id=1085 -- 2634m off
+  address: Ballyogan, Dublin, Ireland
+  stored:  (53.2762172, -6.2130497)
+  google:  (53.257924, -6.187889999999999)  (Ballyogan, Dublin, Ireland)
+
+[KidCREATE Arts & Crafts] id=238 -- 2631m off
+  address: Castleknock, Dublin, Ireland
+  stored:  (53.3699, -6.36196)
+  google:  (53.3601343, -6.3258357)  (Castleknock (part of Phoenix Park), Dublin, Ireland)
+
+[Your 4th Trimester] id=844 -- 2586m off
+  address: Crescent Shopping Centre, Dooradoyle Road, Dooradoyle Park, Dooradoyle, Limerick, Ireland
+  stored:  (52.661252, -8.6301239)
+  google:  (52.63991830000001, -8.6453898)  (Crescent Shopping Centre, 33a Dooradoyle Rd, Dooradoyle Park, Dooradoyle, Limerick, V94 N767, Ireland)
+
+[ClapHandies PlayLabs - Dublin] id=1022 -- 2501m off
+  address: Dublin, D03 X684, Ireland
+  stored:  (53.3493795, -6.2605593)
+  google:  (53.3672706, -6.2377106)  (Dublin, Co. Dublin, D03 X684, Ireland)
+
+[Claphandies] id=1025 -- 2501m off
+  address: Dublin, D03 X684, Ireland
+  stored:  (53.3493795, -6.2605593)
+  google:  (53.3672706, -6.2377106)  (Dublin, Co. Dublin, D03 X684, Ireland)
+
+[Dunmanway Cox's Hall Toddler Group] id=640 -- 2467m off
+  address: Dunmanway North, County Cork, P47 AY67, Ireland
+  stored:  (51.7355334, -9.1345581)
+  google:  (51.7212518, -9.1071476)  (Dunmanway North, Co. Cork, P47 AY67, Ireland)
+
+[BabyGrá - Baby Massage & Yoga Cork] id=623 -- 2456m off
+  address: Cork, T23 K2CA, Ireland
+  stored:  (51.8985136, -8.4726423)
+  google:  (51.9204039, -8.4773674)  (Cork, Co. Cork, T23 K2CA, Ireland)
+
+[Carndonagh Inishowen Toddler Group and More - Spraoi agus Sport] id=679 -- 2442m off
+  address: Churchland Quarters(Carrowtemple Moneyshandoney And Carrick), County Donegal, F93 AY6D, Ireland
+  stored:  (55.2392038, -7.2904889)
+  google:  (55.252411, -7.2597055)  (Churchland Quarters(Carrowtemple Moneyshandoney And Carrick), Co. Donegal, F93 AY6D, Ireland)
+
+[Little Kickers Dublin South & Wicklow] id=241 -- 2334m off
+  address: Dublin, D04 R6C2, Ireland
+  stored:  (53.3493795, -6.2605593)
+  google:  (53.3391767, -6.229839999999999)  (Dublin, Co. Dublin, D04 R6C2, Ireland)
+
+[National Sports Campus] id=526 -- 2333m off
+  address: Snugborough Road, Blanchardstown, Dublin 15
+  stored:  (53.4029303, -6.360272)
+  google:  (53.3893532, -6.3870982)  (Snugborough Rd, Blanchardstown, Dublin, Ireland)
+
+[Ballinfoile Parent, Baby & Toddler Group] id=716 -- 2329m off
+  address: Galway, H91 PN50, Ireland
+  stored:  (53.2744122, -9.0490601)
+  google:  (53.2936314, -9.0351277)  (Galway, Co. Galway, H91 PN50, Ireland)
+
+[Football Fun & Development - Ballinfoile] id=723 -- 2329m off
+  address: Galway, H91 PN50, Ireland
+  stored:  (53.2744122, -9.0490601)
+  google:  (53.2936314, -9.0351277)  (Galway, Co. Galway, H91 PN50, Ireland)
+
+[Little Kickers Galway] id=1219 -- 2329m off
+  address: Galway, H91 PN50, Ireland
+  stored:  (53.2744122, -9.0490601)
+  google:  (53.2936314, -9.0351277)  (Galway, Co. Galway, H91 PN50, Ireland)
+
+[Turtle Tots] id=570 -- 2279m off
+  address: Fitzpatrick Castle Hotel Killiney Royal Marine Hotel Dún Laoghaire Terenure College, Dublin, D6W DK72, Ireland
+  stored:  (53.3222703, -6.2800697)
+  google:  (53.3043975, -6.2968706)  (Templeogue Rd, Terenure, Dublin, D6W DK72, Ireland)
+
+[Mini Movers dance class] id=135 -- 2228m off
+  address: Highfield Rugby Club, Woodleigh Park
+  stored:  (51.9023901311, -8.5344664216)
+  google:  (51.8855432, -8.5168862)  (Woodleigh Park, Model Farm Rd, Cork, T12 T027, Ireland)
+
+[Clashmore / Kinsalebeg Toddler Group] id=957 -- 2227m off
+  address: Ballyheeny, County Waterford, P36 V348, Ireland
+  stored:  (51.9906614, -7.8400042)
+  google:  (52.0062704, -7.8196181)  (Ballyheeny, Co. Waterford, P36 V348, Ireland)
+
+[Kate Cuddy Yoga] id=123 -- 2197m off
+  address: Lackenroe
+  stored:  (51.910856, -8.3361591)
+  google:  (51.9305894, -8.3377464)  (Lackenroe, Co. Cork, Ireland)
+
+[Football Fun & Development - Renmore] id=724 -- 2176m off
+  address: Galway, H91 W259, Ireland
+  stored:  (53.2744122, -9.0490601)
+  google:  (53.2759106, -9.0164337)  (Galway, Co. Galway, H91 W259, Ireland)
+
+[Clara Library] id=906 -- 2169m off
+  address: Erry (Maryborough), County Offaly, R35 NW63, Ireland
+  stored:  (53.3244746, -7.6033534)
+  google:  (53.34205189999999, -7.6175043)  (Erry (Maryborough), Co. Offaly, R35 NW63, Ireland)
+
+[Lecanvey Parent, Baby and Toddler Group] id=873 -- 2159m off
+  address: Thornhill, County Mayo, F28 V0F2, Ireland
+  stored:  (53.7898555, -9.6582134)
+  google:  (53.77968079999999, -9.686203899999999)  (Thornhill, Co. Mayo, F28 V0F2, Ireland)
+
+[Kilronan Equestrian Centre] id=504 -- 2155m off
+  address: Kilronan Equestrian Centre, Kettles Lane, Cloghran, Swords, Co. Dublin
+  stored:  (53.4594799, -6.219175)
+  google:  (53.4403312, -6.2241515)  (Kilronan House, Cloghran, Swords, Co. Dublin, K67 W822, Ireland)
+
+[ClapHandies PlayLabs - Dublin] id=1016 -- 2133m off
+  address: Castleknock (part of Phoenix Park), Dublin, D07 P973, Ireland
+  stored:  (53.3625914, -6.3333486)
+  google:  (53.3640936, -6.3013067)  (Cabra West, Dublin, Co. Dublin, D07 P973, Ireland)
+
+[Claphandies] id=1030 -- 2133m off
+  address: Castleknock (part of Phoenix Park), Dublin, D07 P973, Ireland
+  stored:  (53.3625914, -6.3333486)
+  google:  (53.3640936, -6.3013067)  (Cabra West, Dublin, Co. Dublin, D07 P973, Ireland)
+
+[The Gers] id=550 -- 2112m off
+  address: Bray Rd, Cornelscourt, Dublin
+  stored:  (53.2526819, -6.1430739)
+  google:  (53.26697, -6.1640019)  (Bray Rd, Cornelscourt, Dublin, Ireland)
+
+[Lattin-Cullen Parent, Baby & Toddler Group] id=946 -- 2089m off
+  address: Lattin, Co. Tipperary, Ireland
+  stored:  (52.4493217, -8.2899291)
+  google:  (52.4662906, -8.276683)  (Lattin North, Lattin, Co. Tipperary, Ireland)
+
+[Limerick Library Toddler Group, Storytime & Art] id=836 -- 2040m off
+  address: Watch House Cross Shopping Centre, Kileely Road, Kileely, Watch House Cross, Limerick, Ireland
+  stored:  (52.661252, -8.6301239)
+  google:  (52.6789907, -8.637820099999999)  (Moyross, Limerick, Ireland)
+
+[Ballinderry Parent, Baby and Toddler Group] id=915 -- 2014m off
+  address: Ballinderry, County Roscommon, F42 N277, Ireland
+  stored:  (53.7004614, -8.1757415)
+  google:  (53.70344009999999, -8.2059167)  (Ballinderry, Co. Roscommon, F42 N277, Ireland)
+
+[The Brickx Club] id=1107 -- 1925m off
+  address: Templeogue, Dublin
+  stored:  (53.3051779, -6.2917514)
+  google:  (53.2964776, -6.3167883)  (Templeogue, Dublin, Ireland)
+
+[Phonics with Robot Reg Galway] id=741 -- 1922m off
+  address: Oranmore Community Centre, Dublin Road, Frenchfort, Oranmore, County Galway, Ireland
+  stored:  (53.2754881, -8.9472704)
+  google:  (53.2720642, -8.9189423)  (Oranmore Community Centre, Dublin Rd, Frenchfort, Oranmore, Co. Galway, H91 AV2D, Ireland)
+
+[Bloom Baby Classes Wicklow and South Dublin] id=1005 -- 1909m off
+  address: 11b R750, Wicklow, Ireland
+  stored:  (52.9902976, -6.0690811)
+  google:  (52.98095739999999, -6.0451491)  (11b R750, Wicklow, Ireland)
+
+[Swimtastic.ie] id=1141 -- 1905m off
+  address: Killashee, County Kildare, Ireland
+  stored:  (53.1897622, -6.6680522)
+  google:  (53.17623469999999, -6.6856022)  (Killashee, Co. Kildare, Ireland)
+
+[JR Piano Lessons] id=1433 -- 1892m off
+  address: 8 Hamptons Garden Avenue, Balbriggan
+  stored:  (53.5958142, -6.182455)
+  google:  (53.6083975, -6.20176)  (8 Hampton Gardens Ave, Clogheder, Balbriggan, Co. Dublin, K32 PH32, Ireland)
+
+[Kate Buckley School of Dance] id=498 -- 1880m off
+  address: Dundrum, Knocklyon, Rathfarnham
+  stored:  (53.2917322, -6.3114529)
+  google:  (53.2977169, -6.285000399999999)  (Rathfarnham, Dublin, Ireland)
+
+[Malin Head Ballyhillin Parent, Baby and Toddler Group] id=694 -- 1854m off
+  address: Malin Head, Co. Donegal, Ireland
+  stored:  (55.3747865, -7.3998451)
+  google:  (55.3820014, -7.373387800000001)  (Ardmalin, Malin Head, Co. Donegal, Ireland)
+
+[Castleknock Hurling and Football Club] id=460 -- 1853m off
+  address: 1 Somerton Rd, Castleknock, Dublin, D15 NTC3
+  stored:  (53.3729581, -6.3624744)
+  google:  (53.3657721, -6.387667)  (1 Somerton Rd, Diswellstown, Co. Dublin, Ireland)
+
+[Dundrum South Dublin Athletic Club (DSD)] id=64 -- 1806m off
+  address: Tibradden Road, Taylorsgrange, Dublin 16
+  stored:  (53.2678414, -6.2627252)
+  google:  (53.2635546, -6.2889103)  (Tibradden Rd, Co. Dublin, Ireland)
+
+[ClapHandies PlayLabs - Dublin] id=1019 -- 1795m off
+  address: Rathmines, Dublin, D06 AX71, Ireland
+  stored:  (53.3265199, -6.2648571)
+  google:  (53.3109444, -6.257733399999999)  (Rathmines, Dublin, Co. Dublin, D06 AX71, Ireland)
+
+[Claphandies] id=1032 -- 1795m off
+  address: Rathmines, Dublin, D06 AX71, Ireland
+  stored:  (53.3265199, -6.2648571)
+  google:  (53.3109444, -6.257733399999999)  (Rathmines, Dublin, Co. Dublin, D06 AX71, Ireland)
+
+[Portumna Library - Toddler (up to 5) Storytime / Lego Group] id=742 -- 1763m off
+  address: Portumna Demesne, County Galway, H53 AE06, Ireland
+  stored:  (53.0809068, -8.242785)
+  google:  (53.0904822, -8.2217387)  (Portumna Demesne, Co. Galway, H53 AE06, Ireland)
+
+[Little Stars Music School (Sarah O'Kennedy)] id=1359 -- 1754m off
+  address: 19 The Oaks, Annacotty, Co. Limerick
+  stored:  (52.6668574, -8.5564866)
+  google:  (52.6633921, -8.531113699999999)  (19 The Oaks, Riverbank, Annacotty, Co. Limerick, V94 X8C1, Ireland)
+
+[XVAcademy – Football Academy] id=174 -- 1746m off
+  address: XVArena - XVAcademy Football Hub, Ballybane Industrial Estate, Unit 1 Ballybane Beg
+  stored:  (53.2942783, -9.0143526)
+  google:  (53.2789277, -9.0088531)  (Ballybane, Galway, Ireland)
+
+[Adamstown/Raheen Parent, Baby and Toddler Group] id=960 -- 1746m off
+  address: Courthoyle New, Raheen, County Wexford, Y21 T183, Ireland
+  stored:  (52.3773239, -6.8057092)
+  google:  (52.3916517, -6.7951787)  (Courthoyle New, Raheen, Co. Wexford, Y21 T183, Ireland)
+
+[Belturbet Parent, Toddler & Baby Group] id=588 -- 1698m off
+  address: The Diamond, Corporation Lands, Co. Cavan, Ireland
+  stored:  (54.0934889, -7.4217644)
+  google:  (54.1003529, -7.4450181)  (The Diamond, Corporation Lands, Co. Cavan, Ireland)
+
+[Baby Massage Oranmore] id=711 -- 1669m off
+  address: Oranmore, County Galway, Ireland
+  stored:  (53.2754881, -8.9472704)
+  google:  (53.2647506, -8.9297335)  (Oranmore, Co. Galway, Ireland)
+
+[Messy Adventures] id=1055 -- 1653m off
+  address: Clontarf Road, Dublin, Ireland
+  stored:  (53.3630675, -6.2268626)
+  google:  (53.3601595, -6.2024344)  (Clontarf Rd, Dublin, Ireland)
+
+[Play Cafe / Bumps and Babes] id=15 -- 1640m off
+  address: Kilternan, Dublin 18
+  stored:  (53.2355191, -6.1933991)
+  google:  (53.2467094, -6.1773541)  (Carrickmines Great, Dublin 18, Ireland)
+
+[Claphandies] id=1038 -- 1638m off
+  address: Monkstown, Dublin, A96 F6T0, Ireland
+  stored:  (53.2936454, -6.1539023)
+  google:  (53.2854561, -6.133410599999999)  (Monkstown, Dublin, Co. Dublin, A96 F6T0, Ireland)
+
+[Play with Trayz] id=1164 -- 1635m off
+  address: Kanturk, County Cork, Ireland
+  stored:  (52.1876848, -8.9205697)
+  google:  (52.1774532, -8.903355399999999)  (Greenane, Kanturk, Co. Cork, Ireland)
+
+[Lucan Sarsfields GAA] id=512 -- 1634m off
+  address: 12th Lock, Newcastle Rd, Lucan, Co. Dublin
+  stored:  (53.330559, -6.45495)
+  google:  (53.3451216, -6.4516472)  (Newcastle Rd, Lucan, Co. Dublin, Ireland)
+
+[Westside Parent Baby & Toddler Group] id=753 -- 1629m off
+  address: Galway, H91 R853, Ireland
+  stored:  (53.2744122, -9.0490601)
+  google:  (53.2776571, -9.0729472)  (Galway, Co. Galway, H91 R853, Ireland)
+
+[Messy Fun] id=515 -- 1604m off
+  address: Terenure Business Park, Beechlawn Way, Terenure, Dublin 6W, Co. Dublin, D6W AV82
+  stored:  (53.3233115, -6.2786667)
+  google:  (53.3091155, -6.2829178)  (Beechlawn Way, Dublin, Ireland)
+
+[Shanakill Tralee Parent, Baby & Toddler Group] id=773 -- 1603m off
+  address: Shanakill Estate, Tralee, County Kerry, Ireland
+  stored:  (52.2692116, -9.7057047)
+  google:  (52.28273, -9.6975214)  (Shanakill Estate, Tralee, Co. Kerry, Ireland)
+
+[Bloom Baby Classes North West Ireland] id=677 -- 1574m off
+  address: Drumacrin, County Donegal, F94 RH33, Ireland
+  stored:  (54.4803441, -8.251896)
+  google:  (54.4799565, -8.2762476)  (Drumacrin, Co. Donegal, F94 RH33, Ireland)
+
+[Tiny Tutus] id=1080 -- 1541m off
+  address: Osberstown, County Kildare, W91 HX06, Ireland
+  stored:  (53.2385827, -6.6812799)
+  google:  (53.2482464, -6.664671299999999)  (Osberstown, Co. Kildare, W91 HX06, Ireland)
+
+[Claphandies] id=1027 -- 1529m off
+  address: Saint James, Dublin 8, D08 FW31, Ireland
+  stored:  (53.3544429, -6.3132463)
+  google:  (53.3433089, -6.2997247)  (Saint James, Dublin 8, Co. Dublin, D08 FW31, Ireland)
+
+[Gentle Hands Baby Massage] id=1040 -- 1512m off
+  address: Howth, Dublin, Ireland
+  stored:  (53.3858337, -6.0651186)
+  google:  (53.3727617, -6.058842599999999)  (Howth, Dublin, Ireland)
+
+[Little Kickers] id=1282 -- 1494m off
+  address: Bishopstown, Cork, T12 ERX0, Ireland
+  stored:  (51.8796067, -8.5166631)
+  google:  (51.88349720000001, -8.5375002)  (Bishopstown, Cork, Co. Cork, T12 ERX0, Ireland)
+
+[Oranmore Library - Story time for toddlers to under 5s] id=738 -- 1483m off
+  address: Oran More, Oranmore, County Galway, H91 PC59, Ireland
+  stored:  (53.2754881, -8.9472704)
+  google:  (53.2674846, -8.9294241)  (Oran More, Oranmore, Co. Galway, H91 PC59, Ireland)
+
+[Baby Sensory Dublin Southwest] id=10 -- 1471m off
+  address: The Ruah Centre, Rathfarnham, Dublin
+  stored:  (53.2973285, -6.2807096)
+  google:  (53.2902417, -6.299391399999999)  (7 Orchardstown Villas, Oldorchard, Dublin, D14 VR68, Ireland)
+
+[Drogheda/Dundalk Parent & Toddler Groups -FREE] id=323 -- 1449m off
+  address: Moneymore, Drogheda, County Louth, A92 PY20, Ireland
+  stored:  (53.7269422, -6.3594366)
+  google:  (53.7144273, -6.353305499999999)  (Moneymore, Drogheda, Co. Louth, A92 PY20, Ireland)
+
+[Dublin School of Music] id=6 -- 1436m off
+  address: Units 15/16 Old Bawn Shopping Centre, Tallaght, Dublin 24
+  stored:  (53.2878082, -6.362355)
+  google:  (53.2759343, -6.3538422)  (15, Old Bawn Shopping Centre, Old Bawn Rd, Tallaght, Dublin 24, Ireland)
+
+[Outdoor adventure camps] id=143 -- 1420m off
+  address: Ballinrea
+  stored:  (51.834817, -8.3957456)
+  google:  (51.83992689999999, -8.4146818)  (Ballinrea, Co. Cork, Ireland)
+
+[Ladysbridge Parent, Baby & Toddler Group] id=649 -- 1416m off
+  address: Knockglass, County Cork, P25 HC94, Ireland
+  stored:  (51.8924212, -8.0239769)
+  google:  (51.8975301, -8.0428771)  (Knockglass, Co. Cork, P25 HC94, Ireland)
+
+[Little Ones Playgroup] id=655 -- 1416m off
+  address: Knockglass, County Cork, P25 HC94, Ireland
+  stored:  (51.8924212, -8.0239769)
+  google:  (51.8975301, -8.0428771)  (Knockglass, Co. Cork, P25 HC94, Ireland)
+
+[Abbeyleix Laois Parent, Baby & Toddler Group] id=791 -- 1402m off
+  address: Tonduff, County Laois, R32 H244, Ireland
+  stored:  (52.9290829, -7.3542553)
+  google:  (52.917446, -7.346216500000001)  (Tonduff, Co. Laois, R32 H244, Ireland)
+
+[Rathcoole and Templeogue - Toddlers World] id=1067 -- 1392m off
+  address: Templeogue, Dublin, D6W AF86, Ireland
+  stored:  (53.2983529, -6.3028478)
+  google:  (53.2995616, -6.323701799999999)  (Templeogue, Dublin, Co. Dublin, D6W AF86, Ireland)
+
+[Baby Sensory Ireland] id=1004 -- 1388m off
+  address: Feltrim Rd, Drinan, Swords, County Dublin, Ireland
+  stored:  (53.4452182, -6.2178129)
+  google:  (53.444558, -6.1968875)  (Feltrim Rd, Drinan, Swords, Co. Dublin, Ireland)
+
+[Galway Cookery Classes] id=113 -- 1384m off
+  address: Roevehagh
+  stored:  (53.215517, -8.8360313)
+  google:  (53.2279588, -8.836470499999999)  (Roevehagh, Co. Galway, Ireland)
+
+[Turtle Tots Swimming Classes /Louth/Limerick/Laois/Waterford] id=1246 -- 1382m off
+  address: Kilbarry, Waterford, X91 AX54, Ireland
+  stored:  (52.2326458, -7.131883)
+  google:  (52.24348939999999, -7.1219601)  (Kilbarry, Waterford, Co. Waterford, X91 AX54, Ireland)
+
+[Little Kickers] id=1292 -- 1382m off
+  address: Kilbarry, Waterford, X91 AX54, Ireland
+  stored:  (52.2326458, -7.131883)
+  google:  (52.24348939999999, -7.1219601)  (Kilbarry, Waterford, Co. Waterford, X91 AX54, Ireland)
+
+[Lena's Little Learners] id=331 -- 1358m off
+  address: William St, Moneymore, Drogheda, Co. Louth, Ireland
+  stored:  (53.7269422, -6.3594366)
+  google:  (53.7162667, -6.349417)  (William St, Moneymore, Drogheda, Co. Louth, Ireland)
+
+[Splashtastic] id=541 -- 1344m off
+  address: St. Michael's House, Belcamp Lane, Priorswood, Dublin
+  stored:  (53.4016557, -6.1856731)
+  google:  (53.4075157, -6.2034103)  (R139, Priorswood, Coolock, Co. Dublin, Ireland)
+
+[De La Salle Palmerston FC (DLSP)] id=66 -- 1342m off
+  address: Kirwan Park, Kilternan, Dublin 18
+  stored:  (53.2467012, -6.1975246)
+  google:  (53.2467094, -6.1773541)  (Carrickmines Great, Dublin 18, Ireland)
+
+[De La Salle Palmerston FC (DLSP)] id=67 -- 1342m off
+  address: Kirwan Park, Kilternan, Dublin 18
+  stored:  (53.2467012, -6.1975246)
+  google:  (53.2467094, -6.1773541)  (Carrickmines Great, Dublin 18, Ireland)
+
+[Rockchapel Parent, Baby & Toddler Group] id=665 -- 1338m off
+  address: Tooreennagrena, County Cork, P51 T670, Ireland
+  stored:  (52.2798576, -9.1334326)
+  google:  (52.2883843, -9.1473094)  (Tooreennagrena, Co. Cork, P51 T670, Ireland)
+
+[Me & You Music] id=1123 -- 1290m off
+  address: Dundrum, Dublin 14
+  stored:  (53.2891457, -6.2433756)
+  google:  (53.29578189999999, -6.259299)  (Newtown Little, Dublin 14, Ireland)
+
+[Ready Steady Play South East] id=1296 -- 1289m off
+  address: Danesfort, County Kilkenny, Ireland
+  stored:  (52.5823977, -7.2205955)
+  google:  (52.5734662, -7.2327451)  (Danesfort, Co. Kilkenny, Ireland)
+
+[Ballyhea Parent, Baby & Toddler Group] id=625 -- 1276m off
+  address: Ballyhea, County Cork, Ireland
+  stored:  (52.3226751, -8.6554217)
+  google:  (52.3270559, -8.672773399999999)  (Ballyhay, Co. Cork, Ireland)
+
+[Chime in & Play] id=1137 -- 1275m off
+  address: 96 South Main Street, Gully, Bandon, County Cork, Ireland
+  stored:  (51.7420188, -8.7538813)
+  google:  (51.7451673, -8.7360692)  (96 S Main St, Gully, Bandon, Co. Cork, P72 Y232, Ireland)
+
+[Dunmanway Parent, Baby & Toddler Group] id=641 -- 1270m off
+  address: Kilbarry Road, Kilbarry, Dunmanway, Co. Cork, Ireland
+  stored:  (51.7163278, -9.1328679)
+  google:  (51.7096972, -9.1478832)  (Kilbarry Rd, Kilbarry, Co. Cork, Ireland)
+
+[Abbeyleix Library - Baby & Toddler Group / Kids Chess Club] id=792 -- 1267m off
+  address: Rathmoyle, County Laois, R32 CY65, Ireland
+  stored:  (52.9191688, -7.3316884)
+  google:  (52.9143243, -7.3487886)  (Rathmoyle, Co. Laois, R32 CY65, Ireland)
+
+[ClapHandies PlayLabs - Dublin] id=1024 -- 1263m off
+  address: Dún Laoghaire, Dublin, A94 P5N8, Ireland
+  stored:  (53.2922794, -6.1360079)
+  google:  (53.2936096, -6.1548779)  (Dún Laoghaire, Dublin, Co. Dublin, A94 P5N8, Ireland)
+
+[Claphandies] id=1037 -- 1263m off
+  address: Dún Laoghaire, Dublin, A94 P5N8, Ireland
+  stored:  (53.2922794, -6.1360079)
+  google:  (53.2936096, -6.1548779)  (Dún Laoghaire, Dublin, Co. Dublin, A94 P5N8, Ireland)
+
+[Butterfield Wellness Learn to Swim Classes for Kids] id=1011 -- 1260m off
+  address: Blanchardstown, Dublin, D15 EA43, Ireland
+  stored:  (53.3844588, -6.3829415)
+  google:  (53.3840192, -6.363953299999999)  (Blanchardstown, Dublin, Co. Dublin, D15 EA43, Ireland)
+
+[ClapHandies PlayLabs - Dublin] id=1012 -- 1260m off
+  address: Blanchardstown, Dublin, D15 EA43, Ireland
+  stored:  (53.3844588, -6.3829415)
+  google:  (53.3840192, -6.363953299999999)  (Blanchardstown, Dublin, Co. Dublin, D15 EA43, Ireland)
+
+[Claphandies] id=1035 -- 1260m off
+  address: Blanchardstown, Dublin, D15 EA43, Ireland
+  stored:  (53.3844588, -6.3829415)
+  google:  (53.3840192, -6.363953299999999)  (Blanchardstown, Dublin, Co. Dublin, D15 EA43, Ireland)
+
+[Water Babies -Dublin] id=1190 -- 1260m off
+  address: Blanchardstown, Dublin, D15 EA43, Ireland
+  stored:  (53.3844588, -6.3829415)
+  google:  (53.3840192, -6.363953299999999)  (Blanchardstown, Dublin, Co. Dublin, D15 EA43, Ireland)
+
+[Down Syndrome Limerick Toddler Group/ Social Club - Newcastle/Castletroy] id=1239 -- 1255m off
+  address: Castletroy, County Limerick, Ireland
+  stored:  (52.6654318, -8.5712428)
+  google:  (52.6711188, -8.555159699999999)  (Castletroy, Co. Limerick, Ireland)
+
+[Turtle Tots Swimming Classes] id=1235 -- 1240m off
+  address: Townparks, Athy, County Kildare, R14 XD30, Ireland
+  stored:  (52.9926751, -6.9687501)
+  google:  (52.9946329, -6.986987399999999)  (Townparks, Athy, Co. Kildare, R14 XD30, Ireland)
+
+[Three Rock Rovers] id=557 -- 1232m off
+  address: Grange Road, Rathfarnham, Dublin 16, D16 PT82
+  stored:  (53.2813987, -6.2775802)
+  google:  (53.2921051, -6.282325)  (Grange Rd, Co. Dublin, Ireland)
+
+[Westwood Club] id=1133 -- 1215m off
+  address: West Wood Club, Westmanstown, Clonsilla, Dublin 15, D15 T447
+  stored:  (53.3829431, -6.4231873)
+  google:  (53.3794211, -6.44053)  (Westmanstown, Dublin 15, Co. Dublin, D15 T447, Ireland)
+
+[Woodford/Surrounding Areas Parent Baby & Toddler Group] id=754 -- 1197m off
+  address: Woodford, Galway, Ireland
+  stored:  (53.0521806, -8.399454)
+  google:  (53.0424049, -8.4069494)  (Woodford, Co. Galway, Ireland)
+
+[Wobblers and Toddlers] id=19 -- 1162m off
+  address: Balally Family Resource Centre, Sandyford, Dublin 16
+  stored:  (53.2753673, -6.2367372)
+  google:  (53.2724348, -6.2199633)  (Sandyford, Dublin, Ireland)
+
+[Geevagh Parent, Baby and Toddler Group] id=928 -- 1127m off
+  address: Ballynashee, County Sligo, F52 R942, Ireland
+  stored:  (54.1053946, -8.2262245)
+  google:  (54.1007899, -8.2416232)  (Ballynashee, Co. Sligo, F52 R942, Ireland)
+
+[Moo Music Wicklow] id=1316 -- 1123m off
+  address: Angel Acrobatics, Killarney Rd, Bray, Co. Wicklow, A98 FW08, Ireland
+  stored:  (53.1827429, -6.1315003)
+  google:  (53.19089, -6.12154)  (Killarney Rd, Bray, Co. Wicklow, Ireland)
+
+[Archaeology Camps – Booking Now] id=83 -- 1121m off
+  address: Harold's Cross National School, Harold's Cross, Dublin 6W
+  stored:  (53.3263097, -6.2780042)
+  google:  (53.3174321, -6.2859926)  (Clareville Rd, Harold's Cross, Dublin 6W, Co. Dublin, D6W FR66, Ireland)
+
+[Tina Mation] id=1073 -- 1113m off
+  address: GH6Q+7F, Ballybin, Ashbourne, Co. Meath, Ireland
+  stored:  (53.5124597, -6.4278814)
+  google:  (53.5106875, -6.411312499999999)  (GH6Q+7F Ballybin, County Meath)
+
+[Maia Purposeful Play] id=609 -- 1101m off
+  address: Ballysadare, County Sligo, F91 YK76, Ireland
+  stored:  (54.2098884, -8.509265)
+  google:  (54.2126797, -8.493019199999999)  (Ballysadare, Co. Sligo, F91 YK76, Ireland)
+
+[Maia Purposeful Play] id=930 -- 1101m off
+  address: Ballysadare, County Sligo, F91 YK76, Ireland
+  stored:  (54.2098884, -8.509265)
+  google:  (54.2126797, -8.493019199999999)  (Ballysadare, Co. Sligo, F91 YK76, Ireland)
+
+[Lisgoold/Leamlara Parent, Baby & Toddler Group] id=652 -- 1093m off
+  address: Lisgoold North, County Cork, T56 WT26, Ireland
+  stored:  (51.9747691, -8.2321845)
+  google:  (51.9744122, -8.2162379)  (Lisgoold North, Co. Cork, T56 WT26, Ireland)
+
+[Baby Sensory Kildare & Carlow] id=95 -- 1087m off
+  address: Keadeen Hotel
+  stored:  (53.1624406, -6.8240632)
+  google:  (53.1703376, -6.8144439)  (Curragh Chase, Ballymany, Newbridge, Co. Kildare, W12 T925, Ireland)
+
+[Shannon Baby & Toddler Storytime Groups - Shannon Library] id=615 -- 1081m off
+  address: Tullyvarraga, Shannon, County Clare, V14 WK50, Ireland
+  stored:  (52.7035042, -8.866761)
+  google:  (52.7090165, -8.8799774)  (Tullyvarraga, Shannon, Co. Clare, V14 WK50, Ireland)
+
+[Ardfallen/Douglas Breastfeeding and Toddler Group] id=621 -- 1081m off
+  address: Douglas Road, Cork, Ireland
+  stored:  (51.8785129, -8.4373594)
+  google:  (51.8845421, -8.449718)  (Douglas Rd, Cork, Ireland)
+
+[Daingean Library] id=907 -- 1072m off
+  address: Townparks, County Offaly, R35 V6P5, Ireland
+  stored:  (53.2934752, -7.3058084)
+  google:  (53.2971489, -7.290901799999999)  (Townparks, Co. Offaly, R35 V6P5, Ireland)
+
+[Toddler Group Time in Cork Libraries] id=1167 -- 1072m off
+  address: Douglas, Cork, Ireland
+  stored:  (51.8775545, -8.4358941)
+  google:  (51.8711662, -8.4242008)  (Douglas, Cork, Ireland)
+
+[Watergrasshill Playgroup] id=673 -- 1071m off
+  address: Mitchellsfort, County Cork, T56 X021, Ireland
+  stored:  (51.9988117, -8.3438384)
+  google:  (52.00815859999999, -8.3476378)  (Mitchellsfort, Co. Cork, T56 X021, Ireland)
+
+[Portarlington Toddler Group & Buggy Group] id=802 -- 1053m off
+  address: Cooltederry, Portarlington, County Laois, R32 YK24, Ireland
+  stored:  (53.1524492, -7.1889641)
+  google:  (53.1619158, -7.1888945)  (Cooltederry, Portarlington, Co. Laois, R32 YK24, Ireland)
+
+[Ready to Play] id=1307 -- 1053m off
+  address: Monksland, Co. Roscommon, Ireland
+  stored:  (53.4239686, -7.9982595)
+  google:  (53.42094549999999, -7.983195699999999)  (Monksland, Co. Westmeath, Ireland)
+
+[WSKF SEDAI - After school karate clubs] id=1434 -- 1043m off
+  address: Skerries, Co. Dublin
+  stored:  (53.5739887, -6.1191749)
+  google:  (53.5805519, -6.1078779)  (Skerries, Co. Dublin, Ireland)
+
+[The Paddocks Riding Centre] id=555 -- 1031m off
+  address: Woodside Road, Sandyford, Co. Dublin
+  stored:  (53.2570811, -6.2323114)
+  google:  (53.2648263, -6.2408266)  (Woodside Rd, Sandyford, Dublin, Ireland)
+
+[Stepaside FC] id=408 -- 1029m off
+  address: Stepaside All Weather Pitch, Stepaside, Dublin 18
+  stored:  (53.2531104, -6.2143744)
+  google:  (53.2475602, -6.2019965)  (Enniskerry Rd, Jamestown, Dublin, Ireland)
+
+[Aura Leisure Centre] id=1183 -- 1026m off
+  address: Saint Vincents Centre, Navan Rd, Ashtown, Dublin 7, Ireland
+  stored:  (53.3709427, -6.3283826)
+  google:  (53.3754965, -6.3418358)  (Navan Rd, Ashtown, Dublin, Ireland)
+
+[Clonakilty Park Leisure Club - Swimming Classes] id=1734 -- 1025m off
+  address: Clonakilty, Co. Cork
+  stored:  (51.6232159, -8.8914072)
+  google:  (51.6203379, -8.905510399999999)  (Clonakilty, Co. Cork, Ireland)
+
+[Whitethorn Equestrian Centre] id=843 -- 1024m off
+  address: Knocknasnaa, County Limerick, V94 76C0, Ireland
+  stored:  (52.4147349, -9.2926354)
+  google:  (52.40742969999999, -9.3018393)  (Knocknasnaa, Co. Limerick, V94 76C0, Ireland)
+
+[Moo Music Wicklow] id=986 -- 1023m off
+  address: Wolfe Tone Community Centre, Vevay Road, Oldcourt, Bray, County Wicklow, Ireland
+  stored:  (53.2014604, -6.1105049)
+  google:  (53.1924832, -6.107126)  (Vevay Rd, Oldcourt, Bray, Co. Wicklow, Ireland)
+
+[Woodworking Camps] id=173 -- 1017m off
+  address: Ballincollig
+  stored:  (51.8896456, -8.5803233)
+  google:  (51.888026, -8.594904099999999)  (Ballincollig, Cork, Ireland)
+
+[Master Doyle Taekwon-Do Schools] id=1186 -- 1016m off
+  address: Carlow, R93 K5P2, Ireland
+  stored:  (52.8408344, -6.9261131)
+  google:  (52.8371484, -6.9122756)  (Carlow, Co. Carlow, R93 K5P2, Ireland)
+
+[Bounce Gymnastics Club] id=420 -- 1009m off
+  address: Froebel Hall, Westfield off Mount Merrion Avenue, Blackrock, Co. Dublin
+  stored:  (53.3018639, -6.1788342)
+  google:  (53.2994792, -6.1934853)  (Mount Merrion Ave, Dublin, Ireland)
+
+[Mel Ryan School] id=1126 -- 1006m off
+  address: Mounttown Community Facility, Monkstown, Co. Dublin
+  stored:  (53.2936454, -6.1539023)
+  google:  (53.2852938, -6.1480918)  (Fitzgerald Park, Mountashton, Dublin, Ireland)
+
+[Dublin Stage School] id=410 -- 1001m off
+  address: St. John's National School, Church Road, Killiney, Co. Dublin
+  stored:  (53.2646382, -6.1331618)
+  google:  (53.256099, -6.1283789)  (Church Rd, Loughlinstown, Killiney, Co. Dublin, A96 NW60, Ireland)
+
+[Ready to Play] id=978 -- 998m off
+  address: Waterford, X91 W288, Ireland
+  stored:  (52.2609997, -7.1119081)
+  google:  (52.2520412, -7.1110826)  (Waterford, Co. Waterford, X91 W288, Ireland)
+
+[Kilgarvan Parent, Baby & Toddler Group] id=769 -- 997m off
+  address: Kilgarvan Community Centre, Churchground, Kilgarvan, County Kerry, Ireland
+  stored:  (51.9099153, -9.4299087)
+  google:  (51.9029993, -9.4391526)  (Kilgarvan Community Centre, Churchground, Kilgarvan, Co. Kerry, Ireland)
+
+[Music Cubs] id=257 -- 996m off
+  address: Rathfarnham, Dublin, D14 PY99, Ireland
+  stored:  (53.3030589, -6.2909751)
+  google:  (53.3004213, -6.2766496)  (Rathfarnham, Dublin, Co. Dublin, D14 PY99, Ireland)
+
+[Ready to Play] id=1299 -- 996m off
+  address: Dundaryark, County Kilkenny, R95 D7X3, Ireland
+  stored:  (52.5910514, -7.250923)
+  google:  (52.5835055, -7.2429725)  (Dundaryark, Co. Kilkenny, R95 D7X3, Ireland)
+
+[Shoreline Leisure - Bray Children's Swim Lessons] id=1399 -- 993m off
+  address: Southern Cross Road, Bray, Co. Wicklow
+  stored:  (53.1814122, -6.1300734)
+  google:  (53.1841077, -6.11586)  (Southern Cross Rd, Bray, Co. Wicklow, Ireland)
+
+[Ace Martial Arts - Maynooth] id=1508 -- 993m off
+  address: Blacklion, Maynooth, Co. Kildare
+  stored:  (53.3810858, -6.5760869)
+  google:  (53.3815491, -6.5910382)  (Maynooth, Co. Kildare, Ireland)
+
+[CJ Cookery] id=458 -- 989m off
+  address: St. Gabriel's Parish Centre, Clontarf, Dublin 3
+  stored:  (53.3608138, -6.1968538)
+  google:  (53.36425490000001, -6.183117999999999)  (St Gabriel's Rd, Clontarf, Dublin, 3, Ireland)
+
+[Dublin Cookery School] id=480 -- 989m off
+  address: St. Gabriel's Parish Centre, Clontarf, Dublin 3
+  stored:  (53.3608138, -6.1968538)
+  google:  (53.36425490000001, -6.183117999999999)  (St Gabriel's Rd, Clontarf, Dublin, 3, Ireland)
+
+[Ready to Play] id=1302 -- 989m off
+  address: Enniscorthy, County Wexford, Y21 W640, Ireland
+  stored:  (52.5046084, -6.5662858)
+  google:  (52.5069232, -6.580390899999999)  (Enniscorthy, Co. Wexford, Y21 W640, Ireland)
+
+[Baby Massage in Portlaoise with Oxana Murray] id=794 -- 985m off
+  address: Knockmay, Portlaoise, County Laois, R32 C7DD, Ireland
+  stored:  (53.0292581, -7.3146491)
+  google:  (53.0381104, -7.314129500000001)  (Knockmay, Portlaoise, Co. Laois, R32 C7DD, Ireland)
+
+[Turtle Tots Swimming Classes - Kerry] id=1231 -- 980m off
+  address: Dromtacker House, Dromthacker, Tralee, County Kerry, Ireland
+  stored:  (52.2815239, -9.6735584)
+  google:  (52.2886013, -9.6649625)  (Dromtacker House, Dromthacker, Tralee, Co. Kerry, Ireland)
+
+[Claphandies] id=1031 -- 973m off
+  address: Clontarf West, Dublin, D05 X535, Ireland
+  stored:  (53.3661768, -6.2222809)
+  google:  (53.37455809999999, -6.2180873)  (Clontarf West, Dublin, Co. Dublin, D05 X535, Ireland)
+
+[Happy Cubs] id=1119 -- 973m off
+  address: Kilmainham, Dublin
+  stored:  (53.3410462, -6.3072776)
+  google:  (53.3430611, -6.3215398)  (Kilmainham, Dublin, Ireland)
+
+[Lasting Touch Baby Massage] id=1213 -- 969m off
+  address: Athlone, County Westmeath, N37 W7P3, Ireland
+  stored:  (53.4228434, -7.9425897)
+  google:  (53.43155669999999, -7.942932900000001)  (Athlone, Co. Westmeath, N37 W7P3, Ireland)
+
+[Little Kickers] id=1285 -- 968m off
+  address: Townparks, Midleton, County Cork, P25 R248, Ireland
+  stored:  (51.9148279, -8.1733222)
+  google:  (51.90821390000001, -8.1641519)  (Townparks, Midleton, Co. Cork, P25 R248, Ireland)
+
+[Messy Adventures] id=1054 -- 967m off
+  address: Phibblestown, Dublin, Ireland
+  stored:  (53.400556, -6.434444)
+  google:  (53.39257809999999, -6.4402674)  (Hansfield Or Phibblestown, Dublin, Ireland)
+
+[Jiving Babies & Mums] id=869 -- 962m off
+  address: Bohola, Barleyhill, Co. Mayo, Ireland
+  stored:  (53.9110949, -9.0523151)
+  google:  (53.9025842, -9.0549945)  (Barleyhill, Bohola, Co. Mayo, Ireland)
+
+[Portlaoise Family Resource Centre - Toddler & Kids Groups] id=804 -- 958m off
+  address: Harpur's Lane, Knockmay, Portlaoise, County Laois, Ireland
+  stored:  (53.0292581, -7.3146491)
+  google:  (53.0378536, -7.3137726)  (Harpur's Ln, Knockmay, Portlaoise, Co. Laois, Ireland)
+
+[Little Kickers County Laois, Carlow and Kilkenny] id=1266 -- 958m off
+  address: Harpur's Ln, Knockmay, Portlaoise, Co. Laois, Ireland
+  stored:  (53.0292581, -7.3146491)
+  google:  (53.0378536, -7.3137726)  (Harpur's Ln, Knockmay, Portlaoise, Co. Laois, Ireland)
+
+[Circus Factory Cork - Thursday Youth Circus] id=1342 -- 944m off
+  address: Centre Park House, Centre Park Road, Cork City
+  stored:  (51.8981209, -8.4630379)
+  google:  (51.8976925, -8.4492918)  (Centre Park House, 2 Centre Park Rd, Ballintemple, Cork, T12 RK0N, Ireland)
+
+[Mountmellick - Toddler Group / Kids Book Clubs / Lego Group] id=799 -- 934m off
+  address: Townparks, County Laois, R32 PX61, Ireland
+  stored:  (53.1207549, -7.345772)
+  google:  (53.1184425, -7.3323201)  (Townparks, Co. Laois, R32 PX61, Ireland)
+
+[Alix Gardner's Cookery School] id=439 -- 933m off
+  address: 71 Waterloo Rd, Ballsbridge, Dublin
+  stored:  (53.3291947, -6.2313316)
+  google:  (53.3296475, -6.2453542)  (71 Waterloo Rd, Ballsbridge, Dublin, D04 P659, Ireland)
+
+[Carrick Parent, Baby and Toddler Group] id=680 -- 929m off
+  address: Roxborough Glebe, County Donegal, F94 KXY1, Ireland
+  stored:  (54.6481858, -8.6323031)
+  google:  (54.6565363, -8.6325635)  (Roxborough Glebe, Co. Donegal, F94 KXY1, Ireland)
+
+[Nana's Playroom] id=660 -- 922m off
+  address: Ballinlough Comm Ctr, Ballintemple, Cork, Co. Cork, Ireland
+  stored:  (51.8947981, -8.4354471)
+  google:  (51.889591, -8.445897)  (Ballinlough Comm Ctr, Ballintemple, Cork, Co. Cork, Ireland)
+
+[Craughwell Baby & Toddler Group] id=721 -- 918m off
+  address: Craughwell, County Galway, H91 X028, Ireland
+  stored:  (53.2251309, -8.7358299)
+  google:  (53.2329826, -8.7400966)  (Craughwell, Co. Galway, H91 X028, Ireland)
+
+[Lasting Touch Baby Massage] id=1214 -- 918m off
+  address: Craughwell, County Galway, H91 X028, Ireland
+  stored:  (53.2251309, -8.7358299)
+  google:  (53.2329826, -8.7400966)  (Craughwell, Co. Galway, H91 X028, Ireland)
+
+[Leap Baby &Toddler Group] id=651 -- 913m off
+  address: Kilmacabea, County Cork, P81 CT82, Ireland
+  stored:  (51.5879761, -9.1354535)
+  google:  (51.5807071, -9.1415857)  (Kilmacabea, Co. Cork, P81 CT82, Ireland)
+
+[Aura Leisure Centre] id=1177 -- 903m off
+  address: Corbally Rd, Grove Island, Limerick, Ireland
+  stored:  (52.6675948, -8.6178386)
+  google:  (52.6755703, -8.6153087)  (Corbally Rd, Limerick, Ireland)
+
+[Baby Sensory Northwest] id=676 -- 894m off
+  address: Sligo Airport Business Park, Airport Rd, Killaspugbrone, Strandhill, Co. Sligo, Ireland
+  stored:  (54.2699517, -8.5942985)
+  google:  (54.27773699999999, -8.5977594)  (Sligo Airport Business Park, Airport Rd, Killaspugbrone, Strandhill, Co. Sligo, Ireland)
+
+[Toddler Group Dublin 6 - Terenure Library] id=292 -- 883m off
+  address: Templeogue Road, Templeogue, Dublin 6W, County Dublin, Ireland
+  stored:  (53.29612, -6.31088)
+  google:  (53.3001832, -6.2994613)  (Templeogue Rd, Dublin, Ireland)
+
+[Kids Art Class Mornington, Philipstown and Ardee] id=1098 -- 883m off
+  address: Philipstown, County Louth, Ireland
+  stored:  (53.8229997, -6.4707973)
+  google:  (53.8154128, -6.4668125)  (Philipstown, Co. Louth, Ireland)
+
+[Move To Improve - Carrickmacross, Drogheda] id=1244 -- 878m off
+  address: Beaulieu, County Louth, A92 ET95, Ireland
+  stored:  (53.7294917, -6.294533)
+  google:  (53.736092, -6.301850099999999)  (Beaulieu, Co. Louth, A92 ET95, Ireland)
+
+[Master Doyle Taekwon-Do Schools] id=706 -- 867m off
+  address: Naas West, Naas, County Kildare, W91 VW90, Ireland
+  stored:  (53.2142203, -6.6729831)
+  google:  (53.2199224, -6.6641111)  (Naas West, Naas, Co. Kildare, W91 VW90, Ireland)
+
+[Portarlington Parent, Baby & Toddler Group] id=801 -- 867m off
+  address: Link Road, Cooltederry, Portarlington, County Laois, Ireland
+  stored:  (53.1524492, -7.1889641)
+  google:  (53.1602053, -7.1875722)  (Link Rd, Cooltederry, Portarlington, Co. Laois, Ireland)
+
+[Water Babies -Dublin] id=1198 -- 867m off
+  address: Cratloemoyle, County Clare, V94 YA2R, Ireland
+  stored:  (52.691598, -8.7150041)
+  google:  (52.6843862, -8.7100972)  (Cratloemoyle, Co. Clare, V94 YA2R, Ireland)
+
+[Kilmallock/Caherconlish/Hospital/Ballylanders Toddler Group] id=1241 -- 860m off
+  address: Knockainey Road, Coolalough, Hospital, Co. Limerick, Ireland
+  stored:  (52.4688647, -8.4188976)
+  google:  (52.4674945, -8.4313919)  (Knockainey Rd, Coolalough, Hospital, Co. Limerick, Ireland)
+
+[Mini Athletics Dundalk Drogheda and Swords] id=1057 -- 856m off
+  address: Dundalk, County Louth, Ireland
+  stored:  (54.0046033, -6.4008879)
+  google:  (54.0024774, -6.388300099999999)  (Dundalk, Co. Louth, Ireland)
+
+[Sensory Play Studio] id=951 -- 854m off
+  address: Burgagery-Lands West, Clonmel, County Tipperary, E91 Y312, Ireland
+  stored:  (52.359573, -7.703782)
+  google:  (52.3543053, -7.6946232)  (Burgagery-Lands West, Clonmel, Co. Tipperary, E91 Y312, Ireland)
+
+[Castleblayney Parent, Baby & Toddler Group - Blaneytots] id=889 -- 852m off
+  address: Killygola, County Monaghan, A75 E653, Ireland
+  stored:  (54.1406021, -6.7361848)
+  google:  (54.1333183, -6.7321221)  (Killygola, Co. Monaghan, A75 E653, Ireland)
+
+[Dublin Stage School] id=1113 -- 846m off
+  address: Killiney, Dublin
+  stored:  (53.2642381, -6.1148407)
+  google:  (53.2569756, -6.1186243)  (Killiney, Dublin, Ireland)
+
+[Turtle Tots Swimming Classes - Kerry] id=1228 -- 845m off
+  address: Sandhill Road, Ballybunnion, County Kerry, Ireland
+  stored:  (52.5103039, -9.6740364)
+  google:  (52.5027165, -9.6733101)  (Sandhill Rd, Co. Kerry, Ireland)
+
+[Turtle Tots Swimming Classes - Cork] id=672 -- 840m off
+  address: Rathgoggan North, Charleville, County Cork, P56 V268, Ireland
+  stored:  (52.3718573, -8.6816559)
+  google:  (52.3643631, -8.6832526)  (Rathgoggan North, Charleville, Co. Cork, P56 V268, Ireland)
+
+[Little Kickers Galway] id=734 -- 838m off
+  address: Garraun Upper, County Galway, H91 V12C, Ireland, Glennagloghaun South, County Galway, H65 H393, Ireland
+  stored:  (53.3664953, -8.709486)
+  google:  (53.3735824, -8.705172500000002)  (Glennagloghaun South, Co. Galway, H65 H393, Ireland)
+
+[Swinford Parent, Baby and Toddler Group] id=879 -- 837m off
+  address: Cuilmore Rd, Cloonlara, County Mayo, Ireland
+  stored:  (53.9504733, -8.9207104)
+  google:  (53.9515751, -8.9080501)  (Cuilmore Rd, Deerpark, Co. Mayo, Ireland)
+
+[Abbeyfeale Parent, Baby and Toddler Group] id=822 -- 832m off
+  address: Abbeyfeale West, Abbeyfeale, County Limerick, V94 HXR2, Ireland
+  stored:  (52.379385, -9.302526)
+  google:  (52.386205, -9.2974892)  (Abbeyfeale West, Abbeyfeale, Co. Limerick, V94 HXR2, Ireland)
+
+[Mini Me Massage] id=1058 -- 831m off
+  address: Flemingtown, County Dublin, K32 PD79, Ireland
+  stored:  (53.6191774, -6.2184005)
+  google:  (53.62416409999999, -6.2277759)  (Flemingtown, Co. Dublin, K32 PD79, Ireland)
+
+[Clonmany Parent, Baby and Toddler Group] id=681 -- 830m off
+  address: Clehagh, County Donegal, F93 YX90, Ireland
+  stored:  (55.2636631, -7.395774)
+  google:  (55.2620473, -7.408567300000001)  (Clehagh, Co. Donegal, F93 YX90, Ireland)
+
+[Water Babies] id=1312 -- 829m off
+  address: Ballindinas, County Wexford, Y35 E8KT, Ireland
+  stored:  (52.3337141, -6.5247145)
+  google:  (52.3374816, -6.5141925)  (Ballindinas, Co. Wexford, Y35 E8KT, Ireland)
+
+[Clonmel Mother and Baby Walking/Buggy Group] id=942 -- 827m off
+  address: Burgagery-Lands West, Clonmel, County Tipperary, E91 WV40, Ireland
+  stored:  (52.359573, -7.703782)
+  google:  (52.3522006, -7.7022267)  (Burgagery-Lands West, Clonmel, Co. Tipperary, E91 WV40, Ireland)
+
+[NPAS] id=524 -- 823m off
+  address: Docklands, Dublin
+  stored:  (53.3506697, -6.239326)
+  google:  (53.3432821, -6.238482899999999)  (Sir John Rogerson's Quay, Grand Canal Dock, Dublin, Ireland)
+
+[Bunclody Library] id=963 -- 822m off
+  address: Carrickduff, County Carlow, Y21 E970, Ireland
+  stored:  (52.658997, -6.6673396)
+  google:  (52.6556848, -6.6564463)  (Carrickduff, Co. Carlow, Y21 E970, Ireland)
+
+[Ballinteer St. Johns GAA Club] id=431 -- 819m off
+  address: Grange Road, Ballinteer, Dublin 16
+  stored:  (53.2795149, -6.2711431)
+  google:  (53.274004, -6.2629777)  (Grange Rd, Ballinteer, Dublin, Ireland)
+
+[Ready to Play] id=1306 -- 817m off
+  address: Forest Park, Mullingar Business Park, Mullingar, Co. Westmeath, Ireland
+  stored:  (53.5182334, -7.3609067)
+  google:  (53.5144787, -7.371530700000001)  (Forest Park, Mullingar Business Park, Mullingar, Co. Westmeath, N91 E1WD, Ireland)
+
+[Borris Parent, Baby & Toddler Group Carlow] id=572 -- 815m off
+  address: Borris, County Carlow, R95 AY07, Ireland
+  stored:  (52.5987984, -6.9202139)
+  google:  (52.6056874, -6.9243465)  (Borris, Co. Carlow, R95 AY07, Ireland)
+
+[Bloom Baby Classes - Midlands] id=1262 -- 815m off
+  address: Springfield Or Spittlefield, Mullingar, County Westmeath, N91 PX22, Ireland
+  stored:  (53.525822, -7.341304)
+  google:  (53.53039829999999, -7.331670000000001)  (Springfield Or Spittlefield, Mullingar, Co. Westmeath, N91 PX22, Ireland)
+
+[Bloom Baby Classes Midlands Ireland] id=1265 -- 815m off
+  address: Springfield Or Spittlefield, Mullingar, County Westmeath, N91 PX22, Ireland
+  stored:  (53.525822, -7.341304)
+  google:  (53.53039829999999, -7.331670000000001)  (Springfield Or Spittlefield, Mullingar, Co. Westmeath, N91 PX22, Ireland)
+
+[Mel Ryan School] id=1127 -- 812m off
+  address: Samuel Beckett Civic Centre, Carrickmines, Dublin 18
+  stored:  (53.2532351, -6.1718916)
+  google:  (53.2467094, -6.1773541)  (Carrickmines Great, Dublin 18, Ireland)
+
+[Down Syndrome Limerick Toddler Group/ Social Club - Newcastle/Castletroy] id=828 -- 809m off
+  address: Newcastle, Limerick, V94 D998, Ireland
+  stored:  (52.6661862, -8.5630842)
+  google:  (52.6673474, -8.5749216)  (Newcastle, Limerick, Co. Limerick, V94 D998, Ireland)
+
+[Fenagh Beg Parent & Toddler Group] id=819 -- 804m off
+  address: Fenagh Beg, County Leitrim, N41 E2R6, Ireland
+  stored:  (54.0260405, -7.8471758)
+  google:  (54.0206651, -7.838950100000001)  (Fenagh Beg, Co. Leitrim, N41 E2R6, Ireland)
+
+[Enniscorthy Library] id=966 -- 800m off
+  address: Townparks, Wexford, Y35 AY20, Ireland
+  stored:  (52.3327968, -6.4578219)
+  google:  (52.3390444, -6.4636548)  (Townparks, Wexford, Co. Wexford, Y35 AY20, Ireland)
+
+[Wexford Town Library] id=984 -- 800m off
+  address: Townparks, Wexford, Y35 AY20, Ireland
+  stored:  (52.3327968, -6.4578219)
+  google:  (52.3390444, -6.4636548)  (Townparks, Wexford, Co. Wexford, Y35 AY20, Ireland)
+
+[Newpark Music Centre] id=528 -- 788m off
+  address: Newpark Music Centre, Newtownpark Avenue, Blackrock, Co. Dublin
+  stored:  (53.2802772, -6.1826256)
+  google:  (53.2863976, -6.1766644)  (Newtownpark Ave, Dublin, Ireland)
+
+[Achill Parent, Baby and Toddler Group] id=855 -- 787m off
+  address: Dooniver, County Mayo, F28 K283, Ireland
+  stored:  (54.0021063, -9.9462526)
+  google:  (53.9953638, -9.9499066)  (Dooniver, Co. Mayo, F28 K283, Ireland)
+
+[Pottery Classes in Drogheda with Gatothorceramica] id=148 -- 784m off
+  address: Lagavooren
+  stored:  (53.7124552, -6.3480535)
+  google:  (53.7082285, -6.3575962)  (Lagavooren, Drogheda, Co. Louth, Ireland)
+
+[Clonakilty Parent, Baby & Toddler Group] id=633 -- 784m off
+  address: Tawnies Upper, Clonakilty, County Cork, P85 XC64, Ireland
+  stored:  (51.6305433, -8.8946297)
+  google:  (51.6237131, -8.8917923)  (Tawnies Upper, Clonakilty, Co. Cork, P85 XC64, Ireland)
+
+[Tina Mation] id=1074 -- 782m off
+  address: Donabate Portrane Leisure Centre, 3 Portrane Rd, Ballisk Common, Donabate, Co. Dublin, K36 F598, Ireland
+  stored:  (53.4857483, -6.1512942)
+  google:  (53.4904355, -6.1424829)  (Donabate Portrane Leisure Centre, 3 Portrane Rd, Ballisk Common, Donabate, Co. Dublin, K36 F598, Ireland)
+
+[Baby Sensory South Dublin] id=9 -- 771m off
+  address: St Brigid's, Cabinteely, Co. Dublin
+  stored:  (53.261135, -6.1500827)
+  google:  (53.2615212, -6.1616616)  (Cabinteely, Dublin, D18 TN66, Ireland)
+
+[SENSEable Tots Sensory Class in Dublin and Wicklow] id=1068 -- 771m off
+  address: 24 Carrig Mill, Killincarrig, Greystones, Co. Wicklow, A63 NX21, Ireland
+  stored:  (53.1367546, -6.0664215)
+  google:  (53.13117039999999, -6.073267)  (24 Carrig Mill, Killincarrig, Greystones, Co. Wicklow, A63 NX21, Ireland)
+
+[KidLit Creators - Creative writing for kids!] id=647 -- 770m off
+  address: Glounthaune, County Cork, Ireland
+  stored:  (51.9112899, -8.3251115)
+  google:  (51.91114, -8.33633)  (Lackenroe, Glounthaune Village, Co. Cork, Ireland)
+
+[Baby Massage with Laura – Navan & Surrounds] id=93 -- 763m off
+  address: Navan
+  stored:  (53.6539498759, -6.6965582977)
+  google:  (53.647092, -6.6966605)  (Navan, Co. Meath, Ireland)
+
+[Kilcummin Baby & Toddler Group] id=767 -- 763m off
+  address: Clashnagarrane, County Kerry, V93 K22T, Ireland
+  stored:  (52.0976841, -9.4823304)
+  google:  (52.0968503, -9.4712491)  (Clashnagarrane, Co. Kerry, V93 K22T, Ireland)
+
+[Glengoole Parent, Baby & Toddler Group] id=944 -- 762m off
+  address: Glengoole South, County Tipperary, E41 A065, Ireland
+  stored:  (52.6109714, -7.6304972)
+  google:  (52.6144578, -7.640209100000001)  (Glengoole South, Co. Tipperary, E41 A065, Ireland)
+
+[Ballina Parent, Baby and Toddler Group] id=857 -- 757m off
+  address: Abbeyhalfquarter, Ballina, County Mayo, F26 C6P6, Ireland
+  stored:  (54.1130195, -9.1391942)
+  google:  (54.1119022, -9.1506448)  (Abbeyhalfquarter, Ballina, Co. Mayo, F26 C6P6, Ireland)
+
+[Little Kickers Dublin South & Wicklow] id=1049 -- 751m off
+  address: Blessington Demesne, County Wicklow, W91 A52H, Ireland
+  stored:  (53.175383, -6.5405001)
+  google:  (53.1742962, -6.529372899999999)  (Blessington Demesne, Co. Wicklow, W91 A52H, Ireland)
+
+[Ready Steady Play South East] id=1298 -- 751m off
+  address: Dungarvan, County Waterford, Ireland
+  stored:  (52.0897488, -7.6210306)
+  google:  (52.0932368, -7.6304404)  (Dungarvan, Co. Waterford, Ireland)
+
+[Tullow Parent & Toddler Group Carlow] id=583 -- 750m off
+  address: Tullowphelim, County Carlow, R93 CY68, Ireland
+  stored:  (52.8091063, -6.7313719)
+  google:  (52.8024796, -6.7334289)  (Tullowphelim, Co. Carlow, R93 CY68, Ireland)
+
+[Dromdaleague Parent, Baby & Toddler Group] id=639 -- 741m off
+  address: Dromdaleague, County Cork, P47 W297, Ireland
+  stored:  (51.6658434, -9.2633898)
+  google:  (51.6591826, -9.263670099999999)  (Dromdaleague, Co. Cork, P47 W297, Ireland)
+
+[Dublin School of Music] id=5 -- 735m off
+  address: 20 Kilmacud Road Lower, Stillorgan, Dublin 18
+  stored:  (53.2882188, -6.18887)
+  google:  (53.288327, -6.199931599999999)  (20 Lower Kilmacud Rd, Stillorgan, Dublin, A94 F9K8, Ireland)
+
+[Claphandies] id=204 -- 735m off
+  address: Drumcondra, Dublin, D03 WC66, Ireland
+  stored:  (53.3680988, -6.2554727)
+  google:  (53.36415179999999, -6.246594699999999)  (Drumcondra, Dublin, Co. Dublin, D03 WC66, Ireland)
+
+[ClapHandies PlayLabs - Dublin] id=1021 -- 735m off
+  address: Drumcondra, Dublin, D03 WC66, Ireland
+  stored:  (53.3680988, -6.2554727)
+  google:  (53.36415179999999, -6.246594699999999)  (Drumcondra, Dublin, Co. Dublin, D03 WC66, Ireland)
+
+[Dundalk School of Music - Pre-instrumental] id=1391 -- 735m off
+  address: Unit 11 Blackthorn Business Park, Coe's Road, Dundalk
+  stored:  (53.9984963, -6.3813173)
+  google:  (54.0049212, -6.3786906)  (Blackthorn Business Park, Coes Rd, Townparks, Dundalk, Co. Louth, Ireland)
+
+[Whitechurch and Waterloo Toddler Group] id=674 -- 733m off
+  address: Farranastig, County Cork, T34 RR58, Ireland
+  stored:  (51.9768747, -8.5411171)
+  google:  (51.9812452, -8.533109699999999)  (Farranastig, Co. Cork, T34 RR58, Ireland)
+
+[Strandhill Parent, Baby and Toddler Group] id=1273 -- 727m off
+  address: Carrowbunnaun, County Sligo, F91 XH50, Ireland
+  stored:  (54.2660875, -8.6004028)
+  google:  (54.2701766, -8.6091374)  (Carrowbunnaun, Co. Sligo, F91 XH50, Ireland)
+
+[Harmonics Music School] id=116 -- 725m off
+  address: Beach Court Kilcoole
+  stored:  (53.1127842, -6.0651958)
+  google:  (53.1062723, -6.064586100000001)  (Kilcoole, Co. Wicklow, Ireland)
+
+[West Wood Club Leopardstown] id=989 -- 724m off
+  address: West Wood Tennis Centre, Leopardstown Racecourse, Foxrock, Dublin 18
+  stored:  (53.266813, -6.1838379)
+  google:  (53.2649858, -6.1942796)  (Leopardstown Race Course, Foxrock, Dublin 18, D18 C9V6, Ireland)
+
+[Westwood Club] id=1132 -- 724m off
+  address: West Wood Club, Leopardstown Race Course, Foxrock, Dublin 18, D18 C9V6
+  stored:  (53.266813, -6.1838379)
+  google:  (53.2649858, -6.1942796)  (Leopardstown Race Course, Foxrock, Dublin 18, D18 C9V6, Ireland)
+
+[Babywearing ireland] id=1206 -- 721m off
+  address: Barntown, County Wexford, Ireland
+  stored:  (52.3380972, -6.5364506)
+  google:  (52.34238800000001, -6.5284919)  (Barntown, Co. Wexford, Ireland)
+
+[Sligo Academy of Music - Musical Explorers] id=1481 -- 721m off
+  address: Summerhill College, Sligo
+  stored:  (54.2720696, -8.4751357)
+  google:  (54.2661266, -8.479573499999999)  (Caltragh, Sligo, F91 D5YF, Ireland)
+
+[Summerhill Baby and Toddler Group] id=364 -- 716m off
+  address: Summerhill Demesne, Summerhill Demesne, Co. Meath, Ireland
+  stored:  (53.46626, -6.74258)
+  google:  (53.46886629999999, -6.732684099999999)  (Summerhill Demesne, Co. Meath, Ireland)
+
+[Irish Dance Classes] id=236 -- 713m off
+  address: Navan Road, Castleknock, Dublin 15, D15 R7WX, Ireland
+  stored:  (53.37615, -6.34976)
+  google:  (53.380564, -6.3575517)  (Navan Rd, Castleknock, Dublin, Ireland)
+
+[Renaniree Parent & Toddler Group] id=664 -- 709m off
+  address: Reananerree, County Cork, P12 F447, Ireland
+  stored:  (51.9022877, -9.1494406)
+  google:  (51.90201769999999, -9.1597689)  (Reananerree, Co. Cork, P12 F447, Ireland)
+
+[Killeedy Parent, Baby and Toddler Group] id=834 -- 709m off
+  address: Gortnaclohy, County Limerick, V42 V960, Ireland
+  stored:  (52.362548, -9.0699291)
+  google:  (52.3612352, -9.0597111)  (Gortnaclohy, Co. Limerick, V42 V960, Ireland)
+
+[Toddle Sense] id=1082 -- 708m off
+  address: Drumcondra, Dublin, D09 KDW4, Ireland
+  stored:  (53.3680988, -6.2554727)
+  google:  (53.37239719999999, -6.2475931)  (Drumcondra, Dublin, Co. Dublin, D09 KDW4, Ireland)
+
+[Quin Baby & Toddler Group] id=610 -- 702m off
+  address: Quingardens, County Clare, V95 RX75, Ireland
+  stored:  (52.8143881, -8.8726875)
+  google:  (52.8184014, -8.8646149)  (Quingardens, Co. Clare, V95 RX75, Ireland)
+
+[Quin Village Parent, Baby and Toddler Group] id=611 -- 702m off
+  address: Quingardens, County Clare, V95 RX75, Ireland
+  stored:  (52.8143881, -8.8726875)
+  google:  (52.8184014, -8.8646149)  (Quingardens, Co. Clare, V95 RX75, Ireland)
+
+[Stories & Stations] id=618 -- 702m off
+  address: Quingardens, County Clare, V95 RX75, Ireland
+  stored:  (52.8143881, -8.8726875)
+  google:  (52.8184014, -8.8646149)  (Quingardens, Co. Clare, V95 RX75, Ireland)
+
+[Glenbeigh Parent, Baby & Toddler Group (The Toddle Inn)] id=764 -- 701m off
+  address: Kilnabrack Upper, County Kerry, V93 N5TE, Ireland
+  stored:  (52.0502109, -9.9343284)
+  google:  (52.0554941, -9.9399221)  (Kilnabrack Upper, Co. Kerry, V93 N5TE, Ireland)
+
+[Turtle Tots Dublin] id=1091 -- 698m off
+  address: Finglas North, Dublin, D11 HK09, Ireland
+  stored:  (53.3969003, -6.3044458)
+  google:  (53.3906618, -6.3056389)  (Finglas North, Dublin, Co. Dublin, D11 HK09, Ireland)
+
+[Millstreet Parent, Baby & Toddler Group] id=658 -- 696m off
+  address: West End, Coomlogane, Millstreet, Co. Cork, Ireland
+  stored:  (52.0540186, -9.0669469)
+  google:  (52.0601329, -9.0647815)  (W End, Coomlogane, Co. Cork, Ireland)
+
+[Chime in & Play] id=574 -- 692m off
+  address: Carlow, R93 DK06, Ireland
+  stored:  (52.8408344, -6.9261131)
+  google:  (52.8355553, -6.9206534)  (Carlow, Co. Carlow, R93 DK06, Ireland)
+
+[Dancing Tots] id=576 -- 692m off
+  address: Carlow, R93 DK06, Ireland
+  stored:  (52.8408344, -6.9261131)
+  google:  (52.8355553, -6.9206534)  (Carlow, Co. Carlow, R93 DK06, Ireland)
+
+[Little Lullabies Baby Massage] id=577 -- 692m off
+  address: Carlow, R93 DK06, Ireland
+  stored:  (52.8408344, -6.9261131)
+  google:  (52.8355553, -6.9206534)  (Carlow, Co. Carlow, R93 DK06, Ireland)
+
+[Killybegs Parent, Baby and Toddler Group] id=690 -- 692m off
+  address: Killybegs, Co. Donegal, Ireland
+  stored:  (54.6362345, -8.4442592)
+  google:  (54.6347625, -8.4547084)  (Killybegs, Co. Donegal, Ireland)
+
+[Little Kickers Galway] id=1216 -- 692m off
+  address: Ballycuirke West, County Galway, H91 HF10, Ireland
+  stored:  (53.3359296, -9.1675666)
+  google:  (53.3396765, -9.1758799)  (Ballycuirke West, Co. Galway, H91 HF10, Ireland)
+
+[Bushy Park Tennis Academy] id=457 -- 691m off
+  address: Rathdown Ave, Terenure, Dublin 6W, Co. Dublin, D6W TX24
+  stored:  (53.3093049, -6.2884924)
+  google:  (53.3031447, -6.2898891)  (Rathdown Ave, Terenure, Dublin, Ireland)
+
+[Turtle Tots Swimming Classes - Kerry] id=780 -- 688m off
+  address: Tralee, County Kerry, V92 T6TW, Ireland
+  stored:  (52.2692116, -9.7057047)
+  google:  (52.26349399999999, -9.7095571)  (Tralee, Co. Kerry, V92 T6TW, Ireland)
+
+[Fyi Dance Club] id=391 -- 685m off
+  address: Ballynerrin Lower, Wicklow, A67 VF77, Ireland
+  stored:  (52.9751639, -6.0537484)
+  google:  (52.97992310000001, -6.04725)  (Ballynerrin Lower, Wicklow, Co. Wicklow, A67 VF77, Ireland)
+
+[Little Kickers County Laois, Carlow and Kilkenny] id=1267 -- 684m off
+  address: Main St, Cooltederry, Portarlington, Co. Laois, Ireland
+  stored:  (53.1524492, -7.1889641)
+  google:  (53.1584788, -7.1869101)  (Main St, Cooltederry, Portarlington, Co. Laois, Ireland)
+
+[Turtle Tots Swimming Classes - Kerry] id=1230 -- 683m off
+  address: Ballycasheen, County Kerry, V93 FX00, Ireland
+  stored:  (52.054869, -9.488977)
+  google:  (52.0602122, -9.4840541)  (Ballycasheen, Co. Kerry, V93 FX00, Ireland)
+
+[Round Towers GAA Club (Clondalkin)] id=407 -- 682m off
+  address: Monastery Road, Clondalkin, Co. Dublin
+  stored:  (53.3167284, -6.3735662)
+  google:  (53.3196092, -6.3826266)  (Monastery Road, Clondalkin, Dublin, Ireland)
+
+[Bloom Baby Classes - Midlands] id=904 -- 681m off
+  address: Mucklagh, County Offaly, R35 DN02, Ireland
+  stored:  (53.2510054, -7.5492754)
+  google:  (53.2547446, -7.541161400000001)  (Mucklagh, Co. Offaly, R35 DN02, Ireland)
+
+[Bloom Baby Classes Midlands Ireland] id=905 -- 681m off
+  address: Mucklagh, County Offaly, R35 DN02, Ireland
+  stored:  (53.2510054, -7.5492754)
+  google:  (53.2547446, -7.541161400000001)  (Mucklagh, Co. Offaly, R35 DN02, Ireland)
+
+[Kellystown Riding School] id=500 -- 674m off
+  address: Kellystown Rd, Sandyford, Dublin 18
+  stored:  (53.2578209, -6.2547108)
+  google:  (53.2631503, -6.2595517)  (Kellystown Rd, Sandyford, Dublin, Ireland)
+
+[Chime in & Play] id=1136 -- 670m off
+  address: De La Salle Pastoral Centre, Saint Patrick's Road, Ballynerrin Lower, Wicklow, Ireland
+  stored:  (52.9751639, -6.0537484)
+  google:  (52.9791597, -6.046248599999999)  (De La Salle Pastoral Centre, St Patrick's Rd, Ballynerrin Lower, Wicklow, A67 FX65, Ireland)
+
+[Bloom Baby Classes Midlands Ireland] id=1264 -- 666m off
+  address: Aghafin, County Longford, N39 W425, Ireland
+  stored:  (53.7018885, -7.5936115)
+  google:  (53.69969829999999, -7.6030341)  (Aghafin, Co. Longford, N39 W425, Ireland)
+
+[Turtle Tots Swimming Classes /Louth/Limerick/Laois/Waterford] id=854 -- 663m off
+  address: Boyne Avenue, Newtownstalaban, Drogheda, Co. Louth, Ireland
+  stored:  (53.7215672, -6.3124165)
+  google:  (53.7211533, -6.3224662)  (Boyne Ave, Newtownstalaban, Drogheda, Co. Louth, Ireland)
+
+[Knockmore/Rathduff Parent, Baby and Toddler Group] id=872 -- 660m off
+  address: Knockmore, County Mayo, F26 F803, Ireland
+  stored:  (54.018889, -9.175278)
+  google:  (54.0248216, -9.1750262)  (Knockmore, Co. Mayo, F26 F803, Ireland)
+
+[Water Babies -Dublin] id=1188 -- 659m off
+  address: Priorswood, Dublin, D17 NW92, Ireland
+  stored:  (53.4028801, -6.21105)
+  google:  (53.40727469999999, -6.2043884)  (Priorswood, Dublin, Co. Dublin, D17 NW92, Ireland)
+
+[Little Kickers Dublin South & Wicklow] id=1046 -- 658m off
+  address: Coolagad, County Wicklow, A63 KT20, Ireland
+  stored:  (53.1523715, -6.0943925)
+  google:  (53.1533889, -6.0846766)  (Coolagad, Co. Wicklow, A63 KT20, Ireland)
+
+[Water Babies -Dublin] id=1195 -- 658m off
+  address: Jigginstown, County Kildare, W91 V990, Ireland
+  stored:  (53.212805, -6.6911813)
+  google:  (53.2111345, -6.681705)  (Jigginstown, Co. Kildare, W91 V990, Ireland)
+
+[Little Kickers County Laois, Carlow and Kilkenny] id=1268 -- 656m off
+  address: Sacred Heart Primary School, New Line, Parkmore, Roscrea, Co. Tipperary, Ireland
+  stored:  (52.9551598, -7.7990264)
+  google:  (52.94925809999999, -7.798882499999999)  (Sacred Heart Primary School, New Line, Parkmore, Roscrea, Co. Tipperary, Ireland)
+
+[Thurles / Roscrea / Cashel /Tipperary Town Toddler Group Story Time] id=1279 -- 652m off
+  address: Carrownreddy, Tipperary, E34 KP60, Ireland
+  stored:  (52.4802213, -8.1555577)
+  google:  (52.4750993, -8.160256)  (Carrownreddy, Tipperary, Co. Tipperary, E34 KP60, Ireland)
+
+[Lifford, Parent, Baby and Toddler Group] id=693 -- 651m off
+  address: Croaghan Heights, Lifford, County Donegal, Ireland
+  stored:  (54.8326995, -7.4834739)
+  google:  (54.8358907, -7.4920048)  (Croaghan Heights, Co. Donegal, Ireland)
+
+[Lullababy Baby Classes] id=970 -- 649m off
+  address: Ramstown Lower, County Wexford, Y25 X4P8, Ireland
+  stored:  (52.666298, -6.2980448)
+  google:  (52.66579609999999, -6.3076342)  (Ramstown Lower, Co. Wexford, Y25 X4P8, Ireland)
+
+[Portarlington- Baby Group / Kids Book Clubs / Lego Group] id=803 -- 645m off
+  address: Cooltederry, Portarlington, County Laois, R32 F9WF, Ireland
+  stored:  (53.1524492, -7.1889641)
+  google:  (53.1580777, -7.186627199999999)  (Cooltederry, Portarlington, Co. Laois, R32 F9WF, Ireland)
+
+[Little Laochra Baby Massage Roscommon] id=919 -- 643m off
+  address: Roscommon, Ireland
+  stored:  (53.6312446, -8.19068)
+  google:  (53.634027, -8.182134)  (Roscommon, Ireland)
+
+[Water Babies -Dublin] id=1193 -- 643m off
+  address: Laughanstown, Dublin, D18 FC81, Ireland
+  stored:  (53.2445173, -6.153942)
+  google:  (53.2471841, -6.1453716)  (Laughanstown, Dublin, Co. Dublin, D18 FC81, Ireland)
+
+[Bloom Baby Classes - Midlands] id=1260 -- 641m off
+  address: Granard Rd, Aghafin, Edgeworthstown, Co. Longford, Ireland
+  stored:  (53.7018885, -7.5936115)
+  google:  (53.6981528, -7.6010223)  (Granard Rd, Aghafin, Co. Longford, Ireland)
+
+[Bona MacNally School of Dance] id=455 -- 640m off
+  address: St. Andrew’s Presbyterian, Church Hall, Mount Merrion Avenue, Blackrock
+  stored:  (53.2989687, -6.1953693)
+  google:  (53.3013227, -6.1865732)  (Mount Merrion Ave, Blackrock, Dublin, Ireland)
+
+[Kilkishen Parent, Baby & Toddler Group] id=608 -- 640m off
+  address: Gortnacorragh, County Clare, V95 KN34, Ireland
+  stored:  (52.8069277, -8.761033)
+  google:  (52.8044234, -8.7524525)  (Gortnacorragh, Co. Clare, V95 KN34, Ireland)
+
+[Drogheda/Dundalk Parent & Toddler Groups -FREE] id=1095 -- 639m off
+  address: Townparks, Dundalk, County Louth, A91 RC44, Ireland
+  stored:  (54.0098207, -6.3982723)
+  google:  (54.0040755, -6.3978977)  (Townparks, Dundalk, Co. Louth, A91 RC44, Ireland)
+
+[Coachford Baby & Toddler Group] id=634 -- 637m off
+  address: Nadrid, County Cork, P12 X365, Ireland
+  stored:  (51.9020017, -8.7847569)
+  google:  (51.90741480000001, -8.7877793)  (Nadrid, Co. Cork, P12 X365, Ireland)
+
+[Turtle Tots Dublin] id=1089 -- 634m off
+  address: 75 Valley Dr, Laughanstown, Dublin, Ireland
+  stored:  (53.2445173, -6.153942)
+  google:  (53.24745470000001, -6.1457709)  (75 Valley Dr, Cherrywood, Dublin, D18 F8P8, Ireland)
+
+[Feenagh / Kilmeedy Parent, Baby and Toddler Group] id=829 -- 632m off
+  address: Cloonroosk, County Limerick, V35 PP78, Ireland
+  stored:  (52.3898259, -8.8895889)
+  google:  (52.390401, -8.8803166)  (Cloonroosk, Co. Limerick, V35 PP78, Ireland)
+
+[Reenard (South Kerry) Parent, Baby & Toddler Group] id=772 -- 627m off
+  address: Reenard, County Kerry, V23 TX20, Ireland
+  stored:  (51.929722, -10.26)
+  google:  (51.9300605, -10.2508731)  (Reenard, Co. Kerry, V23 TX20, Ireland)
+
+[Monaghan Toddler Groups with no Social Presence] id=1258 -- 627m off
+  address: Saint Patrick's Church, Church Square, Roosky, Monaghan, Ireland
+  stored:  (54.251266, -6.9614979)
+  google:  (54.2480311, -6.969405)  (Church Square, Roosky, Monaghan, Ireland)
+
+[Dwan Academy - Dance Drama Music, Thurles] id=1638 -- 622m off
+  address: Thurles, Co. Tipperary
+  stored:  (52.6766937, -7.8219058)
+  google:  (52.67895559999999, -7.813466399999999)  (Thurles, Co. Tipperary, Ireland)
+
+[Tralee Down Syndrome Toddler Group] id=779 -- 620m off
+  address: Tralee, County Kerry, V92 YK79, Ireland
+  stored:  (52.2692116, -9.7057047)
+  google:  (52.2710491, -9.7143082)  (Tralee, Co. Kerry, V92 YK79, Ireland)
+
+[Ballyogan Community Development Group Parent and Toddler Group] id=26 -- 619m off
+  address: Ballyogan, Dublin 18
+  stored:  (53.2582951, -6.1971705)
+  google:  (53.257924, -6.187889999999999)  (Ballyogan, Dublin, Ireland)
+
+[Thurles / Roscrea / Cashel /Tipperary Town Toddler Group Story Time] id=1280 -- 619m off
+  address: Townparks, Carrick-on-Suir, County Tipperary, E32 X860, Ireland
+  stored:  (52.349012, -7.4188232)
+  google:  (52.34877119999999, -7.4097203)  (Townparks, Carrick-on-Suir, Co. Tipperary, E32 X860, Ireland)
+
+[Clonmel / Cahir Parent, Baby & Toddler Group] id=1276 -- 617m off
+  address: Wilderness Grove, Clonmel, County Tipperary, Ireland
+  stored:  (52.3611052, -7.6991779)
+  google:  (52.3659554, -7.6947629)  (Wilderness Grove, Clonmel, Co. Tipperary, Ireland)
+
+[Kilmore African Caribbean Toddler & Baby Group] id=592 -- 615m off
+  address: Kilmore, Cavan, Ireland
+  stored:  (53.9734772, -7.4362332)
+  google:  (53.9742723, -7.445538900000001)  (Kilmore, Co. Cavan, Ireland)
+
+[Swimtastic.ie] id=1140 -- 610m off
+  address: Killerig, County Carlow, Ireland
+  stored:  (52.8381361, -6.7850478)
+  google:  (52.84305939999999, -6.789064300000001)  (Killerrig, Co. Carlow, Ireland)
+
+[Newport Parent, Baby and Toddler Group] id=876 -- 609m off
+  address: Cloondaff, County Mayo, F28 P9P7, Ireland
+  stored:  (53.9487376, -9.4338523)
+  google:  (53.9432708, -9.433312899999999)  (Cloondaff, Co. Mayo, F28 P9P7, Ireland)
+
+[Toddler Groups with additional Parenting Support in Dublin] id=1084 -- 609m off
+  address: Loughlinstown, Dublin, Ireland
+  stored:  (53.2463692, -6.1286546)
+  google:  (53.25135210000001, -6.132459)  (Loughlinstown, Dublin, Ireland)
+
+[Do Your Dance Tots - Blackrock] id=218 -- 608m off
+  address: Blackrock, County Dublin, Ireland
+  stored:  (53.30079, -6.17707)
+  google:  (53.2992899, -6.185863899999999)  (Blackrock, Dublin, Ireland)
+
+[Claphandies] id=1033 -- 608m off
+  address: Mount Merrion Or Callary, Dublin, A94 D5F1, Ireland
+  stored:  (53.2978505, -6.2122181)
+  google:  (53.3030262, -6.2092885)  (Mount Merrion, Dublin, Co. Dublin, A94 D5F1, Ireland)
+
+[Ready to Play] id=1301 -- 605m off
+  address: Shandon, Dungarvan, Co. Waterford, Ireland
+  stored:  (52.093096, -7.6223878)
+  google:  (52.0974723, -7.6276487)  (Shandon, Co. Waterford, Ireland)
+
+[Killeshandra Parent, Toddler & Baby Group] id=590 -- 601m off
+  address: Portaliff Or Townparks, County Cavan, H12 K6D3, Ireland
+  stored:  (54.0081083, -7.5224635)
+  google:  (54.0129137, -7.526666199999998)  (Portaliff Or Townparks, Co. Cavan, H12 K6D3, Ireland)
+
+[Aura Leisure Centre] id=1180 -- 599m off
+  address: Youghal, Co. Cork, Ireland
+  stored:  (51.9494736, -7.8431892)
+  google:  (51.9542704, -7.8471707)  (Youghal, Co. Cork, Ireland)
+
+[Bloom Baby Classes Midlands Ireland] id=1263 -- 593m off
+  address: Crannagh, County Roscommon, N37 T298, Ireland
+  stored:  (53.4059217, -7.9879421)
+  google:  (53.4112209, -7.9888948)  (Crannagh, Co. Roscommon, N37 T298, Ireland)
+
+[Turtle Tots Swimming Classes -Mayo/Monaghan/Sligo] id=1250 -- 592m off
+  address: Rathnaconeen, County Mayo, F26 X5P3, Ireland
+  stored:  (54.0900261, -9.1565547)
+  google:  (54.08686059999999, -9.1638463)  (Rathnaconeen, Co. Mayo, F26 X5P3, Ireland)
+
+[I Made It – T-Shirt Painting Workshop] id=119 -- 589m off
+  address: Unit 9, Kennelsfort Rd Upper, Woodfarm, Dublin,, Dublin, D20 EY68,
+  stored:  (53.3504663716, -6.3797295424)
+  google:  (53.3544279, -6.373835499999999)  (9 Kennelsfort Rd Upper, Palmerston Upper, Dublin 20, D20 A395, Ireland)
+
+[Newcastle West Parent, Baby and Toddler Group] id=838 -- 588m off
+  address: Desmond Business Park, Gortboy, Newcastle West, Co. Limerick, Ireland
+  stored:  (52.454514, -9.0499525)
+  google:  (52.4592177, -9.0539222)  (Desmond Business Park, Gortboy, Newcastle West, Co. Limerick, Ireland)
+
+[Little Kickers] id=1286 -- 587m off
+  address: Carrigoon, County Cork, P51 XV58, Ireland
+  stored:  (52.1445238, -8.6039405)
+  google:  (52.1454082, -8.6124271)  (Carrigoon, Co. Cork, P51 XV58, Ireland)
+
+[Swimtastic.ie] id=1139 -- 585m off
+  address: Kilkenny, Ireland
+  stored:  (52.6506255, -7.2514438)
+  google:  (52.6549027, -7.246402900000001)  (Kilkenny, Ireland)
+
+[The Wriggles and Giggles] id=1142 -- 585m off
+  address: Kilkenny, Ireland
+  stored:  (52.6506255, -7.2514438)
+  google:  (52.6549027, -7.246402900000001)  (Kilkenny, Ireland)
+
+[Kilkenny Gymnastics Academy] id=1412 -- 585m off
+  address: Kilkenny
+  stored:  (52.6506255, -7.2514438)
+  google:  (52.6549027, -7.246402900000001)  (Kilkenny, Ireland)
+
+[Cobh Parent, Baby & Toddler Group] id=635 -- 582m off
+  address: Cloyne Terrace, Ballyvoloon, Cobh, County Cork, Ireland
+  stored:  (51.8581581, -8.3005774)
+  google:  (51.8530975, -8.2984148)  (Cloyne Terrace, Ballyvoloon, Cobh, Co. Cork, Ireland)
+
+[Move To Improve - Carrickmacross, Drogheda] id=1243 -- 581m off
+  address: Drummond Otra, County Monaghan, A81 TW29, Ireland
+  stored:  (53.9725639, -6.7117491)
+  google:  (53.9767647, -6.7170257)  (Drummond Otra, Co. Monaghan, A81 TW29, Ireland)
+
+[Kinvara Mum to-Be & New Mum Social Group] id=731 -- 578m off
+  address: Cartron, Kinvarra, County Galway, H91 P6PP, Ireland
+  stored:  (53.1350448, -8.9303245)
+  google:  (53.1390269, -8.935893199999999)  (Cartron, Kinvarra, Co. Galway, H91 P6PP, Ireland)
+
+[Mindful Sensory Play by Playtime Healing] id=1161 -- 577m off
+  address: Edina, 10 St Patrick's Rd, Turners Cross, Cork, T12 A44P, Ireland
+  stored:  (51.8882429, -8.4651154)
+  google:  (51.8892282, -8.473376900000002)  (Edina, 10 St Patrick's Rd, Turners Cross, Cork, T12 A44P, Ireland)
+
+[Nurture and Play] id=1222 -- 576m off
+  address: Craughwell, County Galway, Ireland
+  stored:  (53.2251309, -8.7358299)
+  google:  (53.2302689, -8.7347736)  (Craughwell, Co. Galway, Ireland)
+
+[Turtle Tots Swimming Classes] id=789 -- 573m off
+  address: Cullenagh, County Tipperary, V94 E2D6, Ireland
+  stored:  (52.8155996, -8.4428981)
+  google:  (52.8104928, -8.4440635)  (Cullenagh, Co. Tipperary, V94 E2D6, Ireland)
+
+[Bloom Baby Classes North West Ireland] id=811 -- 573m off
+  address: Townparks, Carrick-On-Shannon, County Leitrim, N41 X9D6, Ireland
+  stored:  (53.9488872, -8.0907441)
+  google:  (53.9534107, -8.0949371)  (Townparks, Carrick-On-Shannon, Co. Leitrim, N41 X9D6, Ireland)
+
+[Carrick on Shannon Parent and Toddler Group] id=812 -- 573m off
+  address: Townparks, Carrick-On-Shannon, County Leitrim, N41 X9D6, Ireland
+  stored:  (53.9488872, -8.0907441)
+  google:  (53.9534107, -8.0949371)  (Townparks, Carrick-On-Shannon, Co. Leitrim, N41 X9D6, Ireland)
+
+[Baby Sensory Ireland] id=1003 -- 570m off
+  address: Greendale Road, Raheny - Foxfield, Kilbarrack, County Dublin, Ireland
+  stored:  (53.3872797, -6.1614803)
+  google:  (53.3853113, -6.1535403)  (Greendale Rd, Raheny - Foxfield, Dublin, Ireland)
+
+[Moville Parent, Toddler & Baby Group] id=696 -- 567m off
+  address: Magheranappan, County Donegal, F93 X593, Ireland
+  stored:  (54.863017, -7.7136237)
+  google:  (54.8659607, -7.720852300000001)  (Magheranappan, Co. Donegal, F93 X593, Ireland)
+
+[ClapHandies PlayLabs - Dublin] id=1015 -- 567m off
+  address: Knocklyon, Dublin, D16 T299, Ireland
+  stored:  (53.2836267, -6.3256812)
+  google:  (53.2835887, -6.317157)  (Knocklyon, Dublin, Co. Dublin, D16 T299, Ireland)
+
+[Claphandies] id=1036 -- 567m off
+  address: Knocklyon, Dublin, D16 T299, Ireland
+  stored:  (53.2836267, -6.3256812)
+  google:  (53.2835887, -6.317157)  (Knocklyon, Dublin, Co. Dublin, D16 T299, Ireland)
+
+[Little Kickers] id=1287 -- 557m off
+  address: Carrigaline West, Carrigaline, County Cork, P43 PK51, Ireland
+  stored:  (51.8192408, -8.4065893)
+  google:  (51.8190237, -8.3984898)  (Carrigaline West, Carrigaline, Co. Cork, P43 PK51, Ireland)
+
+[ClapHandies PlayLabs - Dublin] id=1014 -- 555m off
+  address: Inchicore, Dublin 8, D08 E529, Ireland
+  stored:  (53.3394635, -6.3209233)
+  google:  (53.3361694, -6.3146385)  (Inchicore, Dublin 8, Co. Dublin, D08 E529, Ireland)
+
+[Shankill GAA Club] id=433 -- 553m off
+  address: Stonebridge Road, Shankill, Dublin 18
+  stored:  (53.2355796, -6.1358998)
+  google:  (53.23605870000001, -6.1276218)  (18 Stonebridge Rd, Shankill, Dublin, Ireland)
+
+[Blackrock Baby & Toddler Group Cork] id=627 -- 550m off
+  address: Ballintemple, Cork, T12 Y304, Ireland
+  stored:  (51.8947981, -8.4354471)
+  google:  (51.8984184, -8.4299845)  (Ballintemple, Cork, Co. Cork, T12 Y304, Ireland)
+
+[Dublin Stage School] id=482 -- 548m off
+  address: Blackrock, Dublin
+  stored:  (53.3018639, -6.1788342)
+  google:  (53.2992899, -6.185863899999999)  (Blackrock, Dublin, Ireland)
+
+[Happy Cubs] id=492 -- 548m off
+  address: Blackrock, Dublin
+  stored:  (53.3018639, -6.1788342)
+  google:  (53.2992899, -6.185863899999999)  (Blackrock, Dublin, Ireland)
+
+[Music 4 Tots] id=1059 -- 548m off
+  address: Blackrock, Dublin, Ireland
+  stored:  (53.3018639, -6.1788342)
+  google:  (53.2992899, -6.185863899999999)  (Blackrock, Dublin, Ireland)
+
+[The Wriggles and Giggles] id=581 -- 547m off
+  address: Carlow, Ireland
+  stored:  (52.8408344, -6.9261131)
+  google:  (52.8359963, -6.924607399999999)  (Carlow, Ireland)
+
+[Happy Cubs] id=1120 -- 547m off
+  address: Loughlinstown, Dublin
+  stored:  (53.2469562, -6.1361556)
+  google:  (53.25135210000001, -6.132459)  (Loughlinstown, Dublin, Ireland)
+
+[Tina Mation] id=1076 -- 546m off
+  address: Tech House, Grange, Ballyboughal, Co. Dublin, Ireland
+  stored:  (53.5174683, -6.2690127)
+  google:  (53.52235839999999, -6.2682063)  (Tech House, Grange, Ballyboughal, Co. Dublin, Ireland)
+
+[Raphoe Little Sparks Donegal Toddler Group] id=699 -- 545m off
+  address: Derry Road, Magherasollus, Donegal, Ireland
+  stored:  (54.882099, -7.5802807)
+  google:  (54.87759, -7.58363)  (Derry Rd, Magherasollus, Co. Donegal, Ireland)
+
+[Flying High Fitness] id=1208 -- 545m off
+  address: Monaclinoe, Limerick, V94 C796, Ireland
+  stored:  (52.6516118, -8.5924441)
+  google:  (52.6524864, -8.5844908)  (Monaclinoe, Limerick, Co. Limerick, V94 C796, Ireland)
+
+[PlayAct Drama School] id=533 -- 543m off
+  address: Inchicore, Dublin 8
+  stored:  (53.3394635, -6.3209233)
+  google:  (53.33585009999999, -6.3264308)  (Inchicore, Dublin, Ireland)
+
+[Water Babies -Dublin] id=708 -- 542m off
+  address: Harold's Cross, Dublin, D6W PP90, Ireland
+  stored:  (53.3222703, -6.2800697)
+  google:  (53.32713829999999, -6.280497400000001)  (Harold's Cross, Dublin, Co. Dublin, D6W PP90, Ireland)
+
+[Swim Max - Private Swimming Lessons in Limerick] id=842 -- 542m off
+  address: Crossagalla, Limerick, V94 YW58, Ireland
+  stored:  (52.6459862, -8.5904705)
+  google:  (52.6474883, -8.5828311)  (Crossagalla, Limerick, Co. Limerick, V94 YW58, Ireland)
+
+[Carrick-on-suir Baby & Toddler Group] id=939 -- 542m off
+  address: Townparks, Carrick-on-Suir, County Tipperary, E32 P928, Ireland
+  stored:  (52.349012, -7.4188232)
+  google:  (52.3476626, -7.411158199999999)  (Townparks, Carrick-on-Suir, Co. Tipperary, E32 P928, Ireland)
+
+[Letterkenny Parent, Baby and Toddler Group] id=692 -- 536m off
+  address: Letterkenny, County Donegal, F92 YA21, Ireland
+  stored:  (54.9517941, -7.7354368)
+  google:  (54.9469961, -7.734610200000001)  (Letterkenny, Co. Donegal, F92 YA21, Ireland)
+
+[Tralee (St Brendan's) Parent, Baby & Toddler Group] id=778 -- 536m off
+  address: Rahoonane, Tralee, County Kerry, V92 XA36, Ireland
+  stored:  (52.2785751, -9.6962823)
+  google:  (52.2751946, -9.701900000000002)  (Rahoonane, Tralee, Co. Kerry, V92 XA36, Ireland)
+
+[Bayside Parent and Toddler Group - Cuidiu] id=192 -- 534m off
+  address: Bayside, Dublin, Ireland
+  stored:  (53.38675, -6.14324)
+  google:  (53.391212, -6.1402753)  (Bayside Walk, Kilbarrack Lower, Dublin, Ireland)
+
+[Turtle Tots] id=417 -- 534m off
+  address: Dun Laoghaire, Co. Dublin
+  stored:  (53.2922794, -6.1360079)
+  google:  (53.2949656, -6.142669)  (Dún Laoghaire, Dublin, Ireland)
+
+[Me & You Music] id=513 -- 534m off
+  address: Dun Laoghaire, Co. Dublin
+  stored:  (53.2922794, -6.1360079)
+  google:  (53.2949656, -6.142669)  (Dún Laoghaire, Dublin, Ireland)
+
+[B.A.N.T.S] id=1108 -- 534m off
+  address: Dun Laoghaire, Dublin
+  stored:  (53.2922794, -6.1360079)
+  google:  (53.2949656, -6.142669)  (Dún Laoghaire, Dublin, Ireland)
+
+[PlayAct Drama School] id=1131 -- 534m off
+  address: Dun Laoghaire, Co. Dublin
+  stored:  (53.2922794, -6.1360079)
+  google:  (53.2949656, -6.142669)  (Dún Laoghaire, Dublin, Ireland)
+
+[Borrisokane Parent, Baby and Toddler Group] id=937 -- 530m off
+  address: Borrisokane, County Tipperary, Ireland
+  stored:  (52.9997513, -8.1329107)
+  google:  (52.9963736, -8.127325599999999)  (Shesheraghmore, Borrisokane, Co. Tipperary, Ireland)
+
+[Tullow & Carlow Central Library] id=1143 -- 530m off
+  address: Carlow, R93 K126, Ireland
+  stored:  (52.8408344, -6.9261131)
+  google:  (52.836222, -6.9280775)  (Carlow, Co. Carlow, R93 K126, Ireland)
+
+[Carrigallen Parent and Toddler Group] id=813 -- 529m off
+  address: Boeeshil, County Leitrim, N41 Y2F5, Ireland
+  stored:  (53.9160038, -7.8658289)
+  google:  (53.9203875, -7.868968799999999)  (Boeeshil, Co. Leitrim, N41 Y2F5, Ireland)
+
+[Mohill Toddler Group /Kids Lego/Art/Social Club & Autism Playgroup] id=820 -- 529m off
+  address: Boeeshil, County Leitrim, N41 Y2F5, Ireland
+  stored:  (53.9160038, -7.8658289)
+  google:  (53.9203875, -7.868968799999999)  (Boeeshil, Co. Leitrim, N41 Y2F5, Ireland)
+
+[FREE Parent and Toddler Groups (Dundalk and Drogheda)] id=326 -- 528m off
+  address: St. Nicholas G.F.C., Rathmullan, Drogheda, County Louth, Ireland
+  stored:  (53.7085989, -6.3732192)
+  google:  (53.7132623, -6.3716909)  (St. Nicholas G.F.C., Rathmullan, Drogheda, Co. Louth, Ireland)
+
+[FREE Parent and Toddler Groups (Dundalk and Drogheda)] id=1096 -- 528m off
+  address: St. Nicholas G.F.C., Rathmullan, Drogheda, County Louth, Ireland
+  stored:  (53.7085989, -6.3732192)
+  google:  (53.7132623, -6.3716909)  (St. Nicholas G.F.C., Rathmullan, Drogheda, Co. Louth, Ireland)
+
+[Wild by Nature Forest School] id=3 -- 526m off
+  address: Cabinteely Park (Bray Road entrance), Cabinteely, Dublin 18
+  stored:  (53.2612843, -6.1505691)
+  google:  (53.26035539999999, -6.1583206)  (Cabinteely Park, Bray Rd, Cabinteely, Dún Laoghaire, Co. Dublin, Ireland)
+
+[Turlough Parent, Baby and Toddler Group] id=881 -- 526m off
+  address: Turlough Rd, Castlebar, Co. Mayo, Ireland
+  stored:  (53.8635791, -9.2954038)
+  google:  (53.8663025, -9.2888449)  (Turlough Rd, Knockthomas, Castlebar, Co. Mayo, Ireland)
+
+[B.A.N.T.S] id=445 -- 518m off
+  address: Rathmines, Dublin
+  stored:  (53.3265199, -6.2648571)
+  google:  (53.3218816, -6.2655052)  (Rathmines, Dublin, Ireland)
+
+[Little Puckers - GAA class for preschoolers in Cork] id=1160 -- 516m off
+  address: Cappagh, Kinsale, Co. Cork, P17 WD21, Ireland
+  stored:  (51.7053387, -8.5444499)
+  google:  (51.7047563, -8.5370153)  (Cappagh, Kinsale, Co. Cork, P17 WD21, Ireland)
+
+[Butterfield Wellness Learn to Swim Classes for Kids] id=198 -- 514m off
+  address: Butterfield, Dublin, D14 R7N0, Ireland
+  stored:  (53.2942777, -6.3007876)
+  google:  (53.2942123, -6.3085209)  (Butterfield, Dublin, Co. Dublin, D14 R7N0, Ireland)
+
+[Lus Na Greine Family Resource Centre] id=852 -- 514m off
+  address: Granard, County Longford, N39 R7X4, Ireland
+  stored:  (53.779362, -7.4910079)
+  google:  (53.7766578, -7.497344699999999)  (Main St, Granard, Co. Longford, N39 R7X4, Ireland)
+
+[Water Babies -Dublin] id=1187 -- 514m off
+  address: Butterfield, Dublin, D14 R7N0, Ireland
+  stored:  (53.2942777, -6.3007876)
+  google:  (53.2942123, -6.3085209)  (Butterfield, Dublin, Co. Dublin, D14 R7N0, Ireland)
+
+[ClapHandies PlayLabs - Dublin] id=203 -- 513m off
+  address: Lucan And Pettycanon, Lucan, County Dublin, K78 C627, Ireland
+  stored:  (53.353529, -6.4491621)
+  google:  (53.3581241, -6.4484311)  (Lucan And Pettycanon, Lucan, Co. Dublin, K78 C627, Ireland)
+
+[SCD Leisure Tallaght (Tallaght Leisure Centre)] id=49 -- 511m off
+  address: Fortunestown Way, Tallaght, Dublin 24
+  stored:  (53.2832142, -6.3919939)
+  google:  (53.2831624, -6.3996788)  (Fortunestown Way, Dublin, Ireland)
+
+[SCD Leisure Tallaght (Tallaght Leisure Centre)] id=50 -- 511m off
+  address: Fortunestown Way, Tallaght, Dublin 24
+  stored:  (53.2832142, -6.3919939)
+  google:  (53.2831624, -6.3996788)  (Fortunestown Way, Dublin, Ireland)
+
+[Babywearing ireland] id=1204 -- 511m off
+  address: Blanchardstown, Dublin, D15 XW56, Ireland
+  stored:  (53.3844588, -6.3829415)
+  google:  (53.3890417, -6.382293)  (Blanchardstown, Dublin, Co. Dublin, D15 XW56, Ireland)
+
+[Little Kickers Galway] id=1218 -- 511m off
+  address: Moylough More, County Galway, H53 X6C1, Ireland
+  stored:  (53.4907344, -8.5720623)
+  google:  (53.48790959999999, -8.5659625)  (Moylough More, Co. Galway, H53 X6C1, Ireland)
+
+[Glin Parent, Baby and Toddler Group] id=831 -- 510m off
+  address: Ballygiltenan North, County Limerick, Ireland
+  stored:  (52.565334, -9.2770568)
+  google:  (52.568872, -9.2818653)  (Ballygiltenan North, Co. Limerick, Ireland)
+
+[Carrickmines Equestrian Centre] id=411 -- 508m off
+  address: Glenamuck Road South, Carrickmines, Dublin 18
+  stored:  (53.2517211, -6.1794646)
+  google:  (53.2476519, -6.1829239)  (Glenamuck Rd, Dublin, Ireland)
+
+[Monkstown Hockey Club] id=519 -- 507m off
+  address: Glenageary Rd Upper, Thomastown, Co, Co. Dublin, A96 NX44, Ireland
+  stored:  (53.274781, -6.1355672)
+  google:  (53.2787123, -6.1317063)  (Glenageary Rd Upper, Thomastown, Dublin, Ireland)
+
+[Toddle Sense] id=1083 -- 506m off
+  address: Balgriffin, Dublin, D17 YV83, Ireland
+  stored:  (53.4067461, -6.1700632)
+  google:  (53.4079967, -6.1774026)  (Balgriffin, Dublin, Co. Dublin, D17 YV83, Ireland)
+
+[Water Babies -Dublin] id=1194 -- 505m off
+  address: Abbeyland, County Kildare, W91 YWE0, Ireland
+  stored:  (53.2909101, -6.6739995)
+  google:  (53.2898699, -6.6813965)  (Abbeyland, Co. Kildare, W91 YWE0, Ireland)
+
+[Le Chéile Cootehill Parent, Toddler & Baby Group] id=597 -- 501m off
+  address: Magheranure, County Cavan, H16 HY50, Ireland
+  stored:  (54.0744087, -7.0886751)
+  google:  (54.0732387, -7.081252699999999)  (Magheranure, Co. Cavan, H16 HY50, Ireland)
+
+[Galway Community Circus] id=1209 -- 501m off
+  address: Shantalla, Galway, Ireland
+  stored:  (53.2762051, -9.0687782)
+  google:  (53.2729305, -9.0739597)  (Shantalla Pl, Galway, Ireland)
+
+[Sligo Parent, Baby and Toddler Group] id=932 -- 498m off
+  address: 49 The Mall, Rathquarter, Sligo, Ireland
+  stored:  (54.2744544, -8.4637286)
+  google:  (54.27243619999999, -8.4705735)  (49 The Mall, Rathquarter, Sligo, F91 HR58, Ireland)
+
+[Maia Purposeful Play] id=1147 -- 497m off
+  address: Ennis, County Clare, Ireland
+  stored:  (52.8435152, -8.983747)
+  google:  (52.8470321, -8.9883123)  (Ennis, Co. Clare, Ireland)
+
+[Sense of Wonder Sensory Play] id=1149 -- 497m off
+  address: Ennis, County Clare, Ireland
+  stored:  (52.8435152, -8.983747)
+  google:  (52.8470321, -8.9883123)  (Ennis, Co. Clare, Ireland)
+
+[Water Babies] id=1311 -- 497m off
+  address: Dunlo, Ballinasloe, County Galway, H53 F5P9, Ireland
+  stored:  (53.3235356, -8.2251366)
+  google:  (53.3264893, -8.219514499999999)  (Dunlo, Ballinasloe, Co. Galway, H53 F5P9, Ireland)
+
+[Nenagh Parent, Baby and Toddler Group] id=948 -- 496m off
+  address: Tyone, Nenagh, County Tipperary, E45 FC94, Ireland
+  stored:  (52.8529011, -8.1862566)
+  google:  (52.8569733, -8.189284599999999)  (Tyone, Nenagh, Co. Tipperary, E45 FC94, Ireland)
+
+[ClapHandies PlayLabs - Dublin] id=1017 -- 496m off
+  address: Terenure, Dublin, D6W X265, Ireland
+  stored:  (53.3093049, -6.2884924)
+  google:  (53.3128019, -6.283853499999999)  (Terenure, Dublin, Co. Dublin, D6W X265, Ireland)
+
+[Playful Páistí] id=900 -- 495m off
+  address: Lecklevera, County Monaghan, H18 KF58, Ireland
+  stored:  (54.1908132, -7.075043)
+  google:  (54.1887857, -7.081823099999999)  (Lecklevera, Co. Monaghan, H18 KF58, Ireland)
+
+[Stagekidz Academy] id=1070 -- 495m off
+  address: Huntstown, Dublin, Ireland
+  stored:  (53.4100528, -6.3363735)
+  google:  (53.41297360000001, -6.342011299999999)  (Huntstown, Dublin, Ireland)
+
+[Edel's Baby Massage in Portlaoise🌈] id=796 -- 494m off
+  address: Parish Office, Dublin Road, Maryborough, Portlaoise, County Laois, Ireland
+  stored:  (53.0367074, -7.2869803)
+  google:  (53.0351598, -7.2939004)  (Portleix House, Dublin Rd, Maryborough, Portlaoise, Co. Laois, R32 FH67, Ireland)
+
+[Kevins] id=501 -- 492m off
+  address: 114 Harold’s Cross Road, Dublin 6
+  stored:  (53.3292678, -6.2757352)
+  google:  (53.3253684, -6.2792452)  (114 Harold's Cross Rd, Harold's Cross, Dublin 6W, Co. Dublin, D6W YN47, Ireland)
+
+[Clontarf Hockey Club] id=470 -- 490m off
+  address: 128 Malahide Road, Malahide Road, Clontarf, Dublin 3, D03 DX79
+  stored:  (53.3664848, -6.228478)
+  google:  (53.3694632, -6.223033300000001)  (128 Malahide Rd, Clontarf West, Dublin 3, Ireland)
+
+[North Wexford Parent and Toddler Group] id=974 -- 487m off
+  address: Borleagh, Killinierin, County Wexford, Y25 P954, Ireland
+  stored:  (52.7299329, -6.2804317)
+  google:  (52.7324876, -6.286299899999999)  (Borleagh, Killinierin, Co. Wexford, Y25 P954, Ireland)
+
+[Ready to Play] id=1303 -- 487m off
+  address: Borleagh, Killinierin, County Wexford, Y25 P954, Ireland
+  stored:  (52.7299329, -6.2804317)
+  google:  (52.7324876, -6.286299899999999)  (Borleagh, Killinierin, Co. Wexford, Y25 P954, Ireland)
+
+[Water Babies] id=1308 -- 487m off
+  address: Rockwell, County Tipperary, E25 F886, Ireland
+  stored:  (52.4563025, -7.8966485)
+  google:  (52.4598513, -7.8924255)  (Rockwell, Co. Tipperary, E25 F886, Ireland)
+
+[Dance Republic Tiny Dancer] id=575 -- 486m off
+  address: Carlow, R93 V275, Ireland
+  stored:  (52.8408344, -6.9261131)
+  google:  (52.8367549, -6.9286901)  (Carlow, Co. Carlow, R93 V275, Ireland)
+
+[Crusheen Baby & Toddler Group] id=605 -- 486m off
+  address: Drummanneen, County Clare, V95 YT32, Ireland
+  stored:  (52.9403868, -8.8904025)
+  google:  (52.9362672, -8.8928145)  (Drummanneen, Co. Clare, V95 YT32, Ireland)
+
+[Chime in & Play] id=1138 -- 486m off
+  address: Cloheen, Clonakilty, County Cork, P85 RD23, Ireland
+  stored:  (51.6127089, -8.8994997)
+  google:  (51.61638370000001, -8.895697)  (Cloheen, Clonakilty, Co. Cork, P85 RD23, Ireland)
+
+[Castleisland Parent and Toddler Group in Kerry] id=760 -- 484m off
+  address: Tonbwee, County Kerry, V92 P803, Ireland
+  stored:  (52.2257912, -9.4631033)
+  google:  (52.2295141, -9.459415)  (Tonbwee, Co. Kerry, V92 P803, Ireland)
+
+[Ballymoney Parent, Baby and Toddler Group] id=961 -- 483m off
+  address: Glennaglogh, County Wexford, Y25 D680, Ireland
+  stored:  (52.6658589, -6.2181111)
+  google:  (52.6686819, -6.223552199999999)  (Glennaglogh, Co. Wexford, Y25 D680, Ireland)
+
+[Bloom Baby Classes - Midlands] id=1261 -- 483m off
+  address: Ballymahon Rd, Cloghanboy, Athlone, Co. Westmeath, Ireland
+  stored:  (53.4319577, -7.9208066)
+  google:  (53.4301598, -7.9274427)  (Ballymahon Rd, Cloghanboy (Homan), Athlone, Co. Westmeath, Ireland)
+
+[Longford Baby & Toddler Group - St. Josephs's] id=849 -- 481m off
+  address: Townparks, Longford, N39 DY23, Ireland
+  stored:  (53.7239328, -7.8008735)
+  google:  (53.7259178, -7.794385699999999)  (Townparks, Longford, Co. Longford, N39 DY23, Ireland)
+
+[Tina Mation] id=1072 -- 480m off
+  address: River Valley Shopping Centre, River Valley Rd, River Valley, Swords, Co. Dublin, K67 T6T7, Ireland
+  stored:  (53.4527893, -6.2433328)
+  google:  (53.4525356, -6.2360887)  (River Valley Rd, Swords, Co. Dublin, Ireland)
+
+[Swimtastic.ie] id=580 -- 479m off
+  address: 10 Kellyville Park, Kylekiproe, Portlaoise, Co. Laois, Ireland
+  stored:  (53.0295229, -7.2962358)
+  google:  (53.032979, -7.300515400000001)  (10 Kellyville Park, Kylekiproe, Portlaoise, Co. Laois, R32 T3HV, Ireland)
+
+[Letterkenny - Mums and Tots Playgroup] id=691 -- 478m off
+  address: 73 Port Rd, Letterkenny, Co. Donegal, F92 TA44, Ireland
+  stored:  (54.9511377, -7.7220159)
+  google:  (54.9529315, -7.728826799999999)  (73 Port Rd, Letterkenny, Co. Donegal, F92 TA44, Ireland)
+
+[Caherdaniel Parent, Baby & Toddler Group] id=759 -- 472m off
+  address: Ballycarnahan, Co. Kerry, Ireland
+  stored:  (51.7637522, -10.1037303)
+  google:  (51.7664627, -10.0984459)  (Ballycarnahan, Co. Kerry, Ireland)
+
+[Toddler Sense Cork] id=1169 -- 470m off
+  address: Ballincollig, Cork, P31 DH58, Ireland
+  stored:  (51.8882643, -8.5918414)
+  google:  (51.8919973, -8.588629700000002)  (Ballincollig, Cork, Co. Cork, P31 DH58, Ireland)
+
+[Clondalkin Leisure Centre] id=468 -- 466m off
+  address: Clondalkin Leisure Centre, Nangor Road, Clondalkin, Dublin 22
+  stored:  (53.3214965, -6.3993159)
+  google:  (53.3246075, -6.4040191)  (Nangor Road, Co. Dublin, Ireland)
+
+[Drogheda/Dundalk Parent & Toddler Groups -FREE] id=1093 -- 466m off
+  address: Liberties Of Carlingford, Carlingford, County Louth, A91 N226, Ireland
+  stored:  (54.0386056, -6.1827107)
+  google:  (54.041797, -6.187327499999999)  (Liberties Of Carlingford, Carlingford, Co. Louth, A91 N226, Ireland)
+
+[Toddler Sense Cork] id=670 -- 465m off
+  address: Monfieldstown, Cork, T12 ER22, Ireland
+  stored:  (51.8733027, -8.3982317)
+  google:  (51.8691488, -8.3974305)  (Monfieldstown, Cork, Co. Cork, T12 ER22, Ireland)
+
+[Newport Parent, Baby and Toddler Group] id=949 -- 459m off
+  address: Clonbealy, Newport, County Tipperary, V94 EY72, Ireland
+  stored:  (52.7158203, -8.4000701)
+  google:  (52.71209630000001, -8.402999)  (Clonbealy, Newport, Co. Tipperary, V94 EY72, Ireland)
+
+[Little Kickers Dublin South & Wicklow] id=1044 -- 459m off
+  address: Oldcourt, Bray, County Wicklow, A98 AY83, Ireland
+  stored:  (53.1918127, -6.1142574)
+  google:  (53.1930943, -6.107702499999999)  (Oldcourt, Bray, Co. Wicklow, A98 AY83, Ireland)
+
+[Baby Sensory Limerick & Kerry] id=756 -- 457m off
+  address: Tralee, County Kerry, Ireland
+  stored:  (52.2692116, -9.7057047)
+  google:  (52.2713096, -9.6999325)  (Tralee, Co. Kerry, Ireland)
+
+[Tiny Tornados] id=775 -- 457m off
+  address: Tralee, County Kerry, Ireland
+  stored:  (52.2692116, -9.7057047)
+  google:  (52.2713096, -9.6999325)  (Tralee, Co. Kerry, Ireland)
+
+[Tiny Tornados Kerry] id=777 -- 457m off
+  address: Tralee, County Kerry, Ireland
+  stored:  (52.2692116, -9.7057047)
+  google:  (52.2713096, -9.6999325)  (Tralee, Co. Kerry, Ireland)
+
+[Sound and Scribble] id=1249 -- 457m off
+  address: Knockacroghery, County Mayo, F23 PF59, Ireland
+  stored:  (53.850311, -9.3117487)
+  google:  (53.85283829999999, -9.3062553)  (Knockacroghery, Co. Mayo, F23 PF59, Ireland)
+
+[Citadel Gymnastics - Letterkenny & Gweedore] id=1457 -- 457m off
+  address: Letterkenny, Co. Donegal
+  stored:  (54.9517941, -7.7354368)
+  google:  (54.9533201, -7.7287972)  (Letterkenny, Co. Donegal, Ireland)
+
+[B.A.N.T.S] id=1110 -- 453m off
+  address: Dundrum, Dublin
+  stored:  (53.2891457, -6.2433756)
+  google:  (53.28533720000001, -6.2457942)  (Dundrum, Dublin, Ireland)
+
+[Monaghan Library Baby, Toddler and Kids Groups] id=895 -- 452m off
+  address: Plantation Road, Kilnacloy, Monaghan, Co. Monaghan, Ireland
+  stored:  (54.254256, -6.9742918)
+  google:  (54.2517249, -6.9688505)  (Plantation Rd, Kilnacloy, Monaghan, Ireland)
+
+[Little Kickers Dublin South & Wicklow] id=1045 -- 449m off
+  address: Greenhills, Dublin, D12 Y899, Ireland
+  stored:  (53.3069513, -6.337188)
+  google:  (53.309946, -6.3326611)  (Greenhills, Dublin, Co. Dublin, D12 Y899, Ireland)
+
+[Gort Parent & Toddler Group] id=728 -- 448m off
+  address: Bolands Lane, Ballyhugh, Gort, County Galway, Ireland
+  stored:  (53.0639686, -8.8254155)
+  google:  (53.0673729, -8.8218271)  (Bolands Ln, Ballyhugh, Co. Galway, Ireland)
+
+[Happy Cubs] id=1121 -- 448m off
+  address: Sandymount, Dublin
+  stored:  (53.3279999, -6.2209624)
+  google:  (53.3305546, -6.2157427)  (Sandymount, Dublin, Ireland)
+
+[NPAS] id=1128 -- 448m off
+  address: Sandymount, Dublin 4
+  stored:  (53.3279999, -6.2209624)
+  google:  (53.3305546, -6.2157427)  (Sandymount, Dublin, Ireland)
+
+[PlayAct Drama School] id=1130 -- 448m off
+  address: Sandymount, Dublin 4
+  stored:  (53.3279999, -6.2209624)
+  google:  (53.3305546, -6.2157427)  (Sandymount, Dublin, Ireland)
+
+[Stagekidz Academy] id=282 -- 445m off
+  address: Terenure, Dublin, Ireland
+  stored:  (53.3098292, -6.2832703)
+  google:  (53.31041579999999, -6.2898931)  (Terenure, Dublin, Ireland)
+
+[Aghada Parent, Baby & Toddler Group] id=620 -- 445m off
+  address: Upper Aghada, Aghada, Co. Cork, Ireland
+  stored:  (51.8331139, -8.2094935)
+  google:  (51.83709, -8.20873)  (Aghada, Upper Aghada, Co. Cork, Ireland)
+
+[Archaeology Camps – Booking Now] id=997 -- 445m off
+  address: St Joseph's Parish Church, Terenure, Dublin 6
+  stored:  (53.3098292, -6.2832703)
+  google:  (53.31041579999999, -6.2898931)  (Terenure, Dublin, Ireland)
+
+[Mahon Parent and Toddler Group & Baby Massage Cork] id=657 -- 443m off
+  address: Mahon, Cork, T12 Y180, Ireland
+  stored:  (51.8938281, -8.3979873)
+  google:  (51.8930395, -8.4043157)  (Mahon, Cork, Co. Cork, T12 Y180, Ireland)
+
+[Master Doyle Taekwon-Do Schools] id=1185 -- 441m off
+  address: Oldbawn, Dublin, D24 T854, Ireland
+  stored:  (53.274458, -6.3658655)
+  google:  (53.2780311, -6.362977)  (Oldbawn, Dublin, Co. Dublin, D24 T854, Ireland)
+
+[Carrickmacross Parents & Tots] id=887 -- 438m off
+  address: Kilmactrasna, County Monaghan, A81 NY04, Ireland
+  stored:  (53.9681758, -6.7267802)
+  google:  (53.96979990000001, -6.720684899999999)  (Kilmactrasna, Co. Monaghan, A81 NY04, Ireland)
+
+[Moo Music Monaghan] id=899 -- 438m off
+  address: Kilmactrasna, County Monaghan, A81 NY04, Ireland
+  stored:  (53.9681758, -6.7267802)
+  google:  (53.96979990000001, -6.720684899999999)  (Kilmactrasna, Co. Monaghan, A81 NY04, Ireland)
+
+[Music Cubs] id=1060 -- 438m off
+  address: Terminus Mills, Bóthar Chluain Sceach, Rathmines, Dublin 6, Ireland
+  stored:  (53.3134969, -6.2386593)
+  google:  (53.3173993, -6.239602)  (Terminus Mills, Rathmines, Dublin, D06 V6R2, Ireland)
+
+[Little Kickers Dublin South & Wicklow] id=1052 -- 435m off
+  address: Abbeylands, Arklow, County Wicklow, Y14 FA38, Ireland
+  stored:  (52.7932234, -6.1552075)
+  google:  (52.7969156, -6.1573658)  (Abbeylands, Arklow, Co. Wicklow, Y14 FA38, Ireland)
+
+[Ballymun Kickhams] id=450 -- 434m off
+  address: Collinstown Lane, Ballymun, Dublin 9, Ireland
+  stored:  (53.3961058, -6.2579033)
+  google:  (53.3968675, -6.2643161)  (Ballymun, Dublin, Ireland)
+
+[Happy Cubs] id=1118 -- 433m off
+  address: Cherrywood, Dublin
+  stored:  (53.247873, -6.1382011)
+  google:  (53.24474540000001, -6.1420727)  (Cherrywood, Co. Dublin, Ireland)
+
+[Baby Sensory Ireland] id=1002 -- 426m off
+  address: 45a Ben Edair Rd, Stoneybatter, Dublin 7, Ireland
+  stored:  (53.3515118, -6.2830446)
+  google:  (53.3532252, -6.2887868)  (45a Ben Edair Rd, Stoneybatter, Dublin 7, D07 YE30, Ireland)
+
+[Derryvally / Ballybay Steiner Parent, Baby & Toddler Group] id=891 -- 424m off
+  address: Derryvally, County Monaghan, A75 HF78, Ireland
+  stored:  (54.1288628, -6.9252061)
+  google:  (54.1252475, -6.923152699999999)  (Derryvally, Co. Monaghan, A75 HF78, Ireland)
+
+[Monaghan Toddler Group - Teach Na nDaoine] id=897 -- 423m off
+  address: Killyconigan, Monaghan, H18 D218, Ireland
+  stored:  (54.2413831, -6.9907929)
+  google:  (54.2435299, -6.9854246)  (Killyconigan, Monaghan, Co. Monaghan, H18 D218, Ireland)
+
+[Gorey Parent, Baby and Toddler Group] id=968 -- 422m off
+  address: St Michael's Rd, Gorey corporation lands, County Wexford, Ireland
+  stored:  (52.6769779, -6.2963672)
+  google:  (52.6748755, -6.2911478)  (St Michael's Rd, Gorey corporation lands, Co. Wexford, Ireland)
+
+[Baby Talk] id=17 -- 421m off
+  address: Sandyford, Dublin 18
+  stored:  (53.2698337, -6.2245713)
+  google:  (53.2724348, -6.2199633)  (Sandyford, Dublin, Ireland)
+
+[Naomh Olaf GAA] id=432 -- 421m off
+  address: Sandyford, Dublin 18
+  stored:  (53.2698337, -6.2245713)
+  google:  (53.2724348, -6.2199633)  (Sandyford, Dublin, Ireland)
+
+[Tiny Tornados] id=776 -- 421m off
+  address: Cahir, County Tipperary, Ireland
+  stored:  (52.3779467, -7.922583)
+  google:  (52.3745296, -7.925246899999999)  (Townparks, Cahir, Co. Tipperary, Ireland)
+
+[Gaiety School of Acting] id=1115 -- 421m off
+  address: Sandyford, Dublin
+  stored:  (53.2698337, -6.2245713)
+  google:  (53.2724348, -6.2199633)  (Sandyford, Dublin, Ireland)
+
+[Me & You Music] id=1122 -- 421m off
+  address: Sandyford, Dublin 18
+  stored:  (53.2698337, -6.2245713)
+  google:  (53.2724348, -6.2199633)  (Sandyford, Dublin, Ireland)
+
+[Little Kickers] id=1288 -- 420m off
+  address: Gouldavoher, Limerick, V94 FY29, Ireland
+  stored:  (52.63296, -8.6631176)
+  google:  (52.6309384, -8.6683744)  (Gouldavoher, Limerick, Co. Limerick, V94 FY29, Ireland)
+
+[Messy Adventures] id=248 -- 417m off
+  address: Swords, County Dublin, Ireland
+  stored:  (53.4594799, -6.219175)
+  google:  (53.4557467, -6.219740600000001)  (Swords, Co. Dublin, Ireland)
+
+[The Wonder Years Play & Mindfulness] id=788 -- 415m off
+  address: Gallowshill, Kilkenny, R95 EW82, Ireland
+  stored:  (52.6401776, -7.235972)
+  google:  (52.6437554, -7.2377178)  (Gallowshill, Kilkenny, Co. Kilkenny, R95 EW82, Ireland)
+
+[Ready Steady Play South East] id=977 -- 412m off
+  address: Waterford, Ireland
+  stored:  (52.2609997, -7.1119081)
+  google:  (52.2572983, -7.1115235)  (Waterford, Ireland)
+
+[Waterford Gymnastics - Parent & Toddler] id=1373 -- 412m off
+  address: Carrickpherish Business Park, Unit 3, Waterford
+  stored:  (52.2609997, -7.1119081)
+  google:  (52.2572983, -7.1115235)  (Waterford, Ireland)
+
+[Tubbercurry Parent, Baby and Toddler Group] id=935 -- 411m off
+  address: Mountain Rd, Tobercurry, Co. Sligo, Ireland
+  stored:  (54.0448828, -8.7259179)
+  google:  (54.0485019, -8.7271967)  (Mountain Rd, Tobercurry, Co. Sligo, Ireland)
+
+[Arvagh Parent, Toddler & Baby Group] id=585 -- 410m off
+  address: Drumalt, County Cavan, H12 P308, Ireland
+  stored:  (53.9242864, -7.5768676)
+  google:  (53.92164409999999, -7.581227299999998)  (Drumalt, Co. Cavan, H12 P308, Ireland)
+
+[Ballingarry / Croom Parent, Baby and Toddler Group] id=1237 -- 410m off
+  address: Knightstreet, Ballingarry, County Limerick, V94 9H30, Ireland
+  stored:  (52.4738725, -8.8672014)
+  google:  (52.4723489, -8.8616961)  (Knightstreet, Ballingarry, Co. Limerick, V94 9H30, Ireland)
+
+[Zumbini] id=584 -- 406m off
+  address: 2 Sandy Ln, Cooltederry, Portarlington, Co. Laois, R32 V4K7, Ireland
+  stored:  (53.1524492, -7.1889641)
+  google:  (53.15610059999999, -7.1889292)  (2 Sandy Ln, Cooltederry, Portarlington, Co. Laois, R32 V4K7, Ireland)
+
+[Faughs GAA] id=486 -- 405m off
+  address: Tymon Park, Wellington Lane, Dublin 6W
+  stored:  (53.2966643, -6.3253551)
+  google:  (53.3002213, -6.3240198)  (Wellington Ln, Dublin, Ireland)
+
+[Portlaoise Library - Baby & Toddler Group / Kids Book Clubs] id=805 -- 402m off
+  address: Maryborough, Portlaoise, County Laois, R32 N7EP, Ireland
+  stored:  (53.0370118, -7.3013145)
+  google:  (53.0342789, -7.2973854)  (Maryborough, Portlaoise, Co. Laois, R32 N7EP, Ireland)
+
+[Abbeyquarter Parent, Baby and Toddler Group] id=923 -- 401m off
+  address: Chapel St, Abbeyquarter North, Sligo, Ireland
+  stored:  (54.2696059, -8.4643444)
+  google:  (54.2696579, -8.4705234)  (Chapel St, Abbeyquarter North, Sligo, Ireland)
+
+[Ballyfermot De La Salle] id=449 -- 400m off
+  address: Gurteen Rd, Johnstown, Dublin 10, D10 DV25
+  stored:  (53.3432474, -6.3609018)
+  google:  (53.3464531, -6.3636286)  (Gurteen Rd, Johnstown, Dublin, Ireland)
+
+[Ardara Parent, Baby and Toddler Group] id=675 -- 400m off
+  address: Ardara, County Donegal, Ireland
+  stored:  (54.7636255, -8.4105918)
+  google:  (54.7671456, -8.4092864)  (Ardara, Co. Donegal, Ireland)
+
+[Little Kickers Dublin & Meath] id=37 -- 399m off
+  address: Rockford Manor Secondary School, Stradbrook Road, Blackrock, Co. Dublin
+  stored:  (53.2869192, -6.1631364)
+  google:  (53.2902201, -6.1654871)  (Stradbrook Rd, Dublin, Ireland)
+
+[Little Kickers Dublin & Meath] id=38 -- 399m off
+  address: Rockford Manor Secondary School, Stradbrook Road, Blackrock, Co. Dublin
+  stored:  (53.2869192, -6.1631364)
+  google:  (53.2902201, -6.1654871)  (Stradbrook Rd, Dublin, Ireland)
+
+[Little Kickers Dublin & Meath] id=39 -- 399m off
+  address: Rockford Manor Secondary School, Stradbrook Road, Blackrock, Co. Dublin
+  stored:  (53.2869192, -6.1631364)
+  google:  (53.2902201, -6.1654871)  (Stradbrook Rd, Dublin, Ireland)
+
+[Little Kickers Dublin & Meath] id=40 -- 399m off
+  address: Rockford Manor Secondary School, Stradbrook Road, Blackrock, Co. Dublin
+  stored:  (53.2869192, -6.1631364)
+  google:  (53.2902201, -6.1654871)  (Stradbrook Rd, Dublin, Ireland)
+
+[Little Kickers Dublin & Meath] id=41 -- 399m off
+  address: Rockford Manor Secondary School, Stradbrook Road, Blackrock, Co. Dublin
+  stored:  (53.2869192, -6.1631364)
+  google:  (53.2902201, -6.1654871)  (Stradbrook Rd, Dublin, Ireland)
+
+[Little Kickers Dublin & Meath] id=42 -- 399m off
+  address: Rockford Manor Secondary School, Stradbrook Road, Blackrock, Co. Dublin
+  stored:  (53.2869192, -6.1631364)
+  google:  (53.2902201, -6.1654871)  (Stradbrook Rd, Dublin, Ireland)
+
+[Little Kickers Dublin & Meath] id=43 -- 399m off
+  address: Rockford Manor Secondary School, Stradbrook Road, Blackrock, Co. Dublin
+  stored:  (53.2869192, -6.1631364)
+  google:  (53.2902201, -6.1654871)  (Stradbrook Rd, Dublin, Ireland)
+
+[Little Kickers Dublin & Meath] id=44 -- 399m off
+  address: Rockford Manor Secondary School, Stradbrook Road, Blackrock, Co. Dublin
+  stored:  (53.2869192, -6.1631364)
+  google:  (53.2902201, -6.1654871)  (Stradbrook Rd, Dublin, Ireland)
+
+[Tae Kwon Do Tigers] id=435 -- 399m off
+  address: Rockford Manor Secondary School, Stradbrook Road, Blackrock, Co. Dublin
+  stored:  (53.2869192, -6.1631364)
+  google:  (53.2902201, -6.1654871)  (Stradbrook Rd, Dublin, Ireland)
+
+[Raphoe Parent, Baby, Toddler Group] id=700 -- 399m off
+  address: Raphoe Townparks, County Donegal, F93 XF53, Ireland
+  stored:  (54.8736062, -7.6040263)
+  google:  (54.8771916, -7.6039666)  (Raphoe Townparks, Co. Donegal, F93 XF53, Ireland)
+
+[Archaeology Camps – Booking Now] id=998 -- 399m off
+  address: Rivertown Hall, Maynooth University, Maynooth, Co. Kildare
+  stored:  (53.3821766, -6.5987338)
+  google:  (53.3857088, -6.597703)  (Maynooth University, Maynooth, Co. Kildare, Ireland)
+
+[Tiny Tutus] id=1078 -- 399m off
+  address: Meakstown, Dublin, D11 N23T, Ireland
+  stored:  (53.4056512, -6.2965743)
+  google:  (53.402088, -6.295813799999999)  (Meakstown, Dublin, Co. Dublin, D11 N23T, Ireland)
+
+[Bandon Parent & Toddler Group] id=626 -- 398m off
+  address: Cloghmacsimon, Bandon, County Cork, P72 P895, Ireland
+  stored:  (51.7425368, -8.7313628)
+  google:  (51.7457986, -8.7337475)  (Cloghmacsimon, Bandon, Co. Cork, P72 P895, Ireland)
+
+[Dungloe Letterkenny Outdoor Toddler Group] id=688 -- 398m off
+  address: Dunglow, County Donegal, F94 XP62, Ireland
+  stored:  (54.9474585, -8.355091)
+  google:  (54.95078950000001, -8.3573744)  (Dunglow, Co. Donegal, F94 XP62, Ireland)
+
+[Gorey Library - Baby and Kids Groups] id=967 -- 394m off
+  address: Gorey corporation lands, County Wexford, Y25 WK37, Ireland
+  stored:  (52.6769779, -6.2963672)
+  google:  (52.6734619, -6.2971061)  (Gorey corporation lands, Co. Wexford, Y25 WK37, Ireland)
+
+[Play with Trayz] id=663 -- 392m off
+  address: Gooldshill, County Cork, P51 VAK2, Ireland
+  stored:  (52.1194117, -8.6546487)
+  google:  (52.1221335, -8.650993699999999)  (Gooldshill, Co. Cork, P51 VAK2, Ireland)
+
+[Water Babies] id=1309 -- 392m off
+  address: Kilcohan, Waterford, X91 PR52, Ireland
+  stored:  (52.2357761, -7.113226)
+  google:  (52.2382552, -7.109138000000001)  (Kilcohan, Waterford, Co. Waterford, X91 PR52, Ireland)
+
+[Mum2Mum Roscommon] id=920 -- 391m off
+  address: Roscommon County Library, Ballypheasan, Roscommon, Ireland
+  stored:  (53.6278184, -8.1886866)
+  google:  (53.6263273, -8.1940531)  (Roscommon County Library, Ballypheasan, Roscommon, Ireland)
+
+[Toddler Groups with additional Parenting Support in Dublin] id=1086 -- 391m off
+  address: Mounttown, Dublin, Ireland
+  stored:  (53.2867128, -6.1461491)
+  google:  (53.2853907, -6.1407028)  (Monkstown, Dublin, Ireland)
+
+[Activate - Kids Programme, Killarney] id=1523 -- 390m off
+  address: Ballycasheen Road, Killarney, Co. Kerry
+  stored:  (52.0560839, -9.4803016)
+  google:  (52.0542088, -9.485124)  (Ballycasheen Road, Ballycasheen, Killarney, Co. Kerry, Ireland)
+
+[Little Kickers] id=1289 -- 388m off
+  address: Moneteen, County Limerick, V94 1X59, Ireland
+  stored:  (52.6334059, -8.6891157)
+  google:  (52.6348752, -8.6838942)  (Moneteen, Co. Limerick, V94 1X59, Ireland)
+
+[Baby Massage Class in Shannon Co Clare] id=602 -- 387m off
+  address: Rinneanna View, Ballycasey More, Shannon, Co. Clare, Ireland
+  stored:  (52.7102948, -8.8587661)
+  google:  (52.7087523, -8.8639222)  (Rinneanna View, Ballycasey More, Shannon, Co. Clare, Ireland)
+
+[Raphoe Family Resource Centre Toddler Group] id=698 -- 387m off
+  address: Raphoe Townparks, County Donegal, F93 DX0E, Ireland
+  stored:  (54.8736062, -7.6040263)
+  google:  (54.8742197, -7.5980789)  (Raphoe Townparks, Co. Donegal, F93 DX0E, Ireland)
+
+[Little Kickers] id=1295 -- 387m off
+  address: Burgagery-Lands West, Clonmel, County Tipperary, E91 NF43, Ireland
+  stored:  (52.359573, -7.703782)
+  google:  (52.3567259, -7.700497899999999)  (Burgagery-Lands West, Clonmel, Co. Tipperary, E91 NF43, Ireland)
+
+[Clooneen/Manorhamilton Parent & Toddler Group] id=814 -- 386m off
+  address: Clooneen, County Leitrim, F91 PP62, Ireland
+  stored:  (54.3060812, -8.1857237)
+  google:  (54.3061048, -8.1797802)  (Clooneen, Co. Leitrim, F91 PP62, Ireland)
+
+[Water Babies] id=1313 -- 386m off
+  address: Townparks, Wexford, Y35 NY68, Ireland
+  stored:  (52.3356288, -6.4643783)
+  google:  (52.3389506, -6.4660094)  (Townparks, Wexford, Co. Wexford, Y35 NY68, Ireland)
+
+[Shannon Parent, Baby & Toddler Group - Resource Centre] id=617 -- 383m off
+  address: Ballycasey More, Shannon, County Clare, V14 XV97, Ireland
+  stored:  (52.7102948, -8.8587661)
+  google:  (52.709235, -8.8641781)  (Ballycasey More, Shannon, Co. Clare, V14 XV97, Ireland)
+
+[Bloom Baby Classes Wicklow and South Dublin] id=1008 -- 383m off
+  address: 13 Idrone Terrace, Newtown Blackrock, Blackrock, Co. Dublin, A94 WN60, Ireland
+  stored:  (53.298412, -6.1782639)
+  google:  (53.3015121, -6.1757541)  (13 Idrone Terrace, Newtown Blackrock, Blackrock, Co. Dublin, A94 WN60, Ireland)
+
+[Little Folk Music for Babies, Toddlers & Young Children] id=350 -- 382m off
+  address: 1 Church St, Oldcastle, Co. Meath, A82 DY29, Ireland
+  stored:  (53.76922, -7.16102)
+  google:  (53.7684112, -7.1553688)  (New Houses, 1 Church St, Oldcastle, Co. Meath, Ireland)
+
+[Tipperary Town Toddler Group & Breastfeeding Group] id=955 -- 382m off
+  address: Carrownreddy, Tipperary, E34 EE39, Ireland
+  stored:  (52.4802213, -8.1555577)
+  google:  (52.4776518, -8.1518182)  (Carrownreddy, Tipperary, Co. Tipperary, E34 EE39, Ireland)
+
+[Scariff Baby & Toddler Groups / Kids Book Club - Scariff Library] id=613 -- 381m off
+  address: Ballyminoge, County Clare, V94 NY33, Ireland
+  stored:  (52.9096349, -8.5246382)
+  google:  (52.9106114, -8.5300874)  (Ballyminoge, Co. Clare, V94 NY33, Ireland)
+
+[Aura Leisure Centre] id=704 -- 380m off
+  address: Marley's Ln, Rathmullan, Drogheda, Co. Louth, Ireland
+  stored:  (53.7085989, -6.3732192)
+  google:  (53.7079349, -6.3788866)  (Beechwood Ave, Rathmullan, Drogheda, Co. Louth, Ireland)
+
+[Galway City Library - Baby & Toddler Group] id=725 -- 379m off
+  address: Galway, H91 R6WF, Ireland
+  stored:  (53.2744122, -9.0490601)
+  google:  (53.2714679, -9.051929)  (Galway, Co. Galway, H91 R6WF, Ireland)
+
+[Turtle Tots Swimming Classes -Mayo/Monaghan/Sligo] id=882 -- 378m off
+  address: Drumillard Little, County Monaghan, A75 AP92, Ireland
+  stored:  (54.1244225, -6.7407941)
+  google:  (54.1210439, -6.740101999999999)  (Drumillard Little, Co. Monaghan, A75 AP92, Ireland)
+
+[Castleblayney Library Baby, Toddler and Kids Groups] id=888 -- 375m off
+  address: Onomy, County Monaghan, A75 V383, Ireland
+  stored:  (54.1169114, -6.7304664)
+  google:  (54.1200146, -6.732737999999999)  (Onomy, Co. Monaghan, A75 V383, Ireland)
+
+[Adamstown/Raheen Parent, Baby and Toddler Group] id=1281 -- 375m off
+  address: Adamstown, County Wexford, Y21 C8K1, Ireland
+  stored:  (52.3933762, -6.7187176)
+  google:  (52.3922186, -6.713527999999999)  (Adamstown, Co. Wexford, Y21 C8K1, Ireland)
+
+[Blanchardstown Parent and Toddler Group] id=196 -- 373m off
+  address: Blanchardstown Centre, Blanchardstown, Dublin 15, Ireland
+  stored:  (53.39215, -6.38467)
+  google:  (53.39331749999999, -6.389937799999999)  (Blanchardstown Rd S, Blanchardstown, Dublin, Ireland)
+
+[Maree Parent Baby & Toddler Group] id=736 -- 371m off
+  address: Garraun Upper, County Galway, H91 V12C, Ireland
+  stored:  (53.2318513, -8.9439576)
+  google:  (53.2322442, -8.9494857)  (Garraun Upper, Co. Galway, H91 V12C, Ireland)
+
+[Westside Library - Toddler Story Group] id=752 -- 371m off
+  address: Seamus Quirke Rd, Galway, Ireland
+  stored:  (53.2751977, -9.0770153)
+  google:  (53.2772264, -9.0725861)  (Seamus Quirke Rd, Galway, Ireland)
+
+[Baby Sensory Ireland] id=1001 -- 371m off
+  address: Howth Road, Dublin 3, Ireland
+  stored:  (53.3666622, -6.2218449)
+  google:  (53.3645733, -6.226199299999999)  (3 Howth Rd, Clontarf West, Dublin 3, Ireland)
+
+[Parents & Children Yoga Classes in West Cork] id=146 -- 370m off
+  address: Derrigra
+  stored:  (51.735556, -8.948611)
+  google:  (51.7374836, -8.9529827)  (Derrigra, Co. Cork, Ireland)
+
+[Knockanrawley Parent, Baby & Toddler Group] id=945 -- 368m off
+  address: Knockanrawley, Tipperary, E34 D832, Ireland
+  stored:  (52.4700345, -8.1474053)
+  google:  (52.4726757, -8.150667799999999)  (Knockanrawley, Tipperary, Co. Tipperary, E34 D832, Ireland)
+
+[Honey Bee Hive] id=18 -- 366m off
+  address: Stillorgan, Co. Dublin
+  stored:  (53.2888378, -6.198343)
+  google:  (53.2877953, -6.203568199999999)  (Stillorgan, Dublin, Ireland)
+
+[Tullow & Carlow Central Library] id=582 -- 365m off
+  address: Carlow, R93 E7R7, Ireland
+  stored:  (52.8408344, -6.9261131)
+  google:  (52.83974629999999, -6.9312426)  (Carlow, Co. Carlow, R93 E7R7, Ireland)
+
+[Kinnypottle Cavan Toddler Group - Teach Oscail] id=596 -- 363m off
+  address: Kinnypottle, Cavan, H12 H049, Ireland
+  stored:  (53.9958483, -7.3564337)
+  google:  (53.9930665, -7.3593411)  (Kinnypottle, Cavan, Co. Cavan, H12 H049, Ireland)
+
+[Gentle Beginnings Baby Massage Kilkenny] id=784 -- 363m off
+  address: Smithsland South, Kilkenny, R95 H1WT, Ireland
+  stored:  (52.6373584, -7.2475052)
+  google:  (52.6405707, -7.246581600000001)  (Smithsland South, Kilkenny, Co. Kilkenny, R95 H1WT, Ireland)
+
+[Templemore Parent, Baby and Toddler Group] id=952 -- 363m off
+  address: Kiltillane, County Tipperary, E41 X433, Ireland
+  stored:  (52.7944041, -7.8263783)
+  google:  (52.7952168, -7.8316021)  (Kiltillane, Co. Tipperary, E41 X433, Ireland)
+
+[Little Kickers] id=1293 -- 362m off
+  address: Bishopscourt, Waterford, X91 R863, Ireland
+  stored:  (52.2262015, -7.0707304)
+  google:  (52.2265638, -7.065442)  (Bishopscourt, Waterford, Co. Waterford, X91 R863, Ireland)
+
+[Muine Bheag Parent, Baby & Toddler Group -Bagenalstown] id=578 -- 360m off
+  address: Moneybeg, Muine Bheag, County Carlow, R21 Y753, Ireland
+  stored:  (52.6984667, -6.9700253)
+  google:  (52.696863, -6.9653819)  (Moneybeg, Muine Bheag, Co. Carlow, R21 Y753, Ireland)
+
+[Ballinamore Parent and Toddler Group] id=810 -- 359m off
+  address: Convent Road, Aghadark, County Leitrim, Ireland
+  stored:  (54.0521101, -7.8124376)
+  google:  (54.052027, -7.8069441)  (Convent Rd., Aghadark, Co. Leitrim, Ireland)
+
+[Ballingarry / Croom Parent, Baby and Toddler Group] id=823 -- 358m off
+  address: Croom, County Limerick, V35 E306, Ireland
+  stored:  (52.5154864, -8.7198265)
+  google:  (52.518657, -8.7189299)  (Church Road, Croom, Co. Limerick, V35 E306, Ireland)
+
+[Limerick Parent, Baby and Toddler Group] id=837 -- 357m off
+  address: Barrington Street, Prior's-Land, Limerick, Ireland
+  stored:  (52.6596935, -8.626615)
+  google:  (52.658287, -8.6313689)  (Barrington St, Prior's-Land, Limerick, Ireland)
+
+[Tiny Tutus] id=290 -- 355m off
+  address: Booterstown, Dublin, A94 NW53, Ireland
+  stored:  (53.3086291, -6.1966518)
+  google:  (53.305549, -6.1980542)  (Booterstown, Dublin, Co. Dublin, A94 NW53, Ireland)
+
+[Aura Leisure Centre] id=1178 -- 354m off
+  address: Sallaghagrane, County Donegal, Ireland
+  stored:  (54.9482153, -7.7530145)
+  google:  (54.9502181, -7.748712100000001)  (Sallaghagrane, Co. Donegal, Ireland)
+
+[STEM101] id=1165 -- 353m off
+  address: Community Community Complex, Church Road, Carrigaline Middle, Carrigaline, County Cork, Ireland
+  stored:  (51.8149556, -8.3922675)
+  google:  (51.8148558, -8.3871285)  (Community Community Complex, Carrigaline Middle, Carrigaline, Co. Cork, P43 TK70, Ireland)
+
+[An Grianán Youth Theatre - Letterkenny] id=1456 -- 353m off
+  address: Port Road, Letterkenny
+  stored:  (54.9497195, -7.7173536)
+  google:  (54.9511061, -7.7223318)  (Port Rd, Letterkenny, Co. Donegal, Ireland)
+
+[Glengarriff/Coomhola Parent, Baby & Toddler Group] id=645 -- 352m off
+  address: Cappyaughna, County Cork, P75 V067, Ireland
+  stored:  (51.7525917, -9.5563236)
+  google:  (51.7499038, -9.5536093)  (Cappyaughna, Co. Cork, P75 V067, Ireland)
+
+[Cork Multiples Club - Wilton/Bishopstown - Toddler Group] id=637 -- 349m off
+  address: Bishopstown, Cork, T12 TN97, Ireland
+  stored:  (51.8796067, -8.5166631)
+  google:  (51.8797186, -8.511586399999999)  (Bishopstown, Cork, Co. Cork, T12 TN97, Ireland)
+
+[Shannon Parent, Baby & Toddler Group] id=616 -- 348m off
+  address: Smithstown, Shannon, County Clare, V14 KX52, Ireland
+  stored:  (52.7191462, -8.8745666)
+  google:  (52.7167915, -8.8711685)  (Smithstown, Shannon, Co. Clare, V14 KX52, Ireland)
+
+[Belcarra Parent, Baby and Toddler Group] id=861 -- 346m off
+  address: Cuillare, Co. Mayo, F23 HY58, Ireland
+  stored:  (53.8046522, -9.2118805)
+  google:  (53.80229, -9.2153175)  (Cuillare, Co. Mayo, F23 HY58, Ireland)
+
+[Westport Parent, Baby and Toddler Group] id=883 -- 345m off
+  address: Cahernamart, Westport, County Mayo, F28 FN32, Ireland
+  stored:  (53.7978012, -9.5223567)
+  google:  (53.8002317, -9.525627)  (Cahernamart, Westport, Co. Mayo, F28 FN32, Ireland)
+
+[Toddler Groups with additional Parenting Support in Dublin] id=1087 -- 345m off
+  address: Balally, Dublin, Ireland
+  stored:  (53.2770659, -6.2248438)
+  google:  (53.2756179, -6.229438)  (Balally, Dublin, Ireland)
+
+[Togher Parent, Baby & Toddler Group] id=671 -- 344m off
+  address: Togher, Cork, T12 DN1Y, Ireland
+  stored:  (51.8767758, -8.4939627)
+  google:  (51.8797783, -8.4927593)  (Togher, Cork, Co. Cork, T12 DN1Y, Ireland)
+
+[Dunboyne Athletic Club - Join Juvenile] id=1655 -- 343m off
+  address: Rooske Road, Dunboyne, Co. Meath
+  stored:  (53.4161615, -6.4717037)
+  google:  (53.4132236, -6.4732985)  (Rooske Rd, Dunboyne, Co. Meath, Ireland)
+
+[Butterfly Bambino’s - Baby Massage] id=826 -- 342m off
+  address: Glen, County Limerick, V94 7W13, Ireland
+  stored:  (52.5923668, -8.5564945)
+  google:  (52.5912118, -8.551795499999999)  (Glen, Co. Limerick, V94 7W13, Ireland)
+
+[Ballyboden St Endas GAA, Camogie & Ladies Football Club] id=31 -- 341m off
+  address: Ballyboden St Endas GAA, Firhouse Road, Dublin 16
+  stored:  (53.2875214, -6.3278175)
+  google:  (53.2861931, -6.3324374)  (Firhouse Rd, Dublin, Ireland)
+
+[Toddler Sense Cork] id=1168 -- 341m off
+  address: Townparks, Midleton, County Cork, P25 YT50, Ireland
+  stored:  (51.9148279, -8.1733222)
+  google:  (51.9174729, -8.1758334)  (Townparks, Midleton, Co. Cork, P25 YT50, Ireland)
+
+[Rathgar Hockey Club] id=536 -- 337m off
+  address: Danum, 6 Zion Rd, Rathgar, Dublin 6, D06 YR68, Ireland
+  stored:  (53.3060093, -6.2735905)
+  google:  (53.3090321, -6.2732054)  (6 Zion Rd, Terenure, Dublin 6, D06 NW62, Ireland)
+
+[Killinkere Parent, Toddler & Baby Group] id=591 -- 337m off
+  address: Beagh Glebe, County Cavan, A82 H9F6, Ireland
+  stored:  (53.8849441, -7.0544989)
+  google:  (53.88589649999999, -7.049609599999999)  (Beagh Glebe, Co. Cavan, A82 H9F6, Ireland)
+
+[Cellarstown / New Park / Kilkenny - Baby & Toddler Group] id=783 -- 336m off
+  address: Garrincreen, Kilkenny, R95 RK40, Ireland
+  stored:  (52.6617926, -7.2262194)
+  google:  (52.6588538, -7.2274028)  (Garrincreen, Kilkenny, Co. Kilkenny, R95 RK40, Ireland)
+
+[Little Kickers] id=1290 -- 336m off
+  address: Park, Limerick, V94 X7P9, Ireland
+  stored:  (52.6713918, -8.6120204)
+  google:  (52.6687981, -8.614570800000001)  (Park, Limerick, Co. Limerick, V94 X7P9, Ireland)
+
+[Ballyhaunis Parent, Baby and Toddler Group] id=860 -- 331m off
+  address: Carrownluggaun, County Mayo, F35 Y337, Ireland
+  stored:  (53.767262, -8.7684591)
+  google:  (53.7643148, -8.7677452)  (Carrownluggaun, Co. Mayo, F35 Y337, Ireland)
+
+[Phonics with Robot Reg Galway] id=1223 -- 330m off
+  address: Mountbellew, County Galway, Ireland
+  stored:  (53.4695021, -8.5019101)
+  google:  (53.47188, -8.5049)  (Barnwellsgrove, Mountbellew, Co. Galway, Ireland)
+
+[Parent and Toddler Group - Fingal Sports Hub] id=259 -- 328m off
+  address: Baldoyle, Dublin, Ireland
+  stored:  (53.4051421, -6.1477268)
+  google:  (53.4029952, -6.1443327)  (Baldoyle, Co. Dublin, Ireland)
+
+[Shankill Tennis Club] id=430 -- 328m off
+  address: Quinn's Road, Shankill, Co. Dublin
+  stored:  (53.2302137, -6.1196705)
+  google:  (53.2285925, -6.1237944)  (Quinns Road, Shankill, Dublin, Ireland)
+
+[Carlow Parent & Toddler Messy Play Group - Visual Carlow] id=573 -- 327m off
+  address: Carlow, R93 A3K1, Ireland
+  stored:  (52.8408344, -6.9261131)
+  google:  (52.8381382, -6.9280398)  (Carlow, Co. Carlow, R93 A3K1, Ireland)
+
+[ClapHandies PlayLabs - Dublin] id=1013 -- 325m off
+  address: Ballycragh, Dublin, D24 AH70, Ireland
+  stored:  (53.2761986, -6.3401561)
+  google:  (53.2740142, -6.3434127)  (Dublin, Co. Dublin, D24 AH70, Ireland)
+
+[Turtle Tots Swimming Classes - Wexford/Wicklow] id=1318 -- 325m off
+  address: Townparks, Wexford, Y35 FP9P, Ireland
+  stored:  (52.3327968, -6.4578219)
+  google:  (52.3357015, -6.4573158)  (Townparks, Wexford, Co. Wexford, Y35 FP9P, Ireland)
+
+[Carbury Parent, Baby and Toddler Group] id=304 -- 324m off
+  address: Carbury, Co. Kildare, Ireland
+  stored:  (53.35605, -6.96405)
+  google:  (53.3576669, -6.968115399999999)  (Carbury, Longridge, Co. Kildare, Ireland)
+
+[Lisacul Parent, Baby and Toddler Group] id=918 -- 324m off
+  address: Lisacul, County Roscommon, Ireland
+  stored:  (53.859118, -8.6318087)
+  google:  (53.8592062, -8.6367412)  (Corracoggil North, Lisacul, Co. Roscommon, Ireland)
+
+[Ballynanty Parent, Baby and Toddler Group] id=825 -- 321m off
+  address: Ballynanty Beg, Limerick, V94 APX8, Ireland
+  stored:  (52.6766288, -8.6422543)
+  google:  (52.67932140000001, -8.6439912)  (Ballynanty Beg, Limerick, Co. Limerick, V94 APX8, Ireland)
+
+[Water Babies] id=1310 -- 320m off
+  address: Newtown, Waterford, X91 XR20, Ireland
+  stored:  (52.2486668, -7.1002139)
+  google:  (52.2515201, -7.1008099)  (Newtown, Waterford, Co. Waterford, X91 XR20, Ireland)
+
+[Dance Sport] id=476 -- 319m off
+  address: Tallaght, Dublin
+  stored:  (53.2878082, -6.362355)
+  google:  (53.28817830000001, -6.3575934)  (Tallaght, Dublin, Ireland)
+
+[The Brickx Club] id=1106 -- 319m off
+  address: Tallaght, Dublin
+  stored:  (53.2878082, -6.362355)
+  google:  (53.28817830000001, -6.3575934)  (Tallaght, Dublin, Ireland)
+
+[Curtain's Up Drama School] id=1111 -- 319m off
+  address: Tallaght, Dublin
+  stored:  (53.2878082, -6.362355)
+  google:  (53.28817830000001, -6.3575934)  (Tallaght, Dublin, Ireland)
+
+[Water Babies -Dublin] id=1191 -- 319m off
+  address: Roganstown, County Dublin, K67 P2E4, Ireland
+  stored:  (53.484244, -6.2708973)
+  google:  (53.4867603, -6.273217499999999)  (Roganstown, Co. Dublin, K67 P2E4, Ireland)
+
+[Little Kickers Dublin South & Wicklow] id=1048 -- 316m off
+  address: Drimnagh, Dublin, D12 HT22, Ireland
+  stored:  (53.3299263, -6.3236515)
+  google:  (53.3309564, -6.319222799999999)  (Drimnagh, Dublin, Co. Dublin, D12 HT22, Ireland)
+
+[Banagher Library] id=902 -- 315m off
+  address: Curraghavarna And Portavolla, County Offaly, R42 XY40, Ireland
+  stored:  (53.1907202, -7.9817511)
+  google:  (53.19021979999999, -7.9864)  (Curraghavarna And Portavolla, Co. Offaly, R42 XY40, Ireland)
+
+[Cleaveragh Parent, Baby and Toddler Group] id=927 -- 314m off
+  address: Cleveragh Dr, Cleaveragh Demesne, Sligo, Ireland
+  stored:  (54.2635871, -8.4528934)
+  google:  (54.2611236, -8.455249)  (Cleveragh Dr, Cleaveragh Demesne, Sligo, Ireland)
+
+[Fundamental Football] id=643 -- 313m off
+  address: Cobh, County Cork, Ireland
+  stored:  (51.8502284, -8.2950649)
+  google:  (51.8530415, -8.295090499999999)  (Cobh, Co. Cork, Ireland)
+
+[Kerryhead / Ballyheigue Parent, Baby & Toddler Group] id=766 -- 312m off
+  address: Ballyheige, County Kerry, V92 N225, Ireland
+  stored:  (52.3942172, -9.8393105)
+  google:  (52.39212320000001, -9.842375299999999)  (Ballyheige, Co. Kerry, V92 N225, Ireland)
+
+[Knocknaheeny Toddler Group - Barnardos] id=648 -- 311m off
+  address: Knocknaheeney, Cork, T23 X564, Ireland
+  stored:  (51.9077854, -8.4985727)
+  google:  (51.9068194, -8.502829199999999)  (Knocknaheeney, Cork, Co. Cork, T23 X564, Ireland)
+
+[Turtle Tots Swimming Classes - Cork] id=1173 -- 309m off
+  address: Main St, Ballincollig, Cork, Ireland
+  stored:  (51.8880126, -8.5924307)
+  google:  (51.888034, -8.5879216)  (Main St, Ballincollig, Cork, Ireland)
+
+[Ballycroy Parent, Baby and Toddler Group] id=859 -- 305m off
+  address: Gortbrack South, Co. Mayo, Ireland
+  stored:  (54.031111, -9.8125)
+  google:  (54.0314001, -9.8078598)  (Gortbrack South, Co. Mayo, Ireland)
+
+[Rathnure Parent, Baby and Toddler Group] id=976 -- 305m off
+  address: Rathnure Upper, County Wexford, Y21 V228, Ireland
+  stored:  (52.4960925, -6.7659104)
+  google:  (52.49876510000001, -6.7669406)  (Rathnure Upper, Co. Wexford, Y21 V228, Ireland)
+
+[Art Classes with Caroline - Toddler Art Class] id=793 -- 304m off
+  address: Borris Little, Portlaoise, County Laois, R32 FH67, Ireland
+  stored:  (53.0379583, -7.2910557)
+  google:  (53.0353121, -7.292227699999999)  (Borris Little, Portlaoise, Co. Laois, R32 FH67, Ireland)
+
+[Ready to Play] id=1304 -- 304m off
+  address: Borris Little, Portlaoise, County Laois, R32 FH67, Ireland
+  stored:  (53.0379583, -7.2910557)
+  google:  (53.0353121, -7.292227699999999)  (Borris Little, Portlaoise, Co. Laois, R32 FH67, Ireland)
+
+[Mini Athletics Dundalk Drogheda and Swords] id=1056 -- 302m off
+  address: ALSAA, Toberbunny, County Dublin, Ireland
+  stored:  (53.419495, -6.2291894)
+  google:  (53.4222095, -6.2294834)  (ALSAA, Toberbunny, Co. Dublin, Ireland)
+
+[HoopSkool Basketball Academy 🏀] id=233 -- 301m off
+  address: Kilmacud West, Dublin, A94 X886, Ireland
+  stored:  (53.2854621, -6.2170698)
+  google:  (53.28463679999999, -6.221381399999999)  (Kilmacud West, Dublin, Co. Dublin, A94 X886, Ireland)
+
+[Little Island Parent, Baby & Toddler Group] id=653 -- 301m off
+  address: Wallingstown, County Cork, T45 F449, Ireland
+  stored:  (51.897913, -8.3668842)
+  google:  (51.900518, -8.3680888)  (Wallingstown, Co. Cork, T45 F449, Ireland)
+
+[Bloom Baby Classes Wicklow and South Dublin] id=1006 -- 301m off
+  address: 115A St Peter's Pl, Sheephouse, Arklow, Co. Wicklow, Y14 KA00, Ireland
+  stored:  (52.7953858, -6.167961)
+  google:  (52.7961956, -6.1636956)  (115A St Peter's Pl, Sheephouse, Arklow, Co. Wicklow, Y14 KA00, Ireland)
+
+[Master Doyle Taekwon-Do Schools] id=1184 -- 301m off
+  address: Maynooth, County Kildare, W23 X0C6, Ireland
+  stored:  (53.3830239, -6.5922806)
+  google:  (53.3831687, -6.587749899999999)  (Maynooth, Co. Kildare, W23 X0C6, Ireland)
+
+[Blackrock Athletic Club] id=423 -- 300m off
+  address: Carysfort Park, Carysfort Avenue, Blackrock, Co. Dublin
+  stored:  (53.2957579, -6.1806668)
+  google:  (53.2931915, -6.1820742)  (Carysfort Park, Carysfort, Dublin, Ireland)
+
+[Kilmacud Crokes GAA] id=503 -- 300m off
+  address: Glenalbyn, Stillorgan, Co. Dublin
+  stored:  (53.2869445, -6.195663)
+  google:  (53.2865073, -6.200119399999999)  (Glenalbyn House, Glenalbyn Rd, Stillorgan, Dublin, Ireland)
+

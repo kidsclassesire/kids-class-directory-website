@@ -1,0 +1,4532 @@
+[
+  {
+    "id": 14,
+    "company_name": "Bloom Baby Classes (Dublin South)",
+    "cleared_facebook_url": "https://www.facebook.com/Bloombabyclasses",
+    "cleared_instagram_url": "https://www.instagram.com/bloombabyclasses"
+  },
+  {
+    "id": 15,
+    "company_name": "Play Cafe / Bumps and Babes",
+    "cleared_facebook_url": "https://www.facebook.com/dlrlibraries",
+    "cleared_instagram_url": "https://www.instagram.com/libraries.dlr"
+  },
+  {
+    "id": 16,
+    "company_name": "Talls and Smalls",
+    "cleared_facebook_url": "https://www.facebook.com/dlrlibraries",
+    "cleared_instagram_url": "https://www.instagram.com/libraries.dlr"
+  },
+  {
+    "id": 17,
+    "company_name": "Baby Talk",
+    "cleared_facebook_url": "https://www.facebook.com/dlrlibraries",
+    "cleared_instagram_url": "https://www.instagram.com/libraries.dlr"
+  },
+  {
+    "id": 18,
+    "company_name": "Honey Bee Hive",
+    "cleared_facebook_url": "https://www.facebook.com/dlrlibraries",
+    "cleared_instagram_url": "https://www.instagram.com/libraries.dlr"
+  },
+  {
+    "id": 20,
+    "company_name": "Blackrock Library Parent and Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/dlrlibraries",
+    "cleared_instagram_url": "https://www.instagram.com/libraries.dlr"
+  },
+  {
+    "id": 21,
+    "company_name": "Shankill Library Parent and Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/dlrlibraries",
+    "cleared_instagram_url": "https://www.instagram.com/libraries.dlr"
+  },
+  {
+    "id": 22,
+    "company_name": "Dalkey Library Parent and Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/dlrlibraries",
+    "cleared_instagram_url": "https://www.instagram.com/libraries.dlr"
+  },
+  {
+    "id": 23,
+    "company_name": "Dalkey Library Parent and Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/dlrlibraries",
+    "cleared_instagram_url": "https://www.instagram.com/libraries.dlr"
+  },
+  {
+    "id": 24,
+    "company_name": "Dundrum Library Parent and Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/dlrlibraries",
+    "cleared_instagram_url": "https://www.instagram.com/libraries.dlr"
+  },
+  {
+    "id": 25,
+    "company_name": "Deansgrange Library Parent and Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/dlrlibraries",
+    "cleared_instagram_url": "https://www.instagram.com/libraries.dlr"
+  },
+  {
+    "id": 26,
+    "company_name": "Ballyogan Community Development Group Parent and Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/dlrlibraries",
+    "cleared_instagram_url": "https://www.instagram.com/libraries.dlr"
+  },
+  {
+    "id": 31,
+    "company_name": "Ballyboden St Endas GAA, Camogie & Ladies Football Club",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=718943255375411&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 33,
+    "company_name": "Kilmacud Crokes GAA Club",
+    "cleared_facebook_url": "https://www.facebook.com/KilmacudCrokes",
+    "cleared_instagram_url": "https://www.instagram.com/kcpurpleandgold"
+  },
+  {
+    "id": 58,
+    "company_name": "Junior Einsteins Science Club (South Dublin)",
+    "cleared_facebook_url": "https://www.facebook.com/junioreinsteinsscienceclub",
+    "cleared_instagram_url": "https://www.instagram.com/junioreinsteinsscienceclub"
+  },
+  {
+    "id": 59,
+    "company_name": "Junior Einsteins Science Club (South Dublin)",
+    "cleared_facebook_url": "https://www.facebook.com/junioreinsteinsscienceclub",
+    "cleared_instagram_url": "https://www.instagram.com/junioreinsteinsscienceclub"
+  },
+  {
+    "id": 80,
+    "company_name": "Adult Beginner Piano Class",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 81,
+    "company_name": "Afterschool service",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 85,
+    "company_name": "Art classes for children in Wexford and Lucan, co.Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 87,
+    "company_name": "Art workshops & Tea",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 92,
+    "company_name": "Baby Massage with Emma",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 93,
+    "company_name": "Baby Massage with Laura \u2013 Navan & Surrounds",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 94,
+    "company_name": "Baby Sensory Dunboyne",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=862339792668002&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 95,
+    "company_name": "Baby Sensory Kildare & Carlow",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=548998952778131&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 96,
+    "company_name": "Barleyhill Icelandics",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 97,
+    "company_name": "Beekeeping, hen keeping, forest bathing",
+    "cleared_facebook_url": "https://www.facebook.com/WordPresscom",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 100,
+    "company_name": "Boyne Babies Sensory Classes",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61581447088095#",
+    "cleared_instagram_url": "https://www.instagram.com/boynebabies"
+  },
+  {
+    "id": 101,
+    "company_name": "CHILDRENS ART CLASS SATURDAY",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 106,
+    "company_name": "Eoin\u2019s Guitar Lessons",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 107,
+    "company_name": "Expressive Art Group for Kids",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 108,
+    "company_name": "Expressive Art Group for Kids in Glengoole",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 111,
+    "company_name": "Fun Kids Yoga & Mindfulness Classes",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 114,
+    "company_name": "Green&Blue Project Launch Gathering",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 120,
+    "company_name": "Ickle Minds",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 122,
+    "company_name": "Irish Dancing Classes in Wicklow",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 124,
+    "company_name": "Kids & Teen Yoga Classes (Tralee Area)",
+    "cleared_facebook_url": "https://www.facebook.com/superstarsyoga",
+    "cleared_instagram_url": "https://www.instagram.com/superstarsyoga"
+  },
+  {
+    "id": 126,
+    "company_name": "Kids Yoga & Zumbini Combo Class Midleton",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 129,
+    "company_name": "Little Folk- Music for Babies, Toddlers, & Young Children",
+    "cleared_facebook_url": "https://www.facebook.com/littlefolkmusicclass",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 131,
+    "company_name": "Local Grinds",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 132,
+    "company_name": "Makerspace@ Bare Food",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 133,
+    "company_name": "Malahide Musical & Dramatic Society",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 136,
+    "company_name": "Mna Movement mom & baby Fitness Class",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 137,
+    "company_name": "Newpark Academy Jazz Department",
+    "cleared_facebook_url": "https://www.facebook.com/newparkmusic",
+    "cleared_instagram_url": "https://www.instagram.com/newparkmusic/?hl=en"
+  },
+  {
+    "id": 139,
+    "company_name": "Oboe, Piano, Recorder, Ukulele lessons from age 8 to 88",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 141,
+    "company_name": "Online Piano & Guitar Lessons for Adults and Children \u2013 Music Lessons Ireland",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 145,
+    "company_name": "Parent First Aid Classes \u2013 Nationwide",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=725510407656880&amp;ev=PageView&amp;noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 148,
+    "company_name": "Pottery Classes in Drogheda with Gatothorceramica",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 149,
+    "company_name": "Professional Music Lessons in Ennis & Online",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 150,
+    "company_name": "Rebel Craft Club",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 151,
+    "company_name": "Recreational sports leagues for adults",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=654927583683406&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 152,
+    "company_name": "SINGING CLASSES",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 157,
+    "company_name": "Soccer Stars",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=306765062186726&ev=PageView&noscript=1",
+    "cleared_instagram_url": "https://www.instagram.com/soccerstarsireland"
+  },
+  {
+    "id": 161,
+    "company_name": "Summer grinds",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 163,
+    "company_name": "Taekwon-Do for Kids Ages 6-12",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 164,
+    "company_name": "Tea, Coffee & Create Painting Classes",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 166,
+    "company_name": "Textile Classes, Embroidery, needlefelting, stitched landscapes, Sashiko and more",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 167,
+    "company_name": "The Jam \u2013 Art & Drama",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 168,
+    "company_name": "Tiny Tutus | Ballet & Dance Classes | Ages 2\u201314",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tinytutusie"
+  },
+  {
+    "id": 170,
+    "company_name": "TrueNote \u2013 Music Lessons",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 171,
+    "company_name": "WEEKLY SEWING CLASSES",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 173,
+    "company_name": "Woodworking Camps",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 175,
+    "company_name": "Yoga With Ginni + Moon & Lotus Studio: Classes | Workshops | Retreats",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=719428879362446&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 176,
+    "company_name": "\ud83d\udcbb Coding \u2022 Design \u2022 Robotics \u2022 AI for kids aged 5\u201317",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=151777204592480&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 183,
+    "company_name": "Balbriggan - Lego-Based Therapy Groups",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 184,
+    "company_name": "Balbriggan Library",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 187,
+    "company_name": "Ballsbridge Baby & Toddler Group - Pembroke Library",
+    "cleared_facebook_url": "http://www.facebook.com/dublincitycouncil",
+    "cleared_instagram_url": "https://www.instagram.com/dublincitycouncil/?hl=en"
+  },
+  {
+    "id": 188,
+    "company_name": "Ballyfermot Library - Toddler Group / Book Clubs and More",
+    "cleared_facebook_url": "http://www.facebook.com/dublincitycouncil",
+    "cleared_instagram_url": "https://www.instagram.com/dublincitycouncil/?hl=en"
+  },
+  {
+    "id": 189,
+    "company_name": "Ballymun Library",
+    "cleared_facebook_url": "http://www.facebook.com/dublincitycouncil",
+    "cleared_instagram_url": "https://www.instagram.com/dublincitycouncil/?hl=en"
+  },
+  {
+    "id": 193,
+    "company_name": "Blackrock Library Parent, Baby & Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/dlrlibraries",
+    "cleared_instagram_url": "https://www.instagram.com/libraries.dlr"
+  },
+  {
+    "id": 195,
+    "company_name": "Blanchardstown Library",
+    "cleared_facebook_url": "https://www.facebook.com/fingalcoco",
+    "cleared_instagram_url": "https://www.instagram.com/fingalcountycouncil"
+  },
+  {
+    "id": 200,
+    "company_name": "Cabra Library - Toddler Group / Book Clubs and More",
+    "cleared_facebook_url": "http://www.facebook.com/dublincitycouncil",
+    "cleared_instagram_url": "https://www.instagram.com/dublincitycouncil/?hl=en"
+  },
+  {
+    "id": 201,
+    "company_name": "Castleknock Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 202,
+    "company_name": "Central Library Dublin 1",
+    "cleared_facebook_url": "http://www.facebook.com/dublincitycouncil",
+    "cleared_instagram_url": "https://www.instagram.com/dublincitycouncil/?hl=en"
+  },
+  {
+    "id": 203,
+    "company_name": "ClapHandies PlayLabs - Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/claphandies",
+    "cleared_instagram_url": "https://www.instagram.com/claphandies"
+  },
+  {
+    "id": 206,
+    "company_name": "Clondalkin Parent & Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/quarryvalefrc",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 208,
+    "company_name": "Clondalkin Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 211,
+    "company_name": "Colour and Art Kids classes Balbriggan",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 212,
+    "company_name": "Coolock Library - Toddler Group/Games Night",
+    "cleared_facebook_url": "http://www.facebook.com/dublincitycouncil",
+    "cleared_instagram_url": "https://www.instagram.com/dublincitycouncil/?hl=en"
+  },
+  {
+    "id": 214,
+    "company_name": "C\u00fal Cubs",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 216,
+    "company_name": "Dizzy Footwork (Dance, Drama & Acrobatic)",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 218,
+    "company_name": "Do Your Dance Tots - Blackrock",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 222,
+    "company_name": "Dublin Dance School",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 224,
+    "company_name": "Explorium Irelands National Sport & Science Centre",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=3609701042605538&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 228,
+    "company_name": "Fox-C Play Cafe - D1/D3",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 230,
+    "company_name": "Gentle Hands Baby Massage",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 231,
+    "company_name": "Glenasmole Parent & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 232,
+    "company_name": "Harold's Cross - Toddler Group / Lego Club - Dolphin's Barn Library",
+    "cleared_facebook_url": "http://www.facebook.com/dublincitycouncil",
+    "cleared_instagram_url": "https://www.instagram.com/dublincitycouncil/?hl=en"
+  },
+  {
+    "id": 234,
+    "company_name": "Huntstown Parent and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 235,
+    "company_name": "Inchicore Toddler Storytime - Inchicore Library D8",
+    "cleared_facebook_url": "http://www.facebook.com/dublincitycouncil",
+    "cleared_instagram_url": "https://www.instagram.com/dublincitycouncil/?hl=en"
+  },
+  {
+    "id": 236,
+    "company_name": "Irish Dance Classes",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 237,
+    "company_name": "Irishtown Parent and Toddler Group -Quarryvale Family Resource Centre",
+    "cleared_facebook_url": "https://www.facebook.com/quarryvalefrc",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 241,
+    "company_name": "Little Kickers Dublin South & Wicklow",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 242,
+    "company_name": "Little Lotus",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/little_lotus_dublin?igsh=MThkaGFwYWdidDZpMQ=="
+  },
+  {
+    "id": 243,
+    "company_name": "Little Lotus Summer camp 9-12 yr olds",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/little_lotus_dublin?igsh=MThkaGFwYWdidDZpMQ=="
+  },
+  {
+    "id": 244,
+    "company_name": "Little Turtles",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 246,
+    "company_name": "Lusk Parent and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 248,
+    "company_name": "Messy Adventures",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 249,
+    "company_name": "Mindful Creativity with Michelle",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 252,
+    "company_name": "Moo Music Dun Laoghaire",
+    "cleared_facebook_url": "https://www.facebook.com/moomusicireland",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 253,
+    "company_name": "Muckross Gymnastics Club",
+    "cleared_facebook_url": "https://www.facebook.com/muckrossgc",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 257,
+    "company_name": "Music Cubs",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=357245558018801&ev=PageView",
+    "cleared_instagram_url": "https://www.instagram.com/happycubs.ie"
+  },
+  {
+    "id": 258,
+    "company_name": "Once Upon a...Fairytale",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 261,
+    "company_name": "Pearse St Toddler Group & Junior Book Club",
+    "cleared_facebook_url": "http://www.facebook.com/dublincitycouncil",
+    "cleared_instagram_url": "https://www.instagram.com/dublincitycouncil/?hl=en"
+  },
+  {
+    "id": 262,
+    "company_name": "Phibsboro Toddler Storytime Group - Phibsboro Library",
+    "cleared_facebook_url": "http://www.facebook.com/dublincitycouncil",
+    "cleared_instagram_url": "https://www.instagram.com/dublincitycouncil/?hl=en"
+  },
+  {
+    "id": 264,
+    "company_name": "Portobello Baby & Toddler Group - Kevin Street Library D8",
+    "cleared_facebook_url": "http://www.facebook.com/dublincitycouncil",
+    "cleared_instagram_url": "https://www.instagram.com/dublincitycouncil/?hl=en"
+  },
+  {
+    "id": 265,
+    "company_name": "Raheny Library - Toddler Group and Junior Book Clubs",
+    "cleared_facebook_url": "http://www.facebook.com/dublincitycouncil",
+    "cleared_instagram_url": "https://www.instagram.com/dublincitycouncil/?hl=en"
+  },
+  {
+    "id": 266,
+    "company_name": "Raheny Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 267,
+    "company_name": "Rathcoole and Templeogue - Toddlers World",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 269,
+    "company_name": "Rathmines Baby & Toddler Group & Junior Book Club - Rathmines Library",
+    "cleared_facebook_url": "http://www.facebook.com/dublincitycouncil",
+    "cleared_instagram_url": "https://www.instagram.com/dublincitycouncil/?hl=en"
+  },
+  {
+    "id": 270,
+    "company_name": "Ringsend Library - Toddler Group & Lego Group",
+    "cleared_facebook_url": "http://www.facebook.com/dublincitycouncil",
+    "cleared_instagram_url": "https://www.instagram.com/dublincitycouncil/?hl=en"
+  },
+  {
+    "id": 271,
+    "company_name": "Rosey Stars \ud83c\udf1f",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 274,
+    "company_name": "SENSEable Tots Sensory Class in Dublin and Wicklow",
+    "cleared_facebook_url": "https://facebook.com/senseabletots",
+    "cleared_instagram_url": "https://www.instagram.com/senseabletots"
+  },
+  {
+    "id": 275,
+    "company_name": "Sandyford Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 276,
+    "company_name": "Sandyford Parent, Baby & Toddler Group (Baby Talk)",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 278,
+    "company_name": "Sensory Workshop for Neurodiverse Children - Balbriggan",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 279,
+    "company_name": "Skerries Parent and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 281,
+    "company_name": "Soccer Stars",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=306765062186726&ev=PageView&noscript=1",
+    "cleared_instagram_url": "https://www.instagram.com/soccerstarsireland"
+  },
+  {
+    "id": 283,
+    "company_name": "Stillorgan Parent, Baby & Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 284,
+    "company_name": "Summer Swimming Camps for Children",
+    "cleared_facebook_url": "https://www.facebook.com/swimcampIE",
+    "cleared_instagram_url": "https://www.instagram.com/swimcamp.ireland"
+  },
+  {
+    "id": 289,
+    "company_name": "Tina Mation",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=1333941838661260&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 290,
+    "company_name": "Tiny Tutus",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tinytutusie"
+  },
+  {
+    "id": 292,
+    "company_name": "Toddler Group Dublin 6 - Terenure Library",
+    "cleared_facebook_url": "http://www.facebook.com/dublincitycouncil",
+    "cleared_instagram_url": "https://www.instagram.com/dublincitycouncil/?hl=en"
+  },
+  {
+    "id": 299,
+    "company_name": "Walkinstown Baby & Toddler Storytime / Book clubs",
+    "cleared_facebook_url": "http://www.facebook.com/dublincitycouncil",
+    "cleared_instagram_url": "https://www.instagram.com/dublincitycouncil/?hl=en"
+  },
+  {
+    "id": 304,
+    "company_name": "Carbury Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 305,
+    "company_name": "Castledermot Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 307,
+    "company_name": "Elmm Infant Massage Castledermot",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 308,
+    "company_name": "Fireflies Leixlip Parent and Kids Group",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 309,
+    "company_name": "Happy Peeps Sensory Play",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 310,
+    "company_name": "Kilcullen Parent, Baby and Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/groups/KilcullenToddlerGroup",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 311,
+    "company_name": "Kildangan Parent, Baby and Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/groups/KilcullenToddlerGroup",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 312,
+    "company_name": "Kill Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 314,
+    "company_name": "Leixlip Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 315,
+    "company_name": "Leixlip Parent, Baby and Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 321,
+    "company_name": "Carlingford Cooley Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 322,
+    "company_name": "Clogherhead Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 328,
+    "company_name": "Kids Art Class Mornington, Philipstown and Ardee",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 329,
+    "company_name": "Kids Classes in Kells - Kells Family Resource Centre",
+    "cleared_facebook_url": "https://www.facebook.com/wix",
+    "cleared_instagram_url": "https://www.instagram.com/wix"
+  },
+  {
+    "id": 330,
+    "company_name": "Kilcurry Parent & Toddler Group- Kilcurry Family Resource Centre",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 333,
+    "company_name": "Moneymore Drogheda Louth Parent, Baby & Toddler Group",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 335,
+    "company_name": "Move To Improve - GAA for 8+ years",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 336,
+    "company_name": "Philipstown Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 337,
+    "company_name": "Starlight Academy",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 338,
+    "company_name": "Adventure Avenue Ltd",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 340,
+    "company_name": "Athboy Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 341,
+    "company_name": "Baby Massage With Laura",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 342,
+    "company_name": "Boyne Babies",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61581447088095#",
+    "cleared_instagram_url": "https://www.instagram.com/boynebabies"
+  },
+  {
+    "id": 343,
+    "company_name": "Dunboyne Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 344,
+    "company_name": "Dunshaughlin Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 348,
+    "company_name": "Kids French classes in Navan (3 to 12 years old)",
+    "cleared_facebook_url": "http://www.facebook.com/rendezvousfr",
+    "cleared_instagram_url": "https://www.instagram.com/rendezvousfrancais"
+  },
+  {
+    "id": 350,
+    "company_name": "Little Folk Music for Babies, Toddlers & Young Children",
+    "cleared_facebook_url": "https://www.facebook.com/littlefolkmusicclass",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 351,
+    "company_name": "Little bears",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 353,
+    "company_name": "Mum & Baby French Classes",
+    "cleared_facebook_url": "http://www.facebook.com/rendezvousfr",
+    "cleared_instagram_url": "https://www.instagram.com/rendezvousfrancais"
+  },
+  {
+    "id": 358,
+    "company_name": "Play and Music Meath",
+    "cleared_facebook_url": "https://www.facebook.com/playandmusicmeath",
+    "cleared_instagram_url": "https://www.instagram.com/playmusicmeath"
+  },
+  {
+    "id": 362,
+    "company_name": "Skryne Navan Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 363,
+    "company_name": "Stamullen Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 369,
+    "company_name": "WhizTots Family Play Session",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 370,
+    "company_name": "Zumbini music and movement 0-5 year olds",
+    "cleared_facebook_url": "https://www.facebook.com/zumbiniOfficial/?fref=ts",
+    "cleared_instagram_url": "https://www.instagram.com/zumbiniofficial"
+  },
+  {
+    "id": 374,
+    "company_name": "Athlone Mum and Baby Group",
+    "cleared_facebook_url": "https://www.facebook.com/westmeathcmums",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 375,
+    "company_name": "Ballynahown Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 378,
+    "company_name": "Collinstown Parent, Baby and Toddler Group",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 379,
+    "company_name": "Delvin Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 380,
+    "company_name": "Killucan Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 381,
+    "company_name": "Moate Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 382,
+    "company_name": "Mullingar Mum and Baby Group",
+    "cleared_facebook_url": "https://www.facebook.com/westmeathcmums",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 386,
+    "company_name": "Arklow Library",
+    "cleared_facebook_url": "https://www.facebook.com/WicklowCountyCouncil",
+    "cleared_instagram_url": "https://www.instagram.com/Wicklowcoco"
+  },
+  {
+    "id": 387,
+    "company_name": "Baltinglass Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 388,
+    "company_name": "Blessington Library",
+    "cleared_facebook_url": "https://www.facebook.com/WicklowCountyCouncil",
+    "cleared_instagram_url": "https://www.instagram.com/Wicklowcoco"
+  },
+  {
+    "id": 389,
+    "company_name": "Dunlavin Parent, Baby and Toddler Group Wicklow",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 390,
+    "company_name": "Fitclub",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 392,
+    "company_name": "Gentle Start Collective",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 394,
+    "company_name": "Greystones Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 395,
+    "company_name": "Greystones Presbyterian Church Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 396,
+    "company_name": "Love Life Nurture Doula and Baby Massage",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 397,
+    "company_name": "Musical Maestros Wicklow",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 398,
+    "company_name": "Newtownmountkennedy Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 400,
+    "company_name": "Snuggle Bugs Sensory Play",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 401,
+    "company_name": "Spotlight Studios",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 404,
+    "company_name": "Wicklow Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 406,
+    "company_name": "Do Your Dance Tots",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 407,
+    "company_name": "Round Towers GAA Club (Clondalkin)",
+    "cleared_facebook_url": "https://www.facebook.com/dlrlibraries",
+    "cleared_instagram_url": "https://www.instagram.com/libraries.dlr"
+  },
+  {
+    "id": 409,
+    "company_name": "Monkstown Lawn Tennis Club",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 411,
+    "company_name": "Carrickmines Equestrian Centre",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 412,
+    "company_name": "Churchtown School of Music",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": "https://www.instagram.com/churchtownschoolofmusic"
+  },
+  {
+    "id": 414,
+    "company_name": "iSwim Academy (Club Vitae Tallaght)",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=191614138076265&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 415,
+    "company_name": "Project Fashion",
+    "cleared_facebook_url": "https://www.facebook.com/projectfashionacademy",
+    "cleared_instagram_url": "https://www.instagram.com/projectfashionacademy"
+  },
+  {
+    "id": 416,
+    "company_name": "ClapHandies",
+    "cleared_facebook_url": "https://www.facebook.com/claphandies",
+    "cleared_instagram_url": "https://www.instagram.com/claphandies"
+  },
+  {
+    "id": 418,
+    "company_name": "Tallaght Parent, Baby and Toddler Group (Killinarden Family Resource Centre)",
+    "cleared_facebook_url": "https://www.facebook.com/dlrlibraries",
+    "cleared_instagram_url": "https://www.instagram.com/libraries.dlr"
+  },
+  {
+    "id": 420,
+    "company_name": "Bounce Gymnastics Club",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": "https://www.instagram.com/bouncegymnasticsclub"
+  },
+  {
+    "id": 421,
+    "company_name": "Muckross Park Gymnastics Club",
+    "cleared_facebook_url": "https://www.facebook.com/muckrossgc",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 422,
+    "company_name": "Olympian Gymnastics",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=1598921331816963&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 435,
+    "company_name": "Tae Kwon Do Tigers",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 443,
+    "company_name": "Aura Leisure",
+    "cleared_facebook_url": "https://www.facebook.com/AuraLeisureCentres",
+    "cleared_instagram_url": "https://www.instagram.com/auraleisureirl"
+  },
+  {
+    "id": 444,
+    "company_name": "Avoca Hockey Club",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 454,
+    "company_name": "Blanch Music",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 469,
+    "company_name": "Clontarf GAA Club",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 471,
+    "company_name": "CoderDojo",
+    "cleared_facebook_url": "https://www.facebook.com/codeclub.org",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 475,
+    "company_name": "DMcG Hockey",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=790320546287684&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 476,
+    "company_name": "Dance Sport",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=958458570856628&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 486,
+    "company_name": "Faughs GAA",
+    "cleared_facebook_url": "https://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 489,
+    "company_name": "Gaiety School of Acting",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=691356817682875&ev=PageView&noscript=1",
+    "cleared_instagram_url": "https://www.instagram.com/gaietyschool"
+  },
+  {
+    "id": 491,
+    "company_name": "GymStars",
+    "cleared_facebook_url": "https://www.facebook.com/WordPresscom",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 492,
+    "company_name": "Happy Cubs",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=357245558018801&ev=PageView",
+    "cleared_instagram_url": "https://www.instagram.com/happycubs.ie"
+  },
+  {
+    "id": 502,
+    "company_name": "Kids Comp",
+    "cleared_facebook_url": "https://www.facebook.com/KidsCompIreland",
+    "cleared_instagram_url": "https://www.instagram.com/kidscompireland"
+  },
+  {
+    "id": 503,
+    "company_name": "Kilmacud Crokes GAA",
+    "cleared_facebook_url": "https://www.facebook.com/KilmacudCrokes",
+    "cleared_instagram_url": "https://www.instagram.com/kcpurpleandgold"
+  },
+  {
+    "id": 505,
+    "company_name": "Kilternan School of Music",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=292758464515898&ev=PageView",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 527,
+    "company_name": "Newpark Music",
+    "cleared_facebook_url": "https://www.facebook.com/newparkmusic",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 528,
+    "company_name": "Newpark Music Centre",
+    "cleared_facebook_url": "https://www.facebook.com/newparkmusic",
+    "cleared_instagram_url": "https://www.instagram.com/newparkmusic/?hl=en"
+  },
+  {
+    "id": 533,
+    "company_name": "PlayAct Drama School",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 534,
+    "company_name": "Prima Ballet",
+    "cleared_facebook_url": "https://www.facebook.com/ballet.ie",
+    "cleared_instagram_url": "https://www.instagram.com/ballet.ie"
+  },
+  {
+    "id": 538,
+    "company_name": "SENSEable Tots",
+    "cleared_facebook_url": "https://facebook.com/senseabletots",
+    "cleared_instagram_url": "https://www.instagram.com/senseabletots"
+  },
+  {
+    "id": 541,
+    "company_name": "Splashtastic",
+    "cleared_facebook_url": "https://www.facebook.com/Splashtastic-1230605910329382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 544,
+    "company_name": "Swim Camp",
+    "cleared_facebook_url": "https://www.facebook.com/swimcampIE",
+    "cleared_instagram_url": "https://www.instagram.com/swimcamp.ireland"
+  },
+  {
+    "id": 548,
+    "company_name": "The Academy of Code",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 551,
+    "company_name": "The Irish National Sailing & Powerboat School",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=1414988870348991&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 552,
+    "company_name": "The Mothering Psychologist",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 554,
+    "company_name": "The New School",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=276569043199935&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 556,
+    "company_name": "The School of Music",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": "https://www.instagram.com/churchtownschoolofmusic"
+  },
+  {
+    "id": 562,
+    "company_name": "Westwood Club",
+    "cleared_facebook_url": "https://www.facebook.com/westwoodclub",
+    "cleared_instagram_url": "https://www.instagram.com/westwoodclub"
+  },
+  {
+    "id": 566,
+    "company_name": "Ability Fitness Sligo",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 569,
+    "company_name": "Painting and Drawing Classes",
+    "cleared_facebook_url": "https://www.facebook.com/hmclarts",
+    "cleared_instagram_url": "https://www.instagram.com/artclass_wexford/?hl=en"
+  },
+  {
+    "id": 570,
+    "company_name": "Turtle Tots",
+    "cleared_facebook_url": "https://www.facebook.com/Turtletotsireland",
+    "cleared_instagram_url": "https://www.instagram.com/turtletotsireland"
+  },
+  {
+    "id": 571,
+    "company_name": "Ballon Parent, Baby & Toddler Group Carlow",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 572,
+    "company_name": "Borris Parent, Baby & Toddler Group Carlow",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 575,
+    "company_name": "Dance Republic Tiny Dancer",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 576,
+    "company_name": "Dancing Tots",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 577,
+    "company_name": "Little Lullabies Baby Massage",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 580,
+    "company_name": "Swimtastic.ie",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=1023476079599679&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 583,
+    "company_name": "Tullow Parent & Toddler Group Carlow",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 584,
+    "company_name": "Zumbini",
+    "cleared_facebook_url": "https://www.facebook.com/zumbiniOfficial/?fref=ts",
+    "cleared_instagram_url": "https://www.instagram.com/zumbiniofficial"
+  },
+  {
+    "id": 585,
+    "company_name": "Arvagh Parent, Toddler & Baby Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 586,
+    "company_name": "Baby Massage with Orla",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 587,
+    "company_name": "Bailieborough Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 588,
+    "company_name": "Belturbet Parent, Toddler & Baby Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 590,
+    "company_name": "Killeshandra Parent, Toddler & Baby Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 591,
+    "company_name": "Killinkere Parent, Toddler & Baby Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 593,
+    "company_name": "Kilnaleck Parent, Toddler & Baby Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 594,
+    "company_name": "Kingscourt Mum and Baby Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 595,
+    "company_name": "Kingscourt Parent, Toddler & Baby Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 596,
+    "company_name": "Kinnypottle Cavan Toddler Group - Teach Oscail",
+    "cleared_facebook_url": "https://www.facebook.com/wix",
+    "cleared_instagram_url": "https://www.instagram.com/wix"
+  },
+  {
+    "id": 597,
+    "company_name": "Le Ch\u00e9ile Cootehill Parent, Toddler & Baby Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 598,
+    "company_name": "Mullagh Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 599,
+    "company_name": "Shercock Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 600,
+    "company_name": "Swanlinbar Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 604,
+    "company_name": "Ballyvaughan Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 608,
+    "company_name": "Kilkishen Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 610,
+    "company_name": "Quin Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 611,
+    "company_name": "Quin Village Parent, Baby and Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 612,
+    "company_name": "RINKA Kids Fitness & Wellbeing",
+    "cleared_facebook_url": "https://www.facebook.com/rinkaireland",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 613,
+    "company_name": "Scariff Baby & Toddler Groups / Kids Book Club - Scariff Library",
+    "cleared_facebook_url": "https://www.facebook.com/clarecountylibrary",
+    "cleared_instagram_url": "https://www.instagram.com/clarecountylibrary"
+  },
+  {
+    "id": 615,
+    "company_name": "Shannon Baby & Toddler Storytime Groups - Shannon Library",
+    "cleared_facebook_url": "https://www.facebook.com/clarecountylibrary",
+    "cleared_instagram_url": "https://www.instagram.com/clarecountylibrary"
+  },
+  {
+    "id": 616,
+    "company_name": "Shannon Parent, Baby & Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 619,
+    "company_name": "Tulla Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 620,
+    "company_name": "Aghada Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 621,
+    "company_name": "Ardfallen/Douglas Breastfeeding and Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/LaLecheLeagueIreland",
+    "cleared_instagram_url": "https://www.instagram.com/lalecheleagueofireland"
+  },
+  {
+    "id": 625,
+    "company_name": "Ballyhea Parent, Baby & Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 627,
+    "company_name": "Blackrock Baby & Toddler Group Cork",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 628,
+    "company_name": "Carrigaline Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 629,
+    "company_name": "Carrignavar Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 630,
+    "company_name": "Carrigtwohill Parent, Baby & Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/carrigtwohillfrc",
+    "cleared_instagram_url": "https://www.instagram.com/carrigtwohillfrc"
+  },
+  {
+    "id": 631,
+    "company_name": "Castletown Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 633,
+    "company_name": "Clonakilty Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 634,
+    "company_name": "Coachford Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 636,
+    "company_name": "Conna Parent, Baby & Toddler Group (Tweenies Playgroup)",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 637,
+    "company_name": "Cork Multiples Club - Wilton/Bishopstown - Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 638,
+    "company_name": "Donoughmore Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 639,
+    "company_name": "Dromdaleague Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 645,
+    "company_name": "Glengarriff/Coomhola Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 646,
+    "company_name": "Innishannon Parent & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 648,
+    "company_name": "Knocknaheeny Toddler Group - Barnardos",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=1120878255945518&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 652,
+    "company_name": "Lisgoold/Leamlara Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 653,
+    "company_name": "Little Island Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 654,
+    "company_name": "Little Learners Holistics",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 658,
+    "company_name": "Millstreet Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 661,
+    "company_name": "Newtown Cork Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 664,
+    "company_name": "Renaniree Parent & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 667,
+    "company_name": "Schull Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 668,
+    "company_name": "Sheeps Head Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 669,
+    "company_name": "Toddler Group Time in Cork Libraries",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 674,
+    "company_name": "Whitechurch and Waterloo Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/whitechurchKids",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 675,
+    "company_name": "Ardara Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 676,
+    "company_name": "Baby Sensory Northwest",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=855625329100912&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 677,
+    "company_name": "Bloom Baby Classes North West Ireland",
+    "cleared_facebook_url": "https://www.facebook.com/Bloombabyclasses",
+    "cleared_instagram_url": "https://www.instagram.com/bloombabyclasses"
+  },
+  {
+    "id": 678,
+    "company_name": "Buncrana Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 681,
+    "company_name": "Clonmany Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 682,
+    "company_name": "Convoy Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 683,
+    "company_name": "Conwal Letterkenny Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 684,
+    "company_name": "Donegal Town Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 686,
+    "company_name": "Drumaweer Greencastle Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 693,
+    "company_name": "Lifford, Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 694,
+    "company_name": "Malin Head Ballyhillin Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 697,
+    "company_name": "Pettigo Parent, Toddler & Baby Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 699,
+    "company_name": "Raphoe Little Sparks Donegal Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 700,
+    "company_name": "Raphoe Parent, Baby, Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 701,
+    "company_name": "Ray Parent, Toddler & Baby Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 702,
+    "company_name": "Stranorlar Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 704,
+    "company_name": "Aura Leisure Centre",
+    "cleared_facebook_url": "https://www.facebook.com/AuraLeisureCentres",
+    "cleared_instagram_url": "https://www.instagram.com/auraleisureirl"
+  },
+  {
+    "id": 705,
+    "company_name": "Finglas Sensory Sessions/ Baby Book Club - Finglas Library",
+    "cleared_facebook_url": "http://www.facebook.com/dublincitycouncil",
+    "cleared_instagram_url": "https://www.instagram.com/dublincitycouncil/?hl=en"
+  },
+  {
+    "id": 707,
+    "company_name": "Stretch n Grow Parent & Me Fun Fitness",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 708,
+    "company_name": "Water Babies -Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/waterbabiesireland",
+    "cleared_instagram_url": "https://www.instagram.com/waterbabiesirl"
+  },
+  {
+    "id": 713,
+    "company_name": "Babywearing ireland",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 715,
+    "company_name": "Ballinasloe/Killalaghton Parent Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 718,
+    "company_name": "Ballygar Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 719,
+    "company_name": "Claregalway Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 720,
+    "company_name": "Corofin Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 721,
+    "company_name": "Craughwell Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 722,
+    "company_name": "Flying High Fitness",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": "https://www.instagram.com/flying_high_fitness_ennis"
+  },
+  {
+    "id": 723,
+    "company_name": "Football Fun & Development - Ballinfoile",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=705027284332677&ev=PageView&noscript=1",
+    "cleared_instagram_url": "https://www.instagram.com/_footballfunfactory"
+  },
+  {
+    "id": 724,
+    "company_name": "Football Fun & Development - Renmore",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=705027284332677&ev=PageView&noscript=1",
+    "cleared_instagram_url": "https://www.instagram.com/_footballfunfactory"
+  },
+  {
+    "id": 726,
+    "company_name": "Galway Community Circus",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=335972527888204&ev=PageView&noscript=1",
+    "cleared_instagram_url": "https://www.instagram.com/galwaycircus"
+  },
+  {
+    "id": 727,
+    "company_name": "Garrafrauns Parent Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 728,
+    "company_name": "Gort Parent & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 729,
+    "company_name": "Headford/ Cloughanover Parent Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 731,
+    "company_name": "Kinvara Mum to-Be & New Mum Social Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 732,
+    "company_name": "Kinvara Parent Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 733,
+    "company_name": "Lasting Touch Baby Massage",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 734,
+    "company_name": "Little Kickers Galway",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 736,
+    "company_name": "Maree Parent Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 741,
+    "company_name": "Phonics with Robot Reg Galway",
+    "cleared_facebook_url": "https://www.facebook.com/PhonicsRobotRegHQ",
+    "cleared_instagram_url": "https://www.instagram.com/phonicswithrobotreghq/?hl=en"
+  },
+  {
+    "id": 743,
+    "company_name": "Renmore Parent Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 746,
+    "company_name": "The Extra Special Parent & Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/extraspecialptg",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 748,
+    "company_name": "Tots Football Fun - Salthill",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=705027284332677&ev=PageView&noscript=1",
+    "cleared_instagram_url": "https://www.instagram.com/_footballfunfactory"
+  },
+  {
+    "id": 754,
+    "company_name": "Woodford/Surrounding Areas Parent Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 757,
+    "company_name": "Ballybunion Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 759,
+    "company_name": "Caherdaniel Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 761,
+    "company_name": "Castlemaine Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 763,
+    "company_name": "Firies Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 764,
+    "company_name": "Glenbeigh Parent, Baby & Toddler Group (The Toddle Inn)",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 766,
+    "company_name": "Kerryhead / Ballyheigue Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 768,
+    "company_name": "Kilflynn Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 769,
+    "company_name": "Kilgarvan Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 771,
+    "company_name": "Moyvane Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 772,
+    "company_name": "Reenard (South Kerry) Parent, Baby & Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 773,
+    "company_name": "Shanakill Tralee Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 774,
+    "company_name": "The Unrelated Auntie- Messy Play Group (facilitated by a play therapist)",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 775,
+    "company_name": "Tiny Tornados",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 776,
+    "company_name": "Tiny Tornados",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 781,
+    "company_name": "Ready Steady Play Midlands",
+    "cleared_facebook_url": "https://www.facebook.com/Readysteadyplayireland",
+    "cleared_instagram_url": "https://www.instagram.com/readysteadyplaymusicirl"
+  },
+  {
+    "id": 783,
+    "company_name": "Cellarstown / New Park / Kilkenny - Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 785,
+    "company_name": "Inistioge Kilkenny - Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 786,
+    "company_name": "Mooncoin Kilkenny - Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 787,
+    "company_name": "Newpark Kilkenny - Baby & Toddler Group",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 788,
+    "company_name": "The Wonder Years Play & Mindfulness",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 792,
+    "company_name": "Abbeyleix Library - Baby & Toddler Group / Kids Chess Club",
+    "cleared_facebook_url": "https://www.facebook.com/LaoisCountyCouncil",
+    "cleared_instagram_url": "https://www.instagram.com/laoiscountycouncil"
+  },
+  {
+    "id": 793,
+    "company_name": "Art Classes with Caroline - Toddler Art Class",
+    "cleared_facebook_url": "https://www.facebook.com/artclasseswithcaroline",
+    "cleared_instagram_url": "https://www.instagram.com/artclasseswithcaroline"
+  },
+  {
+    "id": 794,
+    "company_name": "Baby Massage in Portlaoise with Oxana Murray",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 795,
+    "company_name": "Baby Sensory Class - Midwife For You",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": "https://www.instagram.com/midwife.foryou"
+  },
+  {
+    "id": 796,
+    "company_name": "Edel's Baby Massage in Portlaoise\ud83c\udf08",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 797,
+    "company_name": "Midwife For You",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": "https://www.instagram.com/midwife.foryou"
+  },
+  {
+    "id": 798,
+    "company_name": "Mindful Present Moments",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 799,
+    "company_name": "Mountmellick - Toddler Group / Kids Book Clubs / Lego Group",
+    "cleared_facebook_url": "https://www.facebook.com/LaoisCountyCouncil",
+    "cleared_instagram_url": "https://www.instagram.com/laoiscountycouncil"
+  },
+  {
+    "id": 800,
+    "company_name": "Mountrath - Toddler Group / Kids Book Clubs / STEM Group",
+    "cleared_facebook_url": "https://www.facebook.com/LaoisCountyCouncil",
+    "cleared_instagram_url": "https://www.instagram.com/laoiscountycouncil"
+  },
+  {
+    "id": 803,
+    "company_name": "Portarlington- Baby Group / Kids Book Clubs / Lego Group",
+    "cleared_facebook_url": "https://www.facebook.com/LaoisCountyCouncil",
+    "cleared_instagram_url": "https://www.instagram.com/laoiscountycouncil"
+  },
+  {
+    "id": 805,
+    "company_name": "Portlaoise Library - Baby & Toddler Group / Kids Book Clubs",
+    "cleared_facebook_url": "https://www.facebook.com/LaoisCountyCouncil",
+    "cleared_instagram_url": "https://www.instagram.com/laoiscountycouncil"
+  },
+  {
+    "id": 806,
+    "company_name": "Rathdowney Children With Additional Needs Social Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 808,
+    "company_name": "The Yoga Fairy",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 809,
+    "company_name": "The Yoga Fairy Classes",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 810,
+    "company_name": "Ballinamore Parent and Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/mohillfamilysupport",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 811,
+    "company_name": "Bloom Baby Classes North West Ireland",
+    "cleared_facebook_url": "https://www.facebook.com/Bloombabyclasses",
+    "cleared_instagram_url": "https://www.instagram.com/bloombabyclasses"
+  },
+  {
+    "id": 813,
+    "company_name": "Carrigallen Parent and Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/mohillfamilysupport",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 814,
+    "company_name": "Clooneen/Manorhamilton Parent & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 816,
+    "company_name": "Dromahair Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 817,
+    "company_name": "Drumshanbo Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 818,
+    "company_name": "Drumsna Extra Special Parent & Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/extraspecialptg",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 819,
+    "company_name": "Fenagh Beg Parent & Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/WordPresscom",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 820,
+    "company_name": "Mohill Toddler Group /Kids Lego/Art/Social Club & Autism Playgroup",
+    "cleared_facebook_url": "https://www.facebook.com/mohillfamilysupport",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 822,
+    "company_name": "Abbeyfeale Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 826,
+    "company_name": "Butterfly Bambino\u2019s - Baby Massage",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 827,
+    "company_name": "Castleconnell Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 829,
+    "company_name": "Feenagh / Kilmeedy Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 830,
+    "company_name": "Glenroe / Ballyorgan Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 831,
+    "company_name": "Glin Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 832,
+    "company_name": "Irishtown Limerick Parent, Baby and Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/WordPresscom",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 834,
+    "company_name": "Killeedy Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 836,
+    "company_name": "Limerick Library Toddler Group, Storytime & Art",
+    "cleared_facebook_url": "https://www.facebook.com/Limerick.ie",
+    "cleared_instagram_url": "https://www.instagram.com/limerick.ie"
+  },
+  {
+    "id": 837,
+    "company_name": "Limerick Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 838,
+    "company_name": "Newcastle West Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 840,
+    "company_name": "Sensory Spraoi",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 841,
+    "company_name": "Swim Max - Baby & Parent Group Swimming Lessons in Limerick",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=1056514662574691&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 842,
+    "company_name": "Swim Max - Private Swimming Lessons in Limerick",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=1056514662574691&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 843,
+    "company_name": "Whitethorn Equestrian Centre",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 845,
+    "company_name": "Ardagh/Moydow Baby and Toddler group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 848,
+    "company_name": "Edgeworthstown Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 849,
+    "company_name": "Longford Baby & Toddler Group - St. Josephs's",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 853,
+    "company_name": "Move To Improve - Carrickmacross, Drogheda",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 855,
+    "company_name": "Achill Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 859,
+    "company_name": "Ballycroy Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 860,
+    "company_name": "Ballyhaunis Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 863,
+    "company_name": "Bloom Baby Classes North West Ireland",
+    "cleared_facebook_url": "https://www.facebook.com/Bloombabyclasses",
+    "cleared_instagram_url": "https://www.instagram.com/bloombabyclasses"
+  },
+  {
+    "id": 864,
+    "company_name": "Cong Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 866,
+    "company_name": "Drummin Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 867,
+    "company_name": "Elaines Gift of Touch",
+    "cleared_facebook_url": "https://www.facebook.com/elainesgiftoftouch",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 868,
+    "company_name": "Irishtown Mayo Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 870,
+    "company_name": "Kilkelly Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 872,
+    "company_name": "Knockmore/Rathduff Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 874,
+    "company_name": "Messy Tots for Little Ones",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 876,
+    "company_name": "Newport Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 877,
+    "company_name": "Play group in Irish/Gaeilge",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 878,
+    "company_name": "Sound and Scribble",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 879,
+    "company_name": "Swinford Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 880,
+    "company_name": "Tap and Toddle",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 881,
+    "company_name": "Turlough Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 883,
+    "company_name": "Westport Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 884,
+    "company_name": "elainesgiftoftouch",
+    "cleared_facebook_url": "https://www.facebook.com/elainesgiftoftouch",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 890,
+    "company_name": "Clones Baby & Toddler Group - Clones Family Resource Centre",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 891,
+    "company_name": "Derryvally / Ballybay Steiner Parent, Baby & Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 893,
+    "company_name": "Killyfargy / Scotshouse Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 894,
+    "company_name": "Monaghan / Castleblayney Breastfeeding & Baby Group",
+    "cleared_facebook_url": "https://www.facebook.com/LaLecheLeagueIreland",
+    "cleared_instagram_url": "https://www.instagram.com/lalecheleagueofireland"
+  },
+  {
+    "id": 898,
+    "company_name": "Monaghan Toddler Groups with no Social Presence",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 900,
+    "company_name": "Playful P\u00e1ist\u00ed",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 901,
+    "company_name": "Baby Massage Sinead Grace",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 902,
+    "company_name": "Banagher Library",
+    "cleared_facebook_url": "https://www.facebook.com/Offalycoco",
+    "cleared_instagram_url": "https://www.instagram.com/offalycountycouncil"
+  },
+  {
+    "id": 903,
+    "company_name": "Birr Library",
+    "cleared_facebook_url": "https://www.facebook.com/Offalycoco",
+    "cleared_instagram_url": "https://www.instagram.com/offalycountycouncil"
+  },
+  {
+    "id": 904,
+    "company_name": "Bloom Baby Classes - Midlands",
+    "cleared_facebook_url": "https://www.facebook.com/bloommidlandsireland",
+    "cleared_instagram_url": "https://www.instagram.com/bloommidlandsireland"
+  },
+  {
+    "id": 905,
+    "company_name": "Bloom Baby Classes Midlands Ireland",
+    "cleared_facebook_url": "https://www.facebook.com/bloommidlandsireland",
+    "cleared_instagram_url": "https://www.instagram.com/bloommidlandsireland"
+  },
+  {
+    "id": 906,
+    "company_name": "Clara Library",
+    "cleared_facebook_url": "https://www.facebook.com/Offalycoco",
+    "cleared_instagram_url": "https://www.instagram.com/offalycountycouncil"
+  },
+  {
+    "id": 907,
+    "company_name": "Daingean Library",
+    "cleared_facebook_url": "https://www.facebook.com/Offalycoco",
+    "cleared_instagram_url": "https://www.instagram.com/offalycountycouncil"
+  },
+  {
+    "id": 908,
+    "company_name": "Edenderry Library",
+    "cleared_facebook_url": "https://www.facebook.com/Offalycoco",
+    "cleared_instagram_url": "https://www.instagram.com/offalycountycouncil"
+  },
+  {
+    "id": 909,
+    "company_name": "Kinnitty Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 911,
+    "company_name": "Little Kickers County Laois, Carlow and Kilkenny",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 912,
+    "company_name": "ParentsFirst Community Families Baby Cafe",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 913,
+    "company_name": "Tullamore Library",
+    "cleared_facebook_url": "https://www.facebook.com/Offalycoco",
+    "cleared_instagram_url": "https://www.instagram.com/offalycountycouncil"
+  },
+  {
+    "id": 914,
+    "company_name": "Ballaghaderreen Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 915,
+    "company_name": "Ballinderry Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 917,
+    "company_name": "Frenchpark Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 918,
+    "company_name": "Lisacul Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 920,
+    "company_name": "Mum2Mum Roscommon",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 921,
+    "company_name": "Rahara Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 922,
+    "company_name": "Rooskey Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 923,
+    "company_name": "Abbeyquarter Parent, Baby and Toddler Group",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 926,
+    "company_name": "Bloom Baby Classes North West Ireland",
+    "cleared_facebook_url": "https://www.facebook.com/Bloombabyclasses",
+    "cleared_instagram_url": "https://www.instagram.com/bloombabyclasses"
+  },
+  {
+    "id": 927,
+    "company_name": "Cleaveragh Parent, Baby and Toddler Group",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 929,
+    "company_name": "Kids Connect Sligo",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 931,
+    "company_name": "Rathedmond Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 933,
+    "company_name": "Strandhill Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 937,
+    "company_name": "Borrisokane Parent, Baby and Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/silverarchfrc",
+    "cleared_instagram_url": "https://www.instagram.com/silverarchfrc"
+  },
+  {
+    "id": 938,
+    "company_name": "Cappawhite & Annacarty Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 939,
+    "company_name": "Carrick-on-suir Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 942,
+    "company_name": "Clonmel Mother and Baby Walking/Buggy Group",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 943,
+    "company_name": "Gentle Touch Baby Massage with Roisin",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 946,
+    "company_name": "Lattin-Cullen Parent, Baby & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 947,
+    "company_name": "Monard Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 948,
+    "company_name": "Nenagh Parent, Baby and Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/silverarchfrc",
+    "cleared_instagram_url": "https://www.instagram.com/silverarchfrc"
+  },
+  {
+    "id": 949,
+    "company_name": "Newport Parent, Baby and Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/silverarchfrc",
+    "cleared_instagram_url": "https://www.instagram.com/silverarchfrc"
+  },
+  {
+    "id": 950,
+    "company_name": "Roscrea / Corville Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 952,
+    "company_name": "Templemore Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 953,
+    "company_name": "Thurles / Roscrea / Cashel /Tipperary Town Toddler Group Story Time",
+    "cleared_facebook_url": "http://www.facebook.com/pages/Tipperary-Libraries/241612834780",
+    "cleared_instagram_url": "https://www.instagram.com/tipperarycocolibraryservice"
+  },
+  {
+    "id": 954,
+    "company_name": "Thurles Parent, Baby and Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/silverarchfrc",
+    "cleared_instagram_url": "https://www.instagram.com/silverarchfrc"
+  },
+  {
+    "id": 956,
+    "company_name": "Zen Baby by Grace",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 957,
+    "company_name": "Clashmore / Kinsalebeg Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/whitechurchKids",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 961,
+    "company_name": "Ballymoney Parent, Baby and Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/WordPresscom",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 965,
+    "company_name": "Craanford Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 966,
+    "company_name": "Enniscorthy Library",
+    "cleared_facebook_url": "https://www.facebook.com/Wexfordlib",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 969,
+    "company_name": "Little Kickers",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 974,
+    "company_name": "North Wexford Parent and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 976,
+    "company_name": "Rathnure Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 977,
+    "company_name": "Ready Steady Play South East",
+    "cleared_facebook_url": "https://www.facebook.com/Readysteadyplayireland",
+    "cleared_instagram_url": "https://www.instagram.com/readysteadyplaymusicirl"
+  },
+  {
+    "id": 978,
+    "company_name": "Ready to Play",
+    "cleared_facebook_url": "https://www.facebook.com/Readysteadyplayireland",
+    "cleared_instagram_url": "https://www.instagram.com/readysteadyplaymusicirl"
+  },
+  {
+    "id": 982,
+    "company_name": "Water Babies",
+    "cleared_facebook_url": "https://www.facebook.com/waterbabiesireland",
+    "cleared_instagram_url": "https://www.instagram.com/waterbabiesirl"
+  },
+  {
+    "id": 984,
+    "company_name": "Wexford Town Library",
+    "cleared_facebook_url": "https://www.facebook.com/Wexfordlib",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 986,
+    "company_name": "Moo Music Wicklow",
+    "cleared_facebook_url": "https://www.facebook.com/moomusicireland",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 989,
+    "company_name": "West Wood Club Leopardstown",
+    "cleared_facebook_url": "https://www.facebook.com/westwoodclub",
+    "cleared_instagram_url": "https://www.instagram.com/westwoodclub"
+  },
+  {
+    "id": 1012,
+    "company_name": "ClapHandies PlayLabs - Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/claphandies",
+    "cleared_instagram_url": "https://www.instagram.com/claphandies"
+  },
+  {
+    "id": 1013,
+    "company_name": "ClapHandies PlayLabs - Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/claphandies",
+    "cleared_instagram_url": "https://www.instagram.com/claphandies"
+  },
+  {
+    "id": 1014,
+    "company_name": "ClapHandies PlayLabs - Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/claphandies",
+    "cleared_instagram_url": "https://www.instagram.com/claphandies"
+  },
+  {
+    "id": 1015,
+    "company_name": "ClapHandies PlayLabs - Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/claphandies",
+    "cleared_instagram_url": "https://www.instagram.com/claphandies"
+  },
+  {
+    "id": 1016,
+    "company_name": "ClapHandies PlayLabs - Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/claphandies",
+    "cleared_instagram_url": "https://www.instagram.com/claphandies"
+  },
+  {
+    "id": 1017,
+    "company_name": "ClapHandies PlayLabs - Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/claphandies",
+    "cleared_instagram_url": "https://www.instagram.com/claphandies"
+  },
+  {
+    "id": 1018,
+    "company_name": "ClapHandies PlayLabs - Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/claphandies",
+    "cleared_instagram_url": "https://www.instagram.com/claphandies"
+  },
+  {
+    "id": 1019,
+    "company_name": "ClapHandies PlayLabs - Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/claphandies",
+    "cleared_instagram_url": "https://www.instagram.com/claphandies"
+  },
+  {
+    "id": 1020,
+    "company_name": "ClapHandies PlayLabs - Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/claphandies",
+    "cleared_instagram_url": "https://www.instagram.com/claphandies"
+  },
+  {
+    "id": 1021,
+    "company_name": "ClapHandies PlayLabs - Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/claphandies",
+    "cleared_instagram_url": "https://www.instagram.com/claphandies"
+  },
+  {
+    "id": 1022,
+    "company_name": "ClapHandies PlayLabs - Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/claphandies",
+    "cleared_instagram_url": "https://www.instagram.com/claphandies"
+  },
+  {
+    "id": 1023,
+    "company_name": "ClapHandies PlayLabs - Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/claphandies",
+    "cleared_instagram_url": "https://www.instagram.com/claphandies"
+  },
+  {
+    "id": 1024,
+    "company_name": "ClapHandies PlayLabs - Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/claphandies",
+    "cleared_instagram_url": "https://www.instagram.com/claphandies"
+  },
+  {
+    "id": 1040,
+    "company_name": "Gentle Hands Baby Massage",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1043,
+    "company_name": "Little Kickers Dublin South & Wicklow",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1044,
+    "company_name": "Little Kickers Dublin South & Wicklow",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1045,
+    "company_name": "Little Kickers Dublin South & Wicklow",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1046,
+    "company_name": "Little Kickers Dublin South & Wicklow",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1047,
+    "company_name": "Little Kickers Dublin South & Wicklow",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1048,
+    "company_name": "Little Kickers Dublin South & Wicklow",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1049,
+    "company_name": "Little Kickers Dublin South & Wicklow",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1050,
+    "company_name": "Little Kickers Dublin South & Wicklow",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1051,
+    "company_name": "Little Kickers Dublin South & Wicklow",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1052,
+    "company_name": "Little Kickers Dublin South & Wicklow",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1053,
+    "company_name": "Messy Adventures",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1054,
+    "company_name": "Messy Adventures",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1055,
+    "company_name": "Messy Adventures",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1060,
+    "company_name": "Music Cubs",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=357245558018801&ev=PageView",
+    "cleared_instagram_url": "https://www.instagram.com/happycubs.ie"
+  },
+  {
+    "id": 1061,
+    "company_name": "Music Cubs",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=357245558018801&ev=PageView",
+    "cleared_instagram_url": "https://www.instagram.com/happycubs.ie"
+  },
+  {
+    "id": 1062,
+    "company_name": "Music Cubs",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=357245558018801&ev=PageView",
+    "cleared_instagram_url": "https://www.instagram.com/happycubs.ie"
+  },
+  {
+    "id": 1067,
+    "company_name": "Rathcoole and Templeogue - Toddlers World",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 1068,
+    "company_name": "SENSEable Tots Sensory Class in Dublin and Wicklow",
+    "cleared_facebook_url": "https://facebook.com/senseabletots",
+    "cleared_instagram_url": "https://www.instagram.com/senseabletots"
+  },
+  {
+    "id": 1072,
+    "company_name": "Tina Mation",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=1333941838661260&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1073,
+    "company_name": "Tina Mation",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=1333941838661260&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1074,
+    "company_name": "Tina Mation",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=1333941838661260&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1075,
+    "company_name": "Tina Mation",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=1333941838661260&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1076,
+    "company_name": "Tina Mation",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=1333941838661260&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1077,
+    "company_name": "Tiny Tutus",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tinytutusie"
+  },
+  {
+    "id": 1078,
+    "company_name": "Tiny Tutus",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tinytutusie"
+  },
+  {
+    "id": 1079,
+    "company_name": "Tiny Tutus",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tinytutusie"
+  },
+  {
+    "id": 1080,
+    "company_name": "Tiny Tutus",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tinytutusie"
+  },
+  {
+    "id": 1081,
+    "company_name": "Tiny Tutus",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tinytutusie"
+  },
+  {
+    "id": 1098,
+    "company_name": "Kids Art Class Mornington, Philipstown and Ardee",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 1099,
+    "company_name": "Kids Art Class Mornington, Philipstown and Ardee",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 1112,
+    "company_name": "Dance Sport",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=958458570856628&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1115,
+    "company_name": "Gaiety School of Acting",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=691356817682875&ev=PageView&noscript=1",
+    "cleared_instagram_url": "https://www.instagram.com/gaietyschool"
+  },
+  {
+    "id": 1116,
+    "company_name": "Gaiety School of Acting",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=691356817682875&ev=PageView&noscript=1",
+    "cleared_instagram_url": "https://www.instagram.com/gaietyschool"
+  },
+  {
+    "id": 1117,
+    "company_name": "GymStars",
+    "cleared_facebook_url": "https://www.facebook.com/WordPresscom",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1118,
+    "company_name": "Happy Cubs",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=357245558018801&ev=PageView",
+    "cleared_instagram_url": "https://www.instagram.com/happycubs.ie"
+  },
+  {
+    "id": 1119,
+    "company_name": "Happy Cubs",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=357245558018801&ev=PageView",
+    "cleared_instagram_url": "https://www.instagram.com/happycubs.ie"
+  },
+  {
+    "id": 1120,
+    "company_name": "Happy Cubs",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=357245558018801&ev=PageView",
+    "cleared_instagram_url": "https://www.instagram.com/happycubs.ie"
+  },
+  {
+    "id": 1121,
+    "company_name": "Happy Cubs",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=357245558018801&ev=PageView",
+    "cleared_instagram_url": "https://www.instagram.com/happycubs.ie"
+  },
+  {
+    "id": 1129,
+    "company_name": "PlayAct Drama School",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1130,
+    "company_name": "PlayAct Drama School",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1131,
+    "company_name": "PlayAct Drama School",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1132,
+    "company_name": "Westwood Club",
+    "cleared_facebook_url": "https://www.facebook.com/westwoodclub",
+    "cleared_instagram_url": "https://www.instagram.com/westwoodclub"
+  },
+  {
+    "id": 1133,
+    "company_name": "Westwood Club",
+    "cleared_facebook_url": "https://www.facebook.com/westwoodclub",
+    "cleared_instagram_url": "https://www.instagram.com/westwoodclub"
+  },
+  {
+    "id": 1134,
+    "company_name": "Turtle Tots",
+    "cleared_facebook_url": "https://www.facebook.com/Turtletotsireland",
+    "cleared_instagram_url": "https://www.instagram.com/turtletotsireland"
+  },
+  {
+    "id": 1139,
+    "company_name": "Swimtastic.ie",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=1023476079599679&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1140,
+    "company_name": "Swimtastic.ie",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=1023476079599679&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1141,
+    "company_name": "Swimtastic.ie",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=1023476079599679&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1144,
+    "company_name": "Zumbini",
+    "cleared_facebook_url": "https://www.facebook.com/zumbiniOfficial/?fref=ts",
+    "cleared_instagram_url": "https://www.instagram.com/zumbiniofficial"
+  },
+  {
+    "id": 1145,
+    "company_name": "Zumbini",
+    "cleared_facebook_url": "https://www.facebook.com/zumbiniOfficial/?fref=ts",
+    "cleared_instagram_url": "https://www.instagram.com/zumbiniofficial"
+  },
+  {
+    "id": 1166,
+    "company_name": "Toddler Group Time in Cork Libraries",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 1167,
+    "company_name": "Toddler Group Time in Cork Libraries",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 1174,
+    "company_name": "Baby Sensory Northwest",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=855625329100912&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1176,
+    "company_name": "Aura Leisure Centre",
+    "cleared_facebook_url": "https://www.facebook.com/AuraLeisureCentres",
+    "cleared_instagram_url": "https://www.instagram.com/auraleisureirl"
+  },
+  {
+    "id": 1177,
+    "company_name": "Aura Leisure Centre",
+    "cleared_facebook_url": "https://www.facebook.com/AuraLeisureCentres",
+    "cleared_instagram_url": "https://www.instagram.com/auraleisureirl"
+  },
+  {
+    "id": 1178,
+    "company_name": "Aura Leisure Centre",
+    "cleared_facebook_url": "https://www.facebook.com/AuraLeisureCentres",
+    "cleared_instagram_url": "https://www.instagram.com/auraleisureirl"
+  },
+  {
+    "id": 1179,
+    "company_name": "Aura Leisure Centre",
+    "cleared_facebook_url": "https://www.facebook.com/AuraLeisureCentres",
+    "cleared_instagram_url": "https://www.instagram.com/auraleisureirl"
+  },
+  {
+    "id": 1180,
+    "company_name": "Aura Leisure Centre",
+    "cleared_facebook_url": "https://www.facebook.com/AuraLeisureCentres",
+    "cleared_instagram_url": "https://www.instagram.com/auraleisureirl"
+  },
+  {
+    "id": 1181,
+    "company_name": "Aura Leisure Centre",
+    "cleared_facebook_url": "https://www.facebook.com/AuraLeisureCentres",
+    "cleared_instagram_url": "https://www.instagram.com/auraleisureirl"
+  },
+  {
+    "id": 1182,
+    "company_name": "Aura Leisure Centre",
+    "cleared_facebook_url": "https://www.facebook.com/AuraLeisureCentres",
+    "cleared_instagram_url": "https://www.instagram.com/auraleisureirl"
+  },
+  {
+    "id": 1183,
+    "company_name": "Aura Leisure Centre",
+    "cleared_facebook_url": "https://www.facebook.com/AuraLeisureCentres",
+    "cleared_instagram_url": "https://www.instagram.com/auraleisureirl"
+  },
+  {
+    "id": 1187,
+    "company_name": "Water Babies -Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/waterbabiesireland",
+    "cleared_instagram_url": "https://www.instagram.com/waterbabiesirl"
+  },
+  {
+    "id": 1188,
+    "company_name": "Water Babies -Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/waterbabiesireland",
+    "cleared_instagram_url": "https://www.instagram.com/waterbabiesirl"
+  },
+  {
+    "id": 1189,
+    "company_name": "Water Babies -Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/waterbabiesireland",
+    "cleared_instagram_url": "https://www.instagram.com/waterbabiesirl"
+  },
+  {
+    "id": 1190,
+    "company_name": "Water Babies -Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/waterbabiesireland",
+    "cleared_instagram_url": "https://www.instagram.com/waterbabiesirl"
+  },
+  {
+    "id": 1191,
+    "company_name": "Water Babies -Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/waterbabiesireland",
+    "cleared_instagram_url": "https://www.instagram.com/waterbabiesirl"
+  },
+  {
+    "id": 1192,
+    "company_name": "Water Babies -Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/waterbabiesireland",
+    "cleared_instagram_url": "https://www.instagram.com/waterbabiesirl"
+  },
+  {
+    "id": 1193,
+    "company_name": "Water Babies -Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/waterbabiesireland",
+    "cleared_instagram_url": "https://www.instagram.com/waterbabiesirl"
+  },
+  {
+    "id": 1194,
+    "company_name": "Water Babies -Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/waterbabiesireland",
+    "cleared_instagram_url": "https://www.instagram.com/waterbabiesirl"
+  },
+  {
+    "id": 1195,
+    "company_name": "Water Babies -Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/waterbabiesireland",
+    "cleared_instagram_url": "https://www.instagram.com/waterbabiesirl"
+  },
+  {
+    "id": 1196,
+    "company_name": "Water Babies -Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/waterbabiesireland",
+    "cleared_instagram_url": "https://www.instagram.com/waterbabiesirl"
+  },
+  {
+    "id": 1197,
+    "company_name": "Water Babies -Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/waterbabiesireland",
+    "cleared_instagram_url": "https://www.instagram.com/waterbabiesirl"
+  },
+  {
+    "id": 1198,
+    "company_name": "Water Babies -Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/waterbabiesireland",
+    "cleared_instagram_url": "https://www.instagram.com/waterbabiesirl"
+  },
+  {
+    "id": 1199,
+    "company_name": "Water Babies -Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/waterbabiesireland",
+    "cleared_instagram_url": "https://www.instagram.com/waterbabiesirl"
+  },
+  {
+    "id": 1203,
+    "company_name": "Babywearing ireland",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1204,
+    "company_name": "Babywearing ireland",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1205,
+    "company_name": "Babywearing ireland",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1206,
+    "company_name": "Babywearing ireland",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1207,
+    "company_name": "Babywearing ireland",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1208,
+    "company_name": "Flying High Fitness",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": "https://www.instagram.com/flying_high_fitness_ennis"
+  },
+  {
+    "id": 1209,
+    "company_name": "Galway Community Circus",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=335972527888204&ev=PageView&noscript=1",
+    "cleared_instagram_url": "https://www.instagram.com/galwaycircus"
+  },
+  {
+    "id": 1210,
+    "company_name": "Gort Parent & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 1211,
+    "company_name": "Gort Parent & Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 1213,
+    "company_name": "Lasting Touch Baby Massage",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1214,
+    "company_name": "Lasting Touch Baby Massage",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1215,
+    "company_name": "Little Kickers Galway",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1216,
+    "company_name": "Little Kickers Galway",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1217,
+    "company_name": "Little Kickers Galway",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1218,
+    "company_name": "Little Kickers Galway",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1219,
+    "company_name": "Little Kickers Galway",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1223,
+    "company_name": "Phonics with Robot Reg Galway",
+    "cleared_facebook_url": "https://www.facebook.com/PhonicsRobotRegHQ",
+    "cleared_instagram_url": "https://www.instagram.com/phonicswithrobotreghq/?hl=en"
+  },
+  {
+    "id": 1236,
+    "company_name": "Mindful Present Moments",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 1243,
+    "company_name": "Move To Improve - Carrickmacross, Drogheda",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 1244,
+    "company_name": "Move To Improve - Carrickmacross, Drogheda",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 1249,
+    "company_name": "Sound and Scribble",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1254,
+    "company_name": "Monaghan / Castleblayney Breastfeeding & Baby Group",
+    "cleared_facebook_url": "https://www.facebook.com/LaLecheLeagueIreland",
+    "cleared_instagram_url": "https://www.instagram.com/lalecheleagueofireland"
+  },
+  {
+    "id": 1255,
+    "company_name": "Monaghan Toddler Groups with no Social Presence",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 1256,
+    "company_name": "Monaghan Toddler Groups with no Social Presence",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 1257,
+    "company_name": "Monaghan Toddler Groups with no Social Presence",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 1258,
+    "company_name": "Monaghan Toddler Groups with no Social Presence",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 1259,
+    "company_name": "Baby Massage Sinead Grace",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 1260,
+    "company_name": "Bloom Baby Classes - Midlands",
+    "cleared_facebook_url": "https://www.facebook.com/bloommidlandsireland",
+    "cleared_instagram_url": "https://www.instagram.com/bloommidlandsireland"
+  },
+  {
+    "id": 1261,
+    "company_name": "Bloom Baby Classes - Midlands",
+    "cleared_facebook_url": "https://www.facebook.com/bloommidlandsireland",
+    "cleared_instagram_url": "https://www.instagram.com/bloommidlandsireland"
+  },
+  {
+    "id": 1262,
+    "company_name": "Bloom Baby Classes - Midlands",
+    "cleared_facebook_url": "https://www.facebook.com/bloommidlandsireland",
+    "cleared_instagram_url": "https://www.instagram.com/bloommidlandsireland"
+  },
+  {
+    "id": 1263,
+    "company_name": "Bloom Baby Classes Midlands Ireland",
+    "cleared_facebook_url": "https://www.facebook.com/bloommidlandsireland",
+    "cleared_instagram_url": "https://www.instagram.com/bloommidlandsireland"
+  },
+  {
+    "id": 1264,
+    "company_name": "Bloom Baby Classes Midlands Ireland",
+    "cleared_facebook_url": "https://www.facebook.com/bloommidlandsireland",
+    "cleared_instagram_url": "https://www.instagram.com/bloommidlandsireland"
+  },
+  {
+    "id": 1265,
+    "company_name": "Bloom Baby Classes Midlands Ireland",
+    "cleared_facebook_url": "https://www.facebook.com/bloommidlandsireland",
+    "cleared_instagram_url": "https://www.instagram.com/bloommidlandsireland"
+  },
+  {
+    "id": 1266,
+    "company_name": "Little Kickers County Laois, Carlow and Kilkenny",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1267,
+    "company_name": "Little Kickers County Laois, Carlow and Kilkenny",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1268,
+    "company_name": "Little Kickers County Laois, Carlow and Kilkenny",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1269,
+    "company_name": "Little Kickers County Laois, Carlow and Kilkenny",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1270,
+    "company_name": "Little Kickers County Laois, Carlow and Kilkenny",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1271,
+    "company_name": "Little Kickers County Laois, Carlow and Kilkenny",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1272,
+    "company_name": "Kids Connect Sligo",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 1273,
+    "company_name": "Strandhill Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 1274,
+    "company_name": "Cappawhite & Annacarty Parent, Baby and Toddler Group",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 1278,
+    "company_name": "Thurles / Roscrea / Cashel /Tipperary Town Toddler Group Story Time",
+    "cleared_facebook_url": "http://www.facebook.com/pages/Tipperary-Libraries/241612834780",
+    "cleared_instagram_url": "https://www.instagram.com/tipperarycocolibraryservice"
+  },
+  {
+    "id": 1279,
+    "company_name": "Thurles / Roscrea / Cashel /Tipperary Town Toddler Group Story Time",
+    "cleared_facebook_url": "http://www.facebook.com/pages/Tipperary-Libraries/241612834780",
+    "cleared_instagram_url": "https://www.instagram.com/tipperarycocolibraryservice"
+  },
+  {
+    "id": 1280,
+    "company_name": "Thurles / Roscrea / Cashel /Tipperary Town Toddler Group Story Time",
+    "cleared_facebook_url": "http://www.facebook.com/pages/Tipperary-Libraries/241612834780",
+    "cleared_instagram_url": "https://www.instagram.com/tipperarycocolibraryservice"
+  },
+  {
+    "id": 1282,
+    "company_name": "Little Kickers",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1283,
+    "company_name": "Little Kickers",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1284,
+    "company_name": "Little Kickers",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1285,
+    "company_name": "Little Kickers",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1286,
+    "company_name": "Little Kickers",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1287,
+    "company_name": "Little Kickers",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1288,
+    "company_name": "Little Kickers",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1289,
+    "company_name": "Little Kickers",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1290,
+    "company_name": "Little Kickers",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1291,
+    "company_name": "Little Kickers",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1292,
+    "company_name": "Little Kickers",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1293,
+    "company_name": "Little Kickers",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1294,
+    "company_name": "Little Kickers",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1295,
+    "company_name": "Little Kickers",
+    "cleared_facebook_url": "https://www.facebook.com/Littlekickers",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickers"
+  },
+  {
+    "id": 1296,
+    "company_name": "Ready Steady Play South East",
+    "cleared_facebook_url": "https://www.facebook.com/Readysteadyplayireland",
+    "cleared_instagram_url": "https://www.instagram.com/readysteadyplaymusicirl"
+  },
+  {
+    "id": 1297,
+    "company_name": "Ready Steady Play South East",
+    "cleared_facebook_url": "https://www.facebook.com/Readysteadyplayireland",
+    "cleared_instagram_url": "https://www.instagram.com/readysteadyplaymusicirl"
+  },
+  {
+    "id": 1298,
+    "company_name": "Ready Steady Play South East",
+    "cleared_facebook_url": "https://www.facebook.com/Readysteadyplayireland",
+    "cleared_instagram_url": "https://www.instagram.com/readysteadyplaymusicirl"
+  },
+  {
+    "id": 1299,
+    "company_name": "Ready to Play",
+    "cleared_facebook_url": "https://www.facebook.com/Readysteadyplayireland",
+    "cleared_instagram_url": "https://www.instagram.com/readysteadyplaymusicirl"
+  },
+  {
+    "id": 1300,
+    "company_name": "Ready to Play",
+    "cleared_facebook_url": "https://www.facebook.com/Readysteadyplayireland",
+    "cleared_instagram_url": "https://www.instagram.com/readysteadyplaymusicirl"
+  },
+  {
+    "id": 1301,
+    "company_name": "Ready to Play",
+    "cleared_facebook_url": "https://www.facebook.com/Readysteadyplayireland",
+    "cleared_instagram_url": "https://www.instagram.com/readysteadyplaymusicirl"
+  },
+  {
+    "id": 1302,
+    "company_name": "Ready to Play",
+    "cleared_facebook_url": "https://www.facebook.com/Readysteadyplayireland",
+    "cleared_instagram_url": "https://www.instagram.com/readysteadyplaymusicirl"
+  },
+  {
+    "id": 1303,
+    "company_name": "Ready to Play",
+    "cleared_facebook_url": "https://www.facebook.com/Readysteadyplayireland",
+    "cleared_instagram_url": "https://www.instagram.com/readysteadyplaymusicirl"
+  },
+  {
+    "id": 1304,
+    "company_name": "Ready to Play",
+    "cleared_facebook_url": "https://www.facebook.com/Readysteadyplayireland",
+    "cleared_instagram_url": "https://www.instagram.com/readysteadyplaymusicirl"
+  },
+  {
+    "id": 1305,
+    "company_name": "Ready to Play",
+    "cleared_facebook_url": "https://www.facebook.com/Readysteadyplayireland",
+    "cleared_instagram_url": "https://www.instagram.com/readysteadyplaymusicirl"
+  },
+  {
+    "id": 1306,
+    "company_name": "Ready to Play",
+    "cleared_facebook_url": "https://www.facebook.com/Readysteadyplayireland",
+    "cleared_instagram_url": "https://www.instagram.com/readysteadyplaymusicirl"
+  },
+  {
+    "id": 1307,
+    "company_name": "Ready to Play",
+    "cleared_facebook_url": "https://www.facebook.com/Readysteadyplayireland",
+    "cleared_instagram_url": "https://www.instagram.com/readysteadyplaymusicirl"
+  },
+  {
+    "id": 1308,
+    "company_name": "Water Babies",
+    "cleared_facebook_url": "https://www.facebook.com/waterbabiesireland",
+    "cleared_instagram_url": "https://www.instagram.com/waterbabiesirl"
+  },
+  {
+    "id": 1309,
+    "company_name": "Water Babies",
+    "cleared_facebook_url": "https://www.facebook.com/waterbabiesireland",
+    "cleared_instagram_url": "https://www.instagram.com/waterbabiesirl"
+  },
+  {
+    "id": 1310,
+    "company_name": "Water Babies",
+    "cleared_facebook_url": "https://www.facebook.com/waterbabiesireland",
+    "cleared_instagram_url": "https://www.instagram.com/waterbabiesirl"
+  },
+  {
+    "id": 1311,
+    "company_name": "Water Babies",
+    "cleared_facebook_url": "https://www.facebook.com/waterbabiesireland",
+    "cleared_instagram_url": "https://www.instagram.com/waterbabiesirl"
+  },
+  {
+    "id": 1312,
+    "company_name": "Water Babies",
+    "cleared_facebook_url": "https://www.facebook.com/waterbabiesireland",
+    "cleared_instagram_url": "https://www.instagram.com/waterbabiesirl"
+  },
+  {
+    "id": 1313,
+    "company_name": "Water Babies",
+    "cleared_facebook_url": "https://www.facebook.com/waterbabiesireland",
+    "cleared_instagram_url": "https://www.instagram.com/waterbabiesirl"
+  },
+  {
+    "id": 1314,
+    "company_name": "Moo Music Wicklow",
+    "cleared_facebook_url": "https://www.facebook.com/moomusicireland",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1315,
+    "company_name": "Moo Music Wicklow",
+    "cleared_facebook_url": "https://www.facebook.com/moomusicireland",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1316,
+    "company_name": "Moo Music Wicklow",
+    "cleared_facebook_url": "https://www.facebook.com/moomusicireland",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1327,
+    "company_name": "JSBJJ Training Centre",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1328,
+    "company_name": "Mini Music",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1332,
+    "company_name": "Aoife Burke School of Drama",
+    "cleared_facebook_url": "https://www.facebook.com/pg/aoifeburkedrama/about/?ref=page_internal",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1333,
+    "company_name": "Dublin Capoeira - Capoeira Kids",
+    "cleared_facebook_url": "https://www.facebook.com/dublincapoeirabr",
+    "cleared_instagram_url": "https://instagram.com/dublincapoeira?igshid=nmv37ic1gbnp"
+  },
+  {
+    "id": 1349,
+    "company_name": "Kids Art & Craft Classes (Declan O'Meara Art)",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1350,
+    "company_name": "T45 Jiujitsu - Kids BJJ Cork",
+    "cleared_facebook_url": "https://www.facebook.com/t45jiujitsu",
+    "cleared_instagram_url": "https://www.instagram.com/t45jiujitsu"
+  },
+  {
+    "id": 1352,
+    "company_name": "KidsComp - Limerick",
+    "cleared_facebook_url": "https://www.facebook.com/KidsCompIreland",
+    "cleared_instagram_url": "https://www.instagram.com/kidscompireland"
+  },
+  {
+    "id": 1353,
+    "company_name": "Stage School Limerick",
+    "cleared_facebook_url": "https://www.facebook.com/Limerick.ie",
+    "cleared_instagram_url": "https://www.instagram.com/limerick.ie"
+  },
+  {
+    "id": 1355,
+    "company_name": "Limerick School of Acting",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=1785119945116924&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1357,
+    "company_name": "Tiger Academy - Limerick Shojinkai",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1361,
+    "company_name": "Claire Halpin Yoga and Pilates - Kids Yoga",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1362,
+    "company_name": "Galway Community Circus - Toddler & Family Circus",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=335972527888204&ev=PageView&noscript=1",
+    "cleared_instagram_url": "https://www.instagram.com/galwaycircus"
+  },
+  {
+    "id": 1368,
+    "company_name": "Phonics with Robot Reg - Galway",
+    "cleared_facebook_url": "https://www.facebook.com/PhonicsRobotRegHQ",
+    "cleared_instagram_url": "https://www.instagram.com/phonicswithrobotreghq/?hl=en"
+  },
+  {
+    "id": 1371,
+    "company_name": "SEA School Saturdays",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=100087184778508",
+    "cleared_instagram_url": "https://www.instagram.com/s.e.a.school"
+  },
+  {
+    "id": 1372,
+    "company_name": "Starcamp - Dungarvan Easter Camp",
+    "cleared_facebook_url": "https://www.facebook.com/starcampireland",
+    "cleared_instagram_url": "https://instagram.com/starcampireland%20"
+  },
+  {
+    "id": 1377,
+    "company_name": "Tramore Code Club",
+    "cleared_facebook_url": "https://www.facebook.com/codeclub.org",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1384,
+    "company_name": "Primal Fitness Drogheda - Junior Jiu Jitsu",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=3175144716083950&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1386,
+    "company_name": "Creative Circle Drogheda",
+    "cleared_facebook_url": "https://www.facebook.com/WordPresscom",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1390,
+    "company_name": "Starlight Academy - Dance And Gymnastics",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 1396,
+    "company_name": "Navan School of Ballet",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=638639392481349&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1398,
+    "company_name": "Play & Music Meath",
+    "cleared_facebook_url": "https://www.facebook.com/playandmusicmeath",
+    "cleared_instagram_url": "https://www.instagram.com/playmusicmeath"
+  },
+  {
+    "id": 1399,
+    "company_name": "Shoreline Leisure - Bray Children's Swim Lessons",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": "https://www.instagram.com/shorelineleisure"
+  },
+  {
+    "id": 1405,
+    "company_name": "Ennis Hockey Club - Junior Hockey",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1406,
+    "company_name": "Flying High Fitness - Kids Aerial Hoop Course",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": "https://www.instagram.com/flying_high_fitness_ennis"
+  },
+  {
+    "id": 1408,
+    "company_name": "Rugbytots - Gaelscoil Eoghain Ui Thuairisc, Carlow",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=371060880121965&ev=PageView",
+    "cleared_instagram_url": "https://www.instagram.com/rugbytotsireland"
+  },
+  {
+    "id": 1423,
+    "company_name": "ARTlab Tralee",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1427,
+    "company_name": "Super Stars Yoga - Tralee",
+    "cleared_facebook_url": "https://www.facebook.com/superstarsyoga",
+    "cleared_instagram_url": "https://www.instagram.com/superstarsyoga"
+  },
+  {
+    "id": 1429,
+    "company_name": "Tricia O'Connor - Kids Afterschool Classes Tralee",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1441,
+    "company_name": "Club Vitae Portlaoise - Swimming Lessons",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=191614138076265&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1442,
+    "company_name": "Art Classes with Caroline Keane - Portlaoise",
+    "cleared_facebook_url": "https://www.facebook.com/artclasseswithcaroline",
+    "cleared_instagram_url": "https://www.instagram.com/artclasseswithcaroline"
+  },
+  {
+    "id": 1447,
+    "company_name": "Speak Out Drama - Portlaoise",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1454,
+    "company_name": "Elevate Academy of Dance - Mullingar",
+    "cleared_facebook_url": "https://www.facebook.com/ballet.ie",
+    "cleared_instagram_url": "https://www.instagram.com/ballet.ie"
+  },
+  {
+    "id": 1462,
+    "company_name": "David Lewis Golf - Junior Golf Camps Greystones",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1464,
+    "company_name": "Shoreline Leisure - Greystones Swim School",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": "https://www.instagram.com/shorelineleisure"
+  },
+  {
+    "id": 1475,
+    "company_name": "Kids & Teen Art Classes - Wexford",
+    "cleared_facebook_url": "https://www.facebook.com/hmclarts",
+    "cleared_instagram_url": "https://www.instagram.com/artclass_wexford/?hl=en"
+  },
+  {
+    "id": 1478,
+    "company_name": "Leebow - Kids Art Classes Wexford",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1479,
+    "company_name": "Wexford Taekwon-Do Kids",
+    "cleared_facebook_url": "https://www.facebook.com/WordPresscom",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1480,
+    "company_name": "RINKA Sligo - Children's Fitness Classes",
+    "cleared_facebook_url": "https://www.facebook.com/rinkaireland",
+    "cleared_instagram_url": "https://www.instagram.com/rinka_ireland"
+  },
+  {
+    "id": 1482,
+    "company_name": "Soccer Stars Sligo",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=306765062186726&ev=PageView&noscript=1",
+    "cleared_instagram_url": "https://www.instagram.com/soccerstarsireland"
+  },
+  {
+    "id": 1484,
+    "company_name": "Carraig Climbing - Kids Climbing",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1488,
+    "company_name": "Orla Gildea School of Speech and Drama - Celbridge",
+    "cleared_facebook_url": "http://facebook.com/OrlaGildeaSpeechandDrama",
+    "cleared_instagram_url": "http://instagram.com/orlagildeadramaschool/?hl=en"
+  },
+  {
+    "id": 1494,
+    "company_name": "Gaiety School of Acting - Kids Drama Malahide",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=691356817682875&ev=PageView&noscript=1",
+    "cleared_instagram_url": "https://www.instagram.com/gaietyschool"
+  },
+  {
+    "id": 1495,
+    "company_name": "Artzone - St Andrew's NS Malahide",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1497,
+    "company_name": "East Coast School of Ballet - Malahide",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1501,
+    "company_name": "South Tipperary Arts Centre - Kids Classes",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=962819671142692&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1514,
+    "company_name": "KidsComp - Leixlip Coding Classes",
+    "cleared_facebook_url": "https://www.facebook.com/KidsCompIreland",
+    "cleared_instagram_url": "https://www.instagram.com/kidscompireland"
+  },
+  {
+    "id": 1515,
+    "company_name": "Orla Gildea - Leixlip Youth & Community Centre",
+    "cleared_facebook_url": "http://facebook.com/OrlaGildeaSpeechandDrama",
+    "cleared_instagram_url": "http://instagram.com/orlagildeadramaschool/?hl=en"
+  },
+  {
+    "id": 1516,
+    "company_name": "Designer Minds - Leixlip STEAM Summer Camp",
+    "cleared_facebook_url": "https://facebook.com/about/privacy/,",
+    "cleared_instagram_url": "https://www.instagram.com/about/legal/privacy/."
+  },
+  {
+    "id": 1520,
+    "company_name": "Playful Tribe - Art Clubs, Bettystown",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 1521,
+    "company_name": "Turtle Tots - Tullamore Court Hotel",
+    "cleared_facebook_url": "https://www.facebook.com/Turtletotsireland",
+    "cleared_instagram_url": "https://www.instagram.com/turtletotsireland"
+  },
+  {
+    "id": 1530,
+    "company_name": "Project Fashion - Midleton",
+    "cleared_facebook_url": "https://www.facebook.com/projectfashionacademy",
+    "cleared_instagram_url": "https://www.instagram.com/projectfashionacademy"
+  },
+  {
+    "id": 1532,
+    "company_name": "T45 Jiujitsu - Kids BJJ Midleton",
+    "cleared_facebook_url": "https://www.facebook.com/t45jiujitsu",
+    "cleared_instagram_url": "https://www.instagram.com/t45jiujitsu"
+  },
+  {
+    "id": 1534,
+    "company_name": "Mighty Kids Yoga Cork - Midleton",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=61553067792382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1537,
+    "company_name": "Centre Stage School Mallow - Theatre Tots",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=320282765322029&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1539,
+    "company_name": "Empire Dance Academy - Mallow",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=736042267227155&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1541,
+    "company_name": "Arklow & Gorey Dance Studios",
+    "cleared_facebook_url": "https://www.facebook.com/ballet.ie",
+    "cleared_instagram_url": "https://www.instagram.com/ballet.ie"
+  },
+  {
+    "id": 1545,
+    "company_name": "Soccer Stars Mayo - Castlebar",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=306765062186726&ev=PageView&noscript=1",
+    "cleared_instagram_url": "https://www.instagram.com/soccerstarsireland"
+  },
+  {
+    "id": 1546,
+    "company_name": "Turtle Tots - Lough Lannagh, Castlebar",
+    "cleared_facebook_url": "https://www.facebook.com/Turtletotsireland",
+    "cleared_instagram_url": "https://www.instagram.com/turtletotsireland"
+  },
+  {
+    "id": 1550,
+    "company_name": "TADA Dance - Castlebar",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=1113763217004022&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1551,
+    "company_name": "Alto School of Music - Arklow Ukulele",
+    "cleared_facebook_url": "https://www.facebook.com/WordPresscom",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1556,
+    "company_name": "Nadia Corridan - Art Classes, Enniscorthy",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1559,
+    "company_name": "Ready Steady Play & Music - Enniscorthy",
+    "cleared_facebook_url": "https://www.facebook.com/Readysteadyplayireland",
+    "cleared_instagram_url": "https://www.instagram.com/readysteadyplaymusicirl"
+  },
+  {
+    "id": 1562,
+    "company_name": "RINKA Children's Summer Camps - Cavan",
+    "cleared_facebook_url": "https://www.facebook.com/rinkaireland",
+    "cleared_instagram_url": "https://www.instagram.com/rinka_ireland"
+  },
+  {
+    "id": 1564,
+    "company_name": "RINKA Kids Fitness - Cavan Town",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1565,
+    "company_name": "Dance with Lesley - Cavan/Glaslough",
+    "cleared_facebook_url": "https://www.facebook.com/ballet.ie",
+    "cleared_instagram_url": "https://www.instagram.com/ballet.ie"
+  },
+  {
+    "id": 1569,
+    "company_name": "SEA School - Tramore SeaSchool Saturday",
+    "cleared_facebook_url": "https://www.facebook.com/profile.php?id=100087184778508",
+    "cleared_instagram_url": "https://www.instagram.com/s.e.a.school"
+  },
+  {
+    "id": 1572,
+    "company_name": "Designer Minds - Tramore STEAM Summer Camp",
+    "cleared_facebook_url": "https://facebook.com/about/privacy/,",
+    "cleared_instagram_url": "https://www.instagram.com/about/legal/privacy/."
+  },
+  {
+    "id": 1578,
+    "company_name": "RINKA Children's Fitness - Longford",
+    "cleared_facebook_url": "https://www.facebook.com/rinkaireland",
+    "cleared_instagram_url": "https://www.instagram.com/rinka_ireland"
+  },
+  {
+    "id": 1580,
+    "company_name": "Splashtastic Swimming Lessons - North Dublin",
+    "cleared_facebook_url": "https://www.facebook.com/Splashtastic-1230605910329382",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1586,
+    "company_name": "Skerries Community Centre - Junior Activities",
+    "cleared_facebook_url": "https://www.facebook.com/wix",
+    "cleared_instagram_url": "https://www.instagram.com/wix"
+  },
+  {
+    "id": 1589,
+    "company_name": "Skerries Martial Arts - Kids BJJ",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=1431638737708235&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1590,
+    "company_name": "Oceana Wildlife - Ballina",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1594,
+    "company_name": "Edge Dance Studios - Kilcock",
+    "cleared_facebook_url": "https://www.facebook.com/ballet.ie",
+    "cleared_instagram_url": "https://www.instagram.com/ballet.ie"
+  },
+  {
+    "id": 1598,
+    "company_name": "Kildare Academy of Dance - Pre School Classes, Naas",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1599,
+    "company_name": "Ninja Fitness Ireland - Scoil Ui Riada, Kilcock",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1605,
+    "company_name": "The Shannon Irish Dance Academy",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1608,
+    "company_name": "Designer Minds - Dungarvan STEAM Summer Camp",
+    "cleared_facebook_url": "https://facebook.com/about/privacy/,",
+    "cleared_instagram_url": "https://www.instagram.com/about/legal/privacy/."
+  },
+  {
+    "id": 1613,
+    "company_name": "Designer Minds - Nenagh STEAM Summer Camp",
+    "cleared_facebook_url": "https://facebook.com/about/privacy/,",
+    "cleared_instagram_url": "https://www.instagram.com/about/legal/privacy/."
+  },
+  {
+    "id": 1616,
+    "company_name": "Fingal Library - Musical Tots with Karen Donnellan, Donabate",
+    "cleared_facebook_url": "https://www.facebook.com/fingalcoco",
+    "cleared_instagram_url": "https://www.instagram.com/fingalcountycouncil"
+  },
+  {
+    "id": 1620,
+    "company_name": "Leithinis Donabate Portrane CC\u00c9",
+    "cleared_facebook_url": "https://www.facebook.com/WordPresscom",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1624,
+    "company_name": "Bounce Gymnastics - Trim Summer Camp",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": "https://www.instagram.com/bouncegymnasticsclub"
+  },
+  {
+    "id": 1629,
+    "company_name": "RallyTime Pickle - Kids Academy, Portarlington",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1641,
+    "company_name": "Designer Minds - Thurles STEAM Summer Camp",
+    "cleared_facebook_url": "https://facebook.com/about/privacy/,",
+    "cleared_instagram_url": "https://www.instagram.com/about/legal/privacy/."
+  },
+  {
+    "id": 1644,
+    "company_name": "Designer Minds - Clane STEAM Summer Camp",
+    "cleared_facebook_url": "https://facebook.com/about/privacy/,",
+    "cleared_instagram_url": "https://www.instagram.com/about/legal/privacy/."
+  },
+  {
+    "id": 1646,
+    "company_name": "Mad About Monaghan - Master A Piece",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1650,
+    "company_name": "Cheryl Corrigan Ballet Academy - Edenderry/Rathangan",
+    "cleared_facebook_url": "https://www.facebook.com/ballet.ie",
+    "cleared_instagram_url": "https://www.instagram.com/ballet.ie"
+  },
+  {
+    "id": 1653,
+    "company_name": "Dublin Capoeira - Kids Trial Class, Portmarnock/Kinsealy",
+    "cleared_facebook_url": "https://www.facebook.com/dublincapoeirabr",
+    "cleared_instagram_url": "https://instagram.com/dublincapoeira?igshid=nmv37ic1gbnp"
+  },
+  {
+    "id": 1654,
+    "company_name": "Kinsealy United / Olympian Football Academy - Summer Camp",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1659,
+    "company_name": "1st Meath Dunboyne Scouts - Beavers",
+    "cleared_facebook_url": "https://www.facebook.com/WordPresscom",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1661,
+    "company_name": "Bernie Doherty Music - Summer School, Buncrana",
+    "cleared_facebook_url": "https://www.facebook.com/WordPresscom",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1663,
+    "company_name": "Crana Stables - Beach Horse Trekking, Buncrana",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1669,
+    "company_name": "Designer Minds - Kells STEAM Summer Camp",
+    "cleared_facebook_url": "https://facebook.com/about/privacy/,",
+    "cleared_instagram_url": "https://www.instagram.com/about/legal/privacy/."
+  },
+  {
+    "id": 1672,
+    "company_name": "Little Kickers County Galway - Ballinasloe",
+    "cleared_facebook_url": "https://www.facebook.com/littlekickersiecountygalway",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickerscountygalway"
+  },
+  {
+    "id": 1673,
+    "company_name": "Rugbytots - Ballinasloe",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=371060880121965&ev=PageView",
+    "cleared_instagram_url": "https://www.instagram.com/rugbytotsireland"
+  },
+  {
+    "id": 1674,
+    "company_name": "Starcamp - Ballinasloe Summer Camp",
+    "cleared_facebook_url": "https://www.facebook.com/starcampireland",
+    "cleared_instagram_url": "https://instagram.com/starcampireland%20"
+  },
+  {
+    "id": 1676,
+    "company_name": "Dance Concepts - Moylough, Ballinasloe",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1678,
+    "company_name": "Shannon Dance Academy - Roscommon/Athlone",
+    "cleared_facebook_url": "https://www.facebook.com/ballet.ie",
+    "cleared_instagram_url": "https://www.instagram.com/ballet.ie"
+  },
+  {
+    "id": 1679,
+    "company_name": "Little Kickers County Galway - Loughrea",
+    "cleared_facebook_url": "https://www.facebook.com/littlekickersiecountygalway",
+    "cleared_instagram_url": "https://www.instagram.com/littlekickerscountygalway"
+  },
+  {
+    "id": 1681,
+    "company_name": "Designer Minds - Passage West STEAM Summer Camp",
+    "cleared_facebook_url": "https://facebook.com/about/privacy/,",
+    "cleared_instagram_url": "https://www.instagram.com/about/legal/privacy/."
+  },
+  {
+    "id": 1682,
+    "company_name": "Passage West Parent and Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/thefamilyedit",
+    "cleared_instagram_url": "https://www.instagram.com/thefamilyedit"
+  },
+  {
+    "id": 1683,
+    "company_name": "Kinsale Pottery and Arts Centre - Children's Summer Camp",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1684,
+    "company_name": "Kinsale Surf Adventures - Summer Camps",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=685460942035691&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1685,
+    "company_name": "Rugbytots - Kinsale",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=371060880121965&ev=PageView",
+    "cleared_instagram_url": "https://www.instagram.com/rugbytotsireland"
+  },
+  {
+    "id": 1686,
+    "company_name": "Turtle Tots - Kinsale Hotel & Spa",
+    "cleared_facebook_url": "https://www.facebook.com/Turtletotsireland",
+    "cleared_instagram_url": "https://www.instagram.com/turtletotsireland"
+  },
+  {
+    "id": 1689,
+    "company_name": "Club Vitae Oranmore - Summer Camps",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=191614138076265&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1690,
+    "company_name": "Rugbytots - Oranmore",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=371060880121965&ev=PageView",
+    "cleared_instagram_url": "https://www.instagram.com/rugbytotsireland"
+  },
+  {
+    "id": 1696,
+    "company_name": "Designer Minds - Carrick On Suir STEAM Summer Camp",
+    "cleared_facebook_url": "https://facebook.com/about/privacy/,",
+    "cleared_instagram_url": "https://www.instagram.com/about/legal/privacy/."
+  },
+  {
+    "id": 1697,
+    "company_name": "Carrick-on-Suir Library - Lego Boost Club",
+    "cleared_facebook_url": "http://www.facebook.com/pages/Tipperary-Libraries/241612834780",
+    "cleared_instagram_url": "https://www.instagram.com/tipperarycocolibraryservice"
+  },
+  {
+    "id": 1698,
+    "company_name": "Starcamp - Carrickmacross Summer Camp",
+    "cleared_facebook_url": "https://www.facebook.com/starcampireland",
+    "cleared_instagram_url": "https://instagram.com/starcampireland%20"
+  },
+  {
+    "id": 1705,
+    "company_name": "Junior Einsteins - Afterschool Science Club, Blessington",
+    "cleared_facebook_url": "https://www.facebook.com/junioreinsteinsscienceclub",
+    "cleared_instagram_url": "https://www.instagram.com/junioreinsteinsscienceclub"
+  },
+  {
+    "id": 1707,
+    "company_name": "Blessington GAA & LGFA - Blesso Blues Academy",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1711,
+    "company_name": "Carrigtwohill Family Resource Centre - Parent and Toddler Group",
+    "cleared_facebook_url": "https://www.facebook.com/carrigtwohillfrc",
+    "cleared_instagram_url": "https://www.instagram.com/carrigtwohillfrc"
+  },
+  {
+    "id": 1714,
+    "company_name": "East Cork Taekwon-Do - Carrigtwohill",
+    "cleared_facebook_url": "https://www.facebook.com/WordPresscom",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1717,
+    "company_name": "Starcamp - Ardee Summer Camp",
+    "cleared_facebook_url": "https://www.facebook.com/starcampireland",
+    "cleared_instagram_url": "https://instagram.com/starcampireland%20"
+  },
+  {
+    "id": 1722,
+    "company_name": "Starcamp - Ballybofey-Stranorlar Summer Camp",
+    "cleared_facebook_url": "https://www.facebook.com/starcampireland",
+    "cleared_instagram_url": "https://instagram.com/starcampireland%20"
+  },
+  {
+    "id": 1724,
+    "company_name": "Creative Places Tipperary Town - Family Arts Club",
+    "cleared_facebook_url": "https://www.facebook.com/WordPresscom",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1725,
+    "company_name": "The Dancer's Academy of Performing Arts (DAPA) - Tipperary/Thurles",
+    "cleared_facebook_url": "https://www.facebook.com/ballet.ie",
+    "cleared_instagram_url": "https://www.instagram.com/ballet.ie"
+  },
+  {
+    "id": 1728,
+    "company_name": "Nenagh Arts Centre - Kinder Music & Classes",
+    "cleared_facebook_url": "https://www.facebook.com/tr?id=107150198119064&ev=PageView&noscript=1",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1730,
+    "company_name": "Tipperary Libraries - Toddler Storytime",
+    "cleared_facebook_url": null,
+    "cleared_instagram_url": "https://www.instagram.com/tots.spots"
+  },
+  {
+    "id": 1731,
+    "company_name": "Junior Einsteins - Junior Chemists Science Camp, Monasterevin",
+    "cleared_facebook_url": "https://www.facebook.com/junioreinsteinsscienceclub",
+    "cleared_instagram_url": "https://www.instagram.com/junioreinsteinsscienceclub"
+  },
+  {
+    "id": 1732,
+    "company_name": "Monasterevin Shotokan Karate Club",
+    "cleared_facebook_url": "http://www.facebook.com/2008/fbml",
+    "cleared_instagram_url": null
+  },
+  {
+    "id": 1738,
+    "company_name": "\u00c9in\u00edn\u00ed Early Years Music - Clonakilty",
+    "cleared_facebook_url": "https://www.facebook.com/thefamilyedit",
+    "cleared_instagram_url": "https://www.instagram.com/thefamilyedit"
+  },
+  {
+    "id": 1740,
+    "company_name": "Laois County Council - Tin Whistle Classes, Mountmellick",
+    "cleared_facebook_url": "https://www.facebook.com/LaoisCountyCouncil",
+    "cleared_instagram_url": "https://www.instagram.com/laoiscountycouncil"
+  },
+  {
+    "id": 1743,
+    "company_name": "Playful Tribe - Pop Up Art & Movement Workshop, Cashel",
+    "cleared_facebook_url": "https://www.facebook.com/dostuffireland",
+    "cleared_instagram_url": "https://www.instagram.com/dostuffireland"
+  },
+  {
+    "id": 1745,
+    "company_name": "Starcamp - Carrick On Shannon Summer Camp",
+    "cleared_facebook_url": "https://www.facebook.com/starcampireland",
+    "cleared_instagram_url": "https://instagram.com/starcampireland%20"
+  },
+  {
+    "id": 1746,
+    "company_name": "Designer Minds - Carrick on Shannon STEAM Summer Camp",
+    "cleared_facebook_url": "https://facebook.com/about/privacy/,",
+    "cleared_instagram_url": "https://www.instagram.com/about/legal/privacy/."
+  },
+  {
+    "id": 1747,
+    "company_name": "Moo Music Monaghan - Carrickmacross",
+    "cleared_facebook_url": "https://www.facebook.com/thefamilyedit",
+    "cleared_instagram_url": "https://www.instagram.com/thefamilyedit"
+  }
+]
