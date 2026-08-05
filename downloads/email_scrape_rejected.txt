@@ -1,0 +1,44 @@
+Email candidates rejected because the same address matched 2+ distinct companies with no common brand resemblance (likely a shared agency/webmaster inbox).
+
+[Play Cafe / Bumps and Babes] id=15: libraries@dlrcoco.ie
+  also matched: ['Baby Talk', 'Ballyogan Community Development Group Parent and Toddler Group', 'Blackrock Library Parent and Toddler Group', 'Dalkey Library Parent and Toddler Group', 'Deansgrange Library Parent and Toddler Group']
+
+[Talls and Smalls] id=16: libraries@dlrcoco.ie
+  also matched: ['Baby Talk', 'Ballyogan Community Development Group Parent and Toddler Group', 'Blackrock Library Parent and Toddler Group', 'Dalkey Library Parent and Toddler Group', 'Deansgrange Library Parent and Toddler Group']
+
+[Baby Talk] id=17: libraries@dlrcoco.ie
+  also matched: ['Ballyogan Community Development Group Parent and Toddler Group', 'Blackrock Library Parent and Toddler Group', 'Dalkey Library Parent and Toddler Group', 'Deansgrange Library Parent and Toddler Group', 'Dundrum Library Parent and Toddler Group']
+
+[Honey Bee Hive] id=18: libraries@dlrcoco.ie
+  also matched: ['Baby Talk', 'Ballyogan Community Development Group Parent and Toddler Group', 'Blackrock Library Parent and Toddler Group', 'Dalkey Library Parent and Toddler Group', 'Deansgrange Library Parent and Toddler Group']
+
+[Blackrock Library Parent and Toddler Group] id=20: libraries@dlrcoco.ie
+  also matched: ['Baby Talk', 'Ballyogan Community Development Group Parent and Toddler Group', 'Dalkey Library Parent and Toddler Group', 'Deansgrange Library Parent and Toddler Group', 'Dundrum Library Parent and Toddler Group']
+
+[Shankill Library Parent and Toddler Group] id=21: libraries@dlrcoco.ie
+  also matched: ['Baby Talk', 'Ballyogan Community Development Group Parent and Toddler Group', 'Blackrock Library Parent and Toddler Group', 'Dalkey Library Parent and Toddler Group', 'Deansgrange Library Parent and Toddler Group']
+
+[Dalkey Library Parent and Toddler Group] id=22: libraries@dlrcoco.ie
+  also matched: ['Baby Talk', 'Ballyogan Community Development Group Parent and Toddler Group', 'Blackrock Library Parent and Toddler Group', 'Deansgrange Library Parent and Toddler Group', 'Dundrum Library Parent and Toddler Group']
+
+[Dalkey Library Parent and Toddler Group] id=23: libraries@dlrcoco.ie
+  also matched: ['Baby Talk', 'Ballyogan Community Development Group Parent and Toddler Group', 'Blackrock Library Parent and Toddler Group', 'Deansgrange Library Parent and Toddler Group', 'Dundrum Library Parent and Toddler Group']
+
+[Dundrum Library Parent and Toddler Group] id=24: libraries@dlrcoco.ie
+  also matched: ['Baby Talk', 'Ballyogan Community Development Group Parent and Toddler Group', 'Blackrock Library Parent and Toddler Group', 'Dalkey Library Parent and Toddler Group', 'Deansgrange Library Parent and Toddler Group']
+
+[Deansgrange Library Parent and Toddler Group] id=25: libraries@dlrcoco.ie
+  also matched: ['Baby Talk', 'Ballyogan Community Development Group Parent and Toddler Group', 'Blackrock Library Parent and Toddler Group', 'Dalkey Library Parent and Toddler Group', 'Dundrum Library Parent and Toddler Group']
+
+[Ballyogan Community Development Group Parent and Toddler Group] id=26: libraries@dlrcoco.ie
+  also matched: ['Baby Talk', 'Blackrock Library Parent and Toddler Group', 'Dalkey Library Parent and Toddler Group', 'Deansgrange Library Parent and Toddler Group', 'Dundrum Library Parent and Toddler Group']
+
+[Tallaght Parent, Baby and Toddler Group (Killinarden Family Resource Centre)] id=418: libraries@dlrcoco.ie
+  also matched: ['Baby Talk', 'Ballyogan Community Development Group Parent and Toddler Group', 'Blackrock Library Parent and Toddler Group', 'Dalkey Library Parent and Toddler Group', 'Deansgrange Library Parent and Toddler Group']
+
+[Kingscourt Mum and Baby Group] id=594: duanairekindergarten@gmail.com
+  also matched: ['Kingscourt Parent, Toddler & Baby Group']
+
+[Kingscourt Parent, Toddler & Baby Group] id=595: duanairekindergarten@gmail.com
+  also matched: ['Kingscourt Mum and Baby Group']
+
