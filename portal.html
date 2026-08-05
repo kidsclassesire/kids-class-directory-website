@@ -61,6 +61,19 @@
         .business-card-body .category { font-size: 0.8rem; color: var(--text-muted); min-height: 1.1em; }
         .business-card-body .btn-secondary { margin-top: auto; }
         #back-to-list-row { margin-bottom: 1.25rem; }
+        .tabs { display: flex; gap: 0.25rem; border-bottom: 1px solid var(--border); margin-bottom: 1.5rem; overflow-x: auto; }
+        .tab-btn { background: none; border: none; padding: 0.75rem 1rem; font-size: 0.9rem; font-weight: 600; color: var(--text-muted); cursor: pointer; border-bottom: 2px solid transparent; white-space: nowrap; }
+        .tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
+        .classes-table-wrap { overflow-x: auto; }
+        .classes-table { border-collapse: collapse; width: 100%; min-width: 900px; }
+        .classes-table th { text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text-muted); padding: 0.5rem 0.4rem; border-bottom: 1px solid var(--border); white-space: nowrap; }
+        .classes-table td { padding: 0.35rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+        .classes-table input, .classes-table select { width: 100%; box-sizing: border-box; padding: 0.45rem; border: 1px solid var(--border); border-radius: 6px; font-size: 0.85rem; font-family: inherit; }
+        .classes-table input[type="number"] { min-width: 68px; }
+        .classes-table input[type="date"] { min-width: 135px; }
+        .classes-table input[type="text"] { min-width: 110px; }
     </style>
 </head>
 <body>
@@ -142,6 +155,16 @@
             <h3 id="editing-business-name" style="margin: -0.5rem 0 0.5rem; color: var(--text-muted); font-weight: 600; font-size: 1rem;"></h3>
             <p id="page-views-stat" style="display:none; margin: 0 0 1.75rem; font-size: 0.85rem; color: var(--text-muted);"></p>
 
+            <div class="tabs" id="edit-tabs">
+                <button type="button" class="tab-btn active" data-tab="basic">Basic Info</button>
+                <button type="button" class="tab-btn" data-tab="schedule">Ages &amp; Schedule</button>
+                <button type="button" class="tab-btn" data-tab="pricing">Pricing</button>
+                <button type="button" class="tab-btn" data-tab="contact">Contact &amp; Links</button>
+                <button type="button" class="tab-btn" data-tab="facilities">Facilities</button>
+                <button type="button" class="tab-btn" data-tab="classes">Individual Classes</button>
+            </div>
+
+            <div class="tab-panel active" data-tab-panel="basic">
             <fieldset>
                 <legend>Images</legend>
                 <div class="image-field">
@@ -195,7 +218,9 @@
                     <textarea id="edit-description" required></textarea>
                 </div>
             </fieldset>
+            </div>
 
+            <div class="tab-panel" data-tab-panel="schedule">
             <fieldset>
                 <legend>Ages &amp; Supervision</legend>
                 <div class="form-row">
@@ -254,7 +279,9 @@
                     <input type="text" id="edit-term-structure" placeholder="e.g. School-term programme, Drop-in, 6-week term">
                 </div>
             </fieldset>
+            </div>
 
+            <div class="tab-panel" data-tab-panel="pricing">
             <fieldset>
                 <legend>Pricing</legend>
                 <div class="form-row">
@@ -276,7 +303,9 @@
                     <textarea id="edit-pricing-details" placeholder="Any extra detail on pricing, sibling discounts, etc."></textarea>
                 </div>
             </fieldset>
+            </div>
 
+            <div class="tab-panel" data-tab-panel="contact">
             <fieldset>
                 <legend>Contact &amp; Links</legend>
                 <div class="form-group">
@@ -316,7 +345,9 @@
                     </div>
                 </div>
             </fieldset>
+            </div>
 
+            <div class="tab-panel" data-tab-panel="facilities">
             <fieldset>
                 <legend>Facilities</legend>
                 <div class="checkbox-grid" id="facilities-checkbox-grid">
@@ -331,6 +362,37 @@
                     <label><input type="checkbox" value="Parent Viewing Area"> Parent Viewing Area</label>
                 </div>
             </fieldset>
+            </div>
+
+            <div class="tab-panel" data-tab-panel="classes">
+                <p style="color: var(--text-muted); margin: -0.5rem 0 1.25rem; font-size: 0.85rem;">List the specific classes you run — these are separate from the summary details in the other tabs.</p>
+                <div class="alert alert-error" id="classes-error"></div>
+                <div class="alert alert-success" id="classes-success"></div>
+                <div class="classes-table-wrap">
+                    <table class="classes-table" id="classes-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Day</th>
+                                <th>Time</th>
+                                <th>Min Age</th>
+                                <th>Max Age</th>
+                                <th>Num of Classes</th>
+                                <th>Price / Class</th>
+                                <th>Price / Term</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="classes-table-body"></tbody>
+                    </table>
+                </div>
+                <div style="display: flex; gap: 0.75rem; margin-top: 1rem;">
+                    <button type="button" class="btn-secondary" id="add-class-row-btn">+ Add Row</button>
+                    <button type="button" class="btn" style="width: auto; padding: 0.6rem 1.25rem;" id="save-classes-btn">Save Classes</button>
+                </div>
+            </div>
 
             <div class="save-bar">
                 <div class="alert alert-error" id="dash-error-bottom"></div>
@@ -649,9 +711,26 @@
         function showBusinessEditor(business, showBackLink) {
             businessListSection.style.display = 'none';
             backToListRow.style.display = showBackLink ? 'block' : 'none';
+            resetTabs();
             populateEditForm(business);
             editForm.style.display = 'block';
         }
+
+        // ---- Tabs ----
+        function resetTabs() {
+            document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === 0));
+            document.querySelectorAll('.tab-panel').forEach((p, i) => p.classList.toggle('active', i === 0));
+            document.querySelector('.save-bar').style.display = '';
+        }
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tab = btn.getAttribute('data-tab');
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b === btn));
+                document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.getAttribute('data-tab-panel') === tab));
+                document.querySelector('.save-bar').style.display = tab === 'classes' ? 'none' : '';
+                if (tab === 'classes') loadIndividualClasses(currentBusinessId);
+            });
+        });
 
         document.getElementById('back-to-list-btn').addEventListener('click', () => {
             editForm.style.display = 'none';
@@ -795,6 +874,141 @@
         document.getElementById('banner-file-input').addEventListener('change', (e) => { if (e.target.files[0]) uploadImage('banner', e.target.files[0]); e.target.value = ''; });
         document.getElementById('logo-delete-btn').addEventListener('click', () => deleteImage('logo'));
         document.getElementById('banner-delete-btn').addEventListener('click', () => deleteImage('banner'));
+
+        // ---- Individual Classes tab ----
+        // Ids of rows removed locally that still need deleting from the DB on save;
+        // rows the owner adds and then removes before saving never get added here,
+        // since there's nothing in the DB to delete.
+        let deletedClassIds = new Set();
+
+        function dayOptionsHtml(selected) {
+            const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+            return '<option value="">-</option>' + days.map(d =>
+                `<option value="${d}"${d === selected ? ' selected' : ''}>${d}</option>`
+            ).join('');
+        }
+
+        function createClassRow(data) {
+            data = data || {};
+            const tr = document.createElement('tr');
+            tr.dataset.dbId = data.id || '';
+            tr.innerHTML = `
+                <td><input type="text" class="cc-name" value="${escapeHtml(data.name || '')}"></td>
+                <td><input type="date" class="cc-start-date" value="${data.start_date || ''}"></td>
+                <td><input type="date" class="cc-end-date" value="${data.end_date || ''}"></td>
+                <td><select class="cc-day">${dayOptionsHtml(data.day || '')}</select></td>
+                <td><input type="text" class="cc-time" placeholder="e.g. 10:00-10:45" value="${escapeHtml(data.time || '')}"></td>
+                <td><input type="number" step="0.1" min="0" class="cc-min-age" value="${data.min_age ?? ''}"></td>
+                <td><input type="number" step="0.1" min="0" class="cc-max-age" value="${data.max_age ?? ''}"></td>
+                <td><input type="number" step="1" min="0" class="cc-num-classes" value="${data.num_classes ?? ''}"></td>
+                <td><input type="number" step="0.01" min="0" class="cc-price-class" value="${data.price_per_class ?? ''}"></td>
+                <td><input type="number" step="0.01" min="0" class="cc-price-term" value="${data.price_per_term ?? ''}"></td>
+                <td><button type="button" class="btn-danger cc-remove-btn">Remove</button></td>
+            `;
+            tr.querySelector('.cc-remove-btn').addEventListener('click', () => {
+                if (tr.dataset.dbId) deletedClassIds.add(Number(tr.dataset.dbId));
+                tr.remove();
+            });
+            return tr;
+        }
+
+        function readClassRowValues(tr) {
+            const val = (sel) => tr.querySelector(sel).value;
+            const numOrNull = (v) => (v === '' ? null : Number(v));
+            return {
+                name: val('.cc-name') || null,
+                start_date: val('.cc-start-date') || null,
+                end_date: val('.cc-end-date') || null,
+                day: val('.cc-day') || null,
+                time: val('.cc-time') || null,
+                min_age: numOrNull(val('.cc-min-age')),
+                max_age: numOrNull(val('.cc-max-age')),
+                num_classes: numOrNull(val('.cc-num-classes')),
+                price_per_class: numOrNull(val('.cc-price-class')),
+                price_per_term: numOrNull(val('.cc-price-term')),
+            };
+        }
+
+        async function loadIndividualClasses(businessId) {
+            if (!businessId) return;
+            deletedClassIds = new Set();
+            const tbody = document.getElementById('classes-table-body');
+            const classesError = document.getElementById('classes-error');
+            const classesSuccess = document.getElementById('classes-success');
+            tbody.innerHTML = '';
+            classesError.style.display = 'none';
+            classesSuccess.style.display = 'none';
+            try {
+                const { data, error } = await supabaseClient
+                    .from('individual_classes')
+                    .select('*')
+                    .eq('business_id', businessId)
+                    .order('id', { ascending: true });
+                if (error) throw error;
+                (data || []).forEach(row => tbody.appendChild(createClassRow(row)));
+            } catch (err) {
+                classesError.textContent = 'Error loading classes: ' + err.message;
+                classesError.style.display = 'block';
+            }
+        }
+
+        document.getElementById('add-class-row-btn').addEventListener('click', () => {
+            const tbody = document.getElementById('classes-table-body');
+            const lastRow = tbody.querySelector('tr:last-child');
+            const data = lastRow ? readClassRowValues(lastRow) : {};
+            tbody.appendChild(createClassRow(data));
+        });
+
+        document.getElementById('save-classes-btn').addEventListener('click', async () => {
+            if (!currentBusinessId) return;
+            const classesError = document.getElementById('classes-error');
+            const classesSuccess = document.getElementById('classes-success');
+            classesError.style.display = 'none';
+            classesSuccess.style.display = 'none';
+            const btn = document.getElementById('save-classes-btn');
+            btn.textContent = 'Saving...';
+            btn.disabled = true;
+
+            try {
+                if (deletedClassIds.size) {
+                    const { error } = await supabaseClient.from('individual_classes').delete().in('id', Array.from(deletedClassIds));
+                    if (error) throw error;
+                }
+
+                const rows = Array.from(document.querySelectorAll('#classes-table-body tr'));
+                const toInsert = [];
+                const toUpdate = [];
+                rows.forEach(tr => {
+                    const values = readClassRowValues(tr);
+                    if (tr.dataset.dbId) {
+                        toUpdate.push({ id: Number(tr.dataset.dbId), ...values });
+                    } else {
+                        toInsert.push({ business_id: currentBusinessId, ...values });
+                    }
+                });
+
+                if (toInsert.length) {
+                    const { error } = await supabaseClient.from('individual_classes').insert(toInsert);
+                    if (error) throw error;
+                }
+                for (const row of toUpdate) {
+                    const { id, ...values } = row;
+                    const { error } = await supabaseClient.from('individual_classes').update(values).eq('id', id);
+                    if (error) throw error;
+                }
+
+                deletedClassIds = new Set();
+                classesSuccess.textContent = 'Classes saved.';
+                classesSuccess.style.display = 'block';
+                loadIndividualClasses(currentBusinessId);
+            } catch (err) {
+                classesError.textContent = 'Failed to save: ' + err.message;
+                classesError.style.display = 'block';
+            } finally {
+                btn.textContent = 'Save Classes';
+                btn.disabled = false;
+            }
+        });
 
         // Handle Form Save
         editForm.addEventListener('submit', async (e) => {
