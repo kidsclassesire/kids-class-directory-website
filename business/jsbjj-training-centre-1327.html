@@ -70,6 +70,7 @@
                 </div>
             </div>
             <div class="business-backlinks">
+                <a href="../index.html" id="back-to-search-results" style="display:none;">&larr; Back to search results</a>
                 <a href="../index.html">&larr; Back to full directory</a>
                 <a href="../index.html?cat=Martial%20Arts">More Martial Arts classes &rarr;</a>
             </div>
@@ -111,6 +112,23 @@
             </div>
         </div>
     </div>
+    <script>
+        (function() {
+            // index.html stashes the query string of the visitor's last search in
+            // sessionStorage (see kpLastSearch) since a plain link here can't know
+            // it -- this page is static and pre-generated. Falls back to nothing
+            // (link stays hidden) if the visitor arrived without ever searching,
+            // e.g. from Google or a shared URL.
+            try {
+                const saved = sessionStorage.getItem('kpLastSearch');
+                if (saved) {
+                    const link = document.getElementById('back-to-search-results');
+                    link.href = '../index.html?' + saved;
+                    link.style.display = '';
+                }
+            } catch (e) {}
+        })();
+    </script>
     <script>
         window.SUPABASE_URL = window.SUPABASE_URL || 'https://gnozodfteywsiwcnbwch.supabase.co';
         window.SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'sb_publishable_eduvbMySPxHPT0iZjE_LqQ_w6nyjnjY';
