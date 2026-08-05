@@ -72,10 +72,23 @@ def fetch_ga4_pageviews(access_token):
 
 
 def fetch_all_business_ids(secret):
+    # PostgREST caps an unpaginated response at 1000 rows -- there are ~1800
+    # businesses, so this must page via Range headers (same pattern as
+    # fetch_all_rows() in generate_business_pages.py) or several hundred rows
+    # silently never get a page_views_30d value written.
     headers = {'apikey': secret, 'Authorization': f'Bearer {secret}'}
-    req = urllib.request.Request(f'{SUPABASE_URL}/rest/v1/classes?select=id', headers=headers)
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return {row['id'] for row in json.loads(resp.read())}
+    ids, offset, page = set(), 0, 1000
+    while True:
+        req = urllib.request.Request(
+            f'{SUPABASE_URL}/rest/v1/classes?select=id&order=id',
+            headers={**headers, 'Range-Unit': 'items', 'Range': f'{offset}-{offset + page - 1}'},
+        )
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            batch = json.loads(resp.read())
+        ids.update(row['id'] for row in batch)
+        if len(batch) < page:
+            return ids
+        offset += page
 
 
 def write_pageviews(secret, counts, all_ids):
