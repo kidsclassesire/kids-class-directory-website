@@ -46,6 +46,46 @@ ANALYTICS_JS_VERSION = file_version('analytics.js')
 NOTIFY_JS_VERSION = file_version('notify.js')
 CLAIM_JS_VERSION = file_version('claim.js')
 
+# Same sticky top nav and footer as index.html's -- generated pages (business + landing)
+# previously used a bare ".brand-logo" text link with no icon, nav, or footer, left over
+# from an older homepage design. Every generated page lives one directory down from the
+# repo root (business/*.html, classes/*.html), same as index.html's own header/footer,
+# so the "../" links below work unchanged everywhere this is used.
+SITE_HEADER_HTML = '''    <header class="site-header">
+        <div class="site-header-inner">
+            <a href="../index.html" class="logo">
+                <svg width="30" height="30" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                    <path d="M20 2 L26 6 L34 6 L34 14 L38 20 L34 26 L34 34 L26 34 L20 38 L14 34 L6 34 L6 26 L2 20 L6 14 L6 6 L14 6 Z" fill="#0F6E6E"/>
+                    <circle cx="20" cy="20" r="8" fill="#FFC857"/>
+                </svg>
+                Kids Patch
+            </a>
+            <nav class="site-nav">
+                <a href="../index.html">Browse activities</a>
+                <a href="../classes/index.html">Categories</a>
+                <a href="../contact.html">Contact</a>
+            </nav>
+            <a href="../portal.html" class="btn-ghost">Manage your listing</a>
+        </div>
+    </header>'''
+
+SITE_FOOTER_HTML = '''    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div class="logo">
+                <svg viewBox="0 0 40 40" fill="none" width="26" height="26" aria-hidden="true">
+                    <path d="M20 2 L26 6 L34 6 L34 14 L38 20 L34 26 L34 34 L26 34 L20 38 L14 34 L6 34 L6 26 L2 20 L6 14 L6 6 L14 6 Z" fill="#FAF9F6"/>
+                    <circle cx="20" cy="20" r="8" fill="#FFC857"/>
+                </svg>
+                Kids Patch
+            </div>
+            <div class="site-footer-links">
+                <a href="../classes/index.html">Browse all activities by category &amp; county</a>
+                <a href="../portal.html">Business owner? Manage your listing</a>
+                <a href="../contact.html">Contact us</a>
+            </div>
+        </div>
+    </footer>'''
+
 
 def fetch_all_rows():
     headers = {'apikey': SUPABASE_ANON_KEY, 'Authorization': f'Bearer {SUPABASE_ANON_KEY}'}
@@ -462,9 +502,8 @@ def render_page(row, slug):
     <script type="application/ld+json">{json_ld(row, slug)}</script>
 </head>
 <body>
+{SITE_HEADER_HTML}
     <div class="business-page">
-        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
-        <a href="../portal.html" style="float:right; font-size:0.85rem; font-weight:700; color:var(--secondary); text-decoration:none; padding:8px 14px; border:1.5px solid var(--secondary); border-radius:8px;">Manage your listing</a>
         <nav class="breadcrumb">
             <a href="../index.html">Home</a> &rsaquo; <a href="{cat_link}">{esc(category)}</a> &rsaquo; {company}
         </nav>
@@ -493,6 +532,7 @@ def render_page(row, slug):
             </div>
         </main>
     </div>
+{SITE_FOOTER_HTML}
     {CLAIM_MODAL_HTML}
     <script>
         (function() {{

@@ -20,7 +20,7 @@ from datetime import date
 from generate_business_pages import (
     esc, fetch_all_rows, file_version, format_price, format_schedule, image_html,
     make_slug, self_validate_json_ld, slugify, REPO_ROOT, SITE_URL, STYLES_VERSION,
-    ANALYTICS_JS_VERSION,
+    ANALYTICS_JS_VERSION, SITE_HEADER_HTML, SITE_FOOTER_HTML,
 )
 
 CLASSES_DIR = REPO_ROOT / 'classes'
@@ -373,8 +373,8 @@ def render_landing_page(title, canonical, meta_desc, breadcrumb_html, h1, intro_
     {json_ld_block}
 </head>
 <body>
+{SITE_HEADER_HTML}
     <div class="landing-page">
-        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
         {breadcrumb_html}
         <h1>{esc(h1)}</h1>
         {intro_html}
@@ -383,7 +383,8 @@ def render_landing_page(title, canonical, meta_desc, breadcrumb_html, h1, intro_
         {map_html}
         <div class="landing-grid">{grid_html}</div>
         {dataset_html}
-    </div>{leaflet_scripts}{filters_scripts}
+    </div>
+{SITE_FOOTER_HTML}{leaflet_scripts}{filters_scripts}
 </body>
 </html>'''
 
