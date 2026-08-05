@@ -84,6 +84,11 @@ SITE_FOOTER_HTML = '''    <footer class="site-footer">
                 <a href="../contact.html">Contact us</a>
             </div>
         </div>
+        <div class="site-footer-legal">
+            <a href="../privacy-policy.html">Privacy Policy</a>
+            <a href="../terms-of-use.html">Terms of Use</a>
+            <a href="../cookie-policy.html">Cookie Policy</a>
+        </div>
     </footer>'''
 
 
