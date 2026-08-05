@@ -438,7 +438,7 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Start Date</th>
-                                <th>End Date</th>
+                                <th>Duration (weeks)</th>
                                 <th>Day</th>
                                 <th>Time</th>
                                 <th>Min Age</th>
@@ -1164,7 +1164,7 @@
             tr.innerHTML = `
                 <td data-label="Name"><input type="text" class="cc-name" value="${escapeHtml(data.name || '')}"></td>
                 <td data-label="Start Date"><input type="date" class="cc-start-date" value="${data.start_date || ''}"></td>
-                <td data-label="End Date"><input type="date" class="cc-end-date" value="${data.end_date || ''}"></td>
+                <td data-label="Duration (weeks)"><input type="number" step="1" min="0" class="cc-duration-weeks" value="${data.duration_weeks ?? ''}"></td>
                 <td data-label="Day"><select class="cc-day">${dayOptionsHtml(data.day || '')}</select></td>
                 <td data-label="Time"><input type="text" class="cc-time" placeholder="e.g. 10:00-10:45" value="${escapeHtml(data.time || '')}"></td>
                 <td data-label="Min Age"><input type="number" step="0.1" min="0" class="cc-min-age" value="${data.min_age ?? ''}"></td>
@@ -1187,7 +1187,7 @@
             return {
                 name: val('.cc-name') || null,
                 start_date: val('.cc-start-date') || null,
-                end_date: val('.cc-end-date') || null,
+                duration_weeks: numOrNull(val('.cc-duration-weeks')),
                 day: val('.cc-day') || null,
                 time: val('.cc-time') || null,
                 min_age: numOrNull(val('.cc-min-age')),

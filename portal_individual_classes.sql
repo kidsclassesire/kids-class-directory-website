@@ -11,7 +11,7 @@ create table if not exists public.individual_classes (
   business_id bigint not null references public.classes(id) on delete cascade,
   name text,
   start_date date,
-  end_date date,
+  duration_weeks integer,
   day text,
   time text,
   min_age numeric,
