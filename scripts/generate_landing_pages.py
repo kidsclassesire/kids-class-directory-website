@@ -132,6 +132,7 @@ TOWN_COUNTY = {
     'Kilternan': 'Dublin', 'Shankill': 'Dublin', 'Foxrock': 'Dublin', 'Ballsbridge': 'Dublin',
     'Lusk': 'Dublin', 'Dun Laoghaire': 'Dublin', 'Ballinteer': 'Dublin',
     'Blackrock': 'Dublin', 'Sandyford': 'Dublin',
+    'Rathgar': 'Dublin', 'Crumlin': 'Dublin', 'Ranelagh': 'Dublin',
 }
 TOWN_LABEL_BY_LOWER = {name.lower(): name for name in TOWN_COUNTY}
 TOWN_RE = re.compile(

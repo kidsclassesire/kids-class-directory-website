@@ -8062,5 +8062,311 @@
     "longitude": -6.2002566,
     "formatted_address": "Seafield Rd W, Clontarf East, Dublin, Ireland",
     "postcode": null
+  },
+  "1 Observatory Lane, Rathmines, Dublin 6": {
+    "latitude": 53.3260679,
+    "longitude": -6.2641561,
+    "formatted_address": "1 Observatory Ct, Rathmines, Dublin, D06 YW64, Ireland",
+    "postcode": "D06 YW64"
+  },
+  "10A Terenure Road East, Rathgar, Dublin 6": {
+    "latitude": 53.31196070000001,
+    "longitude": -6.2751834,
+    "formatted_address": "10A Terenure Rd E, Rathgar Ave, Dublin 6, D06 A262, Ireland",
+    "postcode": "D06 A262"
+  },
+  "112 Greenlea Road, Terenure, Dublin 6W": {
+    "latitude": 53.3074472,
+    "longitude": -6.300180699999999,
+    "formatted_address": "112 Greenlea Rd, Terenure, Dublin, D6W FF95, Ireland",
+    "postcode": "D6W FF95"
+  },
+  "219 Lower Rathmines Road, Rathmines, Dublin 6": {
+    "latitude": 53.3221459,
+    "longitude": -6.26598,
+    "formatted_address": "219 Rathmines Rd Lower, Rathmines, Dublin 6, D06 XE36, Ireland",
+    "postcode": "D06 XE36"
+  },
+  "31 Palmerston Gardens, Dartry, Rathgar, Dublin 6, D06 FX39": {
+    "latitude": 53.31371129999999,
+    "longitude": -6.261268599999999,
+    "formatted_address": "Lucerne, 31 Palmerston Gardens, Dartry, Dublin 6, D06 FX39, Ireland",
+    "postcode": "D06 FX39"
+  },
+  "80A Windmill Road, Crumlin, Dublin 12, D12 WK5A": {
+    "latitude": 53.3238585,
+    "longitude": -6.3129516,
+    "formatted_address": "80A Windmill Rd, Crumlin, Dublin 12, D12 Y5Y2, Ireland",
+    "postcode": "D12 Y5Y2"
+  },
+  "96 Rathmines Road Upper, Rathmines, Dublin 6": {
+    "latitude": 53.3185619,
+    "longitude": -6.263455899999999,
+    "formatted_address": "96 Rathmines Rd Upper, Rathmines, Dublin 6, Ireland",
+    "postcode": null
+  },
+  "Beechwood Community Centre, Mountain View Road, Ranelagh, Dublin 6": {
+    "latitude": 53.3187757,
+    "longitude": -6.25169,
+    "formatted_address": "Beechwood Community Centre, Mountain View Rd, Ranelagh, Dublin, Ireland",
+    "postcode": null
+  },
+  "Bushes Lane, off Grosvenor Road, Rathgar, Dublin 6": {
+    "latitude": 53.3208699,
+    "longitude": -6.268563299999999,
+    "formatted_address": "6 Grosvenor Rd, Rathmines, Dublin, Ireland",
+    "postcode": null
+  },
+  "Bushy Park, Templeogue, Dublin 6W": {
+    "latitude": 53.2964776,
+    "longitude": -6.3167883,
+    "formatted_address": "Templeogue, Dublin, Ireland",
+    "postcode": null
+  },
+  "Christ Church Rathgar, Rathgar, Dublin 6": {
+    "latitude": 53.3124725,
+    "longitude": -6.2733072,
+    "formatted_address": "Rathgar Rd, Rathgar, Dublin 6, D06 CF63, Ireland",
+    "postcode": "D06 CF63"
+  },
+  "Christ Church, Rathgar, Dublin 6": {
+    "latitude": 53.3124725,
+    "longitude": -6.2733072,
+    "formatted_address": "Rathgar Rd, Rathgar, Dublin 6, D06 CF63, Ireland",
+    "postcode": "D06 CF63"
+  },
+  "Col\u00e1iste \u00c9anna, Rathfarnham, Dublin 16": {
+    "latitude": 53.2860007,
+    "longitude": -6.297868999999999,
+    "formatted_address": "Hillside Park, Ballyroan Rd, Rathfarnham, Dublin 16, D16 E248, Ireland",
+    "postcode": "D16 E248"
+  },
+  "Crumlin Integrated College, 10 Glenavy Road, Crumlin, Dublin 12": {
+    "latitude": 54.618558,
+    "longitude": -6.2194709,
+    "formatted_address": "10 Glenavy Rd, Crumlin BT29 4LA, UK",
+    "postcode": "BT29 4LA"
+  },
+  "Crumlin, Dublin 12": {
+    "latitude": 53.3143906,
+    "longitude": -6.3235643,
+    "formatted_address": "Crumlin, Dublin, Ireland",
+    "postcode": null
+  },
+  "Danum, Zion Road, Rathgar, Dublin 6, D06 YR68": {
+    "latitude": 53.3078632,
+    "longitude": -6.2733806,
+    "formatted_address": "Zion Rd, Dublin, Ireland",
+    "postcode": null
+  },
+  "KPS, 96 Rathmines Road Upper, Ranelagh, Dublin 6": {
+    "latitude": 53.3185619,
+    "longitude": -6.263455899999999,
+    "formatted_address": "96 Rathmines Rd Upper, Rathmines, Dublin 6, Ireland",
+    "postcode": null
+  },
+  "Kenilworth Bowling Club, Grosvenor Square, Rathmines, Dublin 6": {
+    "latitude": 53.3237685,
+    "longitude": -6.2736594,
+    "formatted_address": "Grosvenor Square, Rathmines, Dublin 6, D06 HP90, Ireland",
+    "postcode": "D06 HP90"
+  },
+  "Lakelands, Terenure College RFC, Terenure, Dublin 6W": {
+    "latitude": 53.3077546,
+    "longitude": -6.2940982,
+    "formatted_address": "Greenlea Grove, Terenure, Dublin, Co. Dublin City, Ireland",
+    "postcode": null
+  },
+  "Local primary schools, Ranelagh, Dublin 6": {
+    "latitude": 53.326525,
+    "longitude": -6.2549546,
+    "formatted_address": "6A, Ranelagh, Dublin 6, Ireland",
+    "postcode": null
+  },
+  "Loreto Park, Nutgrove, Rathfarnham, Dublin 14": {
+    "latitude": 53.2915225,
+    "longitude": -6.2732363,
+    "formatted_address": "Loreto Park, Rathfarnham, Dublin, Ireland",
+    "postcode": null
+  },
+  "Marian Road, Rathfarnham, Dublin 16": {
+    "latitude": 53.2922106,
+    "longitude": -6.2978117,
+    "formatted_address": "Marian Rd, Dublin, Ireland",
+    "postcode": null
+  },
+  "Milltown Road, Milltown, Dublin 6": {
+    "latitude": 53.3125365,
+    "longitude": -6.2475537,
+    "formatted_address": "Milltown Rd, Dublin, Ireland",
+    "postcode": null
+  },
+  "Mountpleasant Square, Ranelagh, Dublin 6": {
+    "latitude": 53.3280822,
+    "longitude": -6.2594098,
+    "formatted_address": "6 Mountpleasant Square, Ranelagh, Dublin 6, D06 XH66, Ireland",
+    "postcode": "D06 XH66"
+  },
+  "Nutgrove Retail Park, Nutgrove Avenue, Rathfarnham, Dublin 14, D14 Y3C5": {
+    "latitude": 53.2925556,
+    "longitude": -6.267383499999999,
+    "formatted_address": "Nutgrove Retail Park, Nutgrove Ave, Whitehall, Dublin 14, D14 NT35, Ireland",
+    "postcode": "D14 NT35"
+  },
+  "Our Lady's School, Terenure Road, Templeogue, Dublin 6W": {
+    "latitude": 53.3001085,
+    "longitude": -6.296414599999999,
+    "formatted_address": "Templeogue Rd, Terenure, Dublin, D6W, Ireland",
+    "postcode": "D6W"
+  },
+  "Pearse Park, 177 Windmill Road, Crumlin, Dublin 12": {
+    "latitude": 53.3221488,
+    "longitude": -6.3136467,
+    "formatted_address": "177 Windmill Rd, Kimmage, Dublin 12, D12 E0C1, Ireland",
+    "postcode": "D12 E0C1"
+  },
+  "Ranelagh, Dublin 6": {
+    "latitude": 53.326525,
+    "longitude": -6.2549546,
+    "formatted_address": "6A, Ranelagh, Dublin 6, Ireland",
+    "postcode": null
+  },
+  "Rathgar Methodist Church, Brighton Road, Rathgar, Dublin 6": {
+    "latitude": 53.3144892,
+    "longitude": -6.2793347,
+    "formatted_address": "71B Brighton Rd, Terenure, Dublin 6, D06 Y497, Ireland",
+    "postcode": "D06 Y497"
+  },
+  "Rathmines Library, 157 Lower Rathmines Road, Rathmines, Dublin 6": {
+    "latitude": 53.32416389999999,
+    "longitude": -6.2656331,
+    "formatted_address": "157 Rathmines Rd Lower, Rathmines, Dublin 6, D06 K2K6, Ireland",
+    "postcode": "D06 K2K6"
+  },
+  "Rathmines-St Louis High School, Rathmines, Dublin 6": {
+    "latitude": 53.3215231,
+    "longitude": -6.2705725,
+    "formatted_address": "Charleville Rd, Rathmines, Dublin, 6, Ireland",
+    "postcode": "6"
+  },
+  "Rear of Cullenswood Park, Ranelagh, Dublin 6, D06 Y313": {
+    "latitude": 53.3239949,
+    "longitude": -6.2491014,
+    "formatted_address": "6 Cullenswood Park, Ranelagh, Dublin 6, D06 KN77, Ireland",
+    "postcode": "D06 KN77"
+  },
+  "St Pius Forest School, Bushy Park, Templeogue, Dublin 6W": {
+    "latitude": 53.2964776,
+    "longitude": -6.3167883,
+    "formatted_address": "Templeogue, Dublin, Ireland",
+    "postcode": null
+  },
+  "St. Columba's College Gym, 16 Kilmashogue Lane, Whitechurch, Rathfarnham, Dublin 16": {
+    "latitude": 53.264741,
+    "longitude": -6.279239,
+    "formatted_address": "16 Kilmashogue Ln, Kilmashogue, Dublin, D12 W9D0, Ireland",
+    "postcode": "D12 W9D0"
+  },
+  "Studio 23, Marlay Craft Courtyard, Rathfarnham, Dublin 16": {
+    "latitude": 53.2781933,
+    "longitude": -6.2701072,
+    "formatted_address": "Rathfarnham, Dublin 16, D16 W5F7, Ireland",
+    "postcode": "D16 W5F7"
+  },
+  "TUD Tallaght arena (home venue), Templeogue, Dublin 6W": {
+    "latitude": 53.2924218,
+    "longitude": -6.3344148,
+    "formatted_address": "Tymon Ln, Castletymon Road, Tymon North, Dublin, D24 N449, Ireland",
+    "postcode": "D24 N449"
+  },
+  "Templeogue College, Templeville Road, Templeogue, Dublin 6W": {
+    "latitude": 53.3041989,
+    "longitude": -6.3119979,
+    "formatted_address": "Templeville Rd, Kimmage, Dublin, Ireland",
+    "postcode": null
+  },
+  "Templeogue, Dublin 6W": {
+    "latitude": 53.2964776,
+    "longitude": -6.3167883,
+    "formatted_address": "Templeogue, Dublin, Ireland",
+    "postcode": null
+  },
+  "Terenure College RFC, Greenlea Grove, Terenure, Dublin 6W": {
+    "latitude": 53.3086336,
+    "longitude": -6.2935685,
+    "formatted_address": "Greenlea Grove, Terenure, Dublin, Ireland",
+    "postcode": null
+  },
+  "Terenure College, Terenure, Dublin 6W": {
+    "latitude": 53.3043975,
+    "longitude": -6.2968706,
+    "formatted_address": "Templeogue Rd, Terenure, Dublin, D6W DK72, Ireland",
+    "postcode": "D6W DK72"
+  },
+  "Terenure Library, Terenure, Dublin 6W": {
+    "latitude": 53.3089625,
+    "longitude": -6.285245799999999,
+    "formatted_address": "Templeogue Rd, Terenure, Dublin, D6W YC59, Ireland",
+    "postcode": "D6W YC59"
+  },
+  "Terenure Sports Club, 54 Terenure Road North, Terenure, Dublin 6W": {
+    "latitude": 53.3134254,
+    "longitude": -6.2842536,
+    "formatted_address": "54 Terenure Rd N, Terenure, Dublin 6W, Co. Dublin, D6W X265, Ireland",
+    "postcode": "D6W X265"
+  },
+  "The High School, Danum, Zion Road, Rathgar, Dublin 6": {
+    "latitude": 53.30598430000001,
+    "longitude": -6.2737427,
+    "formatted_address": "Danum, Zion Rd, Rathgar, Dublin 6, D06 YR68, Ireland",
+    "postcode": "D06 YR68"
+  },
+  "The High School, Zion Road, Rathgar, Dublin 6": {
+    "latitude": 53.30598430000001,
+    "longitude": -6.2737427,
+    "formatted_address": "Danum, Zion Rd, Rathgar, Dublin 6, D06 YR68, Ireland",
+    "postcode": "D06 YR68"
+  },
+  "Tymon Park all-weather pitch, Templeogue, Dublin 6W": {
+    "latitude": 53.3041126,
+    "longitude": -6.3412494,
+    "formatted_address": "Tymon Park, Tallaght, Dublin, Ireland",
+    "postcode": null
+  },
+  "Unit 1/2B Nutgrove Shopping Centre, Nutgrove Way, Rathfarnham, Dublin 14": {
+    "latitude": 53.2897265,
+    "longitude": -6.2674656,
+    "formatted_address": "1, Nutgrove Shopping Centre, Unit 28 Nutgrove Way, Rathfarnham, Dublin 14, Ireland",
+    "postcode": null
+  },
+  "VFI Court, Castleside Drive, Rathfarnham, Dublin 14, D14 EY73": {
+    "latitude": 53.2985691,
+    "longitude": -6.2808815,
+    "formatted_address": "Castleside Dr, Rathfarnham, Dublin, Ireland",
+    "postcode": null
+  },
+  "War Memorial Hall, Terenure, Dublin 6W": {
+    "latitude": 53.3084522,
+    "longitude": -6.301157700000001,
+    "formatted_address": "Terenure, Dublin 6W, Co. Dublin, Ireland",
+    "postcode": null
+  },
+  "Wellington Lane, Templeogue, Dublin 6W": {
+    "latitude": 53.2997168,
+    "longitude": -6.3244035,
+    "formatted_address": "Wellington Ln, Templeogue, Dublin, Ireland",
+    "postcode": null
+  },
+  "Wesley House, Leeson Park, Ranelagh, Dublin 6": {
+    "latitude": 53.3293215,
+    "longitude": -6.2518009,
+    "formatted_address": "Leeson Park, Ranelagh, Dublin, D06 E542, Ireland",
+    "postcode": "D06 E542"
+  },
+  "Willie Pearse Park, Windmill Road, Crumlin, Dublin 12, D12 FH60": {
+    "latitude": 53.3238897,
+    "longitude": -6.3119866,
+    "formatted_address": "Windmill Rd, Dublin, Ireland",
+    "postcode": null
   }
 }

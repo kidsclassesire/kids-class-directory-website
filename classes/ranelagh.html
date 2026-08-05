@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Ranelagh | Kids Patch</title>
+    <meta name="description" content="Browse 7 kids activities and classes in Ranelagh, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/ranelagh.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Ranelagh | Kids Patch">
+    <meta property="og:description" content="Browse 7 kids activities and classes in Ranelagh, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/ranelagh.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Ranelagh | Kids Patch">
+    <meta name="twitter:description" content="Browse 7 kids activities and classes in Ranelagh, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=3646260db5">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Ranelagh", "description": "Browse 7 kids activities and classes in Ranelagh, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/ranelagh.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 7, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/isabelle-ashe-dance-studios-ranelagh-1779.html", "name": "Isabelle Ashe Dance Studios - Ranelagh"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/the-independent-theatre-workshop-1780.html", "name": "The Independent Theatre Workshop"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/ranelagh-gaels-gaa-juvenile-academy-1781.html", "name": "Ranelagh Gaels GAA - Juvenile Academy"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/hombu-dojo-karate-ranelagh-1782.html", "name": "Hombu Dojo Karate - Ranelagh"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/mount-pleasant-tennis-club-1783.html", "name": "Mount Pleasant Tennis Club"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/alto-school-of-music-ranelagh-1784.html", "name": "Alto School of Music - Ranelagh"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/soccer-stars-ranelagh-1785.html", "name": "Soccer Stars - Ranelagh"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="dublin.html">Dublin</a> &rsaquo; Ranelagh</nav>
+        <h1>Kids Activities in Ranelagh</h1>
+        <p class="landing-intro">Browse 7 kids activities and classes in Ranelagh. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="dublin.html">&larr; All activities in County Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="1779">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Isabelle Ashe Dance Studios - Ranelagh</h3>
+            <div class="tag-container"><span class="tag">Dance</span></div>
+            <p class="description">Ballet and modern theatre dance classes for young children.</p>
+            
+            <a href="../business/isabelle-ashe-dance-studios-ranelagh-1779.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1780">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>The Independent Theatre Workshop</h3>
+            <div class="tag-container"><span class="tag">Drama</span></div>
+            <p class="description">Performing arts school teaching singing, dance and drama; runs classes in Ranelagh.</p>
+            
+            <a href="../business/the-independent-theatre-workshop-1780.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1781">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Ranelagh Gaels GAA - Juvenile Academy</h3>
+            <div class="tag-container"><span class="tag">GAA</span></div>
+            <p class="description">Community GAA club founded in Ranelagh; football/hurling academy for young children.</p>
+            
+            <a href="../business/ranelagh-gaels-gaa-juvenile-academy-1781.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1782">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Hombu Dojo Karate - Ranelagh</h3>
+            <div class="tag-container"><span class="tag">Martial Arts</span></div>
+            <p class="description">Shotokan karate dojo with dedicated kids classes.</p>
+            
+            <a href="../business/hombu-dojo-karate-ranelagh-1782.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1783">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Mount Pleasant Tennis Club</h3>
+            <div class="tag-container"><span class="tag">Tennis</span></div>
+            <p class="description">700+ member club with 11 courts and junior coaching.</p>
+            
+            <a href="../business/mount-pleasant-tennis-club-1783.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1784">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Alto School of Music - Ranelagh</h3>
+            <div class="tag-container"><span class="tag">Music</span></div>
+            <p class="description">Group/private piano, guitar, violin and other instrument lessons delivered in local schools.</p>
+            
+            <a href="../business/alto-school-of-music-ranelagh-1784.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1785">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Soccer Stars - Ranelagh</h3>
+            <div class="tag-container"><span class="tag">Football</span></div>
+            <p class="description">Early-years football coaching, Saturdays.</p>
+            <div class="landing-card-meta">Saturday &middot; 10:00-11:45</div>
+            <a href="../business/soccer-stars-ranelagh-1785.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 1779, "lat": 53.3293215, "lon": -6.2518009, "name": "Isabelle Ashe Dance Studios - Ranelagh", "category": "Dance", "url": "../business/isabelle-ashe-dance-studios-ranelagh-1779.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1780, "lat": 53.326525, "lon": -6.2549546, "name": "The Independent Theatre Workshop", "category": "Drama", "url": "../business/the-independent-theatre-workshop-1780.html", "minAge": 3, "maxAge": null, "price": null, "free": false}, {"id": 1781, "lat": 53.3185619, "lon": -6.2634559, "name": "Ranelagh Gaels GAA - Juvenile Academy", "category": "GAA", "url": "../business/ranelagh-gaels-gaa-juvenile-academy-1781.html", "minAge": 5, "maxAge": 7, "price": null, "free": false}, {"id": 1782, "lat": 53.3239949, "lon": -6.2491014, "name": "Hombu Dojo Karate - Ranelagh", "category": "Martial Arts", "url": "../business/hombu-dojo-karate-ranelagh-1782.html", "minAge": 5, "maxAge": 11, "price": null, "free": false}, {"id": 1783, "lat": 53.3280822, "lon": -6.2594098, "name": "Mount Pleasant Tennis Club", "category": "Tennis", "url": "../business/mount-pleasant-tennis-club-1783.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1784, "lat": 53.326525, "lon": -6.2549546, "name": "Alto School of Music - Ranelagh", "category": "Music", "url": "../business/alto-school-of-music-ranelagh-1784.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1785, "lat": 53.3187757, "lon": -6.25169, "name": "Soccer Stars - Ranelagh", "category": "Football", "url": "../business/soccer-stars-ranelagh-1785.html", "minAge": 1.5, "maxAge": 8, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>
