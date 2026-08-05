@@ -74,6 +74,25 @@
         .classes-table input[type="number"] { min-width: 68px; }
         .classes-table input[type="date"] { min-width: 135px; }
         .classes-table input[type="text"] { min-width: 110px; }
+        .form-group input:disabled, .form-group select:disabled { background: #F1F5F9; color: var(--text-muted); cursor: not-allowed; }
+        .field-hint { font-size: 0.75rem; color: var(--text-muted); margin: 0.4rem 0 0; }
+        .tab-intro { color: var(--text-muted); margin: -0.5rem 0 1.25rem; font-size: 0.85rem; line-height: 1.5; }
+        .free-checkbox-group { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .free-checkbox-group input { width: auto; }
+        .free-checkbox-group label { font-size: 0.9rem; font-weight: 700; margin: 0; }
+        .price-preview { font-size: 0.85rem; color: var(--text-muted); margin: -0.9rem 0 1.25rem; }
+        .autocomplete-wrap { position: relative; }
+        .field-suggestions {
+            display: none; position: absolute; top: calc(100% + 6px); left: 0; right: 0;
+            background: #ffffff; border: 1px solid var(--border); border-radius: 10px;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12); padding: 6px; z-index: 20;
+            max-height: 220px; overflow-y: auto; box-sizing: border-box;
+        }
+        .field-suggestions.visible { display: block; }
+        .field-suggestion {
+            padding: 8px 10px; border-radius: 8px; cursor: pointer; font-size: 0.88rem; color: var(--text-dark);
+        }
+        .field-suggestion:hover, .field-suggestion.active { background: var(--bg-page); }
 
         @media (max-width: 640px) {
             body { padding: 0.75rem; }
@@ -195,7 +214,7 @@
                     </div>
                     <div class="image-field-actions">
                         <label style="font-size:0.85rem; font-weight:700;">Logo</label>
-                        <p class="image-hint">Shown as a small badge on your card.</p>
+                        <p class="image-hint">Shown as a small badge on your card. Best as a square image, at least 200×200px — it's scaled to fit, not cropped, so a square logo with a plain or transparent background looks best.</p>
                         <div class="btn-row">
                             <input type="file" id="logo-file-input" accept="image/*" style="display:none;">
                             <button type="button" class="btn-secondary" id="logo-upload-btn">Upload</button>
@@ -209,7 +228,7 @@
                     </div>
                     <div class="image-field-actions">
                         <label style="font-size:0.85rem; font-weight:700;">Banner photo</label>
-                        <p class="image-hint">The main image at the top of your card.</p>
+                        <p class="image-hint">The main image at the top of your card. Best as a landscape photo, at least 1200×675px (16:9) — it's automatically cropped to fill the frame, so the edges (especially top/bottom) may not always show.</p>
                         <div class="btn-row">
                             <input type="file" id="banner-file-input" accept="image/*" style="display:none;">
                             <button type="button" class="btn-secondary" id="banner-upload-btn">Upload</button>
@@ -228,11 +247,15 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="edit-category">Category</label>
-                        <input type="text" id="edit-category" placeholder="e.g. Music, Football, Arts and crafts">
+                        <select id="edit-category">
+                            <option value="">Select a category&hellip;</option>
+                        </select>
+                        <input type="text" id="edit-category-other" placeholder="Enter your category" style="display:none; margin-top:0.5rem;">
                     </div>
                     <div class="form-group">
                         <label for="edit-class-types">Class Types</label>
                         <input type="text" id="edit-class-types" placeholder="Comma-separated, e.g. Ballet, Tap">
+                        <p class="field-hint">Optional, more specific than Category — e.g. a Music school might list "Piano, Guitar, Violin". Shown as extra detail on your listing; the Individual Classes tab is the place for full class-by-class scheduling.</p>
                     </div>
                 </div>
                 <div class="form-group">
@@ -243,6 +266,7 @@
             </div>
 
             <div class="tab-panel" data-tab-panel="schedule">
+            <p class="tab-intro">Use this tab for broad claims — i.e. if you run a few different classes for a different ages, fill out the full range of ages you cater for. The Individual Classes tab lets you enter class-by-class.</p>
             <fieldset>
                 <legend>Ages &amp; Supervision</legend>
                 <div class="form-row">
@@ -306,20 +330,28 @@
             <div class="tab-panel" data-tab-panel="pricing">
             <fieldset>
                 <legend>Pricing</legend>
+                <div class="free-checkbox-group">
+                    <input type="checkbox" id="edit-is-free">
+                    <label for="edit-is-free">This is free (no charge)</label>
+                </div>
                 <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-price-currency">Currency</label>
+                        <select id="edit-price-currency">
+                            <option value="EUR">EUR (&euro;)</option>
+                            <option value="GBP">GBP (&pound;)</option>
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label for="edit-price-amount">Price Amount</label>
                         <input type="number" id="edit-price-amount" step="0.01" min="0">
-                    </div>
-                    <div class="form-group">
-                        <label for="edit-price-currency">Currency</label>
-                        <input type="text" id="edit-price-currency" placeholder="EUR">
                     </div>
                     <div class="form-group">
                         <label for="edit-pricing-basis">Basis</label>
                         <input type="text" id="edit-pricing-basis" placeholder="e.g. Per term, Per class">
                     </div>
                 </div>
+                <p class="price-preview" id="price-preview"></p>
                 <div class="form-group">
                     <label for="edit-pricing-details">Pricing Details</label>
                     <textarea id="edit-pricing-details" placeholder="Any extra detail on pricing, sibling discounts, etc."></textarea>
@@ -330,6 +362,10 @@
             <div class="tab-panel" data-tab-panel="contact">
             <fieldset>
                 <legend>Contact &amp; Links</legend>
+                <div class="form-group">
+                    <label for="edit-contact-name">Contact Name</label>
+                    <input type="text" id="edit-contact-name" placeholder="e.g. Jane Doe">
+                </div>
                 <div class="form-group">
                     <label for="edit-website">Website URL</label>
                     <input type="url" id="edit-website">
@@ -350,7 +386,13 @@
                 </div>
                 <div class="form-group">
                     <label for="edit-address">Address</label>
-                    <input type="text" id="edit-address">
+                    <div class="autocomplete-wrap">
+                        <input type="text" id="edit-address" autocomplete="off">
+                        <div class="field-suggestions" id="address-suggestions"></div>
+                    </div>
+                    <input type="hidden" id="edit-latitude">
+                    <input type="hidden" id="edit-longitude">
+                    <p class="field-hint">Start typing and pick a match — this also saves accurate map coordinates for your listing. You can still type a full address manually without picking a suggestion.</p>
                 </div>
                 <div class="form-group">
                     <label for="edit-eircode">Eircode</label>
@@ -432,6 +474,32 @@
         const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
         const STORAGE_BUCKET = 'business-uploads';
         const STORAGE_PUBLIC_PREFIX = `${SUPABASE_URL}/storage/v1/object/public/${STORAGE_BUCKET}/`;
+
+        // Same grouping as CATEGORY_GROUPS in index.html (kept in sync manually) --
+        // the canonical set of categories used across the site's filters.
+        const CATEGORY_GROUPS = [
+            ['Sports & Fitness', ['Athletics', 'Basketball', 'Football', 'GAA', 'Gymnastics', 'Hockey',
+                'Horse Riding', 'Martial Arts', 'Rugby', 'Sports', 'Swimming', 'Team Sports', 'Tennis', 'Watersports']],
+            ['Arts, Music & Drama', ['Arts and crafts', 'Cooking', 'Dance', 'Drama', 'Music']],
+            ['Baby & Toddler', ['Developmental', 'Parent-and-toddler']],
+            ['Academic & STEM', ['Academic Support', 'Languages', 'STEM']],
+            ['Camps & Outdoor', ['Camps', 'Outdoor']],
+        ];
+        const OTHER_CATEGORY_VALUE = '__other__';
+        const ALL_KNOWN_CATEGORIES = new Set(CATEGORY_GROUPS.flatMap(([, members]) => members));
+
+        function populateCategorySelect() {
+            const select = document.getElementById('edit-category');
+            let html = '<option value="">Select a category&hellip;</option>';
+            CATEGORY_GROUPS.forEach(([groupLabel, members]) => {
+                html += `<optgroup label="${escapeHtml(groupLabel)}">` +
+                    members.map(c => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('') +
+                    '</optgroup>';
+            });
+            html += `<option value="${OTHER_CATEGORY_VALUE}">Other / not listed &mdash; suggest a new category</option>`;
+            select.innerHTML = html;
+        }
+        populateCategorySelect();
 
         let isSignUp = true;
         let currentUserEmail = '';
@@ -642,6 +710,181 @@
             return (str || '').split(',').map(s => s.trim()).filter(Boolean);
         }
 
+        // ---- Category select + "suggest a new one" free-text fallback ----
+        function setCategoryValue(category) {
+            const select = document.getElementById('edit-category');
+            const otherInput = document.getElementById('edit-category-other');
+            if (category && ALL_KNOWN_CATEGORIES.has(category)) {
+                select.value = category;
+                otherInput.style.display = 'none';
+                otherInput.value = '';
+            } else if (category) {
+                // Not one of the known categories -- e.g. an existing listing with an
+                // older/one-off value -- keep it visible and editable rather than
+                // silently swapping it for a known category on save.
+                select.value = OTHER_CATEGORY_VALUE;
+                otherInput.value = category;
+                otherInput.style.display = 'block';
+            } else {
+                select.value = '';
+                otherInput.style.display = 'none';
+                otherInput.value = '';
+            }
+        }
+        function getCategoryValue() {
+            const select = document.getElementById('edit-category');
+            if (select.value === OTHER_CATEGORY_VALUE) {
+                return document.getElementById('edit-category-other').value.trim() || null;
+            }
+            return select.value || null;
+        }
+        document.getElementById('edit-category').addEventListener('change', () => {
+            const otherInput = document.getElementById('edit-category-other');
+            if (document.getElementById('edit-category').value === OTHER_CATEGORY_VALUE) {
+                otherInput.style.display = 'block';
+                otherInput.focus();
+            } else {
+                otherInput.style.display = 'none';
+            }
+        });
+
+        // ---- Pricing: currency-formatted preview + "Free" toggle ----
+        // price_amount === 0 is the same convention scripts/generate_landing_pages.py's
+        // is_free() already uses to drive the "Free only" filter on category/county
+        // landing pages, so ticking this box here plugs straight into that.
+        function updatePricePreview() {
+            const preview = document.getElementById('price-preview');
+            if (document.getElementById('edit-is-free').checked) {
+                preview.textContent = 'Will show as Free.';
+                return;
+            }
+            const amount = document.getElementById('edit-price-amount').value;
+            const currency = document.getElementById('edit-price-currency').value;
+            if (amount === '') {
+                preview.textContent = '';
+                return;
+            }
+            const locale = currency === 'GBP' ? 'en-GB' : 'en-IE';
+            try {
+                preview.textContent = new Intl.NumberFormat(locale, { style: 'currency', currency }).format(Number(amount));
+            } catch (err) {
+                preview.textContent = '';
+            }
+        }
+        document.getElementById('edit-price-amount').addEventListener('input', updatePricePreview);
+        document.getElementById('edit-price-currency').addEventListener('change', updatePricePreview);
+
+        function setFreeState(isFree) {
+            const amountInput = document.getElementById('edit-price-amount');
+            const currencySelect = document.getElementById('edit-price-currency');
+            const basisInput = document.getElementById('edit-pricing-basis');
+            document.getElementById('edit-is-free').checked = isFree;
+            amountInput.disabled = isFree;
+            currencySelect.disabled = isFree;
+            basisInput.disabled = isFree;
+            if (isFree) {
+                amountInput.value = '0';
+            } else if (amountInput.value === '0') {
+                amountInput.value = '';
+            }
+            updatePricePreview();
+        }
+        document.getElementById('edit-is-free').addEventListener('change', (e) => setFreeState(e.target.checked));
+
+        // ---- Address lookup, backed by Photon (photon.komoot.io) -- the same free,
+        // keyless geocoder already used for the "Where" field on index.html, so this
+        // needs no new API key/billing setup. Selecting a match also fills the hidden
+        // lat/lon fields, which is more accurate than the manual geocoding scripts
+        // this site otherwise relies on. ----
+        function formatAddressLabel(props) {
+            const primary = [props.housenumber, props.street].filter(Boolean).join(' ') || props.name;
+            return [primary, props.city || props.district, props.county, props.postcode]
+                .filter((part, i, all) => part && all.indexOf(part) === i)
+                .join(', ');
+        }
+        async function fetchAddressMatches(query) {
+            try {
+                const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&limit=6&lang=en` +
+                    `&lat=53.35&lon=-8&bbox=-10.75,51.2,-5.3,55.6`;
+                const res = await fetch(url);
+                if (!res.ok) return [];
+                const data = await res.json();
+                return (data.features || [])
+                    .filter(f => !f.properties.countrycode || f.properties.countrycode.toUpperCase() === 'IE')
+                    .map(f => ({
+                        label: formatAddressLabel(f.properties),
+                        lat: f.geometry.coordinates[1],
+                        lon: f.geometry.coordinates[0],
+                    }))
+                    .filter(item => item.label);
+            } catch (err) {
+                console.warn('Address suggestion lookup failed:', err);
+                return [];
+            }
+        }
+        (function setupAddressTypeahead() {
+            const input = document.getElementById('edit-address');
+            const container = document.getElementById('address-suggestions');
+            let items = [];
+            let activeIndex = -1;
+            let debounceTimer = null;
+            let requestSeq = 0;
+
+            function render() {
+                if (!items.length) { hide(); return; }
+                container.innerHTML = items.map((item, i) =>
+                    `<div class="field-suggestion" data-index="${i}">${escapeHtml(item.label)}</div>`
+                ).join('');
+                container.classList.add('visible');
+            }
+            function hide() {
+                items = [];
+                activeIndex = -1;
+                container.innerHTML = '';
+                container.classList.remove('visible');
+            }
+            function setActive(i) {
+                activeIndex = i;
+                [...container.children].forEach((el, idx) => el.classList.toggle('active', idx === i));
+            }
+            function select(item) {
+                input.value = item.label;
+                document.getElementById('edit-latitude').value = item.lat;
+                document.getElementById('edit-longitude').value = item.lon;
+                hide();
+            }
+            async function runQuery(q) {
+                const seq = ++requestSeq;
+                const matches = await fetchAddressMatches(q);
+                if (seq !== requestSeq) return; // a newer keystroke already superseded this lookup
+                items = matches;
+                activeIndex = -1;
+                render();
+            }
+            input.addEventListener('input', () => {
+                const q = input.value.trim();
+                clearTimeout(debounceTimer);
+                if (q.length < 3) { requestSeq++; hide(); return; }
+                debounceTimer = setTimeout(() => runQuery(q), 300);
+            });
+            input.addEventListener('keydown', (e) => {
+                if (!container.classList.contains('visible')) return;
+                if (e.key === 'ArrowDown') { e.preventDefault(); setActive(Math.min(activeIndex + 1, items.length - 1)); }
+                else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(Math.max(activeIndex - 1, -1)); }
+                else if (e.key === 'Escape') hide();
+                else if (e.key === 'Enter' && activeIndex >= 0 && items[activeIndex]) { e.preventDefault(); select(items[activeIndex]); }
+            });
+            container.addEventListener('mousedown', (e) => {
+                const el = e.target.closest('.field-suggestion');
+                if (!el) return;
+                e.preventDefault();
+                select(items[parseInt(el.dataset.index, 10)]);
+            });
+            document.addEventListener('click', (e) => {
+                if (!input.closest('.autocomplete-wrap').contains(e.target)) hide();
+            });
+        })();
+
         function escapeHtml(unsafe) {
             return (unsafe || '').toString()
                  .replace(/&/g, "&amp;")
@@ -782,7 +1025,7 @@
             // Populate Form
             document.getElementById('edit-id').value = business.id;
             document.getElementById('edit-name').value = business.company_name || '';
-            document.getElementById('edit-category').value = business.category || '';
+            setCategoryValue(business.category || '');
             document.getElementById('edit-class-types').value = (business.class_types || []).join(', ');
             document.getElementById('edit-description').value = business.description || '';
             document.getElementById('edit-min-age').value = business.minimum_age ?? '';
@@ -793,15 +1036,19 @@
             document.getElementById('edit-start-time').value = business.start_time || '';
             document.getElementById('edit-end-time').value = business.end_time || '';
             document.getElementById('edit-term-structure').value = business.term_structure || '';
+            document.getElementById('edit-price-currency').value = business.price_currency === 'GBP' ? 'GBP' : 'EUR';
             document.getElementById('edit-price-amount').value = business.price_amount ?? '';
-            document.getElementById('edit-price-currency').value = business.price_currency || 'EUR';
+            setFreeState(business.price_amount === 0);
             document.getElementById('edit-pricing-basis').value = business.pricing_basis || '';
             document.getElementById('edit-pricing-details').value = business.pricing_details || '';
+            document.getElementById('edit-contact-name').value = business.contact_name || '';
             document.getElementById('edit-website').value = business.website_url || '';
             document.getElementById('edit-booking-url').value = business.booking_url || '';
             document.getElementById('edit-email').value = business.email_address || '';
             document.getElementById('edit-phone').value = business.phone_number || '';
             document.getElementById('edit-address').value = business.address || '';
+            document.getElementById('edit-latitude').value = business.latitude ?? '';
+            document.getElementById('edit-longitude').value = business.longitude ?? '';
             document.getElementById('edit-eircode').value = business.eircode || '';
             document.getElementById('edit-facebook').value = business.facebook_url || '';
             document.getElementById('edit-instagram').value = business.instagram_url || '';
@@ -1049,7 +1296,7 @@
 
             const updates = {
                 company_name: document.getElementById('edit-name').value,
-                category: strOrNull(document.getElementById('edit-category').value),
+                category: getCategoryValue(),
                 class_types: csvToArray(document.getElementById('edit-class-types').value),
                 description: document.getElementById('edit-description').value,
                 minimum_age: numOrNull(document.getElementById('edit-min-age').value),
@@ -1064,11 +1311,14 @@
                 price_currency: strOrNull(document.getElementById('edit-price-currency').value),
                 pricing_basis: strOrNull(document.getElementById('edit-pricing-basis').value),
                 pricing_details: strOrNull(document.getElementById('edit-pricing-details').value),
+                contact_name: strOrNull(document.getElementById('edit-contact-name').value),
                 website_url: strOrNull(document.getElementById('edit-website').value),
                 booking_url: strOrNull(document.getElementById('edit-booking-url').value),
                 email_address: strOrNull(document.getElementById('edit-email').value),
                 phone_number: strOrNull(document.getElementById('edit-phone').value),
                 address: strOrNull(document.getElementById('edit-address').value),
+                latitude: numOrNull(document.getElementById('edit-latitude').value),
+                longitude: numOrNull(document.getElementById('edit-longitude').value),
                 eircode: strOrNull(document.getElementById('edit-eircode').value),
                 facebook_url: strOrNull(document.getElementById('edit-facebook').value),
                 instagram_url: strOrNull(document.getElementById('edit-instagram').value),
