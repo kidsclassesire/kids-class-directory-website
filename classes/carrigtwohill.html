@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Carrigtwohill | Kids Patch</title>
+    <meta name="description" content="Browse 4 kids activities and classes in Carrigtwohill, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/carrigtwohill.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Carrigtwohill | Kids Patch">
+    <meta property="og:description" content="Browse 4 kids activities and classes in Carrigtwohill, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/carrigtwohill.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Carrigtwohill | Kids Patch">
+    <meta name="twitter:description" content="Browse 4 kids activities and classes in Carrigtwohill, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=39453c30e8">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Carrigtwohill", "description": "Browse 4 kids activities and classes in Carrigtwohill, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/carrigtwohill.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 4, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/kidlit-creators-creative-writing-for-kids-1153.html", "name": "KidLit Creators - Creative writing for kids!"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/carrigtwohill-family-resource-centre-parent-and-toddler-grou-1711.html", "name": "Carrigtwohill Family Resource Centre - Parent and Toddler Group"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/j-h-kim-taekwon-do-institute-carrigtwohill-1712.html", "name": "J. H. Kim Taekwon-do Institute - Carrigtwohill"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/bushido-karate-club-carrigtwohill-1713.html", "name": "Bushido Karate Club - Carrigtwohill"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="cork.html">Cork</a> &rsaquo; Carrigtwohill</nav>
+        <h1>Kids Activities in Carrigtwohill</h1>
+        <p class="landing-intro">Browse 4 kids activities and classes in Carrigtwohill. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="cork.html">&larr; All activities in County Cork</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="1153">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>KidLit Creators - Creative writing for kids!</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">KidLit Creators is a creative writing class for kids aged 8-10. The class aims to stimulate imagination and self-expression, while promoting social skills and confidence, all in a fun, screen-free environment. Currently offered in Glounthaune and Carrigtwohill, after school, 3.30-4.30pm, Mondays &amp; Tuesdays. For enquiries, email kidlitcreators@hotmail.com and follow @kidlitcreators on Instagram for updates on classes, workshops and camps.</p>
+            
+            <a href="../business/kidlit-creators-creative-writing-for-kids-1153.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1711">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Carrigtwohill Family Resource Centre - Parent and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Weekly parent/toddler sessions Mon-Thu 10:30am, €2/child; play-based social support.</p>
+            
+            <a href="../business/carrigtwohill-family-resource-centre-parent-and-toddler-grou-1711.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1712">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>J. H. Kim Taekwon-do Institute - Carrigtwohill</h3>
+            <div class="tag-container"><span class="tag">Martial Arts</span></div>
+            <p class="description">Kids Taekwondo from age 3, continuous enrolment, free first class, led by Master Cyril McSweeney (6th Dan).</p>
+            
+            <a href="../business/j-h-kim-taekwon-do-institute-carrigtwohill-1712.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1713">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Bushido Karate Club - Carrigtwohill</h3>
+            <div class="tag-container"><span class="tag">Martial Arts</span></div>
+            <p class="description">Shotokan karate from age 6, Mon/Thu evenings, free trial class.</p>
+            
+            <a href="../business/bushido-karate-club-carrigtwohill-1713.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 1153, "lat": 51.9094617, "lon": -8.2611809, "name": "KidLit Creators - Creative writing for kids!", "category": "Parent-and-toddler", "url": "../business/kidlit-creators-creative-writing-for-kids-1153.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1711, "lat": 51.9094471, "lon": -8.2604343, "name": "Carrigtwohill Family Resource Centre - Parent and Toddler Group", "category": "Parent-and-toddler", "url": "../business/carrigtwohill-family-resource-centre-parent-and-toddler-grou-1711.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1712, "lat": 51.9127024, "lon": -8.2770009, "name": "J. H. Kim Taekwon-do Institute - Carrigtwohill", "category": "Martial Arts", "url": "../business/j-h-kim-taekwon-do-institute-carrigtwohill-1712.html", "minAge": 3.0, "maxAge": null, "price": null, "free": false}, {"id": 1713, "lat": 51.9094919, "lon": -8.2589402, "name": "Bushido Karate Club - Carrigtwohill", "category": "Martial Arts", "url": "../business/bushido-karate-club-carrigtwohill-1713.html", "minAge": 6.0, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Kells | Kids Patch</title>
+    <meta name="description" content="Browse 4 kids activities and classes in Kells, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/kells.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Kells | Kids Patch">
+    <meta property="og:description" content="Browse 4 kids activities and classes in Kells, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/kells.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Kells | Kids Patch">
+    <meta name="twitter:description" content="Browse 4 kids activities and classes in Kells, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=39453c30e8">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Kells", "description": "Browse 4 kids activities and classes in Kells, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/kells.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 4, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/kids-classes-in-kells-kells-family-resource-centre-329.html", "name": "Kids Classes in Kells - Kells Family Resource Centre"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/kells-parent-baby-and-toddler-group-346.html", "name": "Kells Parent, Baby and Toddler Group"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/kells-tennis-club-junior-camps-1407.html", "name": "Kells Tennis Club - Junior Camps"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/designer-minds-kells-steam-summer-camp-1669.html", "name": "Designer Minds - Kells STEAM Summer Camp"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="meath.html">Meath</a> &rsaquo; Kells</nav>
+        <h1>Kids Activities in Kells</h1>
+        <p class="landing-intro">Browse 4 kids activities and classes in Kells. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="meath.html">&larr; All activities in County Meath</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="329">
+        <div class="card-image"><img class="logo-badge" src="../logos/kellsfrc-ie.png" alt="Kids Classes in Kells - Kells Family Resource Centre logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Kids Classes in Kells - Kells Family Resource Centre</h3>
+            <div class="tag-container"><span class="tag">Arts and crafts</span></div>
+            <p class="description">Kells Family Resource Centre offers a number of classes/groups to support children and families. Kells Angels Youth Club (8-12 years): registration is €10, plus a €3 fee at each café meeting. Kells Foróige Youth Café (13-17 years): registration is €10, plus a €2 fee at each café meeting. Art classes (5-12 years): €10 a class. Little Folk, music with Kyle (3 months to 5 years). Brickx Club (5-12 years): €12 per child. Kells CoderDojo (8-17 years): free. Teen Neuro Space: registration €10, plus a €2 fee at each meeting. For more information, see https://www.kellsfrc.ie/childrenandyouth</p>
+            
+            <a href="../business/kids-classes-in-kells-kells-family-resource-centre-329.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="346">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Kells Parent, Baby and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Kells Parent, Baby and Toddler Group is hosted by Kells Family Resource Centre, also known as the Bright Sparks playgroup. Bright Sparks Parent/Carer and Child is an early years play group supporting holistic development, a social space for parents and carers of children aged 0-3, with party days &amp; celebrations, monthly play themes, and a positive environment with lots of fun for your little ones. Location: Kells Family Resource Centre, Lord Edward St, Archdeaconry Glebe, Kells, Co. Meath. Day/Time: every Monday morning, 10-11.45am (during term time). Cost: €3 per family.</p>
+            
+            <a href="../business/kells-parent-baby-and-toddler-group-346.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1407">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Kells Tennis Club - Junior Camps</h3>
+            <div class="tag-container"><span class="tag">Tennis</span></div>
+            <p class="description">Junior tennis camps with daily instruction, Halloween/Easter/Summer sessions; €50-65.</p>
+            
+            <a href="../business/kells-tennis-club-junior-camps-1407.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1669">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Designer Minds - Kells STEAM Summer Camp</h3>
+            <div class="tag-container"><span class="tag">Camps</span></div>
+            <p class="description">Junior/Senior STEAM camp at Eureka House, Kells; €180.</p>
+            
+            <a href="../business/designer-minds-kells-steam-summer-camp-1669.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 329, "lat": 53.72878, "lon": -6.8782, "name": "Kids Classes in Kells - Kells Family Resource Centre", "category": "Arts and crafts", "url": "../business/kids-classes-in-kells-kells-family-resource-centre-329.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 346, "lat": 53.72937, "lon": -6.88031, "name": "Kells Parent, Baby and Toddler Group", "category": "Parent-and-toddler", "url": "../business/kells-parent-baby-and-toddler-group-346.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1407, "lat": 53.7271803, "lon": -6.8769723, "name": "Kells Tennis Club - Junior Camps", "category": "Tennis", "url": "../business/kells-tennis-club-junior-camps-1407.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1669, "lat": 53.7257978, "lon": -6.8719311, "name": "Designer Minds - Kells STEAM Summer Camp", "category": "Camps", "url": "../business/designer-minds-kells-steam-summer-camp-1669.html", "minAge": 6.0, "maxAge": 12.0, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Killarney | Kids Patch</title>
+    <meta name="description" content="Browse 4 kids activities and classes in Killarney, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/killarney.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Killarney | Kids Patch">
+    <meta property="og:description" content="Browse 4 kids activities and classes in Killarney, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/killarney.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Killarney | Kids Patch">
+    <meta name="twitter:description" content="Browse 4 kids activities and classes in Killarney, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=39453c30e8">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Killarney", "description": "Browse 4 kids activities and classes in Killarney, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/killarney.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 4, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/art-jam-studio-565.html", "name": "ART JAM STUDIO"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/macbabies-music-sensory-class-killarney-770.html", "name": "MACBabies Music Sensory class Killarney"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/turtle-tots-swimming-classes-kerry-1229.html", "name": "Turtle Tots Swimming Classes - Kerry"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/activate-kids-programme-killarney-1523.html", "name": "Activate - Kids Programme, Killarney"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="kerry.html">Kerry</a> &rsaquo; Killarney</nav>
+        <h1>Kids Activities in Killarney</h1>
+        <p class="landing-intro">Browse 4 kids activities and classes in Killarney. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="kerry.html">&larr; All activities in County Kerry</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="565">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>ART JAM STUDIO</h3>
+            <div class="tag-container"><span class="tag">Arts and crafts</span></div>
+            <p class="description">Art Jam Studio Killarney is a new creative space for adults to attend one-off creative activities such as Paint &amp; Sip and Sculpt &amp; Sip, along with drop-in sessions during the day to paint your own pottery, mindful art, collage making, splash art, tote bag painting, etc. Also providing pottery classes, abstract art classes, and mindful &amp; intuitive art classes. There will be a range of drop-in creative activities and classes - something for everyone, in a unique space in the centre of Killarney town.</p>
+            
+            <a href="../business/art-jam-studio-565.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="770">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>MACBabies Music Sensory class Killarney</h3>
+            <div class="tag-container"><span class="tag">Music</span></div>
+            <p class="description">Discover the magic of MACBabies at The MACademy in Killarney. Our parent-and-toddler one-hour musical sensory classes combine music, movement, and sensory play to spark little imaginations, with bonding time, social interaction, and developmental benefits in a fun, engaging environment. Perfect for ages 6 months-3 years, located at The Killarney Racecourse on Ross Road, every Tuesday and Thursday at 10am. Suitable for parents or caregivers - join the fun and let&#x27;s make music together.</p>
+            
+            <a href="../business/macbabies-music-sensory-class-killarney-770.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1229">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Turtle Tots Swimming Classes - Kerry</h3>
+            <div class="tag-container"><span class="tag">Swimming</span></div>
+            <p class="description">Turtle Tots lessons are truly child-centred. Each child is nurtured and activities are adapted to meet each individual’s needs. By the time you have reached the end of our baby programme we have taught you all the separate techniques and practices necessary for independent swimming. Our highly trained and skilled teachers ensure lessons are fun and sociable for everyone, whilst teaching your child essential life-saving skills. Babies from 3 months to 4.5 year olds can partake in Turtle Tot swimming lessons.</p>
+            
+            <a href="../business/turtle-tots-swimming-classes-kerry-1229.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1523">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Activate - Kids Programme, Killarney</h3>
+            <div class="tag-container"><span class="tag">Athletics</span></div>
+            <p class="description">Kids fitness programme: bodyweight exercises, conditioning games and coaching for teamwork and confidence; free intro session.</p>
+            
+            <a href="../business/activate-kids-programme-killarney-1523.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 565, "lat": 52.0590247, "lon": -9.5104913, "name": "ART JAM STUDIO", "category": "Arts and crafts", "url": "../business/art-jam-studio-565.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 770, "lat": 52.0481875, "lon": -9.5176875, "name": "MACBabies Music Sensory class Killarney", "category": "Music", "url": "../business/macbabies-music-sensory-class-killarney-770.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1229, "lat": 52.0606406, "lon": -9.4832442, "name": "Turtle Tots Swimming Classes - Kerry", "category": "Swimming", "url": "../business/turtle-tots-swimming-classes-kerry-1229.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1523, "lat": 52.0542088, "lon": -9.485124, "name": "Activate - Kids Programme, Killarney", "category": "Athletics", "url": "../business/activate-kids-programme-killarney-1523.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

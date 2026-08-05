@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Languages Classes in Dublin | Kids Patch</title>
+    <meta name="description" content="Find 5 Languages classes for kids in Dublin. Compare schedules, ages and pricing, then contact providers directly.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/languages-dublin.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Languages Classes in Dublin | Kids Patch">
+    <meta property="og:description" content="Find 5 Languages classes for kids in Dublin. Compare schedules, ages and pricing, then contact providers directly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/languages-dublin.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Languages Classes in Dublin | Kids Patch">
+    <meta name="twitter:description" content="Find 5 Languages classes for kids in Dublin. Compare schedules, ages and pricing, then contact providers directly.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=39453c30e8">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Languages Classes in Dublin", "description": "Find 5 Languages classes for kids in Dublin. Compare schedules, ages and pricing, then contact providers directly.", "url": "https://www.kidspatch.ie/classes/languages-dublin.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 5, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/stay-at-home-irish-summer-college-158.html", "name": "Stay at home Irish Summer College"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/balbriggan-library-184.html", "name": "Balbriggan Library"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/alliance-fran-aise-441.html", "name": "Alliance Française"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/instituto-cervantes-494.html", "name": "Instituto Cervantes"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/mimi-s-french-classes-516.html", "name": "Mimi's French Classes"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="languages.html">Languages</a> &rsaquo; Dublin</nav>
+        <h1>Languages Classes in Dublin</h1>
+        <p class="landing-intro">Explore 5 Languages classes for kids in Dublin, Ireland. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="languages.html">&larr; All Languages classes in Ireland</a><a href="dublin.html">&larr; All classes in Dublin</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="158">
+        <div class="card-image"><img class="banner-img" src="../images/sarghael-ie.jpg" alt="Stay at home Irish Summer College" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/sarghael-ie.png" alt="Stay at home Irish Summer College logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Stay at home Irish Summer College</h3>
+            
+            <p class="description">Looking for a fun way to boost your child&#x27;s Irish this summer? SárGhael is a South Dublin-based Irish summer college offering courses for 1st &amp; 2nd years in IADT, and courses for 3rd-6th class in Clonkeen College. We focus on real Irish in action, helping students build confidence through speaking, sports, music, and making memories with friends - showing them that Irish isn&#x27;t just for the classroom, it&#x27;s a living, vibrant language! Find out more at SárGhael.ie</p>
+            
+            <a href="../business/stay-at-home-irish-summer-college-158.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="184">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Balbriggan Library</h3>
+            
+            <p class="description">Balbriggan Library offers fantastic groups for babies and kids. Activities include Family Story Time, Young Adults Book Club, and Youth Theatre. Sign up to their newsletter to see their monthly activities, especially around school holidays when there are free classes and activities for kids.</p>
+            
+            <a href="../business/balbriggan-library-184.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="441">
+        <div class="card-image"><img class="banner-img" src="../images/alliance-francaise-ie.jpg" alt="Alliance Française" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/alliance-francaise-ie.png" alt="Alliance Française logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Alliance Française</h3>
+            
+            <p class="description">Alliance Française Dublin is a leading French language and cultural centre offering classes for toddlers, children, and teenagers (ages 2-18). Through fun and interactive activities, students build lasting language skills and an appreciation for French culture. Located in the heart of Dublin, the centre is easily accessible and offers a welcoming space for members to relax and socialise. Recognised for excellence, it has received the European Language Label and was named Best Language School in Ireland in 2018.</p>
+            
+            <a href="../business/alliance-fran-aise-441.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="494">
+        <div class="card-image"><img class="banner-img" src="../images/dublin-cervantes-es.jpg" alt="Instituto Cervantes" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/dublin-cervantes-es.png" alt="Instituto Cervantes logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Instituto Cervantes</h3>
+            
+            <p class="description">Instituto Cervantes Dublin offers Spanish language courses for children and teenagers, helping them develop valuable language skills from an early age. Learning Spanish boosts educational success and future career prospects, as it&#x27;s the second most widely used business language globally. Highly qualified native teachers use dynamic, communicative methods to make learning engaging and effective. Located in the heart of Dublin at Lincoln House, the school also offers access to an extensive library and cultural activities to enhance the learning experience.</p>
+            
+            <a href="../business/instituto-cervantes-494.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="516">
+        <div class="card-image"><img class="banner-img" src="../images/mimisfrench-com.jpg" alt="Mimi&#x27;s French Classes" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/mimisfrench-com.png" alt="Mimi&#x27;s French Classes logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Mimi&#x27;s French Classes</h3>
+            
+            <p class="description">Muckross Park Gymnastics provides a range of gymnastics classes from Preschool Gymnastics to Adult Gym Classes. The majority of their gymnasts take part in a one-hour class per week. They also offer Preschool Gymnastics classes on Tuesday &amp; Thursday afternoons at SportsCo.</p>
+            
+            <a href="../business/mimi-s-french-classes-516.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 158, "lat": 53.2797738, "lon": -6.1535736, "name": "Stay at home Irish Summer College", "category": "Languages", "url": "../business/stay-at-home-irish-summer-college-158.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 184, "lat": 53.6084, "lon": -6.18242, "name": "Balbriggan Library", "category": "Languages", "url": "../business/balbriggan-library-184.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 441, "lat": 53.3419906, "lon": -6.2543583, "name": "Alliance Française", "category": "Languages", "url": "../business/alliance-fran-aise-441.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 494, "lat": 53.3421105, "lon": -6.2511766, "name": "Instituto Cervantes", "category": "Languages", "url": "../business/instituto-cervantes-494.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 516, "lat": 53.2852938, "lon": -6.1480918, "name": "Mimi's French Classes", "category": "Languages", "url": "../business/mimi-s-french-classes-516.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developmental Classes in Meath | Kids Patch</title>
+    <meta name="description" content="Find 6 Developmental classes for kids in Meath. Compare schedules, ages and pricing, then contact providers directly.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/developmental-meath.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Developmental Classes in Meath | Kids Patch">
+    <meta property="og:description" content="Find 6 Developmental classes for kids in Meath. Compare schedules, ages and pricing, then contact providers directly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/developmental-meath.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Developmental Classes in Meath | Kids Patch">
+    <meta name="twitter:description" content="Find 6 Developmental classes for kids in Meath. Compare schedules, ages and pricing, then contact providers directly.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=39453c30e8">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Developmental Classes in Meath", "description": "Find 6 Developmental classes for kids in Meath. Compare schedules, ages and pricing, then contact providers directly.", "url": "https://www.kidspatch.ie/classes/developmental-meath.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 6, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/baby-massage-with-laura-navan-surrounds-93.html", "name": "Baby Massage with Laura – Navan & Surrounds"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/baby-sensory-dunboyne-94.html", "name": "Baby Sensory Dunboyne"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/boyne-babies-sensory-classes-100.html", "name": "Boyne Babies Sensory Classes"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/baby-massage-with-laura-341.html", "name": "Baby Massage With Laura"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/pregnancy-post-natal-pilates-359.html", "name": "Pregnancy/Post-Natal Pilates"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/touch-therapies-by-aimee-365.html", "name": "Touch Therapies by Aimee"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="developmental.html">Developmental</a> &rsaquo; Meath</nav>
+        <h1>Developmental Classes in Meath</h1>
+        <p class="landing-intro">Explore 6 Developmental classes for kids in Meath, Ireland. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="developmental.html">&larr; All Developmental classes in Ireland</a><a href="meath.html">&larr; All classes in Meath</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="93">
+        <div class="card-image"><img class="banner-img" src="../images/baby-massage-with-laura-navan-surrounds.jpg" alt="Baby Massage with Laura – Navan &amp; Surrounds" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/baby-massage-with-laura-navan-surrounds.webp" alt="Baby Massage with Laura – Navan &amp; Surrounds logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Baby Massage with Laura – Navan &amp; Surrounds</h3>
+            
+            <p class="description">Baby massage classes led by an experienced Paediatric/Neonatal Intensive Care Nurse (10+ years), open to all babies from birth to 12 months, including those with special needs, complex needs, or life-limiting conditions. There is plenty of room for medical equipment such as suction machines, portable ventilators, or feeding pumps, and massage can be adapted for babies with a feeding tube, stoma bag, tracheostomy, CPAP/BiPAP mask, PEG tube, or similar. Classes run in Navan at Red River Yoga Studio (Wednesdays at 10am) and Wilkinstown Community Centre (Mondays at 10am), with 1:1 classes also available. Sessions are relaxed and baby-led, so feeding, changing, walking around, or cuddling your baby during class is fine - just bring a small blanket, as yoga mats, cushions and oils are provided. Tea, coffee and sweet treats are served in the second part of the class, giving parents a chance to sit, chat and get to know each other. Contact via Instagram DM @baby_massage_with_laura or email lauramcq.babymassage@gmail.com</p>
+            
+            <a href="../business/baby-massage-with-laura-navan-surrounds-93.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="94">
+        <div class="card-image"><img class="banner-img" src="../images/babysensory-ie-cbbf48.jpg" alt="Baby Sensory Dunboyne" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/babysensory-ie-cbbf48.png" alt="Baby Sensory Dunboyne logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Baby Sensory Dunboyne</h3>
+            
+            <p class="description">Baby Sensory classes are designed to support your baby&#x27;s development from birth to 13 months through gentle sensory activities, music, movement and play. Every activity is carefully designed using research into early childhood development, supporting your baby&#x27;s sensory, physical and cognitive growth in a natural, fun way. Each class is structured for your baby&#x27;s stage, from tiny newborns to active explorers, in a warm, welcoming environment. Parents value the class as a special time to bond with their baby, support early development and key milestones, meet other local parents, and enjoy the moment together without pressure. Sessions include sensory play (lights, textures, bubbles and more), music and movement, and varied, age-appropriate activities, all designed to stimulate your baby&#x27;s senses while keeping things calm and enjoyable for you both.</p>
+            
+            <a href="../business/baby-sensory-dunboyne-94.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="100">
+        <div class="card-image"><img class="banner-img" src="../images/boynebabies-ie-02fefa.jpg" alt="Boyne Babies Sensory Classes" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/boynebabies-ie-02fefa.png" alt="Boyne Babies Sensory Classes logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Boyne Babies Sensory Classes</h3>
+            
+            <p class="description">Welcome to Boyne Babies — sensory-rich baby and toddler classes designed to support early development, exploration, and parent–child bonding in a fun and nurturing environment. Our weekly themed sessions include music, movement, lights, textures, messy play, soft play, and interactive sensory activities tailored to different stages, from non-walkers to toddlers aged 2 years. Boyne Babies is also a welcoming space for parents to connect, meet other local families, and enjoy quality time with their little ones in a relaxed and supportive setting. Classes take place weekly at Julianstown Community Centre, offering a calm, engaging, and development-focused experience for both children and parents.</p>
+            
+            <a href="../business/boyne-babies-sensory-classes-100.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="341">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Baby Massage With Laura</h3>
+            
+            <p class="description">Baby massage classes with a PICU/NICU nurse, in 2 locations: Navan and Wilkinstown. Come meet other parents and bond with your baby in a relaxed and calm environment. Every class is followed by tea/coffee/a sweet treat, giving time to chat and get to know other parents. All babies welcome, 0-12 months. Babies with additional needs, complex needs, or life-limiting conditions are welcomed and encouraged to attend, with plenty of space for medical equipment such as portable ventilators, suction machines, and feeding pumps. Massage can be adapted for all needs, e.g. stoma bags or feeding tubes. As a PICU/NICU nurse, I&#x27;m very experienced in caring for babies with additional needs and their families. 1:1 classes also available. Currently Monday mornings at Wilkinstown Community Centre, 10am, and in Navan at the Red River Yoga Studio on Wednesdays at 10am (check socials in case time/location changes).</p>
+            
+            <a href="../business/baby-massage-with-laura-341.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="359">
+        <div class="card-image"><img class="banner-img" src="../images/bodybalancephysiotherapy-ie.jpg" alt="Pregnancy/Post-Natal Pilates" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/bodybalancephysiotherapy-ie.png" alt="Pregnancy/Post-Natal Pilates logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Pregnancy/Post-Natal Pilates</h3>
+            
+            <p class="description">We are a physio and pelvic health clinic in Navan with a studio offering a range of classes, including Post-Natal Pilates: geared to those who have had their baby, this class is tailored to improving pelvic ligament stability after the birthing process, and you can continue in this class for 1-2 years after labour. We also offer Baby Massage Classes: meeting once a week for 5 weeks, designed for parents, grandparents and other caregivers with their babies, ideally from birth to pre-crawling. Participants massage their babies while being guided through a step-by-step massage routine, with individual attention for each participant. Classes include relaxation techniques and talks on issues such as crying, sleeping and baby emotions. All participants receive handouts, massage oil and refreshments.</p>
+            
+            <a href="../business/pregnancy-post-natal-pilates-359.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="365">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Touch Therapies by Aimee</h3>
+            
+            <p class="description">This is a small, baby-led class that provides a relaxed, calm environment for both parent and baby to embrace a bonding experience through nurturing touch and infant massage, while following and tending to your baby&#x27;s cues. Suitable from birth to pre-crawling. Each week we learn the strokes of a new body part and go back over strokes learnt in previous weeks, along with learning about the different benefits of baby massage and how to grow massage through the ages. We then enjoy a cup of tea or coffee while discussing a new baby/parent-related topic each week. As well as benefits for babies, such as aiding digestion, nurturing touch, and easing constipation and teething, the class also benefits parents, such as getting to know other parents in the local area, building a supportive community, and picking up tips, advice and ideas along the way of your parenting journey. Location: the class runs for 5 consecutive weeks and is held in Johnstown, Navan. Classes run on Wednesday/Friday.</p>
+            
+            <a href="../business/touch-therapies-by-aimee-365.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 93, "lat": 53.647092, "lon": -6.6966605, "name": "Baby Massage with Laura – Navan & Surrounds", "category": "Developmental", "url": "../business/baby-massage-with-laura-navan-surrounds-93.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 94, "lat": 53.4102998329, "lon": -6.4731155596, "name": "Baby Sensory Dunboyne", "category": "Developmental", "url": "../business/baby-sensory-dunboyne-94.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 100, "lat": 53.6697087, "lon": -6.2914502, "name": "Boyne Babies Sensory Classes", "category": "Developmental", "url": "../business/boyne-babies-sensory-classes-100.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 341, "lat": 53.64709, "lon": -6.69666, "name": "Baby Massage With Laura", "category": "Developmental", "url": "../business/baby-massage-with-laura-341.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 359, "lat": 53.65359, "lon": -6.69141, "name": "Pregnancy/Post-Natal Pilates", "category": "Developmental", "url": "../business/pregnancy-post-natal-pilates-359.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 365, "lat": 53.63764, "lon": -6.65469, "name": "Touch Therapies by Aimee", "category": "Developmental", "url": "../business/touch-therapies-by-aimee-365.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

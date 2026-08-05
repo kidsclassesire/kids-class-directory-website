@@ -29,12 +29,13 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Balbriggan &amp; District AC - Kids Training — Athletics classes | Kids Patch">
     <meta name="twitter:description" content="Kids athletics training Monday evenings (Little Athletes and Juveniles) at Balbriggan Sports Centre; extra Wed session for competitors.">
-    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="../styles.css?v=39453c30e8">
     <script src="../analytics.js?v=471ea0b7de" defer></script>
     <script src="../share.js?v=47727f61b7" defer></script>
     <script src="../notify.js?v=56f59d57f5" defer></script>
     <script src="../claim.js?v=c2e1b46258" defer></script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Balbriggan & District AC - Kids Training", "url": "https://www.kidspatch.ie/business/balbriggan-district-ac-kids-training-1435.html", "description": "Kids athletics training Monday evenings (Little Athletes and Juveniles) at Balbriggan Sports Centre; extra Wed session for competitors.", "email": "luskacpro@gmail.com", "address": {"@type": "PostalAddress", "streetAddress": "Balbriggan Sports Centre, Co. Dublin", "addressCountry": "IE"}, "makesOffer": {"@type": "Offer", "itemOffered": {"@type": "Course", "name": "Athletics", "provider": {"@type": "Organization", "name": "Balbriggan & District AC - Kids Training"}, "description": "Kids athletics training Monday evenings (Little Athletes and Juveniles) at Balbriggan Sports Centre; extra Wed session for competitors."}}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Balbriggan & District AC - Kids Training", "url": "https://www.kidspatch.ie/business/balbriggan-district-ac-kids-training-1435.html", "description": "Kids athletics training Monday evenings (Little Athletes and Juveniles) at Balbriggan Sports Centre; extra Wed session for competitors.", "email": "luskacpro@gmail.com", "address": {"@type": "PostalAddress", "streetAddress": "Balbriggan Sports Centre, Co. Dublin", "addressCountry": "IE", "postalCode": "K32 HE19"}, "geo": {"@type": "GeoCoordinates", "latitude": 53.6111865, "longitude": -6.1895854}, "makesOffer": {"@type": "Offer", "itemOffered": {"@type": "Course", "name": "Athletics", "provider": {"@type": "Organization", "name": "Balbriggan & District AC - Kids Training"}, "description": "Kids athletics training Monday evenings (Little Athletes and Juveniles) at Balbriggan Sports Centre; extra Wed session for competitors."}}}</script>
 </head>
 <body>
     <div class="business-page">
@@ -54,7 +55,8 @@
                     </div>
                     <p class="description" style="-webkit-line-clamp: unset;">Kids athletics training Monday evenings (Little Athletes and Juveniles) at Balbriggan Sports Centre; extra Wed session for competitors.</p>
                     <div class="verified-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M20 6L9 17l-5-5"/></svg> Verified 2026-08-03</div><div class="detail-row"><strong>Contact:</strong> <a href="mailto:luskacpro@gmail.com" onclick="trackEvent(&quot;email_click&quot;, {&quot;business_id&quot;: 1435, &quot;business_name&quot;: &quot;Balbriggan &amp; District AC - Kids Training&quot;})">luskacpro@gmail.com</a></div>
-                    <div class="business-address"><strong>Address:</strong> Balbriggan Sports Centre, Co. Dublin<br><a href="https://www.google.com/maps/search/?api=1&query=Balbriggan%20Sports%20Centre%2C%20Co.%20Dublin" target="_blank" rel="noopener" onclick="trackEvent(&quot;directions_click&quot;, {&quot;business_id&quot;: 1435, &quot;business_name&quot;: &quot;Balbriggan &amp; District AC - Kids Training&quot;})">View on Google Maps &rarr;</a></div>
+                    
+                    <div class="business-address"><strong>Address:</strong> Balbriggan Sports Centre, Co. Dublin<br><a href="https://www.google.com/maps/search/?api=1&query=Balbriggan%20Sports%20Centre%2C%20Co.%20Dublin" target="_blank" rel="noopener" onclick="trackEvent(&quot;directions_click&quot;, {&quot;business_id&quot;: 1435, &quot;business_name&quot;: &quot;Balbriggan &amp; District AC - Kids Training&quot;})">View on Google Maps &rarr;</a></div><div id="business-map" class="business-map" data-lat="53.6111865" data-lon="-6.1895854"></div>
                     <a href="https://balbrigganathclub.com/training/kids-training/?utm_source=kidspatch&amp;utm_medium=referral" target="_blank" rel="noopener" class="button" onclick="trackEvent(&quot;outbound_click&quot;, {&quot;business_id&quot;: 1435, &quot;business_name&quot;: &quot;Balbriggan &amp; District AC - Kids Training&quot;, &quot;category&quot;: &quot;Athletics&quot;, &quot;link_type&quot;: &quot;website&quot;})">Visit Website</a>
                     <button type="button" class="button claim-btn" onclick="window.openClaimModal(&quot;1435&quot;, &quot;Balbriggan &amp; District AC - Kids Training&quot;)">Claim this business</button>
                     <div class="share-row" data-title="Balbriggan &amp; District AC - Kids Training" data-url="https://www.kidspatch.ie/business/balbriggan-district-ac-kids-training-1435.html" data-business-id="1435">
@@ -118,5 +120,14 @@
         window.supabaseClient = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
     </script>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script>
+        const mapEl = document.getElementById('business-map');
+        if (mapEl) {
+            const m = L.map('business-map').setView([53.6111865, -6.1895854], 15);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap' }).addTo(m);
+            L.marker([53.6111865, -6.1895854]).addTo(m);
+        }
+    </script>
 </body>
 </html>

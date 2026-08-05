@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Ratoath | Kids Patch</title>
+    <meta name="description" content="Browse 4 kids activities and classes in Ratoath, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/ratoath.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Ratoath | Kids Patch">
+    <meta property="og:description" content="Browse 4 kids activities and classes in Ratoath, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/ratoath.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Ratoath | Kids Patch">
+    <meta name="twitter:description" content="Browse 4 kids activities and classes in Ratoath, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=39453c30e8">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Ratoath", "description": "Browse 4 kids activities and classes in Ratoath, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/ratoath.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 4, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/ratoath-parent-baby-and-toddler-group-360.html", "name": "Ratoath Parent, Baby and Toddler Group"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/sing-and-smile-with-aisling-361.html", "name": "Sing and Smile with Aisling"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/ratoath-school-of-music-junior-music-classes-1609.html", "name": "Ratoath School of Music - Junior Music Classes"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/stage-performers-ratoath-1611.html", "name": "Stage Performers - Ratoath"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="meath.html">Meath</a> &rsaquo; Ratoath</nav>
+        <h1>Kids Activities in Ratoath</h1>
+        <p class="landing-intro">Browse 4 kids activities and classes in Ratoath. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="meath.html">&larr; All activities in County Meath</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="360">
+        <div class="card-image"><img class="banner-img" src="../images/thevenueratoath-ie.jpg" alt="Ratoath Parent, Baby and Toddler Group" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/thevenueratoath-ie.png" alt="Ratoath Parent, Baby and Toddler Group logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Ratoath Parent, Baby and Toddler Group</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Ratoath Parent and Toddler Group is open to parents, grandparents and childminders looking to meet other adults, make friends, or just have a fun outing with your child among others in a safe, friendly space - please join our Baby and Toddler get-together. It&#x27;s a great way to meet other people with children of the same age in your area. These groups are traditionally aimed at mothers and fathers, but we welcome babysitters, grandparents, and other guardians too. Tea, coffee, and biscuits are provided, as well as a few toys - babies/toddlers are welcome to bring their own toys and snacks. Location: St Oliver&#x27;s Community Centre CLG, Main Street, Ratoath, Co. Meath. Day/Time: every Wednesday during school term, 9.30-11am. Cost: €3-€5 per family. Contact: Annette, 01 689 5600.</p>
+            
+            <a href="../business/ratoath-parent-baby-and-toddler-group-360.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="361">
+        <div class="card-image"><img class="logo-badge" src="../logos/singandsmilewithaisling-ie.png" alt="Sing and Smile with Aisling logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Sing and Smile with Aisling</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">A fun music baby and toddler parent group promoting wellness and music for children. This is more than just singing and dancing, it&#x27;s helping them grow. Classes develop musical education for all ages, encouraging social development, movement and mindfulness. Locations: Dunshaughlin Dance, Dunshaughlin, 10am Monday mornings; Ratoath Community Centre, Ratoath, 10.15am Wednesday mornings; The Oak Centre, Dunboyne, 10.15am Thursday mornings. Aisling also runs extra ad hoc classes on Saturdays, at 10:15am &amp; 11:30am, at The Venue, Ratoath, Co. Meath, which can be found on her website and socials. Classes can be booked at www.singandsmilewithaisling.ie</p>
+            
+            <a href="../business/sing-and-smile-with-aisling-361.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1609">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Ratoath School of Music - Junior Music Classes</h3>
+            <div class="tag-container"><span class="tag">Music</span></div>
+            <p class="description">Group music for ages 3-6: keyboards, ukulele, percussion, vocals; groundwork for future instrument study.</p>
+            
+            <a href="../business/ratoath-school-of-music-junior-music-classes-1609.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1611">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Stage Performers - Ratoath</h3>
+            <div class="tag-container"><span class="tag">Drama</span></div>
+            <p class="description">Singing, dancing and drama from age 3, Wednesdays at Ratoath Community Centre, age-graded groups (Mini&#x27;s to Teens).</p>
+            
+            <a href="../business/stage-performers-ratoath-1611.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 360, "lat": 53.5054, "lon": -6.4542, "name": "Ratoath Parent, Baby and Toddler Group", "category": "Parent-and-toddler", "url": "../business/ratoath-parent-baby-and-toddler-group-360.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 361, "lat": 53.5072716, "lon": -6.4640687, "name": "Sing and Smile with Aisling", "category": "Parent-and-toddler", "url": "../business/sing-and-smile-with-aisling-361.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1609, "lat": 53.5072716, "lon": -6.4640687, "name": "Ratoath School of Music - Junior Music Classes", "category": "Music", "url": "../business/ratoath-school-of-music-junior-music-classes-1609.html", "minAge": 3.0, "maxAge": 6.0, "price": null, "free": false}, {"id": 1611, "lat": 53.5075569, "lon": -6.4629316, "name": "Stage Performers - Ratoath", "category": "Drama", "url": "../business/stage-performers-ratoath-1611.html", "minAge": 3.0, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

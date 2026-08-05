@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arts and crafts Classes in Cork | Kids Patch</title>
+    <meta name="description" content="Find 5 Arts and crafts classes for kids in Cork. Compare schedules, ages and pricing, then contact providers directly.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/arts-and-crafts-cork.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Arts and crafts Classes in Cork | Kids Patch">
+    <meta property="og:description" content="Find 5 Arts and crafts classes for kids in Cork. Compare schedules, ages and pricing, then contact providers directly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/arts-and-crafts-cork.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Arts and crafts Classes in Cork | Kids Patch">
+    <meta name="twitter:description" content="Find 5 Arts and crafts classes for kids in Cork. Compare schedules, ages and pricing, then contact providers directly.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=39453c30e8">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Arts and crafts Classes in Cork", "description": "Find 5 Arts and crafts classes for kids in Cork. Compare schedules, ages and pricing, then contact providers directly.", "url": "https://www.kidspatch.ie/classes/arts-and-crafts-cork.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 5, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/grannies-squares-and-stitches-a-morning-of-creativity-and-co-568.html", "name": "Grannies, Squares and Stitches. A Morning of Creativity and Community"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/kids-art-craft-classes-declan-o-meara-art-1349.html", "name": "Kids Art & Craft Classes (Declan O'Meara Art)"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/project-fashion-midleton-1530.html", "name": "Project Fashion - Midleton"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/tidal-soul-studio-creative-kids-weekly-groups-1533.html", "name": "Tidal Soul Studio - Creative Kids Weekly Groups"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/rita-s-clay-house-children-s-pottery-classes-1737.html", "name": "Rita's Clay House - Children's Pottery Classes"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="arts-and-crafts.html">Arts and crafts</a> &rsaquo; Cork</nav>
+        <h1>Arts and crafts Classes in Cork</h1>
+        <p class="landing-intro">Explore 5 Arts and crafts classes for kids in Cork, Ireland. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="arts-and-crafts.html">&larr; All Arts and crafts classes in Ireland</a><a href="cork.html">&larr; All classes in Cork</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="568">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Grannies, Squares and Stitches. A Morning of Creativity and Community</h3>
+            
+            <p class="description">Join Emma Jacobs Art at the West Cork Collective for DCCI August Craft Month, a cosy morning celebrating cottagecore tradition and granny hobbies. We&#x27;re inviting young adults from all over the area to unroll their yarn, pack up their projects, and bridge the generation gap - bring your grannies, your granny squares, your knitting. Whether you&#x27;re a master knitter, a crochet beginner, or just want to enjoy a cup of tea in good company, this morning is for you: learn the timeless art of the granny square from local experts, share your skills, or just enjoy the relaxed stitch-and-chat vibe. Date: Saturday 8 August, 10am-1pm. Venue: West Cork Collective. Cost: free admission (tea and home baking provided). Expect a relaxed stitch &amp; chat space to work on your current projects, skill-sharing to learn the art of the granny square from the true experts (our local nans), and cosy cottagecore vibes with acoustic music, endless tea, and artistic company. No granny? No problem - come along anyway, borrow one of ours, or just bring your creative spirit. All skill levels are entirely welcome. Booking is essential, as spaces are limited - secure your spot by contacting Emma: email emma@emmajacobsart.com or call/text 085 826 3872.</p>
+            
+            <a href="../business/grannies-squares-and-stitches-a-morning-of-creativity-and-co-568.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1349">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Kids Art &amp; Craft Classes (Declan O&#x27;Meara Art)</h3>
+            
+            <p class="description">Kids art and craft classes for ages 5-12 with a qualified art teacher; painting, drawing, ceramics, jewellery-making, at Lough Scouts Hall, Cork City.</p>
+            
+            <a href="../business/kids-art-craft-classes-declan-o-meara-art-1349.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1530">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Project Fashion - Midleton</h3>
+            
+            <p class="description">Kids and teens fashion classes, Wednesday sessions at My Place Community Centre, Midleton.</p>
+            
+            <a href="../business/project-fashion-midleton-1530.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1533">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Tidal Soul Studio - Creative Kids Weekly Groups</h3>
+            
+            <p class="description">Process-focused arts and mindfulness sessions for kids, Tue/Thu at Sandy Walk (MFRC), Broomfield Village, Midleton.</p>
+            
+            <a href="../business/tidal-soul-studio-creative-kids-weekly-groups-1533.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1737">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Rita&#x27;s Clay House - Children&#x27;s Pottery Classes</h3>
+            
+            <p class="description">Kids-friendly pottery and art studio run by Rita Morrissey; ongoing classes and summer camp.</p>
+            
+            <a href="../business/rita-s-clay-house-children-s-pottery-classes-1737.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 568, "lat": 51.6666775, "lon": -8.5951639, "name": "Grannies, Squares and Stitches. A Morning of Creativity and Community", "category": "Arts and crafts", "url": "../business/grannies-squares-and-stitches-a-morning-of-creativity-and-co-568.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1349, "lat": 51.8910867, "lon": -8.4849472, "name": "Kids Art & Craft Classes (Declan O'Meara Art)", "category": "Arts and crafts", "url": "../business/kids-art-craft-classes-declan-o-meara-art-1349.html", "minAge": 5.0, "maxAge": 12.0, "price": null, "free": false}, {"id": 1530, "lat": 51.9175186, "lon": -8.1758317, "name": "Project Fashion - Midleton", "category": "Arts and crafts", "url": "../business/project-fashion-midleton-1530.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1533, "lat": 51.9143321, "lon": -8.1726276, "name": "Tidal Soul Studio - Creative Kids Weekly Groups", "category": "Arts and crafts", "url": "../business/tidal-soul-studio-creative-kids-weekly-groups-1533.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1737, "lat": 51.6203379, "lon": -8.9055104, "name": "Rita's Clay House - Children's Pottery Classes", "category": "Arts and crafts", "url": "../business/rita-s-clay-house-children-s-pottery-classes-1737.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

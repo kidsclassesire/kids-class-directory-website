@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Celbridge | Kids Patch</title>
+    <meta name="description" content="Browse 4 kids activities and classes in Celbridge, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/celbridge.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Celbridge | Kids Patch">
+    <meta property="og:description" content="Browse 4 kids activities and classes in Celbridge, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/celbridge.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Celbridge | Kids Patch">
+    <meta name="twitter:description" content="Browse 4 kids activities and classes in Celbridge, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=39453c30e8">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Celbridge", "description": "Browse 4 kids activities and classes in Celbridge, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/celbridge.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 4, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/chime-in-play-1135.html", "name": "Chime in & Play"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/kenpo-karate-academy-celbridge-1487.html", "name": "Kenpo Karate Academy - Celbridge"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/celbridge-playzone-sensory-explorers-1489.html", "name": "Celbridge Playzone - Sensory Explorers"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/bubbles-play-music-celbridge-1490.html", "name": "Bubbles Play & Music - Celbridge"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="kildare.html">Kildare</a> &rsaquo; Celbridge</nav>
+        <h1>Kids Activities in Celbridge</h1>
+        <p class="landing-intro">Browse 4 kids activities and classes in Celbridge. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="kildare.html">&larr; All activities in County Kildare</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="1135">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Chime in &amp; Play</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">Various locations, dates and times - see website for more information. Some venues operate a summer term/classes. You and your child will build creativity, confidence and lifelong friendships. Our classes are specially designed to help young children learn and develop through playing and music. Our classes also help you learn about your child, how to participate in and encourage their development, while enjoying the simple pleasure of playing together.</p>
+            
+            <a href="../business/chime-in-play-1135.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1487">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Kenpo Karate Academy - Celbridge</h3>
+            <div class="tag-container"><span class="tag">Martial Arts</span></div>
+            <p class="description">Children&#x27;s karate programme for ages 4+, confidence and discipline focus with a belt-graduation reward system.</p>
+            
+            <a href="../business/kenpo-karate-academy-celbridge-1487.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1489">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Celbridge Playzone - Sensory Explorers</h3>
+            <div class="tag-container"><span class="tag">Developmental</span></div>
+            <p class="description">Weekly inclusive sensory play, Tuesdays 11am-12pm, aimed at neurodivergent children and siblings; themed sensory activities.</p>
+            
+            <a href="../business/celbridge-playzone-sensory-explorers-1489.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1490">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Bubbles Play &amp; Music - Celbridge</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Sensory Baby Play, Play &amp; Learn, Music, Art and Sports classes for ages 6 weeks-5 years.</p>
+            
+            <a href="../business/bubbles-play-music-celbridge-1490.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 1135, "lat": 53.336787, "lon": -6.5329317, "name": "Chime in & Play", "category": "Developmental", "url": "../business/chime-in-play-1135.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1487, "lat": 53.3393018, "lon": -6.5391517, "name": "Kenpo Karate Academy - Celbridge", "category": "Martial Arts", "url": "../business/kenpo-karate-academy-celbridge-1487.html", "minAge": 4.0, "maxAge": null, "price": null, "free": false}, {"id": 1489, "lat": 53.3590277, "lon": -6.5473525, "name": "Celbridge Playzone - Sensory Explorers", "category": "Developmental", "url": "../business/celbridge-playzone-sensory-explorers-1489.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1490, "lat": 53.3363893, "lon": -6.5321119, "name": "Bubbles Play & Music - Celbridge", "category": "Parent-and-toddler", "url": "../business/bubbles-play-music-celbridge-1490.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

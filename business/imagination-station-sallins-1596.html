@@ -29,12 +29,13 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Imagination Station - Sallins — Arts and crafts classes | Kids Patch">
     <meta name="twitter:description" content="Kids drop-in creative play, art classes and school-holiday camps (STEAM, slime, plushies) in Sallins.">
-    <link rel="stylesheet" href="../styles.css?v=f856e4cf67">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="../styles.css?v=39453c30e8">
     <script src="../analytics.js?v=471ea0b7de" defer></script>
     <script src="../share.js?v=47727f61b7" defer></script>
     <script src="../notify.js?v=56f59d57f5" defer></script>
     <script src="../claim.js?v=c2e1b46258" defer></script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Imagination Station - Sallins", "url": "https://www.kidspatch.ie/business/imagination-station-sallins-1596.html", "description": "Kids drop-in creative play, art classes and school-holiday camps (STEAM, slime, plushies) in Sallins.", "address": {"@type": "PostalAddress", "streetAddress": "The Waterways, Unit 3, Sallins, Co. Kildare", "addressCountry": "IE"}, "makesOffer": {"@type": "Offer", "itemOffered": {"@type": "Course", "name": "Arts and crafts", "provider": {"@type": "Organization", "name": "Imagination Station - Sallins"}, "description": "Kids drop-in creative play, art classes and school-holiday camps (STEAM, slime, plushies) in Sallins."}}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Imagination Station - Sallins", "url": "https://www.kidspatch.ie/business/imagination-station-sallins-1596.html", "description": "Kids drop-in creative play, art classes and school-holiday camps (STEAM, slime, plushies) in Sallins.", "telephone": "+353851519626", "address": {"@type": "PostalAddress", "streetAddress": "The Waterways, Unit 3, Sallins, Co. Kildare", "addressCountry": "IE"}, "geo": {"@type": "GeoCoordinates", "latitude": 53.247239, "longitude": -6.66218}, "makesOffer": {"@type": "Offer", "itemOffered": {"@type": "Course", "name": "Arts and crafts", "provider": {"@type": "Organization", "name": "Imagination Station - Sallins"}, "description": "Kids drop-in creative play, art classes and school-holiday camps (STEAM, slime, plushies) in Sallins."}}}</script>
 </head>
 <body>
     <div class="business-page">
@@ -53,8 +54,9 @@
                         
                     </div>
                     <p class="description" style="-webkit-line-clamp: unset;">Kids drop-in creative play, art classes and school-holiday camps (STEAM, slime, plushies) in Sallins.</p>
-                    <div class="verified-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M20 6L9 17l-5-5"/></svg> Verified 2026-08-03</div>
-                    <div class="business-address"><strong>Address:</strong> The Waterways, Unit 3, Sallins, Co. Kildare<br><a href="https://www.google.com/maps/search/?api=1&query=The%20Waterways%2C%20Unit%203%2C%20Sallins%2C%20Co.%20Kildare" target="_blank" rel="noopener" onclick="trackEvent(&quot;directions_click&quot;, {&quot;business_id&quot;: 1596, &quot;business_name&quot;: &quot;Imagination Station - Sallins&quot;})">View on Google Maps &rarr;</a></div>
+                    <div class="verified-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M20 6L9 17l-5-5"/></svg> Verified 2026-08-03</div><div class="detail-row"><strong>Contact:</strong> <a href="tel:+353851519626" onclick="trackEvent(&quot;phone_click&quot;, {&quot;business_id&quot;: 1596, &quot;business_name&quot;: &quot;Imagination Station - Sallins&quot;})">+353 85 151 9626</a></div>
+                    
+                    <div class="business-address"><strong>Address:</strong> The Waterways, Unit 3, Sallins, Co. Kildare<br><a href="https://www.google.com/maps/search/?api=1&query=The%20Waterways%2C%20Unit%203%2C%20Sallins%2C%20Co.%20Kildare" target="_blank" rel="noopener" onclick="trackEvent(&quot;directions_click&quot;, {&quot;business_id&quot;: 1596, &quot;business_name&quot;: &quot;Imagination Station - Sallins&quot;})">View on Google Maps &rarr;</a></div><div id="business-map" class="business-map" data-lat="53.247239" data-lon="-6.66218"></div>
                     <a href="https://www.imaginationstation.ie/Camps.php?utm_source=kidspatch&amp;utm_medium=referral" target="_blank" rel="noopener" class="button" onclick="trackEvent(&quot;outbound_click&quot;, {&quot;business_id&quot;: 1596, &quot;business_name&quot;: &quot;Imagination Station - Sallins&quot;, &quot;category&quot;: &quot;Arts and crafts&quot;, &quot;link_type&quot;: &quot;website&quot;})">Visit Website</a>
                     <button type="button" class="button claim-btn" onclick="window.openClaimModal(&quot;1596&quot;, &quot;Imagination Station - Sallins&quot;)">Claim this business</button>
                     <div class="share-row" data-title="Imagination Station - Sallins" data-url="https://www.kidspatch.ie/business/imagination-station-sallins-1596.html" data-business-id="1596">
@@ -118,5 +120,14 @@
         window.supabaseClient = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
     </script>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script>
+        const mapEl = document.getElementById('business-map');
+        if (mapEl) {
+            const m = L.map('business-map').setView([53.247239, -6.66218], 15);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap' }).addTo(m);
+            L.marker([53.247239, -6.66218]).addTo(m);
+        }
+    </script>
 </body>
 </html>

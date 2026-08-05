@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camps Classes in Tipperary | Kids Patch</title>
+    <meta name="description" content="Find 4 Camps classes for kids in Tipperary. Compare schedules, ages and pricing, then contact providers directly.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/camps-tipperary.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Camps Classes in Tipperary | Kids Patch">
+    <meta property="og:description" content="Find 4 Camps classes for kids in Tipperary. Compare schedules, ages and pricing, then contact providers directly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/camps-tipperary.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Camps Classes in Tipperary | Kids Patch">
+    <meta name="twitter:description" content="Find 4 Camps classes for kids in Tipperary. Compare schedules, ages and pricing, then contact providers directly.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=39453c30e8">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Camps Classes in Tipperary", "description": "Find 4 Camps classes for kids in Tipperary. Compare schedules, ages and pricing, then contact providers directly.", "url": "https://www.kidspatch.ie/classes/camps-tipperary.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 4, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/archaeology-camps-booking-now-1000.html", "name": "Archaeology Camps – Booking Now"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/designer-minds-nenagh-steam-summer-camp-1613.html", "name": "Designer Minds - Nenagh STEAM Summer Camp"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/lets-go-kids-camps-carrick-on-suir-1695.html", "name": "Lets Go Kids Camps - Carrick-on-Suir"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/designer-minds-carrick-on-suir-steam-summer-camp-1696.html", "name": "Designer Minds - Carrick On Suir STEAM Summer Camp"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="camps.html">Camps</a> &rsaquo; Tipperary</nav>
+        <h1>Camps Classes in Tipperary</h1>
+        <p class="landing-intro">Explore 4 Camps classes for kids in Tipperary, Ireland. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="camps.html">&larr; All Camps classes in Ireland</a><a href="tipperary.html">&larr; All classes in Tipperary</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="1000">
+        <div class="card-image"><img class="banner-img" src="../images/sia-ie.png" alt="Archaeology Camps – Booking Now" loading="lazy" onerror="this.remove()"><img class="logo-badge" src="../logos/sia-ie.png" alt="Archaeology Camps – Booking Now logo" loading="lazy" onerror="this.remove()"></div>
+        <div class="card-content">
+            <h3>Archaeology Camps – Booking Now</h3>
+            
+            <p class="description">Our camps provide a fascinating alternative to sports-themed camps and other school break activities for children aged 7-12 years old. If your child is a curious explorer with a thirst for knowledge about the past, this is the camp for them! Running all year round, the camps introduce children to the mysteries and adventures of our past in a fun, practical and hands-on way that sparks their imagination.</p>
+            
+            <a href="../business/archaeology-camps-booking-now-1000.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1613">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Designer Minds - Nenagh STEAM Summer Camp</h3>
+            
+            <p class="description">Junior/Senior STEAM camp at C.B.S Primary Nenagh; €180.</p>
+            
+            <a href="../business/designer-minds-nenagh-steam-summer-camp-1613.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1695">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Lets Go Kids Camps - Carrick-on-Suir</h3>
+            
+            <p class="description">Summer camp at Comeragh College, Carrick-on-Suir, 9:30am-3:30pm.</p>
+            
+            <a href="../business/lets-go-kids-camps-carrick-on-suir-1695.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1696">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Designer Minds - Carrick On Suir STEAM Summer Camp</h3>
+            
+            <p class="description">Junior/Senior STEAM camp at Comeragh College; €180.</p>
+            
+            <a href="../business/designer-minds-carrick-on-suir-steam-summer-camp-1696.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 1000, "lat": 52.3611052, "lon": -7.6991779, "name": "Archaeology Camps – Booking Now", "category": "Camps", "url": "../business/archaeology-camps-booking-now-1000.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1613, "lat": 52.8664208, "lon": -8.1952132, "name": "Designer Minds - Nenagh STEAM Summer Camp", "category": "Camps", "url": "../business/designer-minds-nenagh-steam-summer-camp-1613.html", "minAge": 6.0, "maxAge": 12.0, "price": null, "free": false}, {"id": 1695, "lat": 52.3521659, "lon": -7.3880242, "name": "Lets Go Kids Camps - Carrick-on-Suir", "category": "Camps", "url": "../business/lets-go-kids-camps-carrick-on-suir-1695.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1696, "lat": 52.3521659, "lon": -7.3880242, "name": "Designer Minds - Carrick On Suir STEAM Summer Camp", "category": "Camps", "url": "../business/designer-minds-carrick-on-suir-steam-summer-camp-1696.html", "minAge": 6.0, "maxAge": 12.0, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

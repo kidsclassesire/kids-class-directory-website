@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Tullamore | Kids Patch</title>
+    <meta name="description" content="Browse 4 kids activities and classes in Tullamore, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/tullamore.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Tullamore | Kids Patch">
+    <meta property="og:description" content="Browse 4 kids activities and classes in Tullamore, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/tullamore.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Tullamore | Kids Patch">
+    <meta name="twitter:description" content="Browse 4 kids activities and classes in Tullamore, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=39453c30e8">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Tullamore", "description": "Browse 4 kids activities and classes in Tullamore, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/tullamore.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 4, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/tullamore-library-913.html", "name": "Tullamore Library"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/aura-leisure-centre-1181.html", "name": "Aura Leisure Centre"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/ready-to-play-1305.html", "name": "Ready to Play"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/turtle-tots-tullamore-court-hotel-1521.html", "name": "Turtle Tots - Tullamore Court Hotel"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="offaly.html">Offaly</a> &rsaquo; Tullamore</nav>
+        <h1>Kids Activities in Tullamore</h1>
+        <p class="landing-intro">Browse 4 kids activities and classes in Tullamore. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="offaly.html">&larr; All activities in County Offaly</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="913">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Tullamore Library</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Tullamore Library offers fantastic groups for babies and kids. Wobblers Group: Wednesdays, 11am. Breastfeeding Support: 4th Saturday of the month, 10.30am. Crafty Time: Saturday, 11.30am. Lego Freeplay: Saturday, 10am. Kids Book Club (7+): first Wednesday of each month, 15.30. Junior Book Club (10-12): first Wednesday of every month, 15.30. Young Adults Book Club: last Tuesday of each month, 16.30 (term time only).</p>
+            
+            <a href="../business/tullamore-library-913.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1181">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Aura Leisure Centre</h3>
+            <div class="tag-container"><span class="tag">Swimming</span></div>
+            <p class="description">Swim Baby: developed for babies who have received their 2nd inoculation, up to 30 months, delivered over an 8-week course of 30-minute lessons - have fun and nurture the bond with your baby by introducing them to the water. Using a gentle and gradual approach, our specially trained swim instructors work with you to ensure your baby feels comfortable in the warm water of our learner pool. Swim Tots is for toddlers ready for the next step - our instructors work closely with each child, focusing on water awareness, confidence and safety to help a smoother transition into the higher levels of the Aura Swim Academy. Kids Swimming Lessons: at the Aura Swim Academy, our goal is not only to teach your children to swim, but to help them develop an understanding of the water. We believe learning to swim can be fun, and with our 10 levels, we cater for all ages and abilities.</p>
+            
+            <a href="../business/aura-leisure-centre-1181.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1305">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Ready to Play</h3>
+            <div class="tag-container"><span class="tag">Parent-and-toddler</span></div>
+            <p class="description">Child development experts and teachers create a unique experience weekly, encouraging early learning and development. In class we pride ourselves on forging a sense of community where parents and caregivers build personal connections and lifelong friendships, with classes throughout the Midlands. Through socialisation, your child will explore and discover the world around them. Our classes are great fun for parents, caregivers and children alike, to share together in the vital first five years. Each week you and your little one will go on a new play and musical adventure into the rainforest, under the sea, practising circus skills and many more, with over 30 themes to explore during the year. Our Baby classes are suitable from newborn to pre-walkers, while our Walkers-Toddlers Play &amp; Music classes are suitable for pre-walkers to 3.5 year olds.</p>
+            
+            <a href="../business/ready-to-play-1305.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1521">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Turtle Tots - Tullamore Court Hotel</h3>
+            <div class="tag-container"><span class="tag">Swimming</span></div>
+            <p class="description">Baby, toddler and preschool swimming lessons, Tuesdays and Saturdays; four 10-week terms a year.</p>
+            
+            <a href="../business/turtle-tots-tullamore-court-hotel-1521.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 913, "lat": 53.2743768, "lon": -7.4927486, "name": "Tullamore Library", "category": "Parent-and-toddler", "url": "../business/tullamore-library-913.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 1181, "lat": 53.2701197, "lon": -7.4803214, "name": "Aura Leisure Centre", "category": "Swimming", "url": "../business/aura-leisure-centre-1181.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1305, "lat": 53.2747547, "lon": -7.4905389, "name": "Ready to Play", "category": "Parent-and-toddler", "url": "../business/ready-to-play-1305.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1521, "lat": 53.2703372, "lon": -7.491882, "name": "Turtle Tots - Tullamore Court Hotel", "category": "Swimming", "url": "../business/turtle-tots-tullamore-court-hotel-1521.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>

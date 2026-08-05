@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-81P6V4P1WX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-81P6V4P1WX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Activities in Kinsale | Kids Patch</title>
+    <meta name="description" content="Browse 5 kids activities and classes in Kinsale, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="canonical" href="https://www.kidspatch.ie/classes/kinsale.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta property="og:title" content="Kids Activities in Kinsale | Kids Patch">
+    <meta property="og:description" content="Browse 5 kids activities and classes in Kinsale, Ireland. Filter by category, age and schedule to find the right activity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kidspatch.ie/classes/kinsale.html">
+    <meta property="og:image" content="https://www.kidspatch.ie/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kids Activities in Kinsale | Kids Patch">
+    <meta name="twitter:description" content="Browse 5 kids activities and classes in Kinsale, Ireland. Filter by category, age and schedule to find the right activity.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="../styles.css?v=39453c30e8">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Kinsale", "description": "Browse 5 kids activities and classes in Kinsale, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/kinsale.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 5, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/little-puckers-gaa-class-for-preschoolers-in-cork-1160.html", "name": "Little Puckers - GAA class for preschoolers in Cork"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/kinsale-pottery-and-arts-centre-children-s-summer-camp-1683.html", "name": "Kinsale Pottery and Arts Centre - Children's Summer Camp"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/kinsale-surf-adventures-summer-camps-1684.html", "name": "Kinsale Surf Adventures - Summer Camps"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/rugbytots-kinsale-1685.html", "name": "Rugbytots - Kinsale"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/turtle-tots-kinsale-hotel-spa-1686.html", "name": "Turtle Tots - Kinsale Hotel & Spa"}]}}</script>
+</head>
+<body>
+    <div class="landing-page">
+        <a href="../index.html" class="brand-logo" style="display:inline-block;">Kids Patch</a>
+        <nav class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">All Activities</a> &rsaquo; <a href="cork.html">Cork</a> &rsaquo; Kinsale</nav>
+        <h1>Kids Activities in Kinsale</h1>
+        <p class="landing-intro">Browse 5 kids activities and classes in Kinsale. Compare schedules, ages and pricing below, or contact a provider directly to book.</p>
+        <div class="business-backlinks"><a href="cork.html">&larr; All activities in County Cork</a></div>
+        <div class="landing-filters" id="landing-filters">
+        <div class="filter-group">
+            <div class="filter-label"><span>Age</span><span class="filter-value" id="age-filter-value">Any age</span></div>
+            <div class="range-slider" data-min="0" data-max="18">
+                <div class="range-track"><div class="range-track-fill" id="age-track-fill"></div></div>
+                <input type="range" min="0" max="18" value="0" step="1" id="age-min" aria-label="Minimum age">
+                <input type="range" min="0" max="18" value="18" step="1" id="age-max" aria-label="Maximum age">
+            </div>
+        </div>
+        <div class="filter-group">
+            <div class="filter-label"><span>Price</span><span class="filter-value" id="price-filter-value">Any price</span></div>
+            <div class="range-slider" data-min="0" data-max="50">
+                <div class="range-track"><div class="range-track-fill" id="price-track-fill"></div></div>
+                <input type="range" min="0" max="50" value="0" step="1" id="price-min" aria-label="Minimum price">
+                <input type="range" min="0" max="50" value="50" step="1" id="price-max" aria-label="Maximum price">
+            </div>
+            <div class="filter-hint">Classes with unlisted pricing are always shown</div>
+        </div>
+        <div class="filter-group filter-group-checkbox">
+            <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+            <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
+        </div>
+        <div class="filters-count" id="filters-count"></div>
+    </div>
+        <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
+        <div class="landing-grid"><div class="landing-card" data-id="1160">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Little Puckers - GAA class for preschoolers in Cork</h3>
+            <div class="tag-container"><span class="tag">GAA</span></div>
+            <p class="description">Join Little Puckers in creating a welcoming and inclusive environment for all children to learn and grow through the joy of Gaelic Games (GAA). Little Puckers is a fun and inclusive Gaelic Games-based programme for children aged 1.5-5 years old, committed to providing easy access to hurling and football for every child. Parents are key stakeholders in their child&#x27;s enjoyment at Little Puckers - you&#x27;ll be asked to play with your child for most of the session, and these collaborative activities help develop strong bonds with your child, leading to a stronger relationship. All equipment is provided at the classes, so there&#x27;s no need to bring anything except a drink. 9 locations in Cork: Blarney (Scoil Mhuire Gan Smal), Bandon (Bandon Grammar School), Macroom (Macroom Community Centre), Kinsale (Saile Community Centre), Carrigaline (Carrigaline Community Complex), Ballinlough (St Anthony&#x27;s BNS), Midleton (Midleton Educate Together), Fermoy (Gaelscoil de hÍde), and Glanmire (Upper Glanmire Community Hall).</p>
+            
+            <a href="../business/little-puckers-gaa-class-for-preschoolers-in-cork-1160.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1683">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Kinsale Pottery and Arts Centre - Children&#x27;s Summer Camp</h3>
+            <div class="tag-container"><span class="tag">Camps</span></div>
+            <p class="description">5-day half-day art camps (pottery, tie-dye, theatre) for kids in Kinsale; €175-190.</p>
+            
+            <a href="../business/kinsale-pottery-and-arts-centre-children-s-summer-camp-1683.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1684">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Kinsale Surf Adventures - Summer Camps</h3>
+            <div class="tag-container"><span class="tag">Watersports</span></div>
+            <p class="description">Week-long surf camps combining surfing, marine education and water safety at Garretstown Beach.</p>
+            
+            <a href="../business/kinsale-surf-adventures-summer-camps-1684.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1685">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Rugbytots - Kinsale</h3>
+            <div class="tag-container"><span class="tag">Rugby</span></div>
+            <p class="description">Rugbytots sessions for ages 3.5-5 at Saile Kinsale Sports and Community Centre, Sundays.</p>
+            
+            <a href="../business/rugbytots-kinsale-1685.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><div class="landing-card" data-id="1686">
+        <div class="card-image"></div>
+        <div class="card-content">
+            <h3>Turtle Tots - Kinsale Hotel &amp; Spa</h3>
+            <div class="tag-container"><span class="tag">Swimming</span></div>
+            <p class="description">Baby/toddler/preschool swimming, Fri/Sun mornings at Kinsale Hotel &amp; Spa.</p>
+            
+            <a href="../business/turtle-tots-kinsale-hotel-spa-1686.html" class="button">View full details &rarr;</a>
+        </div>
+    </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
+        <script type="application/json" id="landing-data">[{"id": 1160, "lat": 51.7047563, "lon": -8.5370153, "name": "Little Puckers - GAA class for preschoolers in Cork", "category": "GAA", "url": "../business/little-puckers-gaa-class-for-preschoolers-in-cork-1160.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1683, "lat": 51.7058853, "lon": -8.5222327, "name": "Kinsale Pottery and Arts Centre - Children's Summer Camp", "category": "Camps", "url": "../business/kinsale-pottery-and-arts-centre-children-s-summer-camp-1683.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1684, "lat": 51.6441536, "lon": -8.5810079, "name": "Kinsale Surf Adventures - Summer Camps", "category": "Watersports", "url": "../business/kinsale-surf-adventures-summer-camps-1684.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1685, "lat": 51.7056868, "lon": -8.5326058, "name": "Rugbytots - Kinsale", "category": "Rugby", "url": "../business/rugbytots-kinsale-1685.html", "minAge": 3.0, "maxAge": 5.0, "price": null, "free": false}, {"id": 1686, "lat": 51.7104725, "lon": -8.5235635, "name": "Turtle Tots - Kinsale Hotel & Spa", "category": "Swimming", "url": "../business/turtle-tots-kinsale-hotel-spa-1686.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="../analytics.js?v=471ea0b7de" defer></script>
+    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+</body>
+</html>
