@@ -440,7 +440,8 @@
                                 <th>Start Date</th>
                                 <th>Duration (weeks)</th>
                                 <th>Day</th>
-                                <th>Time</th>
+                                <th>From</th>
+                                <th>To</th>
                                 <th>Min Age</th>
                                 <th>Max Age</th>
                                 <th>Num of Classes</th>
@@ -1166,7 +1167,8 @@
                 <td data-label="Start Date"><input type="date" class="cc-start-date" value="${data.start_date || ''}"></td>
                 <td data-label="Duration (weeks)"><input type="number" step="1" min="0" class="cc-duration-weeks" value="${data.duration_weeks ?? ''}"></td>
                 <td data-label="Day"><select class="cc-day">${dayOptionsHtml(data.day || '')}</select></td>
-                <td data-label="Time"><input type="text" class="cc-time" placeholder="e.g. 10:00-10:45" value="${escapeHtml(data.time || '')}"></td>
+                <td data-label="From"><input type="text" class="cc-start-time" placeholder="e.g. 10:00" value="${escapeHtml(data.start_time || '')}"></td>
+                <td data-label="To"><input type="text" class="cc-end-time" placeholder="e.g. 10:45" value="${escapeHtml(data.end_time || '')}"></td>
                 <td data-label="Min Age"><input type="number" step="0.1" min="0" class="cc-min-age" value="${data.min_age ?? ''}"></td>
                 <td data-label="Max Age"><input type="number" step="0.1" min="0" class="cc-max-age" value="${data.max_age ?? ''}"></td>
                 <td data-label="Num of Classes"><input type="number" step="1" min="0" class="cc-num-classes" value="${data.num_classes ?? ''}"></td>
@@ -1189,7 +1191,8 @@
                 start_date: val('.cc-start-date') || null,
                 duration_weeks: numOrNull(val('.cc-duration-weeks')),
                 day: val('.cc-day') || null,
-                time: val('.cc-time') || null,
+                start_time: val('.cc-start-time') || null,
+                end_time: val('.cc-end-time') || null,
                 min_age: numOrNull(val('.cc-min-age')),
                 max_age: numOrNull(val('.cc-max-age')),
                 num_classes: numOrNull(val('.cc-num-classes')),
