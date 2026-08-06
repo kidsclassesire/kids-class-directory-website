@@ -73,8 +73,9 @@
 
         /* Overview stat strip */
         .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
-        .stat-tile { position: relative; border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.5rem; }
-        .stat-tile.attention { border-left: 4px solid var(--primary); }
+        .stat-tile { position: relative; border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.5rem; background: linear-gradient(180deg, #fff 0%, #fcfcfb 100%); }
+        .stat-tile.attention { border-left: 4px solid var(--primary); box-shadow: inset 0 1px 0 rgba(255,122,92,0.06); }
+        .stat-pill { display: inline-flex; align-items: center; gap: 0.35rem; margin-top: 0.45rem; font-size: 0.72rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.03em; }
         .stat-label { font-size: 0.78rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 0.4rem; }
         .stat-value { font-size: 2rem; font-weight: 800; color: var(--text-dark); line-height: 1; }
         .stat-sub { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem; }
@@ -199,18 +200,22 @@
                 <div class="stat-tile" id="stat-tile-pending">
                     <div class="stat-label">Pending Claims</div>
                     <div class="stat-value" id="stat-pending">–</div>
+                    <div class="stat-pill" id="stat-pending-pill">Needs attention</div>
                 </div>
                 <div class="stat-tile">
                     <div class="stat-label">Total Businesses</div>
                     <div class="stat-value" id="stat-total">–</div>
+                    <div class="stat-pill">Live directory</div>
                 </div>
                 <div class="stat-tile">
                     <div class="stat-label">Data Quality Issues</div>
                     <div class="stat-value" id="stat-dq">–</div>
+                    <div class="stat-pill">Review queue</div>
                 </div>
                 <div class="stat-tile">
                     <div class="stat-label">Admins</div>
                     <div class="stat-value" id="stat-admins">–</div>
+                    <div class="stat-pill">Access managed</div>
                 </div>
             </div>
         </div>
@@ -222,8 +227,11 @@
                 <button class="tab" data-tab="history">History</button>
             </div>
             <div class="subpanel active" data-tab="pending" id="claims-pending-panel">
-                <div class="inline-form-row">
+                <div class="inline-form-row" style="flex-wrap: wrap; align-items: center;">
                     <input type="text" class="text-input" id="claims-search" placeholder="Search by business, requester, or email...">
+                    <button type="button" class="btn-secondary btn-small" id="claims-filter-all">All</button>
+                    <button type="button" class="btn-secondary btn-small" id="claims-filter-new">New today</button>
+                    <button type="button" class="btn-secondary btn-small" id="claims-filter-email">Email only</button>
                 </div>
                 <div id="claims-container"><p>Loading claims...</p></div>
             </div>
@@ -409,6 +417,10 @@
                 <button class="dq-tab" data-tab="coords" id="dq-tab-coords">Missing Coordinates (<span id="dq-count-coords">0</span>)</button>
                 <button class="dq-tab" data-tab="images" id="dq-tab-images">Missing Images (<span id="dq-count-images">0</span>)</button>
             </div>
+            <div class="inline-form-row" style="flex-wrap: wrap; align-items: center; margin-bottom: 1rem;">
+                <button type="button" class="btn-secondary btn-small" id="dq-bulk-dismiss">Dismiss visible items</button>
+                <span class="dq-meta" id="dq-bulk-help">Use this to clear the currently visible queue items after review.</span>
+            </div>
             <div id="dq-container">
                 <p>Loading data quality review...</p>
             </div>
@@ -447,6 +459,8 @@
         const errorMsg = document.getElementById('auth-error');
 
         let currentUserEmail = '';
+        let hasUnsavedBusinessEdits = false;
+        let currentSavedBusiness = null;
 
         // ============================================================
         // Shared helpers: escaping, toasts, skeletons, tab wiring
@@ -490,11 +504,18 @@
             });
         }
 
-        // The RLS policy on `admins` only lets a user see their OWN row (if it exists),
-        // so this doubles as both the UI gate and confirmation the server-side checks
-        // (claim_requests UPDATE policy) will actually allow this user to approve anything.
+        // Prefer the stable identity helper from the SQL migration. If that is not available
+        // yet in the database, fall back to the legacy email match so the UI remains usable.
         async function isCurrentUserAdmin() {
-            const { data, error } = await supabaseClient.from('admins').select('email').maybeSingle();
+            try {
+                const { data, error } = await supabaseClient.rpc('is_admin');
+                if (!error && typeof data === 'boolean') return data;
+            } catch (err) {
+                // ignore and fall back below
+            }
+
+            if (!currentUserEmail) return false;
+            const { data, error } = await supabaseClient.from('admins').select('email').ilike('email', currentUserEmail).maybeSingle();
             return !error && !!data;
         }
 
@@ -677,6 +698,7 @@
                 document.getElementById('stat-admins').textContent = adminsRes.count ?? '–';
                 document.getElementById('stat-dq').textContent = dqData.links.length + dqData.coords.length + dqData.images.length;
                 document.getElementById('stat-tile-pending').classList.toggle('attention', pending > 0);
+                document.getElementById('stat-pending-pill').textContent = pending > 0 ? `${pending} awaiting review` : 'All caught up';
             } catch (err) {
                 // Overview stats are a nice-to-have summary; a failure here shouldn't block the rest of the dashboard.
             }
@@ -750,6 +772,8 @@
 
                 if (error) throw error;
 
+                await logActivity('approve_claim', 'claim_requests', claimId, { business_name: businessName, requester_email: email, business_id: businessId });
+
                 // Fires an automated "you're approved" email via notify.js (Gmail-backed
                 // Apps Script -- see gmail_notifications.gs) if that's been set up; it's a
                 // silent no-op otherwise. The clipboard copy below stays as a manual
@@ -786,6 +810,7 @@
                     .eq('id', claimId);
 
                 if (error) throw error;
+                await logActivity('reject_claim', 'claim_requests', claimId, { business_name: businessName, requester_email: email, business_id: businessId });
                 if (window.notifyClaim) window.notifyClaim('claim_rejected', { requester_email: email, business_name: businessName, business_id: businessId });
                 showToast('Claim rejected.', 'success');
                 fetchClaims();
@@ -859,6 +884,26 @@
         function csvToArray(str) {
             return (str || '').split(',').map(s => s.trim()).filter(Boolean);
         }
+        function markBusinessDirty() {
+            hasUnsavedBusinessEdits = true;
+        }
+        function clearBusinessDirty() {
+            hasUnsavedBusinessEdits = false;
+        }
+        function confirmBusinessCloseIfNeeded() {
+            if (!hasUnsavedBusinessEdits) return true;
+            return confirm('You have unsaved business changes. Close anyway?');
+        }
+
+        function requireDestructiveConfirmation(actionLabel, targetName, confirmationText = 'DELETE') {
+            const promptText = `Type "${confirmationText}" to ${actionLabel} ${targetName}.`;
+            const response = window.prompt(promptText);
+            return response && response.trim().toUpperCase() === confirmationText;
+        }
+        document.querySelectorAll('#biz-edit-form input, #biz-edit-form textarea, #biz-edit-form select').forEach(field => {
+            field.addEventListener('input', markBusinessDirty);
+            field.addEventListener('change', markBusinessDirty);
+        });
 
         document.getElementById('biz-search-input').addEventListener('input', (e) => {
             clearTimeout(bizSearchTimeout);
@@ -935,6 +980,8 @@
 
                 currentEditBusinessId = business.id;
                 currentEditBusinessName = business.company_name || '';
+                currentSavedBusiness = { ...business };
+                clearBusinessDirty();
 
                 document.getElementById('biz-edit-title').textContent = currentEditBusinessName || '(untitled business)';
                 document.getElementById('biz-edit-name').value = business.company_name || '';
@@ -969,8 +1016,10 @@
         }
 
         document.getElementById('biz-edit-close').addEventListener('click', () => {
+            if (!confirmBusinessCloseIfNeeded()) return;
             bizEditWrap.style.display = 'none';
             currentEditBusinessId = null;
+            clearBusinessDirty();
         });
 
         bizEditForm.addEventListener('submit', async (e) => {
@@ -1014,7 +1063,13 @@
                 const { error } = await supabaseClient.from('classes').update(updates).eq('id', currentEditBusinessId);
                 if (error) throw error;
 
+                await logActivity('edit_business', 'classes', currentEditBusinessId, {
+                    business_name: updates.company_name || currentEditBusinessName,
+                    fields: Object.keys(updates)
+                });
                 currentEditBusinessName = updates.company_name;
+                currentSavedBusiness = { ...(currentSavedBusiness || {}), ...updates, id: currentEditBusinessId };
+                clearBusinessDirty();
                 document.getElementById('biz-edit-title').textContent = currentEditBusinessName || '(untitled business)';
                 showToast('Business updated.', 'success');
                 searchBusinesses(document.getElementById('biz-search-input').value);
@@ -1028,7 +1083,7 @@
 
         document.getElementById('biz-delete-btn').addEventListener('click', async () => {
             if (!currentEditBusinessId) return;
-            if (!confirm(`Soft-delete "${currentEditBusinessName}"? It will be hidden from the public site.`)) return;
+            if (!requireDestructiveConfirmation('soft-delete', `"${currentEditBusinessName}"`, 'DELETE BUSINESS')) return;
 
             try {
                 const { error } = await supabaseClient.from('classes').update({
@@ -1167,7 +1222,7 @@
         });
 
         async function removeAdmin(email) {
-            if (!confirm(`Remove admin access for ${email}?`)) return;
+            if (!requireDestructiveConfirmation('remove admin access for', email, 'REMOVE ADMIN')) return;
             try {
                 const { error } = await supabaseClient.from('admins').delete().eq('email', email);
                 if (error) throw error;
@@ -1243,6 +1298,37 @@
             else renderImagesTab();
         }
 
+        async function bulkDismissVisibleDqItems() {
+            const visibleCards = Array.from(document.querySelectorAll('#dq-container .dq-card'));
+            if (!visibleCards.length) {
+                showToast('Nothing visible to dismiss right now.', 'error');
+                return;
+            }
+            const ids = visibleCards.map(card => Number(card.dataset.businessId)).filter(Boolean);
+            if (!ids.length) {
+                showToast('No review items could be identified.', 'error');
+                return;
+            }
+            const confirmText = `Dismiss ${ids.length} visible review item${ids.length === 1 ? '' : 's'}?`;
+            if (!confirm(confirmText)) return;
+            try {
+                const updates = dqActiveTab === 'links'
+                    ? { website_flag_dismissed: true, website_flag_dismissed_at: new Date().toISOString() }
+                    : dqActiveTab === 'coords'
+                        ? { coords_flag_dismissed: true, coords_flag_dismissed_at: new Date().toISOString() }
+                        : { image_flag_dismissed: true, image_flag_dismissed_at: new Date().toISOString() };
+                const { error } = await supabaseClient.from('classes').update(updates).in('id', ids);
+                if (error) throw error;
+                await logActivity(`dismiss_${dqActiveTab}_dq_items`, 'classes', null, { count: ids.length, tab: dqActiveTab });
+                await loadDataQuality();
+                showToast(`Dismissed ${ids.length} item${ids.length === 1 ? '' : 's'}.`, 'success');
+            } catch (err) {
+                showToast('Failed to dismiss visible items: ' + err.message, 'error');
+            }
+        }
+
+        document.getElementById('dq-bulk-dismiss').addEventListener('click', bulkDismissVisibleDqItems);
+
         function removeDqRow(listKey, rowId, card) {
             dqData[listKey] = dqData[listKey].filter(r => r.id !== rowId);
             document.getElementById(`dq-count-${listKey}`).textContent = dqData[listKey].length;
@@ -1268,6 +1354,9 @@
                     .from('classes')
                     .update({ [flagColumn]: true, [timestampColumn]: new Date().toISOString() })
                     .eq('id', id);
+                if (!error) {
+                    await logActivity(`dismiss_${listKey}_flag`, 'classes', id, { flagColumn, listKey });
+                }
                 if (error) throw error;
                 removeDqRow(listKey, id, card);
             } catch (err) {
@@ -1352,6 +1441,7 @@
             rows.forEach(row => {
                 const card = document.createElement('div');
                 card.className = 'dq-card';
+                card.dataset.businessId = row.id;
                 const checkedDate = row.website_checked_at ? new Date(row.website_checked_at).toLocaleDateString() : 'unknown';
                 card.innerHTML = `
                     <h4>${escapeHtml(row.company_name)}</h4>
@@ -1426,6 +1516,7 @@
             rows.forEach(row => {
                 const card = document.createElement('div');
                 card.className = 'dq-card';
+                card.dataset.businessId = row.id;
                 card.innerHTML = `
                     <h4>${escapeHtml(row.company_name)}</h4>
                     <div class="image-field">

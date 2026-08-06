@@ -208,6 +208,34 @@ def load_source_file(path: Path) -> pd.DataFrame:
     raise ValueError(f'Unsupported file type: {path}')
 
 
+def discover_source_files(root: Path | None = None) -> List[Path]:
+    base = root or ROOT
+    download_dir = base / 'downloads'
+    if not download_dir.exists():
+        return []
+
+    ignored_names = {
+        'classes_in_database.json',
+        'all_normalized_candidates.csv',
+        'all_normalized_candidates.json',
+        'deduped_candidates.csv',
+        'deduped_candidates.json',
+        'cleaned_new_candidates.json',
+        'south_dublin_kids_activities.json',
+    }
+
+    candidates = []
+    for path in sorted(download_dir.iterdir()):
+        if not path.is_file():
+            continue
+        if path.name in ignored_names:
+            continue
+        if path.suffix.lower() not in {'.csv', '.json', '.xlsx', '.xls'}:
+            continue
+        candidates.append(path)
+    return candidates
+
+
 # ------------------------------
 # Mapping
 # ------------------------------
@@ -375,18 +403,13 @@ def main():
     existing = fetch_existing_classes()
     print('Existing rows:', len(existing))
 
-    files = [
-        ROOT / 'downloads' / 'dostuff_providers_ireland.csv',
-        ROOT / 'downloads' / 'totsspots_listings.csv',
-        ROOT / 'downloads' / 'south_dublin_kids_activities_MASTER.json',
-        ROOT / 'downloads' / 'dublincitymum_listings.csv',
-    ]
+    files = discover_source_files(ROOT)
+    if not files:
+        print('No candidate source files found in downloads/')
+        return
 
     combined = []
     for path in files:
-        if not path.exists():
-            print(f'Skipping missing file: {path}')
-            continue
         print(f'Loading {path.name}...')
         df = load_source_file(path)
         print('Rows loaded:', len(df))

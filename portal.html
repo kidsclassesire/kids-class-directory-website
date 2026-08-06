@@ -50,7 +50,10 @@
         .image-field-actions { display: flex; flex-direction: column; gap: 0.5rem; }
         .image-field-actions .btn-row { display: flex; gap: 0.5rem; }
         .image-hint { font-size: 0.75rem; color: var(--text-muted); margin: 0; }
-        .save-bar { position: sticky; bottom: 0; background: #ffffff; padding-top: 1rem; }
+        .save-bar { position: sticky; bottom: 0; background: #ffffff; padding-top: 1rem; border-top: 1px solid var(--border); margin-top: 1rem; }
+        .save-bar-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; }
+        .save-bar-status { display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); font-size: 0.85rem; }
+        .save-status-pill { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.3rem 0.6rem; border-radius: 999px; background: #fef3c7; color: #92400e; font-weight: 600; }
         .business-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
         .business-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; background: #ffffff; }
         .business-card-banner, .business-card-banner-empty { width: 100%; height: 110px; }
@@ -462,7 +465,16 @@
             <div class="save-bar">
                 <div class="alert alert-error" id="dash-error-bottom"></div>
                 <div class="alert alert-success" id="dash-success-bottom"></div>
-                <button type="submit" class="btn" id="save-btn">Save Changes</button>
+                <div class="save-bar-row">
+                    <div class="save-bar-status">
+                        <span class="save-status-pill" id="unsaved-indicator" style="display: none;">Unsaved changes</span>
+                        <span>Tip: press Ctrl/Cmd + S to save.</span>
+                    </div>
+                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                        <button type="button" class="btn-secondary" id="discard-changes-btn">Discard changes</button>
+                        <button type="submit" class="btn" id="save-btn">Save Changes</button>
+                    </div>
+                </div>
             </div>
         </form>
     </div>
@@ -506,6 +518,9 @@
         let currentUserEmail = '';
         let currentBusinessId = null;
         let cachedBusinesses = [];
+        let hasUnsavedChanges = false;
+        let currentSavedBusiness = null;
+        let skipDirtyTracking = false;
 
         // UI Elements
         const authSection = document.getElementById('auth-section');
@@ -541,6 +556,51 @@
             dashSuccessBottom.style.display = 'block';
             dashErrorBottom.style.display = 'none';
         }
+        function updateDirtyIndicator() {
+            const indicator = document.getElementById('unsaved-indicator');
+            const saveBtn = document.getElementById('save-btn');
+            if (!indicator || !saveBtn) return;
+            indicator.style.display = hasUnsavedChanges ? 'inline-flex' : 'none';
+            saveBtn.textContent = hasUnsavedChanges ? 'Save Changes*' : 'Save Changes';
+        }
+        function markDirty() {
+            if (skipDirtyTracking) return;
+            if (!hasUnsavedChanges) {
+                hasUnsavedChanges = true;
+                updateDirtyIndicator();
+            }
+        }
+        function clearDirtyState() {
+            hasUnsavedChanges = false;
+            updateDirtyIndicator();
+        }
+        function confirmDiscardIfNeeded() {
+            if (!hasUnsavedChanges) return true;
+            return confirm('You have unsaved changes. Discard them and continue?');
+        }
+
+        function bindDirtyTracking() {
+            const fields = document.querySelectorAll('#edit-business-form input, #edit-business-form textarea, #edit-business-form select');
+            fields.forEach((field) => {
+                field.addEventListener('input', markDirty);
+                field.addEventListener('change', markDirty);
+            });
+        }
+        bindDirtyTracking();
+
+        window.addEventListener('beforeunload', (e) => {
+            if (hasUnsavedChanges) {
+                e.preventDefault();
+                e.returnValue = '';
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's' && editForm.style.display === 'block') {
+                e.preventDefault();
+                document.getElementById('save-btn').click();
+            }
+        });
 
         // Toggle Login / Signup
         document.getElementById('toggle-auth').addEventListener('click', () => {
@@ -968,6 +1028,7 @@
             `).join('');
             businessCardsEl.querySelectorAll('button[data-business-id]').forEach(btn => {
                 btn.addEventListener('click', () => {
+                    if (!confirmDiscardIfNeeded()) return;
                     const business = cachedBusinesses.find(b => String(b.id) === btn.getAttribute('data-business-id'));
                     if (business) showBusinessEditor(business, true);
                 });
@@ -999,13 +1060,23 @@
         });
 
         document.getElementById('back-to-list-btn').addEventListener('click', () => {
+            if (!confirmDiscardIfNeeded()) return;
             editForm.style.display = 'none';
             backToListRow.style.display = 'none';
             renderBusinessCards(cachedBusinesses);
         });
 
+        document.getElementById('discard-changes-btn').addEventListener('click', () => {
+            if (!currentSavedBusiness) return;
+            if (!confirmDiscardIfNeeded()) return;
+            populateEditForm(currentSavedBusiness);
+            showDashSuccess('Changes discarded.');
+        });
+
         function populateEditForm(business) {
             currentBusinessId = business.id;
+            currentSavedBusiness = { ...business };
+            skipDirtyTracking = true;
 
             document.getElementById('editing-business-name').textContent = `Editing: ${business.company_name || 'Untitled business'}`;
 
@@ -1057,6 +1128,8 @@
 
             renderImagePreview('logo-preview-box', business.logo_path, 'No logo');
             renderImagePreview('banner-preview-box', business.hosted_image_path, 'No banner');
+            clearDirtyState();
+            skipDirtyTracking = false;
         }
 
         // ---- Image upload / delete ----
@@ -1340,7 +1413,9 @@
                 // name/category just saved, without a refetch.
                 const cached = cachedBusinesses.find(b => String(b.id) === id);
                 if (cached) Object.assign(cached, updates);
+                currentSavedBusiness = { ...(currentSavedBusiness || {}), ...updates, id: Number(id) };
                 document.getElementById('editing-business-name').textContent = `Editing: ${updates.company_name || 'Untitled business'}`;
+                clearDirtyState();
 
                 showDashSuccess("Your listing has been updated! It's live on the main search right away — your dedicated business page can take up to 24 hours to catch up.");
             } catch (err) {
