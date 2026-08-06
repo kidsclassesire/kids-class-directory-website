@@ -1,0 +1,420 @@
+[
+ {
+  "id": 1902,
+  "company_name": "Parnell's GAA Club",
+  "category": "GAA",
+  "class_types": [
+   "GAA Nursery"
+  ],
+  "minimum_age": 4,
+  "maximum_age": 7,
+  "age_range_display": "4-7 years",
+  "parental_requirement": "Not Stated",
+  "address": "The Clubhouse, Main Street, Coolock, Dublin 5",
+  "days_of_week": [
+   "Saturday"
+  ],
+  "start_time": null,
+  "end_time": null,
+  "term_structure": null,
+  "price_amount": null,
+  "price_currency": "EUR",
+  "pricing_basis": null,
+  "pricing_details": null,
+  "facilities": null,
+  "description": "GAA nursery (Nippers), Saturday mornings."
+ },
+ {
+  "id": 1903,
+  "company_name": "Coolock Kenpo Karate Club",
+  "category": "Martial Arts",
+  "class_types": [
+   "Kenpo Karate"
+  ],
+  "minimum_age": 5,
+  "maximum_age": 15,
+  "age_range_display": "5-15 years",
+  "parental_requirement": "Not Stated",
+  "address": "Scout Hall, Coolock Village, Coolock, Dublin 5",
+  "days_of_week": null,
+  "start_time": null,
+  "end_time": null,
+  "term_structure": null,
+  "price_amount": null,
+  "price_currency": "EUR",
+  "pricing_basis": null,
+  "pricing_details": null,
+  "facilities": null,
+  "description": "Kenpo karate classes, part of the same chain as Ballinteer Kenpo Karate Club."
+ },
+ {
+  "id": 1904,
+  "company_name": "Bohemian FC Academy",
+  "category": "Football",
+  "class_types": [
+   "Small-Sided Games"
+  ],
+  "minimum_age": null,
+  "maximum_age": null,
+  "age_range_display": "U8-U12",
+  "parental_requirement": "Not Stated",
+  "address": "Oscar Traynor Centre, Oscar Traynor Road, Coolock, Dublin 17",
+  "days_of_week": null,
+  "start_time": null,
+  "end_time": null,
+  "term_structure": null,
+  "price_amount": null,
+  "price_currency": "EUR",
+  "pricing_basis": null,
+  "pricing_details": null,
+  "facilities": null,
+  "description": "Small-sided games football programme."
+ },
+ {
+  "id": 1905,
+  "company_name": "Astropark Coolock",
+  "category": "Camps",
+  "class_types": [
+   "Summer Camp"
+  ],
+  "minimum_age": 5,
+  "maximum_age": 12,
+  "age_range_display": "5-12 years",
+  "parental_requirement": "Not Stated",
+  "address": "Oscar Traynor Road / Coolock Lane, Coolock, Dublin 17, D17 Y998",
+  "days_of_week": null,
+  "start_time": null,
+  "end_time": null,
+  "term_structure": null,
+  "price_amount": null,
+  "price_currency": "EUR",
+  "pricing_basis": null,
+  "pricing_details": null,
+  "facilities": null,
+  "description": "Multi-activity summer camps."
+ },
+ {
+  "id": 1906,
+  "company_name": "Olympus Dance & Music School",
+  "category": "Dance",
+  "class_types": [
+   "Preschool Dance",
+   "Gymnastics",
+   "Music",
+   "Art"
+  ],
+  "minimum_age": null,
+  "maximum_age": null,
+  "age_range_display": null,
+  "parental_requirement": "Not Stated",
+  "address": "Unit 10C, Ringuard House, Malahide Industrial Estate, Greencastle Parade, Dublin 17",
+  "days_of_week": null,
+  "start_time": null,
+  "end_time": null,
+  "term_structure": null,
+  "price_amount": null,
+  "price_currency": "EUR",
+  "pricing_basis": null,
+  "pricing_details": null,
+  "facilities": null,
+  "description": "Preschool dance, Fitnastix gymnastics, and music/art classes."
+ },
+ {
+  "id": 1907,
+  "company_name": "Larkhill Karate Club",
+  "category": "Martial Arts",
+  "class_types": [
+   "Karate"
+  ],
+  "minimum_age": 4,
+  "maximum_age": 15,
+  "age_range_display": "4-15+ years",
+  "parental_requirement": "Not Stated",
+  "address": "Unit 4, Santry Hall Industrial Estate, Santry, Dublin 9, D09 V409",
+  "days_of_week": null,
+  "start_time": null,
+  "end_time": null,
+  "term_structure": null,
+  "price_amount": null,
+  "price_currency": "EUR",
+  "pricing_basis": null,
+  "pricing_details": null,
+  "facilities": null,
+  "description": "Karate classes across Lions/Dragons/Panthers age groups."
+ },
+ {
+  "id": 1908,
+  "company_name": "Grange Gymnastics Club",
+  "category": "Gymnastics",
+  "class_types": [
+   "Gymnastics"
+  ],
+  "minimum_age": null,
+  "maximum_age": null,
+  "age_range_display": "Toddlers-adults",
+  "parental_requirement": "Not Stated",
+  "address": "Unit 10D, Airways Industrial Estate, Boeing Road, Santry, Dublin 9",
+  "days_of_week": null,
+  "start_time": null,
+  "end_time": null,
+  "term_structure": null,
+  "price_amount": null,
+  "price_currency": "EUR",
+  "pricing_basis": null,
+  "pricing_details": null,
+  "facilities": null,
+  "description": "Gymnastics Ireland member club for toddlers through adults."
+ },
+ {
+  "id": 1909,
+  "company_name": "Thunderstruck Stage School - Santry",
+  "category": "Drama",
+  "class_types": [
+   "Stage School"
+  ],
+  "minimum_age": 2.5,
+  "maximum_age": 19,
+  "age_range_display": "2.5-19 years",
+  "parental_requirement": "Not Stated",
+  "address": "Unit 5, Santry Hall Industrial Estate, Santry, Dublin 9",
+  "days_of_week": null,
+  "start_time": null,
+  "end_time": null,
+  "term_structure": null,
+  "price_amount": null,
+  "price_currency": "EUR",
+  "pricing_basis": null,
+  "pricing_details": null,
+  "facilities": null,
+  "description": "Stage school classes covering dance and drama."
+ },
+ {
+  "id": 1910,
+  "company_name": "Starlights GFC",
+  "category": "GAA",
+  "class_types": [
+   "GAA Nursery"
+  ],
+  "minimum_age": 3,
+  "maximum_age": 7,
+  "age_range_display": "3-7 years",
+  "parental_requirement": "Not Stated",
+  "address": "St Pappan's Parochial Hall, Santry village, Dublin 9",
+  "days_of_week": [
+   "Saturday"
+  ],
+  "start_time": "10:00",
+  "end_time": "11:00",
+  "term_structure": null,
+  "price_amount": null,
+  "price_currency": "EUR",
+  "pricing_basis": null,
+  "pricing_details": null,
+  "facilities": null,
+  "description": "GAA nursery (Little Stars), Saturday mornings."
+ },
+ {
+  "id": 1912,
+  "company_name": "Sportslink - Aqua Tots",
+  "category": "Swimming",
+  "class_types": [
+   "Aqua Tots"
+  ],
+  "minimum_age": 0.1,
+  "maximum_age": 3,
+  "age_range_display": "3-36 months",
+  "parental_requirement": "Not Stated",
+  "address": "Furry Park, Swords Road, Santry, Dublin 9",
+  "days_of_week": null,
+  "start_time": null,
+  "end_time": null,
+  "term_structure": null,
+  "price_amount": null,
+  "price_currency": "EUR",
+  "pricing_basis": null,
+  "pricing_details": null,
+  "facilities": null,
+  "description": "Parent and baby swim classes."
+ },
+ {
+  "id": 1913,
+  "company_name": "Finglas Celtic FC",
+  "category": "Football",
+  "class_types": [
+   "Football Academy"
+  ],
+  "minimum_age": 4,
+  "maximum_age": 7,
+  "age_range_display": "4-7 years",
+  "parental_requirement": "Not Stated",
+  "address": "Finglas Celtic FC, Kilshane Road, Finglas West, Dublin 11, D11 VX43",
+  "days_of_week": [
+   "Friday",
+   "Saturday"
+  ],
+  "start_time": null,
+  "end_time": null,
+  "term_structure": null,
+  "price_amount": null,
+  "price_currency": "EUR",
+  "pricing_basis": null,
+  "pricing_details": null,
+  "facilities": null,
+  "description": "Football academy, Friday evenings and Saturday mornings."
+ },
+ {
+  "id": 1914,
+  "company_name": "Kobukan Kobudo Renmei - Finglas",
+  "category": "Martial Arts",
+  "class_types": [
+   "Kobudo"
+  ],
+  "minimum_age": 5,
+  "maximum_age": 12,
+  "age_range_display": "5-12 years",
+  "parental_requirement": "Not Stated",
+  "address": "Meakstown Community Centre, Lanesborough Park, Finglas, Dublin 11",
+  "days_of_week": null,
+  "start_time": null,
+  "end_time": null,
+  "term_structure": null,
+  "price_amount": null,
+  "price_currency": "EUR",
+  "pricing_basis": null,
+  "pricing_details": null,
+  "facilities": null,
+  "description": "Kobudo martial arts classes."
+ },
+ {
+  "id": 1915,
+  "company_name": "House of Swag - Finglas",
+  "category": "Dance",
+  "class_types": [
+   "Dance",
+   "Drama",
+   "Gymnastics"
+  ],
+  "minimum_age": 4,
+  "maximum_age": null,
+  "age_range_display": "4+ years",
+  "parental_requirement": "Not Stated",
+  "address": "2D Century Business Park, Finglas, Dublin 11, D11 VP46",
+  "days_of_week": [
+   "Monday"
+  ],
+  "start_time": null,
+  "end_time": null,
+  "term_structure": null,
+  "price_amount": null,
+  "price_currency": "EUR",
+  "pricing_basis": null,
+  "pricing_details": null,
+  "facilities": null,
+  "description": "Dance, drama and gymnastics classes, Mondays, a new branch of the same company as House of Swag Swords."
+ },
+ {
+  "id": 1917,
+  "company_name": "FKFT Dance School - Finglas",
+  "category": "Dance",
+  "class_types": [
+   "Dance Classes"
+  ],
+  "minimum_age": 3,
+  "maximum_age": 18,
+  "age_range_display": "3-18 years",
+  "parental_requirement": "Not Stated",
+  "address": "W.F.T.R.A Hall, Finglas, Dublin 11",
+  "days_of_week": [
+   "Monday"
+  ],
+  "start_time": null,
+  "end_time": null,
+  "term_structure": null,
+  "price_amount": null,
+  "price_currency": "EUR",
+  "pricing_basis": null,
+  "pricing_details": null,
+  "facilities": null,
+  "description": "Dance classes, Mondays."
+ },
+ {
+  "id": 1918,
+  "company_name": "Axis Ballymun",
+  "category": "Drama",
+  "class_types": [
+   "Drama",
+   "Irish Dancing",
+   "Ballet"
+  ],
+  "minimum_age": 7,
+  "maximum_age": 16,
+  "age_range_display": "7-16 years",
+  "parental_requirement": "Not Stated",
+  "address": "Axis, Main Street, Ballymun, Dublin 9, D09 Y9W0",
+  "days_of_week": [
+   "Tuesday",
+   "Friday"
+  ],
+  "start_time": null,
+  "end_time": null,
+  "term_structure": null,
+  "price_amount": null,
+  "price_currency": "EUR",
+  "pricing_basis": null,
+  "pricing_details": null,
+  "facilities": null,
+  "description": "Drama classes (Tuesdays/Fridays); Beldance Irish Dancing and En Pointe Ballet also run at the venue."
+ },
+ {
+  "id": 1919,
+  "company_name": "Sport Taekwondo Ireland - Ballymun",
+  "category": "Martial Arts",
+  "class_types": [
+   "Taekwondo"
+  ],
+  "minimum_age": 5,
+  "maximum_age": null,
+  "age_range_display": "5+ years",
+  "parental_requirement": "Not Stated",
+  "address": "Trinity Comprehensive School, Ballymun Road, Dublin 11",
+  "days_of_week": [
+   "Monday",
+   "Wednesday"
+  ],
+  "start_time": null,
+  "end_time": null,
+  "term_structure": null,
+  "price_amount": null,
+  "price_currency": "EUR",
+  "pricing_basis": null,
+  "pricing_details": null,
+  "facilities": null,
+  "description": "Taekwondo classes, Monday and Wednesday."
+ },
+ {
+  "id": 1920,
+  "company_name": "Ballymun Boxing Club",
+  "category": "Martial Arts",
+  "class_types": [
+   "Junior Boxing"
+  ],
+  "minimum_age": null,
+  "maximum_age": null,
+  "age_range_display": null,
+  "parental_requirement": "Not Stated",
+  "address": "Poppintree Community Sports Centre, Balbutcher Lane, Ballymun, Dublin 9, D09 N9X6",
+  "days_of_week": [
+   "Tuesday",
+   "Thursday"
+  ],
+  "start_time": "18:00",
+  "end_time": null,
+  "term_structure": null,
+  "price_amount": null,
+  "price_currency": "EUR",
+  "pricing_basis": null,
+  "pricing_details": null,
+  "facilities": null,
+  "description": "Junior boxing sessions, Tuesday and Thursday evenings."
+ }
+]
