@@ -871,7 +871,7 @@
             const q = (rawQuery || '').replace(/[,()%]/g, ' ').trim();
 
             try {
-                let query = supabaseClient.from('classes').select('id,company_name,address,category,is_deleted').eq('is_deleted', false).order('company_name').limit(50);
+                let query = supabaseClient.from('classes').select('id,company_name,address,category,is_deleted').order('is_deleted', { ascending: true }).order('company_name').limit(50);
                 if (q) query = query.or(`company_name.ilike.%${q}%,address.ilike.%${q}%`);
                 const { data, error } = await query;
                 if (error) throw error;
@@ -885,20 +885,46 @@
                 data.forEach(biz => {
                     const row = document.createElement('div');
                     row.className = 'list-row';
+                    const isDeleted = !!biz.is_deleted;
                     row.innerHTML = `
                         <div>
                             <strong>${escapeHtml(biz.company_name)}</strong>
                             <p class="dq-meta">${escapeHtml(biz.category || 'Uncategorized')}${biz.address ? ' &middot; ' + escapeHtml(biz.address) : ''}</p>
+                            ${isDeleted ? '<p class="dq-meta" style="color:#b91c1c; margin-top:0.25rem;">Deleted</p>' : ''}
                         </div>
                         <div class="list-row-actions">
-                            <button class="btn-small">Edit</button>
+                            <button class="btn-small">${isDeleted ? 'Restore' : 'Edit'}</button>
                         </div>
                     `;
-                    row.querySelector('button').addEventListener('click', () => openBusinessEditor(biz.id));
+                    row.querySelector('button').addEventListener('click', async () => {
+                        if (isDeleted) {
+                            await restoreBusiness(biz.id, biz.company_name);
+                        } else {
+                            await openBusinessEditor(biz.id);
+                        }
+                    });
                     bizResultsEl.appendChild(row);
                 });
             } catch (err) {
                 bizResultsEl.innerHTML = `<p style="color:#ef4444;">Error searching businesses: ${escapeHtml(err.message)}</p>`;
+            }
+        }
+
+        async function restoreBusiness(id, businessName) {
+            try {
+                const { error } = await supabaseClient.from('classes').update({
+                    is_deleted: false,
+                    deleted_at: null,
+                    deleted_by: null
+                }).eq('id', id);
+                if (error) throw error;
+
+                await logActivity('restore_business', 'classes', id, { business_name: businessName });
+                showToast('Business restored.', 'success');
+                searchBusinesses(document.getElementById('biz-search-input').value);
+                refreshOverviewStats();
+            } catch (err) {
+                showToast('Failed to restore business: ' + err.message, 'error');
             }
         }
 
