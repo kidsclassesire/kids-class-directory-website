@@ -118,6 +118,7 @@
         .checkbox-grid input { width: auto; }
         .save-bar { position: sticky; bottom: 0; background: #ffffff; padding-top: 1rem; display: flex; gap: 0.75rem; align-items: center; border-top: 1px solid var(--border); margin-top: 0.5rem; }
         .save-bar .btn { width: auto; padding: 0.85rem 1.75rem; }
+        .soft-delete-note { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem; }
         #biz-edit-wrap { border-top: 2px solid var(--border); margin-top: 1.5rem; padding-top: 1.5rem; }
         .biz-edit-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; }
         .danger-note { color: var(--text-muted); font-size: 0.8rem; margin: 0.5rem 0 0; }
@@ -188,6 +189,7 @@
             <button class="tab" data-tab="claims">Claims</button>
             <button class="tab" data-tab="businesses">Businesses</button>
             <button class="tab" data-tab="dataquality">Data Quality</button>
+            <button class="tab" data-tab="activity">Activity</button>
             <button class="tab" data-tab="admins">Admins</button>
         </div>
 
@@ -393,9 +395,9 @@
 
                     <div class="save-bar">
                         <button type="submit" class="btn" id="biz-save-btn">Save Changes</button>
-                        <button type="button" class="btn-danger" id="biz-delete-btn">Delete business</button>
+                        <button type="button" class="btn-danger" id="biz-delete-btn">Soft-delete business</button>
                     </div>
-                    <p class="danger-note">Deleting a business removes it permanently from the directory. This cannot be undone.</p>
+                    <p class="danger-note">This hides the business from the public site and keeps it recoverable from the activity log view.</p>
                 </form>
             </div>
         </div>
@@ -410,6 +412,11 @@
             <div id="dq-container">
                 <p>Loading data quality review...</p>
             </div>
+        </div>
+
+        <!-- Activity -->
+        <div class="panel" data-tab="activity" id="panel-activity">
+            <div id="activity-list"><p>Loading activity...</p></div>
         </div>
 
         <!-- Admins -->
@@ -643,9 +650,11 @@
         let businessesLoaded = false;
         let claimHistoryLoaded = false;
         let adminsLoaded = false;
+        let activityLoaded = false;
 
         wireTabGroup('#top-tabs .tab', '#dashboard-section > .panel', (key) => {
             if (key === 'businesses' && !businessesLoaded) { businessesLoaded = true; searchBusinesses(''); }
+            if (key === 'activity' && !activityLoaded) { activityLoaded = true; fetchActivityLog(); }
             if (key === 'admins' && !adminsLoaded) { adminsLoaded = true; fetchAdmins(); }
         });
         wireTabGroup('#claims-tabs .tab', '#panel-claims .subpanel', (key) => {
@@ -859,11 +868,10 @@
 
         async function searchBusinesses(rawQuery) {
             bizResultsEl.innerHTML = skeletonHtml(4, 60);
-            // Strip characters that would otherwise break the PostgREST .or() filter syntax.
             const q = (rawQuery || '').replace(/[,()%]/g, ' ').trim();
 
             try {
-                let query = supabaseClient.from('classes').select('id,company_name,address,category').order('company_name').limit(50);
+                let query = supabaseClient.from('classes').select('id,company_name,address,category,is_deleted').eq('is_deleted', false).order('company_name').limit(50);
                 if (q) query = query.or(`company_name.ilike.%${q}%,address.ilike.%${q}%`);
                 const { data, error } = await query;
                 if (error) throw error;
@@ -994,21 +1002,75 @@
 
         document.getElementById('biz-delete-btn').addEventListener('click', async () => {
             if (!currentEditBusinessId) return;
-            if (!confirm(`Delete "${currentEditBusinessName}"? This cannot be undone.`)) return;
+            if (!confirm(`Soft-delete "${currentEditBusinessName}"? It will be hidden from the public site.`)) return;
 
             try {
-                const { error } = await supabaseClient.from('classes').delete().eq('id', currentEditBusinessId);
+                const { error } = await supabaseClient.from('classes').update({
+                    is_deleted: true,
+                    deleted_at: new Date().toISOString(),
+                    deleted_by: currentUserEmail || 'unknown'
+                }).eq('id', currentEditBusinessId);
                 if (error) throw error;
 
-                showToast('Business deleted.', 'success');
+                await logActivity('soft_delete_business', 'classes', currentEditBusinessId, {
+                    business_name: currentEditBusinessName
+                });
+
+                showToast('Business soft-deleted.', 'success');
                 bizEditWrap.style.display = 'none';
                 currentEditBusinessId = null;
                 searchBusinesses(document.getElementById('biz-search-input').value);
                 refreshOverviewStats();
             } catch (err) {
-                showToast('Failed to delete: ' + err.message, 'error');
+                showToast('Failed to soft-delete: ' + err.message, 'error');
             }
         });
+
+        // ============================================================
+        // Activity log
+        // ============================================================
+        async function logActivity(action, targetType, targetId, details = {}) {
+            try {
+                const { error } = await supabaseClient.from('admin_activity_log').insert({
+                    actor_email: currentUserEmail || 'unknown',
+                    action,
+                    target_type: targetType,
+                    target_id: targetId ? String(targetId) : null,
+                    details
+                });
+                if (error) console.warn('Activity logging failed', error);
+            } catch (err) {
+                console.warn('Activity logging failed', err);
+            }
+        }
+
+        async function fetchActivityLog() {
+            const el = document.getElementById('activity-list');
+            el.innerHTML = skeletonHtml(4, 70);
+            try {
+                const { data, error } = await supabaseClient.from('admin_activity_log').select('*').order('created_at', { ascending: false }).limit(100);
+                if (error) throw error;
+                if (!data.length) {
+                    el.innerHTML = '<p class="dq-empty">No activity recorded yet.</p>';
+                    return;
+                }
+                el.innerHTML = '';
+                data.forEach(entry => {
+                    const row = document.createElement('div');
+                    row.className = 'list-row';
+                    row.innerHTML = `
+                        <div>
+                            <strong>${escapeHtml(entry.action)}</strong>
+                            <p class="dq-meta">${escapeHtml(entry.actor_email)} &middot; ${new Date(entry.created_at).toLocaleString()}</p>
+                            <p class="dq-meta">${escapeHtml(JSON.stringify(entry.details || {}))}</p>
+                        </div>
+                    `;
+                    el.appendChild(row);
+                });
+            } catch (err) {
+                el.innerHTML = `<p style="color:#ef4444;">Error loading activity: ${escapeHtml(err.message)}</p>`;
+            }
+        }
 
         // ============================================================
         // Admins management
@@ -1068,6 +1130,7 @@
             try {
                 const { error } = await supabaseClient.from('admins').insert({ email });
                 if (error) throw error;
+                await logActivity('add_admin', 'admins', email, { email });
                 input.value = '';
                 showToast('Admin added.', 'success');
                 fetchAdmins();
@@ -1082,6 +1145,7 @@
             try {
                 const { error } = await supabaseClient.from('admins').delete().eq('email', email);
                 if (error) throw error;
+                await logActivity('remove_admin', 'admins', email, { email });
                 showToast('Admin removed.', 'success');
                 fetchAdmins();
                 refreshOverviewStats();
