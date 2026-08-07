@@ -98,6 +98,12 @@
             padding: 8px 10px; border-radius: 8px; cursor: pointer; font-size: 0.88rem; color: var(--text-dark);
         }
         .field-suggestion:hover, .field-suggestion.active { background: var(--bg-page); }
+        .social-link-row { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.6rem; flex-wrap: wrap; }
+        .social-link-row select, .social-link-row input { padding: 0.6rem; border: 1px solid var(--border); border-radius: 8px; font-family: inherit; font-size: 0.9rem; box-sizing: border-box; }
+        .social-link-row .sl-platform { flex: 0 0 130px; }
+        .social-link-row .sl-label { flex: 1 1 140px; }
+        .social-link-row .sl-url { flex: 2 1 200px; }
+        .social-link-row .sl-remove-btn { flex: 0 0 auto; padding: 0.6rem 0.8rem; }
 
         @media (max-width: 640px) {
             body { padding: 0.75rem; }
@@ -411,6 +417,13 @@
                         <input type="url" id="edit-instagram" placeholder="e.g. https://instagram.com/yourbusiness">
                     </div>
                 </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Other Social Links</legend>
+                <p class="field-hint" style="margin: -0.5rem 0 1rem;">Facebook and Instagram have their own fields above. Add any other platforms here.</p>
+                <div id="extra-social-links-list"></div>
+                <button type="button" class="btn-secondary" id="add-social-link-btn">+ Add Link</button>
             </fieldset>
             </div>
 
@@ -865,6 +878,71 @@
             updatePricePreview();
         }
         document.getElementById('edit-is-free').addEventListener('change', (e) => setFreeState(e.target.checked));
+
+        // ---- Other Social Links: Facebook/Instagram keep their own dedicated
+        // columns (facebook_url/instagram_url) since those feed an existing scraper/
+        // enrichment pipeline (see add_social_link_columns.sql) -- this is a separate
+        // free-form list, stored as jsonb, for anything else (TikTok, YouTube, X,
+        // WhatsApp, ...) an owner wants to add. Rows are plain DOM elements inside
+        // the main form, so the existing delegated dirty-tracking/validation already
+        // covers them with no extra wiring. ----
+        const EXTRA_SOCIAL_PLATFORMS = [
+            { value: 'tiktok', label: 'TikTok' },
+            { value: 'youtube', label: 'YouTube' },
+            { value: 'x', label: 'X (Twitter)' },
+            { value: 'whatsapp', label: 'WhatsApp' },
+            { value: 'other', label: 'Other' },
+        ];
+        function socialPlatformOptionsHtml(selected) {
+            return EXTRA_SOCIAL_PLATFORMS.map(p =>
+                `<option value="${p.value}"${p.value === selected ? ' selected' : ''}>${p.label}</option>`
+            ).join('');
+        }
+        function createSocialLinkRow(data) {
+            data = data || {};
+            const row = document.createElement('div');
+            row.className = 'social-link-row';
+            row.innerHTML = `
+                <select class="sl-platform">${socialPlatformOptionsHtml(data.platform || '')}</select>
+                <input type="text" class="sl-label" placeholder="Label, e.g. My Blog" value="${escapeHtml(data.label || '')}" style="display:none;">
+                <input type="url" class="sl-url" placeholder="https://...">
+                <button type="button" class="btn-danger sl-remove-btn">Remove</button>
+            `;
+            row.querySelector('.sl-url').value = data.url || '';
+            const platformSelect = row.querySelector('.sl-platform');
+            const labelInput = row.querySelector('.sl-label');
+            function syncLabelVisibility() {
+                labelInput.style.display = platformSelect.value === 'other' ? '' : 'none';
+            }
+            syncLabelVisibility();
+            platformSelect.addEventListener('change', syncLabelVisibility);
+            row.querySelector('.sl-remove-btn').addEventListener('click', () => {
+                row.remove();
+                markDirty();
+                updateTabCompletionDots();
+            });
+            return row;
+        }
+        function renderSocialLinks(links) {
+            const container = document.getElementById('extra-social-links-list');
+            container.innerHTML = '';
+            (links || []).forEach(link => container.appendChild(createSocialLinkRow(link)));
+        }
+        function readSocialLinks() {
+            return Array.from(document.querySelectorAll('#extra-social-links-list .social-link-row'))
+                .map(row => {
+                    const platform = row.querySelector('.sl-platform').value;
+                    const url = row.querySelector('.sl-url').value.trim();
+                    const label = row.querySelector('.sl-label').value.trim();
+                    return { platform, url, ...(platform === 'other' && label ? { label } : {}) };
+                })
+                .filter(link => link.url); // drop rows left blank rather than saving empty entries
+        }
+        document.getElementById('add-social-link-btn').addEventListener('click', () => {
+            document.getElementById('extra-social-links-list').appendChild(createSocialLinkRow());
+            markDirty();
+            updateTabCompletionDots();
+        });
 
         // ---- Address lookup, backed by Photon (photon.komoot.io) -- the same free,
         // keyless geocoder already used for the "Where" field on index.html, so this
@@ -1334,6 +1412,7 @@
             document.getElementById('edit-eircode').value = business.eircode || '';
             document.getElementById('edit-facebook').value = business.facebook_url || '';
             document.getElementById('edit-instagram').value = business.instagram_url || '';
+            renderSocialLinks(business.extra_social_links || []);
             setCheckboxGroup('facilities-checkbox-grid', business.facilities);
 
             renderImagePreview('logo-preview-box', business.logo_path, 'No logo');
@@ -1621,6 +1700,7 @@
                 eircode: strOrNull(document.getElementById('edit-eircode').value),
                 facebook_url: strOrNull(document.getElementById('edit-facebook').value),
                 instagram_url: strOrNull(document.getElementById('edit-instagram').value),
+                extra_social_links: readSocialLinks(),
                 facilities: getCheckboxGroup('facilities-checkbox-grid'),
             };
 

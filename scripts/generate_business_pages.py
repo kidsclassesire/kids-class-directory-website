@@ -363,14 +363,28 @@ def share_widget_html(row, canonical):
                     </div>'''
 
 
+SOCIAL_PLATFORM_ICONS = {
+    'tiktok': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82c-.9-.98-1.39-2.24-1.39-3.55h-3.03v13.4a3.03 3.03 0 1 1-2.15-2.9V9.7a6.06 6.06 0 1 0 5.18 6v-6.87a8.98 8.98 0 0 0 5.23 1.67V7.47c-1.42 0-2.75-.6-3.84-1.65z"/></svg>',
+    'youtube': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14C4.5 20.5 12 20.5 12 20.5s7.5 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z"/></svg>',
+    'x': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2.25h3.32l-7.26 8.3 8.54 11.2h-6.68l-5.24-6.86-5.99 6.86H1.6l7.76-8.88L1.2 2.25h6.85l4.73 6.26 6.46-6.26zm-1.17 17.4h1.84L6.98 4.14H5l11.07 15.51z"/></svg>',
+    'whatsapp': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.02c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.95-.3-1.64-.6-2.89-1.25-4.78-4.16-4.92-4.35-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.28.58-.35.78-.35h.55c.18 0 .42-.07.65.5.24.58.81 2 .88 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.85.26.14.44.2.5.31.06.12.06.68-.18 1.36z"/></svg>',
+    'other': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 13.5a4 4 0 005.66 0l3-3a4 4 0 00-5.66-5.66l-1.5 1.5"/><path d="M13.5 10.5a4 4 0 00-5.66 0l-3 3a4 4 0 005.66 5.66l1.5-1.5"/></svg>',
+}
+SOCIAL_PLATFORM_LABELS = {'tiktok': 'TikTok', 'youtube': 'YouTube', 'x': 'X', 'whatsapp': 'WhatsApp'}
+
+
 def social_widget_html(row):
-    # Only rendered when the DB actually has a facebook_url/instagram_url --
-    # scripts/scrape_social_links_safe.py populates these, but most rows still
-    # don't have one, so this must stay silent (return '') rather than show
-    # empty/placeholder icons.
+    # facebook_url/instagram_url stay their own dedicated columns -- see
+    # scripts/scrape_social_links_safe.py -- while extra_social_links (jsonb,
+    # see add_extra_social_links_column.sql) is a free-form list of other
+    # platforms an owner adds via the portal. Both are optional per row, so
+    # this must stay silent (return '') rather than show empty/placeholder icons.
     facebook = row.get('facebook_url')
     instagram = row.get('instagram_url')
-    if not facebook and not instagram:
+    extra_links = row.get('extra_social_links')
+    if not isinstance(extra_links, list):
+        extra_links = []
+    if not facebook and not instagram and not extra_links:
         return ''
     facebook_icon = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.08 5.66 21.23 10.44 22v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22C18.34 21.23 22 17.08 22 12.06z"/></svg>'
     instagram_icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>'
@@ -383,6 +397,18 @@ def social_widget_html(row):
         href = esc(with_utm(instagram))
         track = track_onclick('outbound_click', business_id=row.get('id'), business_name=row.get('company_name'), category=row.get('category'), link_type='instagram')
         icons.append(f'<a class="social-icon social-instagram" href="{href}" target="_blank" rel="noopener" aria-label="Instagram page" title="Instagram" {track}>{instagram_icon}</a>')
+    for link in extra_links:
+        if not isinstance(link, dict):
+            continue
+        url = link.get('url')
+        if not url:
+            continue
+        platform = link.get('platform') or 'other'
+        icon = SOCIAL_PLATFORM_ICONS.get(platform, SOCIAL_PLATFORM_ICONS['other'])
+        label = link.get('label') or SOCIAL_PLATFORM_LABELS.get(platform, 'Link')
+        href = esc(with_utm(url))
+        track = track_onclick('outbound_click', business_id=row.get('id'), business_name=row.get('company_name'), category=row.get('category'), link_type=platform)
+        icons.append(f'<a class="social-icon social-{esc(platform)}" href="{href}" target="_blank" rel="noopener" aria-label="{esc(label)}" title="{esc(label)}" {track}>{icon}</a>')
     return f'<div class="social-row">{"".join(icons)}</div>'
 
 
