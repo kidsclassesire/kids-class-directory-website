@@ -1,0 +1,272 @@
+[
+  {
+    "id": 3,
+    "company_name": "Wild by Nature Forest School",
+    "age_range_display": "All ages (family session)"
+  },
+  {
+    "id": 4,
+    "company_name": "Dublin School of Music",
+    "age_range_display": "Children and adults, all ages and abilities"
+  },
+  {
+    "id": 5,
+    "company_name": "Dublin School of Music",
+    "age_range_display": "Children and adults, all ages and abilities"
+  },
+  {
+    "id": 6,
+    "company_name": "Dublin School of Music",
+    "age_range_display": "Children and adults, all ages and abilities"
+  },
+  {
+    "id": 58,
+    "company_name": "Junior Einsteins Science Club (South Dublin)",
+    "age_range_display": "Maternelle/Infant classes through Year 1 & 2 (early primary)"
+  },
+  {
+    "id": 178,
+    "company_name": "Aster Balbriggan",
+    "age_range_display": "0-6 months, 6-12 months, 1 year old, 2 year old, 3 year old, 8 year old, 9 year old, 10 year old"
+  },
+  {
+    "id": 189,
+    "company_name": "Ballymun Library",
+    "age_range_display": "0-6 months, 6-12 months, 1 year old, 2 year old, 3 year old, 4 year old, 5 year old, 10 year old, 11 year old, 12 year old, 13 year old, 14 year old, 15 year old"
+  },
+  {
+    "id": 195,
+    "company_name": "Blanchardstown Library",
+    "age_range_display": "0-6 months, 6-12 months, 1 year old, 2 year old, 3 year old, 12 year old, 13 year old, 14 year old, 15 year old"
+  },
+  {
+    "id": 232,
+    "company_name": "Harold's Cross - Toddler Group / Lego Club - Dolphin's Barn Library",
+    "age_range_display": "0-6 months, 6-12 months, 1 year old, 2 year old, 3 year old, 4 year old, 6 year old, 7 year old, 8 year old, 9 year old, 10 year old, 11 year old, 12 year old"
+  },
+  {
+    "id": 261,
+    "company_name": "Pearse St Toddler Group & Junior Book Club",
+    "age_range_display": "0-6 months, 6-12 months, 1 year old, 2 year old, 3 year old, 4 year old, 5 year old, 8 year old, 9 year old, 10 year old, 11 year old, 12 year old"
+  },
+  {
+    "id": 265,
+    "company_name": "Raheny Library - Toddler Group and Junior Book Clubs",
+    "age_range_display": "0-6 months, 6-12 months, 1 year old, 2 year old, 3 year old, 4 year old, 5 year old, 10 year old, 11 year old, 12 year old"
+  },
+  {
+    "id": 299,
+    "company_name": "Walkinstown Baby & Toddler Storytime / Book clubs",
+    "age_range_display": "0-6 months, 6-12 months, 1 year old, 2 year old, 5 year old, 6 year old, 7 year old, 8 year old, 9 year old, 10 year old, 11 year old"
+  },
+  {
+    "id": 359,
+    "company_name": "Pregnancy/Post-Natal Pilates",
+    "age_range_display": "0-6 months, 6-12 months, 15 year old"
+  },
+  {
+    "id": 412,
+    "company_name": "Churchtown School of Music",
+    "age_range_display": "Children and adults, all ages and skill levels"
+  },
+  {
+    "id": 413,
+    "company_name": "Templeogue College Swim Pool",
+    "age_range_display": "Children (specific age bands assigned after assessment)"
+  },
+  {
+    "id": 582,
+    "company_name": "Tullow & Carlow Central Library",
+    "age_range_display": "0-6 months, 6-12 months, 1 year old, 2 year old, 3 year old, 4 year old, 5 year old, 12 year old, 13 year old, 14 year old"
+  },
+  {
+    "id": 613,
+    "company_name": "Scariff Baby & Toddler Groups / Kids Book Club - Scariff Library",
+    "age_range_display": "0-6 months, 6-12 months, 1 year old, 2 year old, 3 year old, 4 year old, 5 year old, 9 year old, 10 year old, 11 year old, 12 year old"
+  },
+  {
+    "id": 662,
+    "company_name": "Piccolo Play Village Yoga & Sensory classes",
+    "age_range_display": "6-12 months, 6 year old"
+  },
+  {
+    "id": 717,
+    "company_name": "Ballybane Library - Toddler Group / Junior Book Club",
+    "age_range_display": "0-6 months, 6-12 months, 1 year old, 2 year old, 3 year old, 8 year old, 9 year old, 10 year old, 11 year old"
+  },
+  {
+    "id": 847,
+    "company_name": "Drumlish Library - Toddler Group / Kids Book Club / Social Group",
+    "age_range_display": "0-6 months, 6-12 months, 1 year old, 2 year old, 3 year old, 4 year old, 7 year old, 8 year old, 9 year old, 10 year old, 11 year old, 12 year old, 13 year old, 14 year old, 15 year old"
+  },
+  {
+    "id": 963,
+    "company_name": "Bunclody Library",
+    "age_range_display": "0-6 months, 6-12 months, 1 year old, 2 year old, 3 year old, 4 year old, 5 year old, 6 year old, 7 year old, 13 year old, 14 year old, 15 year old"
+  },
+  {
+    "id": 1143,
+    "company_name": "Tullow & Carlow Central Library",
+    "age_range_display": "0-6 months, 6-12 months, 1 year old, 2 year old, 3 year old, 4 year old, 5 year old, 12 year old, 13 year old, 14 year old"
+  },
+  {
+    "id": 1754,
+    "company_name": "Terenure College Swimming Pool",
+    "age_range_display": "Stage-based"
+  },
+  {
+    "id": 1762,
+    "company_name": "Spraoi Forest School - Bushy Park",
+    "age_range_display": "Under 4 to 12+"
+  },
+  {
+    "id": 1763,
+    "company_name": "Isabelle Ashe Dance Studios - Rathgar",
+    "age_range_display": "From age 2"
+  },
+  {
+    "id": 1765,
+    "company_name": "Olympian Gymnastics - Rathgar",
+    "age_range_display": "Under 12, 13-17"
+  },
+  {
+    "id": 1769,
+    "company_name": "Rathmines Library Toddler Group",
+    "age_range_display": "Babies-preschool"
+  },
+  {
+    "id": 1770,
+    "company_name": "Christ Church Rathgar Parents & Toddlers",
+    "age_range_display": "Preschool"
+  },
+  {
+    "id": 1775,
+    "company_name": "Dartry Health Club - Kids Swimming Lessons",
+    "age_range_display": "Levelled programme"
+  },
+  {
+    "id": 1778,
+    "company_name": "Olympian Gymnastics - Milltown",
+    "age_range_display": "Under 12, 13-17"
+  },
+  {
+    "id": 1779,
+    "company_name": "Isabelle Ashe Dance Studios - Ranelagh",
+    "age_range_display": "From age 2"
+  },
+  {
+    "id": 1784,
+    "company_name": "Alto School of Music - Ranelagh",
+    "age_range_display": "~5-12 years"
+  },
+  {
+    "id": 1786,
+    "company_name": "Swan Leisure - Crumlin",
+    "age_range_display": "Baby-14 years"
+  },
+  {
+    "id": 1791,
+    "company_name": "Gym Plus Rathfarnham - Swim Plus Academy",
+    "age_range_display": "Multi-level"
+  },
+  {
+    "id": 1792,
+    "company_name": "Knights of \u00c9anna Chess Club",
+    "age_range_display": "School-age"
+  },
+  {
+    "id": 1796,
+    "company_name": "Summit Judo/Jiu-Jitsu Academy",
+    "age_range_display": "4-7, 8-12, teens"
+  },
+  {
+    "id": 1799,
+    "company_name": "Isabelle Ashe Dance Studios - Templeogue",
+    "age_range_display": "From age 2"
+  },
+  {
+    "id": 1800,
+    "company_name": "Mezzo Music Academy - Terenure",
+    "age_range_display": "Babies-adult"
+  },
+  {
+    "id": 1801,
+    "company_name": "Howth Yacht Club",
+    "age_range_display": "Kids and teens"
+  },
+  {
+    "id": 1802,
+    "company_name": "Howth Music School",
+    "age_range_display": "Children and adults"
+  },
+  {
+    "id": 1804,
+    "company_name": "Howth Library - Toddler Time",
+    "age_range_display": "Toddlers"
+  },
+  {
+    "id": 1805,
+    "company_name": "Sutton Dinghy Club",
+    "age_range_display": "Children"
+  },
+  {
+    "id": 1809,
+    "company_name": "The Music Academy - Baldoyle",
+    "age_range_display": "School-age"
+  },
+  {
+    "id": 1817,
+    "company_name": "Rush Athletic FC (RAFC)",
+    "age_range_display": "U7-U18"
+  },
+  {
+    "id": 1819,
+    "company_name": "Rush Multipurpose Youth Facility",
+    "age_range_display": "Young children"
+  },
+  {
+    "id": 1832,
+    "company_name": "Ruth Shine School of Dance - Palmerstown",
+    "age_range_display": "Toddlers-adult"
+  },
+  {
+    "id": 1833,
+    "company_name": "Wojtek Potaszkin Dance Academy",
+    "age_range_display": "Children-adult"
+  },
+  {
+    "id": 1843,
+    "company_name": "Coolmine Swim Club",
+    "age_range_display": "Squad-based: Sharks (entry), Dolphins, Development, Seniors"
+  },
+  {
+    "id": 1860,
+    "company_name": "Glasnevin FC (The Diggers)",
+    "age_range_display": "U4/5 (Kindergarten), U6/7 (Academy), U8-U16 (Schoolboys/girls)"
+  },
+  {
+    "id": 1865,
+    "company_name": "Phibsboro Chess Club",
+    "age_range_display": "Beginner-2300+ (juniors tournament held)"
+  },
+  {
+    "id": 1868,
+    "company_name": "Phibsboro Library - Toddler Storytime",
+    "age_range_display": "Toddlers"
+  },
+  {
+    "id": 1888,
+    "company_name": "Raheny Shamrock Athletic Club",
+    "age_range_display": "U9-U16"
+  },
+  {
+    "id": 1904,
+    "company_name": "Bohemian FC Academy",
+    "age_range_display": "U8-U12"
+  },
+  {
+    "id": 1908,
+    "company_name": "Grange Gymnastics Club",
+    "age_range_display": "Toddlers-adults"
+  }
+]
