@@ -126,24 +126,6 @@
                         <option value="">Any Category</option>
                     </select>
 
-                    <select id="age-filter" class="filter-select">
-                        <option value="">Any Age</option>
-                        <option value="under1">Under 1</option>
-                        <option value="1">1 Year</option>
-                        <option value="2">2 Years</option>
-                        <option value="3">3 Years</option>
-                        <option value="4">4 Years</option>
-                        <option value="5">5 Years</option>
-                        <option value="6">6 Years</option>
-                        <option value="7">7 Years</option>
-                        <option value="8">8 Years</option>
-                        <option value="9">9 Years</option>
-                        <option value="10">10 Years</option>
-                        <option value="11">11 Years</option>
-                        <option value="12">12 Years</option>
-                        <option value="13plus">13+ Years</option>
-                    </select>
-
                     <select id="day-filter" class="filter-select">
                         <option value="">Any Day</option>
                         <option value="weekday">Weekdays</option>
@@ -174,6 +156,31 @@
                     </select>
 
                     <button type="button" id="clear-filters-btn" class="clear-filters-btn">Clear filters</button>
+                </div>
+            </div>
+
+            <!-- Age/Price range sliders -- same component as the category/county
+                 landing pages (.landing-filters, styles.css); bounds are set once
+                 classesData is loaded (see populateAgePriceRangeFilters()), since
+                 unlike the static landing pages this page doesn't know its data set
+                 at page-load time. -->
+            <div class="landing-filters" id="range-filters">
+                <div class="filter-group">
+                    <div class="filter-label"><span>Age</span><span class="filter-value" id="age-range-filter-value">Any age</span></div>
+                    <div class="range-slider" data-min="0" data-max="18">
+                        <div class="range-track"><div class="range-track-fill" id="age-range-track-fill"></div></div>
+                        <input type="range" min="0" max="18" value="0" step="1" id="age-range-min" aria-label="Minimum age">
+                        <input type="range" min="0" max="18" value="18" step="1" id="age-range-max" aria-label="Maximum age">
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <div class="filter-label"><span>Price</span><span class="filter-value" id="price-range-filter-value">Any price</span></div>
+                    <div class="range-slider" data-min="0" data-max="50">
+                        <div class="range-track"><div class="range-track-fill" id="price-range-track-fill"></div></div>
+                        <input type="range" min="0" max="50" value="0" step="1" id="price-range-min" aria-label="Minimum price">
+                        <input type="range" min="0" max="50" value="50" step="1" id="price-range-max" aria-label="Maximum price">
+                    </div>
+                    <div class="filter-hint">Classes with unlisted pricing are always shown</div>
                 </div>
             </div>
 
@@ -270,6 +277,9 @@
          CATEGORY_GROUPS etc. as plain top-level consts, which that script relies on
          synchronously from its first line. -->
     <script src="site-lookups.js?v=1"></script>
+    <!-- setupRangeSlider(), shared with landing-filters.js (category/county pages) --
+         powers the Age/Price range sliders below. -->
+    <script src="range-slider.js?v=1"></script>
 
     <script>
         // Utility function to escape HTML inside dynamic strings
@@ -290,7 +300,6 @@
         const searchBtn = document.getElementById('search-btn');
         
         const categoryFilter = document.getElementById('category-filter');
-        const ageFilter = document.getElementById('age-filter');
         const dayFilter = document.getElementById('day-filter');
         const dropoffFilter = document.getElementById('dropoff-filter');
         const radiusFilter = document.getElementById('radius-filter');
@@ -328,6 +337,14 @@
         let lastGeocodedQuery = null;
         let isGeocoding = false;
         let sortExplicitlySet = false;
+
+        // Age/Price range sliders -- bounds depend on classesData, so these (and the
+        // sliders themselves) are only set up once data has loaded; see
+        // populateAgePriceRangeFilters(), called from the dataLoadPromise handler.
+        let ageSlider = null;
+        let priceSlider = null;
+        let ageRangeState = { min: 0, max: 18 };
+        let priceRangeState = { min: 0, max: 50 };
 
         let map;
         let markerClusterGroup = null;
@@ -526,6 +543,59 @@
             categoryFilter.innerHTML = html;
         }
 
+        // Structured price_amount is only populated on a small minority of rows --
+        // pricing_details/pricing_basis prose ("Price: Free", "Per Family: FREE",
+        // etc, mostly library/council listings) is the far more common free-class
+        // signal. Same convention as scripts/generate_landing_pages.py's is_free(),
+        // used here so the Price filter's floor (0) still catches those.
+        const FREE_TEXT_RE = /\bfree\b/i;
+        function isFreeItem(item) {
+            if (item.price_amount === 0) return true;
+            const text = [item.pricing_details, item.pricing_basis].filter(Boolean).join(' ');
+            return FREE_TEXT_RE.test(text);
+        }
+
+        // Sets up the Age/Price dual-range sliders once classesData is loaded --
+        // unlike the static category/county landing pages (which know their row set
+        // at generation time), this page only knows its bounds after the initial
+        // Supabase fetch, so the sliders' min/max attributes are computed here rather
+        // than baked into the HTML.
+        function populateAgePriceRangeFilters() {
+            const knownAges = classesData.flatMap(item => [item.minimum_age, item.maximum_age]).filter(v => typeof v === 'number');
+            const maxAge = knownAges.length ? Math.max(18, Math.ceil(Math.max(...knownAges))) : 18;
+
+            const knownPrices = classesData.map(item => item.price_amount).filter(v => typeof v === 'number');
+            const maxPrice = knownPrices.length ? Math.max(50, Math.ceil(Math.max(...knownPrices) / 10) * 10) : 50;
+
+            const ageMinInput = document.getElementById('age-range-min');
+            const ageMaxInput = document.getElementById('age-range-max');
+            [ageMinInput, ageMaxInput].forEach(el => { el.min = 0; el.max = maxAge; });
+            ageMaxInput.value = maxAge;
+
+            const priceMinInput = document.getElementById('price-range-min');
+            const priceMaxInput = document.getElementById('price-range-max');
+            [priceMinInput, priceMaxInput].forEach(el => { el.min = 0; el.max = maxPrice; });
+            priceMaxInput.value = maxPrice;
+
+            const ageValueEl = document.getElementById('age-range-filter-value');
+            const priceValueEl = document.getElementById('price-range-filter-value');
+
+            ageSlider = setupRangeSlider(ageMinInput.closest('.range-slider'), (min, max, boundMin, boundMax) => {
+                ageRangeState = { min, max };
+                ageValueEl.textContent = (min === boundMin && max === boundMax) ? 'Any age' : (min + ' – ' + max + ' years');
+                if (hasTriggeredSearch) filterClasses();
+            }, () => trackFilter('age_range', `${ageRangeState.min}-${ageRangeState.max}`));
+
+            priceSlider = setupRangeSlider(priceMinInput.closest('.range-slider'), (min, max, boundMin, boundMax) => {
+                priceRangeState = { min, max };
+                priceValueEl.textContent = (min === boundMin && max === boundMax) ? 'Any price' : ('€' + min + ' – €' + max + (max === boundMax ? '+' : ''));
+                if (hasTriggeredSearch) filterClasses();
+            }, () => trackFilter('price_range', `${priceRangeState.min}-${priceRangeState.max}`));
+
+            ageRangeState = { min: ageSlider.bounds.min, max: ageSlider.bounds.max };
+            priceRangeState = { min: priceSlider.bounds.min, max: priceSlider.bounds.max };
+        }
+
         // Emoji icons for the homepage "Browse by category" tiles, keyed by the
         // exact category strings used in the data (see CATEGORY_GROUPS above).
         // Anything not listed falls back to CATEGORY_ICON_DEFAULT.
@@ -709,7 +779,6 @@
             const q = searchInput.value.trim().toLowerCase();
             const l = locationInput.value.trim().toLowerCase();
             const cat = categoryFilter.value;
-            const ageBracket = ageFilter.value;
             const dayBracket = dayFilter.value;
             const needsDropoff = dropoffFilter.checked;
             const favoritesOnly = favoritesOnlyFilter.checked;
@@ -743,25 +812,35 @@
                 const dropoffMatch = !needsDropoff || (item.parental_requirement === 'Drop-off');
                 const favMatch = !favoritesOnly || favoriteKeys.has(getItemKey(item));
 
+                // Age/price use the same overlap semantics as the category landing
+                // pages' range sliders (landing-filters.js's matches()): excluded only
+                // if the item's own range is entirely below or entirely above the
+                // selected range, so a class spanning e.g. 3-8 still matches a 5-12
+                // selection. isDefault* skips the check while a slider hasn't been
+                // touched (ageSlider/priceSlider not set up yet on first paint, or the
+                // user simply hasn't moved it) rather than comparing against bounds
+                // that may not exist yet.
                 let ageMatch = true;
-                if (ageBracket !== '') {
+                if (ageSlider && !(ageRangeState.min === ageSlider.bounds.min && ageRangeState.max === ageSlider.bounds.max)) {
                     const hasMin = item.minimum_age !== null && item.minimum_age !== undefined;
                     const hasMax = item.maximum_age !== null && item.maximum_age !== undefined;
                     // No age suggested for this item at all -- can't confidently say it
-                    // does or doesn't suit the selected age, so don't filter it out.
+                    // does or doesn't suit the selected range, so don't filter it out.
                     if (hasMin || hasMax) {
                         const min = hasMin ? item.minimum_age : 0;
-                        const max = hasMax ? item.maximum_age : 99;
-                        if (ageBracket === '13plus') {
-                            ageMatch = (max >= 13);
-                        } else {
-                            // "Under 1" and each whole year are matched against a representative
-                            // age (0.5 for "Under 1") since minimum/maximum_age can be fractional
-                            // (e.g. 0.11 years for a class open from ~6 weeks old).
-                            const age = ageBracket === 'under1' ? 0.5 : parseFloat(ageBracket);
-                            ageMatch = (min <= age && max >= age);
-                        }
+                        const max = hasMax ? item.maximum_age : 999;
+                        ageMatch = (max >= ageRangeState.min && min <= ageRangeState.max);
                     }
+                }
+
+                let priceMatch = true;
+                if (priceSlider && !(priceRangeState.min === priceSlider.bounds.min && priceRangeState.max === priceSlider.bounds.max)) {
+                    if (typeof item.price_amount === 'number') {
+                        priceMatch = (item.price_amount >= priceRangeState.min && item.price_amount <= priceRangeState.max);
+                    } else if (isFreeItem(item) && priceRangeState.min > 0) {
+                        priceMatch = false;
+                    }
+                    // else: no price data and not detected free -- don't filter it out.
                 }
 
                 let dayMatch = true;
@@ -782,7 +861,7 @@
                     }
                 }
 
-                return textMatch && locMatch && catMatch && dropoffMatch && favMatch && ageMatch && dayMatch;
+                return textMatch && locMatch && catMatch && dropoffMatch && favMatch && ageMatch && priceMatch && dayMatch;
             });
 
             if (sortSelect.value === 'distance' && hasOrigin) {
@@ -811,7 +890,14 @@
             if (q) params.set('q', q);
             if (locationInput.value) params.set('loc', locationInput.value);
             if (cat) params.set('cat', cat);
-            if (ageBracket) params.set('age', ageBracket);
+            if (ageSlider && !(ageRangeState.min === ageSlider.bounds.min && ageRangeState.max === ageSlider.bounds.max)) {
+                params.set('agemin', ageRangeState.min);
+                params.set('agemax', ageRangeState.max);
+            }
+            if (priceSlider && !(priceRangeState.min === priceSlider.bounds.min && priceRangeState.max === priceSlider.bounds.max)) {
+                params.set('pricemin', priceRangeState.min);
+                params.set('pricemax', priceRangeState.max);
+            }
             if (dayBracket) params.set('day', dayBracket);
             if (needsDropoff) params.set('dropoff', 'true');
             if (radiusKm) params.set('radius', radiusKm);
@@ -1303,9 +1389,8 @@
         }
 
         categoryFilter.addEventListener('change', () => { trackFilter('category', categoryFilter.value); if (hasTriggeredSearch) filterClasses(); });
-        // Age lives in the hero bar alongside Activity/Where, but like those fields it
-        // should only take effect once the user presses Search, not on every selection.
-        ageFilter.addEventListener('change', () => { trackFilter('age', ageFilter.value); if (hasTriggeredSearch) filterClasses(); });
+        // Age/Price range sliders wire up their own change handling in
+        // populateAgePriceRangeFilters() (called once classesData is ready).
         dayFilter.addEventListener('change', () => { trackFilter('day', dayFilter.value); if (hasTriggeredSearch) filterClasses(); });
         dropoffFilter.addEventListener('change', () => { trackFilter('dropoff', dropoffFilter.checked); if (hasTriggeredSearch) filterClasses(); });
         favoritesOnlyFilter.addEventListener('change', () => { trackFilter('favorites_only', favoritesOnlyFilter.checked); if (hasTriggeredSearch) filterClasses(); });
@@ -1316,7 +1401,16 @@
             searchInput.value = '';
             locationInput.value = '';
             categoryFilter.value = '';
-            ageFilter.value = '';
+            if (ageSlider) {
+                ageSlider.reset();
+                ageRangeState = { min: ageSlider.bounds.min, max: ageSlider.bounds.max };
+                document.getElementById('age-range-filter-value').textContent = 'Any age';
+            }
+            if (priceSlider) {
+                priceSlider.reset();
+                priceRangeState = { min: priceSlider.bounds.min, max: priceSlider.bounds.max };
+                document.getElementById('price-range-filter-value').textContent = 'Any price';
+            }
             dayFilter.value = '';
             dropoffFilter.checked = false;
             favoritesOnlyFilter.checked = false;
@@ -1379,13 +1473,29 @@
         dataLoadPromise.then(() => {
             dataReady = true;
             populateCategoryFilter();
+            populateAgePriceRangeFilters();
             renderCategoryPatches();
             const params = new URLSearchParams(window.location.search);
             if (Array.from(params.keys()).length > 0) {
                 if(params.has('q')) searchInput.value = params.get('q');
                 if(params.has('loc')) locationInput.value = params.get('loc');
                 if(params.has('cat')) categoryFilter.value = params.get('cat');
-                if(params.has('age')) ageFilter.value = params.get('age');
+                if (params.has('agemin') || params.has('agemax')) {
+                    const min = params.has('agemin') ? parseFloat(params.get('agemin')) : ageSlider.bounds.min;
+                    const max = params.has('agemax') ? parseFloat(params.get('agemax')) : ageSlider.bounds.max;
+                    ageSlider.set(min, max);
+                    ageRangeState = { min, max };
+                    document.getElementById('age-range-filter-value').textContent =
+                        (min === ageSlider.bounds.min && max === ageSlider.bounds.max) ? 'Any age' : (min + ' – ' + max + ' years');
+                }
+                if (params.has('pricemin') || params.has('pricemax')) {
+                    const min = params.has('pricemin') ? parseFloat(params.get('pricemin')) : priceSlider.bounds.min;
+                    const max = params.has('pricemax') ? parseFloat(params.get('pricemax')) : priceSlider.bounds.max;
+                    priceSlider.set(min, max);
+                    priceRangeState = { min, max };
+                    document.getElementById('price-range-filter-value').textContent =
+                        (min === priceSlider.bounds.min && max === priceSlider.bounds.max) ? 'Any price' : ('€' + min + ' – €' + max + (max === priceSlider.bounds.max ? '+' : ''));
+                }
                 if(params.has('day')) dayFilter.value = params.get('day');
                 if(params.get('dropoff') === 'true') dropoffFilter.checked = true;
                 if(params.has('radius')) radiusFilter.value = params.get('radius');

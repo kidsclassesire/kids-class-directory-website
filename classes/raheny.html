@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
-    <link rel="stylesheet" href="../styles.css?v=9fbcf74da6">
+    <link rel="stylesheet" href="../styles.css?v=72e753c189">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Raheny", "description": "Browse 6 kids activities and classes in Raheny, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/raheny.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 6, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/raheny-parent-baby-and-toddler-group-266.html", "name": "Raheny Parent, Baby and Toddler Group"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/dublin-school-of-dance-and-etiquette-third-arabesque-1881.html", "name": "Dublin School of Dance and Etiquette (Third Arabesque)"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/hombu-dojo-karate-raheny-1882.html", "name": "Hombu Dojo Karate - Raheny"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/st-paul-s-karate-club-1883.html", "name": "St Paul's Karate Club"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/raheny-shamrock-athletic-club-1888.html", "name": "Raheny Shamrock Athletic Club"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/the-jam-art-drama-1889.html", "name": "The Jam - Art & Drama"}]}}</script>
 </head>
 <body>
@@ -77,9 +77,11 @@
         </div>
         <div class="filter-group filter-group-checkbox">
             <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+        </div>
+        <div class="filters-footer">
+            <div class="filters-count" id="filters-count"></div>
             <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
         </div>
-        <div class="filters-count" id="filters-count"></div>
     </div>
         <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
         <div class="landing-grid"><div class="landing-card" data-id="266">
@@ -137,7 +139,7 @@
             <a href="../business/the-jam-art-drama-1889.html" class="button">View full details &rarr;</a>
         </div>
     </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
-        <script type="application/json" id="landing-data">[{"id": 266, "lat": 53.37782, "lon": -6.17918, "name": "Raheny Parent, Baby and Toddler Group", "category": "Parent-and-toddler", "url": "../business/raheny-parent-baby-and-toddler-group-266.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1881, "lat": 53.3778072, "lon": -6.1792437, "name": "Dublin School of Dance and Etiquette (Third Arabesque)", "category": "Dance", "url": "../business/dublin-school-of-dance-and-etiquette-third-arabesque-1881.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1882, "lat": 53.3840559, "lon": -6.1920739, "name": "Hombu Dojo Karate - Raheny", "category": "Martial Arts", "url": "../business/hombu-dojo-karate-raheny-1882.html", "minAge": 5, "maxAge": 11, "price": null, "free": false}, {"id": 1883, "lat": 53.3730031, "lon": -6.1930273, "name": "St Paul's Karate Club", "category": "Martial Arts", "url": "../business/st-paul-s-karate-club-1883.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1888, "lat": 53.3804065, "lon": -6.1750943, "name": "Raheny Shamrock Athletic Club", "category": "Athletics", "url": "../business/raheny-shamrock-athletic-club-1888.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1889, "lat": 53.3778072, "lon": -6.1792437, "name": "The Jam - Art & Drama", "category": "Arts and crafts", "url": "../business/the-jam-art-drama-1889.html", "minAge": 8, "maxAge": 13, "price": null, "free": false}]</script>
+        <script type="application/json" id="landing-data">[{"id": 266, "lat": 53.37782, "lon": -6.17918, "name": "Raheny Parent, Baby and Toddler Group", "category": "Parent-and-toddler", "url": "../business/raheny-parent-baby-and-toddler-group-266.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1881, "lat": 53.3778072, "lon": -6.1792437, "name": "Dublin School of Dance and Etiquette (Third Arabesque)", "category": "Dance", "url": "../business/dublin-school-of-dance-and-etiquette-third-arabesque-1881.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1882, "lat": 53.3840559, "lon": -6.1920739, "name": "Hombu Dojo Karate - Raheny", "category": "Martial Arts", "url": "../business/hombu-dojo-karate-raheny-1882.html", "minAge": 5, "maxAge": 11, "price": null, "free": false}, {"id": 1883, "lat": 53.3730031, "lon": -6.1930273, "name": "St Paul's Karate Club", "category": "Martial Arts", "url": "../business/st-paul-s-karate-club-1883.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1888, "lat": 53.3804065, "lon": -6.1750943, "name": "Raheny Shamrock Athletic Club", "category": "Athletics", "url": "../business/raheny-shamrock-athletic-club-1888.html", "minAge": 9, "maxAge": 16, "price": null, "free": false}, {"id": 1889, "lat": 53.3778072, "lon": -6.1792437, "name": "The Jam - Art & Drama", "category": "Arts and crafts", "url": "../business/the-jam-art-drama-1889.html", "minAge": 8, "maxAge": 13, "price": null, "free": false}]</script>
     </div>
     <footer class="site-footer">
         <div class="site-footer-inner">
@@ -163,6 +165,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script src="../analytics.js?v=471ea0b7de" defer></script>
-    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+    <script src="../range-slider.js?v=fce270b0f6" defer></script>
+    <script src="../landing-filters.js?v=3ecf3f14d8" defer></script>
 </body>
 </html>

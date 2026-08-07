@@ -628,17 +628,29 @@
            (see landing-filters.js) rather than being hidden as a false
            negative just because that field isn't populated yet. */
         .landing-filters {
-            display: flex; flex-wrap: wrap; align-items: flex-end; gap: 1.75rem;
+            display: flex; flex-wrap: wrap; align-items: flex-start; gap: 1.75rem;
             background: #ffffff; border: 1px solid var(--border); border-radius: 12px;
             padding: 1.25rem 1.5rem; margin-bottom: 1.5rem;
         }
+        /* Age/Price are separate flex items -- Price's extra .filter-hint line makes
+           its box taller than Age's. align-items: flex-start (rather than flex-end)
+           anchors both boxes' tops together so their sliders line up regardless of
+           that height difference; align-items: flex-end previously bottom-aligned
+           them, which pushed the shorter Age slider down below Price's. */
         .filter-group { flex: 1 1 200px; min-width: 180px; }
-        .filter-group-checkbox { flex: 1 1 auto; min-width: 160px; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+        .filter-group-checkbox {
+            flex: 1 1 auto; min-width: 160px; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+            align-self: center; /* has no slider/hint of its own -- sits mid-row rather than pinned to the top */
+        }
         .filter-label {
-            display: flex; justify-content: space-between; align-items: baseline;
+            display: flex; justify-content: space-between; align-items: baseline; flex-wrap: nowrap;
             font-size: 0.85rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.35rem;
         }
-        .filter-value { font-weight: 600; color: var(--text-muted); font-size: 0.8rem; }
+        /* nowrap: this text changes on every drag tick ("Any age" -> "3 – 8 years"),
+           and letting it wrap to a second line would grow .filter-label's height and
+           shove the slider below it down mid-drag -- exactly the "jumps around while
+           dragging" symptom this is fixing. */
+        .filter-value { font-weight: 600; color: var(--text-muted); font-size: 0.8rem; white-space: nowrap; }
         .filter-hint { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.4rem; }
 
         .range-slider { position: relative; height: 28px; }
@@ -667,11 +679,21 @@
 
         .filter-checkbox { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 600; color: var(--text-dark); cursor: pointer; }
         .filter-checkbox input { width: 17px; height: 17px; accent-color: var(--primary); cursor: pointer; }
+        /* Reset filters lives in its own full-width row (flex-basis: 100%, order: 10,
+           same as .filters-count) rather than inline next to the checkbox -- toggling
+           its [hidden] there used to change .filter-group-checkbox's content width,
+           which could wrap that row and reflow the whole filter bar. This row is
+           always full-width regardless of what's in it, so showing/hiding the button
+           only affects this isolated row, never the Age/Price/checkbox row above it. */
+        .filters-footer {
+            flex-basis: 100%; order: 10; display: flex; align-items: center;
+            justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+        }
+        .filters-count { font-size: 0.8rem; color: var(--text-muted); }
         .filters-reset {
             background: none; border: none; color: var(--primary); font-weight: 700; font-size: 0.85rem;
-            cursor: pointer; padding: 0; text-decoration: underline;
+            cursor: pointer; padding: 0; text-decoration: underline; white-space: nowrap;
         }
-        .filters-count { flex-basis: 100%; font-size: 0.8rem; color: var(--text-muted); order: 10; }
         @media (max-width: 640px) {
             .landing-filters { padding: 1rem; gap: 1.25rem; }
         }

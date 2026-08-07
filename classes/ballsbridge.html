@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
-    <link rel="stylesheet" href="../styles.css?v=9fbcf74da6">
+    <link rel="stylesheet" href="../styles.css?v=72e753c189">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Ballsbridge", "description": "Browse 4 kids activities and classes in Ballsbridge, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/ballsbridge.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 4, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/ballsbridge-baby-toddler-group-pembroke-library-187.html", "name": "Ballsbridge Baby & Toddler Group - Pembroke Library"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/rathmines-baby-toddler-group-junior-book-club-rathmines-libr-269.html", "name": "Rathmines Baby & Toddler Group & Junior Book Club - Rathmines Library"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/alix-gardner-s-cookery-school-439.html", "name": "Alix Gardner's Cookery School"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/coderdojo-leman-solicitors-ballsbridge-1335.html", "name": "CoderDojo Leman Solicitors Ballsbridge"}]}}</script>
 </head>
 <body>
@@ -77,9 +77,11 @@
         </div>
         <div class="filter-group filter-group-checkbox">
             <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+        </div>
+        <div class="filters-footer">
+            <div class="filters-count" id="filters-count"></div>
             <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
         </div>
-        <div class="filters-count" id="filters-count"></div>
     </div>
         <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
         <div class="landing-grid"><div class="landing-card" data-id="187">
@@ -145,6 +147,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script src="../analytics.js?v=471ea0b7de" defer></script>
-    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+    <script src="../range-slider.js?v=fce270b0f6" defer></script>
+    <script src="../landing-filters.js?v=3ecf3f14d8" defer></script>
 </body>
 </html>

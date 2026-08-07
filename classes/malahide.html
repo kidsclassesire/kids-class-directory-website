@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
-    <link rel="stylesheet" href="../styles.css?v=9fbcf74da6">
+    <link rel="stylesheet" href="../styles.css?v=72e753c189">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Malahide", "description": "Browse 12 kids activities and classes in Malahide, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/malahide.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 12, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/babble-bloom-90.html", "name": "Babble & Bloom"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/laola-movement-outdoor-pilates-classes-retreats-in-malahide-127.html", "name": "Laola Movement: Outdoor Pilates classes & retreats in Malahide area"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/malahide-musical-dramatic-society-133.html", "name": "Malahide Musical & Dramatic Society"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/malahide-girls-brigade-247.html", "name": "Malahide Girls' Brigade"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/parent-and-toddler-lego-class-260.html", "name": "Parent and Toddler Lego Class"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/archaeology-camps-booking-now-993.html", "name": "Archaeology Camps – Booking Now"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/messy-adventures-1053.html", "name": "Messy Adventures"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/gaiety-school-of-acting-1116.html", "name": "Gaiety School of Acting"}, {"@type": "ListItem", "position": 9, "url": "https://www.kidspatch.ie/business/dublinartclasses-com-1326.html", "name": "DublinArtClasses.com"}, {"@type": "ListItem", "position": 10, "url": "https://www.kidspatch.ie/business/coderdojo-malahide-1493.html", "name": "CoderDojo Malahide"}, {"@type": "ListItem", "position": 11, "url": "https://www.kidspatch.ie/business/artzone-st-andrew-s-ns-malahide-1495.html", "name": "Artzone - St Andrew's NS Malahide"}, {"@type": "ListItem", "position": 12, "url": "https://www.kidspatch.ie/business/olympus-dance-music-school-1906.html", "name": "Olympus Dance & Music School"}]}}</script>
 </head>
 <body>
@@ -77,9 +77,11 @@
         </div>
         <div class="filter-group filter-group-checkbox">
             <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+        </div>
+        <div class="filters-footer">
+            <div class="filters-count" id="filters-count"></div>
             <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
         </div>
-        <div class="filters-count" id="filters-count"></div>
     </div>
         <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
         <div class="landing-grid"><div class="landing-card" data-id="90">
@@ -217,6 +219,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script src="../analytics.js?v=471ea0b7de" defer></script>
-    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+    <script src="../range-slider.js?v=fce270b0f6" defer></script>
+    <script src="../landing-filters.js?v=3ecf3f14d8" defer></script>
 </body>
 </html>

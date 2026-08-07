@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
-    <link rel="stylesheet" href="../styles.css?v=9fbcf74da6">
+    <link rel="stylesheet" href="../styles.css?v=72e753c189">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Martial Arts Classes in Cork", "description": "Find 7 Martial Arts classes for kids in Cork. Compare schedules, ages and pricing, then contact providers directly.", "url": "https://www.kidspatch.ie/classes/martial-arts-cork.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 7, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/cork-judo-club-1343.html", "name": "Cork Judo Club"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/institute-krav-maga-cork-krav-junior-1346.html", "name": "Institute Krav Maga Cork - Krav Junior"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/t45-jiujitsu-kids-bjj-midleton-1532.html", "name": "T45 Jiujitsu - Kids BJJ Midleton"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/curadh-muay-thai-additional-needs-classes-mallow-1536.html", "name": "Curadh Muay Thai - Additional Needs Classes, Mallow"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/j-h-kim-taekwon-do-institute-carrigtwohill-1712.html", "name": "J. H. Kim Taekwon-do Institute - Carrigtwohill"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/bushido-karate-club-carrigtwohill-1713.html", "name": "Bushido Karate Club - Carrigtwohill"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/warrior-martial-arts-clonakilty-taekwondo-club-1735.html", "name": "Warrior Martial Arts - Clonakilty Taekwondo Club"}]}}</script>
 </head>
 <body>
@@ -77,9 +77,11 @@
         </div>
         <div class="filter-group filter-group-checkbox">
             <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+        </div>
+        <div class="filters-footer">
+            <div class="filters-count" id="filters-count"></div>
             <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
         </div>
-        <div class="filters-count" id="filters-count"></div>
     </div>
         <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
         <div class="landing-grid"><div class="landing-card" data-id="1343">
@@ -172,6 +174,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script src="../analytics.js?v=471ea0b7de" defer></script>
-    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+    <script src="../range-slider.js?v=fce270b0f6" defer></script>
+    <script src="../landing-filters.js?v=3ecf3f14d8" defer></script>
 </body>
 </html>

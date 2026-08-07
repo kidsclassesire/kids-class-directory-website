@@ -24,6 +24,7 @@ from generate_business_pages import (
 )
 
 CLASSES_DIR = REPO_ROOT / 'classes'
+RANGE_SLIDER_JS_VERSION = file_version('range-slider.js')
 LANDING_FILTERS_JS_VERSION = file_version('landing-filters.js')
 
 # Structured price_amount is only populated on ~2% of rows -- the far more
@@ -289,9 +290,11 @@ def landing_filters_html(rows):
         </div>
         <div class="filter-group filter-group-checkbox">
             <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+        </div>
+        <div class="filters-footer">
+            <div class="filters-count" id="filters-count"></div>
             <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
         </div>
-        <div class="filters-count" id="filters-count"></div>
     </div>'''
 
 
@@ -337,6 +340,10 @@ def render_landing_page(title, canonical, meta_desc, breadcrumb_html, h1, intro_
     if dataset_html:
         filters_scripts = (
             '\n    <script src="../analytics.js?v=' + ANALYTICS_JS_VERSION + '" defer></script>'
+            # Must precede landing-filters.js (both deferred, so document order
+            # is execution order) -- it defines setupRangeSlider as a plain
+            # global function that landing-filters.js calls directly.
+            '\n    <script src="../range-slider.js?v=' + RANGE_SLIDER_JS_VERSION + '" defer></script>'
             '\n    <script src="../landing-filters.js?v=' + LANDING_FILTERS_JS_VERSION + '" defer></script>'
         )
     return f'''<!DOCTYPE html>

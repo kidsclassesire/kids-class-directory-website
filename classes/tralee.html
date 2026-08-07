@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
-    <link rel="stylesheet" href="../styles.css?v=9fbcf74da6">
+    <link rel="stylesheet" href="../styles.css?v=72e753c189">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Tralee", "description": "Browse 13 kids activities and classes in Tralee, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/tralee.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 13, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/mna-movement-mom-baby-fitness-class-136.html", "name": "Mna Movement mom & baby Fitness Class"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/baby-sensory-limerick-kerry-756.html", "name": "Baby Sensory Limerick & Kerry"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/shanakill-tralee-parent-baby-toddler-group-773.html", "name": "Shanakill Tralee Parent, Baby & Toddler Group"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/tiny-tornados-775.html", "name": "Tiny Tornados"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/tiny-tornados-kerry-777.html", "name": "Tiny Tornados Kerry"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/tralee-st-brendan-s-parent-baby-toddler-group-778.html", "name": "Tralee (St Brendan's) Parent, Baby & Toddler Group"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/tralee-down-syndrome-toddler-group-779.html", "name": "Tralee Down Syndrome Toddler Group"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/turtle-tots-swimming-classes-kerry-780.html", "name": "Turtle Tots Swimming Classes - Kerry"}, {"@type": "ListItem", "position": 9, "url": "https://www.kidspatch.ie/business/play-with-trayz-1162.html", "name": "Play with Trayz"}, {"@type": "ListItem", "position": 10, "url": "https://www.kidspatch.ie/business/turtle-tots-swimming-classes-kerry-1231.html", "name": "Turtle Tots Swimming Classes - Kerry"}, {"@type": "ListItem", "position": 11, "url": "https://www.kidspatch.ie/business/bryan-carr-school-of-performing-arts-tralee-1421.html", "name": "Bryan Carr School of Performing Arts - Tralee"}, {"@type": "ListItem", "position": 12, "url": "https://www.kidspatch.ie/business/tralee-sports-complex-pre-school-swimming-1422.html", "name": "Tralee Sports Complex - Pre-School Swimming"}, {"@type": "ListItem", "position": 13, "url": "https://www.kidspatch.ie/business/tralee-gymnastics-club-1428.html", "name": "Tralee Gymnastics Club"}]}}</script>
 </head>
 <body>
@@ -77,9 +77,11 @@
         </div>
         <div class="filter-group filter-group-checkbox">
             <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+        </div>
+        <div class="filters-footer">
+            <div class="filters-count" id="filters-count"></div>
             <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
         </div>
-        <div class="filters-count" id="filters-count"></div>
     </div>
         <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
         <div class="landing-grid"><div class="landing-card" data-id="136">
@@ -226,6 +228,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script src="../analytics.js?v=471ea0b7de" defer></script>
-    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+    <script src="../range-slider.js?v=fce270b0f6" defer></script>
+    <script src="../landing-filters.js?v=3ecf3f14d8" defer></script>
 </body>
 </html>

@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
-    <link rel="stylesheet" href="../styles.css?v=9fbcf74da6">
+    <link rel="stylesheet" href="../styles.css?v=72e753c189">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Portlaoise", "description": "Browse 14 kids activities and classes in Portlaoise, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/portlaoise.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 14, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/swimtastic-ie-580.html", "name": "Swimtastic.ie"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/art-classes-with-caroline-toddler-art-class-793.html", "name": "Art Classes with Caroline - Toddler Art Class"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/baby-massage-in-portlaoise-with-oxana-murray-794.html", "name": "Baby Massage in Portlaoise with Oxana Murray"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/edel-s-baby-massage-in-portlaoise-796.html", "name": "Edel's Baby Massage in Portlaoise🌈"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/midwife-for-you-797.html", "name": "Midwife For You"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/mindful-present-moments-798.html", "name": "Mindful Present Moments"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/portlaoise-family-resource-centre-toddler-kids-groups-804.html", "name": "Portlaoise Family Resource Centre - Toddler & Kids Groups"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/portlaoise-library-baby-toddler-group-kids-book-clubs-805.html", "name": "Portlaoise Library - Baby & Toddler Group / Kids Book Clubs"}, {"@type": "ListItem", "position": 9, "url": "https://www.kidspatch.ie/business/turtle-tots-swimming-classes-1234.html", "name": "Turtle Tots Swimming Classes"}, {"@type": "ListItem", "position": 10, "url": "https://www.kidspatch.ie/business/turtle-tots-swimming-classes-louth-limerick-laois-waterford-1247.html", "name": "Turtle Tots Swimming Classes /Louth/Limerick/Laois/Waterford"}, {"@type": "ListItem", "position": 11, "url": "https://www.kidspatch.ie/business/little-kickers-county-laois-carlow-and-kilkenny-1266.html", "name": "Little Kickers County Laois, Carlow and Kilkenny"}, {"@type": "ListItem", "position": 12, "url": "https://www.kidspatch.ie/business/ready-to-play-1304.html", "name": "Ready to Play"}, {"@type": "ListItem", "position": 13, "url": "https://www.kidspatch.ie/business/ninja-tots-portlaoise-1445.html", "name": "Ninja Tots - Portlaoise"}, {"@type": "ListItem", "position": 14, "url": "https://www.kidspatch.ie/business/laois-leisure-swimming-aquafit-portarlington-1626.html", "name": "Laois Leisure - Swimming & AquaFit, Portarlington"}]}}</script>
 </head>
 <body>
@@ -77,9 +77,11 @@
         </div>
         <div class="filter-group filter-group-checkbox">
             <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+        </div>
+        <div class="filters-footer">
+            <div class="filters-count" id="filters-count"></div>
             <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
         </div>
-        <div class="filters-count" id="filters-count"></div>
     </div>
         <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
         <div class="landing-grid"><div class="landing-card" data-id="580">
@@ -235,6 +237,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script src="../analytics.js?v=471ea0b7de" defer></script>
-    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+    <script src="../range-slider.js?v=fce270b0f6" defer></script>
+    <script src="../landing-filters.js?v=3ecf3f14d8" defer></script>
 </body>
 </html>

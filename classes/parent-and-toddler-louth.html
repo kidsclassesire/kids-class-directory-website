@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
-    <link rel="stylesheet" href="../styles.css?v=9fbcf74da6">
+    <link rel="stylesheet" href="../styles.css?v=72e753c189">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Parent-and-toddler Classes in Louth", "description": "Find 20 Parent-and-toddler classes for kids in Louth. Compare schedules, ages and pricing, then contact providers directly.", "url": "https://www.kidspatch.ie/classes/parent-and-toddler-louth.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 20, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/ardee-parent-toddler-group-318.html", "name": "Ardee Parent & Toddler Group"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/blackrock-louth-parent-baby-toddler-group-319.html", "name": "Blackrock Louth Parent, Baby & Toddler Group"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/carlingford-cooley-parent-baby-toddler-group-321.html", "name": "Carlingford Cooley Parent, Baby & Toddler Group"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/clogherhead-parent-baby-and-toddler-group-322.html", "name": "Clogherhead Parent, Baby and Toddler Group"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/drogheda-dundalk-parent-toddler-groups-free-323.html", "name": "Drogheda/Dundalk Parent & Toddler Groups -FREE"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/dundalk-parent-toddler-group-redeemer-family-resource-centre-324.html", "name": "Dundalk Parent & Toddler Group - Redeemer Family Resource Centre"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/free-parent-and-toddler-groups-dundalk-and-drogheda-326.html", "name": "FREE Parent and Toddler Groups (Dundalk and Drogheda)"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/kilcurry-parent-toddler-group-kilcurry-family-resource-centr-330.html", "name": "Kilcurry Parent & Toddler Group- Kilcurry Family Resource Centre"}, {"@type": "ListItem", "position": 9, "url": "https://www.kidspatch.ie/business/lena-s-little-learners-331.html", "name": "Lena's Little Learners"}, {"@type": "ListItem", "position": 10, "url": "https://www.kidspatch.ie/business/louth-village-parent-baby-toddler-group-332.html", "name": "Louth Village Parent, Baby & Toddler Group"}, {"@type": "ListItem", "position": 11, "url": "https://www.kidspatch.ie/business/moneymore-drogheda-louth-parent-baby-toddler-group-333.html", "name": "Moneymore Drogheda Louth Parent, Baby & Toddler Group"}, {"@type": "ListItem", "position": 12, "url": "https://www.kidspatch.ie/business/moo-music-northeast-334.html", "name": "Moo Music Northeast"}, {"@type": "ListItem", "position": 13, "url": "https://www.kidspatch.ie/business/philipstown-baby-and-toddler-group-336.html", "name": "Philipstown Baby and Toddler Group"}, {"@type": "ListItem", "position": 14, "url": "https://www.kidspatch.ie/business/move-to-improve-carrickmacross-drogheda-853.html", "name": "Move To Improve - Carrickmacross, Drogheda"}, {"@type": "ListItem", "position": 15, "url": "https://www.kidspatch.ie/business/drogheda-dundalk-parent-toddler-groups-free-1092.html", "name": "Drogheda/Dundalk Parent & Toddler Groups -FREE"}, {"@type": "ListItem", "position": 16, "url": "https://www.kidspatch.ie/business/drogheda-dundalk-parent-toddler-groups-free-1093.html", "name": "Drogheda/Dundalk Parent & Toddler Groups -FREE"}, {"@type": "ListItem", "position": 17, "url": "https://www.kidspatch.ie/business/drogheda-dundalk-parent-toddler-groups-free-1094.html", "name": "Drogheda/Dundalk Parent & Toddler Groups -FREE"}, {"@type": "ListItem", "position": 18, "url": "https://www.kidspatch.ie/business/drogheda-dundalk-parent-toddler-groups-free-1095.html", "name": "Drogheda/Dundalk Parent & Toddler Groups -FREE"}, {"@type": "ListItem", "position": 19, "url": "https://www.kidspatch.ie/business/free-parent-and-toddler-groups-dundalk-and-drogheda-1097.html", "name": "FREE Parent and Toddler Groups (Dundalk and Drogheda)"}, {"@type": "ListItem", "position": 20, "url": "https://www.kidspatch.ie/business/move-to-improve-carrickmacross-drogheda-1244.html", "name": "Move To Improve - Carrickmacross, Drogheda"}]}}</script>
 </head>
 <body>
@@ -77,9 +77,11 @@
         </div>
         <div class="filter-group filter-group-checkbox">
             <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+        </div>
+        <div class="filters-footer">
+            <div class="filters-count" id="filters-count"></div>
             <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
         </div>
-        <div class="filters-count" id="filters-count"></div>
     </div>
         <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
         <div class="landing-grid"><div class="landing-card" data-id="318">
@@ -289,6 +291,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script src="../analytics.js?v=471ea0b7de" defer></script>
-    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+    <script src="../range-slider.js?v=fce270b0f6" defer></script>
+    <script src="../landing-filters.js?v=3ecf3f14d8" defer></script>
 </body>
 </html>

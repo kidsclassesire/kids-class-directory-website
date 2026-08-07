@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
-    <link rel="stylesheet" href="../styles.css?v=9fbcf74da6">
+    <link rel="stylesheet" href="../styles.css?v=72e753c189">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Clontarf", "description": "Browse 11 kids activities and classes in Clontarf, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/clontarf.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 11, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/clontarf-children-s-choir-pre-instrumental-music-102.html", "name": "Clontarf Children’s Choir / Pre Instrumental Music"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/baby-massage-first-aid-181.html", "name": "Baby Massage & First Aid"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/cj-cookery-458.html", "name": "CJ Cookery"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/clontarf-gaa-club-469.html", "name": "Clontarf GAA Club"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/clontarf-hockey-club-470.html", "name": "Clontarf Hockey Club"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/dublin-cookery-school-480.html", "name": "Dublin Cookery School"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/tennis4kids-547.html", "name": "Tennis4Kids"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/westwood-club-562.html", "name": "Westwood Club"}, {"@type": "ListItem", "position": 9, "url": "https://www.kidspatch.ie/business/iswim-academy-564.html", "name": "iSwim Academy"}, {"@type": "ListItem", "position": 10, "url": "https://www.kidspatch.ie/business/claphandies-1031.html", "name": "Claphandies"}, {"@type": "ListItem", "position": 11, "url": "https://www.kidspatch.ie/business/messy-adventures-1055.html", "name": "Messy Adventures"}]}}</script>
 </head>
 <body>
@@ -77,9 +77,11 @@
         </div>
         <div class="filter-group filter-group-checkbox">
             <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+        </div>
+        <div class="filters-footer">
+            <div class="filters-count" id="filters-count"></div>
             <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
         </div>
-        <div class="filters-count" id="filters-count"></div>
     </div>
         <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
         <div class="landing-grid"><div class="landing-card" data-id="102">
@@ -208,6 +210,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script src="../analytics.js?v=471ea0b7de" defer></script>
-    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+    <script src="../range-slider.js?v=fce270b0f6" defer></script>
+    <script src="../landing-filters.js?v=3ecf3f14d8" defer></script>
 </body>
 </html>

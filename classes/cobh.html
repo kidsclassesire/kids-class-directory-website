@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
-    <link rel="stylesheet" href="../styles.css?v=9fbcf74da6">
+    <link rel="stylesheet" href="../styles.css?v=72e753c189">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Cobh", "description": "Browse 7 kids activities and classes in Cobh, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/cobh.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 7, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/cobh-parent-baby-toddler-group-635.html", "name": "Cobh Parent, Baby & Toddler Group"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/fundamental-football-643.html", "name": "Fundamental Football"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/cork-judo-club-1343.html", "name": "Cork Judo Club"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/cork-sports-partnership-try-track-field-cobh-1344.html", "name": "Cork Sports Partnership - Try Track & Field Cobh"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/cove-sailing-club-junior-sailing-1345.html", "name": "Cove Sailing Club - Junior Sailing"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/sailcork-junior-courses-1347.html", "name": "SailCork - Junior Courses"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/cobh-ramblers-fc-junior-academy-1527.html", "name": "Cobh Ramblers FC - Junior Academy"}]}}</script>
 </head>
 <body>
@@ -77,9 +77,11 @@
         </div>
         <div class="filter-group filter-group-checkbox">
             <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+        </div>
+        <div class="filters-footer">
+            <div class="filters-count" id="filters-count"></div>
             <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
         </div>
-        <div class="filters-count" id="filters-count"></div>
     </div>
         <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
         <div class="landing-grid"><div class="landing-card" data-id="635">
@@ -172,6 +174,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script src="../analytics.js?v=471ea0b7de" defer></script>
-    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+    <script src="../range-slider.js?v=fce270b0f6" defer></script>
+    <script src="../landing-filters.js?v=3ecf3f14d8" defer></script>
 </body>
 </html>

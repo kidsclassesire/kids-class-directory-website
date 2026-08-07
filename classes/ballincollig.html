@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
-    <link rel="stylesheet" href="../styles.css?v=9fbcf74da6">
+    <link rel="stylesheet" href="../styles.css?v=72e753c189">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Ballincollig", "description": "Browse 8 kids activities and classes in Ballincollig, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/ballincollig.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 8, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/harmony-music-117.html", "name": "Harmony Music"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/woodworking-camps-173.html", "name": "Woodworking Camps"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/ballincollig-baby-toddler-group-cork-624.html", "name": "Ballincollig Baby & Toddler Group Cork"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/piccolo-play-village-yoga-sensory-classes-662.html", "name": "Piccolo Play Village Yoga & Sensory classes"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/stem101-666.html", "name": "STEM101"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/turtle-tots-1134.html", "name": "Turtle Tots"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/toddler-sense-cork-1169.html", "name": "Toddler Sense Cork"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/turtle-tots-swimming-classes-cork-1173.html", "name": "Turtle Tots Swimming Classes - Cork"}]}}</script>
 </head>
 <body>
@@ -77,9 +77,11 @@
         </div>
         <div class="filter-group filter-group-checkbox">
             <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+        </div>
+        <div class="filters-footer">
+            <div class="filters-count" id="filters-count"></div>
             <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
         </div>
-        <div class="filters-count" id="filters-count"></div>
     </div>
         <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
         <div class="landing-grid"><div class="landing-card" data-id="117">
@@ -155,7 +157,7 @@
             <a href="../business/turtle-tots-swimming-classes-cork-1173.html" class="button">View full details &rarr;</a>
         </div>
     </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
-        <script type="application/json" id="landing-data">[{"id": 117, "lat": 51.8898468, "lon": -8.5886058, "name": "Harmony Music", "category": "Music", "url": "../business/harmony-music-117.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 173, "lat": 51.888026, "lon": -8.5949041, "name": "Woodworking Camps", "category": "Camps", "url": "../business/woodworking-camps-173.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 624, "lat": 51.8875118, "lon": -8.5928633, "name": "Ballincollig Baby & Toddler Group Cork", "category": "Parent-and-toddler", "url": "../business/ballincollig-baby-toddler-group-cork-624.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 662, "lat": 51.8882643, "lon": -8.5918414, "name": "Piccolo Play Village Yoga & Sensory classes", "category": "Parent-and-toddler", "url": "../business/piccolo-play-village-yoga-sensory-classes-662.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 666, "lat": 51.8882643, "lon": -8.5918414, "name": "STEM101", "category": "STEM", "url": "../business/stem101-666.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1134, "lat": 53.3452053, "lon": -6.240766, "name": "Turtle Tots", "category": "Swimming", "url": "../business/turtle-tots-1134.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1169, "lat": 51.8919973, "lon": -8.5886297, "name": "Toddler Sense Cork", "category": "Developmental", "url": "../business/toddler-sense-cork-1169.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1173, "lat": 51.888034, "lon": -8.5879216, "name": "Turtle Tots Swimming Classes - Cork", "category": "Swimming", "url": "../business/turtle-tots-swimming-classes-cork-1173.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+        <script type="application/json" id="landing-data">[{"id": 117, "lat": 51.8898468, "lon": -8.5886058, "name": "Harmony Music", "category": "Music", "url": "../business/harmony-music-117.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 173, "lat": 51.888026, "lon": -8.5949041, "name": "Woodworking Camps", "category": "Camps", "url": "../business/woodworking-camps-173.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 624, "lat": 51.8875118, "lon": -8.5928633, "name": "Ballincollig Baby & Toddler Group Cork", "category": "Parent-and-toddler", "url": "../business/ballincollig-baby-toddler-group-cork-624.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 662, "lat": 51.8882643, "lon": -8.5918414, "name": "Piccolo Play Village Yoga & Sensory classes", "category": "Parent-and-toddler", "url": "../business/piccolo-play-village-yoga-sensory-classes-662.html", "minAge": 0.5, "maxAge": 1.0, "price": null, "free": false}, {"id": 666, "lat": 51.8882643, "lon": -8.5918414, "name": "STEM101", "category": "STEM", "url": "../business/stem101-666.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1134, "lat": 53.3452053, "lon": -6.240766, "name": "Turtle Tots", "category": "Swimming", "url": "../business/turtle-tots-1134.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1169, "lat": 51.8919973, "lon": -8.5886297, "name": "Toddler Sense Cork", "category": "Developmental", "url": "../business/toddler-sense-cork-1169.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1173, "lat": 51.888034, "lon": -8.5879216, "name": "Turtle Tots Swimming Classes - Cork", "category": "Swimming", "url": "../business/turtle-tots-swimming-classes-cork-1173.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
     </div>
     <footer class="site-footer">
         <div class="site-footer-inner">
@@ -181,6 +183,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script src="../analytics.js?v=471ea0b7de" defer></script>
-    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+    <script src="../range-slider.js?v=fce270b0f6" defer></script>
+    <script src="../landing-filters.js?v=3ecf3f14d8" defer></script>
 </body>
 </html>

@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
-    <link rel="stylesheet" href="../styles.css?v=9fbcf74da6">
+    <link rel="stylesheet" href="../styles.css?v=72e753c189">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Ballymun", "description": "Browse 5 kids activities and classes in Ballymun, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/ballymun.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 5, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/ballymun-library-189.html", "name": "Ballymun Library"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/ballymun-kickhams-450.html", "name": "Ballymun Kickhams"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/axis-ballymun-1918.html", "name": "Axis Ballymun"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/sport-taekwondo-ireland-ballymun-1919.html", "name": "Sport Taekwondo Ireland - Ballymun"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/ballymun-boxing-club-1920.html", "name": "Ballymun Boxing Club"}]}}</script>
 </head>
 <body>
@@ -77,9 +77,11 @@
         </div>
         <div class="filter-group filter-group-checkbox">
             <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+        </div>
+        <div class="filters-footer">
+            <div class="filters-count" id="filters-count"></div>
             <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
         </div>
-        <div class="filters-count" id="filters-count"></div>
     </div>
         <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
         <div class="landing-grid"><div class="landing-card" data-id="189">
@@ -128,7 +130,7 @@
             <a href="../business/ballymun-boxing-club-1920.html" class="button">View full details &rarr;</a>
         </div>
     </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
-        <script type="application/json" id="landing-data">[{"id": 189, "lat": 53.38539, "lon": -6.2652, "name": "Ballymun Library", "category": "Parent-and-toddler", "url": "../business/ballymun-library-189.html", "minAge": null, "maxAge": null, "price": null, "free": true}, {"id": 450, "lat": 53.3968675, "lon": -6.2643161, "name": "Ballymun Kickhams", "category": "GAA", "url": "../business/ballymun-kickhams-450.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1918, "lat": 53.3816098, "lon": -6.2465221, "name": "Axis Ballymun", "category": "Drama", "url": "../business/axis-ballymun-1918.html", "minAge": 7, "maxAge": 16, "price": null, "free": false}, {"id": 1919, "lat": 53.3853859, "lon": -6.2651986, "name": "Sport Taekwondo Ireland - Ballymun", "category": "Martial Arts", "url": "../business/sport-taekwondo-ireland-ballymun-1919.html", "minAge": 5, "maxAge": null, "price": null, "free": false}, {"id": 1920, "lat": 53.403063, "lon": -6.2744743, "name": "Ballymun Boxing Club", "category": "Martial Arts", "url": "../business/ballymun-boxing-club-1920.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+        <script type="application/json" id="landing-data">[{"id": 189, "lat": 53.38539, "lon": -6.2652, "name": "Ballymun Library", "category": "Parent-and-toddler", "url": "../business/ballymun-library-189.html", "minAge": 0, "maxAge": 5.0, "price": null, "free": true}, {"id": 450, "lat": 53.3968675, "lon": -6.2643161, "name": "Ballymun Kickhams", "category": "GAA", "url": "../business/ballymun-kickhams-450.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1918, "lat": 53.3816098, "lon": -6.2465221, "name": "Axis Ballymun", "category": "Drama", "url": "../business/axis-ballymun-1918.html", "minAge": 7, "maxAge": 16, "price": null, "free": false}, {"id": 1919, "lat": 53.3853859, "lon": -6.2651986, "name": "Sport Taekwondo Ireland - Ballymun", "category": "Martial Arts", "url": "../business/sport-taekwondo-ireland-ballymun-1919.html", "minAge": 5, "maxAge": null, "price": null, "free": false}, {"id": 1920, "lat": 53.403063, "lon": -6.2744743, "name": "Ballymun Boxing Club", "category": "Martial Arts", "url": "../business/ballymun-boxing-club-1920.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
     </div>
     <footer class="site-footer">
         <div class="site-footer-inner">
@@ -154,6 +156,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script src="../analytics.js?v=471ea0b7de" defer></script>
-    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+    <script src="../range-slider.js?v=fce270b0f6" defer></script>
+    <script src="../landing-filters.js?v=3ecf3f14d8" defer></script>
 </body>
 </html>

@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
-    <link rel="stylesheet" href="../styles.css?v=9fbcf74da6">
+    <link rel="stylesheet" href="../styles.css?v=72e753c189">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Dunboyne", "description": "Browse 7 kids activities and classes in Dunboyne, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/dunboyne.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 7, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/baby-sensory-dunboyne-94.html", "name": "Baby Sensory Dunboyne"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/dunboyne-parent-baby-and-toddler-group-343.html", "name": "Dunboyne Parent, Baby and Toddler Group"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/sing-and-smile-with-aisling-1102.html", "name": "Sing and Smile with Aisling"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/dunboyne-athletic-club-join-juvenile-1655.html", "name": "Dunboyne Athletic Club - Join Juvenile"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/lets-go-kids-camps-dunboyne-1657.html", "name": "Lets Go Kids Camps - Dunboyne"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/next-stage-theatre-school-dunboyne-1658.html", "name": "Next Stage Theatre School - Dunboyne"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/1st-meath-dunboyne-scouts-beavers-1659.html", "name": "1st Meath Dunboyne Scouts - Beavers"}]}}</script>
 </head>
 <body>
@@ -77,9 +77,11 @@
         </div>
         <div class="filter-group filter-group-checkbox">
             <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+        </div>
+        <div class="filters-footer">
+            <div class="filters-count" id="filters-count"></div>
             <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
         </div>
-        <div class="filters-count" id="filters-count"></div>
     </div>
         <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
         <div class="landing-grid"><div class="landing-card" data-id="94">
@@ -172,6 +174,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script src="../analytics.js?v=471ea0b7de" defer></script>
-    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+    <script src="../range-slider.js?v=fce270b0f6" defer></script>
+    <script src="../landing-filters.js?v=3ecf3f14d8" defer></script>
 </body>
 </html>

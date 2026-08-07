@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
-    <link rel="stylesheet" href="../styles.css?v=9fbcf74da6">
+    <link rel="stylesheet" href="../styles.css?v=72e753c189">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Other Classes in Ireland", "description": "Find 6 Other classes and activities for kids across Ireland. Compare schedules, ages and pricing, then contact providers directly.", "url": "https://www.kidspatch.ie/classes/other.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 6, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/terenure-library-chess-club-1753.html", "name": "Terenure Library Chess Club"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/rathmines-junior-chess-club-1771.html", "name": "Rathmines Junior Chess Club"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/knights-of-anna-chess-club-1792.html", "name": "Knights of Éanna Chess Club"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/phibsboro-chess-club-1865.html", "name": "Phibsboro Chess Club"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/naomh-barr-g-juniors-chess-club-1895.html", "name": "Naomh Barróg Juniors Chess Club"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/elm-mount-chess-club-1900.html", "name": "Elm Mount Chess Club"}]}}</script>
 </head>
 <body>
@@ -77,9 +77,11 @@
         </div>
         <div class="filter-group filter-group-checkbox">
             <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+        </div>
+        <div class="filters-footer">
+            <div class="filters-count" id="filters-count"></div>
             <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
         </div>
-        <div class="filters-count" id="filters-count"></div>
     </div>
         <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
         <div class="landing-grid"><div class="landing-card" data-id="1753">
@@ -137,7 +139,7 @@
             <a href="../business/elm-mount-chess-club-1900.html" class="button">View full details &rarr;</a>
         </div>
     </div><p class="no-results" id="no-results-message" hidden>No classes match your filters. <button type="button" id="no-results-reset">Clear filters</button></p></div>
-        <script type="application/json" id="landing-data">[{"id": 1753, "lat": 53.3089625, "lon": -6.2852458, "name": "Terenure Library Chess Club", "category": "Other", "url": "../business/terenure-library-chess-club-1753.html", "minAge": null, "maxAge": null, "price": 0, "free": true}, {"id": 1771, "lat": 53.3237685, "lon": -6.2736594, "name": "Rathmines Junior Chess Club", "category": "Other", "url": "../business/rathmines-junior-chess-club-1771.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1792, "lat": 53.2860007, "lon": -6.297869, "name": "Knights of Éanna Chess Club", "category": "Other", "url": "../business/knights-of-anna-chess-club-1792.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1865, "lat": 53.3680915, "lon": -6.2764711, "name": "Phibsboro Chess Club", "category": "Other", "url": "../business/phibsboro-chess-club-1865.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1895, "lat": 53.3906516, "lon": -6.1521191, "name": "Naomh Barróg Juniors Chess Club", "category": "Other", "url": "../business/naomh-barr-g-juniors-chess-club-1895.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1900, "lat": 53.384851, "lon": -6.2164807, "name": "Elm Mount Chess Club", "category": "Other", "url": "../business/elm-mount-chess-club-1900.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
+        <script type="application/json" id="landing-data">[{"id": 1753, "lat": 53.3089625, "lon": -6.2852458, "name": "Terenure Library Chess Club", "category": "Other", "url": "../business/terenure-library-chess-club-1753.html", "minAge": null, "maxAge": null, "price": 0, "free": true}, {"id": 1771, "lat": 53.3237685, "lon": -6.2736594, "name": "Rathmines Junior Chess Club", "category": "Other", "url": "../business/rathmines-junior-chess-club-1771.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1792, "lat": 53.2860007, "lon": -6.297869, "name": "Knights of Éanna Chess Club", "category": "Other", "url": "../business/knights-of-anna-chess-club-1792.html", "minAge": 4, "maxAge": 12, "price": null, "free": false}, {"id": 1865, "lat": 53.3680915, "lon": -6.2764711, "name": "Phibsboro Chess Club", "category": "Other", "url": "../business/phibsboro-chess-club-1865.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1895, "lat": 53.3906516, "lon": -6.1521191, "name": "Naomh Barróg Juniors Chess Club", "category": "Other", "url": "../business/naomh-barr-g-juniors-chess-club-1895.html", "minAge": null, "maxAge": null, "price": null, "free": false}, {"id": 1900, "lat": 53.384851, "lon": -6.2164807, "name": "Elm Mount Chess Club", "category": "Other", "url": "../business/elm-mount-chess-club-1900.html", "minAge": null, "maxAge": null, "price": null, "free": false}]</script>
     </div>
     <footer class="site-footer">
         <div class="site-footer-inner">
@@ -163,6 +165,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script src="../analytics.js?v=471ea0b7de" defer></script>
-    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+    <script src="../range-slider.js?v=fce270b0f6" defer></script>
+    <script src="../landing-filters.js?v=3ecf3f14d8" defer></script>
 </body>
 </html>

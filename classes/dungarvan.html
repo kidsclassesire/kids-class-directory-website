@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
-    <link rel="stylesheet" href="../styles.css?v=9fbcf74da6">
+    <link rel="stylesheet" href="../styles.css?v=72e753c189">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kids Activities in Dungarvan", "description": "Browse 8 kids activities and classes in Dungarvan, Ireland. Filter by category, age and schedule to find the right activity.", "url": "https://www.kidspatch.ie/classes/dungarvan.html", "mainEntity": {"@type": "ItemList", "numberOfItems": 8, "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://www.kidspatch.ie/business/turtle-tots-swimming-classes-louth-limerick-laois-waterford-1245.html", "name": "Turtle Tots Swimming Classes /Louth/Limerick/Laois/Waterford"}, {"@type": "ListItem", "position": 2, "url": "https://www.kidspatch.ie/business/little-kickers-1294.html", "name": "Little Kickers"}, {"@type": "ListItem", "position": 3, "url": "https://www.kidspatch.ie/business/ready-steady-play-south-east-1298.html", "name": "Ready Steady Play South East"}, {"@type": "ListItem", "position": 4, "url": "https://www.kidspatch.ie/business/ready-to-play-1301.html", "name": "Ready to Play"}, {"@type": "ListItem", "position": 5, "url": "https://www.kidspatch.ie/business/dungarvan-gymnastics-club-1378.html", "name": "Dungarvan Gymnastics Club"}, {"@type": "ListItem", "position": 6, "url": "https://www.kidspatch.ie/business/harmony-children-s-choir-1381.html", "name": "Harmony Children's Choir"}, {"@type": "ListItem", "position": 7, "url": "https://www.kidspatch.ie/business/integrity-martial-arts-dungarvan-1382.html", "name": "Integrity Martial Arts, Dungarvan"}, {"@type": "ListItem", "position": 8, "url": "https://www.kidspatch.ie/business/designer-minds-dungarvan-steam-summer-camp-1608.html", "name": "Designer Minds - Dungarvan STEAM Summer Camp"}]}}</script>
 </head>
 <body>
@@ -77,9 +77,11 @@
         </div>
         <div class="filter-group filter-group-checkbox">
             <label class="filter-checkbox"><input type="checkbox" id="free-only"> Free classes only</label>
+        </div>
+        <div class="filters-footer">
+            <div class="filters-count" id="filters-count"></div>
             <button type="button" id="filters-reset" class="filters-reset" hidden>Reset filters</button>
         </div>
-        <div class="filters-count" id="filters-count"></div>
     </div>
         <div class="landing-map-wrap"><div id="landing-map" class="landing-map"></div></div>
         <div class="landing-grid"><div class="landing-card" data-id="1245">
@@ -181,6 +183,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script src="../analytics.js?v=471ea0b7de" defer></script>
-    <script src="../landing-filters.js?v=5a1bf12266" defer></script>
+    <script src="../range-slider.js?v=fce270b0f6" defer></script>
+    <script src="../landing-filters.js?v=3ecf3f14d8" defer></script>
 </body>
 </html>

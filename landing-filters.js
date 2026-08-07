@@ -20,68 +20,10 @@
         }
     }
 
-    // Two overlapping <input type=range> is the standard dependency-free way
-    // to get a dual-handle slider: pointer-events is disabled on the input
-    // itself (CSS) and re-enabled only on the ::-webkit-slider-thumb/
-    // ::-moz-range-thumb, so each handle stays independently draggable
-    // regardless of DOM order or z-index.
-    function setupRangeSlider(container, onChange, onCommit) {
-        var minInput = container.querySelector('input:first-of-type');
-        var maxInput = container.querySelector('input:last-of-type');
-        var fill = container.querySelector('.range-track-fill');
-        var rangeMin = parseFloat(minInput.min);
-        var rangeMax = parseFloat(minInput.max);
-
-        function paintFill(minVal, maxVal) {
-            var pctMin = ((minVal - rangeMin) / (rangeMax - rangeMin)) * 100;
-            var pctMax = ((maxVal - rangeMin) / (rangeMax - rangeMin)) * 100;
-            fill.style.left = pctMin + '%';
-            fill.style.right = (100 - pctMax) + '%';
-        }
-
-        function update() {
-            var minVal = parseFloat(minInput.value);
-            var maxVal = parseFloat(maxInput.value);
-            if (minVal > maxVal) {
-                if (document.activeElement === maxInput) {
-                    minVal = maxVal;
-                    minInput.value = String(minVal);
-                } else {
-                    maxVal = minVal;
-                    maxInput.value = String(maxVal);
-                }
-            }
-            paintFill(minVal, maxVal);
-            onChange(minVal, maxVal, rangeMin, rangeMax);
-        }
-
-        minInput.addEventListener('input', update);
-        maxInput.addEventListener('input', update);
-        // 'change' (not 'input') fires once on release/keyup rather than on
-        // every drag tick, so this is where analytics tracking hooks in --
-        // an 'input'-driven trackEvent call would spam GA with a call per
-        // pixel of drag.
-        if (onCommit) {
-            minInput.addEventListener('change', onCommit);
-            maxInput.addEventListener('change', onCommit);
-        }
-        // Paint-only, deliberately not calling update()/onChange() here: at
-        // construction time the caller's `var ageSlider = setupRangeSlider(...)`
-        // assignment hasn't completed yet, so a callback that reads
-        // ageSlider/priceSlider (both use this helper, and isDefaultState()
-        // checks both) would blow up on the very first one. init() triggers
-        // the real initial state explicitly once every slider exists instead.
-        paintFill(rangeMin, rangeMax);
-
-        return {
-            bounds: { min: rangeMin, max: rangeMax },
-            reset: function () {
-                minInput.value = String(rangeMin);
-                maxInput.value = String(rangeMax);
-                paintFill(rangeMin, rangeMax);
-            },
-        };
-    }
+    // setupRangeSlider() now lives in range-slider.js (shared with index.html's
+    // main search page, which has the same Age/Price dual-slider filters) -- that
+    // file is loaded before this one (see generate_landing_pages.py), so it's
+    // already in scope here as a plain global function.
 
     function init() {
         var points = readDataset();
@@ -190,6 +132,20 @@
             return true;
         }
 
+        // Rebuilding the marker cluster group + map.fitBounds() is expensive enough
+        // that running it synchronously on every single 'input' tick while dragging a
+        // range slider makes the browser fall behind on pointer events -- visible as
+        // the slider handle itself jumping/stuttering rather than tracking the cursor
+        // smoothly. Debounced so it settles shortly after dragging pauses instead of
+        // running on every pixel of drag.
+        var renderMarkersTimer = null;
+        function scheduleRenderMarkers(visiblePoints) {
+            clearTimeout(renderMarkersTimer);
+            renderMarkersTimer = setTimeout(function () {
+                renderMarkers(visiblePoints);
+            }, 150);
+        }
+
         function applyFilters() {
             var visiblePoints = [];
             var visibleCount = 0;
@@ -203,7 +159,7 @@
                 }
             });
 
-            renderMarkers(visiblePoints);
+            scheduleRenderMarkers(visiblePoints);
 
             if (noResultsMsg) noResultsMsg.hidden = visibleCount !== 0;
             if (resetBtn) resetBtn.hidden = isDefaultState();
