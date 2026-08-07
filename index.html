@@ -297,6 +297,16 @@
         const sortSelect = document.getElementById('sort-select');
         const favoritesOnlyFilter = document.getElementById('favorites-only-filter');
 
+        // Adds each canonical day (from site-lookups.js, shared with portal.html/
+        // admin.html) after the static Any/Weekdays/Weekends options, so a parent
+        // can filter to one specific day rather than just the weekday/weekend bucket.
+        DAYS_OF_WEEK.forEach(day => {
+            const opt = document.createElement('option');
+            opt.value = day;
+            opt.textContent = day;
+            dayFilter.appendChild(opt);
+        });
+
         const heroSection = document.getElementById('hero');
         const mainContent = document.getElementById('main-content');
         const mobileMapFab = document.getElementById('mobile-map-fab');
@@ -735,26 +745,40 @@
 
                 let ageMatch = true;
                 if (ageBracket !== '') {
-                    const min = item.minimum_age !== null ? item.minimum_age : 0;
-                    const max = item.maximum_age !== null ? item.maximum_age : 99;
-                    if (ageBracket === '13plus') {
-                        ageMatch = (max >= 13);
-                    } else {
-                        // "Under 1" and each whole year are matched against a representative
-                        // age (0.5 for "Under 1") since minimum/maximum_age can be fractional
-                        // (e.g. 0.11 years for a class open from ~6 weeks old).
-                        const age = ageBracket === 'under1' ? 0.5 : parseFloat(ageBracket);
-                        ageMatch = (min <= age && max >= age);
+                    const hasMin = item.minimum_age !== null && item.minimum_age !== undefined;
+                    const hasMax = item.maximum_age !== null && item.maximum_age !== undefined;
+                    // No age suggested for this item at all -- can't confidently say it
+                    // does or doesn't suit the selected age, so don't filter it out.
+                    if (hasMin || hasMax) {
+                        const min = hasMin ? item.minimum_age : 0;
+                        const max = hasMax ? item.maximum_age : 99;
+                        if (ageBracket === '13plus') {
+                            ageMatch = (max >= 13);
+                        } else {
+                            // "Under 1" and each whole year are matched against a representative
+                            // age (0.5 for "Under 1") since minimum/maximum_age can be fractional
+                            // (e.g. 0.11 years for a class open from ~6 weeks old).
+                            const age = ageBracket === 'under1' ? 0.5 : parseFloat(ageBracket);
+                            ageMatch = (min <= age && max >= age);
+                        }
                     }
                 }
 
                 let dayMatch = true;
                 if (dayBracket !== '') {
-                    const days = Array.isArray(item.days_of_week) ? item.days_of_week.join(' ') : (item.days_of_week || '');
-                    if (dayBracket === 'weekend') {
-                        dayMatch = days.toLowerCase().includes('saturday') || days.toLowerCase().includes('sunday');
-                    } else if (dayBracket === 'weekday') {
-                        dayMatch = ['monday','tuesday','wednesday','thursday','friday'].some(d => days.toLowerCase().includes(d));
+                    const daysArr = Array.isArray(item.days_of_week) ? item.days_of_week : (item.days_of_week ? [item.days_of_week] : []);
+                    // No day recorded for this item -- can't confidently say it does or
+                    // doesn't run on the requested day, so don't filter it out.
+                    if (daysArr.length) {
+                        const daysLower = daysArr.map(d => (d || '').toLowerCase());
+                        if (dayBracket === 'weekend') {
+                            dayMatch = daysLower.includes('saturday') || daysLower.includes('sunday');
+                        } else if (dayBracket === 'weekday') {
+                            dayMatch = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'].some(d => daysLower.includes(d));
+                        } else {
+                            // A specific day, e.g. "Tuesday".
+                            dayMatch = daysLower.includes(dayBracket.toLowerCase());
+                        }
                     }
                 }
 
