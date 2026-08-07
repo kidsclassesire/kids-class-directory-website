@@ -1413,7 +1413,12 @@
         radiusFilter.addEventListener('change', () => { trackFilter('radius', radiusFilter.value); if (hasTriggeredSearch) filterClasses(); });
         sortSelect.addEventListener('change', () => { sortExplicitlySet = true; trackFilter('sort', sortSelect.value); if (hasTriggeredSearch) filterClasses(); });
 
-        document.getElementById('clear-filters-btn').addEventListener('click', () => {
+        // Resets every filter input to its default value -- shared by "Clear
+        // filters" and by the popstate handler below (landing on a no-params URL
+        // via Back needs the same reset, plus hiding the results/re-showing the
+        // hero, which callers handle themselves since Clear filters deliberately
+        // does NOT do that part).
+        function resetFilterControls() {
             searchInput.value = '';
             locationInput.value = '';
             categoryFilter.value = '';
@@ -1436,6 +1441,10 @@
             userLat = null;
             userLon = null;
             lastGeocodedQuery = null;
+        }
+
+        document.getElementById('clear-filters-btn').addEventListener('click', () => {
+            resetFilterControls();
             if (hasTriggeredSearch) filterClasses();
         });
 
@@ -1486,6 +1495,75 @@
         // empty classesData -- previously only the URL-param auto-search path waited.
         let dataReady = false;
         const dataLoadPromise = Promise.all([loadClasses(), loadRatings(), loadBusinessIndex()]);
+        // Sets every filter control from a URLSearchParams -- shared by the initial
+        // page-load restore and the popstate handler below (Back/Forward), so both
+        // paths apply params identically.
+        function applyUrlParamsToControls(params) {
+            if(params.has('q')) searchInput.value = params.get('q');
+            if(params.has('loc')) locationInput.value = params.get('loc');
+            if(params.has('cat')) categoryFilter.value = params.get('cat');
+            if (params.has('agemin') || params.has('agemax')) {
+                const min = params.has('agemin') ? parseFloat(params.get('agemin')) : ageSlider.bounds.min;
+                const max = params.has('agemax') ? parseFloat(params.get('agemax')) : ageSlider.bounds.max;
+                ageSlider.set(min, max);
+                ageRangeState = { min, max };
+                document.getElementById('age-range-filter-value').textContent =
+                    (min === ageSlider.bounds.min && max === ageSlider.bounds.max) ? 'Any age' : (min + ' – ' + max + ' years');
+            }
+            if (params.has('pricemin') || params.has('pricemax')) {
+                const min = params.has('pricemin') ? parseFloat(params.get('pricemin')) : priceSlider.bounds.min;
+                const max = params.has('pricemax') ? parseFloat(params.get('pricemax')) : priceSlider.bounds.max;
+                priceSlider.set(min, max);
+                priceRangeState = { min, max };
+                document.getElementById('price-range-filter-value').textContent =
+                    (min === priceSlider.bounds.min && max === priceSlider.bounds.max) ? 'Any price' : ('€' + min + ' – €' + max + (max === priceSlider.bounds.max ? '+' : ''));
+            }
+            if(params.has('day')) dayFilter.value = params.get('day');
+            if(params.get('dropoff') === 'true') dropoffFilter.checked = true;
+            if(params.has('radius')) radiusFilter.value = params.get('radius');
+            if(params.has('sort')) { sortSelect.value = params.get('sort'); sortExplicitlySet = true; }
+            if(params.has('lat') && params.has('lng')) {
+                userLat = parseFloat(params.get('lat'));
+                userLon = parseFloat(params.get('lng'));
+                lastGeocodedQuery = 'current location';
+                nearMeBtn.style.color = 'var(--primary)';
+            }
+        }
+
+        // Undoes performSearch()'s one-time hero-collapse -- the inverse transition,
+        // for navigating (via Back) to a URL with no filters at all. Without this,
+        // popstate had nothing to hand off to: the URL would change back to the bare
+        // "/" but the page itself -- already loaded, nothing reacting to the URL
+        // change -- just kept showing the last search's results.
+        function resetToLandingState() {
+            resetFilterControls();
+            hasTriggeredSearch = false;
+            heroSection.classList.add('hero-initial');
+            heroSection.classList.remove('hero-active');
+            mainContent.classList.remove('visible');
+            filteredData = [];
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+
+        // Back/Forward navigation: pushState/replaceState (see filterClasses()) keep
+        // the URL in sync with the current filters, but changing the URL alone does
+        // nothing to a page that's already loaded -- browsers fire 'popstate' for
+        // exactly this, and without a handler for it the page just silently stays on
+        // whatever it was already showing while the address bar changes underneath it.
+        window.addEventListener('popstate', () => {
+            if (!dataReady) return; // nothing meaningful to restore before the initial load finishes
+            const params = new URLSearchParams(window.location.search);
+            if (Array.from(params.keys()).length === 0) {
+                resetToLandingState();
+                return;
+            }
+            resetFilterControls();
+            applyUrlParamsToControls(params);
+            // The URL already reflects this state (that's what popstate just told us) --
+            // replace, don't push a redundant duplicate entry on top of it.
+            performSearch(false);
+        });
+
         dataLoadPromise.then(() => {
             dataReady = true;
             populateCategoryFilter();
@@ -1493,35 +1571,7 @@
             renderCategoryPatches();
             const params = new URLSearchParams(window.location.search);
             if (Array.from(params.keys()).length > 0) {
-                if(params.has('q')) searchInput.value = params.get('q');
-                if(params.has('loc')) locationInput.value = params.get('loc');
-                if(params.has('cat')) categoryFilter.value = params.get('cat');
-                if (params.has('agemin') || params.has('agemax')) {
-                    const min = params.has('agemin') ? parseFloat(params.get('agemin')) : ageSlider.bounds.min;
-                    const max = params.has('agemax') ? parseFloat(params.get('agemax')) : ageSlider.bounds.max;
-                    ageSlider.set(min, max);
-                    ageRangeState = { min, max };
-                    document.getElementById('age-range-filter-value').textContent =
-                        (min === ageSlider.bounds.min && max === ageSlider.bounds.max) ? 'Any age' : (min + ' – ' + max + ' years');
-                }
-                if (params.has('pricemin') || params.has('pricemax')) {
-                    const min = params.has('pricemin') ? parseFloat(params.get('pricemin')) : priceSlider.bounds.min;
-                    const max = params.has('pricemax') ? parseFloat(params.get('pricemax')) : priceSlider.bounds.max;
-                    priceSlider.set(min, max);
-                    priceRangeState = { min, max };
-                    document.getElementById('price-range-filter-value').textContent =
-                        (min === priceSlider.bounds.min && max === priceSlider.bounds.max) ? 'Any price' : ('€' + min + ' – €' + max + (max === priceSlider.bounds.max ? '+' : ''));
-                }
-                if(params.has('day')) dayFilter.value = params.get('day');
-                if(params.get('dropoff') === 'true') dropoffFilter.checked = true;
-                if(params.has('radius')) radiusFilter.value = params.get('radius');
-                if(params.has('sort')) { sortSelect.value = params.get('sort'); sortExplicitlySet = true; }
-                if(params.has('lat') && params.has('lng')) {
-                    userLat = parseFloat(params.get('lat'));
-                    userLon = parseFloat(params.get('lng'));
-                    lastGeocodedQuery = 'current location';
-                    nearMeBtn.style.color = 'var(--primary)';
-                }
+                applyUrlParamsToControls(params);
                 // The browser already navigated here (params are already in the
                 // current URL) -- replace, don't push a duplicate history entry for
                 // the page we're already on.
