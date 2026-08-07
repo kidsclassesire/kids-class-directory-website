@@ -67,6 +67,7 @@
         .tabs { display: flex; gap: 0.25rem; border-bottom: 1px solid var(--border); margin-bottom: 1.5rem; overflow-x: auto; }
         .tab-btn { background: none; border: none; padding: 0.75rem 1rem; font-size: 0.9rem; font-weight: 600; color: var(--text-muted); cursor: pointer; border-bottom: 2px solid transparent; white-space: nowrap; }
         .tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+        .tab-btn.tab-has-content::after { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); opacity: 0.55; margin-left: 6px; vertical-align: middle; }
         .tab-panel { display: none; }
         .tab-panel.active { display: block; }
         .classes-table-wrap { overflow-x: auto; }
@@ -76,6 +77,7 @@
         .classes-table input, .classes-table select { width: 100%; box-sizing: border-box; padding: 0.45rem; border: 1px solid var(--border); border-radius: 6px; font-size: 0.85rem; font-family: inherit; }
         .classes-table input[type="number"] { min-width: 68px; }
         .classes-table input[type="date"] { min-width: 135px; }
+        .classes-table input[type="time"] { min-width: 110px; }
         .classes-table input[type="text"] { min-width: 110px; }
         .form-group input:disabled, .form-group select:disabled { background: #F1F5F9; color: var(--text-muted); cursor: not-allowed; }
         .field-hint { font-size: 0.75rem; color: var(--text-muted); margin: 0.4rem 0 0; }
@@ -116,7 +118,7 @@
                 content: attr(data-label); display: block; font-size: 0.7rem; text-transform: uppercase;
                 letter-spacing: 0.03em; color: var(--text-muted); font-weight: 700; margin-bottom: 0.25rem;
             }
-            .classes-table input[type="number"], .classes-table input[type="date"], .classes-table input[type="text"] { min-width: 0; }
+            .classes-table input[type="number"], .classes-table input[type="date"], .classes-table input[type="time"], .classes-table input[type="text"] { min-width: 0; }
         }
     </style>
 </head>
@@ -193,10 +195,13 @@
             <button type="button" class="btn-secondary" id="back-to-list-btn">&larr; Back to your businesses</button>
         </div>
 
-        <form id="edit-business-form" style="display: none;">
+        <form id="edit-business-form" style="display: none;" novalidate>
             <input type="hidden" id="edit-id">
 
-            <h3 id="editing-business-name" style="margin: -0.5rem 0 0.5rem; color: var(--text-muted); font-weight: 600; font-size: 1rem;"></h3>
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin: -0.5rem 0 0.5rem;">
+                <h3 id="editing-business-name" style="margin:0; color: var(--text-muted); font-weight: 600; font-size: 1rem;"></h3>
+                <a id="view-live-listing-link" href="#" target="_blank" rel="noopener" style="display:none; font-size:0.85rem; font-weight:700; color: var(--primary); text-decoration:none; white-space:nowrap;">View live listing &rarr;</a>
+            </div>
             <p id="page-views-stat" style="display:none; margin: 0 0 1.75rem; font-size: 0.85rem; color: var(--text-muted);"></p>
 
             <div class="tabs" id="edit-tabs">
@@ -257,8 +262,11 @@
                     </div>
                     <div class="form-group">
                         <label for="edit-class-types">Class Types</label>
-                        <input type="text" id="edit-class-types" placeholder="Comma-separated, e.g. Ballet, Tap">
-                        <p class="field-hint">Optional, more specific than Category — e.g. a Music school might list "Piano, Guitar, Violin". Shown as extra detail on your listing; the Individual Classes tab is the place for full class-by-class scheduling.</p>
+                        <div class="autocomplete-wrap">
+                            <input type="text" id="edit-class-types" placeholder="Comma-separated, e.g. Ballet, Tap" autocomplete="off">
+                            <div class="field-suggestions" id="class-types-suggestions"></div>
+                        </div>
+                        <p class="field-hint">Optional, more specific than Category — e.g. a Music school might list "Piano, Guitar, Violin". Start typing to pick from existing class types, or add your own. Shown as extra detail on your listing; the Individual Classes tab is the place for full class-by-class scheduling.</p>
                     </div>
                 </div>
                 <div class="form-group">
@@ -316,11 +324,11 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="edit-start-time">Start Time</label>
-                        <input type="text" id="edit-start-time" placeholder="e.g. 10:00">
+                        <input type="time" id="edit-start-time">
                     </div>
                     <div class="form-group">
                         <label for="edit-end-time">End Time</label>
-                        <input type="text" id="edit-end-time" placeholder="e.g. 11:00">
+                        <input type="time" id="edit-end-time">
                     </div>
                 </div>
                 <div class="form-group">
@@ -519,8 +527,13 @@
         let currentBusinessId = null;
         let cachedBusinesses = [];
         let hasUnsavedChanges = false;
+        let hasUnsavedClassChanges = false;
         let currentSavedBusiness = null;
         let skipDirtyTracking = false;
+        let classesLoadedForBusinessId = null;
+        let businessIndexMap = null;
+        let knownClassTypes = [];
+        let classTypesFetchPromise = null;
 
         // UI Elements
         const authSection = document.getElementById('auth-section');
@@ -570,26 +583,48 @@
                 updateDirtyIndicator();
             }
         }
+        // Individual Classes rows save separately from the rest of the form (their
+        // own "Save Classes" button), so their dirty state is tracked apart from
+        // hasUnsavedChanges -- see isDirty(), which combines both for anything that
+        // needs to know "is there ANY unsaved work".
+        function markClassesDirty() {
+            if (skipDirtyTracking) return;
+            hasUnsavedClassChanges = true;
+        }
         function clearDirtyState() {
             hasUnsavedChanges = false;
             updateDirtyIndicator();
         }
+        function clearClassesDirtyState() {
+            hasUnsavedClassChanges = false;
+        }
+        function isDirty() {
+            return hasUnsavedChanges || hasUnsavedClassChanges;
+        }
         function confirmDiscardIfNeeded() {
-            if (!hasUnsavedChanges) return true;
+            if (!isDirty()) return true;
             return confirm('You have unsaved changes. Discard them and continue?');
         }
 
+        // Delegated on the form itself (rather than bound to each field once at load
+        // time) so it also covers Individual Classes rows, which get created
+        // dynamically after this runs -- per-field listeners attached only once
+        // would never see them, and edits there would silently bypass the
+        // unsaved-changes warning entirely.
+        function handleFormFieldChange(e) {
+            if (!e.target.matches('input, textarea, select')) return;
+            if (e.target.closest('#classes-table-body')) markClassesDirty();
+            else markDirty();
+            updateTabCompletionDots();
+        }
         function bindDirtyTracking() {
-            const fields = document.querySelectorAll('#edit-business-form input, #edit-business-form textarea, #edit-business-form select');
-            fields.forEach((field) => {
-                field.addEventListener('input', markDirty);
-                field.addEventListener('change', markDirty);
-            });
+            editForm.addEventListener('input', handleFormFieldChange);
+            editForm.addEventListener('change', handleFormFieldChange);
         }
         bindDirtyTracking();
 
         window.addEventListener('beforeunload', (e) => {
-            if (hasUnsavedChanges) {
+            if (isDirty()) {
                 e.preventDefault();
                 e.returnValue = '';
             }
@@ -663,6 +698,7 @@
 
         // Logout
         document.getElementById('logout-btn').addEventListener('click', async () => {
+            if (!confirmDiscardIfNeeded()) return;
             await supabaseClient.auth.signOut();
             dashboardSection.style.display = 'none';
             document.getElementById('reset-password-section').style.display = 'none';
@@ -913,6 +949,10 @@
                 document.getElementById('edit-latitude').value = item.lat;
                 document.getElementById('edit-longitude').value = item.lon;
                 hide();
+                // Setting .value directly doesn't fire input/change, so the dirty
+                // tracker wouldn't otherwise notice this counts as an edit.
+                markDirty();
+                updateTabCompletionDots();
             }
             async function runQuery(q) {
                 const seq = ++requestSeq;
@@ -946,6 +986,139 @@
             });
         })();
 
+        // ---- Class Types: autocomplete sourced from other businesses' existing
+        // values, so owners pick a consistent spelling ("Ballet" vs "ballet" vs
+        // "Ballet Classes") instead of each one inventing their own -- inconsistent
+        // free text here is hard to search/filter on later. Loaded lazily on first
+        // focus rather than at page load, since not every owner uses this field. ----
+        async function ensureClassTypesLoaded() {
+            if (knownClassTypes.length || classTypesFetchPromise) return classTypesFetchPromise;
+            classTypesFetchPromise = (async () => {
+                try {
+                    const seen = new Map();
+                    // Paginate rather than a single unpaginated select -- PostgREST
+                    // silently caps unpaginated queries at 1000 rows, which would
+                    // quietly drop suggestions from later rows on a table this size.
+                    const pageSize = 1000;
+                    let from = 0;
+                    while (true) {
+                        const { data, error } = await supabaseClient
+                            .from('classes')
+                            .select('class_types')
+                            .range(from, from + pageSize - 1);
+                        if (error) throw error;
+                        (data || []).forEach(row => (row.class_types || []).forEach(t => {
+                            const trimmed = (t || '').trim();
+                            if (!trimmed) return;
+                            const key = trimmed.toLowerCase();
+                            if (!seen.has(key)) seen.set(key, trimmed);
+                        }));
+                        if (!data || data.length < pageSize) break;
+                        from += pageSize;
+                    }
+                    knownClassTypes = Array.from(seen.values()).sort((a, b) => a.localeCompare(b));
+                } catch (err) {
+                    console.warn('Could not load class type suggestions:', err);
+                }
+            })();
+            return classTypesFetchPromise;
+        }
+
+        (function setupClassTypesTypeahead() {
+            const input = document.getElementById('edit-class-types');
+            const container = document.getElementById('class-types-suggestions');
+            let items = [];
+            let activeIndex = -1;
+
+            // The field holds a comma-separated list -- suggestions/replacement
+            // operate on just the token the caret is currently sitting in, not the
+            // whole field value.
+            function currentTokenBounds() {
+                const value = input.value;
+                const caret = input.selectionStart ?? value.length;
+                const lastComma = value.lastIndexOf(',', caret - 1);
+                const start = lastComma === -1 ? 0 : lastComma + 1;
+                return { start, end: caret, text: value.slice(start, caret).trim() };
+            }
+            function render() {
+                if (!items.length) { hide(); return; }
+                container.innerHTML = items.map((item, i) =>
+                    `<div class="field-suggestion" data-index="${i}">${escapeHtml(item)}</div>`
+                ).join('');
+                container.classList.add('visible');
+            }
+            function hide() {
+                items = [];
+                activeIndex = -1;
+                container.innerHTML = '';
+                container.classList.remove('visible');
+            }
+            function setActive(i) {
+                activeIndex = i;
+                [...container.children].forEach((el, idx) => el.classList.toggle('active', idx === i));
+            }
+            function select(value) {
+                const { start, end } = currentTokenBounds();
+                const prefix = input.value.slice(0, start);
+                const suffix = input.value.slice(end).replace(/^\s+/, '');
+                const needsSpace = prefix.length > 0 && !prefix.endsWith(' ');
+                const replacement = (needsSpace ? ' ' : '') + value + ', ';
+                input.value = prefix + replacement + suffix;
+                const caret = (prefix + replacement).length;
+                input.setSelectionRange(caret, caret);
+                hide();
+                input.focus();
+                // Programmatic .value writes don't fire input/change.
+                markDirty();
+                updateTabCompletionDots();
+            }
+            async function handleInput() {
+                await ensureClassTypesLoaded();
+                const { text } = currentTokenBounds();
+                if (!text) { hide(); return; }
+                const already = new Set(csvToArray(input.value).map(s => s.toLowerCase()));
+                const lower = text.toLowerCase();
+                items = knownClassTypes
+                    .filter(t => t.toLowerCase().includes(lower) && !already.has(t.toLowerCase()))
+                    .slice(0, 8);
+                activeIndex = -1;
+                render();
+            }
+            input.addEventListener('input', handleInput);
+            input.addEventListener('focus', handleInput);
+            input.addEventListener('keydown', (e) => {
+                if (!container.classList.contains('visible')) return;
+                if (e.key === 'ArrowDown') { e.preventDefault(); setActive(Math.min(activeIndex + 1, items.length - 1)); }
+                else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(Math.max(activeIndex - 1, -1)); }
+                else if (e.key === 'Escape') hide();
+                else if (e.key === 'Enter' && activeIndex >= 0 && items[activeIndex]) { e.preventDefault(); select(items[activeIndex]); }
+            });
+            container.addEventListener('mousedown', (e) => {
+                const el = e.target.closest('.field-suggestion');
+                if (!el) return;
+                e.preventDefault();
+                select(items[parseInt(el.dataset.index, 10)]);
+            });
+            document.addEventListener('click', (e) => {
+                if (!input.closest('.autocomplete-wrap').contains(e.target)) hide();
+            });
+        })();
+
+        // Wraps raw Supabase/Postgres error text with a plainer explanation where we
+        // can recognize the shape of the problem; otherwise falls back to showing the
+        // technical message rather than hiding it, since a slightly technical detail
+        // still beats no explanation for an error we haven't seen before.
+        function friendlyErrorMessage(err) {
+            const msg = (err && err.message) || 'Unknown error';
+            if (/failed to fetch|networkerror|load failed/i.test(msg)) {
+                return "couldn't reach the server — check your connection and try again";
+            }
+            if (/duplicate key|already exists/i.test(msg)) {
+                return "that value is already in use";
+            }
+            return msg;
+        }
+
         function escapeHtml(unsafe) {
             return (unsafe || '').toString()
                  .replace(/&/g, "&amp;")
@@ -953,6 +1126,28 @@
                  .replace(/>/g, "&gt;")
                  .replace(/"/g, "&quot;")
                  .replace(/'/g, "&#039;");
+        }
+
+        // Points to the statically-generated public detail page for this business
+        // (see scripts/generate_business_pages.py), keyed off business-index.json
+        // rather than reimplementing the id -> slug logic here.
+        async function updateViewLiveListingLink(businessId) {
+            const link = document.getElementById('view-live-listing-link');
+            link.style.display = 'none';
+            try {
+                if (!businessIndexMap) {
+                    const res = await fetch('business-index.json');
+                    if (!res.ok) return;
+                    businessIndexMap = await res.json();
+                }
+                const path = businessIndexMap[String(businessId)];
+                if (path) {
+                    link.href = path;
+                    link.style.display = 'inline';
+                }
+            } catch (err) {
+                console.warn('Could not load business index for live-listing link:', err);
+            }
         }
 
         function renderImagePreview(boxId, path, emptyLabel) {
@@ -1049,15 +1244,52 @@
             document.querySelectorAll('.tab-panel').forEach((p, i) => p.classList.toggle('active', i === 0));
             document.querySelector('.save-bar').style.display = '';
         }
+        function switchToTab(tab) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-tab') === tab));
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.getAttribute('data-tab-panel') === tab));
+            document.querySelector('.save-bar').style.display = tab === 'classes' ? 'none' : '';
+            // Only fetch once per business -- re-fetching on every tab visit would
+            // silently overwrite any in-progress, unsaved edits already in the table.
+            if (tab === 'classes' && classesLoadedForBusinessId !== currentBusinessId) {
+                loadIndividualClasses(currentBusinessId);
+            }
+        }
         document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const tab = btn.getAttribute('data-tab');
-                document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b === btn));
-                document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.getAttribute('data-tab-panel') === tab));
-                document.querySelector('.save-bar').style.display = tab === 'classes' ? 'none' : '';
-                if (tab === 'classes') loadIndividualClasses(currentBusinessId);
-            });
+            btn.addEventListener('click', () => switchToTab(btn.getAttribute('data-tab')));
         });
+
+        // Most of the form is hidden behind other tabs at any given time. The
+        // browser's native constraint validation can't report on a field inside a
+        // display:none panel (nothing to focus/show a bubble on), so a required or
+        // malformed field on an inactive tab used to fail submission completely
+        // silently. The form now has novalidate and this runs the check manually,
+        // switching to whichever tab holds the first invalid field before reporting it.
+        function focusFirstInvalidField() {
+            const invalid = Array.from(editForm.elements).find(el =>
+                typeof el.checkValidity === 'function' && !el.disabled && !el.checkValidity()
+            );
+            if (!invalid) return true;
+            const panel = invalid.closest('.tab-panel');
+            if (panel) switchToTab(panel.getAttribute('data-tab-panel'));
+            invalid.focus();
+            invalid.reportValidity();
+            return false;
+        }
+
+        // Lightweight "have I filled anything in here" cue per tab, so an owner can
+        // see at a glance which sections are still empty without opening each one.
+        function updateTabCompletionDots() {
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                const panel = document.querySelector(`.tab-panel[data-tab-panel="${btn.getAttribute('data-tab')}"]`);
+                if (!panel) return;
+                const filled = Array.from(panel.querySelectorAll('input, textarea, select')).some(el => {
+                    if (el.type === 'hidden' || el.type === 'button') return false;
+                    if (el.type === 'checkbox' || el.type === 'radio') return el.checked;
+                    return !!(el.value && el.value.trim());
+                });
+                btn.classList.toggle('tab-has-content', filled);
+            });
+        }
 
         document.getElementById('back-to-list-btn').addEventListener('click', () => {
             if (!confirmDiscardIfNeeded()) return;
@@ -1128,6 +1360,11 @@
 
             renderImagePreview('logo-preview-box', business.logo_path, 'No logo');
             renderImagePreview('banner-preview-box', business.hosted_image_path, 'No banner');
+
+            classesLoadedForBusinessId = null;
+            clearClassesDirtyState();
+            updateViewLiveListingLink(business.id);
+            updateTabCompletionDots();
             clearDirtyState();
             skipDirtyTracking = false;
         }
@@ -1175,7 +1412,7 @@
                 renderImagePreview(`${kind}-preview-box`, publicUrl, kind === 'logo' ? 'No logo' : 'No banner');
                 showDashSuccess(`${kind === 'logo' ? 'Logo' : 'Banner'} updated.`);
             } catch (err) {
-                showDashError(`Failed to upload: ${err.message}`);
+                showDashError(`Couldn't upload your image: ${friendlyErrorMessage(err)}`);
             } finally {
                 btn.textContent = 'Upload';
                 btn.disabled = false;
@@ -1207,7 +1444,7 @@
                 renderImagePreview(`${kind}-preview-box`, null, kind === 'logo' ? 'No logo' : 'No banner');
                 showDashSuccess(`${kind === 'logo' ? 'Logo' : 'Banner'} removed.`);
             } catch (err) {
-                showDashError(`Failed to remove: ${err.message}`);
+                showDashError(`Couldn't remove the image: ${friendlyErrorMessage(err)}`);
             }
         }
 
@@ -1240,8 +1477,8 @@
                 <td data-label="Start Date"><input type="date" class="cc-start-date" value="${data.start_date || ''}"></td>
                 <td data-label="Duration (weeks)"><input type="number" step="1" min="0" class="cc-duration-weeks" value="${data.duration_weeks ?? ''}"></td>
                 <td data-label="Day"><select class="cc-day">${dayOptionsHtml(data.day || '')}</select></td>
-                <td data-label="From"><input type="text" class="cc-start-time" placeholder="e.g. 10:00" value="${escapeHtml(data.start_time || '')}"></td>
-                <td data-label="To"><input type="text" class="cc-end-time" placeholder="e.g. 10:45" value="${escapeHtml(data.end_time || '')}"></td>
+                <td data-label="From"><input type="time" class="cc-start-time" value="${escapeHtml(data.start_time || '')}"></td>
+                <td data-label="To"><input type="time" class="cc-end-time" value="${escapeHtml(data.end_time || '')}"></td>
                 <td data-label="Min Age"><input type="number" step="0.1" min="0" class="cc-min-age" value="${data.min_age ?? ''}"></td>
                 <td data-label="Max Age"><input type="number" step="0.1" min="0" class="cc-max-age" value="${data.max_age ?? ''}"></td>
                 <td data-label="Num of Classes"><input type="number" step="1" min="0" class="cc-num-classes" value="${data.num_classes ?? ''}"></td>
@@ -1276,6 +1513,7 @@
 
         async function loadIndividualClasses(businessId) {
             if (!businessId) return;
+            classesLoadedForBusinessId = businessId;
             deletedClassIds = new Set();
             const tbody = document.getElementById('classes-table-body');
             const classesError = document.getElementById('classes-error');
@@ -1291,7 +1529,10 @@
                     .order('id', { ascending: true });
                 if (error) throw error;
                 (data || []).forEach(row => tbody.appendChild(createClassRow(row)));
+                clearClassesDirtyState();
+                updateTabCompletionDots();
             } catch (err) {
+                classesLoadedForBusinessId = null; // let the next tab visit retry the fetch
                 classesError.textContent = 'Error loading classes: ' + err.message;
                 classesError.style.display = 'block';
             }
@@ -1347,7 +1588,7 @@
                 classesSuccess.style.display = 'block';
                 loadIndividualClasses(currentBusinessId);
             } catch (err) {
-                classesError.textContent = 'Failed to save: ' + err.message;
+                classesError.textContent = "Couldn't save your classes: " + friendlyErrorMessage(err);
                 classesError.style.display = 'block';
             } finally {
                 btn.textContent = 'Save Classes';
@@ -1358,6 +1599,7 @@
         // Handle Form Save
         editForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+            if (!focusFirstInvalidField()) return;
             dashError.style.display = 'none';
             dashSuccess.style.display = 'none';
             dashErrorBottom.style.display = 'none';
@@ -1419,7 +1661,7 @@
 
                 showDashSuccess("Your listing has been updated! It's live on the main search right away — your dedicated business page can take up to 24 hours to catch up.");
             } catch (err) {
-                showDashError("Failed to update: " + err.message);
+                showDashError("Couldn't save your changes: " + friendlyErrorMessage(err));
             } finally {
                 saveBtn.textContent = "Save Changes";
                 saveBtn.disabled = false;
