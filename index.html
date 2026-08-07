@@ -583,14 +583,20 @@
             ageSlider = setupRangeSlider(ageMinInput.closest('.range-slider'), (min, max, boundMin, boundMax) => {
                 ageRangeState = { min, max };
                 ageValueEl.textContent = (min === boundMin && max === boundMax) ? 'Any age' : (min + ' – ' + max + ' years');
-                if (hasTriggeredSearch) filterClasses();
-            }, () => trackFilter('age_range', `${ageRangeState.min}-${ageRangeState.max}`));
+                if (hasTriggeredSearch) filterClasses(false); // live update while dragging -- replaceState, not a new history entry
+            }, () => {
+                trackFilter('age_range', `${ageRangeState.min}-${ageRangeState.max}`);
+                if (hasTriggeredSearch) filterClasses(true); // released -- this is the one entry Back should land on
+            });
 
             priceSlider = setupRangeSlider(priceMinInput.closest('.range-slider'), (min, max, boundMin, boundMax) => {
                 priceRangeState = { min, max };
                 priceValueEl.textContent = (min === boundMin && max === boundMax) ? 'Any price' : ('€' + min + ' – €' + max + (max === boundMax ? '+' : ''));
-                if (hasTriggeredSearch) filterClasses();
-            }, () => trackFilter('price_range', `${priceRangeState.min}-${priceRangeState.max}`));
+                if (hasTriggeredSearch) filterClasses(false); // live update while dragging -- replaceState, not a new history entry
+            }, () => {
+                trackFilter('price_range', `${priceRangeState.min}-${priceRangeState.max}`);
+                if (hasTriggeredSearch) filterClasses(true); // released -- this is the one entry Back should land on
+            });
 
             ageRangeState = { min: ageSlider.bounds.min, max: ageSlider.bounds.max };
             priceRangeState = { min: priceSlider.bounds.min, max: priceSlider.bounds.max };
@@ -775,7 +781,12 @@
             }
         }
 
-        function filterClasses() {
+        // pushHistory=false uses history.replaceState instead of pushState -- for
+        // continuous updates (dragging a range slider fires this on every 'input'
+        // tick) so the address bar still stays live-synced, but Back doesn't have
+        // to step through every intermediate value the slider passed through on the
+        // way to where the user actually let go.
+        function filterClasses(pushHistory = true) {
             const q = searchInput.value.trim().toLowerCase();
             const l = locationInput.value.trim().toLowerCase();
             const cat = categoryFilter.value;
@@ -907,7 +918,12 @@
             // search origin instead of just the text (the label alone can't be
             // re-geocoded -- it isn't a real address).
             if (hasOrigin) { params.set('lat', userLat); params.set('lng', userLon); }
-            window.history.pushState(null, '', params.toString() ? '?' + params.toString() : window.location.pathname);
+            const newUrl = params.toString() ? '?' + params.toString() : window.location.pathname;
+            if (pushHistory) {
+                window.history.pushState(null, '', newUrl);
+            } else {
+                window.history.replaceState(null, '', newUrl);
+            }
             // Stashed so a business detail page's "Back to search results" link can
             // return here with the same filters instead of always landing on the
             // bare, unfiltered directory.
@@ -1171,7 +1187,7 @@
             loadMoreObserver.observe(document.getElementById('load-more-sentinel'));
         }
 
-        async function performSearch() {
+        async function performSearch(pushHistory = true) {
             if (!hasTriggeredSearch) {
                 hasTriggeredSearch = true;
                 // The hero collapses from a full-height 100vh block down to its
@@ -1215,7 +1231,7 @@
                 if (coords && !sortExplicitlySet) sortSelect.value = 'distance';
             }
 
-            filterClasses();
+            filterClasses(pushHistory);
             if (window.trackEvent) {
                 window.trackEvent('search', {
                     search_term: searchInput.value.trim(),
@@ -1506,7 +1522,10 @@
                     lastGeocodedQuery = 'current location';
                     nearMeBtn.style.color = 'var(--primary)';
                 }
-                performSearch();
+                // The browser already navigated here (params are already in the
+                // current URL) -- replace, don't push a duplicate history entry for
+                // the page we're already on.
+                performSearch(false);
             }
         });
     </script>
