@@ -1456,11 +1456,11 @@
                 <td data-label="Day"><select class="cc-day">${dayOptionsHtml(data.day || '')}</select></td>
                 <td data-label="From"><input type="time" class="cc-start-time" value="${escapeHtml(data.start_time || '')}"></td>
                 <td data-label="To"><input type="time" class="cc-end-time" value="${escapeHtml(data.end_time || '')}"></td>
-                <td data-label="Min Age"><input type="number" step="0.1" min="0" class="cc-min-age" value="${data.min_age ?? ''}"></td>
-                <td data-label="Max Age"><input type="number" step="0.1" min="0" class="cc-max-age" value="${data.max_age ?? ''}"></td>
+                <td data-label="Min Age"><input type="number" step="1" min="0" class="cc-min-age" value="${data.min_age ?? ''}"></td>
+                <td data-label="Max Age"><input type="number" step="1" min="0" class="cc-max-age" value="${data.max_age ?? ''}"></td>
                 <td data-label="Num of Classes"><input type="number" step="1" min="0" class="cc-num-classes" value="${data.num_classes ?? ''}"></td>
-                <td data-label="Price / Class"><input type="number" step="0.01" min="0" class="cc-price-class" value="${data.price_per_class ?? ''}"></td>
-                <td data-label="Price / Term"><input type="number" step="0.01" min="0" class="cc-price-term" value="${data.price_per_term ?? ''}"></td>
+                <td data-label="Price / Class"><input type="number" step="1" min="0" class="cc-price-class" value="${data.price_per_class ?? ''}"></td>
+                <td data-label="Price / Term"><input type="number" step="1" min="0" class="cc-price-term" value="${data.price_per_term ?? ''}"></td>
                 <td><button type="button" class="btn-danger cc-remove-btn" style="width:100%;">Remove</button></td>
             `;
             tr.querySelector('.cc-remove-btn').addEventListener('click', () => {
@@ -1473,6 +1473,10 @@
         function readClassRowValues(tr) {
             const val = (sel) => tr.querySelector(sel).value;
             const numOrNull = (v) => (v === '' ? null : Number(v));
+            // Min/Max Age and both prices are whole numbers only (step="1" on the
+            // inputs steers normal typing, but a paste can still slip in a decimal --
+            // round here so a non-integer can never actually reach the database).
+            const intOrNull = (v) => (v === '' ? null : Math.round(Number(v)));
             return {
                 name: val('.cc-name') || null,
                 start_date: val('.cc-start-date') || null,
@@ -1480,11 +1484,11 @@
                 day: val('.cc-day') || null,
                 start_time: val('.cc-start-time') || null,
                 end_time: val('.cc-end-time') || null,
-                min_age: numOrNull(val('.cc-min-age')),
-                max_age: numOrNull(val('.cc-max-age')),
+                min_age: intOrNull(val('.cc-min-age')),
+                max_age: intOrNull(val('.cc-max-age')),
                 num_classes: numOrNull(val('.cc-num-classes')),
-                price_per_class: numOrNull(val('.cc-price-class')),
-                price_per_term: numOrNull(val('.cc-price-term')),
+                price_per_class: intOrNull(val('.cc-price-class')),
+                price_per_term: intOrNull(val('.cc-price-term')),
             };
         }
 
