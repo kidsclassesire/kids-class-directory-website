@@ -311,15 +311,7 @@
                 <legend>Schedule</legend>
                 <div class="form-group">
                     <label>Days of the Week</label>
-                    <div class="checkbox-grid" id="days-checkbox-grid">
-                        <label><input type="checkbox" value="Monday"> Monday</label>
-                        <label><input type="checkbox" value="Tuesday"> Tuesday</label>
-                        <label><input type="checkbox" value="Wednesday"> Wednesday</label>
-                        <label><input type="checkbox" value="Thursday"> Thursday</label>
-                        <label><input type="checkbox" value="Friday"> Friday</label>
-                        <label><input type="checkbox" value="Saturday"> Saturday</label>
-                        <label><input type="checkbox" value="Sunday"> Sunday</label>
-                    </div>
+                    <div class="checkbox-grid" id="days-checkbox-grid"><!-- populated from DAYS_OF_WEEK (site-lookups.js) --></div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
@@ -425,17 +417,7 @@
             <div class="tab-panel" data-tab-panel="facilities">
             <fieldset>
                 <legend>Facilities</legend>
-                <div class="checkbox-grid" id="facilities-checkbox-grid">
-                    <label><input type="checkbox" value="Indoor Venue"> Indoor Venue</label>
-                    <label><input type="checkbox" value="Outdoor Venue"> Outdoor Venue</label>
-                    <label><input type="checkbox" value="Wheelchair Accessible"> Wheelchair Accessible</label>
-                    <label><input type="checkbox" value="Buggy Accessible"> Buggy Accessible</label>
-                    <label><input type="checkbox" value="Cafe On-site"> Cafe On-site</label>
-                    <label><input type="checkbox" value="Changing Facilities"> Changing Facilities</label>
-                    <label><input type="checkbox" value="Free Parking"> Free Parking</label>
-                    <label><input type="checkbox" value="Paid Parking"> Paid Parking</label>
-                    <label><input type="checkbox" value="Parent Viewing Area"> Parent Viewing Area</label>
-                </div>
+                <div class="checkbox-grid" id="facilities-checkbox-grid"><!-- populated from FACILITIES_LIST (site-lookups.js) --></div>
             </fieldset>
             </div>
 
@@ -489,6 +471,10 @@
 
     <!-- Supabase JS -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- CATEGORY_GROUPS / FACILITIES_LIST / DAYS_OF_WEEK / renderCheckboxGridOptions,
+         shared with index.html and admin.html -- not deferred, loaded before the main
+         inline script below which relies on these synchronously. -->
+    <script src="site-lookups.js?v=1"></script>
     <script>
         const SUPABASE_URL = 'https://gnozodfteywsiwcnbwch.supabase.co';
         const SUPABASE_ANON_KEY = 'sb_publishable_eduvbMySPxHPT0iZjE_LqQ_w6nyjnjY';
@@ -496,16 +482,6 @@
         const STORAGE_BUCKET = 'business-uploads';
         const STORAGE_PUBLIC_PREFIX = `${SUPABASE_URL}/storage/v1/object/public/${STORAGE_BUCKET}/`;
 
-        // Same grouping as CATEGORY_GROUPS in index.html (kept in sync manually) --
-        // the canonical set of categories used across the site's filters.
-        const CATEGORY_GROUPS = [
-            ['Sports & Fitness', ['Athletics', 'Basketball', 'Football', 'GAA', 'Gymnastics', 'Hockey',
-                'Horse Riding', 'Martial Arts', 'Rugby', 'Sports', 'Swimming', 'Team Sports', 'Tennis', 'Watersports']],
-            ['Arts, Music & Drama', ['Arts and crafts', 'Cooking', 'Dance', 'Drama', 'Music']],
-            ['Baby & Toddler', ['Developmental', 'Parent-and-toddler']],
-            ['Academic & STEM', ['Academic Support', 'Languages', 'STEM']],
-            ['Camps & Outdoor', ['Camps', 'Outdoor']],
-        ];
         const OTHER_CATEGORY_VALUE = '__other__';
         const ALL_KNOWN_CATEGORIES = new Set(CATEGORY_GROUPS.flatMap(([, members]) => members));
 
@@ -521,6 +497,8 @@
             select.innerHTML = html;
         }
         populateCategorySelect();
+        renderCheckboxGridOptions('days-checkbox-grid', DAYS_OF_WEEK);
+        renderCheckboxGridOptions('facilities-checkbox-grid', FACILITIES_LIST);
 
         let isSignUp = true;
         let currentUserEmail = '';
@@ -1462,8 +1440,7 @@
         let deletedClassIds = new Set();
 
         function dayOptionsHtml(selected) {
-            const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-            return '<option value="">-</option>' + days.map(d =>
+            return '<option value="">-</option>' + DAYS_OF_WEEK.map(d =>
                 `<option value="${d}"${d === selected ? ' selected' : ''}>${d}</option>`
             ).join('');
         }

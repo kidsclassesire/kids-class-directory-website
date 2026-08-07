@@ -308,15 +308,7 @@
                         <legend>Schedule</legend>
                         <div class="form-group">
                             <label>Days of the Week</label>
-                            <div class="checkbox-grid" id="biz-days-checkbox-grid">
-                                <label><input type="checkbox" value="Monday"> Monday</label>
-                                <label><input type="checkbox" value="Tuesday"> Tuesday</label>
-                                <label><input type="checkbox" value="Wednesday"> Wednesday</label>
-                                <label><input type="checkbox" value="Thursday"> Thursday</label>
-                                <label><input type="checkbox" value="Friday"> Friday</label>
-                                <label><input type="checkbox" value="Saturday"> Saturday</label>
-                                <label><input type="checkbox" value="Sunday"> Sunday</label>
-                            </div>
+                            <div class="checkbox-grid" id="biz-days-checkbox-grid"><!-- populated from DAYS_OF_WEEK (site-lookups.js) --></div>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
@@ -388,17 +380,7 @@
 
                     <fieldset>
                         <legend>Facilities</legend>
-                        <div class="checkbox-grid" id="biz-facilities-checkbox-grid">
-                            <label><input type="checkbox" value="Indoor Venue"> Indoor Venue</label>
-                            <label><input type="checkbox" value="Outdoor Venue"> Outdoor Venue</label>
-                            <label><input type="checkbox" value="Wheelchair Accessible"> Wheelchair Accessible</label>
-                            <label><input type="checkbox" value="Buggy Accessible"> Buggy Accessible</label>
-                            <label><input type="checkbox" value="Cafe On-site"> Cafe On-site</label>
-                            <label><input type="checkbox" value="Changing Facilities"> Changing Facilities</label>
-                            <label><input type="checkbox" value="Free Parking"> Free Parking</label>
-                            <label><input type="checkbox" value="Paid Parking"> Paid Parking</label>
-                            <label><input type="checkbox" value="Parent Viewing Area"> Parent Viewing Area</label>
-                        </div>
+                        <div class="checkbox-grid" id="biz-facilities-checkbox-grid"><!-- populated from FACILITIES_LIST (site-lookups.js) --></div>
                     </fieldset>
 
                     <div class="save-bar">
@@ -446,6 +428,10 @@
     <!-- Supabase JS -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="notify.js"></script>
+    <!-- FACILITIES_LIST / DAYS_OF_WEEK / renderCheckboxGridOptions, shared with
+         index.html/portal.html -- not deferred, loaded before the main inline
+         script below which relies on these synchronously. -->
+    <script src="site-lookups.js?v=1"></script>
     <script>
         const SUPABASE_URL = 'https://gnozodfteywsiwcnbwch.supabase.co';
         const SUPABASE_ANON_KEY = 'sb_publishable_eduvbMySPxHPT0iZjE_LqQ_w6nyjnjY';
@@ -461,6 +447,9 @@
         let currentUserEmail = '';
         let hasUnsavedBusinessEdits = false;
         let currentSavedBusiness = null;
+
+        renderCheckboxGridOptions('biz-days-checkbox-grid', DAYS_OF_WEEK);
+        renderCheckboxGridOptions('biz-facilities-checkbox-grid', FACILITIES_LIST);
 
         // ============================================================
         // Shared helpers: escaping, toasts, skeletons, tab wiring

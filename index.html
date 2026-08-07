@@ -265,7 +265,12 @@
         // instances" warning and duplicate auth listeners for no benefit.
         window.supabaseClient = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
     </script>
-    
+
+    <!-- Not deferred, and loaded before the main inline script below -- it defines
+         CATEGORY_GROUPS etc. as plain top-level consts, which that script relies on
+         synchronously from its first line. -->
+    <script src="site-lookups.js?v=1"></script>
+
     <script>
         // Utility function to escape HTML inside dynamic strings
         function escapeHtml(unsafe) {
@@ -479,14 +484,8 @@
             }
         }
 
-        const CATEGORY_GROUPS = [
-            ['Sports & Fitness', ['Athletics', 'Basketball', 'Football', 'GAA', 'Gymnastics', 'Hockey',
-                'Horse Riding', 'Martial Arts', 'Rugby', 'Sports', 'Swimming', 'Team Sports', 'Tennis', 'Watersports']],
-            ['Arts, Music & Drama', ['Arts and crafts', 'Cooking', 'Dance', 'Drama', 'Music']],
-            ['Baby & Toddler', ['Developmental', 'Parent-and-toddler']],
-            ['Academic & STEM', ['Academic Support', 'Languages', 'STEM']],
-            ['Camps & Outdoor', ['Camps', 'Outdoor']],
-        ];
+        // CATEGORY_GROUPS now comes from site-lookups.js (loaded above), shared
+        // with portal.html/admin.html.
 
         // Flat, sorted list of category names for the Activity field's typeahead --
         // kept in sync with populateCategoryFilter() below, which computes the same set.
