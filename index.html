@@ -195,32 +195,36 @@
         </div>
     </main>
 
+    <!-- Text below is a static fallback (SEO/no-JS) -- editable from admin.html,
+         which writes to the homepage_content table; loadHomepageContent() (see
+         script near the bottom of this file) overwrites it client-side if that
+         row has been edited. -->
     <section class="how-it-works">
         <div class="section-head">
-            <h2>How Kids Patch works</h2>
+            <h2 id="hiw-heading">How Kids Patch works</h2>
         </div>
-        <p class="how-it-works-intro">Kids Patch is Ireland's directory of children's classes and activities — swimming, GAA, dance, coding, art and everything in between. We bring together activities from local providers in every county so parents can compare schedules, ages and pricing in one place, then reach out directly. No accounts, no booking fees, no middleman.</p>
+        <p class="how-it-works-intro" id="hiw-intro">Kids Patch is Ireland's directory of children's classes and activities — swimming, GAA, dance, coding, art and everything in between. We bring together activities from local providers in every county so parents can compare schedules, ages and pricing in one place, then reach out directly. No accounts, no booking fees, no middleman.</p>
         <div class="how-it-works-grid">
             <div class="how-it-works-step">
                 <div class="how-it-works-icon">
                     <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="none" stroke-width="3"><path d="M13 3C7.477 3 3 7.477 3 13s4.477 10 10 10c2.395 0 4.593-.84 6.31-2.24l6.983 6.982 1.414-1.414-6.982-6.983A9.957 9.957 0 0023 13c0-5.523-4.477-10-10-10zm0 2c4.43 0 8 3.57 8 8s-3.57 8-8 8-8-3.57-8-8 3.57-8 8-8z"/></svg>
                 </div>
-                <h3>Search &amp; compare</h3>
-                <p>Filter by category, age, location, price or day, and see everything side by side &mdash; no more digging through a dozen different websites.</p>
+                <h3 id="hiw-step1-title">Search &amp; compare</h3>
+                <p id="hiw-step1-desc">Filter by category, age, location, price or day, and see everything side by side &mdash; no more digging through a dozen different websites.</p>
             </div>
             <div class="how-it-works-step">
                 <div class="how-it-works-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
                 </div>
-                <h3>Contact the provider directly</h3>
-                <p>Message a provider straight from their listing, or visit their website &mdash; whichever's easier. Your enquiry goes straight to them, not to us.</p>
+                <h3 id="hiw-step2-title">Contact the provider directly</h3>
+                <p id="hiw-step2-desc">Message a provider straight from their listing, or visit their website &mdash; whichever's easier. Your enquiry goes straight to them, not to us.</p>
             </div>
             <div class="how-it-works-step">
                 <div class="how-it-works-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
                 </div>
-                <h3>Get your child started</h3>
-                <p>Confirm a spot directly with the provider. It's free for parents to use Kids Patch, always.</p>
+                <h3 id="hiw-step3-title">Get your child started</h3>
+                <p id="hiw-step3-desc">Confirm a spot directly with the provider. It's free for parents to use Kids Patch, always.</p>
             </div>
         </div>
     </section>
@@ -352,6 +356,37 @@
         // Single shared client -- creating multiple instances triggers a "Multiple GoTrueClient
         // instances" warning and duplicate auth listeners for no benefit.
         window.supabaseClient = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
+    </script>
+
+    <!-- Overwrites the "How Kids Patch works" section's static fallback text
+         (edited from admin.html's Homepage tab) if that row has been changed.
+         Independent of and unrelated to the directory search/filter logic
+         below, so it runs as its own fire-and-forget fetch -- fails open
+         (silently keeps the static text) on any error, including the table
+         not existing yet before add_homepage_content_table.sql has been run. -->
+    <script>
+        (async function loadHomepageContent() {
+            try {
+                const { data, error } = await window.supabaseClient
+                    .from('homepage_content').select('*').eq('id', 1).single();
+                if (error || !data) return;
+                const set = (id, value) => {
+                    if (!value) return;
+                    const el = document.getElementById(id);
+                    if (el) el.textContent = value;
+                };
+                set('hiw-heading', data.heading);
+                set('hiw-intro', data.intro);
+                set('hiw-step1-title', data.step1_title);
+                set('hiw-step1-desc', data.step1_description);
+                set('hiw-step2-title', data.step2_title);
+                set('hiw-step2-desc', data.step2_description);
+                set('hiw-step3-title', data.step3_title);
+                set('hiw-step3-desc', data.step3_description);
+            } catch (err) {
+                // best-effort only -- static fallback text stays as-is
+            }
+        })();
     </script>
 
     <!-- Not deferred, and loaded before the main inline script below -- it defines

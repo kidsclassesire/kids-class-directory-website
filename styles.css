@@ -208,10 +208,10 @@
         .how-it-works { padding: 1rem 2rem 4rem; max-width: 1280px; margin: 0 auto; width: 100%; box-sizing: border-box; }
         .how-it-works-intro { max-width: 640px; color: var(--text-muted); line-height: 1.65; margin: 0 0 2rem; }
         .how-it-works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-        .how-it-works-step { background: #ffffff; border: 1px solid var(--border); border-radius: 20px; padding: 1.75rem 1.5rem; }
+        .how-it-works-step { background: #ffffff; border: 1px solid var(--border); border-radius: 20px; padding: 1.75rem 1.5rem; text-align: center; }
         .how-it-works-icon {
             width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center;
-            justify-content: center; margin-bottom: 1rem; background: var(--bg-page); color: var(--secondary);
+            justify-content: center; margin: 0 auto 1rem; background: var(--bg-page); color: var(--secondary);
         }
         .how-it-works-icon svg { width: 22px; height: 22px; }
         .how-it-works-step h3 { font-size: 1.05rem; margin: 0 0 0.4rem; }

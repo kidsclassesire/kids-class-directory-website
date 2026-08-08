@@ -192,6 +192,7 @@
             <button class="tab" data-tab="dataquality">Data Quality</button>
             <button class="tab" data-tab="activity">Activity</button>
             <button class="tab" data-tab="admins">Admins</button>
+            <button class="tab" data-tab="homepage">Homepage</button>
         </div>
 
         <!-- Overview -->
@@ -420,6 +421,60 @@
                 <button class="btn btn-small" id="admin-add-btn">Add admin</button>
             </div>
             <div id="admins-list"><p>Loading admins...</p></div>
+        </div>
+
+        <!-- Homepage -->
+        <div class="panel" data-tab="homepage" id="panel-homepage">
+            <p class="dq-meta" style="margin-bottom: 1.25rem;">Edits the "How Kids Patch works" section on the homepage (kidspatch.ie). Changes go live as soon as you save.</p>
+            <form id="homepage-content-form">
+                <fieldset>
+                    <legend>Section intro</legend>
+                    <div class="form-group">
+                        <label for="hc-heading">Heading</label>
+                        <input type="text" id="hc-heading" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hc-intro">Intro text</label>
+                        <textarea id="hc-intro" required></textarea>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Step 1</legend>
+                    <div class="form-group">
+                        <label for="hc-step1-title">Title</label>
+                        <input type="text" id="hc-step1-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hc-step1-desc">Description</label>
+                        <textarea id="hc-step1-desc" required></textarea>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Step 2</legend>
+                    <div class="form-group">
+                        <label for="hc-step2-title">Title</label>
+                        <input type="text" id="hc-step2-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hc-step2-desc">Description</label>
+                        <textarea id="hc-step2-desc" required></textarea>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Step 3</legend>
+                    <div class="form-group">
+                        <label for="hc-step3-title">Title</label>
+                        <input type="text" id="hc-step3-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hc-step3-desc">Description</label>
+                        <textarea id="hc-step3-desc" required></textarea>
+                    </div>
+                </fieldset>
+                <div class="save-bar">
+                    <button type="submit" class="btn" id="hc-save-btn">Save Changes</button>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -661,11 +716,13 @@
         let claimHistoryLoaded = false;
         let adminsLoaded = false;
         let activityLoaded = false;
+        let homepageContentLoaded = false;
 
         wireTabGroup('#top-tabs .tab', '#dashboard-section > .panel', (key) => {
             if (key === 'businesses' && !businessesLoaded) { businessesLoaded = true; searchBusinesses(''); }
             if (key === 'activity' && !activityLoaded) { activityLoaded = true; fetchActivityLog(); }
             if (key === 'admins' && !adminsLoaded) { adminsLoaded = true; fetchAdmins(); }
+            if (key === 'homepage' && !homepageContentLoaded) { homepageContentLoaded = true; loadHomepageContent(); }
         });
         wireTabGroup('#claims-tabs .tab', '#panel-claims .subpanel', (key) => {
             if (key === 'history' && !claimHistoryLoaded) { claimHistoryLoaded = true; fetchClaimHistory(); }
@@ -1223,6 +1280,54 @@
                 showToast('Failed to remove admin: ' + err.message, 'error');
             }
         }
+
+        // ============================================================
+        // Homepage content ("How Kids Patch works" section)
+        // ============================================================
+        const HC_FIELDS = ['heading', 'intro', 'step1_title', 'step1_description', 'step2_title', 'step2_description', 'step3_title', 'step3_description'];
+        // Maps DB column name -> form field id, since the DB uses snake_case
+        // (step1_title) but a couple of the form ids abbreviate "description"
+        // to "desc" for brevity.
+        const HC_FIELD_TO_INPUT_ID = {
+            heading: 'hc-heading', intro: 'hc-intro',
+            step1_title: 'hc-step1-title', step1_description: 'hc-step1-desc',
+            step2_title: 'hc-step2-title', step2_description: 'hc-step2-desc',
+            step3_title: 'hc-step3-title', step3_description: 'hc-step3-desc',
+        };
+
+        async function loadHomepageContent() {
+            try {
+                const { data, error } = await supabaseClient.from('homepage_content').select('*').eq('id', 1).single();
+                if (error) throw error;
+                HC_FIELDS.forEach(field => {
+                    document.getElementById(HC_FIELD_TO_INPUT_ID[field]).value = data[field] || '';
+                });
+            } catch (err) {
+                showToast('Failed to load homepage content: ' + err.message, 'error');
+            }
+        }
+
+        document.getElementById('homepage-content-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('hc-save-btn');
+            btn.disabled = true;
+            btn.textContent = 'Saving...';
+            try {
+                const updates = {};
+                HC_FIELDS.forEach(field => {
+                    updates[field] = document.getElementById(HC_FIELD_TO_INPUT_ID[field]).value.trim();
+                });
+                const { error } = await supabaseClient.from('homepage_content').update(updates).eq('id', 1);
+                if (error) throw error;
+                await logActivity('edit_homepage_content', 'homepage_content', '1', updates);
+                showToast('Homepage content saved.', 'success');
+            } catch (err) {
+                showToast('Failed to save: ' + err.message, 'error');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Save Changes';
+            }
+        });
 
         // ============================================================
         // Data Quality Review
