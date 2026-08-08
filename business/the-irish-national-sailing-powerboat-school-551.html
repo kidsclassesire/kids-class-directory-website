@@ -29,11 +29,12 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="The Irish National Sailing &amp; Powerboat School — Watersports classes | Kids Patch">
     <meta name="twitter:description" content="Based in Dun Laoghaire Harbour, The Irish National Sailing &amp; Powerboat School has been teaching people on sailing courses and powerboating courses since...">
-    <link rel="stylesheet" href="../styles.css?v=72e753c189">
+    <link rel="stylesheet" href="../styles.css?v=6a44a77b2f">
     <script src="../analytics.js?v=471ea0b7de" defer></script>
     <script src="../share.js?v=47727f61b7" defer></script>
-    <script src="../notify.js?v=56f59d57f5" defer></script>
+    <script src="../notify.js?v=0665ac6753" defer></script>
     <script src="../claim.js?v=c2e1b46258" defer></script>
+    <script src="../enquiry.js?v=29f82ae819" defer></script>
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "The Irish National Sailing & Powerboat School", "url": "https://www.kidspatch.ie/business/the-irish-national-sailing-powerboat-school-551.html", "description": "Based in Dun Laoghaire Harbour, The Irish National Sailing & Powerboat School has been teaching people on sailing courses and powerboating courses since 1978. They provide all essential gear, boats and buoyancy aids. Their highly experienced instructors are fully insured and have an excellent safety record.", "image": "https://www.kidspatch.ie/images/courses-inss-ie.jpg", "telephone": "+35312844195", "makesOffer": {"@type": "Offer", "itemOffered": {"@type": "Course", "name": "Watersports", "provider": {"@type": "Organization", "name": "The Irish National Sailing & Powerboat School"}, "description": "Based in Dun Laoghaire Harbour, The Irish National Sailing & Powerboat School has been teaching people on sailing courses and powerboating courses since 1978. They provide all essential gear, boats and buoyancy aids. Their highly experienced instructors are fully insured and have an excellent safety record."}}}</script>
 </head>
 <body>
@@ -71,6 +72,7 @@
                     <div class="detail-row"><strong>Contact:</strong> <a href="tel:+35312844195" onclick="trackEvent(&quot;phone_click&quot;, {&quot;business_id&quot;: 551, &quot;business_name&quot;: &quot;The Irish National Sailing &amp; Powerboat School&quot;})">01 284 4195</a></div>
                     
                     <div class="business-address"><strong>Address:</strong> Contact for details<br><a href="https://www.google.com/maps/search/?api=1&query=The%20Irish%20National%20Sailing%20%26%20Powerboat%20School" target="_blank" rel="noopener" onclick="trackEvent(&quot;directions_click&quot;, {&quot;business_id&quot;: 551, &quot;business_name&quot;: &quot;The Irish National Sailing &amp; Powerboat School&quot;})">View on Google Maps &rarr;</a></div>
+                    
                     <a href="http://courses.inss.ie/contact-us/?utm_source=kidspatch&amp;utm_medium=referral" target="_blank" rel="noopener" class="button" onclick="trackEvent(&quot;outbound_click&quot;, {&quot;business_id&quot;: 551, &quot;business_name&quot;: &quot;The Irish National Sailing &amp; Powerboat School&quot;, &quot;category&quot;: &quot;Watersports&quot;, &quot;link_type&quot;: &quot;website&quot;})">Visit Website</a>
                     <button type="button" class="button claim-btn" onclick="window.openClaimModal(&quot;551&quot;, &quot;The Irish National Sailing &amp; Powerboat School&quot;)">Claim this business</button>
                     <div class="share-row" data-title="The Irish National Sailing &amp; Powerboat School" data-url="https://www.kidspatch.ie/business/the-irish-national-sailing-powerboat-school-551.html" data-business-id="551">
@@ -144,6 +146,41 @@
 
             <div id="claim-success" style="display: none; text-align: center; color: #166534; background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
                 <strong>Request Submitted!</strong><br>We'll review your details. Once approved, come back to <a href="../portal.html" style="color:#166534; font-weight:700;">Manage Your Listing</a> and log in with the email address you just gave us to edit your business.
+            </div>
+        </div>
+    </div>
+    <div id="enquiry-modal" class="modal-overlay">
+        <div class="modal">
+            <button id="close-enquiry-modal" class="close-modal">&times;</button>
+            <h3 id="enquiry-modal-business-name">Message Provider</h3>
+            <p>Send a message directly to this business -- they'll reply to the email address you give below.</p>
+
+            <form id="enquiry-form">
+                <input type="hidden" id="enquiry-business-id">
+                <input type="hidden" id="enquiry-business-title">
+                <input type="text" id="enquiry-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
+
+                <div class="form-group">
+                    <label for="enquiry-name">Your Name</label>
+                    <input type="text" id="enquiry-name" required placeholder="e.g. Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-email">Your Email</label>
+                    <input type="email" id="enquiry-email" required placeholder="e.g. jane@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-phone">Your Phone (optional)</label>
+                    <input type="tel" id="enquiry-phone" placeholder="e.g. 086 123 4567">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-message">Message</label>
+                    <textarea id="enquiry-message" required placeholder="Ask about availability, pricing, or anything else..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="enquiry-submit">Send Message</button>
+            </form>
+
+            <div id="enquiry-success" style="display: none; text-align: center; color: #166534; background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
+                <strong>Message sent!</strong><br><span id="enquiry-success-business-name"></span> will get your message by email and can reply directly to you.
             </div>
         </div>
     </div>

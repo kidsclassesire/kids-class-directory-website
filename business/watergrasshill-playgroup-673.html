@@ -30,11 +30,12 @@
     <meta name="twitter:title" content="Watergrasshill Playgroup — Parent-and-toddler classes | Kids Patch">
     <meta name="twitter:description" content="Come and join us for playgroup on Tuesday mornings, 10am, in Watergrasshill. We do music for children aged 0-4, including shakers, bubbles, and parachute...">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
-    <link rel="stylesheet" href="../styles.css?v=72e753c189">
+    <link rel="stylesheet" href="../styles.css?v=6a44a77b2f">
     <script src="../analytics.js?v=471ea0b7de" defer></script>
     <script src="../share.js?v=47727f61b7" defer></script>
-    <script src="../notify.js?v=56f59d57f5" defer></script>
+    <script src="../notify.js?v=0665ac6753" defer></script>
     <script src="../claim.js?v=c2e1b46258" defer></script>
+    <script src="../enquiry.js?v=29f82ae819" defer></script>
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Watergrasshill Playgroup", "url": "https://www.kidspatch.ie/business/watergrasshill-playgroup-673.html", "description": "Come and join us for playgroup on Tuesday mornings, 10am, in Watergrasshill. We do music for children aged 0-4, including shakers, bubbles, and parachute time. We then sit the children down for snack time, with different fruits, vegetables and other snacks provided each week, encouraging the kids to explore their senses. Afterwards we bring out some toys and the children play while their carers enjoy some tea, coffee and biscuits. We are regularly joined by guests like DoReDee Music and Get Messy With Tessy Sensory Play.", "telephone": "+353838584097", "email": "Lsmith_sa@yahoo.com", "address": {"@type": "PostalAddress", "streetAddress": "Mitchellsfort, County Cork, T56 X021, Ireland", "addressCountry": "IE"}, "geo": {"@type": "GeoCoordinates", "latitude": 52.0081586, "longitude": -8.3476378}, "makesOffer": {"@type": "Offer", "itemOffered": {"@type": "Course", "name": "Parent-and-toddler", "provider": {"@type": "Organization", "name": "Watergrasshill Playgroup"}, "description": "Come and join us for playgroup on Tuesday mornings, 10am, in Watergrasshill. We do music for children aged 0-4, including shakers, bubbles, and parachute time. We then sit the children down for snack time, with different fruits, vegetables and other snacks provided each week, encouraging the kids to explore their senses. Afterwards we bring out some toys and the children play while their carers enjoy some tea, coffee and biscuits. We are regularly joined by guests like DoReDee Music and Get Messy With Tessy Sensory Play."}}}</script>
 </head>
 <body>
@@ -72,6 +73,7 @@
                     <div class="detail-row"><strong>Ages:</strong> 0-6 months, 6-12 months, 1 year old, 2 year old, 3 year old, 4 year old</div><div class="detail-row"><strong>Contact:</strong> <a href="tel:+353838584097" onclick="trackEvent(&quot;phone_click&quot;, {&quot;business_id&quot;: 673, &quot;business_name&quot;: &quot;Watergrasshill Playgroup&quot;})">083 858 4097</a> &middot; <a href="mailto:Lsmith_sa@yahoo.com" onclick="trackEvent(&quot;email_click&quot;, {&quot;business_id&quot;: 673, &quot;business_name&quot;: &quot;Watergrasshill Playgroup&quot;})">Lsmith_sa@yahoo.com</a></div>
                     
                     <div class="business-address"><strong>Address:</strong> Mitchellsfort, County Cork, T56 X021, Ireland<br><a href="https://www.google.com/maps/search/?api=1&query=Mitchellsfort%2C%20County%20Cork%2C%20T56%20X021%2C%20Ireland" target="_blank" rel="noopener" onclick="trackEvent(&quot;directions_click&quot;, {&quot;business_id&quot;: 673, &quot;business_name&quot;: &quot;Watergrasshill Playgroup&quot;})">View on Google Maps &rarr;</a></div><div id="business-map" class="business-map" data-lat="52.0081586" data-lon="-8.3476378"></div>
+                    <button type="button" class="button button-secondary" onclick="window.openEnquiryModal(&quot;673&quot;, &quot;Watergrasshill Playgroup&quot;)">Message this provider</button>
                     <a href="https://www.facebook.com/share/577zzhoQSn4Hu6GA/?utm_source=kidspatch&amp;utm_medium=referral" target="_blank" rel="noopener" class="button" onclick="trackEvent(&quot;outbound_click&quot;, {&quot;business_id&quot;: 673, &quot;business_name&quot;: &quot;Watergrasshill Playgroup&quot;, &quot;category&quot;: &quot;Parent-and-toddler&quot;, &quot;link_type&quot;: &quot;website&quot;})">Visit Website</a>
                     <button type="button" class="button claim-btn" onclick="window.openClaimModal(&quot;673&quot;, &quot;Watergrasshill Playgroup&quot;)">Claim this business</button>
                     <div class="share-row" data-title="Watergrasshill Playgroup" data-url="https://www.kidspatch.ie/business/watergrasshill-playgroup-673.html" data-business-id="673">
@@ -145,6 +147,41 @@
 
             <div id="claim-success" style="display: none; text-align: center; color: #166534; background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
                 <strong>Request Submitted!</strong><br>We'll review your details. Once approved, come back to <a href="../portal.html" style="color:#166534; font-weight:700;">Manage Your Listing</a> and log in with the email address you just gave us to edit your business.
+            </div>
+        </div>
+    </div>
+    <div id="enquiry-modal" class="modal-overlay">
+        <div class="modal">
+            <button id="close-enquiry-modal" class="close-modal">&times;</button>
+            <h3 id="enquiry-modal-business-name">Message Provider</h3>
+            <p>Send a message directly to this business -- they'll reply to the email address you give below.</p>
+
+            <form id="enquiry-form">
+                <input type="hidden" id="enquiry-business-id">
+                <input type="hidden" id="enquiry-business-title">
+                <input type="text" id="enquiry-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
+
+                <div class="form-group">
+                    <label for="enquiry-name">Your Name</label>
+                    <input type="text" id="enquiry-name" required placeholder="e.g. Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-email">Your Email</label>
+                    <input type="email" id="enquiry-email" required placeholder="e.g. jane@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-phone">Your Phone (optional)</label>
+                    <input type="tel" id="enquiry-phone" placeholder="e.g. 086 123 4567">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-message">Message</label>
+                    <textarea id="enquiry-message" required placeholder="Ask about availability, pricing, or anything else..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="enquiry-submit">Send Message</button>
+            </form>
+
+            <div id="enquiry-success" style="display: none; text-align: center; color: #166534; background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
+                <strong>Message sent!</strong><br><span id="enquiry-success-business-name"></span> will get your message by email and can reply directly to you.
             </div>
         </div>
     </div>

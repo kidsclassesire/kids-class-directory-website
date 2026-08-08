@@ -30,11 +30,12 @@
     <meta name="twitter:title" content="Mna Movement mom &amp; baby Fitness Class — Parent-and-toddler classes | Kids Patch">
     <meta name="twitter:description" content="Mna Movement is a class designed for postpartum moms to get weekly movement in a private gym without the stress of childcare. Baby is welcome along - work...">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
-    <link rel="stylesheet" href="../styles.css?v=72e753c189">
+    <link rel="stylesheet" href="../styles.css?v=6a44a77b2f">
     <script src="../analytics.js?v=471ea0b7de" defer></script>
     <script src="../share.js?v=47727f61b7" defer></script>
-    <script src="../notify.js?v=56f59d57f5" defer></script>
+    <script src="../notify.js?v=0665ac6753" defer></script>
     <script src="../claim.js?v=c2e1b46258" defer></script>
+    <script src="../enquiry.js?v=29f82ae819" defer></script>
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Mna Movement mom & baby Fitness Class", "url": "https://www.kidspatch.ie/business/mna-movement-mom-baby-fitness-class-136.html", "description": "Mna Movement is a class designed for postpartum moms to get weekly movement in a private gym without the stress of childcare. Baby is welcome along - work out with like-minded people, make connections and new friendships, and take some time for yourself. Based in Tralee, Co. Kerry. Find us on Instagram: mna_movement", "image": "https://www.kidspatch.ie/images/mna-movement-mom-baby-fitness-class.png", "telephone": "+353871462199", "address": {"@type": "PostalAddress", "streetAddress": "Bounce Sports & Fitness Studio Tralee, Unit 3, Co. Kerry", "addressCountry": "IE", "postalCode": "V92 A5DV"}, "geo": {"@type": "GeoCoordinates", "latitude": 52.2970411, "longitude": -9.754031}, "makesOffer": {"@type": "Offer", "itemOffered": {"@type": "Course", "name": "Parent-and-toddler", "provider": {"@type": "Organization", "name": "Mna Movement mom & baby Fitness Class"}, "description": "Mna Movement is a class designed for postpartum moms to get weekly movement in a private gym without the stress of childcare. Baby is welcome along - work out with like-minded people, make connections and new friendships, and take some time for yourself. Based in Tralee, Co. Kerry. Find us on Instagram: mna_movement"}}}</script>
 </head>
 <body>
@@ -72,6 +73,7 @@
                     <div class="verified-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M20 6L9 17l-5-5"/></svg> Verified 2026-07-22T20:20:08</div><div class="detail-row"><strong>Contact:</strong> <a href="tel:+353871462199" onclick="trackEvent(&quot;phone_click&quot;, {&quot;business_id&quot;: 136, &quot;business_name&quot;: &quot;Mna Movement mom &amp; baby Fitness Class&quot;})">+353 87 146 2199</a></div>
                     
                     <div class="business-address"><strong>Address:</strong> Bounce Sports &amp; Fitness Studio Tralee, Unit 3, Co. Kerry<br><a href="https://www.google.com/maps/search/?api=1&query=Bounce%20Sports%20%26%20Fitness%20Studio%20Tralee%2C%20Unit%203%2C%20Co.%20Kerry" target="_blank" rel="noopener" onclick="trackEvent(&quot;directions_click&quot;, {&quot;business_id&quot;: 136, &quot;business_name&quot;: &quot;Mna Movement mom &amp; baby Fitness Class&quot;})">View on Google Maps &rarr;</a></div><div id="business-map" class="business-map" data-lat="52.2970411" data-lon="-9.754031"></div>
+                    
                     <a href="#" target="_blank" rel="noopener" class="button" onclick="trackEvent(&quot;outbound_click&quot;, {&quot;business_id&quot;: 136, &quot;business_name&quot;: &quot;Mna Movement mom &amp; baby Fitness Class&quot;, &quot;category&quot;: &quot;Parent-and-toddler&quot;, &quot;link_type&quot;: &quot;website&quot;})">Visit Website</a>
                     <button type="button" class="button claim-btn" onclick="window.openClaimModal(&quot;136&quot;, &quot;Mna Movement mom &amp; baby Fitness Class&quot;)">Claim this business</button>
                     <div class="share-row" data-title="Mna Movement mom &amp; baby Fitness Class" data-url="https://www.kidspatch.ie/business/mna-movement-mom-baby-fitness-class-136.html" data-business-id="136">
@@ -145,6 +147,41 @@
 
             <div id="claim-success" style="display: none; text-align: center; color: #166534; background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
                 <strong>Request Submitted!</strong><br>We'll review your details. Once approved, come back to <a href="../portal.html" style="color:#166534; font-weight:700;">Manage Your Listing</a> and log in with the email address you just gave us to edit your business.
+            </div>
+        </div>
+    </div>
+    <div id="enquiry-modal" class="modal-overlay">
+        <div class="modal">
+            <button id="close-enquiry-modal" class="close-modal">&times;</button>
+            <h3 id="enquiry-modal-business-name">Message Provider</h3>
+            <p>Send a message directly to this business -- they'll reply to the email address you give below.</p>
+
+            <form id="enquiry-form">
+                <input type="hidden" id="enquiry-business-id">
+                <input type="hidden" id="enquiry-business-title">
+                <input type="text" id="enquiry-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
+
+                <div class="form-group">
+                    <label for="enquiry-name">Your Name</label>
+                    <input type="text" id="enquiry-name" required placeholder="e.g. Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-email">Your Email</label>
+                    <input type="email" id="enquiry-email" required placeholder="e.g. jane@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-phone">Your Phone (optional)</label>
+                    <input type="tel" id="enquiry-phone" placeholder="e.g. 086 123 4567">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-message">Message</label>
+                    <textarea id="enquiry-message" required placeholder="Ask about availability, pricing, or anything else..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="enquiry-submit">Send Message</button>
+            </form>
+
+            <div id="enquiry-success" style="display: none; text-align: center; color: #166534; background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
+                <strong>Message sent!</strong><br><span id="enquiry-success-business-name"></span> will get your message by email and can reply directly to you.
             </div>
         </div>
     </div>

@@ -30,11 +30,12 @@
     <meta name="twitter:title" content="Wellness by Meadows — Developmental classes | Kids Patch">
     <meta name="twitter:description" content="Our Baby Massage Classes usually run for a 5-week term, Wednesday mornings, 10-11.30am, here at Wellness by Meadows, just outside Tinahely, Co. Wicklow, Y14...">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
-    <link rel="stylesheet" href="../styles.css?v=72e753c189">
+    <link rel="stylesheet" href="../styles.css?v=6a44a77b2f">
     <script src="../analytics.js?v=471ea0b7de" defer></script>
     <script src="../share.js?v=47727f61b7" defer></script>
-    <script src="../notify.js?v=56f59d57f5" defer></script>
+    <script src="../notify.js?v=0665ac6753" defer></script>
     <script src="../claim.js?v=c2e1b46258" defer></script>
+    <script src="../enquiry.js?v=29f82ae819" defer></script>
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Wellness by Meadows", "url": "https://www.kidspatch.ie/business/wellness-by-meadows-403.html", "description": "Our Baby Massage Classes usually run for a 5-week term, Wednesday mornings, 10-11.30am, here at Wellness by Meadows, just outside Tinahely, Co. Wicklow, Y14 VY70. Baby massage provides numerous physical, psychological and emotional benefits for babies and their families. Each week you'll learn different massage strokes that can help relax and soothe your baby, aid digestion to relieve wind, colic and constipation, help baby sleep well, and teach your baby body awareness. Your baby will also enjoy the songs and rhymes throughout the class. Connecting with other parents in these classes is another big plus, with time for a cuppa and chat at the end of each class. Class sizes are kept small. We can also accommodate 1:1 classes, both parents attending together, and grandparents may also like to attend - we cater for babies with special needs too. Handouts and oil are provided, and I recommend wearing comfy clothes for you and baby - just bring whatever you usually bring with your baby and a warm blanket to wrap baby in. Classes are baby-led, with lots of time for feeding, changing and the occasional nap. Course investment is €120 for the 5 weeks (you can also claim back most of the cost through your health insurance policy, depending on your plan).", "telephone": "+353871491850", "email": "wellnessbymeadows@gmail.com", "address": {"@type": "PostalAddress", "streetAddress": "Toberpatrick, County Wicklow, Y14 VY70, Ireland", "addressCountry": "IE"}, "geo": {"@type": "GeoCoordinates", "latitude": 52.79457, "longitude": -6.39372}, "makesOffer": {"@type": "Offer", "itemOffered": {"@type": "Course", "name": "Developmental", "provider": {"@type": "Organization", "name": "Wellness by Meadows"}, "description": "Our Baby Massage Classes usually run for a 5-week term, Wednesday mornings, 10-11.30am, here at Wellness by Meadows, just outside Tinahely, Co. Wicklow, Y14 VY70. Baby massage provides numerous physical, psychological and emotional benefits for babies and their families. Each week you'll learn different massage strokes that can help relax and soothe your baby, aid digestion to relieve wind, colic and constipation, help baby sleep well, and teach your baby body awareness. Your baby will also enjoy the songs and rhymes throughout the class. Connecting with other parents in these classes is another big plus, with time for a cuppa and chat at the end of each class. Class sizes are kept small. We can also accommodate 1:1 classes, both parents attending together, and grandparents may also like to attend - we cater for babies with special needs too. Handouts and oil are provided, and I recommend wearing comfy clothes for you and baby - just bring whatever you usually bring with your baby and a warm blanket to wrap baby in. Classes are baby-led, with lots of time for feeding, changing and the occasional nap. Course investment is €120 for the 5 weeks (you can also claim back most of the cost through your health insurance policy, depending on your plan)."}}}</script>
 </head>
 <body>
@@ -72,6 +73,7 @@
                     <div class="detail-row"><strong>Ages:</strong> 0-6 months, 6-12 months</div><div class="detail-row"><strong>Contact:</strong> <a href="tel:+353871491850" onclick="trackEvent(&quot;phone_click&quot;, {&quot;business_id&quot;: 403, &quot;business_name&quot;: &quot;Wellness by Meadows&quot;})">087 149 1850</a> &middot; <a href="mailto:wellnessbymeadows@gmail.com" onclick="trackEvent(&quot;email_click&quot;, {&quot;business_id&quot;: 403, &quot;business_name&quot;: &quot;Wellness by Meadows&quot;})">wellnessbymeadows@gmail.com</a></div>
                     
                     <div class="business-address"><strong>Address:</strong> Toberpatrick, County Wicklow, Y14 VY70, Ireland<br><a href="https://www.google.com/maps/search/?api=1&query=Toberpatrick%2C%20County%20Wicklow%2C%20Y14%20VY70%2C%20Ireland" target="_blank" rel="noopener" onclick="trackEvent(&quot;directions_click&quot;, {&quot;business_id&quot;: 403, &quot;business_name&quot;: &quot;Wellness by Meadows&quot;})">View on Google Maps &rarr;</a></div><div id="business-map" class="business-map" data-lat="52.79457" data-lon="-6.39372"></div>
+                    <button type="button" class="button button-secondary" onclick="window.openEnquiryModal(&quot;403&quot;, &quot;Wellness by Meadows&quot;)">Message this provider</button>
                     <a href="https://www.instagram.com/wellness_by_meadows/?utm_source=kidspatch&amp;utm_medium=referral" target="_blank" rel="noopener" class="button" onclick="trackEvent(&quot;outbound_click&quot;, {&quot;business_id&quot;: 403, &quot;business_name&quot;: &quot;Wellness by Meadows&quot;, &quot;category&quot;: &quot;Developmental&quot;, &quot;link_type&quot;: &quot;website&quot;})">Visit Website</a>
                     <button type="button" class="button claim-btn" onclick="window.openClaimModal(&quot;403&quot;, &quot;Wellness by Meadows&quot;)">Claim this business</button>
                     <div class="share-row" data-title="Wellness by Meadows" data-url="https://www.kidspatch.ie/business/wellness-by-meadows-403.html" data-business-id="403">
@@ -145,6 +147,41 @@
 
             <div id="claim-success" style="display: none; text-align: center; color: #166534; background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
                 <strong>Request Submitted!</strong><br>We'll review your details. Once approved, come back to <a href="../portal.html" style="color:#166534; font-weight:700;">Manage Your Listing</a> and log in with the email address you just gave us to edit your business.
+            </div>
+        </div>
+    </div>
+    <div id="enquiry-modal" class="modal-overlay">
+        <div class="modal">
+            <button id="close-enquiry-modal" class="close-modal">&times;</button>
+            <h3 id="enquiry-modal-business-name">Message Provider</h3>
+            <p>Send a message directly to this business -- they'll reply to the email address you give below.</p>
+
+            <form id="enquiry-form">
+                <input type="hidden" id="enquiry-business-id">
+                <input type="hidden" id="enquiry-business-title">
+                <input type="text" id="enquiry-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
+
+                <div class="form-group">
+                    <label for="enquiry-name">Your Name</label>
+                    <input type="text" id="enquiry-name" required placeholder="e.g. Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-email">Your Email</label>
+                    <input type="email" id="enquiry-email" required placeholder="e.g. jane@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-phone">Your Phone (optional)</label>
+                    <input type="tel" id="enquiry-phone" placeholder="e.g. 086 123 4567">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-message">Message</label>
+                    <textarea id="enquiry-message" required placeholder="Ask about availability, pricing, or anything else..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="enquiry-submit">Send Message</button>
+            </form>
+
+            <div id="enquiry-success" style="display: none; text-align: center; color: #166534; background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
+                <strong>Message sent!</strong><br><span id="enquiry-success-business-name"></span> will get your message by email and can reply directly to you.
             </div>
         </div>
     </div>

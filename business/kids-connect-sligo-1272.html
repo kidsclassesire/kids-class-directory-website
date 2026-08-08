@@ -30,11 +30,12 @@
     <meta name="twitter:title" content="Kids Connect Sligo — Arts and crafts classes | Kids Patch">
     <meta name="twitter:description" content="Children&#x27;s yoga, creative mindfulness arts &amp; crafts, and mindfulness Lego. Each one-hour class is specifically tailored for fun and learning. The class is...">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
-    <link rel="stylesheet" href="../styles.css?v=72e753c189">
+    <link rel="stylesheet" href="../styles.css?v=6a44a77b2f">
     <script src="../analytics.js?v=471ea0b7de" defer></script>
     <script src="../share.js?v=47727f61b7" defer></script>
-    <script src="../notify.js?v=56f59d57f5" defer></script>
+    <script src="../notify.js?v=0665ac6753" defer></script>
     <script src="../claim.js?v=c2e1b46258" defer></script>
+    <script src="../enquiry.js?v=29f82ae819" defer></script>
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Kids Connect Sligo", "url": "https://www.kidspatch.ie/business/kids-connect-sligo-1272.html", "description": "Children's yoga, creative mindfulness arts & crafts, and mindfulness Lego. Each one-hour class is specifically tailored for fun and learning. The class is split into movement via an obstacle course with a wide variety of gross motor and balance elements, and a group 'best bit of the week' instilling an 'attitude of gratitude'. We focus on three yoga poses per week, with yoga (pranayama) breathing practice using props like feathers, bubbles, a light ball and straws, and dance, move and freeze with yoga songs from Kidding Around Yoga. The session also includes a mindfulness story and activities by Louise Shannaher, mindfulness colouring and Lego, and finishes with our 'Peace Begins with Me' song.", "telephone": "+353877775945", "email": "loftymc75@gmail.com", "address": {"@type": "PostalAddress", "streetAddress": "Sligo, Ireland", "addressCountry": "IE"}, "geo": {"@type": "GeoCoordinates", "latitude": 54.2720696, "longitude": -8.4751357}, "makesOffer": {"@type": "Offer", "itemOffered": {"@type": "Course", "name": "Arts and crafts", "provider": {"@type": "Organization", "name": "Kids Connect Sligo"}, "description": "Children's yoga, creative mindfulness arts & crafts, and mindfulness Lego. Each one-hour class is specifically tailored for fun and learning. The class is split into movement via an obstacle course with a wide variety of gross motor and balance elements, and a group 'best bit of the week' instilling an 'attitude of gratitude'. We focus on three yoga poses per week, with yoga (pranayama) breathing practice using props like feathers, bubbles, a light ball and straws, and dance, move and freeze with yoga songs from Kidding Around Yoga. The session also includes a mindfulness story and activities by Louise Shannaher, mindfulness colouring and Lego, and finishes with our 'Peace Begins with Me' song."}}}</script>
 </head>
 <body>
@@ -72,6 +73,7 @@
                     <div class="detail-row"><strong>Ages:</strong> 4 year old, 5 year old, 6 year old, 7 year old, 8 year old, 9 year old, 10 year old, 11 year old, 12 year old, 13 year old, 14 year old, 15 year old</div><div class="detail-row"><strong>Contact:</strong> <a href="tel:+353877775945" onclick="trackEvent(&quot;phone_click&quot;, {&quot;business_id&quot;: 1272, &quot;business_name&quot;: &quot;Kids Connect Sligo&quot;})">087 777 5945</a> &middot; <a href="mailto:loftymc75@gmail.com" onclick="trackEvent(&quot;email_click&quot;, {&quot;business_id&quot;: 1272, &quot;business_name&quot;: &quot;Kids Connect Sligo&quot;})">loftymc75@gmail.com</a></div>
                     
                     <div class="business-address"><strong>Address:</strong> Sligo, Ireland<br><a href="https://www.google.com/maps/search/?api=1&query=Sligo%2C%20Ireland" target="_blank" rel="noopener" onclick="trackEvent(&quot;directions_click&quot;, {&quot;business_id&quot;: 1272, &quot;business_name&quot;: &quot;Kids Connect Sligo&quot;})">View on Google Maps &rarr;</a></div><div id="business-map" class="business-map" data-lat="54.2720696" data-lon="-8.4751357"></div>
+                    <button type="button" class="button button-secondary" onclick="window.openEnquiryModal(&quot;1272&quot;, &quot;Kids Connect Sligo&quot;)">Message this provider</button>
                     <a href="#" target="_blank" rel="noopener" class="button" onclick="trackEvent(&quot;outbound_click&quot;, {&quot;business_id&quot;: 1272, &quot;business_name&quot;: &quot;Kids Connect Sligo&quot;, &quot;category&quot;: &quot;Arts and crafts&quot;, &quot;link_type&quot;: &quot;website&quot;})">Visit Website</a>
                     <button type="button" class="button claim-btn" onclick="window.openClaimModal(&quot;1272&quot;, &quot;Kids Connect Sligo&quot;)">Claim this business</button>
                     <div class="share-row" data-title="Kids Connect Sligo" data-url="https://www.kidspatch.ie/business/kids-connect-sligo-1272.html" data-business-id="1272">
@@ -145,6 +147,41 @@
 
             <div id="claim-success" style="display: none; text-align: center; color: #166534; background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
                 <strong>Request Submitted!</strong><br>We'll review your details. Once approved, come back to <a href="../portal.html" style="color:#166534; font-weight:700;">Manage Your Listing</a> and log in with the email address you just gave us to edit your business.
+            </div>
+        </div>
+    </div>
+    <div id="enquiry-modal" class="modal-overlay">
+        <div class="modal">
+            <button id="close-enquiry-modal" class="close-modal">&times;</button>
+            <h3 id="enquiry-modal-business-name">Message Provider</h3>
+            <p>Send a message directly to this business -- they'll reply to the email address you give below.</p>
+
+            <form id="enquiry-form">
+                <input type="hidden" id="enquiry-business-id">
+                <input type="hidden" id="enquiry-business-title">
+                <input type="text" id="enquiry-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
+
+                <div class="form-group">
+                    <label for="enquiry-name">Your Name</label>
+                    <input type="text" id="enquiry-name" required placeholder="e.g. Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-email">Your Email</label>
+                    <input type="email" id="enquiry-email" required placeholder="e.g. jane@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-phone">Your Phone (optional)</label>
+                    <input type="tel" id="enquiry-phone" placeholder="e.g. 086 123 4567">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-message">Message</label>
+                    <textarea id="enquiry-message" required placeholder="Ask about availability, pricing, or anything else..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="enquiry-submit">Send Message</button>
+            </form>
+
+            <div id="enquiry-success" style="display: none; text-align: center; color: #166534; background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
+                <strong>Message sent!</strong><br><span id="enquiry-success-business-name"></span> will get your message by email and can reply directly to you.
             </div>
         </div>
     </div>

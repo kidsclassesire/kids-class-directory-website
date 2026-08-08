@@ -30,11 +30,12 @@
     <meta name="twitter:title" content="Alix Gardner&#x27;s Cookery School — Cooking classes | Kids Patch">
     <meta name="twitter:description" content="This is where young foodies are discovered. Alix Gardner&#x27;s Cookery shows children the fun and wonder of cooking - they learn traditional cooking skills and...">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
-    <link rel="stylesheet" href="../styles.css?v=72e753c189">
+    <link rel="stylesheet" href="../styles.css?v=6a44a77b2f">
     <script src="../analytics.js?v=471ea0b7de" defer></script>
     <script src="../share.js?v=47727f61b7" defer></script>
-    <script src="../notify.js?v=56f59d57f5" defer></script>
+    <script src="../notify.js?v=0665ac6753" defer></script>
     <script src="../claim.js?v=c2e1b46258" defer></script>
+    <script src="../enquiry.js?v=29f82ae819" defer></script>
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Alix Gardner's Cookery School", "url": "https://www.kidspatch.ie/business/alix-gardner-s-cookery-school-439.html", "description": "This is where young foodies are discovered. Alix Gardner's Cookery shows children the fun and wonder of cooking - they learn traditional cooking skills and have fun with good, honest, delicious food. From artisan kitchen crafts to experimenting with flavour combinations and exploring food cultures and kitchen traditions, their children's cookery courses are specifically designed to educate, inspire and engage young chefs into the world of cookery, while having a great time in the kitchen in a safe and warm environment.", "image": "https://www.kidspatch.ie/logos/dublincookery-com.png", "telephone": "+35316681553", "email": "dublincookery@yahoo.com", "address": {"@type": "PostalAddress", "streetAddress": "71 Waterloo Rd, Ballsbridge, Dublin", "addressCountry": "IE"}, "geo": {"@type": "GeoCoordinates", "latitude": 53.3296475, "longitude": -6.2453542}, "makesOffer": {"@type": "Offer", "itemOffered": {"@type": "Course", "name": "Cooking", "provider": {"@type": "Organization", "name": "Alix Gardner's Cookery School"}, "description": "This is where young foodies are discovered. Alix Gardner's Cookery shows children the fun and wonder of cooking - they learn traditional cooking skills and have fun with good, honest, delicious food. From artisan kitchen crafts to experimenting with flavour combinations and exploring food cultures and kitchen traditions, their children's cookery courses are specifically designed to educate, inspire and engage young chefs into the world of cookery, while having a great time in the kitchen in a safe and warm environment."}}}</script>
 </head>
 <body>
@@ -72,6 +73,7 @@
                     <div class="detail-row"><strong>Contact:</strong> <a href="tel:+35316681553" onclick="trackEvent(&quot;phone_click&quot;, {&quot;business_id&quot;: 439, &quot;business_name&quot;: &quot;Alix Gardner&#x27;s Cookery School&quot;})">01 668 1553</a> &middot; <a href="mailto:dublincookery@yahoo.com" onclick="trackEvent(&quot;email_click&quot;, {&quot;business_id&quot;: 439, &quot;business_name&quot;: &quot;Alix Gardner&#x27;s Cookery School&quot;})">dublincookery@yahoo.com</a></div>
                     
                     <div class="business-address"><strong>Address:</strong> 71 Waterloo Rd, Ballsbridge, Dublin<br><a href="https://www.google.com/maps/search/?api=1&query=71%20Waterloo%20Rd%2C%20Ballsbridge%2C%20Dublin" target="_blank" rel="noopener" onclick="trackEvent(&quot;directions_click&quot;, {&quot;business_id&quot;: 439, &quot;business_name&quot;: &quot;Alix Gardner&#x27;s Cookery School&quot;})">View on Google Maps &rarr;</a></div><div id="business-map" class="business-map" data-lat="53.3296475" data-lon="-6.2453542"></div>
+                    <button type="button" class="button button-secondary" onclick="window.openEnquiryModal(&quot;439&quot;, &quot;Alix Gardner&#x27;s Cookery School&quot;)">Message this provider</button>
                     <a href="https://www.dublincookery.com/online-interactive-bespoke-cooking-class/?utm_source=kidspatch&amp;utm_medium=referral" target="_blank" rel="noopener" class="button" onclick="trackEvent(&quot;outbound_click&quot;, {&quot;business_id&quot;: 439, &quot;business_name&quot;: &quot;Alix Gardner&#x27;s Cookery School&quot;, &quot;category&quot;: &quot;Cooking&quot;, &quot;link_type&quot;: &quot;website&quot;})">Visit Website</a>
                     <button type="button" class="button claim-btn" onclick="window.openClaimModal(&quot;439&quot;, &quot;Alix Gardner&#x27;s Cookery School&quot;)">Claim this business</button>
                     <div class="share-row" data-title="Alix Gardner&#x27;s Cookery School" data-url="https://www.kidspatch.ie/business/alix-gardner-s-cookery-school-439.html" data-business-id="439">
@@ -145,6 +147,41 @@
 
             <div id="claim-success" style="display: none; text-align: center; color: #166534; background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
                 <strong>Request Submitted!</strong><br>We'll review your details. Once approved, come back to <a href="../portal.html" style="color:#166534; font-weight:700;">Manage Your Listing</a> and log in with the email address you just gave us to edit your business.
+            </div>
+        </div>
+    </div>
+    <div id="enquiry-modal" class="modal-overlay">
+        <div class="modal">
+            <button id="close-enquiry-modal" class="close-modal">&times;</button>
+            <h3 id="enquiry-modal-business-name">Message Provider</h3>
+            <p>Send a message directly to this business -- they'll reply to the email address you give below.</p>
+
+            <form id="enquiry-form">
+                <input type="hidden" id="enquiry-business-id">
+                <input type="hidden" id="enquiry-business-title">
+                <input type="text" id="enquiry-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
+
+                <div class="form-group">
+                    <label for="enquiry-name">Your Name</label>
+                    <input type="text" id="enquiry-name" required placeholder="e.g. Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-email">Your Email</label>
+                    <input type="email" id="enquiry-email" required placeholder="e.g. jane@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-phone">Your Phone (optional)</label>
+                    <input type="tel" id="enquiry-phone" placeholder="e.g. 086 123 4567">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-message">Message</label>
+                    <textarea id="enquiry-message" required placeholder="Ask about availability, pricing, or anything else..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="enquiry-submit">Send Message</button>
+            </form>
+
+            <div id="enquiry-success" style="display: none; text-align: center; color: #166534; background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
+                <strong>Message sent!</strong><br><span id="enquiry-success-business-name"></span> will get your message by email and can reply directly to you.
             </div>
         </div>
     </div>

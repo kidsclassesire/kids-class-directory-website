@@ -30,11 +30,12 @@
     <meta name="twitter:title" content="Ballybane Library - Toddler Group / Junior Book Club — Parent-and-toddler classes | Kids Patch">
     <meta name="twitter:description" content="Ballybane Library has fantastic groups on offer for families and children. Location: Ballybane Library, Castlepark Rd, Galway. Cost: free per family....">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
-    <link rel="stylesheet" href="../styles.css?v=72e753c189">
+    <link rel="stylesheet" href="../styles.css?v=6a44a77b2f">
     <script src="../analytics.js?v=471ea0b7de" defer></script>
     <script src="../share.js?v=47727f61b7" defer></script>
-    <script src="../notify.js?v=56f59d57f5" defer></script>
+    <script src="../notify.js?v=0665ac6753" defer></script>
     <script src="../claim.js?v=c2e1b46258" defer></script>
+    <script src="../enquiry.js?v=29f82ae819" defer></script>
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Ballybane Library - Toddler Group / Junior Book Club", "url": "https://www.kidspatch.ie/business/ballybane-library-toddler-group-junior-book-club-717.html", "description": "Ballybane Library has fantastic groups on offer for families and children. Location: Ballybane Library, Castlepark Rd, Galway. Cost: free per family. Contact: ballybane@galwaylibrary.ie. Rhyme Time at Ballybane Library is a fun hour for parents and toddlers to bond over stories, songs and rhymes. Time: every Friday at 11am. Junior Book Club, 'The Find Outers', is for children aged eight to eleven to read and discuss books. Time: third Saturday of every month at 14:30.", "telephone": "+35391509244", "email": "ballybane@galwaylibrary.ie", "address": {"@type": "PostalAddress", "streetAddress": "Castlepark Rd, Galway, Ireland", "addressCountry": "IE"}, "geo": {"@type": "GeoCoordinates", "latitude": 53.2829993, "longitude": -9.0027526}, "makesOffer": {"@type": "Offer", "itemOffered": {"@type": "Course", "name": "Parent-and-toddler", "provider": {"@type": "Organization", "name": "Ballybane Library - Toddler Group / Junior Book Club"}, "description": "Ballybane Library has fantastic groups on offer for families and children. Location: Ballybane Library, Castlepark Rd, Galway. Cost: free per family. Contact: ballybane@galwaylibrary.ie. Rhyme Time at Ballybane Library is a fun hour for parents and toddlers to bond over stories, songs and rhymes. Time: every Friday at 11am. Junior Book Club, 'The Find Outers', is for children aged eight to eleven to read and discuss books. Time: third Saturday of every month at 14:30.", "audience": {"@type": "PeopleAudience", "suggestedMinAge": 0, "suggestedMaxAge": 3.0}}}}</script>
 </head>
 <body>
@@ -72,6 +73,7 @@
                     <div class="detail-row"><strong>Ages:</strong> 0-6 months, 6-12 months, 1 year old, 2 year old, 3 year old, 8 year old, 9 year old, 10 year old, 11 year old</div><div class="detail-row"><strong>Contact:</strong> <a href="tel:+35391509244" onclick="trackEvent(&quot;phone_click&quot;, {&quot;business_id&quot;: 717, &quot;business_name&quot;: &quot;Ballybane Library - Toddler Group / Junior Book Club&quot;})">091 509 244</a> &middot; <a href="mailto:ballybane@galwaylibrary.ie" onclick="trackEvent(&quot;email_click&quot;, {&quot;business_id&quot;: 717, &quot;business_name&quot;: &quot;Ballybane Library - Toddler Group / Junior Book Club&quot;})">ballybane@galwaylibrary.ie</a></div>
                     
                     <div class="business-address"><strong>Address:</strong> Castlepark Rd, Galway, Ireland<br><a href="https://www.google.com/maps/search/?api=1&query=Castlepark%20Rd%2C%20Galway%2C%20Ireland" target="_blank" rel="noopener" onclick="trackEvent(&quot;directions_click&quot;, {&quot;business_id&quot;: 717, &quot;business_name&quot;: &quot;Ballybane Library - Toddler Group / Junior Book Club&quot;})">View on Google Maps &rarr;</a></div><div id="business-map" class="business-map" data-lat="53.2829993" data-lon="-9.0027526"></div>
+                    <button type="button" class="button button-secondary" onclick="window.openEnquiryModal(&quot;717&quot;, &quot;Ballybane Library - Toddler Group / Junior Book Club&quot;)">Message this provider</button>
                     <a href="http://galway.spydus.ie./cgi-bin/spydus.exe/MSGTRN/WPAC/HOME?utm_source=kidspatch&amp;utm_medium=referral" target="_blank" rel="noopener" class="button" onclick="trackEvent(&quot;outbound_click&quot;, {&quot;business_id&quot;: 717, &quot;business_name&quot;: &quot;Ballybane Library - Toddler Group / Junior Book Club&quot;, &quot;category&quot;: &quot;Parent-and-toddler&quot;, &quot;link_type&quot;: &quot;website&quot;})">Visit Website</a>
                     <button type="button" class="button claim-btn" onclick="window.openClaimModal(&quot;717&quot;, &quot;Ballybane Library - Toddler Group / Junior Book Club&quot;)">Claim this business</button>
                     <div class="share-row" data-title="Ballybane Library - Toddler Group / Junior Book Club" data-url="https://www.kidspatch.ie/business/ballybane-library-toddler-group-junior-book-club-717.html" data-business-id="717">
@@ -145,6 +147,41 @@
 
             <div id="claim-success" style="display: none; text-align: center; color: #166534; background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
                 <strong>Request Submitted!</strong><br>We'll review your details. Once approved, come back to <a href="../portal.html" style="color:#166534; font-weight:700;">Manage Your Listing</a> and log in with the email address you just gave us to edit your business.
+            </div>
+        </div>
+    </div>
+    <div id="enquiry-modal" class="modal-overlay">
+        <div class="modal">
+            <button id="close-enquiry-modal" class="close-modal">&times;</button>
+            <h3 id="enquiry-modal-business-name">Message Provider</h3>
+            <p>Send a message directly to this business -- they'll reply to the email address you give below.</p>
+
+            <form id="enquiry-form">
+                <input type="hidden" id="enquiry-business-id">
+                <input type="hidden" id="enquiry-business-title">
+                <input type="text" id="enquiry-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
+
+                <div class="form-group">
+                    <label for="enquiry-name">Your Name</label>
+                    <input type="text" id="enquiry-name" required placeholder="e.g. Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-email">Your Email</label>
+                    <input type="email" id="enquiry-email" required placeholder="e.g. jane@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-phone">Your Phone (optional)</label>
+                    <input type="tel" id="enquiry-phone" placeholder="e.g. 086 123 4567">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-message">Message</label>
+                    <textarea id="enquiry-message" required placeholder="Ask about availability, pricing, or anything else..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="enquiry-submit">Send Message</button>
+            </form>
+
+            <div id="enquiry-success" style="display: none; text-align: center; color: #166534; background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
+                <strong>Message sent!</strong><br><span id="enquiry-success-business-name"></span> will get your message by email and can reply directly to you.
             </div>
         </div>
     </div>

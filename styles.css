@@ -359,7 +359,10 @@
         .meta-info { font-size: 0.85rem; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border); }
         .button { display: block; text-align: center; background: var(--primary); color: white; text-decoration: none; padding: 0.75rem; border-radius: 8px; margin-top: 1rem; font-weight: 600; transition: background 0.15s ease; }
         .button:hover { background: var(--primary-hover); }
-        
+
+        .button-secondary { background: var(--secondary); border: none; width: 100%; font-size: 1rem; cursor: pointer; font-family: inherit; }
+        .button-secondary:hover { background: var(--secondary-dark); }
+
         .claim-btn {
             background: none; border: none; color: var(--text-muted); font-size: 0.8rem;
             cursor: pointer; padding: 0.5rem; margin-top: 0.5rem; text-decoration: underline; text-align: center;
@@ -510,11 +513,13 @@
         
         .form-group { margin-bottom: 1.25rem; }
         .form-group label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark); }
-        .form-group input {
+        .form-group input, .form-group textarea {
             width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 8px;
             font-size: 1rem; box-sizing: border-box; background: var(--bg-page); color: var(--text-dark);
+            font-family: inherit;
         }
-        .form-group input:focus { outline: none; border-color: var(--primary); background: #ffffff; }
+        .form-group textarea { resize: vertical; min-height: 6rem; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); background: #ffffff; }
         
         .submit-btn {
             width: 100%; background: var(--primary); color: white; border: none; padding: 0.85rem;

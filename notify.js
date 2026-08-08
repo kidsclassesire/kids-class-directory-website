@@ -28,6 +28,14 @@
         send(type, payload);
     };
 
+    // "Request Info" form (enquiry.js) -- like notifyClaim, the Apps Script
+    // side re-verifies this against the matching enquiries row in Supabase
+    // (by id) before it will actually send mail, since this endpoint is
+    // public and anyone can POST to it directly.
+    window.notifyEnquiry = function (payload) {
+        send('new_enquiry', payload);
+    };
+
     // Contact form (contact.html) -- unlike notifyClaim, there's no Supabase
     // row for the Apps Script side to verify this against, since a contact
     // message isn't stored anywhere; it only ever emails ADMIN_EMAIL itself

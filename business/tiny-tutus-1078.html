@@ -30,11 +30,12 @@
     <meta name="twitter:title" content="Tiny Tutus — Dance classes | Kids Patch">
     <meta name="twitter:description" content="Tiny Tutus offers magical ballet classes for children aged 2 to 14 years in a warm and nurturing environment. Our most popular classes are the Tutu &amp; Me...">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
-    <link rel="stylesheet" href="../styles.css?v=72e753c189">
+    <link rel="stylesheet" href="../styles.css?v=6a44a77b2f">
     <script src="../analytics.js?v=471ea0b7de" defer></script>
     <script src="../share.js?v=47727f61b7" defer></script>
-    <script src="../notify.js?v=56f59d57f5" defer></script>
+    <script src="../notify.js?v=0665ac6753" defer></script>
     <script src="../claim.js?v=c2e1b46258" defer></script>
+    <script src="../enquiry.js?v=29f82ae819" defer></script>
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Tiny Tutus", "url": "https://www.kidspatch.ie/business/tiny-tutus-1078.html", "description": "Tiny Tutus offers magical ballet classes for children aged 2 to 14 years in a warm and nurturing environment. Our most popular classes are the Tutu & Me parent & child ballet sessions for toddlers aged 2 to 3.5 years. These special classes are designed for little dancers and their caregivers to enjoy music, movement, imagination and bonding time together. We also offer independent ballet classes for preschool and school-age children, helping students build confidence, coordination, creativity and a love for dance. Parents, grandparents or caregivers are welcome to attend the Tutu & Me classes and are required to stay for the duration of the session. For independent classes, drop-off options may vary depending on age. Children are required to wear appropriate ballet attire for regular classes. For trial classes, comfortable clothes suitable for movement are perfectly fine. Classes take place in different locations across North & South Dublin and Kildare. Please check our schedule at tinytutusie.com for class locations and times.", "image": "https://www.kidspatch.ie/logos/tinytutusie-com-3eef2f.png", "telephone": "+353832062313", "email": "tinytutusie@gmail.com", "address": {"@type": "PostalAddress", "streetAddress": "Meakstown, Dublin, D11 N23T, Ireland", "addressCountry": "IE", "postalCode": "D11 N23T"}, "geo": {"@type": "GeoCoordinates", "latitude": 53.402088, "longitude": -6.2958138}, "makesOffer": {"@type": "Offer", "itemOffered": {"@type": "Course", "name": "Dance", "provider": {"@type": "Organization", "name": "Tiny Tutus"}, "description": "Tiny Tutus offers magical ballet classes for children aged 2 to 14 years in a warm and nurturing environment. Our most popular classes are the Tutu & Me parent & child ballet sessions for toddlers aged 2 to 3.5 years. These special classes are designed for little dancers and their caregivers to enjoy music, movement, imagination and bonding time together. We also offer independent ballet classes for preschool and school-age children, helping students build confidence, coordination, creativity and a love for dance. Parents, grandparents or caregivers are welcome to attend the Tutu & Me classes and are required to stay for the duration of the session. For independent classes, drop-off options may vary depending on age. Children are required to wear appropriate ballet attire for regular classes. For trial classes, comfortable clothes suitable for movement are perfectly fine. Classes take place in different locations across North & South Dublin and Kildare. Please check our schedule at tinytutusie.com for class locations and times."}}}</script>
 </head>
 <body>
@@ -72,6 +73,7 @@
                     <div class="detail-row"><strong>Ages:</strong> 2 year old, 3 year old, 4 year old, 5 year old, 6 year old, 7 year old, 8 year old, 9 year old, 10 year old, 11 year old, 12 year old, 13 year old, 14 year old</div><div class="detail-row"><strong>Contact:</strong> <a href="tel:+353832062313" onclick="trackEvent(&quot;phone_click&quot;, {&quot;business_id&quot;: 1078, &quot;business_name&quot;: &quot;Tiny Tutus&quot;})">083 206 2313</a> &middot; <a href="mailto:tinytutusie@gmail.com" onclick="trackEvent(&quot;email_click&quot;, {&quot;business_id&quot;: 1078, &quot;business_name&quot;: &quot;Tiny Tutus&quot;})">tinytutusie@gmail.com</a></div>
                     
                     <div class="business-address"><strong>Address:</strong> Meakstown, Dublin, D11 N23T, Ireland<br><a href="https://www.google.com/maps/search/?api=1&query=Meakstown%2C%20Dublin%2C%20D11%20N23T%2C%20Ireland" target="_blank" rel="noopener" onclick="trackEvent(&quot;directions_click&quot;, {&quot;business_id&quot;: 1078, &quot;business_name&quot;: &quot;Tiny Tutus&quot;})">View on Google Maps &rarr;</a></div><div id="business-map" class="business-map" data-lat="53.402088" data-lon="-6.2958138"></div>
+                    <button type="button" class="button button-secondary" onclick="window.openEnquiryModal(&quot;1078&quot;, &quot;Tiny Tutus&quot;)">Message this provider</button>
                     <a href="https://www.tinytutusie.com/?utm_source=kidspatch&amp;utm_medium=referral" target="_blank" rel="noopener" class="button" onclick="trackEvent(&quot;outbound_click&quot;, {&quot;business_id&quot;: 1078, &quot;business_name&quot;: &quot;Tiny Tutus&quot;, &quot;category&quot;: &quot;Dance&quot;, &quot;link_type&quot;: &quot;website&quot;})">Visit Website</a>
                     <button type="button" class="button claim-btn" onclick="window.openClaimModal(&quot;1078&quot;, &quot;Tiny Tutus&quot;)">Claim this business</button>
                     <div class="share-row" data-title="Tiny Tutus" data-url="https://www.kidspatch.ie/business/tiny-tutus-1078.html" data-business-id="1078">
@@ -145,6 +147,41 @@
 
             <div id="claim-success" style="display: none; text-align: center; color: #166534; background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
                 <strong>Request Submitted!</strong><br>We'll review your details. Once approved, come back to <a href="../portal.html" style="color:#166534; font-weight:700;">Manage Your Listing</a> and log in with the email address you just gave us to edit your business.
+            </div>
+        </div>
+    </div>
+    <div id="enquiry-modal" class="modal-overlay">
+        <div class="modal">
+            <button id="close-enquiry-modal" class="close-modal">&times;</button>
+            <h3 id="enquiry-modal-business-name">Message Provider</h3>
+            <p>Send a message directly to this business -- they'll reply to the email address you give below.</p>
+
+            <form id="enquiry-form">
+                <input type="hidden" id="enquiry-business-id">
+                <input type="hidden" id="enquiry-business-title">
+                <input type="text" id="enquiry-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
+
+                <div class="form-group">
+                    <label for="enquiry-name">Your Name</label>
+                    <input type="text" id="enquiry-name" required placeholder="e.g. Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-email">Your Email</label>
+                    <input type="email" id="enquiry-email" required placeholder="e.g. jane@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-phone">Your Phone (optional)</label>
+                    <input type="tel" id="enquiry-phone" placeholder="e.g. 086 123 4567">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-message">Message</label>
+                    <textarea id="enquiry-message" required placeholder="Ask about availability, pricing, or anything else..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="enquiry-submit">Send Message</button>
+            </form>
+
+            <div id="enquiry-success" style="display: none; text-align: center; color: #166534; background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
+                <strong>Message sent!</strong><br><span id="enquiry-success-business-name"></span> will get your message by email and can reply directly to you.
             </div>
         </div>
     </div>

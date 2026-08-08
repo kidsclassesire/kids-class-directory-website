@@ -45,6 +45,7 @@ SHARE_JS_VERSION = file_version('share.js')
 ANALYTICS_JS_VERSION = file_version('analytics.js')
 NOTIFY_JS_VERSION = file_version('notify.js')
 CLAIM_JS_VERSION = file_version('claim.js')
+ENQUIRY_JS_VERSION = file_version('enquiry.js')
 
 # Same sticky top nav and footer as index.html's -- generated pages (business + landing)
 # previously used a bare ".brand-logo" text link with no icon, nav, or footer, left over
@@ -412,6 +413,17 @@ def social_widget_html(row):
     return f'<div class="social-row">{"".join(icons)}</div>'
 
 
+def enquiry_button_html(row):
+    # Only shown when there's an email_address on file for this business --
+    # gmail_notifications.gs looks the recipient address up server-side from
+    # `classes` at send time (never trusts the client), so with no address to
+    # send to there's nothing for the button to actually do.
+    if not row.get('email_address'):
+        return ''
+    onclick = f'window.openEnquiryModal({json.dumps(str(row.get("id")))}, {json.dumps(row.get("company_name"))})'
+    return f'<button type="button" class="button button-secondary" onclick="{esc(onclick)}">Message this provider</button>'
+
+
 def claim_button_html(row):
     # openClaimModal() (claim.js) is generic across index.html's dynamically
     # rendered cards and these static pages -- same function, same modal
@@ -457,6 +469,46 @@ CLAIM_MODAL_HTML = '''<div id="claim-modal" class="modal-overlay">
 
             <div id="claim-success" style="display: none; text-align: center; color: #166534; background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
                 <strong>Request Submitted!</strong><br>We'll review your details. Once approved, come back to <a href="../portal.html" style="color:#166534; font-weight:700;">Manage Your Listing</a> and log in with the email address you just gave us to edit your business.
+            </div>
+        </div>
+    </div>'''
+
+
+# Same modal markup as index.html's #enquiry-modal -- enquiry.js is written
+# against this exact structure (element IDs) regardless of which page
+# includes it.
+ENQUIRY_MODAL_HTML = '''<div id="enquiry-modal" class="modal-overlay">
+        <div class="modal">
+            <button id="close-enquiry-modal" class="close-modal">&times;</button>
+            <h3 id="enquiry-modal-business-name">Message Provider</h3>
+            <p>Send a message directly to this business -- they'll reply to the email address you give below.</p>
+
+            <form id="enquiry-form">
+                <input type="hidden" id="enquiry-business-id">
+                <input type="hidden" id="enquiry-business-title">
+                <input type="text" id="enquiry-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
+
+                <div class="form-group">
+                    <label for="enquiry-name">Your Name</label>
+                    <input type="text" id="enquiry-name" required placeholder="e.g. Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-email">Your Email</label>
+                    <input type="email" id="enquiry-email" required placeholder="e.g. jane@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-phone">Your Phone (optional)</label>
+                    <input type="tel" id="enquiry-phone" placeholder="e.g. 086 123 4567">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-message">Message</label>
+                    <textarea id="enquiry-message" required placeholder="Ask about availability, pricing, or anything else..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="enquiry-submit">Send Message</button>
+            </form>
+
+            <div id="enquiry-success" style="display: none; text-align: center; color: #166534; background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
+                <strong>Message sent!</strong><br><span id="enquiry-success-business-name"></span> will get your message by email and can reply directly to you.
             </div>
         </div>
     </div>'''
@@ -530,6 +582,7 @@ def render_page(row, slug):
     <script src="../share.js?v={SHARE_JS_VERSION}" defer></script>
     <script src="../notify.js?v={NOTIFY_JS_VERSION}" defer></script>
     <script src="../claim.js?v={CLAIM_JS_VERSION}" defer></script>
+    <script src="../enquiry.js?v={ENQUIRY_JS_VERSION}" defer></script>
     <script type="application/ld+json">{json_ld(row, slug)}</script>
 </head>
 <body>
@@ -551,6 +604,7 @@ def render_page(row, slug):
                     {detail_rows_html(row)}
                     {social_widget_html(row)}
                     {map_section(row)}
+                    {enquiry_button_html(row)}
                     <a href="{esc(with_utm(row.get("website_url"))) or "#"}" target="_blank" rel="noopener" class="button" {track_onclick('outbound_click', business_id=row.get('id'), business_name=row.get('company_name'), category=row.get('category'), link_type='website')}>Visit Website</a>
                     {claim_button_html(row)}
                     {share_widget_html(row, canonical)}
@@ -565,6 +619,7 @@ def render_page(row, slug):
     </div>
 {SITE_FOOTER_HTML}
     {CLAIM_MODAL_HTML}
+    {ENQUIRY_MODAL_HTML}
     <script>
         (function() {{
             // index.html stashes the query string of the visitor's last search in

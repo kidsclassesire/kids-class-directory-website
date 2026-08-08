@@ -76,6 +76,64 @@ function claimRequestExists(businessId, email, status) {
   return rows.length > 0;
 }
 
+// True only if an enquiries row with this exact token/business_id/parent_email
+// exists and hasn't been emailed yet (notified=false) -- confirms the
+// payload matches a real "Request Info" submission rather than being
+// fabricated by whoever is POSTing to this Web App URL, and stops a
+// replayed POST of the same token from re-emailing the business. Matched on
+// the client-generated token (not the row's id) because the anonymous
+// submitter's insert can't read the row's id back -- see the `token` column
+// comment in add_enquiries_table.sql.
+function enquiryRequestExists(token, businessId, parentEmail) {
+  var key = PropertiesService.getScriptProperties().getProperty('SUPABASE_SERVICE_ROLE_KEY');
+  if (!key || !token || !businessId || !parentEmail) return false;
+  var url = SUPABASE_URL + '/rest/v1/enquiries'
+    + '?token=eq.' + encodeURIComponent(token)
+    + '&business_id=eq.' + encodeURIComponent(businessId)
+    + '&parent_email=eq.' + encodeURIComponent(parentEmail)
+    + '&notified=eq.false'
+    + '&select=id&limit=1';
+  var res = UrlFetchApp.fetch(url, {
+    headers: { apikey: key, Authorization: 'Bearer ' + key },
+    muteHttpExceptions: true,
+  });
+  if (res.getResponseCode() !== 200) return false;
+  var rows = JSON.parse(res.getContentText());
+  return rows.length > 0;
+}
+
+function markEnquiryNotified(token) {
+  var key = PropertiesService.getScriptProperties().getProperty('SUPABASE_SERVICE_ROLE_KEY');
+  if (!key || !token) return;
+  var url = SUPABASE_URL + '/rest/v1/enquiries?token=eq.' + encodeURIComponent(token);
+  UrlFetchApp.fetch(url, {
+    method: 'patch',
+    headers: { apikey: key, Authorization: 'Bearer ' + key, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+    payload: JSON.stringify({ notified: true }),
+    muteHttpExceptions: true,
+  });
+}
+
+// The enquiry payload's business_name/business_id come from the page the
+// visitor was on, not from a source we control server-side, so the actual
+// send-to address is looked up fresh from `classes` here rather than trusted
+// from the client -- otherwise the public Web App URL would let anyone make
+// info@kidspatch.ie email an arbitrary address of their choosing.
+function getBusinessContact(businessId) {
+  var key = PropertiesService.getScriptProperties().getProperty('SUPABASE_SERVICE_ROLE_KEY');
+  if (!key || !businessId) return null;
+  var url = SUPABASE_URL + '/rest/v1/classes'
+    + '?id=eq.' + encodeURIComponent(businessId)
+    + '&select=company_name,email_address&limit=1';
+  var res = UrlFetchApp.fetch(url, {
+    headers: { apikey: key, Authorization: 'Bearer ' + key },
+    muteHttpExceptions: true,
+  });
+  if (res.getResponseCode() !== 200) return null;
+  var rows = JSON.parse(res.getContentText());
+  return rows.length > 0 ? rows[0] : null;
+}
+
 function doPost(e) {
   try {
     const payload = JSON.parse(e.postData.contents);
@@ -108,6 +166,21 @@ function doPost(e) {
       case 'contact':
         sendContactEmail(payload);
         console.log('sendContactEmail: sent');
+        break;
+      case 'new_enquiry':
+        if (enquiryRequestExists(payload.token, payload.business_id, payload.parent_email)) {
+          var business = getBusinessContact(payload.business_id);
+          if (business && business.email_address) {
+            sendEnquiryEmail(payload, business);
+            sendEnquiryConfirmationEmail(payload, business);
+            console.log('sendEnquiryEmail: sent');
+          } else {
+            console.log('sendEnquiryEmail: skipped, business has no email_address on file');
+          }
+          markEnquiryNotified(payload.token);
+        } else {
+          console.log('sendEnquiryEmail: skipped, no matching un-notified enquiries row');
+        }
         break;
     }
   } catch (err) {
@@ -262,6 +335,72 @@ function sendClaimApprovedEmail(p) {
   });
 
   GmailApp.sendEmail(p.requester_email, subject, body, { htmlBody: htmlBody });
+}
+
+// The core "prove we send you customers" email -- goes straight to the
+// business's own listed address with replyTo set to the parent, so the
+// owner can just hit reply to respond, no Kids Patch account needed. That's
+// deliberate: the value pitch to a not-yet-signed-up business is "look, a
+// real enquiry landed in your inbox," not "come use our tools."
+function sendEnquiryEmail(p, business) {
+  const subject = `New enquiry via Kids Patch: ${business.company_name || p.business_name || ''}`;
+  const body = [
+    `You have a new enquiry via Kids Patch for "${business.company_name || p.business_name || 'your listing'}".`,
+    ``,
+    `From: ${p.parent_name || ''} (${p.parent_email || ''})`,
+    p.parent_phone ? `Phone: ${p.parent_phone}` : null,
+    ``,
+    `Message:`,
+    p.message || '',
+    ``,
+    `Reply directly to this email to respond to ${firstName(p.parent_name)}.`,
+  ].filter(function (line) { return line !== null; }).join('\n');
+
+  const bodyHtml = '<p style="margin:0 0 12px;">You have a new enquiry via Kids Patch for <strong>' + escapeHtml(business.company_name || p.business_name || 'your listing') + '</strong>.</p>'
+    + detailBox([
+      ['From', escapeHtml(p.parent_name || '') + ' &lt;' + escapeHtml(p.parent_email || '') + '&gt;'],
+      ['Phone', escapeHtml(p.parent_phone || '')],
+    ])
+    + '<div style="margin-top:4px; padding:14px 16px; border-left:3px solid ' + BRAND.accent + '; background-color:' + BRAND.bgPage + '; border-radius:0 8px 8px 0; font-size:15px; line-height:1.6; color:' + BRAND.textDark + ';">' + nl2br(p.message || '') + '</div>'
+    + '<p style="margin:16px 0 0; font-size:13px; color:' + BRAND.textMuted + ';">Just reply to this email to respond to ' + escapeHtml(firstName(p.parent_name)) + ' directly.</p>';
+
+  const htmlBody = emailShell({
+    preheader: `New enquiry from ${p.parent_name || 'a parent'} via Kids Patch`,
+    heading: 'You have a new enquiry',
+    bodyHtml: bodyHtml,
+    cta: { label: 'Claim your free listing', url: SITE_URL + '/portal.html' },
+  });
+
+  var options = { htmlBody: htmlBody };
+  if (p.parent_email) options.replyTo = p.parent_email;
+  GmailApp.sendEmail(business.email_address, subject, body, options);
+}
+
+// Closes the loop for the parent so they're not left wondering whether their
+// message actually went anywhere -- mirrors sendClaimApprovedEmail's tone.
+function sendEnquiryConfirmationEmail(p, business) {
+  if (!p.parent_email) return;
+  const name = business.company_name || p.business_name || 'the business';
+  const subject = `Your message to ${name} has been sent`;
+  const body = [
+    `Hi ${firstName(p.parent_name)},`,
+    ``,
+    `Your message to "${name}" has been sent via Kids Patch. They'll be in touch directly using the contact details you gave.`,
+    ``,
+    `-- Kids Patch`,
+  ].join('\n');
+
+  const bodyHtml = '<p style="margin:0 0 12px;">Hi ' + escapeHtml(firstName(p.parent_name)) + ',</p>'
+    + '<p style="margin:0;">Your message to <strong>' + escapeHtml(name) + '</strong> has been sent. They\'ll be in touch directly using the contact details you gave.</p>';
+
+  const htmlBody = emailShell({
+    preheader: `Your message to ${name} has been sent`,
+    heading: 'Message sent',
+    bodyHtml: bodyHtml,
+    cta: null,
+  });
+
+  GmailApp.sendEmail(p.parent_email, subject, body, { htmlBody: htmlBody });
 }
 
 // Unlike the claim emails above, this has no claim_requests row to verify

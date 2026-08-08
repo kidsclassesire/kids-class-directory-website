@@ -41,6 +41,7 @@
     <script src="analytics.js?v=1" defer></script>
     <script src="notify.js?v=1" defer></script>
     <script src="claim.js?v=1" defer></script>
+    <script src="enquiry.js?v=1" defer></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -256,6 +257,44 @@
 
             <div id="claim-success" style="display: none; text-align: center; color: #166534; background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
                 <strong>Request Submitted!</strong><br>We'll review your details. Once approved, come back to <a href="portal.html" style="color:#166534; font-weight:700;">Manage Your Listing</a> and log in with the email address you just gave us to edit your business.
+            </div>
+        </div>
+    </div>
+
+    <!-- Message Provider / Request Info Modal -->
+    <div id="enquiry-modal" class="modal-overlay">
+        <div class="modal">
+            <button id="close-enquiry-modal" class="close-modal">&times;</button>
+            <h3 id="enquiry-modal-business-name">Message Provider</h3>
+            <p>Send a message directly to this business -- they'll reply to the email address you give below.</p>
+
+            <form id="enquiry-form">
+                <input type="hidden" id="enquiry-business-id">
+                <input type="hidden" id="enquiry-business-title">
+                <!-- Honeypot: invisible to real visitors, often filled in by bots. -->
+                <input type="text" id="enquiry-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
+
+                <div class="form-group">
+                    <label for="enquiry-name">Your Name</label>
+                    <input type="text" id="enquiry-name" required placeholder="e.g. Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-email">Your Email</label>
+                    <input type="email" id="enquiry-email" required placeholder="e.g. jane@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-phone">Your Phone (optional)</label>
+                    <input type="tel" id="enquiry-phone" placeholder="e.g. 086 123 4567">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-message">Message</label>
+                    <textarea id="enquiry-message" required placeholder="Ask about availability, pricing, or anything else..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="enquiry-submit">Send Message</button>
+            </form>
+
+            <div id="enquiry-success" style="display: none; text-align: center; color: #166534; background: #dcfce7; padding: 1.5rem; border-radius: 8px;">
+                <strong>Message sent!</strong><br><span id="enquiry-success-business-name"></span> will get your message by email and can reply directly to you.
             </div>
         </div>
     </div>
@@ -1114,6 +1153,9 @@
                         ${item.id != null && businessIndex.has(String(item.id))
                             ? `<a href="${businessIndex.get(String(item.id))}" class="button" style="background:#EEF0EA; color:var(--text-dark);">Full details</a>`
                             : ''}
+                        ${item.email_address
+                            ? `<button type="button" class="button button-secondary enquiry-btn" data-id="${escapeHtml(item.id)}" data-name="${escapeHtml(item.company_name)}">Message this provider</button>`
+                            : ''}
                         <a href="${escapeHtml(window.withUtm ? window.withUtm(item.website_url) : item.website_url) || '#'}" target="_blank" class="button" data-track="outbound_click" data-link-type="website" data-business-id="${escapeHtml(item.id)}" data-business-name="${escapeHtml(item.company_name)}" data-category="${escapeHtml(item.category)}">Visit Website</a>
                         <button class="claim-btn" data-id="${escapeHtml(item.id)}" data-name="${escapeHtml(item.company_name)}">Claim this business</button>
                     </div>
@@ -1466,6 +1508,10 @@
             }
             if (e.target.classList.contains('claim-btn')) {
                 window.openClaimModal(e.target.getAttribute('data-id'), e.target.getAttribute('data-name'));
+                return;
+            }
+            if (e.target.classList.contains('enquiry-btn')) {
+                window.openEnquiryModal(e.target.getAttribute('data-id'), e.target.getAttribute('data-name'));
                 return;
             }
             // Visit Website / booking links and the whole ratings area (the read-only
