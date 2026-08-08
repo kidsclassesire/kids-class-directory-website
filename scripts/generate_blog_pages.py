@@ -29,7 +29,7 @@ import markdown
 from generate_business_pages import (
     esc, file_version, self_validate_json_ld, REPO_ROOT, SITE_URL,
     STYLES_VERSION, ANALYTICS_JS_VERSION, SITE_HEADER_HTML, SITE_FOOTER_HTML,
-    SUPABASE_URL, SUPABASE_ANON_KEY,
+    SUPABASE_URL, SUPABASE_ANON_KEY, OG_IMAGE_VERSION,
 )
 
 BLOG_DIR = REPO_ROOT / 'blog'
@@ -141,7 +141,7 @@ def render_post_page(post):
     # repo-relative path -- unlike hosted_image_path/logo_path on `classes`,
     # which are relative and need the "../" prefix image_html() adds. Used
     # as-is here.
-    og_image = post.get('featured_image_path') or f'{SITE_URL}/og-image.png'
+    og_image = post.get('featured_image_path') or f'{SITE_URL}/og-image.png?v={OG_IMAGE_VERSION}'
     featured_img_html = ''
     if post.get('featured_image_path'):
         featured_img_html = f'<img class="blog-post-hero" src="{esc(post["featured_image_path"])}" alt="{esc(post["title"])}" loading="lazy">'
@@ -233,7 +233,7 @@ def render_index_page(posts):
     <meta property="og:description" content="{esc(desc)}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{canonical}">
-    <meta property="og:image" content="{SITE_URL}/og-image.png">
+    <meta property="og:image" content="{SITE_URL}/og-image.png?v={OG_IMAGE_VERSION}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{esc(title)}">
     <meta name="twitter:description" content="{esc(desc)}">

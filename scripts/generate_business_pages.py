@@ -46,6 +46,11 @@ ANALYTICS_JS_VERSION = file_version('analytics.js')
 NOTIFY_JS_VERSION = file_version('notify.js')
 CLAIM_JS_VERSION = file_version('claim.js')
 ENQUIRY_JS_VERSION = file_version('enquiry.js')
+# Cache-busts the default social-share image the same way as the assets above --
+# matters more here than most, since Facebook/WhatsApp/etc. cache link-preview
+# images by URL on their own end and otherwise keep serving a stale one long
+# after this file's actual bytes change.
+OG_IMAGE_VERSION = file_version('og-image.png')
 
 # Same sticky top nav and footer as index.html's -- generated pages (business + landing)
 # previously used a bare ".brand-logo" text link with no icon, nav, or footer, left over
@@ -556,7 +561,7 @@ def render_page(row, slug):
     cat_link = f'../index.html?cat={quote(row.get("category") or "")}'
 
     image_path = row.get('hosted_image_path') or row.get('logo_path')
-    og_image_url = f'{SITE_URL}/{image_path}' if image_path else f'{SITE_URL}/og-image.png'
+    og_image_url = f'{SITE_URL}/{image_path}' if image_path else f'{SITE_URL}/og-image.png?v={OG_IMAGE_VERSION}'
     og_image = f'<meta property="og:image" content="{og_image_url}">\n    <meta name="twitter:image" content="{og_image_url}">'
 
     dropoff_tag = ''

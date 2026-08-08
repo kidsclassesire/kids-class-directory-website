@@ -20,7 +20,7 @@ from datetime import date
 from generate_business_pages import (
     esc, fetch_all_rows, file_version, format_price, format_schedule, image_html,
     make_slug, self_validate_json_ld, slugify, REPO_ROOT, SITE_URL, STYLES_VERSION,
-    ANALYTICS_JS_VERSION, SITE_HEADER_HTML, SITE_FOOTER_HTML,
+    ANALYTICS_JS_VERSION, SITE_HEADER_HTML, SITE_FOOTER_HTML, OG_IMAGE_VERSION,
 )
 
 CLASSES_DIR = REPO_ROOT / 'classes'
@@ -372,7 +372,7 @@ def render_landing_page(title, canonical, meta_desc, breadcrumb_html, h1, intro_
     <meta property="og:description" content="{esc(meta_desc)}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{canonical}">
-    <meta property="og:image" content="{SITE_URL}/og-image.png">
+    <meta property="og:image" content="{SITE_URL}/og-image.png?v={OG_IMAGE_VERSION}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{esc(title)}">
     <meta name="twitter:description" content="{esc(meta_desc)}">
