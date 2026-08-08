@@ -18,6 +18,8 @@ Also run by .github/workflows/build-business-pages.yml.
 
 import json
 import re
+import sys
+import urllib.error
 import urllib.request
 from datetime import date, datetime, timezone
 from urllib.parse import quote
@@ -280,7 +282,21 @@ def merge_sitemap(blog_paths):
 
 def main():
     print('Fetching published blog posts from Supabase...')
-    posts = fetch_published_posts()
+    try:
+        posts = fetch_published_posts()
+    except urllib.error.HTTPError as e:
+        # 404 here means blog_posts doesn't exist yet -- add_blog_posts_table.sql
+        # hasn't been run in Supabase yet. This step runs unconditionally on
+        # every scheduled workflow run (see build-business-pages.yml), so it
+        # must exit cleanly rather than raise: a raised exception would fail
+        # the whole job and skip the "Commit generated files" step, silently
+        # breaking nightly business/landing page regeneration too until the
+        # migration is applied. Any other HTTP error still raises normally.
+        if e.code == 404:
+            print(f'blog_posts table not found ({e}) -- skipping blog generation. '
+                  'Run add_blog_posts_table.sql in the Supabase SQL editor to enable it.')
+            sys.exit(0)
+        raise
     print(f'Fetched {len(posts)} published posts.')
 
     BLOG_DIR.mkdir(exist_ok=True)
