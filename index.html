@@ -70,6 +70,7 @@
             <nav class="site-nav">
                 <a href="#" id="nav-browse">Browse activities</a>
                 <a href="classes/index.html">Categories</a>
+                <a href="blog/index.html">Blog</a>
                 <a href="contact.html">Contact</a>
             </nav>
             <a href="portal.html" class="btn-ghost">Manage your listing</a>
@@ -229,6 +230,17 @@
         </div>
     </section>
 
+    <!-- Hidden until loadBlogTeaser() (near the bottom of this file) finds at
+         least one published post -- an empty "From the blog" section before
+         the first post exists would look broken, not just sparse. -->
+    <section class="blog-teaser" id="blog-teaser" style="display:none;">
+        <div class="section-head">
+            <h2>From the blog</h2>
+            <a href="blog/index.html" class="see-all">See all &rarr;</a>
+        </div>
+        <div class="landing-grid" id="blog-teaser-grid"></div>
+    </section>
+
     <button type="button" id="mobile-map-fab" class="mobile-map-fab">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 21s-7-7.5-7-12a7 7 0 1114 0c0 4.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.3" fill="currentColor" stroke="none"/></svg>
         <span id="mobile-map-fab-label">Map</span>
@@ -245,6 +257,7 @@
             </div>
             <div class="site-footer-links">
                 <a href="classes/index.html">Browse all activities by category &amp; county</a>
+                <a href="blog/index.html">Blog</a>
                 <a href="portal.html">Business owner? Manage your listing</a>
                 <a href="contact.html">Contact us</a>
             </div>
@@ -385,6 +398,70 @@
                 set('hiw-step3-desc', data.step3_description);
             } catch (err) {
                 // best-effort only -- static fallback text stays as-is
+            }
+        })();
+    </script>
+
+    <!-- Populates #blog-teaser (hidden by default) with the 3 most recent
+         published posts. Same independent fire-and-forget, fail-open shape
+         as loadHomepageContent() above -- if blog_posts doesn't exist yet
+         (add_blog_posts_table.sql not run) or has zero published posts, the
+         section just stays hidden. Builds cards via DOM APIs (not innerHTML)
+         so post title/excerpt never need manual HTML-escaping. -->
+    <script>
+        (async function loadBlogTeaser() {
+            try {
+                const { data, error } = await window.supabaseClient
+                    .from('blog_posts').select('slug,title,excerpt,featured_image_path,published_at')
+                    .eq('status', 'published').lte('published_at', new Date().toISOString())
+                    .order('published_at', { ascending: false }).limit(3);
+                if (error || !data || !data.length) return;
+
+                const grid = document.getElementById('blog-teaser-grid');
+                data.forEach((post) => {
+                    const card = document.createElement('div');
+                    card.className = 'landing-card';
+
+                    const imageWrap = document.createElement('div');
+                    imageWrap.className = 'card-image';
+                    if (post.featured_image_path) {
+                        const img = document.createElement('img');
+                        img.className = 'banner-img';
+                        img.src = post.featured_image_path;
+                        img.alt = post.title || '';
+                        img.loading = 'lazy';
+                        img.onerror = () => img.remove();
+                        imageWrap.appendChild(img);
+                    }
+                    card.appendChild(imageWrap);
+
+                    const content = document.createElement('div');
+                    content.className = 'card-content';
+
+                    const h3 = document.createElement('h3');
+                    h3.textContent = post.title || '';
+                    content.appendChild(h3);
+
+                    if (post.excerpt) {
+                        const p = document.createElement('p');
+                        p.className = 'description';
+                        p.textContent = post.excerpt;
+                        content.appendChild(p);
+                    }
+
+                    const link = document.createElement('a');
+                    link.className = 'button';
+                    link.href = `blog/${post.slug}.html`;
+                    link.textContent = 'Read more →';
+                    content.appendChild(link);
+
+                    card.appendChild(content);
+                    grid.appendChild(card);
+                });
+
+                document.getElementById('blog-teaser').style.display = '';
+            } catch (err) {
+                // best-effort only -- section stays hidden
             }
         })();
     </script>

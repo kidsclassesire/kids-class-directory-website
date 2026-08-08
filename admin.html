@@ -193,6 +193,7 @@
             <button class="tab" data-tab="activity">Activity</button>
             <button class="tab" data-tab="admins">Admins</button>
             <button class="tab" data-tab="homepage">Homepage</button>
+            <button class="tab" data-tab="blog">Blog</button>
         </div>
 
         <!-- Overview -->
@@ -476,6 +477,84 @@
                 </div>
             </form>
         </div>
+
+        <!-- Blog -->
+        <div class="panel" data-tab="blog" id="panel-blog">
+            <div class="inline-form-row">
+                <input type="text" class="text-input" id="blog-search-input" placeholder="Search by title...">
+                <button type="button" class="btn btn-small" id="blog-new-btn" style="width:auto;">New post</button>
+            </div>
+            <div id="blog-results"><p>Loading posts...</p></div>
+
+            <div id="blog-edit-wrap" style="display: none;">
+                <div class="biz-edit-header">
+                    <h3 id="blog-edit-heading">New post</h3>
+                    <button type="button" class="btn-secondary" id="blog-edit-close">Close</button>
+                </div>
+                <form id="blog-edit-form">
+                    <fieldset>
+                        <legend>Content</legend>
+                        <div class="form-group">
+                            <label for="blog-edit-title">Title</label>
+                            <input type="text" id="blog-edit-title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="blog-edit-slug">Slug</label>
+                            <input type="text" id="blog-edit-slug" required pattern="[a-z0-9\-]+" title="Lowercase letters, numbers and hyphens only">
+                            <small style="color:var(--text-muted); font-size:0.8rem; display:block; margin-top:4px;">Auto-filled from the title &mdash; this becomes the URL (/blog/&lt;slug&gt;.html). Edit with care once published, since changing it changes the URL.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="blog-edit-excerpt">Excerpt</label>
+                            <textarea id="blog-edit-excerpt" required placeholder="A short summary shown on the blog index, homepage teaser, and search results."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="blog-edit-content">Content (Markdown)</label>
+                            <textarea id="blog-edit-content" required style="min-height: 320px;" placeholder="Write the post in Markdown -- # headings, **bold**, [links](url), - lists, etc."></textarea>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Featured Image</legend>
+                        <div class="image-field">
+                            <div class="image-preview-box" id="blog-image-preview"><span class="empty-label">No image</span></div>
+                            <div class="image-field-actions">
+                                <input type="file" id="blog-image-file" accept="image/*" style="display:none;">
+                                <button type="button" class="btn-small" id="blog-image-upload-btn">Upload</button>
+                                <button type="button" class="btn-danger" id="blog-image-remove-btn" style="display:none;">Remove</button>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Publishing</legend>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="blog-edit-author">Author Name</label>
+                                <input type="text" id="blog-edit-author" value="Kids Patch Team">
+                            </div>
+                            <div class="form-group">
+                                <label for="blog-edit-status">Status</label>
+                                <select id="blog-edit-status">
+                                    <option value="draft">Draft</option>
+                                    <option value="published">Published</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="blog-edit-meta-desc">Meta Description (optional)</label>
+                            <input type="text" id="blog-edit-meta-desc" placeholder="Falls back to the excerpt if left blank.">
+                        </div>
+                    </fieldset>
+
+                    <p class="dq-meta" style="margin: -0.5rem 0 1rem;">Saving doesn't publish instantly &mdash; the live page rebuilds on the next scheduled run (nightly) or you can trigger it immediately via GitHub &rarr; Actions &rarr; &ldquo;Build business, landing and blog pages&rdquo; &rarr; Run workflow.</p>
+
+                    <div class="save-bar">
+                        <button type="submit" class="btn" id="blog-save-btn">Save Post</button>
+                        <button type="button" class="btn-danger" id="blog-delete-btn" style="display:none;">Delete post</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
     <div id="toast-container"></div>
@@ -717,12 +796,14 @@
         let adminsLoaded = false;
         let activityLoaded = false;
         let homepageContentLoaded = false;
+        let blogPostsLoaded = false;
 
         wireTabGroup('#top-tabs .tab', '#dashboard-section > .panel', (key) => {
             if (key === 'businesses' && !businessesLoaded) { businessesLoaded = true; searchBusinesses(''); }
             if (key === 'activity' && !activityLoaded) { activityLoaded = true; fetchActivityLog(); }
             if (key === 'admins' && !adminsLoaded) { adminsLoaded = true; fetchAdmins(); }
             if (key === 'homepage' && !homepageContentLoaded) { homepageContentLoaded = true; loadHomepageContent(); }
+            if (key === 'blog' && !blogPostsLoaded) { blogPostsLoaded = true; searchBlogPosts(''); }
         });
         wireTabGroup('#claims-tabs .tab', '#panel-claims .subpanel', (key) => {
             if (key === 'history' && !claimHistoryLoaded) { claimHistoryLoaded = true; fetchClaimHistory(); }
@@ -1326,6 +1407,256 @@
             } finally {
                 btn.disabled = false;
                 btn.textContent = 'Save Changes';
+            }
+        });
+
+        // ============================================================
+        // Blog posts
+        // ============================================================
+        const blogResultsEl = document.getElementById('blog-results');
+        const blogEditWrap = document.getElementById('blog-edit-wrap');
+        const blogEditForm = document.getElementById('blog-edit-form');
+        const BLOG_STORAGE_BUCKET = 'blog-uploads';
+        let currentEditPostId = null;
+        let currentEditPostPublishedAt = null;
+        let blogSlugManuallyEdited = false;
+        let blogSearchTimeout = null;
+
+        // Mirrors slugify()/make_slug() in scripts/generate_business_pages.py
+        // closely enough for this purpose -- doesn't need to match exactly
+        // since the admin can always hand-edit the slug field afterward.
+        function slugifyTitle(text) {
+            return (text || '').toLowerCase().trim()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-+|-+$/g, '')
+                .slice(0, 60)
+                .replace(/-+$/, '') || 'post';
+        }
+
+        document.getElementById('blog-edit-title').addEventListener('input', (e) => {
+            if (!blogSlugManuallyEdited) {
+                document.getElementById('blog-edit-slug').value = slugifyTitle(e.target.value);
+            }
+        });
+        document.getElementById('blog-edit-slug').addEventListener('input', () => {
+            blogSlugManuallyEdited = true;
+        });
+
+        document.getElementById('blog-search-input').addEventListener('input', (e) => {
+            clearTimeout(blogSearchTimeout);
+            const q = e.target.value;
+            blogSearchTimeout = setTimeout(() => searchBlogPosts(q), 300);
+        });
+
+        async function searchBlogPosts(rawQuery) {
+            blogResultsEl.innerHTML = skeletonHtml(4, 60);
+            const q = (rawQuery || '').replace(/[,()%]/g, ' ').trim();
+            try {
+                // No RLS filter needed here beyond what the table itself enforces --
+                // admins (the only users who can reach this tab) see every post,
+                // draft or published, via the "Admins can view all posts" policy.
+                let query = supabaseClient.from('blog_posts').select('id,title,status,published_at').order('updated_at', { ascending: false }).limit(50);
+                if (q) query = query.ilike('title', `%${q}%`);
+                const { data, error } = await query;
+                if (error) throw error;
+
+                if (!data.length) {
+                    blogResultsEl.innerHTML = '<p class="dq-empty">No posts found.</p>';
+                    return;
+                }
+
+                blogResultsEl.innerHTML = '';
+                data.forEach(post => {
+                    const row = document.createElement('div');
+                    row.className = 'list-row';
+                    const statusLabel = post.status === 'published'
+                        ? `Published${post.published_at ? ' ' + new Date(post.published_at).toLocaleDateString() : ''}`
+                        : 'Draft';
+                    row.innerHTML = `
+                        <div>
+                            <strong>${escapeHtml(post.title || '(untitled post)')}</strong>
+                            <p class="dq-meta">${escapeHtml(statusLabel)}</p>
+                        </div>
+                        <div class="list-row-actions">
+                            <button class="btn-small">Edit</button>
+                        </div>
+                    `;
+                    row.querySelector('button').addEventListener('click', () => openBlogEditor(post.id));
+                    blogResultsEl.appendChild(row);
+                });
+            } catch (err) {
+                blogResultsEl.innerHTML = `<p style="color:#ef4444;">Error loading posts: ${escapeHtml(err.message)}</p>`;
+            }
+        }
+
+        function renderBlogImagePreview(path) {
+            const box = document.getElementById('blog-image-preview');
+            const removeBtn = document.getElementById('blog-image-remove-btn');
+            if (path) {
+                box.innerHTML = `<img src="${escapeHtml(path)}" alt="" onerror="this.parentElement.innerHTML='<span class=&quot;empty-label&quot;>Failed to load</span>'">`;
+                removeBtn.style.display = 'inline-block';
+            } else {
+                box.innerHTML = '<span class="empty-label">No image</span>';
+                removeBtn.style.display = 'none';
+            }
+        }
+
+        function resetBlogForm() {
+            currentEditPostId = null;
+            currentEditPostPublishedAt = null;
+            blogSlugManuallyEdited = false;
+            blogEditForm.reset();
+            document.getElementById('blog-edit-heading').textContent = 'New post';
+            document.getElementById('blog-edit-status').value = 'draft';
+            document.getElementById('blog-delete-btn').style.display = 'none';
+            renderBlogImagePreview(null);
+        }
+
+        document.getElementById('blog-new-btn').addEventListener('click', () => {
+            resetBlogForm();
+            blogEditWrap.style.display = 'block';
+        });
+
+        document.getElementById('blog-edit-close').addEventListener('click', () => {
+            blogEditWrap.style.display = 'none';
+        });
+
+        async function openBlogEditor(id) {
+            try {
+                const { data: post, error } = await supabaseClient.from('blog_posts').select('*').eq('id', id).single();
+                if (error) throw error;
+
+                currentEditPostId = post.id;
+                currentEditPostPublishedAt = post.published_at || null;
+                blogSlugManuallyEdited = true; // editing an existing post -- title edits should never silently rewrite its live slug
+
+                document.getElementById('blog-edit-heading').textContent = post.title || '(untitled post)';
+                document.getElementById('blog-edit-title').value = post.title || '';
+                document.getElementById('blog-edit-slug').value = post.slug || '';
+                document.getElementById('blog-edit-excerpt').value = post.excerpt || '';
+                document.getElementById('blog-edit-content').value = post.content_markdown || '';
+                document.getElementById('blog-edit-author').value = post.author_name || 'Kids Patch Team';
+                document.getElementById('blog-edit-status').value = post.status || 'draft';
+                document.getElementById('blog-edit-meta-desc').value = post.meta_description || '';
+                renderBlogImagePreview(post.featured_image_path || null);
+                document.getElementById('blog-delete-btn').style.display = 'inline-block';
+
+                blogEditWrap.style.display = 'block';
+            } catch (err) {
+                showToast('Failed to load post: ' + err.message, 'error');
+            }
+        }
+
+        async function uploadBlogFeaturedImage(file) {
+            if (!file.type.startsWith('image/')) { showToast('Please choose an image file.', 'error'); return; }
+            if (file.size > 5 * 1024 * 1024) { showToast('Image is too large (max 5MB).', 'error'); return; }
+
+            // Scoped by slug (not the DB id) since a brand-new, not-yet-saved post
+            // has no id yet -- the slug is required and unique, so it's already
+            // a valid storage key at this point.
+            const slug = document.getElementById('blog-edit-slug').value.trim();
+            if (!slug) { showToast('Enter a title (which fills in the slug) before uploading an image.', 'error'); return; }
+
+            const btn = document.getElementById('blog-image-upload-btn');
+            btn.textContent = 'Uploading...';
+            btn.disabled = true;
+
+            try {
+                const ext = (file.name.split('.').pop() || 'jpg').toLowerCase();
+                const path = `${slug}/featured.${ext}`;
+
+                const { data: existing } = await supabaseClient.storage.from(BLOG_STORAGE_BUCKET).list(slug);
+                if (existing && existing.length) {
+                    const stale = existing.filter(f => f.name.startsWith('featured.')).map(f => `${slug}/${f.name}`);
+                    if (stale.length) await supabaseClient.storage.from(BLOG_STORAGE_BUCKET).remove(stale);
+                }
+
+                const { error: uploadError } = await supabaseClient.storage.from(BLOG_STORAGE_BUCKET).upload(path, file, { upsert: true });
+                if (uploadError) throw uploadError;
+
+                const { data: urlData } = supabaseClient.storage.from(BLOG_STORAGE_BUCKET).getPublicUrl(path);
+                renderBlogImagePreview(urlData.publicUrl);
+                showToast('Image uploaded -- remember to save the post.', 'success');
+            } catch (err) {
+                showToast('Failed to upload: ' + err.message, 'error');
+            } finally {
+                btn.textContent = 'Upload';
+                btn.disabled = false;
+            }
+        }
+
+        document.getElementById('blog-image-upload-btn').addEventListener('click', () => document.getElementById('blog-image-file').click());
+        document.getElementById('blog-image-file').addEventListener('change', (e) => {
+            if (e.target.files[0]) uploadBlogFeaturedImage(e.target.files[0]);
+            e.target.value = '';
+        });
+        document.getElementById('blog-image-remove-btn').addEventListener('click', () => {
+            renderBlogImagePreview(null);
+        });
+
+        blogEditForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('blog-save-btn');
+            btn.disabled = true;
+            btn.textContent = 'Saving...';
+            try {
+                const status = document.getElementById('blog-edit-status').value;
+                const imageImg = document.querySelector('#blog-image-preview img');
+
+                const updates = {
+                    title: document.getElementById('blog-edit-title').value.trim(),
+                    slug: document.getElementById('blog-edit-slug').value.trim(),
+                    excerpt: document.getElementById('blog-edit-excerpt').value.trim(),
+                    content_markdown: document.getElementById('blog-edit-content').value,
+                    author_name: document.getElementById('blog-edit-author').value.trim() || 'Kids Patch Team',
+                    status,
+                    meta_description: document.getElementById('blog-edit-meta-desc').value.trim() || null,
+                    featured_image_path: imageImg ? imageImg.getAttribute('src') : null,
+                    updated_at: new Date().toISOString(),
+                };
+                // Only stamps published_at the first time a post goes live --
+                // flipping back to draft and republishing later shouldn't reset
+                // its original publish date.
+                if (status === 'published' && !currentEditPostPublishedAt) {
+                    updates.published_at = new Date().toISOString();
+                }
+
+                if (currentEditPostId) {
+                    const { error } = await supabaseClient.from('blog_posts').update(updates).eq('id', currentEditPostId);
+                    if (error) throw error;
+                    await logActivity('edit_blog_post', 'blog_posts', currentEditPostId, { title: updates.title, status });
+                } else {
+                    const { data, error } = await supabaseClient.from('blog_posts').insert(updates).select('id').single();
+                    if (error) throw error;
+                    currentEditPostId = data.id;
+                    await logActivity('create_blog_post', 'blog_posts', data.id, { title: updates.title, status });
+                }
+                if (updates.published_at) currentEditPostPublishedAt = updates.published_at;
+
+                showToast('Post saved.', 'success');
+                document.getElementById('blog-delete-btn').style.display = 'inline-block';
+                searchBlogPosts(document.getElementById('blog-search-input').value);
+            } catch (err) {
+                showToast('Failed to save: ' + err.message, 'error');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Save Post';
+            }
+        });
+
+        document.getElementById('blog-delete-btn').addEventListener('click', async () => {
+            if (!currentEditPostId) return;
+            const title = document.getElementById('blog-edit-title').value || 'this post';
+            if (!requireDestructiveConfirmation('delete', title, 'DELETE')) return;
+            try {
+                const { error } = await supabaseClient.from('blog_posts').delete().eq('id', currentEditPostId);
+                if (error) throw error;
+                await logActivity('delete_blog_post', 'blog_posts', currentEditPostId, { title });
+                showToast('Post deleted.', 'success');
+                blogEditWrap.style.display = 'none';
+                searchBlogPosts(document.getElementById('blog-search-input').value);
+            } catch (err) {
+                showToast('Failed to delete: ' + err.message, 'error');
             }
         });
 

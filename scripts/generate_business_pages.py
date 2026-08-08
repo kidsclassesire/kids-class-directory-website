@@ -64,6 +64,7 @@ SITE_HEADER_HTML = '''    <header class="site-header">
             <nav class="site-nav">
                 <a href="../index.html">Browse activities</a>
                 <a href="../classes/index.html">Categories</a>
+                <a href="../blog/index.html">Blog</a>
                 <a href="../contact.html">Contact</a>
             </nav>
             <a href="../portal.html" class="btn-ghost">Manage your listing</a>
@@ -81,6 +82,7 @@ SITE_FOOTER_HTML = '''    <footer class="site-footer">
             </div>
             <div class="site-footer-links">
                 <a href="../classes/index.html">Browse all activities by category &amp; county</a>
+                <a href="../blog/index.html">Blog</a>
                 <a href="../portal.html">Business owner? Manage your listing</a>
                 <a href="../contact.html">Contact us</a>
             </div>

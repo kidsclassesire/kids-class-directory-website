@@ -789,18 +789,31 @@
 
         /* Static legal pages (privacy-policy.html, terms-of-use.html, cookie-policy.html)
            -- plain prose container, reused as-is by all three rather than duplicating the
-           same layout CSS inline in each page like contact.html does for its one-off form. */
-        .legal-page { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
-        .legal-page h1 { font-size: 2rem; margin: 0 0 0.5rem; letter-spacing: -0.02em; }
+           same layout CSS inline in each page like contact.html does for its one-off form.
+           Blog posts (blog/*.html, scripts/generate_blog_pages.py) share this too -- a
+           markdown-rendered article wants the exact same 760px prose treatment. */
+        .legal-page, .blog-post-page { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+        .legal-page h1, .blog-post-page h1 { font-size: 2rem; margin: 0 0 0.5rem; letter-spacing: -0.02em; }
         .legal-page .updated { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem; }
-        .legal-page h2 { font-size: 1.3rem; margin: 2rem 0 0.75rem; }
-        .legal-page p, .legal-page li { line-height: 1.7; }
-        .legal-page ul, .legal-page ol { padding-left: 1.4rem; }
-        .legal-page a { color: var(--secondary); }
-        .legal-page table { border-collapse: collapse; width: 100%; margin: 1rem 0 1.5rem; font-size: 0.92rem; }
-        .legal-page th, .legal-page td { border: 1px solid var(--border, #ddd); padding: 0.6rem 0.8rem; text-align: left; vertical-align: top; }
-        .legal-page th { background: var(--bg-alt, #f5f5f5); font-family: inherit; }
+        .legal-page h2, .blog-post-page h2 { font-size: 1.3rem; margin: 2rem 0 0.75rem; }
+        .legal-page p, .legal-page li, .blog-post-page p, .blog-post-page li { line-height: 1.7; }
+        .legal-page ul, .legal-page ol, .blog-post-page ul, .blog-post-page ol { padding-left: 1.4rem; }
+        .legal-page a, .blog-post-page a { color: var(--secondary); }
+        .legal-page table, .blog-post-page table { border-collapse: collapse; width: 100%; margin: 1rem 0 1.5rem; font-size: 0.92rem; }
+        .legal-page th, .legal-page td, .blog-post-page th, .blog-post-page td { border: 1px solid var(--border, #ddd); padding: 0.6rem 0.8rem; text-align: left; vertical-align: top; }
+        .legal-page th, .blog-post-page th { background: var(--bg-alt, #f5f5f5); font-family: inherit; }
         .legal-page .table-scroll { overflow-x: auto; }
+
+        /* Blog-specific bits the legal pages don't need: a byline/date line,
+           and a full-width hero image under the title. */
+        .blog-post-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+        .blog-post-hero { width: 100%; max-height: 420px; object-fit: cover; border-radius: 16px; margin-bottom: 1.5rem; }
+
+        .blog-teaser { padding: 1rem 2rem 4rem; max-width: 1280px; margin: 0 auto; width: 100%; box-sizing: border-box; }
+        @media (max-width: 700px) {
+            .blog-post-page { padding: 1.5rem 1rem 3rem; }
+            .blog-teaser { padding: 0.5rem 1.25rem 3rem; }
+        }
 
         @media (max-width: 640px) {
             .landing-page { padding: 1.5rem 1rem 3rem; }
