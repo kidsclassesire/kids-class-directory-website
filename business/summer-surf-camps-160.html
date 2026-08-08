@@ -30,7 +30,7 @@
     <meta name="twitter:title" content="Summer Surf Camps — Team Sports classes | Kids Patch">
     <meta name="twitter:description" content="We offer a fun and thrill-packed week of surfing. Each day&#x27;s two-hour session will allow your children to gain confidence and skills in the water. Our camps...">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
-    <link rel="stylesheet" href="../styles.css?v=06cd1d0bb2">
+    <link rel="stylesheet" href="../styles.css?v=fe47f7bbc1">
     <script src="../analytics.js?v=471ea0b7de" defer></script>
     <script src="../share.js?v=47727f61b7" defer></script>
     <script src="../notify.js?v=0665ac6753" defer></script>
@@ -96,24 +96,47 @@
     </div>
     <footer class="site-footer">
         <div class="site-footer-inner">
-            <div class="logo">
-                <svg viewBox="0 0 40 40" fill="none" width="26" height="26" aria-hidden="true">
-                    <path d="M20 2 L26 6 L34 6 L34 14 L38 20 L34 26 L34 34 L26 34 L20 38 L14 34 L6 34 L6 26 L2 20 L6 14 L6 6 L14 6 Z" fill="#FAF9F6"/>
-                    <circle cx="20" cy="20" r="8" fill="#FFC857"/>
-                </svg>
-                Kids Patch
+            <div class="site-footer-brand">
+                <div class="logo">
+                    <svg viewBox="0 0 40 40" fill="none" width="26" height="26" aria-hidden="true">
+                        <path d="M20 2 L26 6 L34 6 L34 14 L38 20 L34 26 L34 34 L26 34 L20 38 L14 34 L6 34 L6 26 L2 20 L6 14 L6 6 L14 6 Z" fill="#FAF9F6"/>
+                        <circle cx="20" cy="20" r="8" fill="#FFC857"/>
+                    </svg>
+                    Kids Patch
+                </div>
+                <p class="site-footer-tagline">Ireland's directory of kids' classes &amp; activities.</p>
+                <div class="site-footer-social">
+                    <!-- Social accounts aren't live yet -- update these hrefs (and drop the
+                         onclick/title placeholder) once real profiles exist. Same markup is
+                         duplicated in index.html and contact.html. -->
+                    <a href="#" class="footer-social-icon" aria-label="Facebook (coming soon)" title="Coming soon" onclick="return false;">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.08 5.66 21.23 10.44 22v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22C18.34 21.23 22 17.08 22 12.06z"/></svg>
+                    </a>
+                    <a href="#" class="footer-social-icon" aria-label="Instagram (coming soon)" title="Coming soon" onclick="return false;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+                    </a>
+                    <a href="#" class="footer-social-icon" aria-label="TikTok (coming soon)" title="Coming soon" onclick="return false;">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82c-.9-.98-1.39-2.24-1.39-3.55h-3.03v13.4a3.03 3.03 0 1 1-2.15-2.9V9.7a6.06 6.06 0 1 0 5.18 6v-6.87a8.98 8.98 0 0 0 5.23 1.67V7.47c-1.42 0-2.75-.6-3.84-1.65z"/></svg>
+                    </a>
+                </div>
             </div>
-            <div class="site-footer-links">
-                <a href="../classes/index.html">Browse all activities by category &amp; county</a>
+            <div class="site-footer-col">
+                <h3>Explore</h3>
+                <a href="../index.html">Home</a>
+                <a href="../classes/index.html">Categories &amp; Counties</a>
                 <a href="../blog/index.html">Blog</a>
-                <a href="../portal.html">Business owner? Manage your listing</a>
-                <a href="../contact.html">Contact us</a>
             </div>
-        </div>
-        <div class="site-footer-legal">
-            <a href="../privacy-policy.html">Privacy Policy</a>
-            <a href="../terms-of-use.html">Terms of Use</a>
-            <a href="../cookie-policy.html">Cookie Policy</a>
+            <div class="site-footer-col">
+                <h3>Company</h3>
+                <a href="../contact.html">Contact Us</a>
+                <a href="../portal.html">Manage Your Listing</a>
+            </div>
+            <div class="site-footer-col">
+                <h3>Legal</h3>
+                <a href="../privacy-policy.html">Privacy Policy</a>
+                <a href="../terms-of-use.html">Terms of Use</a>
+                <a href="../cookie-policy.html">Cookie Policy</a>
+            </div>
         </div>
     </footer>
     <div id="claim-modal" class="modal-overlay">
