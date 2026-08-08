@@ -447,7 +447,12 @@ CLAIM_MODAL_HTML = '''<div id="claim-modal" class="modal-overlay">
             <form id="claim-form" style="display:none;">
                 <input type="hidden" id="claim-business-id">
                 <input type="hidden" id="claim-business-title">
-                <input type="text" id="claim-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
+                <!-- Honeypot: name must NOT look like a real field type (email/tel/
+                     website/url/company/...) -- browser autofill will silently stuff a
+                     recognized-looking hidden field along with the visible ones, which
+                     then reads as "a bot filled the honeypot" and makes the real submit
+                     handler silently no-op. -->
+                <input type="text" id="claim-hp" name="kp-notes" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
 
                 <div class="form-group">
                     <label for="claim-name">Your Full Name</label>
@@ -486,7 +491,8 @@ ENQUIRY_MODAL_HTML = '''<div id="enquiry-modal" class="modal-overlay">
             <form id="enquiry-form">
                 <input type="hidden" id="enquiry-business-id">
                 <input type="hidden" id="enquiry-business-title">
-                <input type="text" id="enquiry-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
+                <!-- Honeypot -- see the name="kp-notes" comment on claim-hp above. -->
+                <input type="text" id="enquiry-hp" name="kp-notes" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
 
                 <div class="form-group">
                     <label for="enquiry-name">Your Name</label>
