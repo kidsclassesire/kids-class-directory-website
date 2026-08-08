@@ -38,6 +38,10 @@
 const ADMIN_EMAIL = 'info@kidspatch.ie';
 const SITE_URL = 'https://www.kidspatch.ie';
 const SUPABASE_URL = 'https://gnozodfteywsiwcnbwch.supabase.co';
+// GmailApp.sendEmail's `name` option -- without it, every email shows up in
+// the recipient's inbox as coming from the raw address (info@kidspatch.ie)
+// rather than a friendly sender name.
+const SENDER_NAME = 'Kids Patch';
 
 // Mirrors the palette in styles.css (:root) so the emails look like the
 // same product as the website rather than a generic notification.
@@ -66,6 +70,24 @@ function claimRequestExists(businessId, email, status) {
     + '?business_id=eq.' + encodeURIComponent(businessId)
     + '&requester_email=eq.' + encodeURIComponent(email)
     + '&status=eq.' + encodeURIComponent(status)
+    + '&select=id&limit=1';
+  var res = UrlFetchApp.fetch(url, {
+    headers: { apikey: key, Authorization: 'Bearer ' + key },
+    muteHttpExceptions: true,
+  });
+  if (res.getResponseCode() !== 200) return false;
+  var rows = JSON.parse(res.getContentText());
+  return rows.length > 0;
+}
+
+// Used to decide whether sendEnquiryEmail's "claim your listing" pitch is
+// worth showing -- no point pitching an owner who already has portal access.
+function isBusinessClaimed(businessId) {
+  var key = PropertiesService.getScriptProperties().getProperty('SUPABASE_SERVICE_ROLE_KEY');
+  if (!key || !businessId) return false;
+  var url = SUPABASE_URL + '/rest/v1/claim_requests'
+    + '?business_id=eq.' + encodeURIComponent(businessId)
+    + '&status=eq.approved'
     + '&select=id&limit=1';
   var res = UrlFetchApp.fetch(url, {
     headers: { apikey: key, Authorization: 'Bearer ' + key },
@@ -171,7 +193,7 @@ function doPost(e) {
         if (enquiryRequestExists(payload.token, payload.business_id, payload.parent_email)) {
           var business = getBusinessContact(payload.business_id);
           if (business && business.email_address) {
-            sendEnquiryEmail(payload, business);
+            sendEnquiryEmail(payload, business, isBusinessClaimed(payload.business_id));
             sendEnquiryConfirmationEmail(payload, business);
             console.log('sendEnquiryEmail: sent');
           } else {
@@ -307,7 +329,7 @@ function sendNewClaimEmail(p) {
     cta: { label: 'Review in admin panel', url: SITE_URL + '/admin.html' },
   });
 
-  GmailApp.sendEmail(ADMIN_EMAIL, subject, body, { htmlBody: htmlBody });
+  GmailApp.sendEmail(ADMIN_EMAIL, subject, body, { htmlBody: htmlBody, name: SENDER_NAME });
 }
 
 function sendClaimApprovedEmail(p) {
@@ -334,7 +356,7 @@ function sendClaimApprovedEmail(p) {
     cta: { label: 'Manage your listing', url: SITE_URL + '/portal.html' },
   });
 
-  GmailApp.sendEmail(p.requester_email, subject, body, { htmlBody: htmlBody });
+  GmailApp.sendEmail(p.requester_email, subject, body, { htmlBody: htmlBody, name: SENDER_NAME });
 }
 
 // The core "prove we send you customers" email -- goes straight to the
@@ -342,10 +364,22 @@ function sendClaimApprovedEmail(p) {
 // owner can just hit reply to respond, no Kids Patch account needed. That's
 // deliberate: the value pitch to a not-yet-signed-up business is "look, a
 // real enquiry landed in your inbox," not "come use our tools."
-function sendEnquiryEmail(p, business) {
-  const subject = `New enquiry via Kids Patch: ${business.company_name || p.business_name || ''}`;
+function sendEnquiryEmail(p, business, alreadyClaimed) {
+  const name = business.company_name || p.business_name || 'your listing';
+  const subject = `New enquiry via Kids Patch: ${name}`;
+
+  // Only pitched at businesses that haven't claimed their listing yet -- an
+  // owner who already has portal access doesn't need convincing, and
+  // repeating the pitch on every enquiry would just get noisy for them.
+  const claimPitchText = alreadyClaimed ? '' : [
+    ``,
+    `This enquiry came from your free Kids Patch listing -- a directory Irish parents use to find kids' classes and activities. You haven't claimed your listing yet, which means you can't update your own details, photos or schedule, or see how many parents are viewing your page.`,
+    ``,
+    `Claiming it takes a minute and is free: ${SITE_URL}/portal.html`,
+  ].join('\n');
+
   const body = [
-    `You have a new enquiry via Kids Patch for "${business.company_name || p.business_name || 'your listing'}".`,
+    `You have a new enquiry via Kids Patch for "${name}".`,
     ``,
     `From: ${p.parent_name || ''} (${p.parent_email || ''})`,
     p.parent_phone ? `Phone: ${p.parent_phone}` : null,
@@ -354,24 +388,32 @@ function sendEnquiryEmail(p, business) {
     p.message || '',
     ``,
     `Reply directly to this email to respond to ${firstName(p.parent_name)}.`,
+    claimPitchText || null,
   ].filter(function (line) { return line !== null; }).join('\n');
 
-  const bodyHtml = '<p style="margin:0 0 12px;">You have a new enquiry via Kids Patch for <strong>' + escapeHtml(business.company_name || p.business_name || 'your listing') + '</strong>.</p>'
+  const claimPitchHtml = alreadyClaimed ? '' : (
+    '<div style="margin-top:20px; padding-top:16px; border-top:1px solid ' + BRAND.border + '; font-size:13.5px; line-height:1.6; color:' + BRAND.textMuted + ';">'
+    + 'This enquiry came from your free Kids Patch listing &mdash; a directory Irish parents use to find kids&rsquo; classes and activities. You haven&rsquo;t claimed your listing yet, which means you can&rsquo;t update your own details, photos or schedule, or see how many parents are viewing your page. Claiming it takes a minute and is free.'
+    + '</div>'
+  );
+
+  const bodyHtml = '<p style="margin:0 0 12px;">You have a new enquiry via Kids Patch for <strong>' + escapeHtml(name) + '</strong>.</p>'
     + detailBox([
       ['From', escapeHtml(p.parent_name || '') + ' &lt;' + escapeHtml(p.parent_email || '') + '&gt;'],
       ['Phone', escapeHtml(p.parent_phone || '')],
     ])
     + '<div style="margin-top:4px; padding:14px 16px; border-left:3px solid ' + BRAND.accent + '; background-color:' + BRAND.bgPage + '; border-radius:0 8px 8px 0; font-size:15px; line-height:1.6; color:' + BRAND.textDark + ';">' + nl2br(p.message || '') + '</div>'
-    + '<p style="margin:16px 0 0; font-size:13px; color:' + BRAND.textMuted + ';">Just reply to this email to respond to ' + escapeHtml(firstName(p.parent_name)) + ' directly.</p>';
+    + '<p style="margin:16px 0 0; font-size:13px; color:' + BRAND.textMuted + ';">Just reply to this email to respond to ' + escapeHtml(firstName(p.parent_name)) + ' directly.</p>'
+    + claimPitchHtml;
 
   const htmlBody = emailShell({
     preheader: `New enquiry from ${p.parent_name || 'a parent'} via Kids Patch`,
     heading: 'You have a new enquiry',
     bodyHtml: bodyHtml,
-    cta: { label: 'Claim your free listing', url: SITE_URL + '/portal.html' },
+    cta: alreadyClaimed ? null : { label: 'Claim your free listing', url: SITE_URL + '/portal.html' },
   });
 
-  var options = { htmlBody: htmlBody };
+  var options = { htmlBody: htmlBody, name: SENDER_NAME };
   if (p.parent_email) options.replyTo = p.parent_email;
   GmailApp.sendEmail(business.email_address, subject, body, options);
 }
@@ -400,7 +442,7 @@ function sendEnquiryConfirmationEmail(p, business) {
     cta: null,
   });
 
-  GmailApp.sendEmail(p.parent_email, subject, body, { htmlBody: htmlBody });
+  GmailApp.sendEmail(p.parent_email, subject, body, { htmlBody: htmlBody, name: SENDER_NAME });
 }
 
 // Unlike the claim emails above, this has no claim_requests row to verify
@@ -435,7 +477,7 @@ function sendContactEmail(p) {
     cta: null,
   });
 
-  var options = { htmlBody: htmlBody };
+  var options = { htmlBody: htmlBody, name: SENDER_NAME };
   if (p.email) options.replyTo = p.email;
   GmailApp.sendEmail(ADMIN_EMAIL, subject, body, options);
 }
@@ -464,5 +506,5 @@ function sendClaimRejectedEmail(p) {
     cta: null,
   });
 
-  GmailApp.sendEmail(p.requester_email, subject, body, { htmlBody: htmlBody });
+  GmailApp.sendEmail(p.requester_email, subject, body, { htmlBody: htmlBody, name: SENDER_NAME });
 }
