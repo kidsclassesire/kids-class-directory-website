@@ -124,12 +124,14 @@
             <form id="claim-form" style="display:none;">
                 <input type="hidden" id="claim-business-id">
                 <input type="hidden" id="claim-business-title">
-                <!-- Honeypot: name must NOT look like a real field type (email/tel/
-                     website/url/company/...) -- browser autofill will silently stuff a
-                     recognized-looking hidden field along with the visible ones, which
-                     then reads as "a bot filled the honeypot" and makes the real submit
-                     handler silently no-op. -->
-                <input type="text" id="claim-hp" name="kp-notes" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
+                <!-- Honeypot: must be display:none -- confirmed in production (2026-08)
+                     that browser autofill (Chrome/Safari) still targets a field hidden only
+                     via off-screen positioning + opacity:0, since that's still "visible" to
+                     the layout/autofill engine. It then silently stuffs this field along
+                     with the real ones, which reads as "a bot filled the honeypot" and makes
+                     the real submit handler silently no-op with zero user feedback.
+                     display:none has no layout box at all, which autofill does respect. -->
+                <input type="text" id="claim-hp" name="kp-notes" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none;">
 
                 <div class="form-group">
                     <label for="claim-name">Your Full Name</label>
@@ -163,8 +165,8 @@
             <form id="enquiry-form">
                 <input type="hidden" id="enquiry-business-id">
                 <input type="hidden" id="enquiry-business-title">
-                <!-- Honeypot -- see the name="kp-notes" comment on claim-hp above. -->
-                <input type="text" id="enquiry-hp" name="kp-notes" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
+                <!-- Honeypot -- see the display:none comment on claim-hp above. -->
+                <input type="text" id="enquiry-hp" name="kp-notes" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none;">
 
                 <div class="form-group">
                     <label for="enquiry-name">Your Name</label>
